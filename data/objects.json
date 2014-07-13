@@ -1,0 +1,106 @@
+[
+	{
+		"name": "QObject"
+	},
+	{
+		"name": "QWidget", "base": "QObject",
+		"methods": [
+			{
+				"name": "QWidget"
+			},
+			{
+				"name": "isEnabled", "retType": "bool"
+			},
+			{
+				"name": "isVisible", "retType": "bool"
+			},
+			{
+				"name": "setEnabled", "retType": "void",
+				"params": [
+					{"name": "enabled", "type": "bool"}
+				]
+			},
+			{
+				"name": "setLayout", "retType": "void",
+				"params": [
+					{"name": "layout", "type": "QLayout*"}
+				]
+			},
+			{
+				"name": "setVisible", "retType": "void",
+				"params": [
+					{"name": "visible", "type": "bool"}
+				]
+			}
+		],
+        "properties": [
+            {
+                "name": "enabled",
+                "getter": "isEnabled",
+                "setter": "setEnabled"
+            },
+            {
+                "name": "visible",
+                "getter": "isVisible",
+                "setter": "setVisible"
+            }
+        ]
+	},
+	{
+		"name": "QFrame", "base": "QWidget"
+	},
+	{
+		"name": "QLabel", "base": "QFrame",
+		"methods": [
+			{
+				"name": "QLabel"
+			},
+			{
+				"name": "setText", "retType": "void",
+				"params": [
+					 {"name": "text", "type": "const QString&"}
+				]
+			},
+			{
+				"name": "text", "retType": "QString"
+			}
+		],
+        "properties": [
+            {
+                "name": "text",
+                "getter": "text",
+                "setter": "setText"
+            }
+        ]
+	},
+    {
+        "name": "QLayout", "base": "QObject"
+    },
+	{
+		"name": "QBoxLayout", "base": "QLayout",
+		"methods": [
+			{
+				"name": "addWidget", "retType": "void",
+				"params": [
+					{"name": "widget", "type": "QWidget*"}
+				]
+			}
+		]
+	},
+	{
+		"name": "QVBoxLayout", "base": "QBoxLayout",
+		"methods": [
+			{
+				"name": "QVBoxLayout"
+			}
+		]
+	},
+	{
+		"name": "QHBoxLayout", "base": "QBoxLayout",
+		"methods": [
+			{
+				"name": "QHBoxLayout"
+			}
+		]
+	}
+]
