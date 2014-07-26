@@ -18,6 +18,5 @@ SOURCES += main.cpp\
 
 HEADERS  += \
     class.h \
-    method.h \
     jsonparser.h \
     classwriter.h

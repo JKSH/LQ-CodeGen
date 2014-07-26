@@ -1,7 +1,7 @@
 #ifndef CLASS_H
 #define CLASS_H
 /*
-#include "method.h"
+//#include "method.h"
 
 #include <QMap>
 #include <QList>
