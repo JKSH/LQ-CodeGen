@@ -1,9 +1,9 @@
 [
     {
         "qtType": "bool",
-        "dllType": "quint8",
-        "qt2dll": "quint8(_qtValue_)",
-        "dll2qt": "_dllValue_ > 0"
+        "dllType": "LVBoolean*",
+        "qt2dll": "LVBoolean(_qtValue_)",
+        "dll2qt": "(*_dllValue_) > 0"
     },
     {
         "qtType": "QString",

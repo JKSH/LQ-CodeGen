@@ -133,7 +133,7 @@ public:
 		if (retType != "void")
 		{
 			// HACK. TODO: Find a more robust solution.
-			if (retType != "LStrHandle")
+			if (retType != "LStrHandle" && retType != "LVBoolean*")
 				retType += '*';
 			list.prepend(Param{retType, "retVal"});
 		}
