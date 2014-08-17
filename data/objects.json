@@ -27,10 +27,37 @@
 				]
 			},
 			{
+				"name": "setStyleSheet", "retType": "void",
+				"params": [
+					{"name": "styleSheet", "type": "const QString&"}
+				]
+			},
+			{
+				"name": "setToolTip", "retType": "void",
+				"params": [
+					{"name": "toolTip", "type": "const QString&"}
+				]
+			},
+			{
 				"name": "setVisible", "retType": "void",
 				"params": [
 					{"name": "visible", "type": "bool"}
 				]
+			},
+			{
+				"name": "setWindowTitle", "retType": "void",
+				"params": [
+					{"name": "windowTitle", "type": "const QString&"}
+				]
+			},
+			{
+				"name": "styleSheet", "retType": "QString"
+			},
+			{
+				"name": "toolTip", "retType": "QString"
+			},
+			{
+				"name": "windowTitle", "retType": "QString"
 			}
 		],
 		"properties": [
@@ -40,9 +67,24 @@
 				"setter": "setEnabled"
 			},
 			{
+				"name": "styleSheet",
+				"getter": "styleSheet",
+				"setter": "setStyleSheet"
+			},
+			{
+				"name": "toolTip",
+				"getter": "toolTip",
+				"setter": "setToolTip"
+			},
+			{
 				"name": "visible",
 				"getter": "isVisible",
 				"setter": "setVisible"
+			},
+			{
+				"name": "windowTitle",
+				"getter": "windowTitle",
+				"setter": "setWindowTitle"
 			}
 		]
 	},
@@ -62,7 +104,16 @@
 				]
 			},
 			{
+				"name": "setWordWrap", "retType": "void",
+				"params": [
+					 {"name": "wordWrap", "type": "bool"}
+				]
+			},
+			{
 				"name": "text", "retType": "QString"
+			},
+			{
+				"name": "wordWrap", "retType": "bool"
 			}
 		],
 		"properties": [
@@ -70,11 +121,24 @@
 				"name": "text",
 				"getter": "text",
 				"setter": "setText"
+			},
+			{
+				"name": "wordWrap",
+				"getter": "wordWrap",
+				"setter": "setWordWrap"
 			}
 		]
 	},
 	{
-		"name": "QLayout", "base": "QObject"
+		"name": "QLayout", "base": "QObject",
+		"methods": [
+			{
+				"name": "removeWidget", "retType": "void",
+				"params": [
+					{"name": "widget", "type": "QWidget*"}
+				]
+			}
+		]
 	},
 	{
 		"name": "QBoxLayout", "base": "QLayout",
