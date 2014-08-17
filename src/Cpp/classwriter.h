@@ -228,17 +228,16 @@ public:
 			bool hasReturn = (retType_brg != "void");
 			if (method.isConstructor())
 			{
-				// TODO: Handle constructor params
-				body_brg += "return new " + currentClass + ';';
+				body_brg += "return new " + currentClass;
 			}
 			else
 			{
 				if (hasReturn)
 					body_brg = "return ";
 
-				body_brg += currentClass.toLower() + "->" + methodName + '('
-						+ Method::prototypeParams(paramList, false) + ");";
+				body_brg += currentClass.toLower() + "->" + methodName;
 			}
+			body_brg += '(' + Method::prototypeParams(paramList, false) + ");";
 
 			if (hasReturn)
 				body_dll += "\t" + retType_brg + " retVal_brg;\n";

@@ -95,7 +95,10 @@
 		"name": "QLabel", "base": "QFrame",
 		"methods": [
 			{
-				"name": "QLabel"
+				"name": "QLabel",
+				"params": [
+					 {"name": "text", "type": "const QString&"}
+				]
 			},
 			{
 				"name": "setText", "retType": "void",
