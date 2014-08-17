@@ -37,6 +37,7 @@
 		<Item Name="Param Writers" Type="Folder">
 			<Item Name="Abstract Param Writer.lvclass" Type="LVClass" URL="../Param Writers/Abstract Param Writer/Abstract Param Writer.lvclass"/>
 			<Item Name="Bool Writer.lvclass" Type="LVClass" URL="../Param Writers/Bool Writer/Bool Writer.lvclass"/>
+			<Item Name="Number Writer.lvclass" Type="LVClass" URL="../Param Writers/Number Writer/Number Writer.lvclass"/>
 			<Item Name="Obtain Writer.vi" Type="VI" URL="../Param Writers/Obtain Writer.vi"/>
 			<Item Name="QObject Writer.lvclass" Type="LVClass" URL="../Param Writers/QObject Writer/QObject Writer.lvclass"/>
 			<Item Name="String Writer.lvclass" Type="LVClass" URL="../Param Writers/String Writer/String Writer.lvclass"/>

@@ -39,9 +39,21 @@
 				]
 			},
 			{
+				"name": "setToolTipDuration", "retType": "void",
+				"params": [
+					{"name": "msec", "type": "int"}
+				]
+			},
+			{
 				"name": "setVisible", "retType": "void",
 				"params": [
 					{"name": "visible", "type": "bool"}
+				]
+			},
+			{
+				"name": "setWindowOpacity", "retType": "void",
+				"params": [
+					{"name": "level", "type": "qreal"}
 				]
 			},
 			{
@@ -55,6 +67,12 @@
 			},
 			{
 				"name": "toolTip", "retType": "QString"
+			},
+			{
+				"name": "toolTipDuration", "retType": "int"
+			},
+			{
+				"name": "windowOpacity", "retType": "qreal"
 			},
 			{
 				"name": "windowTitle", "retType": "QString"
@@ -77,9 +95,19 @@
 				"setter": "setToolTip"
 			},
 			{
+				"name": "toolTipDuration",
+				"getter": "toolTipDuration",
+				"setter": "setToolTipDuration"
+			},
+			{
 				"name": "visible",
 				"getter": "isVisible",
 				"setter": "setVisible"
+			},
+			{
+				"name": "windowOpacity",
+				"getter": "windowOpacity",
+				"setter": "setWindowOpacity"
 			},
 			{
 				"name": "windowTitle",
