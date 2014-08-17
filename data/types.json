@@ -1,14 +1,14 @@
 [
-    {
-        "qtType": "bool",
-        "dllType": "LVBoolean*",
-        "qt2dll": "LVBoolean(_qtValue_)",
-        "dll2qt": "(*_dllValue_) > 0"
-    },
-    {
-        "qtType": "QString",
-        "dllType": "LStrHandle",
-        "dll2qt": "QString(  QLatin1String( (char*)(*_dllValue_)->str, LStrLen(*_dllValue_) )  )",
+	{
+		"qtType": "bool",
+		"dllType": "LVBoolean*",
+		"qt2dll": "LVBoolean(_qtValue_)",
+		"dll2qt": "(*_dllValue_) > 0"
+	},
+	{
+		"qtType": "QString",
+		"dllType": "LStrHandle",
+		"dll2qt": "QString(  QLatin1String( (char*)(*_dllValue_)->str, LStrLen(*_dllValue_) )  )",
 		"qt2dll": "copyIntoLStr(_dllValue_, _qtValue_.toUtf8())"
-    }
+	}
 ]

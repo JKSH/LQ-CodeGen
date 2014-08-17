@@ -33,18 +33,18 @@
 				]
 			}
 		],
-        "properties": [
-            {
-                "name": "enabled",
-                "getter": "isEnabled",
-                "setter": "setEnabled"
-            },
-            {
-                "name": "visible",
-                "getter": "isVisible",
-                "setter": "setVisible"
-            }
-        ]
+		"properties": [
+			{
+				"name": "enabled",
+				"getter": "isEnabled",
+				"setter": "setEnabled"
+			},
+			{
+				"name": "visible",
+				"getter": "isVisible",
+				"setter": "setVisible"
+			}
+		]
 	},
 	{
 		"name": "QFrame", "base": "QWidget"
@@ -65,17 +65,17 @@
 				"name": "text", "retType": "QString"
 			}
 		],
-        "properties": [
-            {
-                "name": "text",
-                "getter": "text",
-                "setter": "setText"
-            }
-        ]
+		"properties": [
+			{
+				"name": "text",
+				"getter": "text",
+				"setter": "setText"
+			}
+		]
 	},
-    {
-        "name": "QLayout", "base": "QObject"
-    },
+	{
+		"name": "QLayout", "base": "QObject"
+	},
 	{
 		"name": "QBoxLayout", "base": "QLayout",
 		"methods": [
