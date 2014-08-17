@@ -8,7 +8,7 @@ CONFIG += c++11
 
 QT       -= gui
 
-TARGET = CodeGen
+TARGET = LabQt-CodeGen-Cpp
 TEMPLATE = app
 
 

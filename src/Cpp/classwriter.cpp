@@ -9,7 +9,7 @@ ClassWriter::ClassWriter() :
 {
 	// TODO: Move this upstream
 //	qDebug("== Start testing TypeConv");
-	QFile typeFile("../data/types.json");
+	QFile typeFile("../../data/types.json");
 	typeFile.open(QFile::ReadOnly|QFile::Text);
 
 	auto conversions = QJsonDocument::fromJson(typeFile.readAll());
@@ -41,7 +41,7 @@ ClassWriter::startWriting()
 	// TODO: Warn if templates are malformed
 
 	// TODO: Refactor
-	QFile template_dllH("../data/labqt.h");
+	QFile template_dllH("../../templates/Cpp/labqt.h");
 	if (template_dllH.open(QFile::ReadOnly|QFile::Text))
 	{
 		QStringList bits = QString(template_dllH.readAll()).split("//[TEMPLATE]");
@@ -55,7 +55,7 @@ ClassWriter::startWriting()
 	else
 		qWarning() << "Could not find labqt.h template";
 
-	QFile template_dllC("../data/labqt.cpp");
+	QFile template_dllC("../../templates/Cpp/labqt.cpp");
 	if (template_dllC.open(QFile::ReadOnly|QFile::Text))
 	{
 		QStringList bits = QString(template_dllC.readAll()).split("//[TEMPLATE]");
@@ -69,7 +69,7 @@ ClassWriter::startWriting()
 	else
 		qWarning() << "Could not find labqt.cpp template";
 
-	QFile template_bridgeH("../data/bridge.h");
+	QFile template_bridgeH("../../templates/Cpp/bridge.h");
 	if (template_bridgeH.open(QFile::ReadOnly|QFile::Text))
 	{
 		QStringList bits = QString(template_bridgeH.readAll()).split("//[TEMPLATE]");

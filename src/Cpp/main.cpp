@@ -19,7 +19,7 @@ int main(int, char **)
 	qDebug() << QMetaObject::normalizedType("const char *");
 	qDebug() << QMetaObject::normalizedType("const char * const");
 */
-	QFile file("../data/objects.json");
+	QFile file("../../data/objects.json");
 	if (file.open(QFile::ReadOnly|QFile::Text))
 	{
 		auto doc = QJsonDocument::fromJson(file.readAll());
