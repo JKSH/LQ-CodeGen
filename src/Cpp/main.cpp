@@ -4,6 +4,14 @@
 
 int main(int, char **)
 {
+	QFile typeFile("../../data/types.json");
+	typeFile.open(QFile::ReadOnly|QFile::Text);
+
+	auto conversions = QJsonDocument::fromJson(typeFile.readAll());
+	TypeConv::init(conversions.array());
+
+	typeFile.close();
+
 	QFile file("../../data/objects.json");
 	if (file.open(QFile::ReadOnly|QFile::Text))
 	{

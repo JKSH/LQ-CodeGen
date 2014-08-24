@@ -6,16 +6,7 @@ ClassWriter::ClassWriter() :
 	dllH("labqt.h"),
 	dllC("labqt.cpp"),
 	bridgeH("bridge.h")
-{
-	// TODO: Move this upstream
-	QFile typeFile("../../data/types.json");
-	typeFile.open(QFile::ReadOnly|QFile::Text);
-
-	auto conversions = QJsonDocument::fromJson(typeFile.readAll());
-	TypeConv::init(conversions.array());
-
-	typeFile.close();
-}
+{}
 
 bool
 ClassWriter::startWriting()
