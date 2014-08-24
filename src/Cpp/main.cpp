@@ -4,28 +4,35 @@
 
 int main(int, char **)
 {
+	// Read data
 	QFile typeFile("../../data/types.json");
-	typeFile.open(QFile::ReadOnly|QFile::Text);
-
+	if (!typeFile.open(QFile::ReadOnly|QFile::Text))
+	{
+		qDebug() << "Unable to open" << typeFile.fileName();
+		return -1;
+	}
 	auto conversions = QJsonDocument::fromJson(typeFile.readAll());
-	TypeConv::init(conversions.array());
-
 	typeFile.close();
 
-	QFile file("../../data/objects.json");
-	if (file.open(QFile::ReadOnly|QFile::Text))
+	QFile qobjFile("../../data/objects.json");
+	if (!qobjFile.open(QFile::ReadOnly|QFile::Text))
 	{
-		auto doc = QJsonDocument::fromJson(file.readAll());
-		file.close();
-
-		ClassWriter c;
-		c.startWriting();
-		for(const QJsonValue& val : doc.array())
-			c.writeClass(val.toObject());
-		c.stopWriting();
+		qDebug() << "Unable to open" << qobjFile.fileName();
+		return -1;
 	}
-	else
-		qDebug() << "Unable to open JSON file";
+	auto doc = QJsonDocument::fromJson(qobjFile.readAll());
+	qobjFile.close();
+
+
+	// Process data
+	// TypeConv must be initialized before other processing
+	TypeConv::init(conversions.array());
+
+	ClassWriter c;
+	c.startWriting();
+	for(const QJsonValue& val : doc.array())
+		c.writeClass(val.toObject());
+	c.stopWriting();
 
 	return 0;
 }
