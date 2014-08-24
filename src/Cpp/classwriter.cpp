@@ -8,7 +8,6 @@ ClassWriter::ClassWriter() :
 	bridgeH("bridge.h")
 {
 	// TODO: Move this upstream
-//	qDebug("== Start testing TypeConv");
 	QFile typeFile("../../data/types.json");
 	typeFile.open(QFile::ReadOnly|QFile::Text);
 
@@ -16,13 +15,6 @@ ClassWriter::ClassWriter() :
 	TypeConv::init(conversions.array());
 
 	typeFile.close();
-/*
-	qDebug() << TypeConv::dllType("void");
-	qDebug() << TypeConv::dllType("bool");
-	qDebug() << TypeConv::dllType("QString");
-	qDebug() << TypeConv::dllType("int");
-	qDebug("== Stop testing TypeConv");
-*/
 }
 
 bool

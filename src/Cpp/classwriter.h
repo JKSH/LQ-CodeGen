@@ -193,8 +193,6 @@ public:
 				continue;
 			}
 
-			QString methodName = method.name();
-
 			QString retType_brg = method.returnType_bridge();
 			bridgeH.write('\t' + retType_brg.toUtf8() + ' ');
 			dllH.write("extern qint32 Q_DECL_EXPORT ");
@@ -235,7 +233,7 @@ public:
 				if (hasReturn)
 					body_brg = "return ";
 
-				body_brg += currentClass.toLower() + "->" + methodName;
+				body_brg += currentClass.toLower() + "->" + method.name();
 			}
 			body_brg += '(' + Method::prototypeParams(paramList, false) + ");";
 
