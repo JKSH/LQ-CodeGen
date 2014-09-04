@@ -1,8 +1,6 @@
 #ifndef CLASSWRITER_H
 #define CLASSWRITER_H
 
-#include "jsonparser.h"
-
 #include <QFile>
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -13,13 +11,25 @@
 
 class TypeConv
 {
-	static QJsonObject _qt2dll;
-
 public:
-	static void init(const QJsonArray& conversions)
+	enum Category {
+		Boolean,
+		Numeric,
+		SimpleStruct,
+		OpaqueStruct,
+		Identity,
+		Container
+	};
+
+	static void init(const QJsonArray& conversions, Category category)
 	{
 		// TODO: More robust checks
-		_qt2dll = JsonParser::arrayToObject(conversions, "qtType");
+		for (const QJsonValue& obj : conversions)
+		{
+			QString objName = obj.toObject()["qtType"].toString();
+			_qt2dll[objName] = obj;
+			_categories[objName] = category; // TODO: Use category info in ClassWriter
+		}
 	}
 
 	/// This is a lossy (irreversible) conversion.
@@ -54,6 +64,9 @@ public:
 		// TODO: Return default if non-existent
 		return _qt2dll[qtType].toObject()["dll2qt"].toString();
 	}
+private:
+	static QMap<QString, Category> _categories;
+	static QJsonObject _qt2dll;
 };
 
 struct Param

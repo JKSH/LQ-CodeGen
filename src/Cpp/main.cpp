@@ -30,7 +30,7 @@ int main(int, char **)
 
 	// Process data
 	// TypeConv must be initialized before other processing
-	TypeConv::init(conversions.array());
+	TypeConv::init(conversions.array(), TypeConv::SimpleStruct);
 
 	ClassWriter c;
 	c.startWriting();

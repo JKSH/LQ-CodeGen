@@ -13,9 +13,7 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-    jsonparser.cpp \
     classwriter.cpp
 
 HEADERS  += \
-    jsonparser.h \
     classwriter.h
