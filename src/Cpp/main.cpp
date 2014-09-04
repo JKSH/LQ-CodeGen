@@ -2,26 +2,30 @@
 #include <QJsonDocument>
 #include "classwriter.h"
 
+static QJsonDocument
+parseJsonFile(const QString& filePath)
+{
+	QFile file(filePath);
+	if (!file.open(QFile::ReadOnly|QFile::Text))
+	{
+		qDebug() << "Unable to open" << file.fileName();
+		return QJsonDocument();
+	}
+	auto doc = QJsonDocument::fromJson(file.readAll());
+	file.close();
+	return doc;
+}
+
 int main(int, char **)
 {
 	// Read data
-	QFile typeFile("../../data/types.json");
-	if (!typeFile.open(QFile::ReadOnly|QFile::Text))
-	{
-		qDebug() << "Unable to open" << typeFile.fileName();
+	QJsonDocument conversions = parseJsonFile("../../data/types.json");
+	if (conversions.isNull())
 		return -1;
-	}
-	auto conversions = QJsonDocument::fromJson(typeFile.readAll());
-	typeFile.close();
 
-	QFile qobjFile("../../data/objects.json");
-	if (!qobjFile.open(QFile::ReadOnly|QFile::Text))
-	{
-		qDebug() << "Unable to open" << qobjFile.fileName();
+	QJsonDocument doc = parseJsonFile("../../data/objects.json");
+	if (doc.isNull())
 		return -1;
-	}
-	auto doc = QJsonDocument::fromJson(qobjFile.readAll());
-	qobjFile.close();
 
 
 	// Process data
