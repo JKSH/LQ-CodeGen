@@ -1,8 +1,5 @@
 #include "classwriter.h"
 
-QJsonObject TypeConv::_qt2dll;
-QMap<QString, TypeConv::Category> TypeConv::_categories;
-
 ClassWriter::ClassWriter() :
 	dllH("labqt.h"),
 	dllC("labqt.cpp"),
