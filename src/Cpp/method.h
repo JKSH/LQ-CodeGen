@@ -27,7 +27,8 @@ public:
 	QList<Param> paramList_dll() const;
 
 	// Param list codification
-	static QString prototypeParams(const QList<Param>& params, bool full = true);
+	static QString paramsToCode_funcCall(const QList<Param>& params);
+	static QString paramsToCode_prototype(const QList<Param>& params);
 
 private:
 	QString _className;
