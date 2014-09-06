@@ -1,6 +1,9 @@
 #include "method.h"
 #include "param.h"
 
+#include <QList>
+#include <QJsonArray>
+
 Method::Method(const QString& className, const QJsonObject& methodObj) :
 	_className(className),
 	_data(methodObj)
