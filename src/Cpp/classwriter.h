@@ -9,6 +9,7 @@
 #include <QDebug>
 #include <QStringList>
 
+#include "param.h"
 #include "method.h"
 #include "typeconv.h"
 
