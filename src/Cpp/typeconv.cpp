@@ -46,13 +46,13 @@ TypeConv::dllType(const QString& qtType)
 }
 
 QString
-TypeConv::conversion_toDll(const QString& qtType)
+TypeConv::convCode_toDll(const QString& qtType)
 {
 	// TODO: Return default if non-existent
 	return _qt2dll[qtType].toObject()["qt2dll"].toString();
 }
 QString
-TypeConv::conversion_fromDll(const QString& qtType)
+TypeConv::convCode_fromDll(const QString& qtType)
 {
 	// TODO: Return default if non-existent
 	return _qt2dll[qtType].toObject()["dll2qt"].toString();
