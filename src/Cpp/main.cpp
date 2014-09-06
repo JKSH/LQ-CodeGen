@@ -1,6 +1,9 @@
 #include <QDebug>
 #include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonArray>
 #include "classwriter.h"
+#include "typeconv.h"
 
 static QJsonDocument
 parseJsonFile(const QString& filePath)

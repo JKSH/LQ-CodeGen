@@ -13,7 +13,12 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-    classwriter.cpp
+    classwriter.cpp \
+    method.cpp \
+    typeconv.cpp
 
 HEADERS  += \
-    classwriter.h
+    classwriter.h \
+    method.h \
+    typeconv.h \
+    param.h
