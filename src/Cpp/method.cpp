@@ -103,19 +103,23 @@ Method::paramList_dll() const
 }
 
 QString
-Method::prototypeParams(const QList<Param>& params, bool full)
+Method::paramsToCode_funcCall(const QList<Param>& params)
 {
 	QString str;
-	if (full)
-	{
-		for (const Param& p : params)
-			str += p.type + ' ' + p.name + ", ";
-	}
-	else
-	{
-		for (const Param& p : params)
-			str += p.name + ", ";
-	}
+	for (const Param& p : params)
+		str += p.name + ", ";
+
+	// Remove the trailing ", "
+	str.chop(2);
+	return str;
+}
+
+QString
+Method::paramsToCode_prototype(const QList<Param>& params)
+{
+	QString str;
+	for (const Param& p : params)
+		str += p.type + ' ' + p.name + ", ";
 
 	// Remove the trailing ", "
 	str.chop(2);

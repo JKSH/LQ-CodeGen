@@ -123,8 +123,8 @@ ClassWriter::writeClass(const QJsonObject& classObj)
 		auto paramList_dll = method.paramList_dll();
 		auto paramList_brg = method.paramList_bridge();
 
-		QString paramStr_dll = Method::prototypeParams(paramList_dll);
-		QString paramStr_brg = Method::prototypeParams(paramList_brg);
+		QString paramStr_dll = Method::paramsToCode_prototype(paramList_dll);
+		QString paramStr_brg = Method::paramsToCode_prototype(paramList_brg);
 
 
 		bridgeH.write(paramStr_brg.toUtf8() + ") {");
@@ -150,7 +150,7 @@ ClassWriter::writeClass(const QJsonObject& classObj)
 
 			body_brg += currentClass.toLower() + "->" + method.name();
 		}
-		body_brg += '(' + Method::prototypeParams(paramList, false) + ");";
+		body_brg += '(' + Method::paramsToCode_funcCall(paramList) + ");";
 
 		if (hasReturn)
 			body_dll += "\t" + retType_brg + " retVal_brg;\n";
@@ -169,7 +169,7 @@ ClassWriter::writeClass(const QJsonObject& classObj)
 		for (const Param& p : paramList_brg)
 		{
 			QByteArray normType = QMetaObject::normalizedType(p.type.toUtf8());
-			QString conversion = TypeConv::conversion_fromDll(normType);
+			QString conversion = TypeConv::convCode_fromDll(normType);
 			conversion.replace("_dllValue_", p.name);
 
 			// TODO: Default to static_cast
@@ -193,7 +193,7 @@ ClassWriter::writeClass(const QJsonObject& classObj)
 
 			QString retType_dll = method.returnType_dll();
 
-			QString conversion = TypeConv::conversion_toDll(retType_brg);
+			QString conversion = TypeConv::convCode_toDll(retType_brg);
 			conversion.replace("_dllValue_", "retVal");
 			conversion.replace("_qtValue_", "retVal_brg");
 
