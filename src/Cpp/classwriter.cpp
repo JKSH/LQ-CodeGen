@@ -170,12 +170,8 @@ ClassWriter::writeClass(const QJsonObject& classObj)
 		{
 			QByteArray normType = QMetaObject::normalizedType(p.type.toUtf8());
 			QString conversion = TypeConv::convCode_fromDll(normType);
+			conversion.replace("_qtType_", normType);
 			conversion.replace("_dllValue_", p.name);
-
-			// This case currently only runs with Identity objects
-			// TODO: Handle nicely using TypeConv
-			if (conversion.isEmpty())
-				conversion = '(' + normType + ')' + p.name;
 
 			body_dll
 					+= "\t\t\tQ_ARG(" + QMetaObject::normalizedType(p.type.toUtf8()) + ", "
@@ -188,16 +184,10 @@ ClassWriter::writeClass(const QJsonObject& classObj)
 		{
 			QByteArray retType_brg = QMetaObject::normalizedType(method.returnType_bridge().toUtf8());
 
-			QString retType_dll = method.returnType_dll();
-
 			QString conversion = TypeConv::convCode_toDll(retType_brg);
+			conversion.replace("_dllType_", method.returnType_dll());
 			conversion.replace("_dllValue_", "retVal");
 			conversion.replace("_qtValue_", "retVal_brg");
-
-			// This case currently only runs with Identity objects
-			// TODO: Handle nicely using TypeConv
-			if (conversion.isEmpty())
-				conversion = '(' + retType_dll + ")retVal_brg";
 
 			body_dll
 					+= "\t*retVal = " + conversion + ";\n";

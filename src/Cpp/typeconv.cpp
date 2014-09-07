@@ -59,12 +59,11 @@ TypeConv::convCode_toDll(const QString& qtType)
 	case Boolean:
 	case Numeric: return "_qtValue_";
 	case Container: return _qt2dll[qtType].toObject()["qt2dll"].toString();
-	case Identity:
-		break;
+	case Identity: return "(_dllType_)_qtValue_";
 	default:
 		qWarning() << "WARNING: Don't know how to convert from DLL:" << qtType;
+		return QString();
 	}
-	return QString();
 }
 QString
 TypeConv::convCode_fromDll(const QString& qtType)
@@ -75,10 +74,9 @@ TypeConv::convCode_fromDll(const QString& qtType)
 	case Boolean: return "*_dllValue_";
 	case Numeric: return "_dllValue_";
 	case Container: return _qt2dll[qtType].toObject()["dll2qt"].toString();
-	case Identity: // TODO: Provide "recipe" for Identities here too
-		break;
+	case Identity: return "(_qtType_)_dllValue_";
 	default:
 		qWarning() << "WARNING: Don't know how to convert to DLL:" << qtType;
+		return QString();
 	}
-	return QString();
 }
