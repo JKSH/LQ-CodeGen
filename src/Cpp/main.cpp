@@ -30,8 +30,8 @@ int main(int, char **)
 	if (conversions.isNull())
 		return -1;
 
-	QJsonDocument doc = parseJsonFile("../../data/objects.json");
-	if (doc.isNull())
+	QJsonDocument identities = parseJsonFile("../../data/identities.json");
+	if (identities.isNull())
 		return -1;
 
 
@@ -42,7 +42,7 @@ int main(int, char **)
 
 	ClassWriter c;
 	c.startWriting();
-	for(const QJsonValue& val : doc.array())
+	for(const QJsonValue& val : identities.array())
 		c.writeClass(val.toObject());
 	c.stopWriting();
 
