@@ -37,14 +37,11 @@ TypeConv::dllType(const QString& qtType)
 	case Numeric:
 	case Container: return _qt2dll[tmp].toObject()["dllType"].toString();
 	case Identity: return "quint32"; // TODO: See if quintptr is any good
-	default: break;
+	default:
+		qWarning() << "WARNING: Unsupported type:" << qtType;
+		return tmp;
+		// TODO: Decide on a good default to return
 	}
-
-	if (_qt2dll.contains(tmp))
-		return _qt2dll[tmp].toObject()["dllType"].toString();
-
-	qWarning() << "WARNING: Unsupported type:" << qtType;
-	return tmp;
 }
 
 QString
