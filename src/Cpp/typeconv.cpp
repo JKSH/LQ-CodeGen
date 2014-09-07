@@ -17,8 +17,10 @@ TypeConv::init(const QJsonArray& conversions, Category category)
 	for (const QJsonValue& obj : conversions)
 	{
 		QString objName = obj.toObject()["name"].toString();
+		if (category == Identity)
+			objName += '*';
 		_qt2dll[objName] = obj;
-		_categories[objName] = category; // TODO: Use category info in ClassWriter
+		_categories[objName] = category;
 	}
 }
 
@@ -26,13 +28,13 @@ TypeConv::init(const QJsonArray& conversions, Category category)
 QString
 TypeConv::dllType(const QString& qtType)
 {
-	// Pointer
-	// TODO: See if quintptr is any good
-	if (qtType.contains('*'))
-		return "quint32";
-
 	// TODO: Study normalization
 	QString tmp = QMetaObject::normalizedType(qtType.toUtf8());
+	switch (_categories[tmp])
+	{
+	case Identity: return "quint32"; // TODO: See if quintptr is any good
+	default: break;
+	}
 
 	// Unchanged types
 	if (tmp == "void")
