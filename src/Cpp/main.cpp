@@ -38,7 +38,7 @@ int main(int, char **)
 	// Process data
 	// TypeConv must be initialized before other processing
 	TypeConv::init(numerics.array(), TypeConv::Numeric);
-	TypeConv::init(conversions.array(), TypeConv::SimpleStruct);
+	TypeConv::init(conversions.array(), TypeConv::Invalid); // TODO: Categorize properly
 
 	ClassWriter c;
 	c.startWriting();

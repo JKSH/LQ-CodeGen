@@ -8,6 +8,8 @@ class TypeConv
 {
 public:
 	enum Category {
+		Invalid,
+		Void,
 		Boolean,
 		Numeric,
 		SimpleStruct,
