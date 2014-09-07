@@ -16,7 +16,7 @@ TypeConv::init(const QJsonArray& conversions, Category category)
 	// TODO: More robust checks
 	for (const QJsonValue& obj : conversions)
 	{
-		QString objName = obj.toObject()["qtType"].toString();
+		QString objName = obj.toObject()["name"].toString();
 		_qt2dll[objName] = obj;
 		_categories[objName] = category; // TODO: Use category info in ClassWriter
 	}
