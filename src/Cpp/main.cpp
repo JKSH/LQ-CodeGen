@@ -26,8 +26,8 @@ int main(int, char **)
 	if (numerics.isNull())
 		return -1;
 
-	QJsonDocument conversions = parseJsonFile("../../data/types.json");
-	if (conversions.isNull())
+	QJsonDocument containers = parseJsonFile("../../data/containers.json");
+	if (containers.isNull())
 		return -1;
 
 	QJsonDocument identities = parseJsonFile("../../data/identities.json");
@@ -49,7 +49,7 @@ int main(int, char **)
 	TypeConv::init(QJsonArray()<<voidObj, TypeConv::Void);
 	TypeConv::init(QJsonArray()<<boolObj, TypeConv::Boolean);
 	TypeConv::init(numerics.array(), TypeConv::Numeric);
-	TypeConv::init(conversions.array(), TypeConv::Invalid); // TODO: Categorize properly
+	TypeConv::init(containers.array(), TypeConv::Container);
 	TypeConv::init(identities.array(), TypeConv::Identity);
 
 	ClassWriter c;
