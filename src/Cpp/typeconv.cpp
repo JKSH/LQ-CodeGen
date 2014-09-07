@@ -24,13 +24,19 @@ TypeConv::init(const QJsonArray& conversions, Category category)
 	}
 }
 
+TypeConv::Category
+TypeConv::category(const QString& qtType)
+{
+	return _categories.value(qtType, Invalid);
+}
+
 /// This is a lossy (irreversible) conversion.
 QString
 TypeConv::dllType(const QString& qtType)
 {
 	// TODO: Study normalization
 	QString tmp = QMetaObject::normalizedType(qtType.toUtf8());
-	switch (_categories[tmp])
+	switch (category(tmp))
 	{
 	case Void: return "void";
 	case Boolean:

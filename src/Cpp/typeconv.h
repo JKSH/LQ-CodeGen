@@ -20,6 +20,7 @@ public:
 
 	static void init(const QJsonArray& conversions, Category category);
 
+	static Category category(const QString& qtType);
 	static QString dllType(const QString& qtType);
 	static QString convCode_toDll(const QString& qtType);
 	static QString convCode_fromDll(const QString& qtType);
