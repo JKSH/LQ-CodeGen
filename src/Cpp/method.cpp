@@ -4,6 +4,8 @@
 #include <QList>
 #include <QJsonArray>
 
+#include <QDebug>
+
 Method::Method(const QString& className, const QJsonObject& methodObj) :
 	_className(className),
 	_data(methodObj)
@@ -87,18 +89,41 @@ Method::paramList_dll() const
 	QList<Param> list = paramList_bridge();
 
 	for (Param& param : list)
-		param.type = TypeConv::dllType(param.type);
-
-
-	QString retType = returnType_dll();
-	if (retType != "void")
 	{
-		// HACK. TODO: Find a more robust solution.
-		if (retType != "LStrHandle" && retType != "LVBoolean*")
-			retType += '*';
-		list.prepend(Param{retType, "retVal"});
+		QString qtType = param.type;
+		param.type = TypeConv::dllType(qtType);
+
+		// TODO: Intelligent pointerification
+		switch (   TypeConv::category(  QMetaObject::normalizedType( qtType.toUtf8() )  )   )
+		{
+		case TypeConv::Boolean:
+		case TypeConv::Numeric:
+		case TypeConv::Identity:
+		case TypeConv::Container: // TODO: Use Handle Pointers for containers, for efficiency
+			break;
+		default:
+			qWarning() << "WARNING: Method::paramList_dll(): Unsupported input arg type:" << qtType;
+		}
 	}
 
+
+	// Prepend list with the return value (if any)
+	QString retType = returnType_dll();
+	switch (  TypeConv::category( returnType_bridge() )  )
+	{
+	// NOTE: The actions in the switch() case flow through.
+	//       There is only 1 "break", before "default".
+	case TypeConv::Numeric:
+	case TypeConv::Identity:
+		retType += '*';
+	case TypeConv::Boolean:
+	case TypeConv::Container:
+		list.prepend(Param{retType, "retVal"});
+	case TypeConv::Void:
+		break;
+	default:
+		qWarning() << "WARNING: Method::paramList_dll(): Unsupported return type:" << returnType_bridge();
+	}
 	return list;
 }
 
