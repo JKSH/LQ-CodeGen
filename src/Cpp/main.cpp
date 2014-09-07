@@ -37,12 +37,8 @@ int main(int, char **)
 	QJsonObject voidObj;
 	voidObj["name"] = "void";
 
-	// TODO: Use more intelligent pointer handling in ClassWriter
 	QJsonObject boolObj;
 	boolObj["name"] = "bool";
-	boolObj["dllType"] = "LVBoolean*";
-	boolObj["qt2dll"] = "LVBoolean(_qtValue_)";
-	boolObj["dll2qt"] = "(*_dllValue_) > 0";
 
 	// Process data
 	// TypeConv must be initialized before other processing

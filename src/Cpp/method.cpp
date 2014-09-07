@@ -97,6 +97,7 @@ Method::paramList_dll() const
 		switch (   TypeConv::category(  QMetaObject::normalizedType( qtType.toUtf8() )  )   )
 		{
 		case TypeConv::Boolean:
+			param.type += '*';
 		case TypeConv::Numeric:
 		case TypeConv::Identity:
 		case TypeConv::Container: // TODO: Use Handle Pointers for containers, for efficiency
@@ -113,10 +114,10 @@ Method::paramList_dll() const
 	{
 	// NOTE: The actions in the switch() case flow through.
 	//       There is only 1 "break", before "default".
+	case TypeConv::Boolean:
 	case TypeConv::Numeric:
 	case TypeConv::Identity:
 		retType += '*';
-	case TypeConv::Boolean:
 	case TypeConv::Container:
 		list.prepend(Param{retType, "retVal"});
 	case TypeConv::Void:
