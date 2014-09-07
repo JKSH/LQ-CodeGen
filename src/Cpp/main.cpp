@@ -34,9 +34,12 @@ int main(int, char **)
 	if (identities.isNull())
 		return -1;
 
+	QJsonObject voidObj;
+	voidObj["name"] = "void";
 
 	// Process data
 	// TypeConv must be initialized before other processing
+	TypeConv::init(QJsonArray()<<voidObj, TypeConv::Void);
 	TypeConv::init(numerics.array(), TypeConv::Numeric);
 	TypeConv::init(conversions.array(), TypeConv::Invalid); // TODO: Categorize properly
 	TypeConv::init(identities.array(), TypeConv::Identity);

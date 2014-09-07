@@ -32,13 +32,10 @@ TypeConv::dllType(const QString& qtType)
 	QString tmp = QMetaObject::normalizedType(qtType.toUtf8());
 	switch (_categories[tmp])
 	{
+	case Void: return "void";
 	case Identity: return "quint32"; // TODO: See if quintptr is any good
 	default: break;
 	}
-
-	// Unchanged types
-	if (tmp == "void")
-		return tmp;
 
 	if (_qt2dll.contains(tmp))
 		return _qt2dll[tmp].toObject()["dllType"].toString();
