@@ -22,6 +22,10 @@ parseJsonFile(const QString& filePath)
 int main(int, char **)
 {
 	// Read data
+	QJsonDocument numerics = parseJsonFile("../../data/numerics.json");
+	if (numerics.isNull())
+		return -1;
+
 	QJsonDocument conversions = parseJsonFile("../../data/types.json");
 	if (conversions.isNull())
 		return -1;
@@ -33,6 +37,7 @@ int main(int, char **)
 
 	// Process data
 	// TypeConv must be initialized before other processing
+	TypeConv::init(numerics.array(), TypeConv::Numeric);
 	TypeConv::init(conversions.array(), TypeConv::SimpleStruct);
 
 	ClassWriter c;

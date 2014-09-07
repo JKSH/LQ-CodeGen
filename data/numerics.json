@@ -1,0 +1,54 @@
+[
+	{
+		"qtType": "char",
+		"dllType": "int8"
+	},
+	{
+		"qtType": "qint8",
+		"dllType": "int8"
+	},
+	{
+		"qtType": "qint16",
+		"dllType": "int16"
+	},
+	{
+		"qtType": "int",
+		"dllType": "int32"
+	},
+	{
+		"qtType": "qint32",
+		"dllType": "int32"
+	},
+	{
+		"qtType": "qint64",
+		"dllType": "int64"
+	},
+	{
+		"qtType": "quint8",
+		"dllType": "uInt8"
+	},
+	{
+		"qtType": "quint16",
+		"dllType": "uInt16"
+	},
+	{
+		"qtType": "quint32",
+		"dllType": "uInt32"
+	},
+	{
+		"qtType": "quint64",
+		"dllType": "uInt64"
+	},
+	{
+		"qtType": "float",
+		"dllType": "float32"
+	},
+	{
+		"qtType": "double",
+		"dllType": "float64"
+	},
+	{
+		"qtType": "qreal",
+		"dllType": "float64"
+	}
+]

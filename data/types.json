@@ -6,14 +6,6 @@
 		"dll2qt": "(*_dllValue_) > 0"
 	},
 	{
-		"qtType": "qreal",
-		"dllType": "double"
-	},
-	{
-		"qtType": "int",
-		"dllType": "qint32"
-	},
-	{
 		"qtType": "QString",
 		"dllType": "LStrHandle",
 		"dll2qt": "QString(  QLatin1String( (char*)(*_dllValue_)->str, LStrLen(*_dllValue_) )  )",
