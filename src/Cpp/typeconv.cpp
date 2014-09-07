@@ -34,6 +34,7 @@ TypeConv::dllType(const QString& qtType)
 	{
 	case Void: return "void";
 	case Boolean:
+	case Numeric:
 	case Container: return _qt2dll[tmp].toObject()["dllType"].toString();
 	case Identity: return "quint32"; // TODO: See if quintptr is any good
 	default: break;
