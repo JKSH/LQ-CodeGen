@@ -36,6 +36,11 @@
 			<Item Name="DebugClass.lvclass" Type="LVClass" URL="../DEBUG/DebugClass.lvclass"/>
 		</Item>
 		<Item Name="Param Writers" Type="Folder">
+			<Item Name="TypeConv" Type="Folder">
+				<Item Name="Action.ctl" Type="VI" URL="../Param Writers/TypeConv/Action.ctl"/>
+				<Item Name="Category.ctl" Type="VI" URL="../Param Writers/TypeConv/Category.ctl"/>
+				<Item Name="TypeConv.vi" Type="VI" URL="../Param Writers/TypeConv/TypeConv.vi"/>
+			</Item>
 			<Item Name="Abstract Param Writer.lvclass" Type="LVClass" URL="../Param Writers/Abstract Param Writer/Abstract Param Writer.lvclass"/>
 			<Item Name="Bool Writer.lvclass" Type="LVClass" URL="../Param Writers/Bool Writer/Bool Writer.lvclass"/>
 			<Item Name="Number Writer.lvclass" Type="LVClass" URL="../Param Writers/Number Writer/Number Writer.lvclass"/>
