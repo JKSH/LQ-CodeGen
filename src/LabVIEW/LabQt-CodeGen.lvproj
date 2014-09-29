@@ -21,6 +21,7 @@
 				<Item Name="Param.ctl" Type="VI" URL="../Data Structures/JSON/Param.ctl"/>
 				<Item Name="Property.ctl" Type="VI" URL="../Data Structures/JSON/Property.ctl"/>
 				<Item Name="Simple Struct.ctl" Type="VI" URL="../Data Structures/JSON/Simple Struct.ctl"/>
+				<Item Name="TypeConv.ctl" Type="VI" URL="../Data Structures/JSON/TypeConv.ctl"/>
 			</Item>
 			<Item Name="DLL Parameter Info.ctl" Type="VI" URL="../Data Structures/DLL Parameter Info.ctl"/>
 		</Item>
@@ -36,10 +37,14 @@
 			<Item Name="DebugClass.lvclass" Type="LVClass" URL="../DEBUG/DebugClass.lvclass"/>
 		</Item>
 		<Item Name="Param Writers" Type="Folder">
+			<Item Name="TypeConv" Type="Folder">
+				<Item Name="Action.ctl" Type="VI" URL="../Param Writers/TypeConv/Action.ctl"/>
+				<Item Name="Category.ctl" Type="VI" URL="../Param Writers/TypeConv/Category.ctl"/>
+				<Item Name="TypeConv.vi" Type="VI" URL="../Param Writers/TypeConv/TypeConv.vi"/>
+			</Item>
 			<Item Name="Abstract Param Writer.lvclass" Type="LVClass" URL="../Param Writers/Abstract Param Writer/Abstract Param Writer.lvclass"/>
 			<Item Name="Bool Writer.lvclass" Type="LVClass" URL="../Param Writers/Bool Writer/Bool Writer.lvclass"/>
 			<Item Name="Number Writer.lvclass" Type="LVClass" URL="../Param Writers/Number Writer/Number Writer.lvclass"/>
-			<Item Name="Obtain Writer.vi" Type="VI" URL="../Param Writers/Obtain Writer.vi"/>
 			<Item Name="QObject Writer.lvclass" Type="LVClass" URL="../Param Writers/QObject Writer/QObject Writer.lvclass"/>
 			<Item Name="String Writer.lvclass" Type="LVClass" URL="../Param Writers/String Writer/String Writer.lvclass"/>
 		</Item>
