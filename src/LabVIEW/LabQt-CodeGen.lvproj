@@ -46,6 +46,7 @@
 			<Item Name="Bool Writer.lvclass" Type="LVClass" URL="../Param Writers/Bool Writer/Bool Writer.lvclass"/>
 			<Item Name="Number Writer.lvclass" Type="LVClass" URL="../Param Writers/Number Writer/Number Writer.lvclass"/>
 			<Item Name="QObject Writer.lvclass" Type="LVClass" URL="../Param Writers/QObject Writer/QObject Writer.lvclass"/>
+			<Item Name="Simple Struct Writer.lvclass" Type="LVClass" URL="../Param Writers/Simple Struct Writer/Simple Struct Writer.lvclass"/>
 			<Item Name="String Writer.lvclass" Type="LVClass" URL="../Param Writers/String Writer/String Writer.lvclass"/>
 		</Item>
 		<Item Name="Add Property.vi" Type="VI" URL="../Add Property.vi"/>

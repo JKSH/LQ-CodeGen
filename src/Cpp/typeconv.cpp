@@ -39,7 +39,9 @@ TypeConv::dllType(const QString& qtType)
 	switch (category(tmp))
 	{
 	case Void:
-	case Boolean: return tmp;
+	case Boolean:
+	case SimpleStruct:
+		return tmp;
 	case Numeric:
 	case Container: return _qt2dll[tmp].toObject()["dllType"].toString();
 	case Identity: return "quint32"; // TODO: See if quintptr is any good
@@ -57,7 +59,9 @@ TypeConv::convCode_toDll(const QString& qtType)
 	switch (category(tmp))
 	{
 	case Boolean:
-	case Numeric: return "_qtValue_";
+	case Numeric:
+	case SimpleStruct:
+		return "_qtValue_";
 	case Container: return _qt2dll[qtType].toObject()["qt2dll"].toString();
 	case Identity: return "(_dllType_)_qtValue_";
 	default:
@@ -71,7 +75,9 @@ TypeConv::convCode_fromDll(const QString& qtType)
 	QString tmp = QMetaObject::normalizedType(qtType.toUtf8());
 	switch (category(tmp))
 	{
-	case Boolean: return "*_dllValue_";
+	case Boolean:
+	case SimpleStruct:
+		return "*_dllValue_";
 	case Numeric: return "_dllValue_";
 	case Container: return _qt2dll[qtType].toObject()["dll2qt"].toString();
 	case Identity: return "(_qtType_)_dllValue_";

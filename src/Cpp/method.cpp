@@ -97,6 +97,7 @@ Method::paramList_dll() const
 		switch (   TypeConv::category(  QMetaObject::normalizedType( qtType.toUtf8() )  )   )
 		{
 		case TypeConv::Boolean:
+		case TypeConv::SimpleStruct:
 			param.type += '*';
 		case TypeConv::Numeric:
 		case TypeConv::Identity:
@@ -116,6 +117,7 @@ Method::paramList_dll() const
 	//       There is only 1 "break", before "default".
 	case TypeConv::Boolean:
 	case TypeConv::Numeric:
+	case TypeConv::SimpleStruct:
 	case TypeConv::Identity:
 		retType += '*';
 	case TypeConv::Container:
