@@ -1,6 +1,7 @@
 #ifndef LABQT_H
 #define LABQT_H
 
+#include <QtCore>
 #include <QtGlobal>
 #include "extcode.h"
 

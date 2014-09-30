@@ -9,10 +9,16 @@
 				"name": "QWidget"
 			},
 			{
+				"name": "geometry", "retType": "QRect"
+			},
+			{
 				"name": "isEnabled", "retType": "bool"
 			},
 			{
 				"name": "isVisible", "retType": "bool"
+			},
+			{
+				"name": "minimumSize", "retType": "QSize"
 			},
 			{
 				"name": "setEnabled", "retType": "void",
@@ -21,9 +27,21 @@
 				]
 			},
 			{
+				"name": "setGeometry", "retType": "void",
+				"params": [
+					{"name": "geometry", "type": "const QRect&"}
+				]
+			},
+			{
 				"name": "setLayout", "retType": "void",
 				"params": [
 					{"name": "layout", "type": "QLayout*"}
+				]
+			},
+			{
+				"name": "setMinimumSize", "retType": "void",
+				"params": [
+					{"name": "size", "type": "const QSize&"}
 				]
 			},
 			{
@@ -83,6 +101,16 @@
 				"name": "enabled",
 				"getter": "isEnabled",
 				"setter": "setEnabled"
+			},
+			{
+				"name": "geometry",
+				"getter": "geometry",
+				"setter": "setGeometry"
+			},
+			{
+				"name": "minimumSize",
+				"getter": "minimumSize",
+				"setter": "setMinimumSize"
 			},
 			{
 				"name": "styleSheet",
