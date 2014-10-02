@@ -2,7 +2,7 @@
 	{
 		"name": "QString",
 		"dllType": "LStrHandle",
-		"dll2qt": "QString(  QLatin1String( (char*)(*_dllValue_)->str, LStrLen(*_dllValue_) )  )",
+		"dll2qt": "QString::fromUtf8( (char*)(*_dllValue_)->str, LStrLen(*_dllValue_) )",
 		"qt2dll": "copyIntoLStr(_dllValue_, _qtValue_.toUtf8())"
 	}
 ]
