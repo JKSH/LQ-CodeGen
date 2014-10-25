@@ -32,25 +32,6 @@ run()
 	qDebug("Qt event loop stopped");
 }
 
-static LStrPtr
-copyIntoLStr(LStrHandle lStr, const QByteArray& bytes)
-{
-	const int lStrHeaderSize = 4;
-
-	// TODO: Report MgErr value
-	MgErr outcome = DSSetHandleSize(lStr, bytes.length() + lStrHeaderSize);
-	if (outcome == noErr)
-	{
-		(*lStr)->cnt = bytes.length();
-		std::copy(bytes.constBegin(), bytes.constEnd(), (*lStr)->str);
-		return *lStr;
-	}
-
-	// TODO: Check if this is a safe design
-	return nullptr;
-}
-
-
 // TODO: Return version info to protect against mismatched VI-DLL combos
 // TODO: Decide if the LV dev needs access to QApplication methods
 qint32 Q_DECL_EXPORT

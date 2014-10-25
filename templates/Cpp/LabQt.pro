@@ -5,11 +5,13 @@ TARGET = LabQt
 TEMPLATE = lib
 
 SOURCES += \
-    labqt.cpp
+    labqt.cpp \
+    utils.cpp
 
 HEADERS += \
     labqt.h \
-    bridge.h
+    bridge.h \
+    utils.h
 
 INCLUDEPATH += "C:/Program Files (x86)/National Instruments/LabVIEW 2013/cintools"
 LIBS        += "C:/Program Files (x86)/National Instruments/LabVIEW 2013/cintools/labviewv.lib"
