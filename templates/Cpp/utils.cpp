@@ -17,3 +17,10 @@ copyIntoLStr(LStrHandle lStr, const QByteArray& bytes)
 	// TODO: Check if this is a safe design
 	return nullptr;
 }
+
+// TODO: Make QByteArray converter use this too?
+QByteArray
+copyFromLStr(LStrHandle lStr)
+{
+	return QByteArray( (char*)(*lStr)->str, LStrLen(*lStr) );
+}
