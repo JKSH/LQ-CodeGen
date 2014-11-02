@@ -30,6 +30,26 @@ TypeConv::category(const QString& qtType)
 	return _categories.value(qtType, Invalid);
 }
 
+QString
+TypeConv::bridgeType(const QString& qtType)
+{
+	QString tmp = QMetaObject::normalizedType(qtType.toUtf8());
+	switch (category(tmp))
+	{
+	case Void:
+	case Boolean:
+	case Numeric:
+	case SimpleStruct:
+	case Container:
+	case Identity:
+		return tmp;
+	default:
+		qWarning() << "WARNING: TypeConv::bridgeType(): Unsupported type:" << qtType;
+		return tmp;
+		// TODO: Decide on a good default to return
+	}
+}
+
 /// This is a lossy (irreversible) conversion.
 QString
 TypeConv::dllType(const QString& qtType)
@@ -69,6 +89,7 @@ TypeConv::convCode_bridge2Dll(const QString& qtType)
 		return QString();
 	}
 }
+
 QString
 TypeConv::convCode_dll2Bridge(const QString& qtType)
 {
@@ -85,4 +106,20 @@ TypeConv::convCode_dll2Bridge(const QString& qtType)
 		qWarning() << "WARNING: Don't know how to convert to DLL:" << qtType;
 		return QString();
 	}
+}
+
+QString
+TypeConv::convCode_qt2Bridge(const QString& qtType)
+{
+	Q_UNUSED(qtType);
+	// TODO: Support cases where bridgeType != qtType
+	return "_bridgeValue_";
+}
+
+QString
+TypeConv::convCode_bridge2Qt(const QString& qtType)
+{
+	Q_UNUSED(qtType);
+	// TODO: Support cases where bridgeType != qtType
+	return "_qtValue_";
 }
