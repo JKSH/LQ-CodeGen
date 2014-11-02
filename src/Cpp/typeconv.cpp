@@ -17,10 +17,16 @@ TypeConv::init(const QJsonArray& conversions, Category category)
 	for (const QJsonValue& obj : conversions)
 	{
 		QString objName = obj.toObject()["name"].toString();
-		if (category == Identity)
-			objName += '*';
 		_bridge2dll[objName] = obj;
 		_categories[objName] = category;
+
+		// TODO: Protect against non-pointer parameters?
+		// Need to support both base (for constructors) and pointer names (for params)
+		if (category == Identity)
+		{
+			_bridge2dll[objName+'*'] = obj;
+			_categories[objName+'*'] = category;
+		}
 	}
 }
 

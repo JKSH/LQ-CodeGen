@@ -47,10 +47,19 @@ Method::qualifiedName(const QString& separator) const
 QString
 Method::returnType_bridge() const
 {
+	QString retType_qt = _data["retType"].toString();
 	if (isConstructor())
-		return _className + '*';
-
-	return _data["retType"].toString();
+	{
+		switch (TypeConv::category(_className))
+		{
+		case TypeConv::Identity:
+			return _className + '*';
+		default:
+			qWarning() << "WARNING: Method::returnType_bridge(): Explicit constructor not supported for type:" << _className;
+			return "";
+		}
+	}
+	return TypeConv::bridgeType(retType_qt);
 }
 
 QString
