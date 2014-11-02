@@ -7,7 +7,7 @@
 
 #include <QDebug>
 
-QJsonObject _qt2dll;
+QJsonObject _bridge2dll;
 QMap<QString, TypeConv::Category> _categories;
 
 void
@@ -19,7 +19,7 @@ TypeConv::init(const QJsonArray& conversions, Category category)
 		QString objName = obj.toObject()["name"].toString();
 		if (category == Identity)
 			objName += '*';
-		_qt2dll[objName] = obj;
+		_bridge2dll[objName] = obj;
 		_categories[objName] = category;
 	}
 }
@@ -43,7 +43,7 @@ TypeConv::dllType(const QString& qtType)
 	case SimpleStruct:
 		return tmp;
 	case Numeric:
-	case Container: return _qt2dll[tmp].toObject()["dllType"].toString();
+	case Container: return _bridge2dll[tmp].toObject()["dllType"].toString();
 	case Identity: return "quint32"; // TODO: See if quintptr is any good
 	default:
 		qWarning() << "WARNING: Unsupported type:" << qtType;
@@ -53,7 +53,7 @@ TypeConv::dllType(const QString& qtType)
 }
 
 QString
-TypeConv::convCode_toDll(const QString& qtType)
+TypeConv::convCode_bridge2Dll(const QString& qtType)
 {
 	QString tmp = QMetaObject::normalizedType(qtType.toUtf8());
 	switch (category(tmp))
@@ -61,16 +61,16 @@ TypeConv::convCode_toDll(const QString& qtType)
 	case Boolean:
 	case Numeric:
 	case SimpleStruct:
-		return "_qtValue_";
-	case Container: return _qt2dll[qtType].toObject()["qt2dll"].toString();
-	case Identity: return "(_dllType_)_qtValue_";
+		return "_bridgeValue_";
+	case Container: return _bridge2dll[qtType].toObject()["bridge2dll"].toString();
+	case Identity: return "(_dllType_)_bridgeValue_";
 	default:
 		qWarning() << "WARNING: Don't know how to convert from DLL:" << qtType;
 		return QString();
 	}
 }
 QString
-TypeConv::convCode_fromDll(const QString& qtType)
+TypeConv::convCode_dll2Bridge(const QString& qtType)
 {
 	QString tmp = QMetaObject::normalizedType(qtType.toUtf8());
 	switch (category(tmp))
@@ -79,7 +79,7 @@ TypeConv::convCode_fromDll(const QString& qtType)
 	case SimpleStruct:
 		return "*_dllValue_";
 	case Numeric: return "_dllValue_";
-	case Container: return _qt2dll[qtType].toObject()["dll2qt"].toString();
+	case Container: return _bridge2dll[qtType].toObject()["dll2bridge"].toString();
 	case Identity: return "(_qtType_)_dllValue_";
 	default:
 		qWarning() << "WARNING: Don't know how to convert to DLL:" << qtType;

@@ -169,7 +169,7 @@ ClassWriter::writeClass(const QJsonObject& classObj)
 		for (const Param& p : paramList_brg)
 		{
 			QByteArray normType = QMetaObject::normalizedType(p.type.toUtf8());
-			QString conversion = TypeConv::convCode_fromDll(normType);
+			QString conversion = TypeConv::convCode_dll2Bridge(normType);
 			conversion.replace("_qtType_", normType);
 			conversion.replace("_dllValue_", p.name);
 
@@ -184,10 +184,10 @@ ClassWriter::writeClass(const QJsonObject& classObj)
 		{
 			QByteArray retType_brg = QMetaObject::normalizedType(method.returnType_bridge().toUtf8());
 
-			QString conversion = TypeConv::convCode_toDll(retType_brg);
+			QString conversion = TypeConv::convCode_bridge2Dll(retType_brg);
 			conversion.replace("_dllType_", method.returnType_dll());
 			conversion.replace("_dllValue_", "retVal");
-			conversion.replace("_qtValue_", "retVal_brg");
+			conversion.replace("_bridgeValue_", "retVal_brg");
 
 			body_dll
 					+= "\t*retVal = " + conversion + ";\n";

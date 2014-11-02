@@ -22,8 +22,8 @@ public:
 
 	static Category category(const QString& qtType);
 	static QString dllType(const QString& qtType);
-	static QString convCode_toDll(const QString& qtType);
-	static QString convCode_fromDll(const QString& qtType);
+	static QString convCode_bridge2Dll(const QString& qtType);
+	static QString convCode_dll2Bridge(const QString& qtType);
 };
 
 #endif // TYPECONV_H
