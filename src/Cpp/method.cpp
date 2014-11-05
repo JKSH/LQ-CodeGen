@@ -148,7 +148,6 @@ Method::paramList_dll() const
 		}
 	}
 
-
 	// Prepend list with the return value (if any)
 	QString retType = returnType_dll();
 	switch (  TypeConv::category( returnType_bridge() )  )
@@ -168,18 +167,6 @@ Method::paramList_dll() const
 		qWarning() << "WARNING: Method::paramList_dll(): Unsupported return type:" << returnType_bridge();
 	}
 	return list;
-}
-
-QString
-Method::paramsToCode_funcCall(const QList<Param>& params)
-{
-	QString str;
-	for (const Param& p : params)
-		str += p.name + ", ";
-
-	// Remove the trailing ", "
-	str.chop(2);
-	return str;
 }
 
 QString

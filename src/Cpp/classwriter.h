@@ -3,6 +3,7 @@
 
 #include <QFile>
 
+class Method;
 class QJsonObject;
 
 class ClassWriter
@@ -16,6 +17,8 @@ public:
 	void writeClass(const QJsonObject& classObj);
 
 private:
+	static QString funcCallBody_inBridge(const Method& method);
+
 	QFile dllH;
 	QFile dllC;
 	QFile bridgeH;
