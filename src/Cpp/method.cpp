@@ -59,7 +59,25 @@ Method::returnType_bridge() const
 			return "";
 		}
 	}
-	return TypeConv::bridgeType(retType_qt);
+	else
+	{
+		QString retType_bridge;
+		switch (TypeConv::category(retType_qt))
+		{
+		case TypeConv::Void:
+		case TypeConv::Boolean:
+		case TypeConv::Numeric:
+		case TypeConv::SimpleStruct:
+		case TypeConv::Identity:
+		case TypeConv::Container:
+			retType_bridge = TypeConv::bridgeType(retType_qt);
+			break;
+		default:
+			qWarning() << "WARNING: Method::returnType_bridge(): Unsupported return type:" << retType_qt;
+			return "";
+		}
+		return retType_bridge;
+	}
 }
 
 QString
@@ -87,7 +105,20 @@ Method::paramList_bridge() const
 {
 	QList<Param> list = paramList_raw();
 	if (!isConstructor())
-		list.prepend(Param{_className+'*', _className.toLower()});
+	{
+		switch (   TypeConv::category(  QMetaObject::normalizedType( _className.toUtf8() )  )   )
+		{
+		case TypeConv::Boolean:
+		case TypeConv::Numeric:
+		case TypeConv::SimpleStruct:
+		case TypeConv::Identity:
+		case TypeConv::Container:
+			list.prepend(Param{_className+'*', _className.toLower()});
+			break;
+		default:
+			break;
+		}
+	}
 
 	return list;
 }
