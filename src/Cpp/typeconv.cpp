@@ -117,15 +117,36 @@ TypeConv::convCode_dll2Bridge(const QString& qtType)
 QString
 TypeConv::convCode_qt2Bridge(const QString& qtType)
 {
-	Q_UNUSED(qtType);
-	// TODO: Support cases where bridgeType != qtType
-	return "_bridgeValue_";
+	QString tmp = QMetaObject::normalizedType(qtType.toUtf8());
+	switch (category(tmp))
+	{
+	case Void:
+	case Boolean:
+	case Numeric:
+	case SimpleStruct:
+	case Identity:
+	case Container:
+		return "_qtValue_";
+	default:
+		qWarning() << "WARNING: TypeConv::convCode_qt2Bridge(): Don't know how to convert" << qtType;
+		return "";
+	}
 }
 
 QString
 TypeConv::convCode_bridge2Qt(const QString& qtType)
 {
-	Q_UNUSED(qtType);
-	// TODO: Support cases where bridgeType != qtType
-	return "_qtValue_";
+	QString tmp = QMetaObject::normalizedType(qtType.toUtf8());
+	switch (category(tmp))
+	{
+	case Boolean:
+	case Numeric:
+	case SimpleStruct:
+	case Identity:
+	case Container:
+		return "_bridgeValue_";
+	default:
+		qWarning() << "WARNING: TypeConv::convCode_bridge2Qt(): Don't know how to convert" << qtType;
+		return "";
+	}
 }
