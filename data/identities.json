@@ -21,6 +21,15 @@
 				"name": "minimumSize", "retType": "QSize"
 			},
 			{
+				"name": "restoreGeometry", "retType": "bool",
+				"params": [
+					{"name": "geometry", "type": "const QByteArray&"}
+				]
+			},
+			{
+				"name": "saveGeometry", "retType": "QByteArray"
+			},
+			{
 				"name": "setEnabled", "retType": "void",
 				"params": [
 					{"name": "enabled", "type": "bool"}

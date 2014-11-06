@@ -2,6 +2,7 @@
 #define BRIDGE_H
 
 #include <QtWidgets>
+#include "utils.h"
 
 class Bridge : public QObject
 {
