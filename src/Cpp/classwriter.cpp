@@ -119,7 +119,6 @@ ClassWriter::writeClass(const QJsonObject& classObj)
 		dllC.write(funcName + '(');
 
 		// TODO: Don't let the Method know about DLL vs Bridge
-		auto paramList = method.paramList_raw();
 		auto paramList_dll = method.paramList_dll();
 		auto paramList_brg = method.paramList_bridge();
 
@@ -131,27 +130,13 @@ ClassWriter::writeClass(const QJsonObject& classObj)
 		dllH.write(paramStr_dll.toUtf8() + ");\n");
 		dllC.write(paramStr_dll.toUtf8() + ")\n{\n");
 
-		QString body_brg;
+		QString body_brg = funcCallBody_inBridge(method);
 		QString body_dll;
-
 		body_dll =
 				"\t"    "if (!bridge)"    "\n"
 				"\t\t"      "return -1;"  "\n\n";
 
 		bool hasReturn = (retType_brg != "void");
-		if (method.isConstructor())
-		{
-			body_brg += "return new " + currentClass;
-		}
-		else
-		{
-			if (hasReturn)
-				body_brg = "return ";
-
-			body_brg += currentClass.toLower() + "->" + method.name();
-		}
-		body_brg += '(' + Method::paramsToCode_funcCall(paramList) + ");";
-
 		if (hasReturn)
 			body_dll += "\t" + retType_brg + " retVal_brg;\n";
 
@@ -169,7 +154,7 @@ ClassWriter::writeClass(const QJsonObject& classObj)
 		for (const Param& p : paramList_brg)
 		{
 			QByteArray normType = QMetaObject::normalizedType(p.type.toUtf8());
-			QString conversion = TypeConv::convCode_fromDll(normType);
+			QString conversion = TypeConv::convCode_dll2Bridge(normType);
 			conversion.replace("_qtType_", normType);
 			conversion.replace("_dllValue_", p.name);
 
@@ -184,10 +169,10 @@ ClassWriter::writeClass(const QJsonObject& classObj)
 		{
 			QByteArray retType_brg = QMetaObject::normalizedType(method.returnType_bridge().toUtf8());
 
-			QString conversion = TypeConv::convCode_toDll(retType_brg);
+			QString conversion = TypeConv::convCode_bridge2Dll(retType_brg);
 			conversion.replace("_dllType_", method.returnType_dll());
 			conversion.replace("_dllValue_", "retVal");
-			conversion.replace("_qtValue_", "retVal_brg");
+			conversion.replace("_bridgeValue_", "retVal_brg");
 
 			body_dll
 					+= "\t*retVal = " + conversion + ";\n";
@@ -200,4 +185,67 @@ ClassWriter::writeClass(const QJsonObject& classObj)
 
 		// TODO: Bypass Bridge if method is a slot
 	}
+}
+
+QString
+ClassWriter::funcCallBody_inBridge(const Method &method)
+{
+	auto classCategory = TypeConv::category(method.className());
+
+	// TODO: Optimize passing data across the Bridge
+	// e.g. To return a LabVIEW string, write the data in the GUI thread and make the Bridge return void
+	QString wrapper;
+	if (method.isConstructor())
+	{
+		switch (classCategory)
+		{
+		case TypeConv::Identity:
+			wrapper = "return new %METHOD_CALL%;";
+			break;
+		default:
+			qWarning() << "WARNING: ClassWriter::funcCallBody_inBridge(): Explicit constructor not supported for type:" << method.className();
+			return "";
+		}
+	}
+	else
+	{
+		switch (classCategory)
+		{
+		case TypeConv::Identity:
+			wrapper = "%RETURN_KEY_END%%FINAL_CALL_CONVERTED%;";
+			wrapper.replace("%FINAL_CALL_CONVERTED%", TypeConv::convCode_qt2Bridge(method.returnType_qt()));
+			wrapper.replace("_qtValue_", "%INSTANCE%->%METHOD_CALL%");
+			break;
+
+		default:
+			qWarning() << "WARNING: ClassWriter::funcCallBody_inBridge(): Method calls not supported for type:" << method.className();
+			return "";
+		}
+
+		bool hasReturn = (method.returnType_bridge() != "void");
+		if (hasReturn)
+			wrapper.replace("%RETURN_KEY_END%", "return ");
+		else
+			wrapper.replace("%RETURN_KEY_END%", "");
+	}
+
+	QString methodCall = method.name() + "(%PARAMS%)";
+	QString params;
+	for (const Param& param : method.paramList_raw())
+	{
+		QByteArray normType = QMetaObject::normalizedType(param.type.toUtf8());
+		QString conversion = TypeConv::convCode_bridge2Qt(normType);
+		conversion.replace("_qtType_", normType);
+		conversion.replace("_bridgeValue_", param.name);
+
+		params += conversion + ", ";
+	}
+	params.chop(2);
+
+	methodCall.replace("%PARAMS%", params);
+	wrapper.replace("%CLASS%", method.className());
+	wrapper.replace("%INSTANCE%", method.className().toLower());
+	wrapper.replace("%METHOD_CALL%", methodCall);
+
+	return wrapper;
 }

@@ -14,10 +14,12 @@ public:
 	// Method info
 	bool isValid() const;
 	bool isConstructor() const;
+	QString className() const {return _className;}
 	QString name() const;
 	QString qualifiedName(const QString& separator) const;
 
 	// Return type names
+	QString returnType_qt() const {return _data["retType"].toString();}
 	QString returnType_bridge() const;
 	QString returnType_dll() const;
 
@@ -27,7 +29,6 @@ public:
 	QList<Param> paramList_dll() const;
 
 	// Param list codification
-	static QString paramsToCode_funcCall(const QList<Param>& params);
 	static QString paramsToCode_prototype(const QList<Param>& params);
 
 private:

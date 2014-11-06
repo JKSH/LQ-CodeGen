@@ -47,10 +47,37 @@ Method::qualifiedName(const QString& separator) const
 QString
 Method::returnType_bridge() const
 {
+	QString retType_qt = _data["retType"].toString();
 	if (isConstructor())
-		return _className + '*';
-
-	return _data["retType"].toString();
+	{
+		switch (TypeConv::category(_className))
+		{
+		case TypeConv::Identity:
+			return _className + '*';
+		default:
+			qWarning() << "WARNING: Method::returnType_bridge(): Explicit constructor not supported for type:" << _className;
+			return "";
+		}
+	}
+	else
+	{
+		QString retType_bridge;
+		switch (TypeConv::category(retType_qt))
+		{
+		case TypeConv::Void:
+		case TypeConv::Boolean:
+		case TypeConv::Numeric:
+		case TypeConv::SimpleStruct:
+		case TypeConv::Identity:
+		case TypeConv::Container:
+			retType_bridge = TypeConv::bridgeType(retType_qt);
+			break;
+		default:
+			qWarning() << "WARNING: Method::returnType_bridge(): Unsupported return type:" << retType_qt;
+			return "";
+		}
+		return retType_bridge;
+	}
 }
 
 QString
@@ -78,7 +105,20 @@ Method::paramList_bridge() const
 {
 	QList<Param> list = paramList_raw();
 	if (!isConstructor())
-		list.prepend(Param{_className+'*', _className.toLower()});
+	{
+		switch (   TypeConv::category(  QMetaObject::normalizedType( _className.toUtf8() )  )   )
+		{
+		case TypeConv::Boolean:
+		case TypeConv::Numeric:
+		case TypeConv::SimpleStruct:
+		case TypeConv::Identity:
+		case TypeConv::Container:
+			list.prepend(Param{_className+'*', _className.toLower()});
+			break;
+		default:
+			break;
+		}
+	}
 
 	return list;
 }
@@ -108,7 +148,6 @@ Method::paramList_dll() const
 		}
 	}
 
-
 	// Prepend list with the return value (if any)
 	QString retType = returnType_dll();
 	switch (  TypeConv::category( returnType_bridge() )  )
@@ -128,18 +167,6 @@ Method::paramList_dll() const
 		qWarning() << "WARNING: Method::paramList_dll(): Unsupported return type:" << returnType_bridge();
 	}
 	return list;
-}
-
-QString
-Method::paramsToCode_funcCall(const QList<Param>& params)
-{
-	QString str;
-	for (const Param& p : params)
-		str += p.name + ", ";
-
-	// Remove the trailing ", "
-	str.chop(2);
-	return str;
 }
 
 QString
