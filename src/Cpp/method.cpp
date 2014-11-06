@@ -52,6 +52,8 @@ Method::returnType_bridge() const
 	{
 		switch (TypeConv::category(_className))
 		{
+		case TypeConv::OpaqueStruct:
+			return "QByteArray";
 		case TypeConv::Identity:
 			return _className + '*';
 		default:
@@ -72,9 +74,25 @@ Method::returnType_bridge() const
 		case TypeConv::Container:
 			retType_bridge = TypeConv::bridgeType(retType_qt);
 			break;
+		case TypeConv::OpaqueStruct:
+			retType_bridge = "QByteArray";
+			break;
 		default:
 			qWarning() << "WARNING: Method::returnType_bridge(): Unsupported return type:" << retType_qt;
 			return "";
+		}
+
+		if (TypeConv::category(_className) == TypeConv::OpaqueStruct)
+		{
+			if (retType_bridge != "void")
+			{
+				// TODO: Support methods of OpaqueStructs that return a value
+				// (need QPair to return the return-value plus the object, OR pass LStrHandle across the Bridge)
+				qWarning() << "WARNING: Method::returnType_bridge(): OpaqueStruct method with return type not supported:" << qualifiedName("::");
+				return "";
+			}
+			else
+				retType_bridge = "QByteArray";
 		}
 		return retType_bridge;
 	}
@@ -104,6 +122,23 @@ QList<Param>
 Method::paramList_bridge() const
 {
 	QList<Param> list = paramList_raw();
+	for (Param& param : list)
+	{
+		switch (   TypeConv::category(  QMetaObject::normalizedType( param.type.toUtf8() )  )   )
+		{
+		case TypeConv::Boolean:
+		case TypeConv::Numeric:
+		case TypeConv::SimpleStruct:
+		case TypeConv::Identity:
+		case TypeConv::Container:
+			break;
+		case TypeConv::OpaqueStruct:
+			param.type = TypeConv::bridgeType(param.type);
+			break;
+		default:
+			qWarning() << "WARNING: Method::paramList_bridge(): Unsupported input arg type:" << param.type;
+		}
+	}
 	if (!isConstructor())
 	{
 		switch (   TypeConv::category(  QMetaObject::normalizedType( _className.toUtf8() )  )   )
@@ -114,6 +149,9 @@ Method::paramList_bridge() const
 		case TypeConv::Identity:
 		case TypeConv::Container:
 			list.prepend(Param{_className+'*', _className.toLower()});
+			break;
+		case TypeConv::OpaqueStruct:
+			list.prepend(Param{"const QByteArray&", _className.toLower()});
 			break;
 		default:
 			break;
@@ -142,6 +180,9 @@ Method::paramList_dll() const
 		case TypeConv::Numeric:
 		case TypeConv::Identity:
 		case TypeConv::Container: // TODO: Use Handle Pointers for containers, for efficiency
+			break;
+		case TypeConv::OpaqueStruct:
+			param.type = "QByteArray";
 			break;
 		default:
 			qWarning() << "WARNING: Method::paramList_dll(): Unsupported input arg type:" << qtType;

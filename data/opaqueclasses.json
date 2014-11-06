@@ -1,0 +1,13 @@
+[
+	{
+		"name": "QIcon",
+		"methods": [
+			{
+				"name": "QIcon",
+				"params": [
+					 {"name": "fileName", "type": "const QString&"}
+				]
+			}
+		]
+	}
+]

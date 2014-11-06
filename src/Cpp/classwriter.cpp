@@ -199,6 +199,9 @@ ClassWriter::funcCallBody_inBridge(const Method &method)
 	{
 		switch (classCategory)
 		{
+		case TypeConv::OpaqueStruct:
+			wrapper = "return serialize(%METHOD_CALL%);";
+			break;
 		case TypeConv::Identity:
 			wrapper = "return new %METHOD_CALL%;";
 			break;
@@ -211,6 +214,15 @@ ClassWriter::funcCallBody_inBridge(const Method &method)
 	{
 		switch (classCategory)
 		{
+		case TypeConv::OpaqueStruct:
+
+			wrapper = "\n"
+					"\t\t"  "%CLASS% thisInstance = deserialize<%CLASS%>(%INSTANCE%);"  "\n"
+					"\t\t"  "%RETURN_KEY_MID%thisInstance.%METHOD_CALL%;"               "\n"
+					"\t\t"  "return serialize(thisInstance);"                           "\n"
+					"\t";
+			break;
+
 		case TypeConv::Identity:
 			wrapper = "%RETURN_KEY_END%%FINAL_CALL_CONVERTED%;";
 			wrapper.replace("%FINAL_CALL_CONVERTED%", TypeConv::convCode_qt2Bridge(method.returnType_qt()));
@@ -224,9 +236,24 @@ ClassWriter::funcCallBody_inBridge(const Method &method)
 
 		bool hasReturn = (method.returnType_bridge() != "void");
 		if (hasReturn)
+		{
+			wrapper.replace("%RETURN_KEY_MID%", "%RETURN_TYPE% retVal = ");
 			wrapper.replace("%RETURN_KEY_END%", "return ");
+
+			wrapper.replace("%RETURN_TYPE%", method.returnType_bridge());
+
+			// TODO: Support this
+			if (classCategory == TypeConv::OpaqueStruct)
+			{
+				qWarning() << "WARNING: ClassWriter::funcCallBody_inBridge(): Method calls with return values not supported for OpaqueStructs:" << method.qualifiedName("::");
+				return "";
+			}
+		}
 		else
+		{
+			wrapper.replace("%RETURN_KEY_MID%", "");
 			wrapper.replace("%RETURN_KEY_END%", "");
+		}
 	}
 
 	QString methodCall = method.name() + "(%PARAMS%)";
