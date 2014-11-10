@@ -96,7 +96,7 @@
 			<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
 			<Property Name="NI.ClassItem.State" Type="Int">1342710274</Property>
 		</Item>
-		<Item Name="Global Connection Engine.vi" Type="VI" URL="../Global Connection Engine.vi">
+		<Item Name="Global Connection Engine.vi" Type="VI" URL="../Private/Global Connection Engine.vi">
 			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!&amp;4!!!!#!!%!!!!$%"4"V:B=GFB&lt;H1!(%"!!!(`````!!%05WFH&lt;G&amp;M)%.I97ZO:7RT!)]!]1!!!!!!!!!$$F2F&lt;8"M982F,GRW&lt;'FC&amp;ER26WFE:W6U27ZH;7ZF,GRW9WRB=X-61W^O&lt;G6D&gt;'FP&lt;C""9X2J&lt;WYO9X2M!%N!&amp;A!%"%FO;81/172E)%.P&lt;GZF9X2J&lt;WY02W6U)%.P&lt;GZF9X2J&lt;WZT#%.M:7&amp;O)&amp;6Q!!!21W^O&lt;G6D&gt;'FP&lt;C""9X2J&lt;WY!&amp;%"4$F.J:WZB&lt;#"$;'&amp;O&lt;G6M!!!41!-!$&amp;.J:WZB&lt;#"*&lt;G2F?!!!&amp;5!)!!Z24W*K:7.U)&amp;*F:GZV&lt;1!!6!$Q!!Q!!!!!!!)!!!!!!!!!!Q!%!!!!"1!'!!!$!!"Y!!!!!!!!!!!!!!E!!!!!!!!!!!!!!!!!!!!1!!!!#!!!!!!!!!!)!!!!#!!!!!!!!!!!!1!(!!!!!!</Property>
 			<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
 			<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>
@@ -141,7 +141,7 @@
 			<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
 			<Property Name="NI.ClassItem.State" Type="Int">1082130944</Property>
 		</Item>
-		<Item Name="Start Event Loop.vi" Type="VI" URL="../Start Event Loop.vi">
+		<Item Name="Start Event Loop.vi" Type="VI" URL="../Private/Start Event Loop.vi">
 			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!#'!!!!"!!%!!!!%%!B#V&amp;V;81A5WFH&lt;G&amp;M!":!=!!:!!%!!1J2&gt;7FU)%6W:7ZU!!"5!0!!$!!!!!!!!!!!!!!!!!!!!!!!!!!!!!)!!!-!!(A!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!)!!!!!!!!!!!"!!-!!!!!</Property>
 			<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
 			<Property Name="NI.ClassItem.Flags" Type="Int">256</Property>
