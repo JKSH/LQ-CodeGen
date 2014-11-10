@@ -149,4 +149,15 @@ connect_string(quint32 qobject, const char* encodedSignal)
 	return 0;
 }
 
+qint32 Q_DECL_EXPORT
+findSignalIndex(qint64* retVal, quint32 qobject, const char* encodedSignal)
+{
+	if (!bridge)
+		return -1;
+
+	// TODO: Return the full version of signals with default parameters
+	*retVal = ((QObject*)qobject)->metaObject()->indexOfSignal(encodedSignal);
+	return 0;
+}
+
 //[TEMPLATE]

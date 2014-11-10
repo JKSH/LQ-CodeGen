@@ -15,6 +15,7 @@ extern qint32 Q_DECL_EXPORT connect_void(quint32 qobject, const char* encodedSig
 extern qint32 Q_DECL_EXPORT connect_bool(quint32 qobject, const char* encodedSignal);
 extern qint32 Q_DECL_EXPORT connect_i32(quint32 qobject, const char* encodedSignal);
 extern qint32 Q_DECL_EXPORT connect_string(quint32 qobject, const char* encodedSignal);
+extern qint32 Q_DECL_EXPORT findSignalIndex(qint64* retVal, quint32 qobject, const char* encodedSignal);
 
 // TODO: Add QObject::setProperty() and QObject::property()
 
