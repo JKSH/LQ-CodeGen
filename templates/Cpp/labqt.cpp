@@ -73,33 +73,6 @@ registerEventRefs(LVUserEventRef* voidRef, LVUserEventRef* boolRef, LVUserEventR
 	bridge->registerEventRef_string(stringRef);
 	return 0;
 }
-qint32 Q_DECL_EXPORT
-registerEventRef_bool(LVUserEventRef* ref)
-{
-	if (!bridge)
-		return -1;
-
-	bridge->registerEventRef_bool(ref);
-	return 0;
-}
-qint32 Q_DECL_EXPORT
-registerEventRef_i32(LVUserEventRef* ref)
-{
-	if (!bridge)
-		return -1;
-
-	bridge->registerEventRef_i32(ref);
-	return 0;
-}
-qint32 Q_DECL_EXPORT
-registerEventRef_string(LVUserEventRef* ref)
-{
-	if (!bridge)
-		return -1;
-
-	bridge->registerEventRef_string(ref);
-	return 0;
-}
 
 // LabVIEW needs to prepend "2" to the string
 qint32 Q_DECL_EXPORT
@@ -139,7 +112,6 @@ connect_i32(quint32 qobject, const char* encodedSignal)
 qint32 Q_DECL_EXPORT
 connect_string(quint32 qobject, const char* encodedSignal)
 {
-	qDebug() << "string" << encodedSignal;
 	if (!bridge)
 		return -1;
 
