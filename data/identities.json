@@ -198,6 +198,68 @@
 		]
 	},
 	{
+		"name": "QAbstractButton", "base": "QWidget",
+		"methods": [
+			{
+				"name": "isDown", "retType": "bool"
+			},
+			{
+				"name": "setDown", "retType": "void",
+				"params": [
+					 {"name": "down", "type": "bool"}
+				]
+			},
+			{
+				"name": "setText", "retType": "void",
+				"params": [
+					 {"name": "text", "type": "const QString&"}
+				]
+			},
+			{
+				"name": "text", "retType": "QString"
+			}
+		],
+		"properties": [
+			{
+				"name": "down",
+				"getter": "isDown",
+				"setter": "setDown"
+			},
+			{
+				"name": "text",
+				"getter": "text",
+				"setter": "setText"
+			}
+		]
+	},
+	{
+		"name": "QPushButton", "base": "QAbstractButton",
+		"methods": [
+			{
+				"name": "QPushButton",
+				"params": [
+					 {"name": "text", "type": "const QString&"}
+				]
+			},
+			{
+				"name": "isFlat", "retType": "bool"
+			},
+			{
+				"name": "setFlat", "retType": "void",
+				"params": [
+					 {"name": "flat", "type": "bool"}
+				]
+			}
+		],
+		"properties": [
+			{
+				"name": "flat",
+				"getter": "isFlat",
+				"setter": "setFlat"
+			}
+		]
+	},
+	{
 		"name": "QLayout", "base": "QObject",
 		"methods": [
 			{
