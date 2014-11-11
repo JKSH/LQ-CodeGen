@@ -149,14 +149,42 @@ connect_string(quint32 qobject, const char* encodedSignal)
 	return 0;
 }
 
+/*!
+	Finds the value returned by QObject::senderSignalIndex() as called
+	from a slot that was executed in response to a signal emission.
+
+	This function is like QMetaObject::indexOfSignal(), except that it returns
+	the index of the "full" version of a signal that has default parameters.
+*/
 qint32 Q_DECL_EXPORT
-findSignalIndex(qint64* retVal, quint32 qobject, const char* encodedSignal)
+findSignalIndex(qint64* retVal, quint32 qobject, const char* normalizedSignal)
 {
 	if (!bridge)
 		return -1;
 
-	// TODO: Return the full version of signals with default parameters
-	*retVal = ((QObject*)qobject)->metaObject()->indexOfSignal(encodedSignal);
+	QString head = QString::fromLatin1(normalizedSignal);
+	head.chop(1);
+
+	*retVal = -1;
+	int maxLength = 0;
+	auto metaObject = ((QObject*)qobject)->metaObject();
+	for(int i = 0; i < metaObject->methodCount(); ++i)
+	{
+		const QMetaMethod candidateMethod = metaObject->method(i);
+		const QString candidateStr = QString::fromLatin1(candidateMethod.methodSignature());
+		if (candidateMethod.methodType() == QMetaMethod::Signal
+				&& candidateStr.startsWith(head)
+				&& candidateStr.length() >= maxLength)
+		{
+			maxLength = candidateStr.length();
+			*retVal = i;
+		}
+
+		// Possible optimization: moc always generates meta method for the full version
+		// before the reduced version(s). We could break the loop at the first match.
+		// However, that would be the wrong index for an overridden virtual signal (not
+		// that I can think of any such cases in Qt)
+	}
 	return 0;
 }
 
