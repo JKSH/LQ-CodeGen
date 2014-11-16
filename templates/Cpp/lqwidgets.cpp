@@ -1,4 +1,4 @@
-#include "labqt.h"
+#include "lqwidgets.h"
 #include "bridge.h"
 #include <thread>
 #include <QThread>
@@ -13,7 +13,7 @@ run()
 	// Note: The Bridge needs an active event loop to run slots
 
 	int            argc = 1;
-	QByteArray     argv0("LabQt.dll\0");
+	QByteArray     argv0("LQWidgets.dll\0");
 	QVector<char*> argv{argv0.data(), nullptr};
 
 	QApplication app(argc, argv.data());

@@ -1,15 +1,15 @@
 CONFIG += C++11
 QT     += widgets
 
-TARGET = LabQt
+TARGET = LQWidgets
 TEMPLATE = lib
 
 SOURCES += \
-    labqt.cpp \
+    lqwidgets.cpp \
     utils.cpp
 
 HEADERS += \
-    labqt.h \
+    lqwidgets.h \
     bridge.h \
     utils.h
 

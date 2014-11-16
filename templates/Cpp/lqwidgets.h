@@ -1,5 +1,5 @@
-#ifndef LABQT_H
-#define LABQT_H
+#ifndef LQWIDGETS_H
+#define LQWIDGETS_H
 
 #include <QtCore>
 #include <QtGlobal>
