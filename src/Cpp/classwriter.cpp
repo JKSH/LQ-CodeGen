@@ -9,8 +9,8 @@
 #include <QDebug>
 
 ClassWriter::ClassWriter() :
-	dllH("labqt.h"),
-	dllC("labqt.cpp"),
+	dllH("lqwidgets.h"),
+	dllC("lqwidgets.cpp"),
 	bridgeH("bridge.h")
 {}
 
@@ -30,7 +30,7 @@ ClassWriter::startWriting()
 	// TODO: Warn if templates are malformed
 
 	// TODO: Refactor
-	QFile template_dllH("../../templates/Cpp/labqt.h");
+	QFile template_dllH("../../templates/Cpp/lqwidgets.h");
 	if (template_dllH.open(QFile::ReadOnly|QFile::Text))
 	{
 		QStringList bits = QString(template_dllH.readAll()).split("//[TEMPLATE]");
@@ -42,9 +42,9 @@ ClassWriter::startWriting()
 		template_dllH.close();
 	}
 	else
-		qWarning() << "Could not find labqt.h template";
+		qWarning() << "Could not find lqwidgets.h template";
 
-	QFile template_dllC("../../templates/Cpp/labqt.cpp");
+	QFile template_dllC("../../templates/Cpp/lqwidgets.cpp");
 	if (template_dllC.open(QFile::ReadOnly|QFile::Text))
 	{
 		QStringList bits = QString(template_dllC.readAll()).split("//[TEMPLATE]");
@@ -56,7 +56,7 @@ ClassWriter::startWriting()
 		template_dllC.close();
 	}
 	else
-		qWarning() << "Could not find labqt.cpp template";
+		qWarning() << "Could not find lqwidgets.cpp template";
 
 	QFile template_bridgeH("../../templates/Cpp/bridge.h");
 	if (template_bridgeH.open(QFile::ReadOnly|QFile::Text))
