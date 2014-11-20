@@ -154,6 +154,20 @@
 		]
 	},
 	{
+		"name": "QComboBox", "base": "QWidget",
+		"methods": [
+			{
+				"name": "QComboBox"
+			},
+			{
+				"name": "addItems", "retType": "void",
+				"params": [
+					 {"name": "texts", "type": "const QStringList&"}
+				]
+			}
+		]
+	},
+	{
 		"name": "QFrame", "base": "QWidget"
 	},
 	{
@@ -294,6 +308,51 @@
 		"methods": [
 			{
 				"name": "QHBoxLayout"
+			}
+		]
+	},
+	{
+		"name": "QAbstractItemModel", "base": "QObject"
+	},
+	{
+		"name": "QAbstractListModel", "base": "QAbstractItemModel"
+	},
+	{
+		"name": "QStringListModel", "base": "QAbstractListModel",
+		"methods": [
+			{
+				"name": "QStringListModel"
+			},
+			{
+				"name": "setStringList", "retType": "void",
+				"params": [
+					{"name": "strings", "type": "const QStringList&"}
+				]
+			},
+			{
+				"name": "stringList", "retType": "QStringList"
+			}
+		]
+	},
+	{
+		"name": "QAbstractScrollArea", "base": "QFrame"
+	},
+	{
+		"name": "QAbstractItemView", "base": "QAbstractScrollArea",
+		"methods": [
+			{
+				"name": "setModel", "retType": "void",
+				"params": [
+					{"name": "model", "type": "QAbstractItemModel*"}
+				]
+			}
+		]
+	},
+	{
+		"name": "QListView", "base": "QAbstractItemView",
+		"methods": [
+			{
+				"name": "QListView"
 			}
 		]
 	}
