@@ -4,6 +4,7 @@
 #include <QtCore>
 #include <QtGlobal>
 #include "extcode.h"
+#include "utils.h"
 
 extern "C" {
 
