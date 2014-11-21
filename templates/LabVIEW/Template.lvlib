@@ -4,7 +4,6 @@
 	<Property Name="NI.Lib.SourceVersion" Type="Int">318799872</Property>
 	<Property Name="NI.Lib.Version" Type="Str">1.0.0.0</Property>
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">true</Property>
+	<Item Name="LQWidgetEngine.lvclass" Type="LVClass" URL="../LQWidgetEngine/LQWidgetEngine.lvclass"/>
 	<Item Name="QObject.lvclass" Type="LVClass" URL="../QObject/QObject.lvclass"/>
-	<Item Name="Start Widget Engine.vi" Type="VI" URL="../Start Widget Engine.vi"/>
-	<Item Name="Stop Widget Engine.vi" Type="VI" URL="../Stop Widget Engine.vi"/>
 </Library>

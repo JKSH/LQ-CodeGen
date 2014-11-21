@@ -168,6 +168,20 @@
 		]
 	},
 	{
+		"name": "QComboBox", "base": "QWidget",
+		"methods": [
+			{
+				"name": "QComboBox"
+			},
+			{
+				"name": "addItems", "retType": "void",
+				"params": [
+					 {"name": "texts", "type": "const QStringList&"}
+				]
+			}
+		]
+	},
+	{
 		"name": "QFrame", "base": "QWidget"
 	},
 	{
@@ -212,6 +226,68 @@
 		]
 	},
 	{
+		"name": "QAbstractButton", "base": "QWidget",
+		"methods": [
+			{
+				"name": "isDown", "retType": "bool"
+			},
+			{
+				"name": "setDown", "retType": "void",
+				"params": [
+					 {"name": "down", "type": "bool"}
+				]
+			},
+			{
+				"name": "setText", "retType": "void",
+				"params": [
+					 {"name": "text", "type": "const QString&"}
+				]
+			},
+			{
+				"name": "text", "retType": "QString"
+			}
+		],
+		"properties": [
+			{
+				"name": "down",
+				"getter": "isDown",
+				"setter": "setDown"
+			},
+			{
+				"name": "text",
+				"getter": "text",
+				"setter": "setText"
+			}
+		]
+	},
+	{
+		"name": "QPushButton", "base": "QAbstractButton",
+		"methods": [
+			{
+				"name": "QPushButton",
+				"params": [
+					 {"name": "text", "type": "const QString&"}
+				]
+			},
+			{
+				"name": "isFlat", "retType": "bool"
+			},
+			{
+				"name": "setFlat", "retType": "void",
+				"params": [
+					 {"name": "flat", "type": "bool"}
+				]
+			}
+		],
+		"properties": [
+			{
+				"name": "flat",
+				"getter": "isFlat",
+				"setter": "setFlat"
+			}
+		]
+	},
+	{
 		"name": "QLayout", "base": "QObject",
 		"methods": [
 			{
@@ -246,6 +322,51 @@
 		"methods": [
 			{
 				"name": "QHBoxLayout"
+			}
+		]
+	},
+	{
+		"name": "QAbstractItemModel", "base": "QObject"
+	},
+	{
+		"name": "QAbstractListModel", "base": "QAbstractItemModel"
+	},
+	{
+		"name": "QStringListModel", "base": "QAbstractListModel",
+		"methods": [
+			{
+				"name": "QStringListModel"
+			},
+			{
+				"name": "setStringList", "retType": "void",
+				"params": [
+					{"name": "strings", "type": "const QStringList&"}
+				]
+			},
+			{
+				"name": "stringList", "retType": "QStringList"
+			}
+		]
+	},
+	{
+		"name": "QAbstractScrollArea", "base": "QFrame"
+	},
+	{
+		"name": "QAbstractItemView", "base": "QAbstractScrollArea",
+		"methods": [
+			{
+				"name": "setModel", "retType": "void",
+				"params": [
+					{"name": "model", "type": "QAbstractItemModel*"}
+				]
+			}
+		]
+	},
+	{
+		"name": "QListView", "base": "QAbstractItemView",
+		"methods": [
+			{
+				"name": "QListView"
 			}
 		]
 	}
