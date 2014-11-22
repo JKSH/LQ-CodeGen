@@ -6,4 +6,5 @@
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">true</Property>
 	<Item Name="LQWidgetEngine.lvclass" Type="LVClass" URL="../LQWidgetEngine/LQWidgetEngine.lvclass"/>
 	<Item Name="QObject.lvclass" Type="LVClass" URL="../QObject/QObject.lvclass"/>
+	<Item Name="TEMPLATE_OpaqueStruct.lvclass" Type="LVClass" URL="../TEMPLATE_OpaqueStruct/TEMPLATE_OpaqueStruct.lvclass"/>
 </Library>
