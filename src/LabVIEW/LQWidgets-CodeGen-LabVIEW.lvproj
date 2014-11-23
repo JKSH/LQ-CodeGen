@@ -58,6 +58,7 @@
 		<Item Name="Create Method VIs.vi" Type="VI" URL="../Create Method VIs.vi"/>
 		<Item Name="Create New Class.vi" Type="VI" URL="../Create New Class.vi"/>
 		<Item Name="Create Opaque Structs.vi" Type="VI" URL="../Create Opaque Structs.vi"/>
+		<Item Name="Delete Template VIs.vi" Type="VI" URL="../Delete Template VIs.vi"/>
 		<Item Name="Extract Subclasses.vi" Type="VI" URL="../Extract Subclasses.vi"/>
 		<Item Name="Generate Class and Subclasses.vi" Type="VI" URL="../Generate Class and Subclasses.vi"/>
 		<Item Name="Generate Subclasses.vi" Type="VI" URL="../Generate Subclasses.vi"/>
