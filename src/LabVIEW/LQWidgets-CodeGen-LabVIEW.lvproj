@@ -46,6 +46,7 @@
 			<Item Name="Array Writer.lvclass" Type="LVClass" URL="../Param Writers/Array Writer/Array Writer.lvclass"/>
 			<Item Name="Bool Writer.lvclass" Type="LVClass" URL="../Param Writers/Bool Writer/Bool Writer.lvclass"/>
 			<Item Name="Number Writer.lvclass" Type="LVClass" URL="../Param Writers/Number Writer/Number Writer.lvclass"/>
+			<Item Name="Opaque Struct Writer.lvclass" Type="LVClass" URL="../Param Writers/Opaque Struct Writer/Opaque Struct Writer.lvclass"/>
 			<Item Name="QObject Writer.lvclass" Type="LVClass" URL="../Param Writers/QObject Writer/QObject Writer.lvclass"/>
 			<Item Name="Simple Struct Writer.lvclass" Type="LVClass" URL="../Param Writers/Simple Struct Writer/Simple Struct Writer.lvclass"/>
 			<Item Name="String Writer.lvclass" Type="LVClass" URL="../Param Writers/String Writer/String Writer.lvclass"/>
@@ -56,6 +57,7 @@
 		<Item Name="Create LVClass Control.vi" Type="VI" URL="../Create LVClass Control.vi"/>
 		<Item Name="Create Method VIs.vi" Type="VI" URL="../Create Method VIs.vi"/>
 		<Item Name="Create New Class.vi" Type="VI" URL="../Create New Class.vi"/>
+		<Item Name="Create Opaque Structs.vi" Type="VI" URL="../Create Opaque Structs.vi"/>
 		<Item Name="Extract Subclasses.vi" Type="VI" URL="../Extract Subclasses.vi"/>
 		<Item Name="Generate Class and Subclasses.vi" Type="VI" URL="../Generate Class and Subclasses.vi"/>
 		<Item Name="Generate Subclasses.vi" Type="VI" URL="../Generate Subclasses.vi"/>
