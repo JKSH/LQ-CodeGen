@@ -229,12 +229,21 @@
 		"name": "QAbstractButton", "base": "QWidget",
 		"methods": [
 			{
+				"name": "icon", "retType": "QIcon"
+			},
+			{
 				"name": "isDown", "retType": "bool"
 			},
 			{
 				"name": "setDown", "retType": "void",
 				"params": [
 					 {"name": "down", "type": "bool"}
+				]
+			},
+			{
+				"name": "setIcon", "retType": "void",
+				"params": [
+					 {"name": "icon", "type": "const QIcon&"}
 				]
 			},
 			{
@@ -252,6 +261,11 @@
 				"name": "down",
 				"getter": "isDown",
 				"setter": "setDown"
+			},
+			{
+				"name": "icon",
+				"getter": "icon",
+				"setter": "setIcon"
 			},
 			{
 				"name": "text",
