@@ -52,6 +52,8 @@ Method::returnType_bridge() const
 	{
 		switch (TypeConv::category(_className))
 		{
+		case TypeConv::OpaqueStruct:
+			return "QByteArray";
 		case TypeConv::Identity:
 			return _className + '*';
 		default:
@@ -71,6 +73,9 @@ Method::returnType_bridge() const
 		case TypeConv::Identity:
 		case TypeConv::Container:
 			retType_bridge = TypeConv::bridgeType(retType_qt);
+			break;
+		case TypeConv::OpaqueStruct:
+			retType_bridge = "QByteArray";
 			break;
 		default:
 			qWarning() << "WARNING: Method::returnType_bridge(): Unsupported return type:" << retType_qt;
@@ -104,6 +109,23 @@ QList<Param>
 Method::paramList_bridge() const
 {
 	QList<Param> list = paramList_raw();
+	for (Param& param : list)
+	{
+		switch (   TypeConv::category(  QMetaObject::normalizedType( param.type.toUtf8() )  )   )
+		{
+		case TypeConv::Boolean:
+		case TypeConv::Numeric:
+		case TypeConv::SimpleStruct:
+		case TypeConv::Identity:
+		case TypeConv::Container:
+			break;
+		case TypeConv::OpaqueStruct:
+			param.type = "LStrHandle";
+			break;
+		default:
+			qWarning() << "WARNING: Method::paramList_bridge(): Unsupported input arg type:" << param.type;
+		}
+	}
 	if (!isConstructor())
 	{
 		switch (   TypeConv::category(  QMetaObject::normalizedType( _className.toUtf8() )  )   )
@@ -114,6 +136,9 @@ Method::paramList_bridge() const
 		case TypeConv::Identity:
 		case TypeConv::Container:
 			list.prepend(Param{_className+'*', _className.toLower()});
+			break;
+		case TypeConv::OpaqueStruct:
+			list.prepend(Param{"LStrHandle", _className.toLower()});
 			break;
 		default:
 			break;
@@ -126,7 +151,7 @@ Method::paramList_bridge() const
 QList<Param>
 Method::paramList_dll() const
 {
-	QList<Param> list = paramList_bridge();
+	QList<Param> list = paramList_raw();
 
 	for (Param& param : list)
 	{
@@ -143,8 +168,26 @@ Method::paramList_dll() const
 		case TypeConv::Identity:
 		case TypeConv::Container: // TODO: Use Handle Pointers for containers, for efficiency
 			break;
+		case TypeConv::OpaqueStruct:
+			param.type = "LStrHandle";
+			break;
 		default:
 			qWarning() << "WARNING: Method::paramList_dll(): Unsupported input arg type:" << qtType;
+		}
+	}
+
+	// Prepend list with Instance (if applicable)
+	if (!isConstructor())
+	{
+		switch (   TypeConv::category(  QMetaObject::normalizedType( _className.toUtf8() )  )   )
+		{
+		case TypeConv::Identity:
+		case TypeConv::OpaqueStruct:
+			list.prepend(Param{TypeConv::instanceType_dll(_className), _className.toLower()});
+			break;
+		default:
+			qWarning() << "WARNING: Method::paramList_dll(): This type cannot have methods:" << _className;
+			break;
 		}
 	}
 

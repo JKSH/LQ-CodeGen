@@ -30,6 +30,10 @@ int main(int, char **)
 	if (simpleStructs.isNull())
 		return -1;
 
+	QJsonDocument opaqueClasses = parseJsonFile("../../data/opaqueclasses.json");
+	if (opaqueClasses.isNull())
+		return -1;
+
 	QJsonDocument containers = parseJsonFile("../../data/containers.json");
 	if (containers.isNull())
 		return -1;
@@ -50,12 +54,15 @@ int main(int, char **)
 	TypeConv::init(QJsonArray()<<boolObj, TypeConv::Boolean);
 	TypeConv::init(numerics.array(), TypeConv::Numeric);
 	TypeConv::init(simpleStructs.array(), TypeConv::SimpleStruct);
+	TypeConv::init(opaqueClasses.array(), TypeConv::OpaqueStruct);
 	TypeConv::init(containers.array(), TypeConv::Container);
 	TypeConv::init(identities.array(), TypeConv::Identity);
 
 	ClassWriter c;
 	c.startWriting();
 	for(const QJsonValue& val : identities.array())
+		c.writeClass(val.toObject());
+	for(const QJsonValue& val : opaqueClasses.array())
 		c.writeClass(val.toObject());
 	c.stopWriting();
 

@@ -46,7 +46,7 @@
 			<Property Name="NI.ClassItem.State" Type="Int">8388608</Property>
 		</Item>
 	</Item>
-	<Item Name="Template_Constructor.vi" Type="VI" URL="../../Template_Constructor.vi">
+	<Item Name="TEMPLATE_Constructor.vi" Type="VI" URL="../TEMPLATE_Constructor.vi">
 		<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!$J!!!!#!!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AF&amp;=H*P=C"0&gt;81!"!!!!$:!=!!?!!!A$F2F&lt;8"M982F,GRW&lt;'FC$V&amp;09GJF9X1O&lt;(:D&lt;'&amp;T=Q!!#V&amp;09GJF9X1A4X6U!":!5!!$!!!!!1!##%6S=G^S)%FO!!"5!0!!$!!$!!1!"!!&amp;!!1!"!!%!!1!"A!%!!1!"!-!!(A!!!U)!!!!!!!!!!!!!!E!!!!!!!!!!!!!!!!!!!!!!!!!#A!!!!!!!!!!!!!!!!!!!!!"!!=!!!!!</Property>
 		<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
 		<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>
@@ -55,7 +55,7 @@
 		<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
 		<Property Name="NI.ClassItem.State" Type="Int">1342710288</Property>
 	</Item>
-	<Item Name="Template_Regular_NoReturn.vi" Type="VI" URL="../../Template_Regular_NoReturn.vi">
+	<Item Name="TEMPLATE_Regular_NoReturn.vi" Type="VI" URL="../TEMPLATE_Regular_NoReturn.vi">
 		<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!%M!!!!#1!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AF&amp;=H*P=C"0&gt;81!"!!!!$:!=!!?!!!A$F2F&lt;8"M982F,GRW&lt;'FC$V&amp;09GJF9X1O&lt;(:D&lt;'&amp;T=Q!!#V&amp;09GJF9X1A4X6U!":!5!!$!!!!!1!##%6S=G^S)%FO!!!W1(!!(A!!)!Z5:7VQ&lt;'&amp;U:3ZM&gt;GRJ9A^24W*K:7.U,GRW9WRB=X-!!!J24W*K:7.U)%FO!!"B!0!!$!!$!!1!"!!&amp;!!1!"!!%!!1!"A!%!!1!"Q-!!(A!!!U)!!!!!!!!!!!!!!U,!!!!!!!!!!!!!!!!!!!!!!!!#A!!!!!!!!!!!!!!%!!!$1!!!!Q!!!!!!!!!!!!!!1!)!!!!!!</Property>
 		<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
 		<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>
@@ -64,7 +64,7 @@
 		<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
 		<Property Name="NI.ClassItem.State" Type="Int">1342710288</Property>
 	</Item>
-	<Item Name="Template_Regular_Return.vi" Type="VI" URL="../../Template_Regular_Return.vi">
+	<Item Name="TEMPLATE_Regular_Return.vi" Type="VI" URL="../TEMPLATE_Regular_Return.vi">
 		<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!%[!!!!#A!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AF&amp;=H*P=C"0&gt;81!"!!!!!Z!-0````]&amp;6G&amp;M&gt;75!.E"Q!"Y!!#!/6'6N='RB&gt;'5O&lt;(:M;7)055^C;G6D&gt;#ZM&gt;G.M98.T!!!,55^C;G6D&gt;#"0&gt;81!&amp;E"1!!-!!!!"!!))28*S&lt;X)A37Y!!$:!=!!?!!!A$F2F&lt;8"M982F,GRW&lt;'FC$V&amp;09GJF9X1O&lt;(:D&lt;'&amp;T=Q!!#F&amp;09GJF9X1A37Y!!'%!]!!-!!-!"!!&amp;!!9!"!!%!!1!"!!(!!1!"!!)!Q!!?!!!$1A!!!!!!!!*!!!!$1M!!!!!!!!!!!!!!!!!!!!!!!!+!!!!!!!!!!!!!!!1!!!.!!!!$!!!!!!!!!!!!!!"!!E!!!!!</Property>
 		<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
 		<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>

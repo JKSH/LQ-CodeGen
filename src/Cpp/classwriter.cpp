@@ -118,7 +118,7 @@ ClassWriter::writeClass(const QJsonObject& classObj)
 		dllH.write(funcName + '(');
 		dllC.write(funcName + '(');
 
-		// TODO: Don't let the Method know about DLL vs Bridge
+		auto paramList_raw = method.paramList_raw();
 		auto paramList_dll = method.paramList_dll();
 		auto paramList_brg = method.paramList_bridge();
 
@@ -151,7 +151,19 @@ ClassWriter::writeClass(const QJsonObject& classObj)
 					"\t\t\tQ_RETURN_ARG(" + retType_brg + ", retVal_brg)," "\n";
 		}
 
-		for (const Param& p : paramList_brg)
+		// Add instance
+		if (!method.isConstructor())
+		{
+			QString conversion = TypeConv::convCode_dll2Bridge(currentClass);
+			conversion.replace("_qtType_", TypeConv::instanceType_bridge(currentClass));
+			conversion.replace("_dllValue_", currentClass.toLower());
+
+			body_dll
+					+= "\t\t\tQ_ARG(" + TypeConv::instanceType_bridge(currentClass) + ", "
+					+ conversion + "),\n";
+		}
+
+		for (const Param& p : paramList_raw)
 		{
 			QByteArray normType = QMetaObject::normalizedType(p.type.toUtf8());
 			QString conversion = TypeConv::convCode_dll2Bridge(normType);
@@ -159,7 +171,7 @@ ClassWriter::writeClass(const QJsonObject& classObj)
 			conversion.replace("_dllValue_", p.name);
 
 			body_dll
-					+= "\t\t\tQ_ARG(" + QMetaObject::normalizedType(p.type.toUtf8()) + ", "
+					+= "\t\t\tQ_ARG(" + TypeConv::bridgeType(p.type) + ", "
 					+ conversion + "),\n";
 		}
 		body_dll.chop(2);
@@ -199,6 +211,9 @@ ClassWriter::funcCallBody_inBridge(const Method &method)
 	{
 		switch (classCategory)
 		{
+		case TypeConv::OpaqueStruct:
+			wrapper = "return serialize(%METHOD_CALL%);";
+			break;
 		case TypeConv::Identity:
 			wrapper = "return new %METHOD_CALL%;";
 			break;
@@ -211,6 +226,17 @@ ClassWriter::funcCallBody_inBridge(const Method &method)
 	{
 		switch (classCategory)
 		{
+		case TypeConv::OpaqueStruct:
+
+			// TODO: Don't re-serialize if it's a const method
+			wrapper = "\n"
+					"\t\t"  "%CLASS% thisInstance = deserialize<%CLASS%>(copyFromLStr(%INSTANCE%));"  "\n"
+					"\t\t"  "%CALL_STMT_MAIN%;"                                                       "\n"
+					"\t\t"  "copyIntoLStr(%INSTANCE%, serialize(thisInstance));"                      "\n"
+					"\t\t"  "%RETURN_STMT_END%"                                                       "\n"
+					"\t";
+			break;
+
 		case TypeConv::Identity:
 			wrapper = "%RETURN_KEY_END%%FINAL_CALL_CONVERTED%;";
 			wrapper.replace("%FINAL_CALL_CONVERTED%", TypeConv::convCode_qt2Bridge(method.returnType_qt()));
@@ -224,9 +250,21 @@ ClassWriter::funcCallBody_inBridge(const Method &method)
 
 		bool hasReturn = (method.returnType_bridge() != "void");
 		if (hasReturn)
+		{
+			wrapper.replace("%CALL_STMT_MAIN%", "%RETURN_TYPE% retVal = " + TypeConv::convCode_qt2Bridge(method.returnType_qt()));
+			wrapper.replace("_qtValue_", "thisInstance.%METHOD_CALL%");
+
 			wrapper.replace("%RETURN_KEY_END%", "return ");
+			wrapper.replace("%RETURN_STMT_END%", "return retVal;");
+			wrapper.replace("%RETURN_TYPE%", method.returnType_bridge());
+		}
 		else
+		{
+			wrapper.replace("%CALL_STMT_MAIN%", "thisInstance.%METHOD_CALL%");
+
 			wrapper.replace("%RETURN_KEY_END%", "");
+			wrapper.replace("%RETURN_STMT_END%", "");
+		}
 	}
 
 	QString methodCall = method.name() + "(%PARAMS%)";

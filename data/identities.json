@@ -78,6 +78,12 @@
 				]
 			},
 			{
+				"name": "setWindowIcon", "retType": "void",
+				"params": [
+					{"name": "icon", "type": "const QIcon&"}
+				]
+			},
+			{
 				"name": "setWindowOpacity", "retType": "void",
 				"params": [
 					{"name": "level", "type": "qreal"}
@@ -97,6 +103,9 @@
 			},
 			{
 				"name": "toolTipDuration", "retType": "int"
+			},
+			{
+				"name": "windowIcon", "retType": "QIcon"
 			},
 			{
 				"name": "windowOpacity", "retType": "qreal"
@@ -142,6 +151,11 @@
 				"setter": "setVisible"
 			},
 			{
+				"name": "windowIcon",
+				"getter": "windowIcon",
+				"setter": "setWindowIcon"
+			},
+			{
 				"name": "windowOpacity",
 				"getter": "windowOpacity",
 				"setter": "setWindowOpacity"
@@ -180,6 +194,12 @@
 				]
 			},
 			{
+				"name": "setPixmap", "retType": "void",
+				"params": [
+					 {"name": "pixmap", "type": "const QPixmap&"}
+				]
+			},
+			{
 				"name": "setText", "retType": "void",
 				"params": [
 					 {"name": "text", "type": "const QString&"}
@@ -215,12 +235,21 @@
 		"name": "QAbstractButton", "base": "QWidget",
 		"methods": [
 			{
+				"name": "icon", "retType": "QIcon"
+			},
+			{
 				"name": "isDown", "retType": "bool"
 			},
 			{
 				"name": "setDown", "retType": "void",
 				"params": [
 					 {"name": "down", "type": "bool"}
+				]
+			},
+			{
+				"name": "setIcon", "retType": "void",
+				"params": [
+					 {"name": "icon", "type": "const QIcon&"}
 				]
 			},
 			{
@@ -238,6 +267,11 @@
 				"name": "down",
 				"getter": "isDown",
 				"setter": "setDown"
+			},
+			{
+				"name": "icon",
+				"getter": "icon",
+				"setter": "setIcon"
 			},
 			{
 				"name": "text",
