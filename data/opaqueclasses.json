@@ -7,6 +7,38 @@
 				"params": [
 					 {"name": "fileName", "type": "const QString&"}
 				]
+			},
+			{
+				"name": "addFile", "retType": "void",
+				"params": [
+					 {"name": "file", "type": "const QString&"}
+				]
+			},
+			{
+				"name": "addPixmap", "retType": "void",
+				"params": [
+					 {"name": "pixmap", "type": "const QPixmap&"}
+				]
+			},
+			{
+				"name": "pixmap", "retType": "QPixmap",
+				"params": [
+					 {"name": "size", "type": "const QSize&"}
+				]
+			}
+		]
+	},
+	{
+		"name": "QPixmap",
+		"methods": [
+			{
+				"name": "QPixmap",
+				"params": [
+					 {"name": "fileName", "type": "const QString&"}
+				]
+			},
+			{
+				"name": "size", "retType": "QSize"
 			}
 		]
 	}

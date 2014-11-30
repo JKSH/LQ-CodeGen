@@ -194,6 +194,12 @@
 				]
 			},
 			{
+				"name": "setPixmap", "retType": "void",
+				"params": [
+					 {"name": "pixmap", "type": "const QPixmap&"}
+				]
+			},
+			{
 				"name": "setText", "retType": "void",
 				"params": [
 					 {"name": "text", "type": "const QString&"}

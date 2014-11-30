@@ -81,19 +81,6 @@ Method::returnType_bridge() const
 			qWarning() << "WARNING: Method::returnType_bridge(): Unsupported return type:" << retType_qt;
 			return "";
 		}
-
-		if (TypeConv::category(_className) == TypeConv::OpaqueStruct)
-		{
-			if (retType_bridge != "void")
-			{
-				// TODO: Support methods of OpaqueStructs that return a value
-				// (need QPair to return the return-value plus the object, OR pass LStrHandle across the Bridge)
-				qWarning() << "WARNING: Method::returnType_bridge(): OpaqueStruct method with return type not supported:" << qualifiedName("::");
-				return "";
-			}
-			else
-				retType_bridge = "QByteArray";
-		}
 		return retType_bridge;
 	}
 }
@@ -133,7 +120,7 @@ Method::paramList_bridge() const
 		case TypeConv::Container:
 			break;
 		case TypeConv::OpaqueStruct:
-			param.type = TypeConv::bridgeType(param.type);
+			param.type = "LStrHandle";
 			break;
 		default:
 			qWarning() << "WARNING: Method::paramList_bridge(): Unsupported input arg type:" << param.type;
@@ -151,7 +138,7 @@ Method::paramList_bridge() const
 			list.prepend(Param{_className+'*', _className.toLower()});
 			break;
 		case TypeConv::OpaqueStruct:
-			list.prepend(Param{"const QByteArray&", _className.toLower()});
+			list.prepend(Param{"LStrHandle", _className.toLower()});
 			break;
 		default:
 			break;
@@ -164,7 +151,7 @@ Method::paramList_bridge() const
 QList<Param>
 Method::paramList_dll() const
 {
-	QList<Param> list = paramList_bridge();
+	QList<Param> list = paramList_raw();
 
 	for (Param& param : list)
 	{
@@ -182,10 +169,25 @@ Method::paramList_dll() const
 		case TypeConv::Container: // TODO: Use Handle Pointers for containers, for efficiency
 			break;
 		case TypeConv::OpaqueStruct:
-			param.type = "QByteArray";
+			param.type = "LStrHandle";
 			break;
 		default:
 			qWarning() << "WARNING: Method::paramList_dll(): Unsupported input arg type:" << qtType;
+		}
+	}
+
+	// Prepend list with Instance (if applicable)
+	if (!isConstructor())
+	{
+		switch (   TypeConv::category(  QMetaObject::normalizedType( _className.toUtf8() )  )   )
+		{
+		case TypeConv::Identity:
+		case TypeConv::OpaqueStruct:
+			list.prepend(Param{TypeConv::instanceType_dll(_className), _className.toLower()});
+			break;
+		default:
+			qWarning() << "WARNING: Method::paramList_dll(): This type cannot have methods:" << _className;
+			break;
 		}
 	}
 

@@ -50,7 +50,7 @@ TypeConv::bridgeType(const QString& qtType)
 	case Identity:
 		return tmp;
 	case OpaqueStruct:
-		return "const QByteArray&";
+		return "LStrHandle";
 	default:
 		qWarning() << "WARNING: TypeConv::bridgeType(): Unsupported type:" << qtType;
 		return tmp;
@@ -82,6 +82,45 @@ TypeConv::dllType(const QString& qtType)
 	}
 }
 
+// TODO: Use instanceType() in more generation code
+//
+QString
+TypeConv::instanceType_bridge(const QString& qtType)
+{
+	QString tmp = QMetaObject::normalizedType(qtType.toUtf8());
+	switch (category(tmp))
+	{
+	case Identity:
+		// TODO: Clean this up
+		if (tmp.contains('*'))
+			return tmp;
+		return tmp+'*';
+
+	case OpaqueStruct:
+		return "LStrHandle";
+
+	default:
+		qWarning() << "WARNING: instanceType_bridge(): This type cannot have methods:" << qtType;
+		return tmp;
+	}
+}
+
+QString
+TypeConv::instanceType_dll(const QString& qtType)
+{
+	QString tmp = QMetaObject::normalizedType(qtType.toUtf8());
+	switch (category(tmp))
+	{
+	case Identity:
+		return "quint32";
+	case OpaqueStruct:
+		return "LStrHandle";
+	default:
+		qWarning() << "WARNING: instanceType_dll(): This type cannot have methods:" << qtType;
+		return tmp;
+	}
+}
+
 QString
 TypeConv::convCode_bridge2Dll(const QString& qtType)
 {
@@ -91,9 +130,8 @@ TypeConv::convCode_bridge2Dll(const QString& qtType)
 	case Boolean:
 	case Numeric:
 	case SimpleStruct:
-		return "_bridgeValue_";
 	case OpaqueStruct:
-		return "copyIntoLStr(_dllValue_, _bridgeValue_)";
+		return "_bridgeValue_";
 	case Container: return _bridge2dll[qtType].toObject()["bridge2dll"].toString();
 	case Identity: return "(_dllType_)_bridgeValue_";
 	default:
@@ -111,9 +149,9 @@ TypeConv::convCode_dll2Bridge(const QString& qtType)
 	case Boolean:
 	case SimpleStruct:
 		return "*_dllValue_";
-	case Numeric: return "_dllValue_";
+	case Numeric:
 	case OpaqueStruct:
-		return "copyFromLStr(_dllValue_)";
+		return "_dllValue_";
 	case Container: return _bridge2dll[qtType].toObject()["dll2bridge"].toString();
 	case Identity: return "(_qtType_)_dllValue_";
 	default:
@@ -156,7 +194,7 @@ TypeConv::convCode_bridge2Qt(const QString& qtType)
 	case Container:
 		return "_bridgeValue_";
 	case OpaqueStruct:
-		return "deserialize<_qtType_>(_bridgeValue_)";
+		return "deserialize<_qtType_>(copyFromLStr(_bridgeValue_))";
 	default:
 		qWarning() << "WARNING: TypeConv::convCode_bridge2Qt(): Don't know how to convert" << qtType;
 		return "";

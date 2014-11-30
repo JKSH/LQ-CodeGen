@@ -23,6 +23,10 @@ public:
 	static Category category(const QString& qtType);
 	static QString bridgeType(const QString& qtType);
 	static QString dllType(const QString& qtType);
+
+	static QString instanceType_dll(const QString& qtType);
+	static QString instanceType_bridge(const QString& qtType);
+
 	static QString convCode_bridge2Dll(const QString& qtType);
 	static QString convCode_dll2Bridge(const QString& qtType);
 	static QString convCode_qt2Bridge(const QString& qtType);
