@@ -118,7 +118,6 @@ ClassWriter::writeClass(const QJsonObject& classObj)
 		dllH.write(funcName + '(');
 		dllC.write(funcName + '(');
 
-		auto paramList_raw = method.paramList_raw();
 		auto paramList_dll = method.paramList_dll();
 		auto paramList_brg = method.paramList_bridge();
 
@@ -131,72 +130,82 @@ ClassWriter::writeClass(const QJsonObject& classObj)
 		dllC.write(paramStr_dll.toUtf8() + ")\n{\n");
 
 		QString body_brg = funcCallBody_inBridge(method);
-		QString body_dll;
-		body_dll =
-				"\t"    "if (!bridge)"    "\n"
-				"\t\t"      "return -1;"  "\n\n";
-
-		bool hasReturn = (retType_brg != "void");
-		if (hasReturn)
-			body_dll += "\t" + retType_brg + " retVal_brg;\n";
-
-		body_dll +=
-				"\t"        "QMetaObject::invokeMethod(bridge,"         "\n"
-				"\t\t\t"            "\"" + funcName + "\","             "\n"
-				"\t\t\t"            "Qt::BlockingQueuedConnection,"     "\n";
-
-		if (hasReturn)
-		{
-			body_dll +=
-					"\t\t\tQ_RETURN_ARG(" + retType_brg + ", retVal_brg)," "\n";
-		}
-
-		// Add instance
-		if (!method.isConstructor())
-		{
-			QString conversion = TypeConv::convCode_dll2Bridge(currentClass);
-			conversion.replace("_qtType_", TypeConv::instanceType_bridge(currentClass));
-			conversion.replace("_dllValue_", currentClass.toLower());
-
-			body_dll
-					+= "\t\t\tQ_ARG(" + TypeConv::instanceType_bridge(currentClass) + ", "
-					+ conversion + "),\n";
-		}
-
-		for (const Param& p : paramList_raw)
-		{
-			QByteArray normType = QMetaObject::normalizedType(p.type.toUtf8());
-			QString conversion = TypeConv::convCode_dll2Bridge(normType);
-			conversion.replace("_qtType_", normType);
-			conversion.replace("_dllValue_", p.name);
-
-			body_dll
-					+= "\t\t\tQ_ARG(" + TypeConv::bridgeType(p.type) + ", "
-					+ conversion + "),\n";
-		}
-		body_dll.chop(2);
-		body_dll += ");\n";
-
-		if (hasReturn)
-		{
-			QByteArray retType_brg = QMetaObject::normalizedType(method.returnType_bridge().toUtf8());
-
-			QString conversion = TypeConv::convCode_bridge2Dll(retType_brg);
-			conversion.replace("_dllType_", method.returnType_dll());
-			conversion.replace("_dllValue_", "retVal");
-			conversion.replace("_bridgeValue_", "retVal_brg");
-
-			body_dll
-					+= "\t*retVal = " + conversion + ";\n";
-		}
-
-		body_dll += "\n\treturn 0;\n";
+		QString body_dll = funcCallBody_inDll(method);
 
 		bridgeH.write(body_brg.toUtf8() + "}\n");
 		dllC.write(body_dll.toUtf8() + "}\n\n");
 
 		// TODO: Bypass Bridge if method is a slot
 	}
+}
+
+QString
+ClassWriter::funcCallBody_inDll(const Method &method)
+{
+	QString body_dll;
+	body_dll =
+			"\t"    "if (!bridge)"    "\n"
+			"\t\t"      "return -1;"  "\n\n";
+
+	QString retType_brg = method.returnType_bridge();
+	bool hasReturn = (retType_brg != "void");
+	if (hasReturn)
+		body_dll += "\t" + retType_brg + " retVal_brg;\n";
+
+	body_dll +=
+			"\t"      "QMetaObject::invokeMethod(bridge,"               "\n"
+			"\t\t\t"          "\"" + method.qualifiedName("_") + "\","  "\n"
+			"\t\t\t"          "Qt::BlockingQueuedConnection,"           "\n";
+
+	if (hasReturn)
+	{
+		body_dll +=
+				"\t\t\tQ_RETURN_ARG(" + retType_brg + ", retVal_brg)," "\n";
+	}
+
+	// Add instance
+	if (!method.isConstructor())
+	{
+		QString thisClass = method.className();
+
+		QString conversion = TypeConv::convCode_dll2Bridge(thisClass);
+		conversion.replace("_qtType_", TypeConv::instanceType_bridge(thisClass));
+		conversion.replace("_dllValue_", thisClass.toLower());
+
+		body_dll
+				+= "\t\t\tQ_ARG(" + TypeConv::instanceType_bridge(thisClass) + ", "
+				+ conversion + "),\n";
+	}
+
+	for (const Param& p : method.paramList_raw())
+	{
+		QByteArray normType = QMetaObject::normalizedType(p.type.toUtf8());
+		QString conversion = TypeConv::convCode_dll2Bridge(normType);
+		conversion.replace("_qtType_", normType);
+		conversion.replace("_dllValue_", p.name);
+
+		body_dll
+				+= "\t\t\tQ_ARG(" + TypeConv::bridgeType(p.type) + ", "
+				+ conversion + "),\n";
+	}
+	body_dll.chop(2);
+	body_dll += ");\n";
+
+	if (hasReturn)
+	{
+		QByteArray retType_brg = QMetaObject::normalizedType(method.returnType_bridge().toUtf8());
+
+		QString conversion = TypeConv::convCode_bridge2Dll(retType_brg);
+		conversion.replace("_dllType_", method.returnType_dll());
+		conversion.replace("_dllValue_", "retVal");
+		conversion.replace("_bridgeValue_", "retVal_brg");
+
+		body_dll
+				+= "\t*retVal = " + conversion + ";\n";
+	}
+
+	body_dll += "\n\treturn 0;\n";
+	return body_dll;
 }
 
 QString
