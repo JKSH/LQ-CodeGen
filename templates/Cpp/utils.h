@@ -5,7 +5,7 @@
 #include <QStringList>
 #include "extcode.h"
 
-LStrPtr copyIntoLStr(LStrHandle lStr, const QByteArray& bytes);
+void copyIntoLStr(LStrHandle lStr, const QByteArray& bytes);
 QByteArray copyFromLStr(LStrHandle lStr);
 
 // TODO: Move the following to types.h or something
