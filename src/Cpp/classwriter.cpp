@@ -201,7 +201,23 @@ ClassWriter::funcCallBody_inDll(const Method &method)
 		conversion.replace("_bridgeValue_", "retVal_brg");
 
 		body_dll
-				+= "\t*retVal = " + conversion + ";\n";
+				+= "\t%RETURN_KEY%" + conversion + ";\n";
+
+		switch (TypeConv::category(retType_brg))
+		{
+		case TypeConv::Boolean:
+		case TypeConv::Numeric:
+		case TypeConv::SimpleStruct:
+		case TypeConv::Identity:
+			body_dll.replace("%RETURN_KEY%", "*retVal = ");
+			break;
+		case TypeConv::Container:
+		case TypeConv::OpaqueStruct:
+			body_dll.replace("%RETURN_KEY%", "");
+			break;
+		default:
+			qWarning() << "WARNING: ClassWriter::funcCallBody_inDll(): Unsupported return type:" << retType_brg;
+		}
 	}
 
 	body_dll += "\n\treturn 0;\n";
