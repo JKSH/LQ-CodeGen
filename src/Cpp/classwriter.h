@@ -27,8 +27,6 @@ private:
 	QString _footer_dllH;
 	QString _footer_dllC;
 	QString _footer_bridgeH;
-
-	QString currentClass;
 };
 
 #endif // CLASSWRITER_H

@@ -90,7 +90,7 @@ ClassWriter::stopWriting()
 void
 ClassWriter::writeClass(const QJsonObject& classObj)
 {
-	currentClass = classObj["name"].toString();
+	QString currentClass = classObj["name"].toString();
 	if (currentClass.isEmpty())
 	{
 		qWarning() << "Not a class object:" << classObj;
@@ -118,12 +118,8 @@ ClassWriter::writeClass(const QJsonObject& classObj)
 		dllH.write(funcName + '(');
 		dllC.write(funcName + '(');
 
-		auto paramList_dll = method.paramList_dll();
-		auto paramList_brg = method.paramList_bridge();
-
-		QString paramStr_dll = Method::paramsToCode_prototype(paramList_dll);
-		QString paramStr_brg = Method::paramsToCode_prototype(paramList_brg);
-
+		QString paramStr_dll = Method::paramsToCode_prototype(method.paramList_dll());
+		QString paramStr_brg = Method::paramsToCode_prototype(method.paramList_bridge());
 
 		bridgeH.write(paramStr_brg.toUtf8() + ") {");
 		dllH.write(paramStr_dll.toUtf8() + ");\n");
