@@ -71,7 +71,7 @@ Method::returnType_bridge() const
 		case TypeConv::Numeric:
 		case TypeConv::SimpleStruct:
 		case TypeConv::Identity:
-		case TypeConv::Container:
+		case TypeConv::SimpleContainer:
 			retType_bridge = TypeConv::bridgeType(retType_qt);
 			break;
 		case TypeConv::OpaqueStruct:
@@ -117,7 +117,7 @@ Method::paramList_bridge() const
 		case TypeConv::Numeric:
 		case TypeConv::SimpleStruct:
 		case TypeConv::Identity:
-		case TypeConv::Container:
+		case TypeConv::SimpleContainer:
 			break;
 		case TypeConv::OpaqueStruct:
 			param.type = "LStrHandle";
@@ -134,7 +134,7 @@ Method::paramList_bridge() const
 		case TypeConv::Numeric:
 		case TypeConv::SimpleStruct:
 		case TypeConv::Identity:
-		case TypeConv::Container:
+		case TypeConv::SimpleContainer:
 			list.prepend(Param{_className+'*', _className.toLower()});
 			break;
 		case TypeConv::OpaqueStruct:
@@ -166,7 +166,7 @@ Method::paramList_dll() const
 			param.type += '*';
 		case TypeConv::Numeric:
 		case TypeConv::Identity:
-		case TypeConv::Container: // TODO: Use Handle Pointers for containers, for efficiency
+		case TypeConv::SimpleContainer: // TODO: Use Handle Pointers for containers, for efficiency
 			break;
 		case TypeConv::OpaqueStruct:
 			param.type = "LStrHandle";
@@ -202,7 +202,7 @@ Method::paramList_dll() const
 	case TypeConv::SimpleStruct:
 	case TypeConv::Identity:
 		retType += '*';
-	case TypeConv::Container:
+	case TypeConv::SimpleContainer:
 		list.prepend(Param{retType, "retVal"});
 	case TypeConv::Void:
 		break;

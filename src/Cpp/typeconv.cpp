@@ -46,7 +46,7 @@ TypeConv::bridgeType(const QString& qtType)
 	case Boolean:
 	case Numeric:
 	case SimpleStruct:
-	case Container:
+	case SimpleContainer:
 	case Identity:
 		return tmp;
 	case OpaqueStruct:
@@ -71,7 +71,7 @@ TypeConv::dllType(const QString& qtType)
 	case SimpleStruct:
 		return tmp;
 	case Numeric:
-	case Container: return _bridge2dll[tmp].toObject()["dllType"].toString();
+	case SimpleContainer: return _bridge2dll[tmp].toObject()["dllType"].toString();
 	case Identity: return "quint32"; // TODO: See if quintptr is any good
 	case OpaqueStruct:
 		return "LStrHandle";
@@ -132,7 +132,7 @@ TypeConv::convCode_bridge2Dll(const QString& qtType)
 	case SimpleStruct:
 	case OpaqueStruct:
 		return "_bridgeValue_";
-	case Container: return _bridge2dll[qtType].toObject()["bridge2dll"].toString();
+	case SimpleContainer: return _bridge2dll[qtType].toObject()["bridge2dll"].toString();
 	case Identity: return "(_dllType_)_bridgeValue_";
 	default:
 		qWarning() << "WARNING: Don't know how to convert from DLL:" << qtType;
@@ -152,7 +152,7 @@ TypeConv::convCode_dll2Bridge(const QString& qtType)
 	case Numeric:
 	case OpaqueStruct:
 		return "_dllValue_";
-	case Container: return _bridge2dll[qtType].toObject()["dll2bridge"].toString();
+	case SimpleContainer: return _bridge2dll[qtType].toObject()["dll2bridge"].toString();
 	case Identity: return "(_qtType_)_dllValue_";
 	default:
 		qWarning() << "WARNING: Don't know how to convert to DLL:" << qtType;
@@ -171,7 +171,7 @@ TypeConv::convCode_qt2Bridge(const QString& qtType)
 	case Numeric:
 	case SimpleStruct:
 	case Identity:
-	case Container:
+	case SimpleContainer:
 		return "_qtValue_";
 	case OpaqueStruct:
 		return "serialize(_qtValue_)";
@@ -191,7 +191,7 @@ TypeConv::convCode_bridge2Qt(const QString& qtType)
 	case Numeric:
 	case SimpleStruct:
 	case Identity:
-	case Container:
+	case SimpleContainer:
 		return "_bridgeValue_";
 	case OpaqueStruct:
 		return "deserialize<_qtType_>(copyFromLStr(_bridgeValue_))";
