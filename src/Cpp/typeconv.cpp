@@ -119,7 +119,7 @@ TypeConv::dllType(const QString& qtType)
 	case OpaqueStruct:
 		return "LStrHandle";
 	default:
-		qWarning() << "WARNING: Unsupported type:" << qtType;
+		qWarning() << "WARNING: TypeConv::dllType(): Unsupported type:" << qtType;
 		return tmp;
 		// TODO: Decide on a good default to return
 	}
@@ -188,7 +188,7 @@ TypeConv::convCode_bridge2Dll(const QString& qtType)
 	}
 	case Identity: return "(_dllType_)_bridgeValue_";
 	default:
-		qWarning() << "WARNING: Don't know how to convert from DLL:" << qtType;
+		qWarning() << "WARNING: TypeConv::convCode_bridge2Dll(): Don't know how to convert" << qtType;
 		return QString();
 	}
 }
@@ -210,7 +210,7 @@ TypeConv::convCode_dll2Bridge(const QString& qtType)
 		return _bridge2dll[tmp].toObject()["dll2bridge"].toString();
 	case Identity: return "(_qtType_)_dllValue_";
 	default:
-		qWarning() << "WARNING: Don't know how to convert to DLL:" << qtType;
+		qWarning() << "WARNING: TypeConv::convCode_dll2Bridge(): Don't know how to convert" << qtType;
 		return QString();
 	}
 }

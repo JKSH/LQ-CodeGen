@@ -240,7 +240,7 @@ ClassWriter::funcCallBody_inBridge(const Method &method)
 			wrapper = "return new %METHOD_CALL%;";
 			break;
 		default:
-			qWarning() << "WARNING: ClassWriter::funcCallBody_inBridge(): Explicit constructor not supported for type:" << method.className();
+			qWarning() << "WARNING: ClassWriter::funcCallBody_inBridge(): This type cannot have constructors:" << method.className();
 			return "";
 		}
 	}
@@ -266,7 +266,7 @@ ClassWriter::funcCallBody_inBridge(const Method &method)
 			break;
 
 		default:
-			qWarning() << "WARNING: ClassWriter::funcCallBody_inBridge(): Method calls not supported for type:" << method.className();
+			qWarning() << "WARNING: ClassWriter::funcCallBody_inBridge(): This type cannot have methods:" << method.className();
 			return "";
 		}
 
