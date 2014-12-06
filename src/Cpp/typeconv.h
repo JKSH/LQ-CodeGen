@@ -15,7 +15,8 @@ public:
 		SimpleStruct,
 		OpaqueStruct,
 		Identity,
-		SimpleContainer
+		SimpleContainer,
+		FullContainer
 	};
 
 	static void init(const QJsonArray& conversions, Category category);

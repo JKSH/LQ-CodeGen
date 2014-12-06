@@ -212,6 +212,7 @@ ClassWriter::funcCallBody_inDll(const Method &method)
 			body_dll.replace("%RETURN_KEY%", "*retVal = ");
 			break;
 		case TypeConv::SimpleContainer:
+		case TypeConv::FullContainer:
 		case TypeConv::OpaqueStruct:
 			body_dll.replace("%RETURN_KEY%", "");
 			break;

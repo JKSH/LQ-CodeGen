@@ -14,9 +14,21 @@ void
 TypeConv::init(const QJsonArray& conversions, Category category)
 {
 	// TODO: More robust checks
+	// TODO: Warn if the type is already registered
 	for (const QJsonValue& obj : conversions)
 	{
 		QString objName = obj.toObject()["name"].toString();
+
+		if (category == FullContainer)
+		{
+			// Store base names of FullContainers, e.g. "QVector"
+			int templateStartIdx = objName.indexOf('<');
+			if (templateStartIdx != -1)
+				objName = objName.left(templateStartIdx);
+			else
+				qWarning() << "WARNING: TypeConv::init(): Not a FullContainer:" << objName;
+		}
+
 		_bridge2dll[objName] = obj;
 		_categories[objName] = category;
 
@@ -69,6 +81,7 @@ TypeConv::bridgeType(const QString& qtType)
 	case Numeric:
 	case SimpleStruct:
 	case SimpleContainer:
+	case FullContainer:
 	case Identity:
 		return tmp;
 	case OpaqueStruct:
@@ -93,6 +106,15 @@ TypeConv::dllType(const QString& qtType)
 		return tmp;
 	case Numeric:
 	case SimpleContainer: return _bridge2dll[tmp].toObject()["dllType"].toString();
+	case FullContainer:
+	{
+		int start = qtType.indexOf('<') + 1;
+		int end = qtType.lastIndexOf('>');
+
+		QString inner = qtType.mid(start, end-start);
+		QString type = _bridge2dll[tmp].toObject()["dllType"].toString();
+		return type.replace("%DLL_TYPE_INNER%", dllType(inner));
+	}
 	case Identity: return "quint32"; // TODO: See if quintptr is any good
 	case OpaqueStruct:
 		return "LStrHandle";
@@ -154,6 +176,16 @@ TypeConv::convCode_bridge2Dll(const QString& qtType)
 	case OpaqueStruct:
 		return "_bridgeValue_";
 	case SimpleContainer: return _bridge2dll[qtType].toObject()["bridge2dll"].toString();
+	case FullContainer:
+	{
+		int start = qtType.indexOf('<') + 1;
+		int end = qtType.lastIndexOf('>');
+
+		QString inner = qtType.mid(start, end-start);
+		QString type = _bridge2dll[tmp].toObject()["bridge2dll"].toString();
+
+		return type.replace("%DLL_TYPE_INNER%", dllType(inner));
+	}
 	case Identity: return "(_dllType_)_bridgeValue_";
 	default:
 		qWarning() << "WARNING: Don't know how to convert from DLL:" << qtType;
@@ -173,7 +205,9 @@ TypeConv::convCode_dll2Bridge(const QString& qtType)
 	case Numeric:
 	case OpaqueStruct:
 		return "_dllValue_";
-	case SimpleContainer: return _bridge2dll[qtType].toObject()["dll2bridge"].toString();
+	case SimpleContainer:
+	case FullContainer:
+		return _bridge2dll[tmp].toObject()["dll2bridge"].toString();
 	case Identity: return "(_qtType_)_dllValue_";
 	default:
 		qWarning() << "WARNING: Don't know how to convert to DLL:" << qtType;
@@ -193,6 +227,7 @@ TypeConv::convCode_qt2Bridge(const QString& qtType)
 	case SimpleStruct:
 	case Identity:
 	case SimpleContainer:
+	case FullContainer:
 		return "_qtValue_";
 	case OpaqueStruct:
 		return "serialize(_qtValue_)";
@@ -213,6 +248,7 @@ TypeConv::convCode_bridge2Qt(const QString& qtType)
 	case SimpleStruct:
 	case Identity:
 	case SimpleContainer:
+	case FullContainer:
 		return "_bridgeValue_";
 	case OpaqueStruct:
 		return "deserialize<_qtType_>(copyFromLStr(_bridgeValue_))";
