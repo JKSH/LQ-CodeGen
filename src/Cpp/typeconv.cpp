@@ -30,10 +30,32 @@ TypeConv::init(const QJsonArray& conversions, Category category)
 	}
 }
 
+/*!
+	Reduces \a qtType to its minimum, normalized form. This discards minor
+	variations in type names, so that they can be compared for equality.
+
+	For templated container classes, this function also removes information
+	about the type held inside the container.
+
+	e.g. "const QVector<qreal>&" becomes simply "QVector".
+*/
+QString
+TypeConv::typeBase(const QString& qtType)
+{
+	QByteArray tmp = QMetaObject::normalizedType(qtType.toUtf8());
+
+	// TODO: Handle pointers too
+
+	int templateStartIdx = tmp.indexOf('<');
+	if (templateStartIdx != -1)
+		return tmp.left(templateStartIdx);
+	return tmp;
+}
+
 TypeConv::Category
 TypeConv::category(const QString& qtType)
 {
-	return _categories.value(qtType, Invalid);
+	return _categories.value(typeBase(qtType), Invalid);
 }
 
 QString
@@ -62,8 +84,7 @@ TypeConv::bridgeType(const QString& qtType)
 QString
 TypeConv::dllType(const QString& qtType)
 {
-	// TODO: Study normalization
-	QString tmp = QMetaObject::normalizedType(qtType.toUtf8());
+	QString tmp = typeBase(qtType);
 	switch (category(tmp))
 	{
 	case Void:
@@ -124,7 +145,7 @@ TypeConv::instanceType_dll(const QString& qtType)
 QString
 TypeConv::convCode_bridge2Dll(const QString& qtType)
 {
-	QString tmp = QMetaObject::normalizedType(qtType.toUtf8());
+	QString tmp = typeBase(qtType);
 	switch (category(tmp))
 	{
 	case Boolean:
@@ -143,7 +164,7 @@ TypeConv::convCode_bridge2Dll(const QString& qtType)
 QString
 TypeConv::convCode_dll2Bridge(const QString& qtType)
 {
-	QString tmp = QMetaObject::normalizedType(qtType.toUtf8());
+	QString tmp = typeBase(qtType);
 	switch (category(tmp))
 	{
 	case Boolean:

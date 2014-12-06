@@ -21,6 +21,7 @@ public:
 	static void init(const QJsonArray& conversions, Category category);
 
 	static Category category(const QString& qtType);
+	static QString typeBase(const QString& qtType);
 	static QString bridgeType(const QString& qtType);
 	static QString dllType(const QString& qtType);
 
