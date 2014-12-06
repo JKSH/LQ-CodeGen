@@ -34,8 +34,8 @@ int main(int, char **)
 	if (opaqueClasses.isNull())
 		return -1;
 
-	QJsonDocument containers = parseJsonFile("../../data/containers.json");
-	if (containers.isNull())
+	QJsonDocument simpleContainers = parseJsonFile("../../data/simplecontainers.json");
+	if (simpleContainers.isNull())
 		return -1;
 
 	QJsonDocument identities = parseJsonFile("../../data/identities.json");
@@ -55,7 +55,7 @@ int main(int, char **)
 	TypeConv::init(numerics.array(), TypeConv::Numeric);
 	TypeConv::init(simpleStructs.array(), TypeConv::SimpleStruct);
 	TypeConv::init(opaqueClasses.array(), TypeConv::OpaqueStruct);
-	TypeConv::init(containers.array(), TypeConv::Container);
+	TypeConv::init(simpleContainers.array(), TypeConv::SimpleContainer);
 	TypeConv::init(identities.array(), TypeConv::Identity);
 
 	ClassWriter c;
