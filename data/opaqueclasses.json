@@ -29,6 +29,26 @@
 		]
 	},
 	{
+		"name": "QPen",
+		"methods": [
+			{
+				"name": "QPen"
+			},
+			{
+				"name": "dashOffset", "retType": "qreal"
+			},
+			{
+				"name": "dashPattern", "retType": "QVector<qreal>"
+			},
+			{
+				"name": "setDashPattern", "retType": "void",
+				"params": [
+					 {"name": "pattern", "type": "const QVector<qreal>&"}
+				]
+			}
+		]
+	},
+	{
 		"name": "QPixmap",
 		"methods": [
 			{
