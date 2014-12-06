@@ -1,0 +1,8 @@
+[
+	{
+		"name": "QVector<%QT_TYPE_INNER%>",
+		"dllType": "LVArray<%DLL_TYPE_INNER%>**",
+		"dll2bridge": "(*_dllValue_)->toVector()",
+		"bridge2dll": "LVArray<%DLL_TYPE_INNER%>::fromQVector(_dllValue_, _bridgeValue_)"
+	}
+]
