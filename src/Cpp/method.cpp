@@ -57,7 +57,7 @@ Method::returnType_bridge() const
 		case TypeConv::Identity:
 			return _className + '*';
 		default:
-			qWarning() << "WARNING: Method::returnType_bridge(): Explicit constructor not supported for type:" << _className;
+			qWarning() << "WARNING: Method::returnType_bridge(): This type cannot have constructors:" << _className;
 			return "";
 		}
 	}

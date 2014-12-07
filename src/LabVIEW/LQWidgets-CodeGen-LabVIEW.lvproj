@@ -167,7 +167,9 @@
 				<Item Name="VI Scripting - Traverse.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/traverseref.llb/VI Scripting - Traverse.lvlib"/>
 				<Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
 			</Item>
+			<Item Name="Generate and Save Method VIs.vi" Type="VI" URL="../Generate and Save Method VIs.vi"/>
 			<Item Name="LabQt.dll" Type="Document" URL="/C/LabQt/LabQt.dll"/>
+			<Item Name="Save Method VIs.vi" Type="VI" URL="../Save Method VIs.vi"/>
 			<Item Name="TRef FinderCallback.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/traverseref.llb/TRef FinderCallback.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>

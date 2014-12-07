@@ -90,7 +90,7 @@ ClassWriter::stopWriting()
 void
 ClassWriter::writeClass(const QJsonObject& classObj)
 {
-	currentClass = classObj["name"].toString();
+	QString currentClass = classObj["name"].toString();
 	if (currentClass.isEmpty())
 	{
 		qWarning() << "Not a class object:" << classObj;
@@ -118,12 +118,8 @@ ClassWriter::writeClass(const QJsonObject& classObj)
 		dllH.write(funcName + '(');
 		dllC.write(funcName + '(');
 
-		auto paramList_dll = method.paramList_dll();
-		auto paramList_brg = method.paramList_bridge();
-
-		QString paramStr_dll = Method::paramsToCode_prototype(paramList_dll);
-		QString paramStr_brg = Method::paramsToCode_prototype(paramList_brg);
-
+		QString paramStr_dll = Method::paramsToCode_prototype(method.paramList_dll());
+		QString paramStr_brg = Method::paramsToCode_prototype(method.paramList_bridge());
 
 		bridgeH.write(paramStr_brg.toUtf8() + ") {");
 		dllH.write(paramStr_dll.toUtf8() + ");\n");
@@ -144,26 +140,17 @@ ClassWriter::funcCallBody_inDll(const Method &method)
 {
 	QString body_dll;
 	body_dll =
-			"\t"    "if (!bridge)"    "\n"
-			"\t\t"      "return -1;"  "\n\n";
+			"\t"      "if (!bridge)"    "\n"
+			"\t\t"        "return -1;"  "\n\n"
 
-	QString retType_brg = method.returnType_bridge();
-	bool hasReturn = (retType_brg != "void");
-	if (hasReturn)
-		body_dll += "\t" + retType_brg + " retVal_brg;\n";
-
-	body_dll +=
+			""        "%RETURN_VAR_INTERMEDIATE%"
 			"\t"      "QMetaObject::invokeMethod(bridge,"               "\n"
 			"\t\t\t"          "\"" + method.qualifiedName("_") + "\","  "\n"
-			"\t\t\t"          "Qt::BlockingQueuedConnection,"           "\n";
+			"\t\t\t"          "Qt::BlockingQueuedConnection,"           "\n"
+			""                "%RETURN_LINE_INVOKE%"
+			""                "%INSTANCE_LINE_INVOKE%"
+			""                "%INPUT_LINES_INVOKE%";
 
-	if (hasReturn)
-	{
-		body_dll +=
-				"\t\t\tQ_RETURN_ARG(" + retType_brg + ", retVal_brg)," "\n";
-	}
-
-	// Add instance
 	if (!method.isConstructor())
 	{
 		QString thisClass = method.className();
@@ -172,11 +159,26 @@ ClassWriter::funcCallBody_inDll(const Method &method)
 		conversion.replace("_qtType_", TypeConv::instanceType_bridge(thisClass));
 		conversion.replace("_dllValue_", thisClass.toLower());
 
-		body_dll
-				+= "\t\t\tQ_ARG(" + TypeConv::instanceType_bridge(thisClass) + ", "
-				+ conversion + "),\n";
+		body_dll.replace("%INSTANCE_LINE_INVOKE%", "\t\t\tQ_ARG(" + TypeConv::instanceType_bridge(thisClass) + ", "	+ conversion + "),\n");
+	}
+	else
+		body_dll.replace("%INSTANCE_LINE_INVOKE%", "");
+
+	QString retType_brg = method.returnType_bridge();
+	bool hasReturn = (retType_brg != "void");
+	if (hasReturn)
+	{
+		body_dll.replace("%RETURN_VAR_INTERMEDIATE%", "\t%RETURN_TYPE_BRIDGE% retVal_brg;\n");
+		body_dll.replace("%RETURN_LINE_INVOKE%", "\t\t\tQ_RETURN_ARG(%RETURN_TYPE_BRIDGE%, retVal_brg)," "\n");
+		body_dll.replace("%RETURN_TYPE_BRIDGE%", retType_brg);
+	}
+	else
+	{
+		body_dll.replace("%RETURN_VAR_INTERMEDIATE%", "");
+		body_dll.replace("%RETURN_LINE_INVOKE%", "");
 	}
 
+	QString inputLines;
 	for (const Param& p : method.paramList_raw())
 	{
 		QByteArray normType = QMetaObject::normalizedType(p.type.toUtf8());
@@ -184,17 +186,17 @@ ClassWriter::funcCallBody_inDll(const Method &method)
 		conversion.replace("_qtType_", normType);
 		conversion.replace("_dllValue_", p.name);
 
-		body_dll
+		inputLines
 				+= "\t\t\tQ_ARG(" + TypeConv::bridgeType(p.type) + ", "
 				+ conversion + "),\n";
 	}
+	body_dll.replace("%INPUT_LINES_INVOKE%", inputLines);
+
 	body_dll.chop(2);
 	body_dll += ");\n";
 
 	if (hasReturn)
 	{
-		QByteArray retType_brg = QMetaObject::normalizedType(method.returnType_bridge().toUtf8());
-
 		QString conversion = TypeConv::convCode_bridge2Dll(retType_brg);
 		conversion.replace("_dllType_", method.returnType_dll());
 		conversion.replace("_dllValue_", "retVal");
@@ -244,7 +246,7 @@ ClassWriter::funcCallBody_inBridge(const Method &method)
 			wrapper = "return new %METHOD_CALL%;";
 			break;
 		default:
-			qWarning() << "WARNING: ClassWriter::funcCallBody_inBridge(): Explicit constructor not supported for type:" << method.className();
+			qWarning() << "WARNING: ClassWriter::funcCallBody_inBridge(): This type cannot have constructors:" << method.className();
 			return "";
 		}
 	}
@@ -270,7 +272,7 @@ ClassWriter::funcCallBody_inBridge(const Method &method)
 			break;
 
 		default:
-			qWarning() << "WARNING: ClassWriter::funcCallBody_inBridge(): Method calls not supported for type:" << method.className();
+			qWarning() << "WARNING: ClassWriter::funcCallBody_inBridge(): This type cannot have methods:" << method.className();
 			return "";
 		}
 
