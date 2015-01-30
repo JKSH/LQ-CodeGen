@@ -17,6 +17,8 @@
 		<Item Name="Data Structures" Type="Folder">
 			<Item Name="JSON" Type="Folder">
 				<Item Name="Class.ctl" Type="VI" URL="../Data Structures/JSON/Class.ctl"/>
+				<Item Name="Enum Value.ctl" Type="VI" URL="../Data Structures/JSON/Enum Value.ctl"/>
+				<Item Name="Enum.ctl" Type="VI" URL="../Data Structures/JSON/Enum.ctl"/>
 				<Item Name="Method.ctl" Type="VI" URL="../Data Structures/JSON/Method.ctl"/>
 				<Item Name="Param.ctl" Type="VI" URL="../Data Structures/JSON/Param.ctl"/>
 				<Item Name="Property.ctl" Type="VI" URL="../Data Structures/JSON/Property.ctl"/>
@@ -45,6 +47,7 @@
 			<Item Name="Abstract Param Writer.lvclass" Type="LVClass" URL="../Param Writers/Abstract Param Writer/Abstract Param Writer.lvclass"/>
 			<Item Name="Array Writer.lvclass" Type="LVClass" URL="../Param Writers/Array Writer/Array Writer.lvclass"/>
 			<Item Name="Bool Writer.lvclass" Type="LVClass" URL="../Param Writers/Bool Writer/Bool Writer.lvclass"/>
+			<Item Name="Enum Writer.lvclass" Type="LVClass" URL="../Param Writers/Enum Writer/Enum Writer.lvclass"/>
 			<Item Name="Number Writer.lvclass" Type="LVClass" URL="../Param Writers/Number Writer/Number Writer.lvclass"/>
 			<Item Name="Opaque Struct Writer.lvclass" Type="LVClass" URL="../Param Writers/Opaque Struct Writer/Opaque Struct Writer.lvclass"/>
 			<Item Name="QObject Writer.lvclass" Type="LVClass" URL="../Param Writers/QObject Writer/QObject Writer.lvclass"/>
@@ -54,6 +57,7 @@
 		<Item Name="Add Property.vi" Type="VI" URL="../Add Property.vi"/>
 		<Item Name="Build Inheritance Map.vi" Type="VI" URL="../Build Inheritance Map.vi"/>
 		<Item Name="Create Cluster Typedefs.vi" Type="VI" URL="../Create Cluster Typedefs.vi"/>
+		<Item Name="Create Enum Typedefs.vi" Type="VI" URL="../Create Enum Typedefs.vi"/>
 		<Item Name="Create LVClass Control.vi" Type="VI" URL="../Create LVClass Control.vi"/>
 		<Item Name="Create Method VIs.vi" Type="VI" URL="../Create Method VIs.vi"/>
 		<Item Name="Create New Class.vi" Type="VI" URL="../Create New Class.vi"/>

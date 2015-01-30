@@ -79,6 +79,7 @@ TypeConv::bridgeType(const QString& qtType)
 	case Void:
 	case Boolean:
 	case Numeric:
+	case Enum:
 	case SimpleStruct:
 	case SimpleContainer:
 	case FullContainer:
@@ -106,6 +107,8 @@ TypeConv::dllType(const QString& qtType)
 		return tmp;
 	case Numeric:
 	case SimpleContainer: return _bridge2dll[tmp].toObject()["dllType"].toString();
+	case Enum:
+		return "int32"; // ASSUMPTION: All enums fit in 32-bit integers
 	case FullContainer:
 	{
 		int start = qtType.indexOf('<') + 1;
@@ -186,7 +189,9 @@ TypeConv::convCode_bridge2Dll(const QString& qtType)
 
 		return type.replace("%DLL_TYPE_INNER%", dllType(inner));
 	}
-	case Identity: return "(_dllType_)_bridgeValue_";
+	case Enum:
+	case Identity:
+		return "(_dllType_)_bridgeValue_";
 	default:
 		qWarning() << "WARNING: TypeConv::convCode_bridge2Dll(): Don't know how to convert" << qtType;
 		return QString();
@@ -208,6 +213,7 @@ TypeConv::convCode_dll2Bridge(const QString& qtType)
 	case SimpleContainer:
 	case FullContainer:
 		return _bridge2dll[tmp].toObject()["dll2bridge"].toString();
+	case Enum:
 	case Identity: return "(_qtType_)_dllValue_";
 	default:
 		qWarning() << "WARNING: TypeConv::convCode_dll2Bridge(): Don't know how to convert" << qtType;
@@ -224,6 +230,7 @@ TypeConv::convCode_qt2Bridge(const QString& qtType)
 	case Void:
 	case Boolean:
 	case Numeric:
+	case Enum:
 	case SimpleStruct:
 	case Identity:
 	case SimpleContainer:
@@ -245,6 +252,7 @@ TypeConv::convCode_bridge2Qt(const QString& qtType)
 	{
 	case Boolean:
 	case Numeric:
+	case Enum:
 	case SimpleStruct:
 	case Identity:
 	case SimpleContainer:

@@ -169,6 +169,17 @@
 	},
 	{
 		"name": "QComboBox", "base": "QWidget",
+		"enums": [
+			{
+				"name": "SizeAdjustPolicy",
+				"values": [
+					{"name": "AdjustToContents", "value": 0},
+					{"name": "AdjustToContentsOnFirstShow", "value": 1},
+					{"name": "AdjustToMinimumContentsLength", "value": 2},
+					{"name": "AdjustToMinimumContentsLengthWithIcon", "value": 3}
+				]
+			}
+		],
 		"methods": [
 			{
 				"name": "QComboBox"
@@ -178,6 +189,22 @@
 				"params": [
 					 {"name": "texts", "type": "const QStringList&"}
 				]
+			},
+			{
+				"name": "setSizeAdjustPolicy", "retType": "void",
+				"params": [
+					 {"name": "policy", "type": "QComboBox::SizeAdjustPolicy"}
+				]
+			},
+			{
+				"name": "sizeAdjustPolicy", "retType": "QComboBox::SizeAdjustPolicy"
+			}
+		],
+		"properties": [
+			{
+				"name": "sizeAdjustPolicy",
+				"getter": "sizeAdjustPolicy",
+				"setter": "setSizeAdjustPolicy"
 			}
 		]
 	},

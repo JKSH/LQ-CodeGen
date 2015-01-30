@@ -19,6 +19,34 @@ parseJsonFile(const QString& filePath)
 	return doc;
 }
 
+/*!
+	Goes through the array of \a entities (which can be classes
+	or namespaces) and extracts any enums within.
+
+	Returns an array of enums with fully-qualified names.
+*/
+static QJsonArray
+extractEnums(const QJsonArray& entities)
+{
+	QJsonArray enums;
+
+	for (const QJsonValue& entity : entities)
+	{
+		QJsonObject entityObj = entity.toObject();
+		QString entityName = entityObj["name"].toString();
+		for (const QJsonValue& entry : entityObj["enums"].toArray())
+		{
+			// Fully qualify the name
+			auto finalEnum = entry.toObject();
+			QString baseName = finalEnum["name"].toString();
+			finalEnum["name"] = entityName + "::" + baseName;
+			enums << finalEnum;
+		}
+	}
+
+	return enums;
+}
+
 int main(int, char **)
 {
 	// Read data
@@ -57,6 +85,7 @@ int main(int, char **)
 	TypeConv::init(QJsonArray()<<voidObj, TypeConv::Void);
 	TypeConv::init(QJsonArray()<<boolObj, TypeConv::Boolean);
 	TypeConv::init(numerics.array(), TypeConv::Numeric);
+	TypeConv::init(extractEnums(identities.array()), TypeConv::Enum);
 	TypeConv::init(simpleStructs.array(), TypeConv::SimpleStruct);
 	TypeConv::init(opaqueClasses.array(), TypeConv::OpaqueStruct);
 	TypeConv::init(simpleContainers.array(), TypeConv::SimpleContainer);
