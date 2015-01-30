@@ -69,6 +69,7 @@ Method::returnType_bridge() const
 		case TypeConv::Void:
 		case TypeConv::Boolean:
 		case TypeConv::Numeric:
+		case TypeConv::Enum:
 		case TypeConv::SimpleStruct:
 		case TypeConv::Identity:
 		case TypeConv::SimpleContainer:
@@ -116,6 +117,7 @@ Method::paramList_bridge() const
 		{
 		case TypeConv::Boolean:
 		case TypeConv::Numeric:
+		case TypeConv::Enum:
 		case TypeConv::SimpleStruct:
 		case TypeConv::Identity:
 		case TypeConv::SimpleContainer:
@@ -167,6 +169,7 @@ Method::paramList_dll() const
 		case TypeConv::SimpleStruct:
 			param.type += '*';
 		case TypeConv::Numeric:
+		case TypeConv::Enum:
 		case TypeConv::Identity:
 		case TypeConv::SimpleContainer: // TODO: Use Handle Pointers for containers, for efficiency
 		case TypeConv::FullContainer:
@@ -202,6 +205,7 @@ Method::paramList_dll() const
 	//       There is only 1 "break", before "default".
 	case TypeConv::Boolean:
 	case TypeConv::Numeric:
+	case TypeConv::Enum:
 	case TypeConv::SimpleStruct:
 	case TypeConv::Identity:
 		retType += '*';

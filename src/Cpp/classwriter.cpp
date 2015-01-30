@@ -209,6 +209,7 @@ ClassWriter::funcCallBody_inDll(const Method &method)
 		{
 		case TypeConv::Boolean:
 		case TypeConv::Numeric:
+		case TypeConv::Enum:
 		case TypeConv::SimpleStruct:
 		case TypeConv::Identity:
 			body_dll.replace("%RETURN_KEY%", "*retVal = ");

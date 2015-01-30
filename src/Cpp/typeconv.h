@@ -11,6 +11,7 @@ namespace TypeConv
 		Void,
 		Boolean,
 		Numeric,
+		Enum,
 		SimpleStruct,
 		OpaqueStruct,
 		Identity,
