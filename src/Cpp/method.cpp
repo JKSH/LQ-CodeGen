@@ -73,7 +73,7 @@ Method::returnType_bridge() const
 		case TypeConv::SimpleStruct:
 		case TypeConv::Identity:
 		case TypeConv::SimpleContainer:
-		case TypeConv::FullContainer:
+		case TypeConv::FullArray:
 			retType_bridge = TypeConv::bridgeType(retType_qt);
 			break;
 		case TypeConv::OpaqueStruct:
@@ -121,7 +121,7 @@ Method::paramList_bridge() const
 		case TypeConv::SimpleStruct:
 		case TypeConv::Identity:
 		case TypeConv::SimpleContainer:
-		case TypeConv::FullContainer:
+		case TypeConv::FullArray:
 			break;
 		case TypeConv::OpaqueStruct:
 			param.type = "LStrHandle";
@@ -172,7 +172,7 @@ Method::paramList_dll() const
 		case TypeConv::Enum:
 		case TypeConv::Identity:
 		case TypeConv::SimpleContainer: // TODO: Use Handle Pointers for containers, for efficiency
-		case TypeConv::FullContainer:
+		case TypeConv::FullArray:
 			break;
 		case TypeConv::OpaqueStruct:
 			param.type = "LStrHandle";
@@ -210,7 +210,7 @@ Method::paramList_dll() const
 	case TypeConv::Identity:
 		retType += '*';
 	case TypeConv::SimpleContainer:
-	case TypeConv::FullContainer:
+	case TypeConv::FullArray:
 		list.prepend(Param{retType, "retVal"});
 	case TypeConv::Void:
 		break;

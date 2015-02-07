@@ -44,6 +44,15 @@
 			<Property Name="NI.ClassItem.State" Type="Int">1107820544</Property>
 		</Item>
 	</Item>
+	<Item Name="Add Element to Constant.vi" Type="VI" URL="../Add Element to Constant.vi">
+		<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!%;!!!!"Q!%!!!!)E"Q!!A!!%!#!!!51WRV=X2F=C"P=C""=H*B?3"%&gt;8!!!$*!=!!?!!!8&amp;5ZV&lt;7*F=C"8=GFU:8)O&lt;(:D&lt;'&amp;T=Q!24H6N9G6S)&amp;&gt;S;82F=C"P&gt;81!&amp;E!Q`````QR&amp;&lt;'6N:7ZU)%ZB&lt;75!!"Z!=!!)!!"!!A!!%%.M&gt;8.U:8)A&lt;X)A18*S98E!!$*!=!!?!!!8&amp;5ZV&lt;7*F=C"8=GFU:8)O&lt;(:D&lt;'&amp;T=Q!14H6N9G6S)&amp;&gt;S;82F=C"J&lt;A!!6!$Q!!Q!!!!!!!%!!A!!!!!!!!!!!!!!!Q!%!!5$!!"Y!!!!!!!!!!!!!!U+!!#.#Q!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1!!!!%!!!!*!!!!!!!1!'!!!!!!</Property>
+		<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
+		<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>
+		<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">false</Property>
+		<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
+		<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
+		<Property Name="NI.ClassItem.State" Type="Int">1107821072</Property>
+	</Item>
 	<Item Name="Add Element to Control.vi" Type="VI" URL="../Add Element to Control.vi">
 		<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!%;!!!!"Q!%!!!!)E"Q!!A!!!!'!!!51WRV=X2F=C"P=C""=H*B?3"%&gt;8!!!$*!=!!?!!!8&amp;5ZV&lt;7*F=C"8=GFU:8)O&lt;(:D&lt;'&amp;T=Q!24H6N9G6S)&amp;&gt;S;82F=C"P&gt;81!&amp;E!Q`````QR&amp;&lt;'6N:7ZU)%ZB&lt;75!!"Z!=!!)!!!!"A!!%%.M&gt;8.U:8)A&lt;X)A18*S98E!!$*!=!!?!!!8&amp;5ZV&lt;7*F=C"8=GFU:8)O&lt;(:D&lt;'&amp;T=Q!14H6N9G6S)&amp;&gt;S;82F=C"J&lt;A!!6!$Q!!Q!!!!!!!%!!A!!!!!!!!!!!!!!!Q!%!!5$!!"Y!!!!!!!!!!!!!!U+!!#.#Q!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1!!!!%A!!!*!!!!!!!1!'!!!!!!</Property>
 		<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
