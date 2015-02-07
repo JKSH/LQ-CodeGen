@@ -16,7 +16,7 @@ namespace TypeConv
 		OpaqueStruct,
 		Identity,
 		SimpleContainer,
-		FullContainer
+		FullArray
 	};
 
 	void init(const QJsonArray& conversions, Category category);

@@ -19,14 +19,14 @@ TypeConv::init(const QJsonArray& conversions, Category category)
 	{
 		QString objName = obj.toObject()["name"].toString();
 
-		if (category == FullContainer)
+		if (category == FullArray)
 		{
-			// Store base names of FullContainers, e.g. "QVector"
+			// Store base names of FullArrays, e.g. "QVector"
 			int templateStartIdx = objName.indexOf('<');
 			if (templateStartIdx != -1)
 				objName = objName.left(templateStartIdx);
 			else
-				qWarning() << "WARNING: TypeConv::init(): Not a FullContainer:" << objName;
+				qWarning() << "WARNING: TypeConv::init(): Not a FullArray:" << objName;
 		}
 
 		_bridge2dll[objName] = obj;
@@ -82,7 +82,7 @@ TypeConv::bridgeType(const QString& qtType)
 	case Enum:
 	case SimpleStruct:
 	case SimpleContainer:
-	case FullContainer:
+	case FullArray:
 	case Identity:
 		return tmp;
 	case OpaqueStruct:
@@ -109,7 +109,7 @@ TypeConv::dllType(const QString& qtType)
 	case SimpleContainer: return _bridge2dll[tmp].toObject()["dllType"].toString();
 	case Enum:
 		return "int32"; // ASSUMPTION: All enums fit in 32-bit integers
-	case FullContainer:
+	case FullArray:
 	{
 		int start = qtType.indexOf('<') + 1;
 		int end = qtType.lastIndexOf('>');
@@ -179,7 +179,7 @@ TypeConv::convCode_bridge2Dll(const QString& qtType)
 	case OpaqueStruct:
 		return "_bridgeValue_";
 	case SimpleContainer: return _bridge2dll[qtType].toObject()["bridge2dll"].toString();
-	case FullContainer:
+	case FullArray:
 	{
 		int start = qtType.indexOf('<') + 1;
 		int end = qtType.lastIndexOf('>');
@@ -211,7 +211,7 @@ TypeConv::convCode_dll2Bridge(const QString& qtType)
 	case OpaqueStruct:
 		return "_dllValue_";
 	case SimpleContainer:
-	case FullContainer:
+	case FullArray:
 		return _bridge2dll[tmp].toObject()["dll2bridge"].toString();
 	case Enum:
 	case Identity: return "(_qtType_)_dllValue_";
@@ -234,7 +234,7 @@ TypeConv::convCode_qt2Bridge(const QString& qtType)
 	case SimpleStruct:
 	case Identity:
 	case SimpleContainer:
-	case FullContainer:
+	case FullArray:
 		return "_qtValue_";
 	case OpaqueStruct:
 		return "serialize(_qtValue_)";
@@ -256,7 +256,7 @@ TypeConv::convCode_bridge2Qt(const QString& qtType)
 	case SimpleStruct:
 	case Identity:
 	case SimpleContainer:
-	case FullContainer:
+	case FullArray:
 		return "_bridgeValue_";
 	case OpaqueStruct:
 		return "deserialize<_qtType_>(copyFromLStr(_bridgeValue_))";
