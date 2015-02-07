@@ -70,6 +70,7 @@
 		<Item Name="Main.vi" Type="VI" URL="../Main.vi"/>
 		<Item Name="Prepare Class Save Dir.vi" Type="VI" URL="../Prepare Class Save Dir.vi"/>
 		<Item Name="Seed LVLIB.vi" Type="VI" URL="../Seed LVLIB.vi"/>
+		<Item Name="TypeConv_Obtain Writer.vi" Type="VI" URL="../Param Writers/TypeConv/TypeConv_Obtain Writer.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="user.lib" Type="Folder">
 				<Item Name="Array of VData to VArray__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/lvdata/lvdata.llb/Array of VData to VArray__ogtk.vi"/>
