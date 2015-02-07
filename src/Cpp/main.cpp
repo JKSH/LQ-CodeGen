@@ -66,7 +66,7 @@ int main(int, char **)
 	if (simpleContainers.isNull())
 		return -1;
 
-	QJsonDocument fullArrays = parseJsonFile("../../data/fullcontainers.json");
+	QJsonDocument fullArrays = parseJsonFile("../../data/fullarrays.json");
 	if (fullArrays.isNull())
 		return -1;
 
