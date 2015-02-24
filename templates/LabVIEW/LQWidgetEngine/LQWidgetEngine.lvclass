@@ -4,6 +4,7 @@
 	<Property Name="NI.Lib.ContainingLibPath" Type="Str">../../Template.lvlib</Property>
 	<Property Name="NI.Lib.FriendGUID" Type="Str">3b52310c-db5d-494f-999a-3037140af5a6</Property>
 	<Property Name="NI.Lib.Icon" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!(S!!!*Q(C=\&gt;4"&lt;2MR%!813:"$LOIA5!P4AFJ1#^/#LDGKB7F",;C$9&amp;J1#WL"?&lt;MAAJSC3Y,Y9.+5L&lt;`=Y4/8W)C^@9XY%G_PWI]`NI`LL[[`;0(20NL`&lt;&gt;^@(N*`@G9`R@9C-M:IIYS-&lt;;GXE9^]Z#-@_=B&lt;XP+7N\TF,3^ZS5N?]J+80/5J4XH+5Z\SP=N$(P+1)YX&amp;RU+D[#AQ*K0%_"C?Y2G?Y@%VBG&gt;YBG&gt;YBM?5'*\B':\B'2[XR@!-T`!-T`!IN5NG\X+?Y6%_GK&gt;ZGK&gt;ZGM?3U4Q.U":LB6M2D'A8WR`.UTT.Y]^IHO:JHO:J(J?D?:KH?:KH?&gt;SS\ULPGKX,?:3*YCG?YCG?YF%[CK&gt;YCK&gt;YCM&gt;S54T&amp;5R"FQ6)=)=J.:5,Z5DT&amp;YV=54`%54`%5DUP\%[J^:T&lt;.VO5]S:-]S:-]S;.%*%`S*%`S*)_SE4T*ETT*ETS7CO2*HO2*E,3IZ3-63T?G33F)(D`\;=H^+@5OS&lt;V(L--&lt;[V$'/GSR$F'MQR(LI=&gt;[G,%?5KT.D\7JM49LVC&lt;%_O&gt;CI7.B9CU3[_:N9DR^0IS\=4/ORM5Y'S@D;"SW7``SR/@T'9`()_\X?^RON\B?LX'Z8/*]0M@J&gt;)LD]2C(Q_(8;_#&lt;`OO&amp;]"\?3_`#]$F_LWO0@A+=/$7N!!!!!!</Property>
+	<Property Name="NI.Lib.LocalName" Type="Str">LQWidgetEngine</Property>
 	<Property Name="NI.Lib.SourceVersion" Type="Int">318799872</Property>
 	<Property Name="NI.Lib.Version" Type="Str">1.0.0.0</Property>
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">true</Property>
