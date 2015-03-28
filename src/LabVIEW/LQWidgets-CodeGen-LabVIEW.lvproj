@@ -73,7 +73,7 @@
 		<Item Name="Generate Subclasses.vi" Type="VI" URL="../Generate Subclasses.vi"/>
 		<Item Name="Get Template LVClass.vi" Type="VI" URL="../Get Template LVClass.vi"/>
 		<Item Name="Main.vi" Type="VI" URL="../Main.vi"/>
-		<Item Name="Prepare Class Save Dir.vi" Type="VI" URL="../Prepare Class Save Dir.vi"/>
+		<Item Name="Prepare Save Dir.vi" Type="VI" URL="../Prepare Save Dir.vi"/>
 		<Item Name="Seed LVLIB.vi" Type="VI" URL="../Seed LVLIB.vi"/>
 		<Item Name="TypeConv_Obtain Writer.vi" Type="VI" URL="../Param Writers/TypeConv/TypeConv_Obtain Writer.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
