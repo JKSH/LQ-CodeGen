@@ -8,7 +8,7 @@
 
 extern "C" {
 
-extern qint32 Q_DECL_EXPORT startWidgetEngine();
+extern qint32 Q_DECL_EXPORT startWidgetEngine(LStrHandle pluginDir);
 extern qint32 Q_DECL_EXPORT stopWidgetEngine();
 
 extern qint32 Q_DECL_EXPORT registerEventRefs(LVUserEventRef* voidRef, LVUserEventRef* boolRef, LVUserEventRef* i32Ref, LVUserEventRef* stringRef);
