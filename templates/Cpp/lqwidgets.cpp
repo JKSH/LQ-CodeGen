@@ -35,7 +35,7 @@ run()
 // TODO: Return version info to protect against mismatched VI-DLL combos
 // TODO: Decide if the LV dev needs access to QApplication methods
 qint32 Q_DECL_EXPORT
-startWidgetEngine()
+startWidgetEngine(LStrHandle pluginDir)
 {
 	if (bridge)
 	{
@@ -43,6 +43,7 @@ startWidgetEngine()
 		return -1;
 	}
 
+	QCoreApplication::addLibraryPath(QString::fromUtf8( (char*)(*pluginDir)->str, LStrLen(*pluginDir) ));
 	std::thread t(&run);
 	t.detach();
 
