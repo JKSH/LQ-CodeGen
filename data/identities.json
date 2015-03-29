@@ -9,6 +9,9 @@
 				"name": "QWidget"
 			},
 			{
+				"name": "focusPolicy", "retType": "Qt::FocusPolicy"
+			},
+			{
 				"name": "geometry", "retType": "QRect"
 			},
 			{
@@ -33,6 +36,12 @@
 				"name": "setEnabled", "retType": "void",
 				"params": [
 					{"name": "enabled", "type": "bool"}
+				]
+			},
+			{
+				"name": "setFocusPolicy", "retType": "void",
+				"params": [
+					{"name": "policy", "type": "Qt::FocusPolicy"}
 				]
 			},
 			{
@@ -119,6 +128,11 @@
 				"name": "enabled",
 				"getter": "isEnabled",
 				"setter": "setEnabled"
+			},
+			{
+				"name": "focusPolicy",
+				"getter": "focusPolicy",
+				"setter": "setFocusPolicy"
 			},
 			{
 				"name": "geometry",

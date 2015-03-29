@@ -50,6 +50,10 @@ extractEnums(const QJsonArray& entities)
 int main(int, char **)
 {
 	// Read data
+	QJsonDocument namespaces = parseJsonFile("../../data/namespaces.json");
+	if (namespaces.isNull())
+		return -1;
+
 	QJsonDocument numerics = parseJsonFile("../../data/numerics.json");
 	if (numerics.isNull())
 		return -1;
@@ -86,6 +90,7 @@ int main(int, char **)
 	TypeConv::init(QJsonArray()<<boolObj, TypeConv::Boolean);
 	TypeConv::init(numerics.array(), TypeConv::Numeric);
 	TypeConv::init(extractEnums(identities.array()), TypeConv::Enum);
+	TypeConv::init(extractEnums(namespaces.array()), TypeConv::Enum);
 	TypeConv::init(simpleStructs.array(), TypeConv::SimpleStruct);
 	TypeConv::init(opaqueClasses.array(), TypeConv::OpaqueStruct);
 	TypeConv::init(simpleContainers.array(), TypeConv::SimpleContainer);

@@ -1,0 +1,32 @@
+[
+	{
+		"name": "Qt",
+		"enums": [
+			{
+				"name": "FocusPolicy",
+				"values": [
+					{
+						"name": "ClickFocus",
+						"value": 2
+					},
+					{
+						"name": "NoFocus",
+						"value": 0
+					},
+					{
+						"name": "StrongFocus",
+						"value": 11
+					},
+					{
+						"name": "TabFocus",
+						"value": 1
+					},
+					{
+						"name": "WheelFocus",
+						"value": 15
+					}
+				]
+			}
+		]
+	}
+]
