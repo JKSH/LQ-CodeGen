@@ -1,8 +1,5 @@
 [
 	{
-		"name": "QObject"
-	},
-	{
 		"name": "QWidget", "base": "QObject",
 		"methods": [
 			{
