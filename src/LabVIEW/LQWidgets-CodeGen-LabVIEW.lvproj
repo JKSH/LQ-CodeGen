@@ -61,22 +61,20 @@
 			<Item Name="String Writer.lvclass" Type="LVClass" URL="../Param Writers/String Writer/String Writer.lvclass"/>
 		</Item>
 		<Item Name="Add Property.vi" Type="VI" URL="../Add Property.vi"/>
-		<Item Name="Build Inheritance Map.vi" Type="VI" URL="../Build Inheritance Map.vi"/>
 		<Item Name="Create Cluster Typedefs.vi" Type="VI" URL="../Create Cluster Typedefs.vi"/>
 		<Item Name="Create Enum Typedefs.vi" Type="VI" URL="../Create Enum Typedefs.vi"/>
+		<Item Name="Create Identity Classes.vi" Type="VI" URL="../Create Identity Classes.vi"/>
 		<Item Name="Create LVClass Control.vi" Type="VI" URL="../Create LVClass Control.vi"/>
 		<Item Name="Create Method VIs.vi" Type="VI" URL="../Create Method VIs.vi"/>
 		<Item Name="Create Namespaces.vi" Type="VI" URL="../Create Namespaces.vi"/>
 		<Item Name="Create New Class.vi" Type="VI" URL="../Create New Class.vi"/>
 		<Item Name="Create Opaque Structs.vi" Type="VI" URL="../Create Opaque Structs.vi"/>
 		<Item Name="Delete Template VIs.vi" Type="VI" URL="../Delete Template VIs.vi"/>
-		<Item Name="Extract Subclasses.vi" Type="VI" URL="../Extract Subclasses.vi"/>
-		<Item Name="Generate Class and Subclasses.vi" Type="VI" URL="../Generate Class and Subclasses.vi"/>
-		<Item Name="Generate Subclasses.vi" Type="VI" URL="../Generate Subclasses.vi"/>
 		<Item Name="Get Template LVClass.vi" Type="VI" URL="../Get Template LVClass.vi"/>
 		<Item Name="Main.vi" Type="VI" URL="../Main.vi"/>
 		<Item Name="Prepare Save Dir.vi" Type="VI" URL="../Prepare Save Dir.vi"/>
 		<Item Name="Seed LVLIB.vi" Type="VI" URL="../Seed LVLIB.vi"/>
+		<Item Name="Set Inheritances.vi" Type="VI" URL="../Set Inheritances.vi"/>
 		<Item Name="TypeConv_Obtain Writer.vi" Type="VI" URL="../Param Writers/TypeConv/TypeConv_Obtain Writer.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="user.lib" Type="Folder">
