@@ -74,6 +74,7 @@
 		<Item Name="Main.vi" Type="VI" URL="../Main.vi"/>
 		<Item Name="Prepare Save Dir.vi" Type="VI" URL="../Prepare Save Dir.vi"/>
 		<Item Name="Seed LVLIB.vi" Type="VI" URL="../Seed LVLIB.vi"/>
+		<Item Name="Set Friendships.vi" Type="VI" URL="../Set Friendships.vi"/>
 		<Item Name="Set Inheritances.vi" Type="VI" URL="../Set Inheritances.vi"/>
 		<Item Name="TypeConv_Obtain Writer.vi" Type="VI" URL="../Param Writers/TypeConv/TypeConv_Obtain Writer.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
