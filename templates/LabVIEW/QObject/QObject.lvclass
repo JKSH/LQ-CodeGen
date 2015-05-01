@@ -32,18 +32,18 @@
 	<Item Name="QObject.ctl" Type="Class Private Data" URL="QObject.ctl">
 		<Property Name="NI.LibItem.Scope" Type="Int">2</Property>
 	</Item>
-	<Item Name="Protected" Type="Folder">
-		<Property Name="NI.LibItem.Scope" Type="Int">3</Property>
-		<Item Name="lqManifestation.vi" Type="VI" URL="../Protected/lqManifestation.vi">
+	<Item Name="Community" Type="Folder">
+		<Property Name="NI.LibItem.Scope" Type="Int">4</Property>
+		<Item Name="lqManifestation.vi" Type="VI" URL="../Community/lqManifestation.vi">
 			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!&amp;$!!!!#A!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!"!!!!!V!"Q!'5G6G&lt;H6N!!!W1(!!(A!!)!Z5:7VQ&lt;'&amp;U:3ZM&gt;GRJ9A^24W*K:7.U,GRW9WRB=X-!!!N24W*K:7.U)'^V&gt;!!A1&amp;!!!Q!!!!%!!B.F=H*P=C"J&lt;C!I&lt;G]A:8*S&lt;X)J!$:!=!!?!!!A$F2F&lt;8"M982F,GRW&lt;'FC$V&amp;09GJF9X1O&lt;(:D&lt;'&amp;T=Q!!#F&amp;09GJF9X1A;7Y!!'%!]!!-!!-!"!!&amp;!!9!"!!%!!1!"!!(!!1!"!!)!A!!?!!!$1A!!!!!!!!*!!!!$1M!!!!!!!!!!!!!!!!!!!!!!!!)!!!!!!!!!!!!!!!1!!!.!!!!$!!!!!!!!!!!!!!"!!E!!!!!</Property>
 			<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
 			<Property Name="NI.ClassItem.Flags" Type="Int">16777216</Property>
 			<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">true</Property>
-			<Property Name="NI.ClassItem.MethodScope" Type="UInt">3</Property>
+			<Property Name="NI.ClassItem.MethodScope" Type="UInt">4</Property>
 			<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
 			<Property Name="NI.ClassItem.State" Type="Int">8396800</Property>
 		</Item>
-		<Item Name="lqSetManifestation.vi" Type="VI" URL="../Protected/lqSetManifestation.vi">
+		<Item Name="lqSetManifestation.vi" Type="VI" URL="../Community/lqSetManifestation.vi">
 			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!&amp;$!!!!#A!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!"!!!!$:!=!!?!!!A$F2F&lt;8"M982F,GRW&lt;'FC$V&amp;09GJF9X1O&lt;(:D&lt;'&amp;T=Q!!#V&amp;09GJF9X1A&lt;X6U!#"!5!!$!!!!!1!#%W6S=G^S)'FO)#BO&lt;S"F=H*P=CE!$5!(!!:3:7:O&gt;7U!!$:!=!!?!!!A$F2F&lt;8"M982F,GRW&lt;'FC$V&amp;09GJF9X1O&lt;(:D&lt;'&amp;T=Q!!#F&amp;09GJF9X1A;7Y!!'%!]!!-!!-!"!!%!!5!"!!%!!1!"!!'!!1!"Q!)!A!!?!!!$1A!!!!!!!!!!!!!$1M!!!!!!!!!!!!!!!!!!!!!!!!)!!!!!!!!!"!!!!!3!!!.!!!!$!!!!!!!!!!!!!!"!!E!!!!!</Property>
 			<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
 			<Property Name="NI.ClassItem.Flags" Type="Int">16777344</Property>
