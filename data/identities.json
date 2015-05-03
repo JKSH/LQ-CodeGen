@@ -427,5 +427,68 @@
 				"name": "QListView"
 			}
 		]
+	},
+	{
+		"name": "QCoreApplication", "base": "QObject",
+		"methods": [
+			{
+				"name": "setApplicationName", "retType": "void",
+				"params": [
+					{"name": "application", "type": "const QString&"}
+				]
+			},
+			{
+				"name": "applicationName", "retType": "QString"
+			}
+		],
+		"properties": [
+			{
+				"name": "applicationName",
+				"getter": "applicationName",
+				"setter": "setApplicationName"
+			}
+		]
+	},
+	{
+		"name": "QGuiApplication", "base": "QCoreApplication",
+		"methods": [
+			{
+				"name": "setWindowIcon", "retType": "void",
+				"params": [
+					{"name": "icon", "type": "const QIcon&"}
+				]
+			},
+			{
+				"name": "windowIcon", "retType": "QIcon"
+			}
+		],
+		"properties": [
+			{
+				"name": "windowIcon",
+				"getter": "windowIcon",
+				"setter": "setWindowIcon"
+			}
+		]
+	},
+	{
+		"name": "QApplication", "base": "QGuiApplication",
+		"methods": [
+			{
+				"name": "setStyleSheet", "retType": "void",
+				"params": [
+					{"name": "sheet", "type": "const QString&"}
+				]
+			},
+			{
+				"name": "styleSheet", "retType": "QString"
+			}
+		],
+		"properties": [
+			{
+				"name": "styleSheet",
+				"getter": "styleSheet",
+				"setter": "setStyleSheet"
+			}
+		]
 	}
 ]

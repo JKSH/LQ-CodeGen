@@ -1,0 +1,14 @@
+[
+	{
+		"source": "QCoreApplication",
+		"projection": "LQWidgetEngine"
+	},
+	{
+		"source": "QGuiApplication",
+		"projection": "LQWidgetEngine"
+	},
+	{
+		"source": "QApplication",
+		"projection": "LQWidgetEngine"
+	}
+]
