@@ -22,6 +22,7 @@
 				<Item Name="Method.ctl" Type="VI" URL="../Data Structures/JSON/Method.ctl"/>
 				<Item Name="Namespace.ctl" Type="VI" URL="../Data Structures/JSON/Namespace.ctl"/>
 				<Item Name="Param.ctl" Type="VI" URL="../Data Structures/JSON/Param.ctl"/>
+				<Item Name="Projection Info.ctl" Type="VI" URL="../Data Structures/JSON/Projection Info.ctl"/>
 				<Item Name="Property.ctl" Type="VI" URL="../Data Structures/JSON/Property.ctl"/>
 				<Item Name="Simple Struct.ctl" Type="VI" URL="../Data Structures/JSON/Simple Struct.ctl"/>
 				<Item Name="TypeConv.ctl" Type="VI" URL="../Data Structures/JSON/TypeConv.ctl"/>
@@ -71,6 +72,8 @@
 		<Item Name="Create Opaque Structs.vi" Type="VI" URL="../Create Opaque Structs.vi"/>
 		<Item Name="Delete Template VIs.vi" Type="VI" URL="../Delete Template VIs.vi"/>
 		<Item Name="Get Template LVClass.vi" Type="VI" URL="../Get Template LVClass.vi"/>
+		<Item Name="Get Template LVClasses.vi" Type="VI" URL="../Get Template LVClasses.vi"/>
+		<Item Name="Identify Projections.vi" Type="VI" URL="../Identify Projections.vi"/>
 		<Item Name="Main.vi" Type="VI" URL="../Main.vi"/>
 		<Item Name="Prepare Save Dir.vi" Type="VI" URL="../Prepare Save Dir.vi"/>
 		<Item Name="Seed LVLIB.vi" Type="VI" URL="../Seed LVLIB.vi"/>
