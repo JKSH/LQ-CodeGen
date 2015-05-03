@@ -1,5 +1,26 @@
 [
 	{
+		"name": "QObject",
+		"methods": [
+			{
+				"name": "setObjectName", "retType": "void",
+				"params": [
+					{"name": "sheet", "type": "const QString&"}
+				]
+			},
+			{
+				"name": "objectName", "retType": "QString"
+			}
+		],
+		"properties": [
+			{
+				"name": "objectName",
+				"getter": "objectName",
+				"setter": "setObjectName"
+			}
+		]
+	},
+	{
 		"name": "QWidget", "base": "QObject",
 		"methods": [
 			{
@@ -7,6 +28,9 @@
 			},
 			{
 				"name": "focusPolicy", "retType": "Qt::FocusPolicy"
+			},
+			{
+				"name": "font", "retType": "QFont"
 			},
 			{
 				"name": "geometry", "retType": "QRect"
@@ -39,6 +63,12 @@
 				"name": "setFocusPolicy", "retType": "void",
 				"params": [
 					{"name": "policy", "type": "Qt::FocusPolicy"}
+				]
+			},
+			{
+				"name": "setFont", "retType": "void",
+				"params": [
+					{"name": "font", "type": "const QFont&"}
 				]
 			},
 			{
@@ -130,6 +160,11 @@
 				"name": "focusPolicy",
 				"getter": "focusPolicy",
 				"setter": "setFocusPolicy"
+			},
+			{
+				"name": "font",
+				"getter": "font",
+				"setter": "setFont"
 			},
 			{
 				"name": "geometry",

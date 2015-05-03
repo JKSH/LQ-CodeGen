@@ -1,5 +1,9 @@
 [
 	{
+		"source": "QObject",
+		"projection": "LQObject"
+	},
+	{
 		"source": "QCoreApplication",
 		"projection": "LQWidgetEngine"
 	},
