@@ -118,7 +118,7 @@ TypeConv::dllType(const QString& qtType)
 		QString type = _bridge2dll[tmp].toObject()["dllType"].toString();
 		return type.replace("%DLL_TYPE_INNER%", dllType(inner));
 	}
-	case Identity: return "quint32"; // TODO: See if quintptr is any good
+	case Identity: return "quintptr";
 	case OpaqueStruct:
 		return "LStrHandle";
 	default:
@@ -158,7 +158,7 @@ TypeConv::instanceType_dll(const QString& qtType)
 	switch (category(tmp))
 	{
 	case Identity:
-		return "quint32";
+		return "quintptr";
 	case OpaqueStruct:
 		return "LStrHandle";
 	default:
