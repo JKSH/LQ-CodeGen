@@ -141,7 +141,7 @@ ClassWriter::funcCallBody_inDll(const Method &method)
 	QString body_dll;
 	body_dll =
 			"\t"      "if (!bridge)"    "\n"
-			"\t\t"        "return -1;"  "\n\n"
+			"\t\t"        "return LQ::EngineNotRunningError;"           "\n\n"
 
 			""        "%RETURN_VAR_INTERMEDIATE%"
 			"\t"      "QMetaObject::invokeMethod(bridge,"               "\n"
@@ -224,7 +224,7 @@ ClassWriter::funcCallBody_inDll(const Method &method)
 		}
 	}
 
-	body_dll += "\n\treturn 0;\n";
+	body_dll += "\n\treturn LQ::NoError;\n";
 	return body_dll;
 }
 

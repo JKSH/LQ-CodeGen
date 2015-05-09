@@ -1,5 +1,6 @@
 #include "lqwidgets.h"
 #include "bridge.h"
+#include "errors.h"
 #include <thread>
 #include <QThread>
 
@@ -38,10 +39,7 @@ qint32 Q_DECL_EXPORT
 startWidgetEngine(LStrHandle pluginDir)
 {
 	if (bridge)
-	{
-		// The engine is already running
-		return -1;
-	}
+		return LQ::EngineAlreadyRunningError;
 
 	QCoreApplication::addLibraryPath(QString::fromUtf8( (char*)(*pluginDir)->str, LStrLen(*pluginDir) ));
 	std::thread t(&run);
@@ -51,28 +49,29 @@ startWidgetEngine(LStrHandle pluginDir)
 	while (!bridge)
 		std::this_thread::sleep_for(std::chrono::milliseconds(20));
 
-	return 0;
+	return LQ::NoError;
 }
 
 qint32 Q_DECL_EXPORT
 stopWidgetEngine()
 {
-	if (bridge)
-		QMetaObject::invokeMethod(qApp, "quit", Qt::BlockingQueuedConnection);
-	return 0;
+	if (!bridge)
+		return LQ::EngineNotRunningError;
+	QMetaObject::invokeMethod(qApp, "quit", Qt::BlockingQueuedConnection);
+	return LQ::NoError;
 }
 
 qint32 Q_DECL_EXPORT
 registerEventRefs(LVUserEventRef* voidRef, LVUserEventRef* boolRef, LVUserEventRef* i32Ref, LVUserEventRef* stringRef)
 {
 	if (!bridge)
-		return -1;
+		return LQ::EngineNotRunningError;
 
 	bridge->registerEventRef_void(voidRef);
 	bridge->registerEventRef_bool(boolRef);
 	bridge->registerEventRef_i32(i32Ref);
 	bridge->registerEventRef_string(stringRef);
-	return 0;
+	return LQ::NoError;
 }
 
 // LabVIEW needs to prepend "2" to the string
@@ -80,46 +79,46 @@ qint32 Q_DECL_EXPORT
 connect_void(quint32 qobject, const char* encodedSignal)
 {
 	if (!bridge)
-		return -1;
+		return LQ::EngineNotRunningError;
 
 	QObject::connect((QObject*)qobject, encodedSignal,
 			bridge, SLOT(postLVEvent_void()));
 
 	// TODO: Return error code if connection failed
-	return 0;
+	return LQ::NoError;
 }
 qint32 Q_DECL_EXPORT
 connect_bool(quint32 qobject, const char* encodedSignal)
 {
 	if (!bridge)
-		return -1;
+		return LQ::EngineNotRunningError;
 
 	QObject::connect((QObject*)qobject, encodedSignal,
 			bridge, SLOT(postLVEvent_bool(bool)));
 
-	return 0;
+	return LQ::NoError;
 }
 qint32 Q_DECL_EXPORT
 connect_i32(quint32 qobject, const char* encodedSignal)
 {
 	if (!bridge)
-		return -1;
+		return LQ::EngineNotRunningError;
 
 	QObject::connect((QObject*)qobject, encodedSignal,
 			bridge, SLOT(postLVEvent_i32(int)));
 
-	return 0;
+	return LQ::NoError;
 }
 qint32 Q_DECL_EXPORT
 connect_string(quint32 qobject, const char* encodedSignal)
 {
 	if (!bridge)
-		return -1;
+		return LQ::EngineNotRunningError;
 
 	QObject::connect((QObject*)qobject, encodedSignal,
 			bridge, SLOT(postLVEvent_string(QString)));
 
-	return 0;
+	return LQ::NoError;
 }
 
 /*!
@@ -133,7 +132,7 @@ qint32 Q_DECL_EXPORT
 findSignalIndex(qint64* retVal, quint32 qobject, const char* normalizedSignal)
 {
 	if (!bridge)
-		return -1;
+		return LQ::EngineNotRunningError;
 
 	QString head = QString::fromLatin1(normalizedSignal);
 	head.chop(1);
@@ -158,7 +157,7 @@ findSignalIndex(qint64* retVal, quint32 qobject, const char* normalizedSignal)
 		// However, that would be the wrong index for an overridden virtual signal (not
 		// that I can think of any such cases in Qt)
 	}
-	return 0;
+	return LQ::NoError;
 }
 
 //[TEMPLATE]
