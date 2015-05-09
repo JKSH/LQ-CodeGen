@@ -6,7 +6,8 @@ TEMPLATE = lib
 
 SOURCES += \
     lqwidgets.cpp \
-    utils.cpp
+    utils.cpp \
+    errors.cpp
 
 HEADERS += \
     lqwidgets.h \

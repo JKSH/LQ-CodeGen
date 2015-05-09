@@ -1,6 +1,9 @@
 #ifndef ERRORS_H
 #define ERRORS_H
 
+#include <QtGlobal>
+#include "extcode.h"
+
 namespace LQ
 {
 	enum Error
@@ -15,6 +18,12 @@ namespace LQ
 		EngineNotRunningError = -8000,
 		EngineAlreadyRunningError = -8001
 	};
+}
+
+extern "C" {
+
+extern void Q_DECL_EXPORT errorStringFromCode(LStrHandle retVal, int32 errorCode);
+
 }
 
 #endif // ERRORS_H
