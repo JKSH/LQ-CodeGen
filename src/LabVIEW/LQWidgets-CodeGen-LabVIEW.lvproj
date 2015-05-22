@@ -34,9 +34,7 @@
 			<Item Name="DEBUG Call Lib Probe.vi" Type="VI" URL="../DEBUG Call Lib Probe.vi"/>
 			<Item Name="DEBUG Connect ConPane.vi" Type="VI" URL="../DEBUG Connect ConPane.vi"/>
 			<Item Name="DEBUG Put Object in VI.vi" Type="VI" URL="../DEBUG Put Object in VI.vi"/>
-			<Item Name="DEBUG Query Class.vi" Type="VI" URL="../DEBUG Query Class.vi"/>
 			<Item Name="DEBUG Query VI.vi" Type="VI" URL="../DEBUG Query VI.vi"/>
-			<Item Name="DEBUG Simple Node.vi" Type="VI" URL="../DEBUG Simple Node.vi"/>
 			<Item Name="DEBUG Wiring Study.vi" Type="VI" URL="../DEBUG Wiring Study.vi"/>
 			<Item Name="DebugClass.lvclass" Type="LVClass" URL="../DEBUG/DebugClass.lvclass"/>
 		</Item>
@@ -225,7 +223,6 @@
 				<Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
 			</Item>
 			<Item Name="Generate and Save Method VIs.vi" Type="VI" URL="../Generate and Save Method VIs.vi"/>
-			<Item Name="LabQt.dll" Type="Document" URL="/C/LabQt/LabQt.dll"/>
 			<Item Name="Save Method VIs.vi" Type="VI" URL="../Save Method VIs.vi"/>
 			<Item Name="TRef FinderCallback.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/traverseref.llb/TRef FinderCallback.vi"/>
 		</Item>
