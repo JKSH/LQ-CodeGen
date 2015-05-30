@@ -91,6 +91,7 @@ int main(int, char **)
 	TypeConv::init(numerics.array(), TypeConv::Numeric);
 	TypeConv::init(extractEnums(identities.array()), TypeConv::Enum);
 	TypeConv::init(extractEnums(namespaces.array()), TypeConv::Enum);
+	TypeConv::init(extractEnums(opaqueClasses.array()), TypeConv::Enum);
 	TypeConv::init(simpleStructs.array(), TypeConv::SimpleStruct);
 	TypeConv::init(opaqueClasses.array(), TypeConv::OpaqueStruct);
 	TypeConv::init(simpleContainers.array(), TypeConv::SimpleContainer);
