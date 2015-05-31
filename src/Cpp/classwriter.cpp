@@ -199,7 +199,7 @@ ClassWriter::funcCallBody_inDll(const Method &method)
 	{
 		QString conversion = TypeConv::convCode_bridge2Dll(retType_brg);
 		conversion.replace("_dllType_", method.returnType_dll());
-		conversion.replace("_dllValue_", "retVal");
+		conversion.replace("_dllValue_", "_retVal");
 		conversion.replace("_bridgeValue_", "retVal_brg");
 
 		body_dll
@@ -212,7 +212,7 @@ ClassWriter::funcCallBody_inDll(const Method &method)
 		case TypeConv::Enum:
 		case TypeConv::SimpleStruct:
 		case TypeConv::Identity:
-			body_dll.replace("%RETURN_KEY%", "*retVal = ");
+			body_dll.replace("%RETURN_KEY%", "*_retVal = ");
 			break;
 		case TypeConv::SimpleContainer:
 		case TypeConv::FullArray:

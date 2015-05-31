@@ -217,7 +217,7 @@ Method::paramList_dll() const
 		retType += '*';
 	case TypeConv::SimpleContainer:
 	case TypeConv::FullArray:
-		list.prepend(Param{retType, "retVal"});
+		list.prepend(Param{retType, "_retVal"});
 	case TypeConv::Void:
 		break;
 	default:
