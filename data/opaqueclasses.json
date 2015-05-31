@@ -266,30 +266,37 @@
 				"retType": "void"
 			},
 			{
+				"isConst": true,
 				"name": "family",
 				"retType": "QString"
 			},
 			{
+				"isConst": true,
 				"name": "styleName",
 				"retType": "QString"
 			},
 			{
+				"isConst": true,
 				"name": "pointSize",
 				"retType": "int"
 			},
 			{
+				"isConst": true,
 				"name": "pointSizeF",
 				"retType": "qreal"
 			},
 			{
+				"isConst": true,
 				"name": "pixelSize",
 				"retType": "int"
 			},
 			{
+				"isConst": true,
 				"name": "weight",
 				"retType": "int"
 			},
 			{
+				"isConst": true,
 				"name": "bold",
 				"retType": "bool"
 			},
@@ -304,10 +311,12 @@
 				"retType": "void"
 			},
 			{
+				"isConst": true,
 				"name": "style",
 				"retType": "QFont::Style"
 			},
 			{
+				"isConst": true,
 				"name": "italic",
 				"retType": "bool"
 			},
@@ -322,30 +331,37 @@
 				"retType": "void"
 			},
 			{
+				"isConst": true,
 				"name": "underline",
 				"retType": "bool"
 			},
 			{
+				"isConst": true,
 				"name": "overline",
 				"retType": "bool"
 			},
 			{
+				"isConst": true,
 				"name": "strikeOut",
 				"retType": "bool"
 			},
 			{
+				"isConst": true,
 				"name": "fixedPitch",
 				"retType": "bool"
 			},
 			{
+				"isConst": true,
 				"name": "kerning",
 				"retType": "bool"
 			},
 			{
+				"isConst": true,
 				"name": "styleHint",
 				"retType": "QFont::StyleHint"
 			},
 			{
+				"isConst": true,
 				"name": "styleStrategy",
 				"retType": "QFont::StyleStrategy"
 			},
@@ -360,14 +376,17 @@
 				"retType": "void"
 			},
 			{
+				"isConst": true,
 				"name": "stretch",
 				"retType": "int"
 			},
 			{
+				"isConst": true,
 				"name": "letterSpacing",
 				"retType": "qreal"
 			},
 			{
+				"isConst": true,
 				"name": "letterSpacingType",
 				"retType": "QFont::SpacingType"
 			},
@@ -386,6 +405,7 @@
 				"retType": "void"
 			},
 			{
+				"isConst": true,
 				"name": "wordSpacing",
 				"retType": "qreal"
 			},
@@ -400,6 +420,7 @@
 				"retType": "void"
 			},
 			{
+				"isConst": true,
 				"name": "capitalization",
 				"retType": "QFont::Capitalization"
 			},
@@ -414,34 +435,42 @@
 				"retType": "void"
 			},
 			{
+				"isConst": true,
 				"name": "hintingPreference",
 				"retType": "QFont::HintingPreference"
 			},
 			{
+				"isConst": true,
 				"name": "rawMode",
 				"retType": "bool"
 			},
 			{
+				"isConst": true,
 				"name": "exactMatch",
 				"retType": "bool"
 			},
 			{
+				"isConst": true,
 				"name": "key",
 				"retType": "QString"
 			},
 			{
+				"isConst": true,
 				"name": "toString",
 				"retType": "QString"
 			},
 			{
+				"isConst": true,
 				"name": "defaultFamily",
 				"retType": "QString"
 			},
 			{
+				"isConst": true,
 				"name": "lastResortFamily",
 				"retType": "QString"
 			},
 			{
+				"isConst": true,
 				"name": "lastResortFont",
 				"retType": "QString"
 			}
@@ -507,7 +536,8 @@
 				]
 			},
 			{
-				"name": "size", "retType": "QSize"
+				"name": "size", "retType": "QSize",
+				"isConst": true
 			}
 		]
 	}
