@@ -13,6 +13,7 @@ public:
 
 	// Method info
 	bool isValid() const;
+	bool isConst() const;
 	bool isConstructor() const;
 	QString className() const {return _className;}
 	QString name() const;
