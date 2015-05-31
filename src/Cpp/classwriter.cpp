@@ -261,7 +261,7 @@ ClassWriter::funcCallBody_inBridge(const Method &method)
 			wrapper = "\n"
 					"\t\t"  "%CLASS% thisInstance = deserialize<%CLASS%>(copyFromLStr(%INSTANCE%));"  "\n"
 					"\t\t"  "%CALL_STMT_MAIN%;"                                                       "\n"
-					"\t\t"  "copyIntoLStr(%INSTANCE%, serialize(thisInstance));"                      "\n"
+							"%SERIAlIZE_LINE%"
 					"\t\t"  "%RETURN_STMT_END%"                                                       "\n"
 					"\t";
 			break;
@@ -276,6 +276,11 @@ ClassWriter::funcCallBody_inBridge(const Method &method)
 			qWarning() << "WARNING: ClassWriter::funcCallBody_inBridge(): This type cannot have methods:" << method.className();
 			return "";
 		}
+
+		if (method.isConst())
+			wrapper.replace("%SERIAlIZE_LINE%", "");
+		else
+			wrapper.replace("%SERIAlIZE_LINE%", "\t\tcopyIntoLStr(%INSTANCE%, serialize(thisInstance));\n");
 
 		bool hasReturn = (method.returnType_bridge() != "void");
 		if (hasReturn)

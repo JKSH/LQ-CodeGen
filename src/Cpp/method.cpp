@@ -27,6 +27,12 @@ Method::isValid() const
 }
 
 bool
+Method::isConst() const
+{
+	return _data["isConst"].toBool();
+}
+
+bool
 Method::isConstructor() const
 {
 	return _data["name"].toString() == _className;
