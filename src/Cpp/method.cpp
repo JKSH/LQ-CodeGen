@@ -145,10 +145,10 @@ Method::paramList_bridge() const
 		case TypeConv::SimpleStruct:
 		case TypeConv::Identity:
 		case TypeConv::SimpleContainer:
-			list.prepend(Param{_className+'*', _className.toLower()});
+			list.prepend(Param{_className+'*', "_instance"});
 			break;
 		case TypeConv::OpaqueStruct:
-			list.prepend(Param{"LStrHandle", _className.toLower()});
+			list.prepend(Param{"LStrHandle", "_instance"});
 			break;
 		default:
 			break;
@@ -195,7 +195,7 @@ Method::paramList_dll() const
 		{
 		case TypeConv::Identity:
 		case TypeConv::OpaqueStruct:
-			list.prepend(Param{TypeConv::instanceType_dll(_className), _className.toLower()});
+			list.prepend(Param{TypeConv::instanceType_dll(_className), "_instance"});
 			break;
 		default:
 			qWarning() << "WARNING: Method::paramList_dll(): This type cannot have methods:" << _className;
@@ -217,7 +217,7 @@ Method::paramList_dll() const
 		retType += '*';
 	case TypeConv::SimpleContainer:
 	case TypeConv::FullArray:
-		list.prepend(Param{retType, "retVal"});
+		list.prepend(Param{retType, "_retVal"});
 	case TypeConv::Void:
 		break;
 	default:

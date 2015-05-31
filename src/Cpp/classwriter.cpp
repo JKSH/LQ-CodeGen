@@ -157,7 +157,7 @@ ClassWriter::funcCallBody_inDll(const Method &method)
 
 		QString conversion = TypeConv::convCode_dll2Bridge(thisClass);
 		conversion.replace("_qtType_", TypeConv::instanceType_bridge(thisClass));
-		conversion.replace("_dllValue_", thisClass.toLower());
+		conversion.replace("_dllValue_", "_instance");
 
 		body_dll.replace("%INSTANCE_LINE_INVOKE%", "\t\t\tQ_ARG(" + TypeConv::instanceType_bridge(thisClass) + ", "	+ conversion + "),\n");
 	}
@@ -199,7 +199,7 @@ ClassWriter::funcCallBody_inDll(const Method &method)
 	{
 		QString conversion = TypeConv::convCode_bridge2Dll(retType_brg);
 		conversion.replace("_dllType_", method.returnType_dll());
-		conversion.replace("_dllValue_", "retVal");
+		conversion.replace("_dllValue_", "_retVal");
 		conversion.replace("_bridgeValue_", "retVal_brg");
 
 		body_dll
@@ -212,7 +212,7 @@ ClassWriter::funcCallBody_inDll(const Method &method)
 		case TypeConv::Enum:
 		case TypeConv::SimpleStruct:
 		case TypeConv::Identity:
-			body_dll.replace("%RETURN_KEY%", "*retVal = ");
+			body_dll.replace("%RETURN_KEY%", "*_retVal = ");
 			break;
 		case TypeConv::SimpleContainer:
 		case TypeConv::FullArray:
@@ -259,7 +259,7 @@ ClassWriter::funcCallBody_inBridge(const Method &method)
 
 			// TODO: Don't re-serialize if it's a const method
 			wrapper = "\n"
-					"\t\t"  "%CLASS% thisInstance = deserialize<%CLASS%>(copyFromLStr(%INSTANCE%));"  "\n"
+					"\t\t"  "%CLASS% thisInstance = deserialize<%CLASS%>(copyFromLStr(_instance));"   "\n"
 					"\t\t"  "%CALL_STMT_MAIN%;"                                                       "\n"
 							"%SERIAlIZE_LINE%"
 					"\t\t"  "%RETURN_STMT_END%"                                                       "\n"
@@ -269,7 +269,7 @@ ClassWriter::funcCallBody_inBridge(const Method &method)
 		case TypeConv::Identity:
 			wrapper = "%RETURN_KEY_END%%FINAL_CALL_CONVERTED%;";
 			wrapper.replace("%FINAL_CALL_CONVERTED%", TypeConv::convCode_qt2Bridge(method.returnType_qt()));
-			wrapper.replace("_qtValue_", "%INSTANCE%->%METHOD_CALL%");
+			wrapper.replace("_qtValue_", "_instance->%METHOD_CALL%");
 			break;
 
 		default:
@@ -280,7 +280,7 @@ ClassWriter::funcCallBody_inBridge(const Method &method)
 		if (method.isConst())
 			wrapper.replace("%SERIAlIZE_LINE%", "");
 		else
-			wrapper.replace("%SERIAlIZE_LINE%", "\t\tcopyIntoLStr(%INSTANCE%, serialize(thisInstance));\n");
+			wrapper.replace("%SERIAlIZE_LINE%", "\t\tcopyIntoLStr(_instance, serialize(thisInstance));\n");
 
 		bool hasReturn = (method.returnType_bridge() != "void");
 		if (hasReturn)
@@ -316,7 +316,6 @@ ClassWriter::funcCallBody_inBridge(const Method &method)
 
 	methodCall.replace("%PARAMS%", params);
 	wrapper.replace("%CLASS%", method.className());
-	wrapper.replace("%INSTANCE%", method.className().toLower());
 	wrapper.replace("%METHOD_CALL%", methodCall);
 
 	return wrapper;
