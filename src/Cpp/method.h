@@ -15,6 +15,7 @@ public:
 	bool isValid() const;
 	bool isConst() const;
 	bool isConstructor() const;
+	bool isStaticMember() const;
 	QString className() const {return _className;}
 	QString name() const;
 	QString qualifiedName(const QString& separator) const;

@@ -38,6 +38,12 @@ Method::isConstructor() const
 	return _data["name"].toString() == _className;
 }
 
+bool
+Method::isStaticMember() const
+{
+	return _data["isStaticMember"].toBool();
+}
+
 QString
 Method::name() const
 {
