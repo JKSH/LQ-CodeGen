@@ -142,7 +142,7 @@ Method::paramList_bridge() const
 			qWarning() << "WARNING: Method::paramList_bridge(): Unsupported input arg type:" << param.type;
 		}
 	}
-	if (!isConstructor())
+	if (!isConstructor() && !isStaticMember())
 	{
 		switch (   TypeConv::category(  QMetaObject::normalizedType( _className.toUtf8() )  )   )
 		{
@@ -195,7 +195,7 @@ Method::paramList_dll() const
 	}
 
 	// Prepend list with Instance (if applicable)
-	if (!isConstructor())
+	if (!isConstructor() && !isStaticMember())
 	{
 		switch (   TypeConv::category(  QMetaObject::normalizedType( _className.toUtf8() )  )   )
 		{
