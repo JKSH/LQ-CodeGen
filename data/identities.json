@@ -96,6 +96,14 @@
 				]
 			},
 			{
+				"name": "setTabOrder", "retType": "void",
+				"params": [
+					{"name": "first", "type": "QWidget*"},
+					{"name": "second", "type": "QWidget*"}
+				],
+				"isStaticMember": true
+			},
+			{
 				"name": "setToolTip", "retType": "void",
 				"params": [
 					{"name": "toolTip", "type": "const QString&"}

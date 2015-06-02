@@ -151,7 +151,7 @@ ClassWriter::funcCallBody_inDll(const Method &method)
 			""                "%INSTANCE_LINE_INVOKE%"
 			""                "%INPUT_LINES_INVOKE%";
 
-	if (!method.isConstructor())
+	if (!method.isConstructor() && !method.isStaticMember())
 	{
 		QString thisClass = method.className();
 
@@ -232,6 +232,7 @@ QString
 ClassWriter::funcCallBody_inBridge(const Method &method)
 {
 	auto classCategory = TypeConv::category(method.className());
+	bool hasReturn = (method.returnType_bridge() != "void");
 
 	// TODO: Optimize passing data across the Bridge
 	// e.g. To return a LabVIEW string, write the data in the GUI thread and make the Bridge return void
@@ -250,6 +251,24 @@ ClassWriter::funcCallBody_inBridge(const Method &method)
 			qWarning() << "WARNING: ClassWriter::funcCallBody_inBridge(): This type cannot have constructors:" << method.className();
 			return "";
 		}
+	}
+	else if (method.isStaticMember())
+	{
+		switch (classCategory)
+		{
+		case TypeConv::OpaqueStruct:
+		case TypeConv::Identity:
+			wrapper = "%RETURN_KEY_END%%CLASS%::%METHOD_CALL%;";
+			break;
+		default:
+			qWarning() << "WARNING: ClassWriter::funcCallBody_inBridge(): This type cannot have methods:" << method.className();
+			return "";
+		}
+
+		if (hasReturn)
+			wrapper.replace("%RETURN_KEY_END%", "return ");
+		else
+			wrapper.replace("%RETURN_KEY_END%", "");
 	}
 	else
 	{
@@ -282,7 +301,6 @@ ClassWriter::funcCallBody_inBridge(const Method &method)
 		else
 			wrapper.replace("%SERIAlIZE_LINE%", "\t\tcopyIntoLStr(_instance, serialize(thisInstance));\n");
 
-		bool hasReturn = (method.returnType_bridge() != "void");
 		if (hasReturn)
 		{
 			wrapper.replace("%CALL_STMT_MAIN%", "%RETURN_TYPE% retVal = " + TypeConv::convCode_qt2Bridge(method.returnType_qt()));
