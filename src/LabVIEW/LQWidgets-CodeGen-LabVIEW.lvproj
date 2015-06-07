@@ -59,6 +59,9 @@
 			<Item Name="Simple Struct Writer.lvclass" Type="LVClass" URL="../Param Writers/Simple Struct Writer/Simple Struct Writer.lvclass"/>
 			<Item Name="String Writer.lvclass" Type="LVClass" URL="../Param Writers/String Writer/String Writer.lvclass"/>
 		</Item>
+		<Item Name="Utils" Type="Folder">
+			<Item Name="Merge Maps.vi" Type="VI" URL="../Utils/Merge Maps.vi"/>
+		</Item>
 		<Item Name="Add Property.vi" Type="VI" URL="../Add Property.vi"/>
 		<Item Name="Create Cluster Typedefs.vi" Type="VI" URL="../Create Cluster Typedefs.vi"/>
 		<Item Name="Create Enum Typedefs.vi" Type="VI" URL="../Create Enum Typedefs.vi"/>
