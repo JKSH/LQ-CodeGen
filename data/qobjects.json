@@ -36,6 +36,9 @@
 				"name": "geometry", "retType": "QRect"
 			},
 			{
+				"name": "layout", "retType": "QLayout*"
+			},
+			{
 				"name": "isEnabled", "retType": "bool"
 			},
 			{
@@ -391,6 +394,9 @@
 	{
 		"name": "QLayout", "base": "QObject",
 		"methods": [
+			{
+				"name": "parentWidget", "retType": "QWidget*"
+			},
 			{
 				"name": "removeWidget", "retType": "void",
 				"params": [
