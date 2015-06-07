@@ -74,8 +74,12 @@ int main(int, char **)
 	if (fullArrays.isNull())
 		return -1;
 
-	QJsonDocument identities = parseJsonFile("../../data/identities.json");
-	if (identities.isNull())
+	QJsonDocument simpleIdentities = parseJsonFile("../../data/simpleidentities.json");
+	if (simpleIdentities.isNull())
+		return -1;
+
+	QJsonDocument qobjects = parseJsonFile("../../data/qobjects.json");
+	if (qobjects.isNull())
 		return -1;
 
 	QJsonObject voidObj;
@@ -89,18 +93,22 @@ int main(int, char **)
 	TypeConv::init(QJsonArray()<<voidObj, TypeConv::Void);
 	TypeConv::init(QJsonArray()<<boolObj, TypeConv::Boolean);
 	TypeConv::init(numerics.array(), TypeConv::Numeric);
-	TypeConv::init(extractEnums(identities.array()), TypeConv::Enum);
+	TypeConv::init(extractEnums(simpleIdentities.array()), TypeConv::Enum);
+	TypeConv::init(extractEnums(qobjects.array()), TypeConv::Enum);
 	TypeConv::init(extractEnums(namespaces.array()), TypeConv::Enum);
 	TypeConv::init(extractEnums(opaqueClasses.array()), TypeConv::Enum);
 	TypeConv::init(simpleStructs.array(), TypeConv::SimpleStruct);
 	TypeConv::init(opaqueClasses.array(), TypeConv::OpaqueStruct);
 	TypeConv::init(simpleContainers.array(), TypeConv::SimpleContainer);
 	TypeConv::init(fullArrays.array(), TypeConv::FullArray);
-	TypeConv::init(identities.array(), TypeConv::Identity);
+	TypeConv::init(simpleIdentities.array(), TypeConv::QObject);
+	TypeConv::init(qobjects.array(), TypeConv::QObject);
 
 	ClassWriter c;
 	c.startWriting();
-	for(const QJsonValue& val : identities.array())
+	for(const QJsonValue& val : simpleIdentities.array())
+		c.writeClass(val.toObject());
+	for(const QJsonValue& val : qobjects.array())
 		c.writeClass(val.toObject());
 	for(const QJsonValue& val : opaqueClasses.array())
 		c.writeClass(val.toObject());

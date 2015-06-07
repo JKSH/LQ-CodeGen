@@ -66,7 +66,8 @@ Method::returnType_bridge() const
 		{
 		case TypeConv::OpaqueStruct:
 			return "QByteArray";
-		case TypeConv::Identity:
+		case TypeConv::SimpleIdentity:
+		case TypeConv::QObject:
 			return _className + '*';
 		default:
 			qWarning() << "WARNING: Method::returnType_bridge(): This type cannot have constructors:" << _className;
@@ -83,7 +84,8 @@ Method::returnType_bridge() const
 		case TypeConv::Numeric:
 		case TypeConv::Enum:
 		case TypeConv::SimpleStruct:
-		case TypeConv::Identity:
+		case TypeConv::SimpleIdentity:
+		case TypeConv::QObject:
 		case TypeConv::SimpleContainer:
 		case TypeConv::FullArray:
 			retType_bridge = TypeConv::bridgeType(retType_qt);
@@ -131,7 +133,8 @@ Method::paramList_bridge() const
 		case TypeConv::Numeric:
 		case TypeConv::Enum:
 		case TypeConv::SimpleStruct:
-		case TypeConv::Identity:
+		case TypeConv::SimpleIdentity:
+		case TypeConv::QObject:
 		case TypeConv::SimpleContainer:
 		case TypeConv::FullArray:
 			break;
@@ -149,7 +152,8 @@ Method::paramList_bridge() const
 		case TypeConv::Boolean:
 		case TypeConv::Numeric:
 		case TypeConv::SimpleStruct:
-		case TypeConv::Identity:
+		case TypeConv::SimpleIdentity:
+		case TypeConv::QObject:
 		case TypeConv::SimpleContainer:
 			list.prepend(Param{_className+'*', "_instance"});
 			break;
@@ -182,7 +186,8 @@ Method::paramList_dll() const
 			param.type += '*';
 		case TypeConv::Numeric:
 		case TypeConv::Enum:
-		case TypeConv::Identity:
+		case TypeConv::SimpleIdentity:
+		case TypeConv::QObject:
 		case TypeConv::SimpleContainer: // TODO: Use Handle Pointers for containers, for efficiency
 		case TypeConv::FullArray:
 			break;
@@ -199,7 +204,8 @@ Method::paramList_dll() const
 	{
 		switch (   TypeConv::category(  QMetaObject::normalizedType( _className.toUtf8() )  )   )
 		{
-		case TypeConv::Identity:
+		case TypeConv::SimpleIdentity:
+		case TypeConv::QObject:
 		case TypeConv::OpaqueStruct:
 			list.prepend(Param{TypeConv::instanceType_dll(_className), "_instance"});
 			break;
@@ -219,7 +225,8 @@ Method::paramList_dll() const
 	case TypeConv::Numeric:
 	case TypeConv::Enum:
 	case TypeConv::SimpleStruct:
-	case TypeConv::Identity:
+	case TypeConv::SimpleIdentity:
+	case TypeConv::QObject:
 		retType += '*';
 	case TypeConv::SimpleContainer:
 	case TypeConv::FullArray:

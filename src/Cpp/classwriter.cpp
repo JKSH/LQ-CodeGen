@@ -211,7 +211,8 @@ ClassWriter::funcCallBody_inDll(const Method &method)
 		case TypeConv::Numeric:
 		case TypeConv::Enum:
 		case TypeConv::SimpleStruct:
-		case TypeConv::Identity:
+		case TypeConv::SimpleIdentity:
+		case TypeConv::QObject:
 			body_dll.replace("%RETURN_KEY%", "*_retVal = ");
 			break;
 		case TypeConv::SimpleContainer:
@@ -244,7 +245,8 @@ ClassWriter::funcCallBody_inBridge(const Method &method)
 		case TypeConv::OpaqueStruct:
 			wrapper = "return serialize(%METHOD_CALL%);";
 			break;
-		case TypeConv::Identity:
+		case TypeConv::SimpleIdentity:
+		case TypeConv::QObject:
 			wrapper = "return new %METHOD_CALL%;";
 			break;
 		default:
@@ -257,7 +259,8 @@ ClassWriter::funcCallBody_inBridge(const Method &method)
 		switch (classCategory)
 		{
 		case TypeConv::OpaqueStruct:
-		case TypeConv::Identity:
+		case TypeConv::SimpleIdentity:
+		case TypeConv::QObject:
 			wrapper = "%RETURN_KEY_END%%CLASS%::%METHOD_CALL%;";
 			break;
 		default:
@@ -285,7 +288,8 @@ ClassWriter::funcCallBody_inBridge(const Method &method)
 					"\t";
 			break;
 
-		case TypeConv::Identity:
+		case TypeConv::SimpleIdentity:
+		case TypeConv::QObject:
 			wrapper = "%RETURN_KEY_END%%FINAL_CALL_CONVERTED%;";
 			wrapper.replace("%FINAL_CALL_CONVERTED%", TypeConv::convCode_qt2Bridge(method.returnType_qt()));
 			wrapper.replace("_qtValue_", "_instance->%METHOD_CALL%");

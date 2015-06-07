@@ -14,7 +14,8 @@ namespace TypeConv
 		Enum,
 		SimpleStruct,
 		OpaqueStruct,
-		Identity,
+		SimpleIdentity,
+		QObject,
 		SimpleContainer,
 		FullArray
 	};

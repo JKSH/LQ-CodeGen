@@ -1,0 +1,25 @@
+[
+	{
+		"name": "QTextCodec",
+		"methods": [
+			{
+				"name": "fromUnicode", "retType": "QByteArray",
+				"params": [
+					{"name": "string", "type": "const QString&"}
+				],
+				"isConst": true
+			},
+			{
+				"name": "name", "retType": "QByteArray",
+				"isConst": true
+			},
+			{
+				"name": "toUnicode", "retType": "QString",
+				"params": [
+					{"name": "string", "type": "const QByteArray&"}
+				],
+				"isConst": true
+			}
+		]
+	}
+]
