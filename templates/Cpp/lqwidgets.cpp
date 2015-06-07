@@ -34,12 +34,14 @@ run()
 }
 
 // TODO: Return version info to protect against mismatched VI-DLL combos
-// TODO: Decide if the LV dev needs access to QApplication methods
 qint32 Q_DECL_EXPORT
-startWidgetEngine(LStrHandle pluginDir)
+startWidgetEngine(quintptr* _retVal, LStrHandle pluginDir)
 {
 	if (bridge)
+	{
+		*_retVal = 0;
 		return LQ::EngineAlreadyRunningError;
+	}
 
 	QCoreApplication::addLibraryPath(QString::fromUtf8( (char*)(*pluginDir)->str, LStrLen(*pluginDir) ));
 	std::thread t(&run);
@@ -49,6 +51,7 @@ startWidgetEngine(LStrHandle pluginDir)
 	while (!bridge)
 		std::this_thread::sleep_for(std::chrono::milliseconds(20));
 
+	*_retVal = (quintptr)qApp;
 	return LQ::NoError;
 }
 
