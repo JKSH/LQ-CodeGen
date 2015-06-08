@@ -73,7 +73,6 @@
 		<Item Name="Create Opaque Structs.vi" Type="VI" URL="../Create Opaque Structs.vi"/>
 		<Item Name="Delete Template VIs.vi" Type="VI" URL="../Delete Template VIs.vi"/>
 		<Item Name="Generate and Save Method VIs.vi" Type="VI" URL="../Generate and Save Method VIs.vi"/>
-		<Item Name="Get Template LVClass.vi" Type="VI" URL="../Get Template LVClass.vi"/>
 		<Item Name="Get Template LVClasses.vi" Type="VI" URL="../Get Template LVClasses.vi"/>
 		<Item Name="Identify Projections.vi" Type="VI" URL="../Identify Projections.vi"/>
 		<Item Name="Main.vi" Type="VI" URL="../Main.vi"/>
