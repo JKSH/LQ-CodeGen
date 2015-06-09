@@ -12,6 +12,18 @@
 	<Item Name="Enum Writer.ctl" Type="Class Private Data" URL="Enum Writer.ctl">
 		<Property Name="NI.LibItem.Scope" Type="Int">2</Property>
 	</Item>
+	<Item Name="Protected" Type="Folder">
+		<Property Name="NI.LibItem.Scope" Type="Int">3</Property>
+		<Item Name="ConPane Control Params.vi" Type="VI" URL="../Protected/ConPane Control Params.vi">
+			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!$6!!!!"A!%!!!!$E!S`````Q21982I!!!,1!-!"6.U?7RF!#Z!=!!?!!!6%U6O&gt;7UA6X*J&gt;'6S,GRW9WRB=X-!$U6O&gt;7UA6X*J&gt;'6S)'^V&gt;!!O1(!!(A!!&amp;2.&amp;&lt;H6N)&amp;&gt;S;82F=CZM&gt;G.M98.T!!Z&amp;&lt;H6N)&amp;&gt;S;82F=C"J&lt;A!!6!$Q!!Q!!!!"!!)!!Q!!!!!!!!!!!!!!!!!!!!1#!!"Y!!!!!!!!#1!!!!E!!!#.#Q!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*!!!!!!!1!&amp;!!!!!!</Property>
+			<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
+			<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>
+			<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">false</Property>
+			<Property Name="NI.ClassItem.MethodScope" Type="UInt">3</Property>
+			<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
+			<Property Name="NI.ClassItem.State" Type="Int">1342972416</Property>
+		</Item>
+	</Item>
 	<Item Name="Process Return Value.vi" Type="VI" URL="../Dynamic Dispatch/Process Return Value.vi">
 		<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!$Y!!!!"A!%!!!!*E"Q!!A!!!!#!!!:47^E;7:J:71A5(*P&gt;']A476U;'^E)#"731!O1(!!(A!!&amp;2.&amp;&lt;H6N)&amp;&gt;S;82F=CZM&gt;G.M98.T!!^&amp;&lt;H6N)&amp;&gt;S;82F=C"P&gt;81!&amp;E"Q!!A!!!!#!!!*476U;'^E)&amp;:*!#Z!=!!?!!!6%U6O&gt;7UA6X*J&gt;'6S,GRW9WRB=X-!$E6O&gt;7UA6X*J&gt;'6S)'FO!!"5!0!!$!!!!!!!!1!#!!!!!!!!!!!!!!!!!!-!"!-!!(A!!!!!!!!!!!!!$1I!!)U,!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!+!!!!E!!!!!!"!!5!!!!!</Property>
 		<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
@@ -20,15 +32,6 @@
 		<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
 		<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
 		<Property Name="NI.ClassItem.State" Type="Int">1342972432</Property>
-	</Item>
-	<Item Name="Set Up Terminal for Input Param.vi" Type="VI" URL="../Dynamic Dispatch/Set Up Terminal for Input Param.vi">
-		<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!%M!!!!#!!%!!!!,E"Q!"Y!!"5427ZV&lt;3"8=GFU:8)O&lt;(:D&lt;'&amp;T=Q!027ZV&lt;3"8=GFU:8)A&lt;X6U!"V!"Q!71W^O5'&amp;O:3"5:8*N;7ZB&lt;#"*&lt;G2F?!!!)5!$!"J$97RM4'FC=G&amp;S?3"5:8*N;7ZB&lt;#"*&lt;G2F?!!!(E"Q!!A!!%!B!!!11W&amp;M&lt;'R-;7*S98*Z)&amp;*F:A!!&amp;%"Q!!A!!!!#!!!'6EEA5G6G!!!O1(!!(A!!&amp;2.&amp;&lt;H6N)&amp;&gt;S;82F=CZM&gt;G.M98.T!!Z&amp;&lt;H6N)&amp;&gt;S;82F=C"J&lt;A!!6!$Q!!Q!!!!!!!!!!1!!!!!!!A!$!!!!"!!&amp;!!9$!!"Y!!!!!!!!!!!!!!!!!!#.#Q!!!!!!!!!!!!!+!!!!#!!!!!!!!!!)!!!!#!!!!*!!!!!!!1!(!!!!!!</Property>
-		<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
-		<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>
-		<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">false</Property>
-		<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
-		<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
-		<Property Name="NI.ClassItem.State" Type="Int">1107821072</Property>
 	</Item>
 	<Item Name="Write Typedef Path.vi" Type="VI" URL="../Write Typedef Path.vi">
 		<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!%]!!!!#A!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!"!!!!#Z!=!!?!!!6%U6O&gt;7UA6X*J&gt;'6S,GRW9WRB=X-!$U6O&gt;7UA6X*J&gt;'6S)'^V&gt;!!A1&amp;!!!Q!!!!%!!B.F=H*P=C"J&lt;C!I&lt;G]A:8*S&lt;X)J!":!-P````]-6(FQ:72F:C"1982I!!!O1(!!(A!!&amp;2.&amp;&lt;H6N)&amp;&gt;S;82F=CZM&gt;G.M98.T!!Z&amp;&lt;H6N)&amp;&gt;S;82F=C"J&lt;A!!91$Q!!Q!!Q!%!!1!"1!%!!1!"!!%!!9!"!!(!!A#!!"Y!!!.#!!!!!!!!!!!!!!.#Q!!!!!!!!!!!!!!!!!!!!!!!!A!!!!!!!!!%!!!!")!!!U!!!!-!!!!!!!!!!!!!!%!#1!!!!!</Property>
