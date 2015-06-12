@@ -23,6 +23,24 @@
 			<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
 			<Property Name="NI.ClassItem.State" Type="Int">1342972416</Property>
 		</Item>
+		<Item Name="Generate BD Constant Info.vi" Type="VI" URL="../Protected/Generate BD Constant Info.vi">
+			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!$&gt;!!!!"A!%!!!!$E!S`````Q21982I!!!,1!-!"6.U?7RF!$*!=!!?!!!8&amp;5ZV&lt;7*F=C"8=GFU:8)O&lt;(:D&lt;'&amp;T=Q!24H6N9G6S)&amp;&gt;S;82F=C"P&gt;81!-E"Q!"Y!!"=64H6N9G6S)&amp;&gt;S;82F=CZM&gt;G.M98.T!""/&gt;7VC:8)A6X*J&gt;'6S)'FO!!"5!0!!$!!!!!%!!A!$!!!!!!!!!!!!!!!!!!!!"!)!!(A!!!!!!!!*!!!!#1!!!)U,!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!E!!!!!!"!!5!!!!!</Property>
+			<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
+			<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>
+			<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">false</Property>
+			<Property Name="NI.ClassItem.MethodScope" Type="UInt">3</Property>
+			<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
+			<Property Name="NI.ClassItem.State" Type="Int">1342972416</Property>
+		</Item>
+		<Item Name="Polish BD Constant.vi" Type="VI" URL="../Protected/Polish BD Constant.vi">
+			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!$;!!!!"1!%!!!!-E"Q!"Y!!"=64H6N9G6S)&amp;&gt;S;82F=CZM&gt;G.M98.T!"&amp;/&gt;7VC:8)A6X*J&gt;'6S)'^V&gt;!!71(!!#!!!1!)!!!B#2#"$&lt;WZT&gt;!!!-E"Q!"Y!!"=64H6N9G6S)&amp;&gt;S;82F=CZM&gt;G.M98.T!""/&gt;7VC:8)A6X*J&gt;'6S)'FO!!"5!0!!$!!!!!!!!!!"!!!!!!!!!!!!!!!!!!)!!Q-!!(A!!!!!!!!!!!!!!!!!!)U,!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!3!!!!E!!!!!!"!!1!!!!!</Property>
+			<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
+			<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>
+			<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">false</Property>
+			<Property Name="NI.ClassItem.MethodScope" Type="UInt">3</Property>
+			<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
+			<Property Name="NI.ClassItem.State" Type="Int">1107821072</Property>
+		</Item>
 		<Item Name="Polish Control.vi" Type="VI" URL="../Protected/Polish Control.vi">
 			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!$=!!!!"1!%!!!!-E"Q!"Y!!"=64H6N9G6S)&amp;&gt;S;82F=CZM&gt;G.M98.T!"&amp;/&gt;7VC:8)A6X*J&gt;'6S)'^V&gt;!!91(!!#!!!!!9!!!N$&lt;WZU=G^M)&amp;*F:A!S1(!!(A!!&amp;R6/&gt;7VC:8)A6X*J&gt;'6S,GRW9WRB=X-!%%ZV&lt;7*F=C"8=GFU:8)A;7Y!!&amp;1!]!!-!!!!!!!!!!%!!!!!!!!!!!!!!!!!!A!$!Q!!?!!!!!!!!!!!!!!!!!!!D1M!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")!!!#1!!!!!!%!"!!!!!!</Property>
 			<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
@@ -109,15 +127,6 @@
 		<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
 		<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
 		<Property Name="NI.ClassItem.State" Type="Int">1074541056</Property>
-	</Item>
-	<Item Name="Process Return Value.vi" Type="VI" URL="../Process Return Value.vi">
-		<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!%!!!!!"A!%!!!!*E"Q!!A!!!!#!!!:47^E;7:J:71A5(*P&gt;']A476U;'^E)#"731!S1(!!(A!!&amp;R6/&gt;7VC:8)A6X*J&gt;'6S,GRW9WRB=X-!%5ZV&lt;7*F=C"8=GFU:8)A&lt;X6U!":!=!!)!!!!!A!!#5VF&gt;'BP:#"731!S1(!!(A!!&amp;R6/&gt;7VC:8)A6X*J&gt;'6S,GRW9WRB=X-!%%ZV&lt;7*F=C"8=GFU:8)A;7Y!!&amp;1!]!!-!!!!!!!"!!)!!!!!!!!!!!!!!!!!!Q!%!Q!!?!!!!!!!!!!!!!!.#A!!D1M!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!I!!!#1!!!!!!%!"1!!!!!</Property>
-		<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
-		<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>
-		<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">false</Property>
-		<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
-		<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
-		<Property Name="NI.ClassItem.State" Type="Int">1342710288</Property>
 	</Item>
 	<Item Name="Type String to DLL Enum.vi" Type="VI" URL="../Type String to DLL Enum.vi">
 		<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!$_!!!!"1!%!!!!$%!B"F:B&lt;'FE0Q!!A!$R!!!!!!!!!!)64H6N9G6S)&amp;&gt;S;82F=CZM&gt;G.M98.T%%ZV&lt;76S;7-A6(FQ:3ZD&gt;'Q!55!7!!Q#34A$34%W!UET-A.*.D1#64A$64%W!V5T-A.6.D1$5U&gt;-!U2#4!&gt;16&amp;)A35Z5#&amp;"55C"635Z5!!!-4H6N:8*J9S"5?8"F!!!31$$`````#62Z='5A4G&amp;N:1"5!0!!$!!!!!%!!A!!!!!!!!!!!!!!!!!!!!-!!!)!!(A!!!!!!!!*!!!!#1!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!))!!!!!!!!!!!"!!1!!!!!</Property>

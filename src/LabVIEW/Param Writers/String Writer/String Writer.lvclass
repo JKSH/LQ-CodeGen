@@ -26,6 +26,15 @@
 			<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
 			<Property Name="NI.ClassItem.State" Type="Int">1342972416</Property>
 		</Item>
+		<Item Name="Generate BD Constant Info.vi" Type="VI" URL="../Protected/Generate BD Constant Info.vi">
+			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!$&gt;!!!!"A!%!!!!$E!S`````Q21982I!!!,1!-!"6.U?7RF!$*!=!!?!!!8&amp;6.U=GFO:S"8=GFU:8)O&lt;(:D&lt;'&amp;T=Q!25X2S;7ZH)&amp;&gt;S;82F=C"P&gt;81!-E"Q!"Y!!"=65X2S;7ZH)&amp;&gt;S;82F=CZM&gt;G.M98.T!""4&gt;(*J&lt;G=A6X*J&gt;'6S)'FO!!"5!0!!$!!!!!%!!A!$!!!!!!!!!!!!!!!!!!!!"!)!!(A!!!!!!!!*!!!!#1!!!)U,!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!E!!!!!!"!!5!!!!!</Property>
+			<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
+			<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>
+			<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">false</Property>
+			<Property Name="NI.ClassItem.MethodScope" Type="UInt">3</Property>
+			<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
+			<Property Name="NI.ClassItem.State" Type="Int">1342972416</Property>
+		</Item>
 	</Item>
 	<Item Name="Add Element to Constant.vi" Type="VI" URL="../Add Element to Constant.vi">
 		<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!%;!!!!"Q!%!!!!)E"Q!!A!!%!#!!!51WRV=X2F=C"P=C""=H*B?3"%&gt;8!!!$*!=!!?!!!8&amp;6.U=GFO:S"8=GFU:8)O&lt;(:D&lt;'&amp;T=Q!25X2S;7ZH)&amp;&gt;S;82F=C"P&gt;81!&amp;E!Q`````QR&amp;&lt;'6N:7ZU)%ZB&lt;75!!"Z!=!!)!!"!!A!!%%.M&gt;8.U:8)A&lt;X)A18*S98E!!$*!=!!?!!!8&amp;6.U=GFO:S"8=GFU:8)O&lt;(:D&lt;'&amp;T=Q!15X2S;7ZH)&amp;&gt;S;82F=C"J&lt;A!!6!$Q!!Q!!!!!!!%!!A!!!!!!!!!!!!!!!Q!%!!5$!!"Y!!!!!!!!!!!!!!U+!!#.#Q!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1!!!!%!!!!*!!!!!!!1!'!!!!!!</Property>
@@ -62,14 +71,5 @@
 		<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
 		<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
 		<Property Name="NI.ClassItem.State" Type="Int">1342972416</Property>
-	</Item>
-	<Item Name="Process Return Value.vi" Type="VI" URL="../Process Return Value.vi">
-		<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!%!!!!!"A!%!!!!*E"Q!!A!!!!#!!!:47^E;7:J:71A5(*P&gt;']A476U;'^E)#"731!S1(!!(A!!&amp;R64&gt;(*J&lt;G=A6X*J&gt;'6S,GRW9WRB=X-!%6.U=GFO:S"8=GFU:8)A&lt;X6U!":!=!!)!!!!!A!!#5VF&gt;'BP:#"731!S1(!!(A!!&amp;R64&gt;(*J&lt;G=A6X*J&gt;'6S,GRW9WRB=X-!%&amp;.U=GFO:S"8=GFU:8)A;7Y!!&amp;1!]!!-!!!!!!!"!!)!!!!!!!!!!!!!!!!!!Q!%!Q!!?!!!!!!!!!!!!!!.#A!!D1M!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!A!!!#1!!!!!!%!"1!!!!!</Property>
-		<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
-		<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>
-		<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">false</Property>
-		<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
-		<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
-		<Property Name="NI.ClassItem.State" Type="Int">1342972432</Property>
 	</Item>
 </LVClass>
