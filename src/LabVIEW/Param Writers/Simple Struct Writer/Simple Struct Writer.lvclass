@@ -15,13 +15,13 @@
 	<Item Name="Protected" Type="Folder">
 		<Property Name="NI.LibItem.Scope" Type="Int">3</Property>
 		<Item Name="ConPane Control Params.vi" Type="VI" URL="../Protected/ConPane Control Params.vi">
-			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!$\!!!!"A!%!!!!$E!S`````Q21982I!!!,1!-!"6.U?7RF!%*!=!!?!!!?(&amp;.J&lt;8"M:3"4&gt;(*V9X1A6X*J&gt;'6S,GRW9WRB=X-!!"B4;7VQ&lt;'5A5X2S&gt;7.U)&amp;&gt;S;82F=C"P&gt;81!!%"!=!!?!!!?(&amp;.J&lt;8"M:3"4&gt;(*V9X1A6X*J&gt;'6S,GRW9WRB=X-!!"&gt;4;7VQ&lt;'5A5X2S&gt;7.U)&amp;&gt;S;82F=C"J&lt;A"5!0!!$!!!!!%!!A!$!!!!!!!!!!!!!!!!!!!!"!)!!(A!!!!!!!!*!!!!#1!!!)U,!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!E!!!!!!"!!5!!!!!</Property>
+			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!%0!!!!"Q!%!!!!$E!S`````Q21982I!!!,1!-!"6.U?7RF!%*!=!!?!!!?(&amp;.J&lt;8"M:3"4&gt;(*V9X1A6X*J&gt;'6S,GRW9WRB=X-!!"B4;7VQ&lt;'5A5X2S&gt;7.U)&amp;&gt;S;82F=C"P&gt;81!!"2!)1Z*&lt;G2J9W&amp;U&lt;X)`)#B'+1!!1%"Q!"Y!!"Y=5WFN='RF)&amp;.U=H6D&gt;#"8=GFU:8)O&lt;(:D&lt;'&amp;T=Q!!&amp;V.J&lt;8"M:3"4&gt;(*V9X1A6X*J&gt;'6S)'FO!&amp;1!]!!-!!!!!1!#!!-!!!!!!!!!!!!!!!!!"!!&amp;!A!!?!!!!!!!!!E!!!!*!!!!D1M!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!A!!!#1!!!!!!%!"A!!!!!</Property>
 			<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
-			<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>
+			<Property Name="NI.ClassItem.Flags" Type="Int">33554432</Property>
 			<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">false</Property>
 			<Property Name="NI.ClassItem.MethodScope" Type="UInt">3</Property>
 			<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
-			<Property Name="NI.ClassItem.State" Type="Int">1342972416</Property>
+			<Property Name="NI.ClassItem.State" Type="Int">1342710272</Property>
 		</Item>
 		<Item Name="Generate BD Constant Info.vi" Type="VI" URL="../Protected/Generate BD Constant Info.vi">
 			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!$\!!!!"A!%!!!!$E!S`````Q21982I!!!,1!-!"6.U?7RF!%*!=!!?!!!?(&amp;.J&lt;8"M:3"4&gt;(*V9X1A6X*J&gt;'6S,GRW9WRB=X-!!"B4;7VQ&lt;'5A5X2S&gt;7.U)&amp;&gt;S;82F=C"P&gt;81!!%"!=!!?!!!?(&amp;.J&lt;8"M:3"4&gt;(*V9X1A6X*J&gt;'6S,GRW9WRB=X-!!"&gt;4;7VQ&lt;'5A5X2S&gt;7.U)&amp;&gt;S;82F=C"J&lt;A"5!0!!$!!!!!%!!A!$!!!!!!!!!!!!!!!!!!!!"!)!!(A!!!!!!!!*!!!!#1!!!)U,!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!E!!!!!!"!!5!!!!!</Property>

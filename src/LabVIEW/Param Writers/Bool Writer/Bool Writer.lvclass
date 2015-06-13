@@ -18,13 +18,13 @@
 	<Item Name="Protected" Type="Folder">
 		<Property Name="NI.LibItem.Scope" Type="Int">3</Property>
 		<Item Name="ConPane Control Params.vi" Type="VI" URL="../Protected/ConPane Control Params.vi">
-			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!$6!!!!"A!%!!!!$E!S`````Q21982I!!!,1!-!"6.U?7RF!#Z!=!!?!!!6%U*P&lt;WQA6X*J&gt;'6S,GRW9WRB=X-!$U*P&lt;WQA6X*J&gt;'6S)'^V&gt;!!O1(!!(A!!&amp;2.#&lt;W^M)&amp;&gt;S;82F=CZM&gt;G.M98.T!!Z#&lt;W^M)&amp;&gt;S;82F=C"J&lt;A!!6!$Q!!Q!!!!"!!)!!Q!!!!!!!!!!!!!!!!!!!!1#!!"Y!!!!!!!!#1!!!!E!!!#.#Q!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*!!!!!!!1!&amp;!!!!!!</Property>
+			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!$J!!!!"Q!%!!!!$E!S`````Q21982I!!!,1!-!"6.U?7RF!#Z!=!!?!!!6%U*P&lt;WQA6X*J&gt;'6S,GRW9WRB=X-!$U*P&lt;WQA6X*J&gt;'6S)'^V&gt;!!51#%/37ZE;7.B&gt;'^S0S!I2CE!!#Z!=!!?!!!6%U*P&lt;WQA6X*J&gt;'6S,GRW9WRB=X-!$E*P&lt;WQA6X*J&gt;'6S)'FO!!"5!0!!$!!!!!%!!A!$!!!!!!!!!!!!!!!!!!1!"1)!!(A!!!!!!!!*!!!!#1!!!)U,!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!)!!!!E!!!!!!"!!9!!!!!</Property>
 			<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
-			<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>
+			<Property Name="NI.ClassItem.Flags" Type="Int">33554432</Property>
 			<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">false</Property>
 			<Property Name="NI.ClassItem.MethodScope" Type="UInt">3</Property>
 			<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
-			<Property Name="NI.ClassItem.State" Type="Int">1342972416</Property>
+			<Property Name="NI.ClassItem.State" Type="Int">1342710272</Property>
 		</Item>
 		<Item Name="Generate BD Constant Info.vi" Type="VI" URL="../Protected/Generate BD Constant Info.vi">
 			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!$6!!!!"A!%!!!!$E!S`````Q21982I!!!,1!-!"6.U?7RF!#Z!=!!?!!!6%U*P&lt;WQA6X*J&gt;'6S,GRW9WRB=X-!$U*P&lt;WQA6X*J&gt;'6S)'^V&gt;!!O1(!!(A!!&amp;2.#&lt;W^M)&amp;&gt;S;82F=CZM&gt;G.M98.T!!Z#&lt;W^M)&amp;&gt;S;82F=C"J&lt;A!!6!$Q!!Q!!!!"!!)!!Q!!!!!!!!!!!!!!!!!!!!1#!!"Y!!!!!!!!#1!!!!E!!!#.#Q!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*!!!!!!!1!&amp;!!!!!!</Property>
