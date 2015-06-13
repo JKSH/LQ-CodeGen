@@ -29,15 +29,6 @@
 			</Item>
 			<Item Name="DLL Parameter Info.ctl" Type="VI" URL="../Data Structures/DLL Parameter Info.ctl"/>
 		</Item>
-		<Item Name="DEBUG" Type="Folder">
-			<Item Name="ClassInVi.vi" Type="VI" URL="../DEBUG/ClassInVi.vi"/>
-			<Item Name="DEBUG Call Lib Probe.vi" Type="VI" URL="../DEBUG Call Lib Probe.vi"/>
-			<Item Name="DEBUG Connect ConPane.vi" Type="VI" URL="../DEBUG Connect ConPane.vi"/>
-			<Item Name="DEBUG Put Object in VI.vi" Type="VI" URL="../DEBUG Put Object in VI.vi"/>
-			<Item Name="DEBUG Query VI.vi" Type="VI" URL="../DEBUG Query VI.vi"/>
-			<Item Name="DEBUG Wiring Study.vi" Type="VI" URL="../DEBUG Wiring Study.vi"/>
-			<Item Name="DebugClass.lvclass" Type="LVClass" URL="../DEBUG/DebugClass.lvclass"/>
-		</Item>
 		<Item Name="Icons and Wires" Type="Folder">
 			<Item Name="Create Icon.vi" Type="VI" URL="../Icons and Wires/Create Icon.vi"/>
 			<Item Name="Icon Template.ctl" Type="VI" URL="../Icons and Wires/Icon Template.ctl"/>
@@ -197,7 +188,6 @@
 				<Item Name="LVNumericRepresentation.ctl" Type="VI" URL="/&lt;vilib&gt;/numeric/LVNumericRepresentation.ctl"/>
 				<Item Name="LVPoint32TypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVPoint32TypeDef.ctl"/>
 				<Item Name="LVPointTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVPointTypeDef.ctl"/>
-				<Item Name="LVPositionTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVPositionTypeDef.ctl"/>
 				<Item Name="Pathes.ctl" Type="VI" URL="/&lt;vilib&gt;/LabVIEW Icon API/lv_icon/Controls/Pathes.ctl"/>
 				<Item Name="PCT Pad String.vi" Type="VI" URL="/&lt;vilib&gt;/picture/picture.llb/PCT Pad String.vi"/>
 				<Item Name="Picture to Pixmap.vi" Type="VI" URL="/&lt;vilib&gt;/picture/pictutil.llb/Picture to Pixmap.vi"/>
