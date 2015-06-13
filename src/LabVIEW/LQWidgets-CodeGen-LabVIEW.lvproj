@@ -51,6 +51,7 @@
 			<Item Name="String Writer.lvclass" Type="LVClass" URL="../Param Writers/String Writer/String Writer.lvclass"/>
 		</Item>
 		<Item Name="Utils" Type="Folder">
+			<Item Name="JSON File to Cluster.vi" Type="VI" URL="../Utils/JSON File to Cluster.vi"/>
 			<Item Name="Merge Maps.vi" Type="VI" URL="../Utils/Merge Maps.vi"/>
 		</Item>
 		<Item Name="Add Property.vi" Type="VI" URL="../Add Property.vi"/>
