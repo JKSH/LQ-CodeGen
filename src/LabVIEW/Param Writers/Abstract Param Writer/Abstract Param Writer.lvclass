@@ -88,15 +88,6 @@
 			<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
 			<Property Name="NI.ClassItem.State" Type="Int">1342710288</Property>
 		</Item>
-		<Item Name="Find RetVal Wire_UNUSED.vi" Type="VI" URL="../Utils/Find RetVal Wire_UNUSED.vi">
-			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!%(!!!!#A!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AF&amp;=H*P=C"0&gt;81!"!!!!"B!=!!)!!"!.Q!!#V*F&gt;&amp;:B&lt;#"8;8*F!#"!=!!)!!!!!A!!%V"S&lt;X2P)%VF&gt;'BP:#"733"%&gt;8!!&amp;E"1!!-!!!!"!!))28*S&lt;X)A37Y!!"R!=!!)!!!!!A!!$V"S&lt;X2P)%VF&gt;'BP:#"731"5!0!!$!!$!!1!"1!'!!1!"!!%!!1!"Q!%!!1!#!-!!(A!!!U)!!!!!!!!#1!!!!U,!!!!!!!!!!!!!!!!!!!!!!!!#A!!!!!!!!!!!!!!%!!!!!!"!!E!!!!!</Property>
-			<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
-			<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>
-			<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">true</Property>
-			<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
-			<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
-			<Property Name="NI.ClassItem.State" Type="Int">1107821072</Property>
-		</Item>
 		<Item Name="Find Wire Terminals.vi" Type="VI" URL="../Utils/Find Wire Terminals.vi">
 			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!#_!!!!"A!%!!!!'E"Q!!A!!%!"!!!.5WFO;S"5:8*N;7ZB&lt;!!=1(!!#!!!1!%!!!^4&lt;X6S9W5A6'6S&lt;7FO97Q!&amp;E"Q!!A!!%!X!!!)6WFS:3"%&gt;8!!!"*!=!!)!!"!.Q!!"&amp;&gt;J=G5!!&amp;1!]!!-!!!!!1!#!!-!!!!!!!!!!!!!!!!!!!!%!Q!!?!!!!!!!!!E!!!!*!!!!$1M!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1!!!!!!%!"1!!!!!</Property>
 			<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
