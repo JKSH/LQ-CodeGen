@@ -34,7 +34,7 @@ run()
 }
 
 // TODO: Return version info to protect against mismatched VI-DLL combos
-qint32 Q_DECL_EXPORT
+qint32
 startWidgetEngine(quintptr* _retVal, LStrHandle pluginDir)
 {
 	if (bridge)
@@ -55,7 +55,7 @@ startWidgetEngine(quintptr* _retVal, LStrHandle pluginDir)
 	return LQ::NoError;
 }
 
-qint32 Q_DECL_EXPORT
+qint32
 stopWidgetEngine()
 {
 	if (!bridge)
@@ -64,7 +64,7 @@ stopWidgetEngine()
 	return LQ::NoError;
 }
 
-qint32 Q_DECL_EXPORT
+qint32
 registerEventRefs(LVUserEventRef* voidRef, LVUserEventRef* boolRef, LVUserEventRef* i32Ref, LVUserEventRef* stringRef)
 {
 	if (!bridge)
@@ -78,7 +78,7 @@ registerEventRefs(LVUserEventRef* voidRef, LVUserEventRef* boolRef, LVUserEventR
 }
 
 // LabVIEW needs to prepend "2" to the string
-qint32 Q_DECL_EXPORT
+qint32
 connect_void(quint32 _instance, const char* encodedSignal)
 {
 	if (!bridge)
@@ -90,7 +90,7 @@ connect_void(quint32 _instance, const char* encodedSignal)
 	// TODO: Return error code if connection failed
 	return LQ::NoError;
 }
-qint32 Q_DECL_EXPORT
+qint32
 connect_bool(quint32 _instance, const char* encodedSignal)
 {
 	if (!bridge)
@@ -101,7 +101,7 @@ connect_bool(quint32 _instance, const char* encodedSignal)
 
 	return LQ::NoError;
 }
-qint32 Q_DECL_EXPORT
+qint32
 connect_i32(quint32 _instance, const char* encodedSignal)
 {
 	if (!bridge)
@@ -112,7 +112,7 @@ connect_i32(quint32 _instance, const char* encodedSignal)
 
 	return LQ::NoError;
 }
-qint32 Q_DECL_EXPORT
+qint32
 connect_string(quint32 _instance, const char* encodedSignal)
 {
 	if (!bridge)
@@ -131,7 +131,7 @@ connect_string(quint32 _instance, const char* encodedSignal)
 	This function is like QMetaObject::indexOfSignal(), except that it returns
 	the index of the "full" version of a signal that has default parameters.
 */
-qint32 Q_DECL_EXPORT
+qint32
 findSignalIndex(qint64* _retVal, quint32 _instance, const char* normalizedSignal)
 {
 	if (!bridge)

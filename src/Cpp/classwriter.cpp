@@ -111,7 +111,7 @@ ClassWriter::writeClass(const QJsonObject& classObj)
 		QString retType_brg = method.returnType_bridge();
 		bridgeH.write('\t' + retType_brg.toUtf8() + ' ');
 		dllH.write("extern qint32 Q_DECL_EXPORT ");
-		dllC.write(       "qint32 Q_DECL_EXPORT\n");
+		dllC.write("qint32\n");
 
 		QByteArray funcName = method.qualifiedName("_").toUtf8();
 		bridgeH.write(funcName + '(');
