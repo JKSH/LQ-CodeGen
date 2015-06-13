@@ -132,7 +132,6 @@ TypeConv::dllType(const QString& qtType)
 }
 
 // TODO: Use instanceType() in more generation code
-//
 QString
 TypeConv::instanceType_bridge(const QString& qtType)
 {

@@ -29,15 +29,6 @@
 			</Item>
 			<Item Name="DLL Parameter Info.ctl" Type="VI" URL="../Data Structures/DLL Parameter Info.ctl"/>
 		</Item>
-		<Item Name="DEBUG" Type="Folder">
-			<Item Name="ClassInVi.vi" Type="VI" URL="../DEBUG/ClassInVi.vi"/>
-			<Item Name="DEBUG Call Lib Probe.vi" Type="VI" URL="../DEBUG Call Lib Probe.vi"/>
-			<Item Name="DEBUG Connect ConPane.vi" Type="VI" URL="../DEBUG Connect ConPane.vi"/>
-			<Item Name="DEBUG Put Object in VI.vi" Type="VI" URL="../DEBUG Put Object in VI.vi"/>
-			<Item Name="DEBUG Query VI.vi" Type="VI" URL="../DEBUG Query VI.vi"/>
-			<Item Name="DEBUG Wiring Study.vi" Type="VI" URL="../DEBUG Wiring Study.vi"/>
-			<Item Name="DebugClass.lvclass" Type="LVClass" URL="../DEBUG/DebugClass.lvclass"/>
-		</Item>
 		<Item Name="Icons and Wires" Type="Folder">
 			<Item Name="Create Icon.vi" Type="VI" URL="../Icons and Wires/Create Icon.vi"/>
 			<Item Name="Icon Template.ctl" Type="VI" URL="../Icons and Wires/Icon Template.ctl"/>
@@ -60,6 +51,7 @@
 			<Item Name="String Writer.lvclass" Type="LVClass" URL="../Param Writers/String Writer/String Writer.lvclass"/>
 		</Item>
 		<Item Name="Utils" Type="Folder">
+			<Item Name="JSON File to Cluster.vi" Type="VI" URL="../Utils/JSON File to Cluster.vi"/>
 			<Item Name="Merge Maps.vi" Type="VI" URL="../Utils/Merge Maps.vi"/>
 		</Item>
 		<Item Name="Add Property.vi" Type="VI" URL="../Add Property.vi"/>
@@ -73,7 +65,6 @@
 		<Item Name="Create Opaque Structs.vi" Type="VI" URL="../Create Opaque Structs.vi"/>
 		<Item Name="Delete Template VIs.vi" Type="VI" URL="../Delete Template VIs.vi"/>
 		<Item Name="Generate and Save Method VIs.vi" Type="VI" URL="../Generate and Save Method VIs.vi"/>
-		<Item Name="Get Template LVClass.vi" Type="VI" URL="../Get Template LVClass.vi"/>
 		<Item Name="Get Template LVClasses.vi" Type="VI" URL="../Get Template LVClasses.vi"/>
 		<Item Name="Identify Projections.vi" Type="VI" URL="../Identify Projections.vi"/>
 		<Item Name="Main.vi" Type="VI" URL="../Main.vi"/>
@@ -198,7 +189,6 @@
 				<Item Name="LVNumericRepresentation.ctl" Type="VI" URL="/&lt;vilib&gt;/numeric/LVNumericRepresentation.ctl"/>
 				<Item Name="LVPoint32TypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVPoint32TypeDef.ctl"/>
 				<Item Name="LVPointTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVPointTypeDef.ctl"/>
-				<Item Name="LVPositionTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVPositionTypeDef.ctl"/>
 				<Item Name="Pathes.ctl" Type="VI" URL="/&lt;vilib&gt;/LabVIEW Icon API/lv_icon/Controls/Pathes.ctl"/>
 				<Item Name="PCT Pad String.vi" Type="VI" URL="/&lt;vilib&gt;/picture/picture.llb/PCT Pad String.vi"/>
 				<Item Name="Picture to Pixmap.vi" Type="VI" URL="/&lt;vilib&gt;/picture/pictutil.llb/Picture to Pixmap.vi"/>
