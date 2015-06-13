@@ -22,7 +22,7 @@ namespace LQ
 
 extern "C" {
 
-extern void Q_DECL_EXPORT errorStringFromCode(LStrHandle retVal, int32 errorCode);
+extern void Q_DECL_EXPORT errorStringFromCode(LStrHandle _retVal, int32 errorCode);
 
 }
 

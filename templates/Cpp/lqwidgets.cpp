@@ -34,7 +34,7 @@ run()
 }
 
 // TODO: Return version info to protect against mismatched VI-DLL combos
-qint32 Q_DECL_EXPORT
+qint32
 startWidgetEngine(quintptr* _retVal, LStrHandle pluginDir)
 {
 	if (bridge)
@@ -55,7 +55,7 @@ startWidgetEngine(quintptr* _retVal, LStrHandle pluginDir)
 	return LQ::NoError;
 }
 
-qint32 Q_DECL_EXPORT
+qint32
 stopWidgetEngine()
 {
 	if (!bridge)
@@ -64,7 +64,7 @@ stopWidgetEngine()
 	return LQ::NoError;
 }
 
-qint32 Q_DECL_EXPORT
+qint32
 registerEventRefs(LVUserEventRef* voidRef, LVUserEventRef* boolRef, LVUserEventRef* i32Ref, LVUserEventRef* stringRef)
 {
 	if (!bridge)
@@ -78,47 +78,47 @@ registerEventRefs(LVUserEventRef* voidRef, LVUserEventRef* boolRef, LVUserEventR
 }
 
 // LabVIEW needs to prepend "2" to the string
-qint32 Q_DECL_EXPORT
-connect_void(quint32 qobject, const char* encodedSignal)
+qint32
+connect_void(quint32 _instance, const char* encodedSignal)
 {
 	if (!bridge)
 		return LQ::EngineNotRunningError;
 
-	QObject::connect((QObject*)qobject, encodedSignal,
+	QObject::connect((QObject*)_instance, encodedSignal,
 			bridge, SLOT(postLVEvent_void()));
 
 	// TODO: Return error code if connection failed
 	return LQ::NoError;
 }
-qint32 Q_DECL_EXPORT
-connect_bool(quint32 qobject, const char* encodedSignal)
+qint32
+connect_bool(quint32 _instance, const char* encodedSignal)
 {
 	if (!bridge)
 		return LQ::EngineNotRunningError;
 
-	QObject::connect((QObject*)qobject, encodedSignal,
+	QObject::connect((QObject*)_instance, encodedSignal,
 			bridge, SLOT(postLVEvent_bool(bool)));
 
 	return LQ::NoError;
 }
-qint32 Q_DECL_EXPORT
-connect_i32(quint32 qobject, const char* encodedSignal)
+qint32
+connect_i32(quint32 _instance, const char* encodedSignal)
 {
 	if (!bridge)
 		return LQ::EngineNotRunningError;
 
-	QObject::connect((QObject*)qobject, encodedSignal,
+	QObject::connect((QObject*)_instance, encodedSignal,
 			bridge, SLOT(postLVEvent_i32(int)));
 
 	return LQ::NoError;
 }
-qint32 Q_DECL_EXPORT
-connect_string(quint32 qobject, const char* encodedSignal)
+qint32
+connect_string(quint32 _instance, const char* encodedSignal)
 {
 	if (!bridge)
 		return LQ::EngineNotRunningError;
 
-	QObject::connect((QObject*)qobject, encodedSignal,
+	QObject::connect((QObject*)_instance, encodedSignal,
 			bridge, SLOT(postLVEvent_string(QString)));
 
 	return LQ::NoError;
@@ -131,8 +131,8 @@ connect_string(quint32 qobject, const char* encodedSignal)
 	This function is like QMetaObject::indexOfSignal(), except that it returns
 	the index of the "full" version of a signal that has default parameters.
 */
-qint32 Q_DECL_EXPORT
-findSignalIndex(qint64* retVal, quint32 qobject, const char* normalizedSignal)
+qint32
+findSignalIndex(qint64* _retVal, quint32 _instance, const char* normalizedSignal)
 {
 	if (!bridge)
 		return LQ::EngineNotRunningError;
@@ -140,9 +140,9 @@ findSignalIndex(qint64* retVal, quint32 qobject, const char* normalizedSignal)
 	QString head = QString::fromLatin1(normalizedSignal);
 	head.chop(1);
 
-	*retVal = -1;
+	*_retVal = -1;
 	int maxLength = 0;
-	auto metaObject = ((QObject*)qobject)->metaObject();
+	auto metaObject = ((QObject*)_instance)->metaObject();
 	for(int i = 0; i < metaObject->methodCount(); ++i)
 	{
 		const QMetaMethod candidateMethod = metaObject->method(i);
@@ -152,7 +152,7 @@ findSignalIndex(qint64* retVal, quint32 qobject, const char* normalizedSignal)
 				&& candidateStr.length() >= maxLength)
 		{
 			maxLength = candidateStr.length();
-			*retVal = i;
+			*_retVal = i;
 		}
 
 		// Possible optimization: moc always generates meta method for the full version

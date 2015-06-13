@@ -9,8 +9,8 @@ static const QMap<int, QByteArray> errorMap
 	{LQ::EngineAlreadyRunningError, "The widget engine is already running."}
 };
 
-void Q_DECL_EXPORT
-errorStringFromCode(LStrHandle retVal, int32 errorCode)
+void
+errorStringFromCode(LStrHandle _retVal, int32 errorCode)
 {
-	copyIntoLStr(retVal, errorMap.value(errorCode, "Unknown error."));
+	copyIntoLStr(_retVal, errorMap.value(errorCode, "Unknown error."));
 }
