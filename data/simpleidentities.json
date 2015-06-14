@@ -3,6 +3,27 @@
 		"name": "QTextCodec",
 		"methods": [
 			{
+				"name": "codecForLocale", "retType": "QTextCodec*",
+				"isStaticMember": true,
+				"isFactory": true
+			},
+			{
+				"name": "codecForMib", "retType": "QTextCodec*",
+				"params": [
+					{"name": "mib", "type": "int"}
+				],
+				"isStaticMember": true,
+				"isFactory": true
+			},
+			{
+				"name": "codecForName", "retType": "QTextCodec*",
+				"params": [
+					{"name": "name", "type": "const QByteArray&"}
+				],
+				"isStaticMember": true,
+				"isFactory": true
+			},
+			{
 				"name": "fromUnicode", "retType": "QByteArray",
 				"params": [
 					{"name": "string", "type": "const QString&"}
