@@ -55,6 +55,7 @@
 			<Item Name="Merge Maps.vi" Type="VI" URL="../Utils/Merge Maps.vi"/>
 		</Item>
 		<Item Name="Add Property.vi" Type="VI" URL="../Add Property.vi"/>
+		<Item Name="Clone and Open LVLib.vi" Type="VI" URL="../Clone and Open LVLib.vi"/>
 		<Item Name="Create Cluster Typedefs.vi" Type="VI" URL="../Create Cluster Typedefs.vi"/>
 		<Item Name="Create Enum Typedefs.vi" Type="VI" URL="../Create Enum Typedefs.vi"/>
 		<Item Name="Create Identity Classes.vi" Type="VI" URL="../Create Identity Classes.vi"/>
@@ -70,7 +71,6 @@
 		<Item Name="Main.vi" Type="VI" URL="../Main.vi"/>
 		<Item Name="Prepare Save Dir.vi" Type="VI" URL="../Prepare Save Dir.vi"/>
 		<Item Name="Save Method VIs.vi" Type="VI" URL="../Save Method VIs.vi"/>
-		<Item Name="Seed LVLIB.vi" Type="VI" URL="../Seed LVLIB.vi"/>
 		<Item Name="Set Friendships.vi" Type="VI" URL="../Set Friendships.vi"/>
 		<Item Name="Set Inheritances.vi" Type="VI" URL="../Set Inheritances.vi"/>
 		<Item Name="TypeConv_Obtain Writer.vi" Type="VI" URL="../Param Writers/TypeConv/TypeConv_Obtain Writer.vi"/>
