@@ -39,6 +39,7 @@
 				<Item Name="Action.ctl" Type="VI" URL="../Param Writers/TypeConv/Action.ctl"/>
 				<Item Name="Category.ctl" Type="VI" URL="../Param Writers/TypeConv/Category.ctl"/>
 				<Item Name="TypeConv.vi" Type="VI" URL="../Param Writers/TypeConv/TypeConv.vi"/>
+				<Item Name="TypeConv_Register Basic Types.vi" Type="VI" URL="../Param Writers/TypeConv/TypeConv_Register Basic Types.vi"/>
 			</Item>
 			<Item Name="Abstract Param Writer.lvclass" Type="LVClass" URL="../Param Writers/Abstract Param Writer/Abstract Param Writer.lvclass"/>
 			<Item Name="Array Writer.lvclass" Type="LVClass" URL="../Param Writers/Array Writer/Array Writer.lvclass"/>
