@@ -23,23 +23,22 @@
 	<Item Name="LQIdentity.ctl" Type="Class Private Data" URL="LQIdentity.ctl">
 		<Property Name="NI.LibItem.Scope" Type="Int">2</Property>
 	</Item>
-	<Item Name="Community" Type="Folder">
-		<Property Name="NI.LibItem.Scope" Type="Int">4</Property>
-		<Item Name="lqManifestation.vi" Type="VI" URL="../Community/lqManifestation.vi">
+	<Item Name="Internal" Type="Folder">
+		<Item Name="lqManifestation.vi" Type="VI" URL="../Internal/lqManifestation.vi">
 			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!$W!!!!"1!%!!!!%U!)!!V.97ZJ:G6T&gt;'&amp;U;7^O!$R!=!!?!!!D$F2F&lt;8"M982F,GRW&lt;'FC%ER2372F&lt;H2J&gt;(EO&lt;(:D&lt;'&amp;T=Q!/4&amp;&amp;*:'6O&gt;'FU?3"P&gt;81!!$J!=!!?!!!D$F2F&lt;8"M982F,GRW&lt;'FC%ER2372F&lt;H2J&gt;(EO&lt;(:D&lt;'&amp;T=Q!.4&amp;&amp;*:'6O&gt;'FU?3"J&lt;A"B!0!!$!!!!!!!!1!#!!!!!!!!!!!!!!!!!!!!!Q)!!(A!!!!!!!!!!!!!#1!!!!U,!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!%!!!$1!!!!Q!!!!!!!!!!!!!!1!%!!!!!!</Property>
 			<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
 			<Property Name="NI.ClassItem.Flags" Type="Int">16777216</Property>
 			<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">true</Property>
-			<Property Name="NI.ClassItem.MethodScope" Type="UInt">4</Property>
+			<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
 			<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
 			<Property Name="NI.ClassItem.State" Type="Int">8400896</Property>
 		</Item>
-		<Item Name="lqSetManifestation.vi" Type="VI" URL="../Community/lqSetManifestation.vi">
+		<Item Name="lqSetManifestation.vi" Type="VI" URL="../Internal/lqSetManifestation.vi">
 			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!&amp;*!!!!#A!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AF&amp;=H*P=C"0&gt;81!"!!!!$R!=!!?!!!D$F2F&lt;8"M982F,GRW&lt;'FC%ER2372F&lt;H2J&gt;(EO&lt;(:D&lt;'&amp;T=Q!/4&amp;&amp;*:'6O&gt;'FU?3"P&gt;81!!":!5!!$!!!!!1!##%6S=G^S)%FO!!!41!A!$5VB&lt;GFG:8.U982J&lt;WY!/E"Q!"Y!!#-/6'6N='RB&gt;'5O&lt;(:M;7)34&amp;&amp;*:'6O&gt;'FU?3ZM&gt;G.M98.T!!V-55FE:7ZU;82Z)'FO!'%!]!!-!!-!"!!%!!5!"!!%!!1!"!!'!!1!"Q!)!A!!?!!!$1A!!!!!!!!!!!!!$1M!!!!!!!!!!!!!!!!!!!!!!!!)!!!!!!!!!"!!!!!3!!!.!!!!$!!!!!!!!!!!!!!"!!E!!!!!</Property>
 			<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
 			<Property Name="NI.ClassItem.Flags" Type="Int">16777216</Property>
 			<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">true</Property>
-			<Property Name="NI.ClassItem.MethodScope" Type="UInt">4</Property>
+			<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
 			<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
 			<Property Name="NI.ClassItem.State" Type="Int">8400896</Property>
 		</Item>
