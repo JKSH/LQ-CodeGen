@@ -39,6 +39,7 @@
 				<Item Name="Action.ctl" Type="VI" URL="../Param Writers/TypeConv/Action.ctl"/>
 				<Item Name="Category.ctl" Type="VI" URL="../Param Writers/TypeConv/Category.ctl"/>
 				<Item Name="TypeConv.vi" Type="VI" URL="../Param Writers/TypeConv/TypeConv.vi"/>
+				<Item Name="TypeConv_Obtain Writer.vi" Type="VI" URL="../Param Writers/TypeConv/TypeConv_Obtain Writer.vi"/>
 				<Item Name="TypeConv_Register Basic Types.vi" Type="VI" URL="../Param Writers/TypeConv/TypeConv_Register Basic Types.vi"/>
 			</Item>
 			<Item Name="Abstract Param Writer.lvclass" Type="LVClass" URL="../Param Writers/Abstract Param Writer/Abstract Param Writer.lvclass"/>
@@ -74,7 +75,6 @@
 		<Item Name="Save Method VIs.vi" Type="VI" URL="../Save Method VIs.vi"/>
 		<Item Name="Set Friendships.vi" Type="VI" URL="../Set Friendships.vi"/>
 		<Item Name="Set Inheritances.vi" Type="VI" URL="../Set Inheritances.vi"/>
-		<Item Name="TypeConv_Obtain Writer.vi" Type="VI" URL="../Param Writers/TypeConv/TypeConv_Obtain Writer.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="user.lib" Type="Folder">
 				<Item Name="Array of VData to VArray__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/lvdata/lvdata.llb/Array of VData to VArray__ogtk.vi"/>
