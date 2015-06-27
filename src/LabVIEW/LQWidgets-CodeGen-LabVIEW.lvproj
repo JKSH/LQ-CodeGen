@@ -66,7 +66,9 @@
 		<Item Name="Create Namespaces.vi" Type="VI" URL="../Create Namespaces.vi"/>
 		<Item Name="Create New Class.vi" Type="VI" URL="../Create New Class.vi"/>
 		<Item Name="Create Opaque Structs.vi" Type="VI" URL="../Create Opaque Structs.vi"/>
+		<Item Name="Create Temporary Template Directory.vi" Type="VI" URL="../Create Temporary Template Directory.vi"/>
 		<Item Name="Delete Template VIs.vi" Type="VI" URL="../Delete Template VIs.vi"/>
+		<Item Name="Delete Temporary Template Directory.vi" Type="VI" URL="../Delete Temporary Template Directory.vi"/>
 		<Item Name="Generate and Save Method VIs.vi" Type="VI" URL="../Generate and Save Method VIs.vi"/>
 		<Item Name="Get LVClasses.vi" Type="VI" URL="../Get LVClasses.vi"/>
 		<Item Name="Identify Projections.vi" Type="VI" URL="../Identify Projections.vi"/>
@@ -166,6 +168,7 @@
 				<Item Name="Flatten Pixmap.vi" Type="VI" URL="/&lt;vilib&gt;/picture/pixmap.llb/Flatten Pixmap.vi"/>
 				<Item Name="Font.ctl" Type="VI" URL="/&lt;vilib&gt;/LabVIEW Icon API/lv_icon/Controls/Font.ctl"/>
 				<Item Name="Get Image Subset.vi" Type="VI" URL="/&lt;vilib&gt;/picture/pictutil.llb/Get Image Subset.vi"/>
+				<Item Name="Get System Directory.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/sysdir.llb/Get System Directory.vi"/>
 				<Item Name="Get Text Rect.vi" Type="VI" URL="/&lt;vilib&gt;/picture/picture.llb/Get Text Rect.vi"/>
 				<Item Name="Get Type Code from I16 Array And Pos.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/GetType.llb/Get Type Code from I16 Array And Pos.vi"/>
 				<Item Name="Graphic.ctl" Type="VI" URL="/&lt;vilib&gt;/LabVIEW Icon API/lv_icon/Controls/Graphic.ctl"/>
@@ -194,6 +197,7 @@
 				<Item Name="RGB to Color.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/colorconv.llb/RGB to Color.vi"/>
 				<Item Name="Set Pen State.vi" Type="VI" URL="/&lt;vilib&gt;/picture/picture.llb/Set Pen State.vi"/>
 				<Item Name="subDisplayMessage.vi" Type="VI" URL="/&lt;vilib&gt;/express/express output/DisplayMessageBlock.llb/subDisplayMessage.vi"/>
+				<Item Name="System Directory Type.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/sysdir.llb/System Directory Type.ctl"/>
 				<Item Name="TD_Get Array Information.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/GetType.llb/TD_Get Array Information.vi"/>
 				<Item Name="TD_Get Cluster Information.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/GetType.llb/TD_Get Cluster Information.vi"/>
 				<Item Name="TD_Get Enum Information.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/GetType.llb/TD_Get Enum Information.vi"/>
