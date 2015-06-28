@@ -50,37 +50,10 @@ extractEnums(const QJsonArray& entities)
 int main(int, char **)
 {
 	// Read data
-	QJsonDocument namespaces = parseJsonFile("../../data/namespaces.json");
-	if (namespaces.isNull())
+	QJsonObject moduleSpecs = parseJsonFile("../../data/Qt Core GUI Widgets.json").object();
+	if (moduleSpecs.isEmpty())
 		return -1;
-
-	QJsonDocument numerics = parseJsonFile("../../data/numerics.json");
-	if (numerics.isNull())
-		return -1;
-
-	QJsonDocument simpleStructs = parseJsonFile("../../data/simplestructs.json");
-	if (simpleStructs.isNull())
-		return -1;
-
-	QJsonDocument opaqueClasses = parseJsonFile("../../data/opaqueclasses.json");
-	if (opaqueClasses.isNull())
-		return -1;
-
-	QJsonDocument simpleContainers = parseJsonFile("../../data/simplecontainers.json");
-	if (simpleContainers.isNull())
-		return -1;
-
-	QJsonDocument fullArrays = parseJsonFile("../../data/fullarrays.json");
-	if (fullArrays.isNull())
-		return -1;
-
-	QJsonDocument simpleIdentities = parseJsonFile("../../data/simpleidentities.json");
-	if (simpleIdentities.isNull())
-		return -1;
-
-	QJsonDocument qobjects = parseJsonFile("../../data/qobjects.json");
-	if (qobjects.isNull())
-		return -1;
+	QJsonObject types = moduleSpecs["typeCategories"].toObject();
 
 	QJsonObject voidObj;
 	voidObj["name"] = "void";
@@ -88,29 +61,35 @@ int main(int, char **)
 	QJsonObject boolObj;
 	boolObj["name"] = "bool";
 
+	QJsonArray numerics = types["numerics"].toArray();
+	QJsonArray simpleStructs = types["simpleStructs"].toArray();
+	QJsonArray opaqueStructs = types["opaqueStructs"].toArray();
+	QJsonArray simpleIdentities = types["simpleIdentities"].toArray();
+	QJsonArray qObjects = types["qObjects"].toArray();
+
 	// Process data
 	// TypeConv must be initialized before other processing
 	TypeConv::init(QJsonArray()<<voidObj, TypeConv::Void);
 	TypeConv::init(QJsonArray()<<boolObj, TypeConv::Boolean);
-	TypeConv::init(numerics.array(), TypeConv::Numeric);
-	TypeConv::init(extractEnums(simpleIdentities.array()), TypeConv::Enum);
-	TypeConv::init(extractEnums(qobjects.array()), TypeConv::Enum);
-	TypeConv::init(extractEnums(namespaces.array()), TypeConv::Enum);
-	TypeConv::init(extractEnums(opaqueClasses.array()), TypeConv::Enum);
-	TypeConv::init(simpleStructs.array(), TypeConv::SimpleStruct);
-	TypeConv::init(opaqueClasses.array(), TypeConv::OpaqueStruct);
-	TypeConv::init(simpleContainers.array(), TypeConv::SimpleContainer);
-	TypeConv::init(fullArrays.array(), TypeConv::FullArray);
-	TypeConv::init(simpleIdentities.array(), TypeConv::QObject);
-	TypeConv::init(qobjects.array(), TypeConv::QObject);
+	TypeConv::init(numerics, TypeConv::Numeric);
+	TypeConv::init(extractEnums(moduleSpecs["namespaces"].toArray()), TypeConv::Enum);
+	TypeConv::init(extractEnums(opaqueStructs), TypeConv::Enum);
+	TypeConv::init(extractEnums(simpleIdentities), TypeConv::Enum);
+	TypeConv::init(extractEnums(qObjects), TypeConv::Enum);
+	TypeConv::init(simpleStructs, TypeConv::SimpleStruct);
+	TypeConv::init(opaqueStructs, TypeConv::OpaqueStruct);
+	TypeConv::init(types["simpleContainers"].toArray(), TypeConv::SimpleContainer);
+	TypeConv::init(types["fullArrays"].toArray(), TypeConv::FullArray);
+	TypeConv::init(simpleIdentities, TypeConv::SimpleIdentity);
+	TypeConv::init(qObjects, TypeConv::QObject);
 
 	ClassWriter c;
 	c.startWriting();
-	for(const QJsonValue& val : simpleIdentities.array())
+	for(const QJsonValue& val : simpleIdentities)
 		c.writeClass(val.toObject());
-	for(const QJsonValue& val : qobjects.array())
+	for(const QJsonValue& val : qObjects)
 		c.writeClass(val.toObject());
-	for(const QJsonValue& val : opaqueClasses.array())
+	for(const QJsonValue& val : opaqueStructs)
 		c.writeClass(val.toObject());
 	c.stopWriting();
 

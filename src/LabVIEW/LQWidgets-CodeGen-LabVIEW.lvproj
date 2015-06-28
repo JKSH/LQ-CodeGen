@@ -25,6 +25,7 @@
 				<Item Name="Projection Info.ctl" Type="VI" URL="../Data Structures/JSON/Projection Info.ctl"/>
 				<Item Name="Property.ctl" Type="VI" URL="../Data Structures/JSON/Property.ctl"/>
 				<Item Name="Simple Struct.ctl" Type="VI" URL="../Data Structures/JSON/Simple Struct.ctl"/>
+				<Item Name="Type Categories.ctl" Type="VI" URL="../Data Structures/JSON/Type Categories.ctl"/>
 				<Item Name="TypeConv.ctl" Type="VI" URL="../Data Structures/JSON/TypeConv.ctl"/>
 			</Item>
 			<Item Name="DLL Parameter Info.ctl" Type="VI" URL="../Data Structures/DLL Parameter Info.ctl"/>
@@ -53,7 +54,6 @@
 			<Item Name="String Writer.lvclass" Type="LVClass" URL="../Param Writers/String Writer/String Writer.lvclass"/>
 		</Item>
 		<Item Name="Utils" Type="Folder">
-			<Item Name="JSON File to Cluster.vi" Type="VI" URL="../Utils/JSON File to Cluster.vi"/>
 			<Item Name="Merge Maps.vi" Type="VI" URL="../Utils/Merge Maps.vi"/>
 		</Item>
 		<Item Name="Add Property.vi" Type="VI" URL="../Add Property.vi"/>
@@ -73,6 +73,7 @@
 		<Item Name="Get LVClasses.vi" Type="VI" URL="../Get LVClasses.vi"/>
 		<Item Name="Identify Projections.vi" Type="VI" URL="../Identify Projections.vi"/>
 		<Item Name="Main.vi" Type="VI" URL="../Main.vi"/>
+		<Item Name="Parse Module Specifications.vi" Type="VI" URL="../Parse Module Specifications.vi"/>
 		<Item Name="Prepare Save Dir.vi" Type="VI" URL="../Prepare Save Dir.vi"/>
 		<Item Name="Save Method VIs.vi" Type="VI" URL="../Save Method VIs.vi"/>
 		<Item Name="Set Inheritances.vi" Type="VI" URL="../Set Inheritances.vi"/>
