@@ -1,5 +1,5 @@
 {
-	"name": "Qt Core GUI Widgets",
+	"name": "LQ Widgets Core",
 	"projections": [
 		{
 			"source": "QObject",
