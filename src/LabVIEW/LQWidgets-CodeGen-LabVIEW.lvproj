@@ -42,6 +42,10 @@
 				<Item Name="TypeConv.vi" Type="VI" URL="../Param Writers/TypeConv/TypeConv.vi"/>
 				<Item Name="TypeConv_Obtain Writer.vi" Type="VI" URL="../Param Writers/TypeConv/TypeConv_Obtain Writer.vi"/>
 				<Item Name="TypeConv_Register Basic Types.vi" Type="VI" URL="../Param Writers/TypeConv/TypeConv_Register Basic Types.vi"/>
+				<Item Name="TypeConv_Register Existing Complex Types.vi" Type="VI" URL="../Param Writers/TypeConv/TypeConv_Register Existing Complex Types.vi"/>
+				<Item Name="TypeConv_Register Existing Enums.vi" Type="VI" URL="../Param Writers/TypeConv/TypeConv_Register Existing Enums.vi"/>
+				<Item Name="TypeConv_Register Existing Identities.vi" Type="VI" URL="../Param Writers/TypeConv/TypeConv_Register Existing Identities.vi"/>
+				<Item Name="TypeConv_Register Existing Opaque Structs.vi" Type="VI" URL="../Param Writers/TypeConv/TypeConv_Register Existing Opaque Structs.vi"/>
 			</Item>
 			<Item Name="Abstract Param Writer.lvclass" Type="LVClass" URL="../Param Writers/Abstract Param Writer/Abstract Param Writer.lvclass"/>
 			<Item Name="Array Writer.lvclass" Type="LVClass" URL="../Param Writers/Array Writer/Array Writer.lvclass"/>
