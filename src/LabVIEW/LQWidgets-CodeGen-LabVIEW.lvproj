@@ -61,6 +61,7 @@
 		<Item Name="Create Cluster Typedefs.vi" Type="VI" URL="../Create Cluster Typedefs.vi"/>
 		<Item Name="Create Enum Typedefs.vi" Type="VI" URL="../Create Enum Typedefs.vi"/>
 		<Item Name="Create Identity Classes.vi" Type="VI" URL="../Create Identity Classes.vi"/>
+		<Item Name="Create Kernel Module LVLib.vi" Type="VI" URL="../Create Kernel Module LVLib.vi"/>
 		<Item Name="Create LVClass Control.vi" Type="VI" URL="../Create LVClass Control.vi"/>
 		<Item Name="Create Method VIs.vi" Type="VI" URL="../Create Method VIs.vi"/>
 		<Item Name="Create Namespaces.vi" Type="VI" URL="../Create Namespaces.vi"/>
@@ -74,6 +75,7 @@
 		<Item Name="Identify Projections.vi" Type="VI" URL="../Identify Projections.vi"/>
 		<Item Name="Main.vi" Type="VI" URL="../Main.vi"/>
 		<Item Name="Parse Module Specifications.vi" Type="VI" URL="../Parse Module Specifications.vi"/>
+		<Item Name="Populate Module.vi" Type="VI" URL="../Populate Module.vi"/>
 		<Item Name="Prepare Save Dir.vi" Type="VI" URL="../Prepare Save Dir.vi"/>
 		<Item Name="Save Method VIs.vi" Type="VI" URL="../Save Method VIs.vi"/>
 		<Item Name="Set Inheritances.vi" Type="VI" URL="../Set Inheritances.vi"/>
