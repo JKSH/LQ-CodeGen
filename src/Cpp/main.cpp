@@ -47,50 +47,59 @@ extractEnums(const QJsonArray& entities)
 	return enums;
 }
 
+// The kernel module must be first in the list.
+const QStringList
+moduleSpecs
+{
+	"LQ Widgets Core.json"
+};
+
 int main(int, char **)
 {
-	// Read data
-	QJsonObject moduleSpecs = parseJsonFile("../../data/Qt Core GUI Widgets.json").object();
-	if (moduleSpecs.isEmpty())
-		return -1;
-	QJsonObject types = moduleSpecs["typeCategories"].toObject();
-
-	QJsonObject voidObj;
-	voidObj["name"] = "void";
-
-	QJsonObject boolObj;
-	boolObj["name"] = "bool";
-
-	QJsonArray numerics = types["numerics"].toArray();
-	QJsonArray simpleStructs = types["simpleStructs"].toArray();
-	QJsonArray opaqueStructs = types["opaqueStructs"].toArray();
-	QJsonArray simpleIdentities = types["simpleIdentities"].toArray();
-	QJsonArray qObjects = types["qObjects"].toArray();
-
-	// Process data
-	// TypeConv must be initialized before other processing
-	TypeConv::init(QJsonArray()<<voidObj, TypeConv::Void);
-	TypeConv::init(QJsonArray()<<boolObj, TypeConv::Boolean);
-	TypeConv::init(numerics, TypeConv::Numeric);
-	TypeConv::init(extractEnums(moduleSpecs["namespaces"].toArray()), TypeConv::Enum);
-	TypeConv::init(extractEnums(opaqueStructs), TypeConv::Enum);
-	TypeConv::init(extractEnums(simpleIdentities), TypeConv::Enum);
-	TypeConv::init(extractEnums(qObjects), TypeConv::Enum);
-	TypeConv::init(simpleStructs, TypeConv::SimpleStruct);
-	TypeConv::init(opaqueStructs, TypeConv::OpaqueStruct);
-	TypeConv::init(types["simpleContainers"].toArray(), TypeConv::SimpleContainer);
-	TypeConv::init(types["fullArrays"].toArray(), TypeConv::FullArray);
-	TypeConv::init(simpleIdentities, TypeConv::SimpleIdentity);
-	TypeConv::init(qObjects, TypeConv::QObject);
+	// Void and bool types are basic types, required everywhere.
+	// Don't initialize them multiple times.
+	TypeConv::init({QJsonObject{{"name", "void"}}}, TypeConv::Void);
+	TypeConv::init({QJsonObject{{"name", "bool"}}}, TypeConv::Boolean);
 
 	ClassWriter c;
 	c.startWriting();
-	for(const QJsonValue& val : simpleIdentities)
-		c.writeClass(val.toObject());
-	for(const QJsonValue& val : qObjects)
-		c.writeClass(val.toObject());
-	for(const QJsonValue& val : opaqueStructs)
-		c.writeClass(val.toObject());
+
+	// Loop across multiple modules, and generate code for each
+	// TODO: Support separate DLLs per module. This requires redesigning the Bridge system.
+	for (const QString& file : moduleSpecs)
+	{
+		// Read module specs
+		QJsonObject moduleSpecs = parseJsonFile("../../data/"+file).object();
+		if (moduleSpecs.isEmpty())
+			return -1;
+		QJsonObject types = moduleSpecs["typeCategories"].toObject();
+		QJsonArray numerics = types["numerics"].toArray();
+		QJsonArray simpleStructs = types["simpleStructs"].toArray();
+		QJsonArray opaqueStructs = types["opaqueStructs"].toArray();
+		QJsonArray simpleIdentities = types["simpleIdentities"].toArray();
+		QJsonArray qObjects = types["qObjects"].toArray();
+
+		// Regster types
+		TypeConv::init(numerics, TypeConv::Numeric);
+		TypeConv::init(extractEnums(moduleSpecs["namespaces"].toArray()), TypeConv::Enum);
+		TypeConv::init(extractEnums(opaqueStructs), TypeConv::Enum);
+		TypeConv::init(extractEnums(simpleIdentities), TypeConv::Enum);
+		TypeConv::init(extractEnums(qObjects), TypeConv::Enum);
+		TypeConv::init(simpleStructs, TypeConv::SimpleStruct);
+		TypeConv::init(opaqueStructs, TypeConv::OpaqueStruct);
+		TypeConv::init(types["simpleContainers"].toArray(), TypeConv::SimpleContainer);
+		TypeConv::init(types["fullArrays"].toArray(), TypeConv::FullArray);
+		TypeConv::init(simpleIdentities, TypeConv::SimpleIdentity);
+		TypeConv::init(qObjects, TypeConv::QObject);
+
+		// Generate code
+		for(const QJsonValue& val : simpleIdentities)
+			c.writeClass(val.toObject());
+		for(const QJsonValue& val : qObjects)
+			c.writeClass(val.toObject());
+		for(const QJsonValue& val : opaqueStructs)
+			c.writeClass(val.toObject());
+	}
 	c.stopWriting();
 
 	return 0;
