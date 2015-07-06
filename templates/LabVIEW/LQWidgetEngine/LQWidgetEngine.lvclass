@@ -31,15 +31,6 @@
 			<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
 			<Property Name="NI.ClassItem.State" Type="Int">1082143248</Property>
 		</Item>
-		<Item Name="Library Path.vi" Type="VI" URL="../Library Path.vi">
-			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!!Q!!!!!A!71$,`````$%RJ9H*B=HEA5'&amp;U;!!!%A$Q!!%!!!)!!!!!!!E!!!!!!1!"!!!!!!</Property>
-			<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
-			<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>
-			<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">true</Property>
-			<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
-			<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
-			<Property Name="NI.ClassItem.State" Type="Int">1074266624</Property>
-		</Item>
 		<Item Name="LQIdentity Registry Action.ctl" Type="VI" URL="../Internal/LQIdentity Registry Action.ctl">
 			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!#P!!!!!1#H!0%!!!!!!!!!!QZ5:7VQ&lt;'&amp;U:3ZM&gt;GRJ9B:-56&gt;J:'&gt;F&gt;%6O:WFO:3ZM&gt;G.M98.T'V&amp;09GJF9X1A5G6H;8.U=HEA17.U;7^O,G.U&lt;!"&gt;1"9!"!2*&lt;GFU%&amp;*F:WFT&gt;'6S)&amp;&amp;09GJF9X112W6U)&amp;&amp;09GJF9X1A37ZG&lt;R*6&lt;H*F:WFT&gt;'6S)&amp;&amp;09GJF9X1!&amp;V&amp;09GJF9X1A5G6H;8.U=HEA17.U;7^O!!%!!!!!!!!</Property>
 			<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>

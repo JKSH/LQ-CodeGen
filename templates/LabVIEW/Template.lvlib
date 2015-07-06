@@ -4,6 +4,9 @@
 	<Property Name="NI.Lib.SourceVersion" Type="Int">318799872</Property>
 	<Property Name="NI.Lib.Version" Type="Str">1.0.0.0</Property>
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">true</Property>
+	<Item Name="_Internal" Type="Folder">
+		<Item Name="Library Path.vi" Type="VI" URL="../_Internal/Library Path.vi"/>
+	</Item>
 	<Item Name="LQIdentity.lvclass" Type="LVClass" URL="../LQIdentity/LQIdentity.lvclass"/>
 	<Item Name="LQObject.lvclass" Type="LVClass" URL="../LQObject/LQObject.lvclass"/>
 	<Item Name="LQSerialData.lvclass" Type="LVClass" URL="../LQSerialData/LQSerialData.lvclass"/>
