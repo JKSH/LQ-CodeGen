@@ -1,0 +1,33 @@
+{
+	"name": "Qt SVG",
+	"typeCategories": {
+		"qObjects": [
+			{
+				"base": "QWidget",
+				"methods": [
+					{
+						"name": "QSvgWidget",
+						"params": [
+							{
+								"name": "file",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "load",
+						"params": [
+							{
+								"name": "contents",
+								"type": "const QByteArray&"
+							}
+						],
+						"retType": "void"
+					}
+				],
+				"name": "QSvgWidget"
+			}
+		]
+	}
+}

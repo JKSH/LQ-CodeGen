@@ -1,5 +1,5 @@
 CONFIG += C++11
-QT     += widgets
+QT     += widgets svg
 
 TARGET = LQWidgets
 TEMPLATE = lib

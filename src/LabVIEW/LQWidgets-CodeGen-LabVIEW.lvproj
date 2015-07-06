@@ -42,6 +42,10 @@
 				<Item Name="TypeConv.vi" Type="VI" URL="../Param Writers/TypeConv/TypeConv.vi"/>
 				<Item Name="TypeConv_Obtain Writer.vi" Type="VI" URL="../Param Writers/TypeConv/TypeConv_Obtain Writer.vi"/>
 				<Item Name="TypeConv_Register Basic Types.vi" Type="VI" URL="../Param Writers/TypeConv/TypeConv_Register Basic Types.vi"/>
+				<Item Name="TypeConv_Register Existing Complex Types.vi" Type="VI" URL="../Param Writers/TypeConv/TypeConv_Register Existing Complex Types.vi"/>
+				<Item Name="TypeConv_Register Existing Enums.vi" Type="VI" URL="../Param Writers/TypeConv/TypeConv_Register Existing Enums.vi"/>
+				<Item Name="TypeConv_Register Existing Identities.vi" Type="VI" URL="../Param Writers/TypeConv/TypeConv_Register Existing Identities.vi"/>
+				<Item Name="TypeConv_Register Existing Opaque Structs.vi" Type="VI" URL="../Param Writers/TypeConv/TypeConv_Register Existing Opaque Structs.vi"/>
 			</Item>
 			<Item Name="Abstract Param Writer.lvclass" Type="LVClass" URL="../Param Writers/Abstract Param Writer/Abstract Param Writer.lvclass"/>
 			<Item Name="Array Writer.lvclass" Type="LVClass" URL="../Param Writers/Array Writer/Array Writer.lvclass"/>
@@ -61,11 +65,13 @@
 		<Item Name="Create Cluster Typedefs.vi" Type="VI" URL="../Create Cluster Typedefs.vi"/>
 		<Item Name="Create Enum Typedefs.vi" Type="VI" URL="../Create Enum Typedefs.vi"/>
 		<Item Name="Create Identity Classes.vi" Type="VI" URL="../Create Identity Classes.vi"/>
+		<Item Name="Create Kernel Module LVLib.vi" Type="VI" URL="../Create Kernel Module LVLib.vi"/>
 		<Item Name="Create LVClass Control.vi" Type="VI" URL="../Create LVClass Control.vi"/>
 		<Item Name="Create Method VIs.vi" Type="VI" URL="../Create Method VIs.vi"/>
 		<Item Name="Create Namespaces.vi" Type="VI" URL="../Create Namespaces.vi"/>
 		<Item Name="Create New Class.vi" Type="VI" URL="../Create New Class.vi"/>
 		<Item Name="Create Opaque Structs.vi" Type="VI" URL="../Create Opaque Structs.vi"/>
+		<Item Name="Create Satellite Module LVLib.vi" Type="VI" URL="../Create Satellite Module LVLib.vi"/>
 		<Item Name="Create Temporary Template Directory.vi" Type="VI" URL="../Create Temporary Template Directory.vi"/>
 		<Item Name="Delete Template VIs.vi" Type="VI" URL="../Delete Template VIs.vi"/>
 		<Item Name="Delete Temporary Template Directory.vi" Type="VI" URL="../Delete Temporary Template Directory.vi"/>
@@ -74,6 +80,7 @@
 		<Item Name="Identify Projections.vi" Type="VI" URL="../Identify Projections.vi"/>
 		<Item Name="Main.vi" Type="VI" URL="../Main.vi"/>
 		<Item Name="Parse Module Specifications.vi" Type="VI" URL="../Parse Module Specifications.vi"/>
+		<Item Name="Populate Module.vi" Type="VI" URL="../Populate Module.vi"/>
 		<Item Name="Prepare Save Dir.vi" Type="VI" URL="../Prepare Save Dir.vi"/>
 		<Item Name="Save Method VIs.vi" Type="VI" URL="../Save Method VIs.vi"/>
 		<Item Name="Set Inheritances.vi" Type="VI" URL="../Set Inheritances.vi"/>
@@ -144,6 +151,7 @@
 			</Item>
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Alignment.ctl" Type="VI" URL="/&lt;vilib&gt;/LabVIEW Icon API/lv_icon/Controls/Alignment.ctl"/>
+				<Item Name="Application Directory.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Application Directory.vi"/>
 				<Item Name="Bit-array To Byte-array.vi" Type="VI" URL="/&lt;vilib&gt;/picture/pictutil.llb/Bit-array To Byte-array.vi"/>
 				<Item Name="BodyText.ctl" Type="VI" URL="/&lt;vilib&gt;/LabVIEW Icon API/lv_icon/Controls/BodyText.ctl"/>
 				<Item Name="BodyTextPosition.ctl" Type="VI" URL="/&lt;vilib&gt;/LabVIEW Icon API/lv_icon/Controls/BodyTextPosition.ctl"/>
@@ -192,6 +200,7 @@
 				<Item Name="LVNumericRepresentation.ctl" Type="VI" URL="/&lt;vilib&gt;/numeric/LVNumericRepresentation.ctl"/>
 				<Item Name="LVPoint32TypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVPoint32TypeDef.ctl"/>
 				<Item Name="LVPointTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVPointTypeDef.ctl"/>
+				<Item Name="NI_FileType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/lvfile.llb/NI_FileType.lvlib"/>
 				<Item Name="Pathes.ctl" Type="VI" URL="/&lt;vilib&gt;/LabVIEW Icon API/lv_icon/Controls/Pathes.ctl"/>
 				<Item Name="PCT Pad String.vi" Type="VI" URL="/&lt;vilib&gt;/picture/picture.llb/PCT Pad String.vi"/>
 				<Item Name="Picture to Pixmap.vi" Type="VI" URL="/&lt;vilib&gt;/picture/pictutil.llb/Picture to Pixmap.vi"/>
