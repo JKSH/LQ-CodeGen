@@ -61,6 +61,7 @@
 		<Item Name="Utils" Type="Folder">
 			<Item Name="Merge Maps.vi" Type="VI" URL="../Utils/Merge Maps.vi"/>
 		</Item>
+		<Item Name="Add Projection Keys.vi" Type="VI" URL="../Add Projection Keys.vi"/>
 		<Item Name="Add Property.vi" Type="VI" URL="../Add Property.vi"/>
 		<Item Name="Clone and Open LVLib.vi" Type="VI" URL="../Clone and Open LVLib.vi"/>
 		<Item Name="Create Cluster Typedefs.vi" Type="VI" URL="../Create Cluster Typedefs.vi"/>
@@ -85,6 +86,7 @@
 		<Item Name="Register Projections.vi" Type="VI" URL="../Register Projections.vi"/>
 		<Item Name="Save Method VIs.vi" Type="VI" URL="../Save Method VIs.vi"/>
 		<Item Name="Set Inheritances.vi" Type="VI" URL="../Set Inheritances.vi"/>
+		<Item Name="TypeConv_Register Existing Namespaces.vi" Type="VI" URL="../Param Writers/TypeConv/TypeConv_Register Existing Namespaces.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="user.lib" Type="Folder">
 				<Item Name="Array of VData to VArray__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/lvdata/lvdata.llb/Array of VData to VArray__ogtk.vi"/>
