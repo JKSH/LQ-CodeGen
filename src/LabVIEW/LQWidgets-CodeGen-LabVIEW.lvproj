@@ -52,6 +52,7 @@
 			<Item Name="Bool Writer.lvclass" Type="LVClass" URL="../Param Writers/Bool Writer/Bool Writer.lvclass"/>
 			<Item Name="Enum Writer.lvclass" Type="LVClass" URL="../Param Writers/Enum Writer/Enum Writer.lvclass"/>
 			<Item Name="Identity Writer.lvclass" Type="LVClass" URL="../Param Writers/Identity Writer/Identity Writer.lvclass"/>
+			<Item Name="Manifestation Writer.lvclass" Type="LVClass" URL="../Param Writers/Manifestation Writer/Manifestation Writer.lvclass"/>
 			<Item Name="Number Writer.lvclass" Type="LVClass" URL="../Param Writers/Number Writer/Number Writer.lvclass"/>
 			<Item Name="Opaque Struct Writer.lvclass" Type="LVClass" URL="../Param Writers/Opaque Struct Writer/Opaque Struct Writer.lvclass"/>
 			<Item Name="Simple Struct Writer.lvclass" Type="LVClass" URL="../Param Writers/Simple Struct Writer/Simple Struct Writer.lvclass"/>
