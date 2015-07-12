@@ -7,15 +7,15 @@
 		},
 		{
 			"source": "QCoreApplication",
-			"projection": "LQWidgetEngine"
+			"projection": "LQCoreEngine"
 		},
 		{
 			"source": "QGuiApplication",
-			"projection": "LQWidgetEngine"
+			"projection": "LQCoreEngine"
 		},
 		{
 			"source": "QApplication",
-			"projection": "LQWidgetEngine"
+			"projection": "LQCoreEngine"
 		}
 	],
 	"namespaces": [

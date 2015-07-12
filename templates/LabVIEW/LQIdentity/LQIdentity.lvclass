@@ -18,7 +18,7 @@
 
 </Property>
 	<Item Name="Friends List" Type="Friends List">
-		<Item Name="Template.lvlib:LQWidgetEngine.lvclass" Type="Friended Library" URL="../../LQWidgetEngine/LQWidgetEngine.lvclass"/>
+		<Item Name="Template.lvlib:LQCoreEngine.lvclass" Type="Friended Library" URL="../../LQCoreEngine/LQCoreEngine.lvclass"/>
 	</Item>
 	<Item Name="LQIdentity.ctl" Type="Class Private Data" URL="LQIdentity.ctl">
 		<Property Name="NI.LibItem.Scope" Type="Int">2</Property>
