@@ -1,0 +1,468 @@
+{
+	"name": "Qt Widgets",
+	"projections": [
+		{
+			"source": "QApplication",
+			"projection": "LQWidgetEngine"
+		}
+	],
+	"typeCategories": {
+		"qObjects": [
+			{
+				"name": "QApplication", "base": "QGuiApplication",
+				"methods": [
+					{
+						"name": "setStyleSheet", "retType": "void",
+						"params": [
+							{"name": "sheet", "type": "const QString&"}
+						]
+					},
+					{
+						"name": "styleSheet", "retType": "QString"
+					}
+				],
+				"properties": [
+					{
+						"name": "styleSheet",
+						"getter": "styleSheet",
+						"setter": "setStyleSheet"
+					}
+				]
+			},
+			{
+				"name": "QWidget", "base": "QObject",
+				"methods": [
+					{
+						"name": "QWidget"
+					},
+					{
+						"name": "focusPolicy", "retType": "Qt::FocusPolicy"
+					},
+					{
+						"name": "font", "retType": "QFont"
+					},
+					{
+						"name": "geometry", "retType": "QRect"
+					},
+					{
+						"name": "layout", "retType": "QLayout*"
+					},
+					{
+						"name": "isEnabled", "retType": "bool"
+					},
+					{
+						"name": "isVisible", "retType": "bool"
+					},
+					{
+						"name": "minimumSize", "retType": "QSize"
+					},
+					{
+						"name": "restoreGeometry", "retType": "bool",
+						"params": [
+							{"name": "geometry", "type": "const QByteArray&"}
+						]
+					},
+					{
+						"name": "saveGeometry", "retType": "QByteArray"
+					},
+					{
+						"name": "setEnabled", "retType": "void",
+						"params": [
+							{"name": "enabled", "type": "bool"}
+						]
+					},
+					{
+						"name": "setFocusPolicy", "retType": "void",
+						"params": [
+							{"name": "policy", "type": "Qt::FocusPolicy"}
+						]
+					},
+					{
+						"name": "setFont", "retType": "void",
+						"params": [
+							{"name": "font", "type": "const QFont&"}
+						]
+					},
+					{
+						"name": "setGeometry", "retType": "void",
+						"params": [
+							{"name": "geometry", "type": "const QRect&"}
+						]
+					},
+					{
+						"name": "setLayout", "retType": "void",
+						"params": [
+							{"name": "layout", "type": "QLayout*"}
+						]
+					},
+					{
+						"name": "setMinimumSize", "retType": "void",
+						"params": [
+							{"name": "size", "type": "const QSize&"}
+						]
+					},
+					{
+						"name": "setStyleSheet", "retType": "void",
+						"params": [
+							{"name": "styleSheet", "type": "const QString&"}
+						]
+					},
+					{
+						"name": "setTabOrder", "retType": "void",
+						"params": [
+							{"name": "first", "type": "QWidget*"},
+							{"name": "second", "type": "QWidget*"}
+						],
+						"isStaticMember": true
+					},
+					{
+						"name": "setToolTip", "retType": "void",
+						"params": [
+							{"name": "toolTip", "type": "const QString&"}
+						]
+					},
+					{
+						"name": "setToolTipDuration", "retType": "void",
+						"params": [
+							{"name": "msec", "type": "int"}
+						]
+					},
+					{
+						"name": "setVisible", "retType": "void",
+						"params": [
+							{"name": "visible", "type": "bool"}
+						]
+					},
+					{
+						"name": "setWindowIcon", "retType": "void",
+						"params": [
+							{"name": "icon", "type": "const QIcon&"}
+						]
+					},
+					{
+						"name": "setWindowOpacity", "retType": "void",
+						"params": [
+							{"name": "level", "type": "qreal"}
+						]
+					},
+					{
+						"name": "setWindowTitle", "retType": "void",
+						"params": [
+							{"name": "windowTitle", "type": "const QString&"}
+						]
+					},
+					{
+						"name": "styleSheet", "retType": "QString"
+					},
+					{
+						"name": "toolTip", "retType": "QString"
+					},
+					{
+						"name": "toolTipDuration", "retType": "int"
+					},
+					{
+						"name": "windowIcon", "retType": "QIcon"
+					},
+					{
+						"name": "windowOpacity", "retType": "qreal"
+					},
+					{
+						"name": "windowTitle", "retType": "QString"
+					}
+				],
+				"properties": [
+					{
+						"name": "enabled",
+						"getter": "isEnabled",
+						"setter": "setEnabled"
+					},
+					{
+						"name": "focusPolicy",
+						"getter": "focusPolicy",
+						"setter": "setFocusPolicy"
+					},
+					{
+						"name": "font",
+						"getter": "font",
+						"setter": "setFont"
+					},
+					{
+						"name": "geometry",
+						"getter": "geometry",
+						"setter": "setGeometry"
+					},
+					{
+						"name": "minimumSize",
+						"getter": "minimumSize",
+						"setter": "setMinimumSize"
+					},
+					{
+						"name": "styleSheet",
+						"getter": "styleSheet",
+						"setter": "setStyleSheet"
+					},
+					{
+						"name": "toolTip",
+						"getter": "toolTip",
+						"setter": "setToolTip"
+					},
+					{
+						"name": "toolTipDuration",
+						"getter": "toolTipDuration",
+						"setter": "setToolTipDuration"
+					},
+					{
+						"name": "visible",
+						"getter": "isVisible",
+						"setter": "setVisible"
+					},
+					{
+						"name": "windowIcon",
+						"getter": "windowIcon",
+						"setter": "setWindowIcon"
+					},
+					{
+						"name": "windowOpacity",
+						"getter": "windowOpacity",
+						"setter": "setWindowOpacity"
+					},
+					{
+						"name": "windowTitle",
+						"getter": "windowTitle",
+						"setter": "setWindowTitle"
+					}
+				]
+			},
+			{
+				"name": "QComboBox", "base": "QWidget",
+				"enums": [
+					{
+						"name": "SizeAdjustPolicy",
+						"values": [
+							{"name": "AdjustToContents", "value": 0},
+							{"name": "AdjustToContentsOnFirstShow", "value": 1},
+							{"name": "AdjustToMinimumContentsLength", "value": 2},
+							{"name": "AdjustToMinimumContentsLengthWithIcon", "value": 3}
+						]
+					}
+				],
+				"methods": [
+					{
+						"name": "QComboBox"
+					},
+					{
+						"name": "addItems", "retType": "void",
+						"params": [
+							 {"name": "texts", "type": "const QStringList&"}
+						]
+					},
+					{
+						"name": "setSizeAdjustPolicy", "retType": "void",
+						"params": [
+							 {"name": "policy", "type": "QComboBox::SizeAdjustPolicy"}
+						]
+					},
+					{
+						"name": "sizeAdjustPolicy", "retType": "QComboBox::SizeAdjustPolicy"
+					}
+				],
+				"properties": [
+					{
+						"name": "sizeAdjustPolicy",
+						"getter": "sizeAdjustPolicy",
+						"setter": "setSizeAdjustPolicy"
+					}
+				]
+			},
+			{
+				"name": "QFrame", "base": "QWidget"
+			},
+			{
+				"name": "QLabel", "base": "QFrame",
+				"methods": [
+					{
+						"name": "QLabel",
+						"params": [
+							 {"name": "text", "type": "const QString&"}
+						]
+					},
+					{
+						"name": "setPixmap", "retType": "void",
+						"params": [
+							 {"name": "pixmap", "type": "const QPixmap&"}
+						]
+					},
+					{
+						"name": "setText", "retType": "void",
+						"params": [
+							 {"name": "text", "type": "const QString&"}
+						]
+					},
+					{
+						"name": "setWordWrap", "retType": "void",
+						"params": [
+							 {"name": "wordWrap", "type": "bool"}
+						]
+					},
+					{
+						"name": "text", "retType": "QString"
+					},
+					{
+						"name": "wordWrap", "retType": "bool"
+					}
+				],
+				"properties": [
+					{
+						"name": "text",
+						"getter": "text",
+						"setter": "setText"
+					},
+					{
+						"name": "wordWrap",
+						"getter": "wordWrap",
+						"setter": "setWordWrap"
+					}
+				]
+			},
+			{
+				"name": "QAbstractButton", "base": "QWidget",
+				"methods": [
+					{
+						"name": "icon", "retType": "QIcon"
+					},
+					{
+						"name": "isDown", "retType": "bool"
+					},
+					{
+						"name": "setDown", "retType": "void",
+						"params": [
+							 {"name": "down", "type": "bool"}
+						]
+					},
+					{
+						"name": "setIcon", "retType": "void",
+						"params": [
+							 {"name": "icon", "type": "const QIcon&"}
+						]
+					},
+					{
+						"name": "setText", "retType": "void",
+						"params": [
+							 {"name": "text", "type": "const QString&"}
+						]
+					},
+					{
+						"name": "text", "retType": "QString"
+					}
+				],
+				"properties": [
+					{
+						"name": "down",
+						"getter": "isDown",
+						"setter": "setDown"
+					},
+					{
+						"name": "icon",
+						"getter": "icon",
+						"setter": "setIcon"
+					},
+					{
+						"name": "text",
+						"getter": "text",
+						"setter": "setText"
+					}
+				]
+			},
+			{
+				"name": "QPushButton", "base": "QAbstractButton",
+				"methods": [
+					{
+						"name": "QPushButton",
+						"params": [
+							 {"name": "text", "type": "const QString&"}
+						]
+					},
+					{
+						"name": "isFlat", "retType": "bool"
+					},
+					{
+						"name": "setFlat", "retType": "void",
+						"params": [
+							 {"name": "flat", "type": "bool"}
+						]
+					}
+				],
+				"properties": [
+					{
+						"name": "flat",
+						"getter": "isFlat",
+						"setter": "setFlat"
+					}
+				]
+			},
+			{
+				"name": "QLayout", "base": "QObject",
+				"methods": [
+					{
+						"name": "parentWidget", "retType": "QWidget*"
+					},
+					{
+						"name": "removeWidget", "retType": "void",
+						"params": [
+							{"name": "widget", "type": "QWidget*"}
+						]
+					}
+				]
+			},
+			{
+				"name": "QBoxLayout", "base": "QLayout",
+				"methods": [
+					{
+						"name": "addWidget", "retType": "void",
+						"params": [
+							{"name": "widget", "type": "QWidget*"}
+						]
+					}
+				]
+			},
+			{
+				"name": "QVBoxLayout", "base": "QBoxLayout",
+				"methods": [
+					{
+						"name": "QVBoxLayout"
+					}
+				]
+			},
+			{
+				"name": "QHBoxLayout", "base": "QBoxLayout",
+				"methods": [
+					{
+						"name": "QHBoxLayout"
+					}
+				]
+			},
+			{
+				"name": "QAbstractScrollArea", "base": "QFrame"
+			},
+			{
+				"name": "QAbstractItemView", "base": "QAbstractScrollArea",
+				"methods": [
+					{
+						"name": "setModel", "retType": "void",
+						"params": [
+							{"name": "model", "type": "QAbstractItemModel*"}
+						]
+					}
+				]
+			},
+			{
+				"name": "QListView", "base": "QAbstractItemView",
+				"methods": [
+					{
+						"name": "QListView"
+					}
+				]
+			}
+		]
+	}
+}

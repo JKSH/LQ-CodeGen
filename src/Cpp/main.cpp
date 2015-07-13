@@ -51,7 +51,9 @@ extractEnums(const QJsonArray& entities)
 const QStringList
 moduleSpecs
 {
-	"LQ Widgets Core.json",
+	"LQ Core.json",
+	"Qt GUI.json",
+	"Qt Widgets.json",
 	"Qt SVG.json"
 };
 

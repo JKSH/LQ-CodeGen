@@ -1,0 +1,578 @@
+{
+	"name": "Qt GUI",
+	"projections": [
+		{
+			"source": "QGuiApplication",
+			"projection": "LQGuiEngine"
+		}
+	],
+	"typeCategories": {
+		"opaqueStructs": 	[
+			{
+				"enums": [
+					{
+						"name": "StyleHint",
+						"values": [
+							{
+								"name": "SansSerif",
+								"value": 0
+							},
+							{
+								"name": "Serif",
+								"value": 1
+							},
+							{
+								"name": "TypeWriter",
+								"value": 2
+							},
+							{
+								"name": "Decorative",
+								"value": 3
+							},
+							{
+								"name": "System",
+								"value": 4
+							},
+							{
+								"name": "AnyStyle",
+								"value": 5
+							},
+							{
+								"name": "Cursive",
+								"value": 6
+							},
+							{
+								"name": "Monospace",
+								"value": 7
+							},
+							{
+								"name": "Fantasy",
+								"value": 8
+							}
+						]
+					},
+					{
+						"name": "StyleStrategy",
+						"values": [
+							{
+								"name": "PreferDefault",
+								"value": 1
+							},
+							{
+								"name": "PreferBitmap",
+								"value": 2
+							},
+							{
+								"name": "PreferDevice",
+								"value": 4
+							},
+							{
+								"name": "PreferOutline",
+								"value": 8
+							},
+							{
+								"name": "ForceOutline",
+								"value": 16
+							},
+							{
+								"name": "PreferMatch",
+								"value": 32
+							},
+							{
+								"name": "PreferQuality",
+								"value": 64
+							},
+							{
+								"name": "PreferAntialias",
+								"value": 128
+							},
+							{
+								"name": "NoAntialias",
+								"value": 256
+							},
+							{
+								"name": "OpenGLCompatible",
+								"value": 512
+							},
+							{
+								"name": "ForceIntegerMetrics",
+								"value": 1024
+							},
+							{
+								"name": "NoSubpixelAntialias",
+								"value": 2048
+							},
+							{
+								"name": "NoFontMerging",
+								"value": 32768
+							}
+						]
+					},
+					{
+						"name": "HintingPreference",
+						"values": [
+							{
+								"name": "PreferDefaultHinting",
+								"value": 0
+							},
+							{
+								"name": "PreferNoHinting",
+								"value": 1
+							},
+							{
+								"name": "PreferVerticalHinting",
+								"value": 2
+							},
+							{
+								"name": "PreferFullHinting",
+								"value": 3
+							}
+						]
+					},
+					{
+						"name": "Weight",
+						"values": [
+							{
+								"name": "Light",
+								"value": 25
+							},
+							{
+								"name": "Normal",
+								"value": 50
+							},
+							{
+								"name": "DemiBold",
+								"value": 63
+							},
+							{
+								"name": "Bold",
+								"value": 75
+							},
+							{
+								"name": "Black",
+								"value": 87
+							}
+						]
+					},
+					{
+						"name": "Style",
+						"values": [
+							{
+								"name": "StyleNormal",
+								"value": 0
+							},
+							{
+								"name": "StyleItalic",
+								"value": 1
+							},
+							{
+								"name": "StyleOblique",
+								"value": 2
+							}
+						]
+					},
+					{
+						"name": "Stretch",
+						"values": [
+							{
+								"name": "UltraCondensed",
+								"value": 50
+							},
+							{
+								"name": "ExtraCondensed",
+								"value": 62
+							},
+							{
+								"name": "Condensed",
+								"value": 75
+							},
+							{
+								"name": "SemiCondensed",
+								"value": 87
+							},
+							{
+								"name": "Unstretched",
+								"value": 100
+							},
+							{
+								"name": "SemiExpanded",
+								"value": 112
+							},
+							{
+								"name": "Expanded",
+								"value": 125
+							},
+							{
+								"name": "ExtraExpanded",
+								"value": 150
+							},
+							{
+								"name": "UltraExpanded",
+								"value": 200
+							}
+						]
+					},
+					{
+						"name": "Capitalization",
+						"values": [
+							{
+								"name": "MixedCase",
+								"value": 0
+							},
+							{
+								"name": "AllUppercase",
+								"value": 1
+							},
+							{
+								"name": "AllLowercase",
+								"value": 2
+							},
+							{
+								"name": "SmallCaps",
+								"value": 3
+							},
+							{
+								"name": "Capitalize",
+								"value": 4
+							}
+						]
+					},
+					{
+						"name": "SpacingType",
+						"values": [
+							{
+								"name": "PercentageSpacing",
+								"value": 0
+							},
+							{
+								"name": "AbsoluteSpacing",
+								"value": 1
+							}
+						]
+					}
+				],
+				"methods": [
+					{
+						"name": "QFont",
+						"params": [
+							{
+								"name": "family",
+								"type": "const QString&"
+							},
+							{
+								"name": "pointSize",
+								"type": "int"
+							},
+							{
+								"name": "weight",
+								"type": "int"
+							},
+							{
+								"name": "italic",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "family",
+						"retType": "QString"
+					},
+					{
+						"isConst": true,
+						"name": "styleName",
+						"retType": "QString"
+					},
+					{
+						"isConst": true,
+						"name": "pointSize",
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "pointSizeF",
+						"retType": "qreal"
+					},
+					{
+						"isConst": true,
+						"name": "pixelSize",
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "weight",
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "bold",
+						"retType": "bool"
+					},
+					{
+						"name": "setStyle",
+						"params": [
+							{
+								"name": "style",
+								"type": "QFont::Style"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "style",
+						"retType": "QFont::Style"
+					},
+					{
+						"isConst": true,
+						"name": "italic",
+						"retType": "bool"
+					},
+					{
+						"name": "setItalic",
+						"params": [
+							{
+								"name": "b",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "underline",
+						"retType": "bool"
+					},
+					{
+						"isConst": true,
+						"name": "overline",
+						"retType": "bool"
+					},
+					{
+						"isConst": true,
+						"name": "strikeOut",
+						"retType": "bool"
+					},
+					{
+						"isConst": true,
+						"name": "fixedPitch",
+						"retType": "bool"
+					},
+					{
+						"isConst": true,
+						"name": "kerning",
+						"retType": "bool"
+					},
+					{
+						"isConst": true,
+						"name": "styleHint",
+						"retType": "QFont::StyleHint"
+					},
+					{
+						"isConst": true,
+						"name": "styleStrategy",
+						"retType": "QFont::StyleStrategy"
+					},
+					{
+						"name": "setStyleStrategy",
+						"params": [
+							{
+								"name": "s",
+								"type": "QFont::StyleStrategy"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "stretch",
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "letterSpacing",
+						"retType": "qreal"
+					},
+					{
+						"isConst": true,
+						"name": "letterSpacingType",
+						"retType": "QFont::SpacingType"
+					},
+					{
+						"name": "setLetterSpacing",
+						"params": [
+							{
+								"name": "type",
+								"type": "QFont::SpacingType"
+							},
+							{
+								"name": "spacing",
+								"type": "qreal"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "wordSpacing",
+						"retType": "qreal"
+					},
+					{
+						"name": "setWordSpacing",
+						"params": [
+							{
+								"name": "spacing",
+								"type": "qreal"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "capitalization",
+						"retType": "QFont::Capitalization"
+					},
+					{
+						"name": "setHintingPreference",
+						"params": [
+							{
+								"name": "hintingPreference",
+								"type": "QFont::HintingPreference"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "hintingPreference",
+						"retType": "QFont::HintingPreference"
+					},
+					{
+						"isConst": true,
+						"name": "rawMode",
+						"retType": "bool"
+					},
+					{
+						"isConst": true,
+						"name": "exactMatch",
+						"retType": "bool"
+					},
+					{
+						"isConst": true,
+						"name": "key",
+						"retType": "QString"
+					},
+					{
+						"isConst": true,
+						"name": "toString",
+						"retType": "QString"
+					},
+					{
+						"isConst": true,
+						"name": "defaultFamily",
+						"retType": "QString"
+					},
+					{
+						"isConst": true,
+						"name": "lastResortFamily",
+						"retType": "QString"
+					},
+					{
+						"isConst": true,
+						"name": "lastResortFont",
+						"retType": "QString"
+					}
+				],
+				"name": "QFont"
+			},
+			{
+				"name": "QIcon",
+				"methods": [
+					{
+						"name": "QIcon",
+						"params": [
+							 {"name": "fileName", "type": "const QString&"}
+						]
+					},
+					{
+						"name": "addFile", "retType": "void",
+						"params": [
+							 {"name": "file", "type": "const QString&"}
+						]
+					},
+					{
+						"name": "addPixmap", "retType": "void",
+						"params": [
+							 {"name": "pixmap", "type": "const QPixmap&"}
+						]
+					},
+					{
+						"name": "pixmap", "retType": "QPixmap",
+						"params": [
+							 {"name": "size", "type": "const QSize&"}
+						]
+					}
+				]
+			},
+			{
+				"name": "QPen",
+				"methods": [
+					{
+						"name": "QPen"
+					},
+					{
+						"name": "dashOffset", "retType": "qreal"
+					},
+					{
+						"name": "dashPattern", "retType": "QVector<qreal>"
+					},
+					{
+						"name": "setDashPattern", "retType": "void",
+						"params": [
+							 {"name": "pattern", "type": "const QVector<qreal>&"}
+						]
+					}
+				]
+			},
+			{
+				"name": "QPixmap",
+				"methods": [
+					{
+						"name": "QPixmap",
+						"params": [
+							 {"name": "fileName", "type": "const QString&"}
+						]
+					},
+					{
+						"name": "size", "retType": "QSize",
+						"isConst": true
+					}
+				]
+			}
+		],
+		"qObjects": [
+			{
+				"name": "QGuiApplication", "base": "QCoreApplication",
+				"methods": [
+					{
+						"name": "setWindowIcon", "retType": "void",
+						"params": [
+							{"name": "icon", "type": "const QIcon&"}
+						]
+					},
+					{
+						"name": "windowIcon", "retType": "QIcon"
+					}
+				],
+				"properties": [
+					{
+						"name": "windowIcon",
+						"getter": "windowIcon",
+						"setter": "setWindowIcon"
+					}
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,260 @@
+{
+	"name": "LQ Core",
+	"projections": [
+		{
+			"source": "QObject",
+			"projection": "LQObject"
+		},
+		{
+			"source": "QCoreApplication",
+			"projection": "LQCoreEngine"
+		}
+	],
+	"namespaces": [
+		{
+			"name": "Qt",
+			"enums": [
+				{
+					"name": "FocusPolicy",
+					"values": [
+						{
+							"name": "ClickFocus",
+							"value": 2
+						},
+						{
+							"name": "NoFocus",
+							"value": 0
+						},
+						{
+							"name": "StrongFocus",
+							"value": 11
+						},
+						{
+							"name": "TabFocus",
+							"value": 1
+						},
+						{
+							"name": "WheelFocus",
+							"value": 15
+						}
+					]
+				}
+			]
+		}
+	],
+	"typeCategories": {
+		"numerics": [
+			{
+				"name": "char",
+				"dllType": "int8"
+			},
+			{
+				"name": "qint8",
+				"dllType": "int8"
+			},
+			{
+				"name": "qint16",
+				"dllType": "int16"
+			},
+			{
+				"name": "int",
+				"dllType": "int32"
+			},
+			{
+				"name": "qint32",
+				"dllType": "int32"
+			},
+			{
+				"name": "qint64",
+				"dllType": "int64"
+			},
+			{
+				"name": "quint8",
+				"dllType": "uInt8"
+			},
+			{
+				"name": "quint16",
+				"dllType": "uInt16"
+			},
+			{
+				"name": "quint32",
+				"dllType": "uInt32"
+			},
+			{
+				"name": "quint64",
+				"dllType": "uInt64"
+			},
+			{
+				"name": "float",
+				"dllType": "float32"
+			},
+			{
+				"name": "double",
+				"dllType": "float64"
+			},
+			{
+				"name": "qreal",
+				"dllType": "float64"
+			}
+		],
+		"simpleStructs": [
+			{
+				"name": "QSize",
+				"fields": [
+					{"name": "width", "type": "int"},
+					{"name": "height", "type": "int"}
+				]
+			},
+			{
+				"name": "QRect",
+				"fields": [
+					{"name": "x1", "type": "int"},
+					{"name": "y1", "type": "int"},
+					{"name": "x2", "type": "int"},
+					{"name": "y2", "type": "int"}
+				]
+			}
+		],
+		"simpleIdentities": [
+			{
+				"name": "QTextCodec",
+				"methods": [
+					{
+						"name": "codecForLocale", "retType": "QTextCodec*",
+						"isStaticMember": true,
+						"isFactory": true
+					},
+					{
+						"name": "codecForMib", "retType": "QTextCodec*",
+						"params": [
+							{"name": "mib", "type": "int"}
+						],
+						"isStaticMember": true,
+						"isFactory": true
+					},
+					{
+						"name": "codecForName", "retType": "QTextCodec*",
+						"params": [
+							{"name": "name", "type": "const QByteArray&"}
+						],
+						"isStaticMember": true,
+						"isFactory": true
+					},
+					{
+						"name": "fromUnicode", "retType": "QByteArray",
+						"params": [
+							{"name": "string", "type": "const QString&"}
+						],
+						"isConst": true
+					},
+					{
+						"name": "name", "retType": "QByteArray",
+						"isConst": true
+					},
+					{
+						"name": "toUnicode", "retType": "QString",
+						"params": [
+							{"name": "string", "type": "const QByteArray&"}
+						],
+						"isConst": true
+					}
+				]
+			}
+		],
+		"qObjects": [
+			{
+				"name": "QObject",
+				"methods": [
+					{
+						"name": "setObjectName", "retType": "void",
+						"params": [
+							{"name": "sheet", "type": "const QString&"}
+						]
+					},
+					{
+						"name": "objectName", "retType": "QString"
+					}
+				],
+				"properties": [
+					{
+						"name": "objectName",
+						"getter": "objectName",
+						"setter": "setObjectName"
+					}
+				]
+			},
+			{
+				"name": "QAbstractItemModel", "base": "QObject"
+			},
+			{
+				"name": "QAbstractListModel", "base": "QAbstractItemModel"
+			},
+			{
+				"name": "QStringListModel", "base": "QAbstractListModel",
+				"methods": [
+					{
+						"name": "QStringListModel"
+					},
+					{
+						"name": "setStringList", "retType": "void",
+						"params": [
+							{"name": "strings", "type": "const QStringList&"}
+						]
+					},
+					{
+						"name": "stringList", "retType": "QStringList"
+					}
+				]
+			},
+			{
+				"name": "QCoreApplication", "base": "QObject",
+				"methods": [
+					{
+						"name": "setApplicationName", "retType": "void",
+						"params": [
+							{"name": "application", "type": "const QString&"}
+						]
+					},
+					{
+						"name": "applicationName", "retType": "QString"
+					}
+				],
+				"properties": [
+					{
+						"name": "applicationName",
+						"getter": "applicationName",
+						"setter": "setApplicationName"
+					}
+				]
+			}
+		],
+		"simpleContainers": [
+			{
+				"name": "QByteArray",
+				"dllType": "LStrHandle",
+				"dll2bridge": "QByteArray( (char*)(*_dllValue_)->str, LStrLen(*_dllValue_) )",
+				"bridge2dll": "copyIntoLStr(_dllValue_, _bridgeValue_)"
+			},
+			{
+				"name": "QString",
+				"dllType": "LStrHandle",
+				"dll2bridge": "QString::fromUtf8( (char*)(*_dllValue_)->str, LStrLen(*_dllValue_) )",
+				"bridge2dll": "copyIntoLStr(_dllValue_, _bridgeValue_.toUtf8())"
+			},
+			{
+				"name": "QStringList",
+				"dllType": "LVArray<LStrHandle>**",
+				"dll2bridge": "(*_dllValue_)->toList()",
+				"bridge2dll": "LVArray<LStrHandle>::fromList(_dllValue_, _bridgeValue_)"
+			}
+		],
+		"fullArrays": [
+			{
+				"name": "QVector<%QT_TYPE_INNER%>",
+				"dllType": "LVArray<%DLL_TYPE_INNER%>**",
+				"dll2bridge": "(*_dllValue_)->toVector()",
+				"bridge2dll": "LVArray<%DLL_TYPE_INNER%>::fromQVector(_dllValue_, _bridgeValue_)"
+			}
+		]
+	}
+}
