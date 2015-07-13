@@ -1,7 +1,34 @@
 {
 	"name": "Qt Widgets",
+	"projections": [
+		{
+			"source": "QApplication",
+			"projection": "LQWidgetEngine"
+		}
+	],
 	"typeCategories": {
 		"qObjects": [
+			{
+				"name": "QApplication", "base": "QGuiApplication",
+				"methods": [
+					{
+						"name": "setStyleSheet", "retType": "void",
+						"params": [
+							{"name": "sheet", "type": "const QString&"}
+						]
+					},
+					{
+						"name": "styleSheet", "retType": "QString"
+					}
+				],
+				"properties": [
+					{
+						"name": "styleSheet",
+						"getter": "styleSheet",
+						"setter": "setStyleSheet"
+					}
+				]
+			},
 			{
 				"name": "QWidget", "base": "QObject",
 				"methods": [

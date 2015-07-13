@@ -1,5 +1,11 @@
 {
 	"name": "Qt GUI",
+	"projections": [
+		{
+			"source": "QGuiApplication",
+			"projection": "LQGuiEngine"
+		}
+	],
 	"typeCategories": {
 		"opaqueStructs": 	[
 			{
@@ -541,6 +547,29 @@
 					{
 						"name": "size", "retType": "QSize",
 						"isConst": true
+					}
+				]
+			}
+		],
+		"qObjects": [
+			{
+				"name": "QGuiApplication", "base": "QCoreApplication",
+				"methods": [
+					{
+						"name": "setWindowIcon", "retType": "void",
+						"params": [
+							{"name": "icon", "type": "const QIcon&"}
+						]
+					},
+					{
+						"name": "windowIcon", "retType": "QIcon"
+					}
+				],
+				"properties": [
+					{
+						"name": "windowIcon",
+						"getter": "windowIcon",
+						"setter": "setWindowIcon"
 					}
 				]
 			}

@@ -8,14 +8,6 @@
 		{
 			"source": "QCoreApplication",
 			"projection": "LQCoreEngine"
-		},
-		{
-			"source": "QGuiApplication",
-			"projection": "LQCoreEngine"
-		},
-		{
-			"source": "QApplication",
-			"projection": "LQCoreEngine"
 		}
 	],
 	"namespaces": [
@@ -232,30 +224,6 @@
 						"name": "applicationName",
 						"getter": "applicationName",
 						"setter": "setApplicationName"
-					}
-				]
-			},
-			{
-				"name": "QGuiApplication", "base": "QCoreApplication"
-			},
-			{
-				"name": "QApplication", "base": "QGuiApplication",
-				"methods": [
-					{
-						"name": "setStyleSheet", "retType": "void",
-						"params": [
-							{"name": "sheet", "type": "const QString&"}
-						]
-					},
-					{
-						"name": "styleSheet", "retType": "QString"
-					}
-				],
-				"properties": [
-					{
-						"name": "styleSheet",
-						"getter": "styleSheet",
-						"setter": "setStyleSheet"
 					}
 				]
 			}
