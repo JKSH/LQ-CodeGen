@@ -5,6 +5,9 @@
 #include <QtSvg>
 #include "utils.h"
 
+#include <qwt_thermo.h>
+#include <qwt_slider.h>
+
 class Bridge : public QObject
 {
 	Q_OBJECT

@@ -54,7 +54,8 @@ moduleSpecs
 	"LQ Core.json",
 	"Qt GUI.json",
 	"Qt Widgets.json",
-	"Qt SVG.json"
+	"Qt SVG.json",
+	"Qwt.json"
 };
 
 int main(int, char **)
