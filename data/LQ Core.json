@@ -46,55 +46,55 @@
 		"numerics": [
 			{
 				"name": "char",
-				"dllType": "int8"
+				"dllType": "qint8"
 			},
 			{
 				"name": "qint8",
-				"dllType": "int8"
+				"dllType": "qint8"
 			},
 			{
 				"name": "qint16",
-				"dllType": "int16"
+				"dllType": "qint16"
 			},
 			{
 				"name": "int",
-				"dllType": "int32"
+				"dllType": "qint32"
 			},
 			{
 				"name": "qint32",
-				"dllType": "int32"
+				"dllType": "qint32"
 			},
 			{
 				"name": "qint64",
-				"dllType": "int64"
+				"dllType": "qint64"
 			},
 			{
 				"name": "quint8",
-				"dllType": "uInt8"
+				"dllType": "quint8"
 			},
 			{
 				"name": "quint16",
-				"dllType": "uInt16"
+				"dllType": "quint16"
 			},
 			{
 				"name": "quint32",
-				"dllType": "uInt32"
+				"dllType": "quint32"
 			},
 			{
 				"name": "quint64",
-				"dllType": "uInt64"
+				"dllType": "quint64"
 			},
 			{
 				"name": "float",
-				"dllType": "float32"
+				"dllType": "float"
 			},
 			{
 				"name": "double",
-				"dllType": "float64"
+				"dllType": "double"
 			},
 			{
 				"name": "qreal",
-				"dllType": "float64"
+				"dllType": "double"
 			}
 		],
 		"simpleStructs": [
