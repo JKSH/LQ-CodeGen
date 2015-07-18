@@ -1,5 +1,5 @@
 CONFIG += C++11
-QT     += widgets svg
+QT     += widgets svg winextras
 
 TARGET = LQWidgets
 TEMPLATE = lib

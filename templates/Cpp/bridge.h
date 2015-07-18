@@ -3,6 +3,7 @@
 
 #include <QtWidgets>
 #include <QtSvg>
+#include <QtWinExtras>
 #include "utils.h"
 
 #include <qwt_thermo.h>

@@ -55,6 +55,7 @@ moduleSpecs
 	"Qt GUI.json",
 	"Qt Widgets.json",
 	"Qt SVG.json",
+	"Qt Windows Extras.json",
 	"Qwt.json"
 };
 
