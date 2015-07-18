@@ -7,7 +7,13 @@
 		}
 	],
 	"typeCategories": {
-		"opaqueStructs": 	[
+		"numerics": [
+			{
+				"name": "WId",
+				"dllType": "quintptr"
+			}
+		],
+		"opaqueStructs": [
 			{
 				"enums": [
 					{
@@ -570,6 +576,747 @@
 						"name": "windowIcon",
 						"getter": "windowIcon",
 						"setter": "setWindowIcon"
+					}
+				]
+			},
+			{
+				"base": "QObject",
+				"methods": [
+					{
+						"isConst": true,
+						"name": "name",
+						"retType": "QString"
+					},
+					{
+						"isConst": true,
+						"name": "depth",
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "size",
+						"retType": "QSize"
+					},
+					{
+						"isConst": true,
+						"name": "geometry",
+						"retType": "QRect"
+					},
+					{
+						"isConst": true,
+						"name": "physicalDotsPerInchX",
+						"retType": "qreal"
+					},
+					{
+						"isConst": true,
+						"name": "physicalDotsPerInchY",
+						"retType": "qreal"
+					},
+					{
+						"isConst": true,
+						"name": "physicalDotsPerInch",
+						"retType": "qreal"
+					},
+					{
+						"isConst": true,
+						"name": "logicalDotsPerInchX",
+						"retType": "qreal"
+					},
+					{
+						"isConst": true,
+						"name": "logicalDotsPerInchY",
+						"retType": "qreal"
+					},
+					{
+						"isConst": true,
+						"name": "logicalDotsPerInch",
+						"retType": "qreal"
+					},
+					{
+						"isConst": true,
+						"name": "devicePixelRatio",
+						"retType": "qreal"
+					},
+					{
+						"isConst": true,
+						"name": "availableSize",
+						"retType": "QSize"
+					},
+					{
+						"isConst": true,
+						"name": "availableGeometry",
+						"retType": "QRect"
+					},
+					{
+						"isConst": true,
+						"name": "virtualSize",
+						"retType": "QSize"
+					},
+					{
+						"isConst": true,
+						"name": "virtualGeometry",
+						"retType": "QRect"
+					},
+					{
+						"isConst": true,
+						"name": "availableVirtualSize",
+						"retType": "QSize"
+					},
+					{
+						"isConst": true,
+						"name": "availableVirtualGeometry",
+						"retType": "QRect"
+					},
+					{
+						"name": "grabWindow",
+						"params": [
+							{
+								"name": "window",
+								"type": "WId"
+							},
+							{
+								"name": "x",
+								"type": "int"
+							},
+							{
+								"name": "y",
+								"type": "int"
+							},
+							{
+								"name": "w",
+								"type": "int"
+							},
+							{
+								"name": "h",
+								"type": "int"
+							}
+						],
+						"retType": "QPixmap"
+					},
+					{
+						"isConst": true,
+						"name": "refreshRate",
+						"retType": "qreal"
+					}
+				],
+				"name": "QScreen"
+			},
+			{
+				"base": "QObject",
+				"enums": [
+					{
+						"name": "Visibility",
+						"values": [
+							{
+								"name": "Hidden",
+								"value": 0
+							},
+							{
+								"name": "AutomaticVisibility",
+								"value": 1
+							},
+							{
+								"name": "Windowed",
+								"value": 2
+							},
+							{
+								"name": "Minimized",
+								"value": 3
+							},
+							{
+								"name": "Maximized",
+								"value": 4
+							},
+							{
+								"name": "FullScreen",
+								"value": 5
+							}
+						]
+					},
+					{
+						"name": "AncestorMode",
+						"values": [
+							{
+								"name": "ExcludeTransients",
+								"value": 0
+							},
+							{
+								"name": "IncludeTransients",
+								"value": 1
+							}
+						]
+					}
+				],
+				"methods": [
+					{
+						"name": "QWindow",
+						"params": [
+							{
+								"name": "screen",
+								"type": "QScreen*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "isVisible",
+						"retType": "bool"
+					},
+					{
+						"isConst": true,
+						"name": "visibility",
+						"retType": "QWindow::Visibility"
+					},
+					{
+						"name": "setVisibility",
+						"params": [
+							{
+								"name": "v",
+								"type": "QWindow::Visibility"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "winId",
+						"retType": "WId"
+					},
+					{
+						"isConst": true,
+						"name": "isTopLevel",
+						"retType": "bool"
+					},
+					{
+						"isConst": true,
+						"name": "isModal",
+						"retType": "bool"
+					},
+					{
+						"isConst": true,
+						"name": "modality",
+						"retType": "Qt::WindowModality"
+					},
+					{
+						"name": "setModality",
+						"params": [
+							{
+								"name": "modality",
+								"type": "Qt::WindowModality"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "type",
+						"retType": "Qt::WindowType"
+					},
+					{
+						"isConst": true,
+						"name": "title",
+						"retType": "QString"
+					},
+					{
+						"name": "setOpacity",
+						"params": [
+							{
+								"name": "level",
+								"type": "qreal"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "opacity",
+						"retType": "qreal"
+					},
+					{
+						"isConst": true,
+						"name": "isActive",
+						"retType": "bool"
+					},
+					{
+						"isConst": true,
+						"name": "devicePixelRatio",
+						"retType": "qreal"
+					},
+					{
+						"isConst": true,
+						"name": "windowState",
+						"retType": "Qt::WindowState"
+					},
+					{
+						"name": "setWindowState",
+						"params": [
+							{
+								"name": "state",
+								"type": "Qt::WindowState"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setTransientParent",
+						"params": [
+							{
+								"name": "parent",
+								"type": "QWindow*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "transientParent",
+						"retType": "QWindow*"
+					},
+					{
+						"isConst": true,
+						"name": "isExposed",
+						"retType": "bool"
+					},
+					{
+						"isConst": true,
+						"name": "minimumWidth",
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "minimumHeight",
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "maximumWidth",
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "maximumHeight",
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "minimumSize",
+						"retType": "QSize"
+					},
+					{
+						"isConst": true,
+						"name": "maximumSize",
+						"retType": "QSize"
+					},
+					{
+						"isConst": true,
+						"name": "baseSize",
+						"retType": "QSize"
+					},
+					{
+						"isConst": true,
+						"name": "sizeIncrement",
+						"retType": "QSize"
+					},
+					{
+						"name": "setMinimumSize",
+						"params": [
+							{
+								"name": "size",
+								"type": "const QSize&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setMaximumSize",
+						"params": [
+							{
+								"name": "size",
+								"type": "const QSize&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setBaseSize",
+						"params": [
+							{
+								"name": "size",
+								"type": "const QSize&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setSizeIncrement",
+						"params": [
+							{
+								"name": "size",
+								"type": "const QSize&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setGeometry",
+						"params": [
+							{
+								"name": "rect",
+								"type": "const QRect&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "geometry",
+						"retType": "QRect"
+					},
+					{
+						"isConst": true,
+						"name": "frameGeometry",
+						"retType": "QRect"
+					},
+					{
+						"isConst": true,
+						"name": "width",
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "height",
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "x",
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "y",
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "size",
+						"retType": "QSize"
+					},
+					{
+						"name": "resize",
+						"params": [
+							{
+								"name": "w",
+								"type": "int"
+							},
+							{
+								"name": "h",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setIcon",
+						"params": [
+							{
+								"name": "icon",
+								"type": "const QIcon&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "icon",
+						"retType": "QIcon"
+					},
+					{
+						"name": "destroy",
+						"retType": "void"
+					},
+					{
+						"name": "setKeyboardGrabEnabled",
+						"params": [
+							{
+								"name": "grab",
+								"type": "bool"
+							}
+						],
+						"retType": "bool"
+					},
+					{
+						"name": "setMouseGrabEnabled",
+						"params": [
+							{
+								"name": "grab",
+								"type": "bool"
+							}
+						],
+						"retType": "bool"
+					},
+					{
+						"isConst": true,
+						"name": "screen",
+						"retType": "QScreen*"
+					},
+					{
+						"name": "setScreen",
+						"params": [
+							{
+								"name": "screen",
+								"type": "QScreen*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "focusObject",
+						"retType": "QObject*"
+					},
+					{
+						"isStaticMember": true,
+						"name": "fromWinId",
+						"params": [
+							{
+								"name": "id",
+								"type": "WId"
+							}
+						],
+						"retType": "QWindow*"
+					},
+					{
+						"name": "requestActivate",
+						"retType": "void"
+					},
+					{
+						"name": "setVisible",
+						"params": [
+							{
+								"name": "visible",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "show",
+						"retType": "void"
+					},
+					{
+						"name": "hide",
+						"retType": "void"
+					},
+					{
+						"name": "showMinimized",
+						"retType": "void"
+					},
+					{
+						"name": "showMaximized",
+						"retType": "void"
+					},
+					{
+						"name": "showFullScreen",
+						"retType": "void"
+					},
+					{
+						"name": "showNormal",
+						"retType": "void"
+					},
+					{
+						"name": "close",
+						"retType": "bool"
+					},
+					{
+						"name": "raise",
+						"retType": "void"
+					},
+					{
+						"name": "lower",
+						"retType": "void"
+					},
+					{
+						"name": "setTitle",
+						"params": [
+							{
+								"name": "title",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setX",
+						"params": [
+							{
+								"name": "arg",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setY",
+						"params": [
+							{
+								"name": "arg",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setWidth",
+						"params": [
+							{
+								"name": "arg",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setHeight",
+						"params": [
+							{
+								"name": "arg",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setMinimumWidth",
+						"params": [
+							{
+								"name": "w",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setMinimumHeight",
+						"params": [
+							{
+								"name": "h",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setMaximumWidth",
+						"params": [
+							{
+								"name": "w",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setMaximumHeight",
+						"params": [
+							{
+								"name": "h",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "alert",
+						"params": [
+							{
+								"name": "msec",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					}
+				],
+				"name": "QWindow",
+				"properties": [
+					{
+						"getter": "title",
+						"name": "title",
+						"setter": "setTitle",
+						"type": "QString"
+					},
+					{
+						"getter": "modality",
+						"name": "modality",
+						"setter": "setModality",
+						"type": "Qt::WindowModality"
+					},
+					{
+						"getter": "x",
+						"name": "x",
+						"setter": "setX",
+						"type": "int"
+					},
+					{
+						"getter": "y",
+						"name": "y",
+						"setter": "setY",
+						"type": "int"
+					},
+					{
+						"getter": "width",
+						"name": "width",
+						"setter": "setWidth",
+						"type": "int"
+					},
+					{
+						"getter": "height",
+						"name": "height",
+						"setter": "setHeight",
+						"type": "int"
+					},
+					{
+						"getter": "minimumWidth",
+						"name": "minimumWidth",
+						"setter": "setMinimumWidth",
+						"type": "int"
+					},
+					{
+						"getter": "minimumHeight",
+						"name": "minimumHeight",
+						"setter": "setMinimumHeight",
+						"type": "int"
+					},
+					{
+						"getter": "maximumWidth",
+						"name": "maximumWidth",
+						"setter": "setMaximumWidth",
+						"type": "int"
+					},
+					{
+						"getter": "maximumHeight",
+						"name": "maximumHeight",
+						"setter": "setMaximumHeight",
+						"type": "int"
+					},
+					{
+						"getter": "isVisible",
+						"name": "visible",
+						"setter": "setVisible",
+						"type": "bool"
+					},
+					{
+						"getter": "visibility",
+						"name": "visibility",
+						"setter": "setVisibility",
+						"type": "Visibility"
+					},
+					{
+						"getter": "opacity",
+						"name": "opacity",
+						"setter": "setOpacity",
+						"type": "qreal"
 					}
 				]
 			}
