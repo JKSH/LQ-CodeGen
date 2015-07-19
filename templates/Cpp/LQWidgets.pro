@@ -1,5 +1,5 @@
 CONFIG += C++11
-QT     += widgets svg
+QT     += widgets svg winextras
 
 TARGET = LQWidgets
 TEMPLATE = lib
@@ -18,3 +18,4 @@ HEADERS += \
 INCLUDEPATH += "C:/Program Files (x86)/National Instruments/LabVIEW 2013/cintools"
 LIBS        += "C:/Program Files (x86)/National Instruments/LabVIEW 2013/cintools/labviewv.lib"
 
+include(C:/Qwt-6.1.2/features/qwt.prf)

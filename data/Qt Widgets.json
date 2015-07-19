@@ -462,6 +462,927 @@
 						"name": "QListView"
 					}
 				]
+			},
+			{
+				"base": "QAbstractButton",
+				"methods": [
+					{
+						"name": "QCheckBox",
+						"params": [
+							{
+								"name": "text",
+								"type": "const QString&"
+							},
+							{
+								"name": "parent",
+								"type": "QWidget*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setTristate",
+						"params": [
+							{
+								"name": "y",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "isTristate",
+						"retType": "bool"
+					},
+					{
+						"isConst": true,
+						"name": "checkState",
+						"retType": "Qt::CheckState"
+					},
+					{
+						"name": "setCheckState",
+						"params": [
+							{
+								"name": "state",
+								"type": "Qt::CheckState"
+							}
+						],
+						"retType": "void"
+					}
+				],
+				"name": "QCheckBox",
+				"properties": [
+					{
+						"getter": "isTristate",
+						"name": "tristate",
+						"setter": "setTristate",
+						"type": "bool"
+					}
+				]
+			},
+			{
+				"base": "QWidget",
+				"methods": [
+					{
+						"name": "QGroupBox",
+						"params": [
+							{
+								"name": "title",
+								"type": "const QString&"
+							},
+							{
+								"name": "parent",
+								"type": "QWidget*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "title",
+						"retType": "QString"
+					},
+					{
+						"name": "setTitle",
+						"params": [
+							{
+								"name": "title",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "alignment",
+						"retType": "Qt::AlignmentFlag"
+					},
+					{
+						"name": "setAlignment",
+						"params": [
+							{
+								"name": "alignment",
+								"type": "Qt::AlignmentFlag"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "isFlat",
+						"retType": "bool"
+					},
+					{
+						"name": "setFlat",
+						"params": [
+							{
+								"name": "flat",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "isCheckable",
+						"retType": "bool"
+					},
+					{
+						"name": "setCheckable",
+						"params": [
+							{
+								"name": "checkable",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "isChecked",
+						"retType": "bool"
+					},
+					{
+						"name": "setChecked",
+						"params": [
+							{
+								"name": "checked",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					}
+				],
+				"name": "QGroupBox",
+				"properties": [
+					{
+						"getter": "title",
+						"name": "title",
+						"setter": "setTitle",
+						"type": "QString"
+					},
+					{
+						"getter": "alignment",
+						"name": "alignment",
+						"setter": "setAlignment",
+						"type": "Qt::AlignmentFlag"
+					},
+					{
+						"getter": "isFlat",
+						"name": "flat",
+						"setter": "setFlat",
+						"type": "bool"
+					},
+					{
+						"getter": "isCheckable",
+						"name": "checkable",
+						"setter": "setCheckable",
+						"type": "bool"
+					},
+					{
+						"getter": "isChecked",
+						"name": "checked",
+						"setter": "setChecked",
+						"type": "bool"
+					}
+				]
+			},
+			{
+				"base": "QFrame",
+				"methods": [
+					{
+						"name": "QSplitter",
+						"params": [
+							{
+								"name": "orientation",
+								"type": "Qt::Orientation"
+							},
+							{
+								"name": "parent",
+								"type": "QWidget*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "addWidget",
+						"params": [
+							{
+								"name": "widget",
+								"type": "QWidget*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "insertWidget",
+						"params": [
+							{
+								"name": "index",
+								"type": "int"
+							},
+							{
+								"name": "widget",
+								"type": "QWidget*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setOrientation",
+						"params": [
+							{
+								"name": "orientation",
+								"type": "Qt::Orientation"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "orientation",
+						"retType": "Qt::Orientation"
+					},
+					{
+						"name": "setChildrenCollapsible",
+						"params": [
+							{
+								"name": "collapsible",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "childrenCollapsible",
+						"retType": "bool"
+					},
+					{
+						"name": "setCollapsible",
+						"params": [
+							{
+								"name": "index",
+								"type": "int"
+							},
+							{
+								"name": "collapsible",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "isCollapsible",
+						"params": [
+							{
+								"name": "index",
+								"type": "int"
+							}
+						],
+						"retType": "bool"
+					},
+					{
+						"name": "setOpaqueResize",
+						"params": [
+							{
+								"name": "opaque",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "opaqueResize",
+						"retType": "bool"
+					},
+					{
+						"isConst": true,
+						"name": "sizes",
+						"retType": "QList<int>"
+					},
+					{
+						"name": "setSizes",
+						"params": [
+							{
+								"name": "list",
+								"type": "const QList<int>&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "saveState",
+						"retType": "QByteArray"
+					},
+					{
+						"name": "restoreState",
+						"params": [
+							{
+								"name": "state",
+								"type": "const QByteArray&"
+							}
+						],
+						"retType": "bool"
+					},
+					{
+						"isConst": true,
+						"name": "handleWidth",
+						"retType": "int"
+					},
+					{
+						"name": "setHandleWidth",
+						"params": [
+							{
+								"name": "width",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "indexOf",
+						"params": [
+							{
+								"name": "widget",
+								"type": "QWidget*"
+							}
+						],
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "widget",
+						"params": [
+							{
+								"name": "index",
+								"type": "int"
+							}
+						],
+						"retType": "QWidget*"
+					},
+					{
+						"isConst": true,
+						"name": "count",
+						"retType": "int"
+					},
+					{
+						"name": "setStretchFactor",
+						"params": [
+							{
+								"name": "index",
+								"type": "int"
+							},
+							{
+								"name": "stretch",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					}
+				],
+				"name": "QSplitter",
+				"properties": [
+					{
+						"getter": "orientation",
+						"name": "orientation",
+						"setter": "setOrientation",
+						"type": "Qt::Orientation"
+					},
+					{
+						"getter": "opaqueResize",
+						"name": "opaqueResize",
+						"setter": "setOpaqueResize",
+						"type": "bool"
+					},
+					{
+						"getter": "handleWidth",
+						"name": "handleWidth",
+						"setter": "setHandleWidth",
+						"type": "int"
+					},
+					{
+						"getter": "childrenCollapsible",
+						"name": "childrenCollapsible",
+						"setter": "setChildrenCollapsible",
+						"type": "bool"
+					}
+				]
+			},
+			{
+				"base": "QWidget",
+				"enums": [
+					{
+						"name": "TabPosition",
+						"values": [
+							{
+								"name": "North",
+								"value": 0
+							},
+							{
+								"name": "South",
+								"value": 1
+							},
+							{
+								"name": "West",
+								"value": 2
+							},
+							{
+								"name": "East",
+								"value": 3
+							}
+						]
+					},
+					{
+						"name": "TabShape",
+						"values": [
+							{
+								"name": "Rounded",
+								"value": 0
+							},
+							{
+								"name": "Triangular",
+								"value": 1
+							}
+						]
+					}
+				],
+				"methods": [
+					{
+						"name": "QTabWidget",
+						"params": [
+							{
+								"name": "parent",
+								"type": "QWidget*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "addTab",
+						"params": [
+							{
+								"name": "widget",
+								"type": "QWidget*"
+							},
+							{
+								"name": "icon",
+								"type": "const QIcon&"
+							},
+							{
+								"name": "label",
+								"type": "const QString&"
+							}
+						],
+						"retType": "int"
+					},
+					{
+						"name": "insertTab",
+						"params": [
+							{
+								"name": "index",
+								"type": "int"
+							},
+							{
+								"name": "widget",
+								"type": "QWidget*"
+							},
+							{
+								"name": "icon",
+								"type": "const QIcon&"
+							},
+							{
+								"name": "label",
+								"type": "const QString&"
+							}
+						],
+						"retType": "int"
+					},
+					{
+						"name": "removeTab",
+						"params": [
+							{
+								"name": "index",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "isTabEnabled",
+						"params": [
+							{
+								"name": "index",
+								"type": "int"
+							}
+						],
+						"retType": "bool"
+					},
+					{
+						"name": "setTabEnabled",
+						"params": [
+							{
+								"name": "index",
+								"type": "int"
+							},
+							{
+								"name": "enabled",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "tabText",
+						"params": [
+							{
+								"name": "index",
+								"type": "int"
+							}
+						],
+						"retType": "QString"
+					},
+					{
+						"name": "setTabText",
+						"params": [
+							{
+								"name": "index",
+								"type": "int"
+							},
+							{
+								"name": "text",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "tabIcon",
+						"params": [
+							{
+								"name": "index",
+								"type": "int"
+							}
+						],
+						"retType": "QIcon"
+					},
+					{
+						"name": "setTabIcon",
+						"params": [
+							{
+								"name": "index",
+								"type": "int"
+							},
+							{
+								"name": "icon",
+								"type": "const QIcon&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setTabToolTip",
+						"params": [
+							{
+								"name": "index",
+								"type": "int"
+							},
+							{
+								"name": "tip",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "tabToolTip",
+						"params": [
+							{
+								"name": "index",
+								"type": "int"
+							}
+						],
+						"retType": "QString"
+					},
+					{
+						"name": "setTabWhatsThis",
+						"params": [
+							{
+								"name": "index",
+								"type": "int"
+							},
+							{
+								"name": "text",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "tabWhatsThis",
+						"params": [
+							{
+								"name": "index",
+								"type": "int"
+							}
+						],
+						"retType": "QString"
+					},
+					{
+						"isConst": true,
+						"name": "currentIndex",
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "currentWidget",
+						"retType": "QWidget*"
+					},
+					{
+						"isConst": true,
+						"name": "widget",
+						"params": [
+							{
+								"name": "index",
+								"type": "int"
+							}
+						],
+						"retType": "QWidget*"
+					},
+					{
+						"isConst": true,
+						"name": "indexOf",
+						"params": [
+							{
+								"name": "widget",
+								"type": "QWidget*"
+							}
+						],
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "count",
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "tabPosition",
+						"retType": "QTabWidget::TabPosition"
+					},
+					{
+						"name": "setTabPosition",
+						"params": [
+							{
+								"name": "position",
+								"type": "QTabWidget::TabPosition"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "tabsClosable",
+						"retType": "bool"
+					},
+					{
+						"name": "setTabsClosable",
+						"params": [
+							{
+								"name": "closable",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "isMovable",
+						"retType": "bool"
+					},
+					{
+						"name": "setMovable",
+						"params": [
+							{
+								"name": "movable",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "tabShape",
+						"retType": "QTabWidget::TabShape"
+					},
+					{
+						"name": "setTabShape",
+						"params": [
+							{
+								"name": "shape",
+								"type": "QTabWidget::TabShape"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setCornerWidget",
+						"params": [
+							{
+								"name": "widget",
+								"type": "QWidget*"
+							},
+							{
+								"name": "corner",
+								"type": "Qt::Corner"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "cornerWidget",
+						"params": [
+							{
+								"name": "corner",
+								"type": "Qt::Corner"
+							}
+						],
+						"retType": "QWidget*"
+					},
+					{
+						"isConst": true,
+						"name": "elideMode",
+						"retType": "Qt::TextElideMode"
+					},
+					{
+						"name": "setElideMode",
+						"params": [
+							{
+								"name": "elideMode",
+								"type": "Qt::TextElideMode"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "iconSize",
+						"retType": "QSize"
+					},
+					{
+						"name": "setIconSize",
+						"params": [
+							{
+								"name": "size",
+								"type": "const QSize&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "usesScrollButtons",
+						"retType": "bool"
+					},
+					{
+						"name": "setUsesScrollButtons",
+						"params": [
+							{
+								"name": "useButtons",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "documentMode",
+						"retType": "bool"
+					},
+					{
+						"name": "setDocumentMode",
+						"params": [
+							{
+								"name": "set",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "tabBarAutoHide",
+						"retType": "bool"
+					},
+					{
+						"name": "setTabBarAutoHide",
+						"params": [
+							{
+								"name": "enabled",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "clear",
+						"retType": "void"
+					},
+					{
+						"name": "setCurrentIndex",
+						"params": [
+							{
+								"name": "index",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setCurrentWidget",
+						"params": [
+							{
+								"name": "widget",
+								"type": "QWidget*"
+							}
+						],
+						"retType": "void"
+					}
+				],
+				"name": "QTabWidget",
+				"properties": [
+					{
+						"getter": "tabPosition",
+						"name": "tabPosition",
+						"setter": "setTabPosition",
+						"type": "TabPosition"
+					},
+					{
+						"getter": "tabShape",
+						"name": "tabShape",
+						"setter": "setTabShape",
+						"type": "TabShape"
+					},
+					{
+						"getter": "currentIndex",
+						"name": "currentIndex",
+						"setter": "setCurrentIndex",
+						"type": "int"
+					},
+					{
+						"getter": "iconSize",
+						"name": "iconSize",
+						"setter": "setIconSize",
+						"type": "QSize"
+					},
+					{
+						"getter": "elideMode",
+						"name": "elideMode",
+						"setter": "setElideMode",
+						"type": "Qt::TextElideMode"
+					},
+					{
+						"getter": "usesScrollButtons",
+						"name": "usesScrollButtons",
+						"setter": "setUsesScrollButtons",
+						"type": "bool"
+					},
+					{
+						"getter": "documentMode",
+						"name": "documentMode",
+						"setter": "setDocumentMode",
+						"type": "bool"
+					},
+					{
+						"getter": "tabsClosable",
+						"name": "tabsClosable",
+						"setter": "setTabsClosable",
+						"type": "bool"
+					},
+					{
+						"getter": "isMovable",
+						"name": "movable",
+						"setter": "setMovable",
+						"type": "bool"
+					},
+					{
+						"getter": "tabBarAutoHide",
+						"name": "tabBarAutoHide",
+						"setter": "setTabBarAutoHide",
+						"type": "bool"
+					}
+				]
 			}
 		]
 	}

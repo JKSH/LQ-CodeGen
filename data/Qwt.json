@@ -1,0 +1,860 @@
+{
+	"name": "Qwt",
+	"typeCategories": {
+		"qObjects": [
+			{
+				"base": "QWidget",
+				"methods": [
+					{
+						"name": "QwtAbstractScale",
+						"params": [
+							{
+								"name": "parent",
+								"type": "QWidget*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setScale",
+						"params": [
+							{
+								"name": "lowerBound",
+								"type": "double"
+							},
+							{
+								"name": "upperBound",
+								"type": "double"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setLowerBound",
+						"params": [
+							{
+								"name": "value",
+								"type": "double"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "lowerBound",
+						"retType": "double"
+					},
+					{
+						"name": "setUpperBound",
+						"params": [
+							{
+								"name": "value",
+								"type": "double"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "upperBound",
+						"retType": "double"
+					},
+					{
+						"name": "setScaleStepSize",
+						"params": [
+							{
+								"name": "stepSize",
+								"type": "double"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "scaleStepSize",
+						"retType": "double"
+					},
+					{
+						"name": "setScaleMaxMajor",
+						"params": [
+							{
+								"name": "ticks",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "scaleMaxMinor",
+						"retType": "int"
+					},
+					{
+						"name": "setScaleMaxMinor",
+						"params": [
+							{
+								"name": "ticks",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "scaleMaxMajor",
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "transform",
+						"params": [
+							{
+								"name": "value",
+								"type": "double"
+							}
+						],
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "invTransform",
+						"params": [
+							{
+								"name": "value",
+								"type": "int"
+							}
+						],
+						"retType": "double"
+					},
+					{
+						"isConst": true,
+						"name": "isInverted",
+						"retType": "bool"
+					},
+					{
+						"isConst": true,
+						"name": "minimum",
+						"retType": "double"
+					},
+					{
+						"isConst": true,
+						"name": "maximum",
+						"retType": "double"
+					}
+				],
+				"name": "QwtAbstractScale",
+				"properties": [
+					{
+						"getter": "lowerBound",
+						"name": "lowerBound",
+						"setter": "setLowerBound",
+						"type": "double"
+					},
+					{
+						"getter": "upperBound",
+						"name": "upperBound",
+						"setter": "setUpperBound",
+						"type": "double"
+					},
+					{
+						"getter": "scaleMaxMajor",
+						"name": "scaleMaxMajor",
+						"setter": "setScaleMaxMajor",
+						"type": "int"
+					},
+					{
+						"getter": "scaleMaxMinor",
+						"name": "scaleMaxMinor",
+						"setter": "setScaleMaxMinor",
+						"type": "int"
+					},
+					{
+						"getter": "scaleStepSize",
+						"name": "scaleStepSize",
+						"setter": "setScaleStepSize",
+						"type": "double"
+					}
+				]
+			},
+			{
+				"base": "QwtAbstractScale",
+				"enums": [
+					{
+						"name": "ScalePosition",
+						"values": [
+							{
+								"name": "NoScale",
+								"value": 0
+							},
+							{
+								"name": "LeadingScale",
+								"value": 1
+							},
+							{
+								"name": "TrailingScale",
+								"value": 2
+							}
+						]
+					},
+					{
+						"name": "OriginMode",
+						"values": [
+							{
+								"name": "OriginMinimum",
+								"value": 0
+							},
+							{
+								"name": "OriginMaximum",
+								"value": 1
+							},
+							{
+								"name": "OriginCustom",
+								"value": 2
+							}
+						]
+					}
+				],
+				"methods": [
+					{
+						"name": "QwtThermo",
+						"params": [
+							{
+								"name": "parent",
+								"type": "QWidget*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setOrientation",
+						"params": [
+							{
+								"name": "orientation",
+								"type": "Qt::Orientation"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "orientation",
+						"retType": "Qt::Orientation"
+					},
+					{
+						"name": "setScalePosition",
+						"params": [
+							{
+								"name": "position",
+								"type": "QwtThermo::ScalePosition"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "scalePosition",
+						"retType": "QwtThermo::ScalePosition"
+					},
+					{
+						"name": "setSpacing",
+						"params": [
+							{
+								"name": "spacing",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "spacing",
+						"retType": "int"
+					},
+					{
+						"name": "setBorderWidth",
+						"params": [
+							{
+								"name": "w",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "borderWidth",
+						"retType": "int"
+					},
+					{
+						"name": "setOriginMode",
+						"params": [
+							{
+								"name": "mode",
+								"type": "QwtThermo::OriginMode"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "originMode",
+						"retType": "QwtThermo::OriginMode"
+					},
+					{
+						"name": "setOrigin",
+						"params": [
+							{
+								"name": "origin",
+								"type": "double"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "origin",
+						"retType": "double"
+					},
+					{
+						"name": "setAlarmLevel",
+						"params": [
+							{
+								"name": "v",
+								"type": "double"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "alarmLevel",
+						"retType": "double"
+					},
+					{
+						"name": "setAlarmEnabled",
+						"params": [
+							{
+								"name": "tf",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "alarmEnabled",
+						"retType": "bool"
+					},
+					{
+						"name": "setPipeWidth",
+						"params": [
+							{
+								"name": "w",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "pipeWidth",
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "value",
+						"retType": "double"
+					},
+					{
+						"name": "setValue",
+						"params": [
+							{
+								"name": "val",
+								"type": "double"
+							}
+						],
+						"retType": "void"
+					}
+				],
+				"name": "QwtThermo",
+				"properties": [
+					{
+						"getter": "orientation",
+						"name": "orientation",
+						"setter": "setOrientation",
+						"type": "Qt::Orientation"
+					},
+					{
+						"getter": "scalePosition",
+						"name": "scalePosition",
+						"setter": "setScalePosition",
+						"type": "ScalePosition"
+					},
+					{
+						"getter": "originMode",
+						"name": "originMode",
+						"setter": "setOriginMode",
+						"type": "OriginMode"
+					},
+					{
+						"getter": "alarmEnabled",
+						"name": "alarmEnabled",
+						"setter": "setAlarmEnabled",
+						"type": "bool"
+					},
+					{
+						"getter": "alarmLevel",
+						"name": "alarmLevel",
+						"setter": "setAlarmLevel",
+						"type": "double"
+					},
+					{
+						"getter": "origin",
+						"name": "origin",
+						"setter": "setOrigin",
+						"type": "double"
+					},
+					{
+						"getter": "spacing",
+						"name": "spacing",
+						"setter": "setSpacing",
+						"type": "int"
+					},
+					{
+						"getter": "borderWidth",
+						"name": "borderWidth",
+						"setter": "setBorderWidth",
+						"type": "int"
+					},
+					{
+						"getter": "pipeWidth",
+						"name": "pipeWidth",
+						"setter": "setPipeWidth",
+						"type": "int"
+					},
+					{
+						"getter": "value",
+						"name": "value",
+						"setter": "setValue",
+						"type": "double"
+					}
+				]
+			},
+			{
+				"base": "QwtAbstractScale",
+				"methods": [
+					{
+						"name": "setValid",
+						"params": [
+							{
+								"name": "valid",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "isValid",
+						"retType": "bool"
+					},
+					{
+						"isConst": true,
+						"name": "value",
+						"retType": "double"
+					},
+					{
+						"name": "setWrapping",
+						"params": [
+							{
+								"name": "wrapping",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "wrapping",
+						"retType": "bool"
+					},
+					{
+						"name": "setTotalSteps",
+						"params": [
+							{
+								"name": "totalSteps",
+								"type": "quint32"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "totalSteps",
+						"retType": "quint32"
+					},
+					{
+						"name": "setSingleSteps",
+						"params": [
+							{
+								"name": "singleSteps",
+								"type": "quint32"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "singleSteps",
+						"retType": "quint32"
+					},
+					{
+						"name": "setPageSteps",
+						"params": [
+							{
+								"name": "pageSteps",
+								"type": "quint32"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "pageSteps",
+						"retType": "quint32"
+					},
+					{
+						"name": "setStepAlignment",
+						"params": [
+							{
+								"name": "stepAlignment",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "stepAlignment",
+						"retType": "bool"
+					},
+					{
+						"name": "setTracking",
+						"params": [
+							{
+								"name": "tracking",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "isTracking",
+						"retType": "bool"
+					},
+					{
+						"name": "setReadOnly",
+						"params": [
+							{
+								"name": "readOnly",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "isReadOnly",
+						"retType": "bool"
+					},
+					{
+						"name": "setInvertedControls",
+						"params": [
+							{
+								"name": "inverted",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "invertedControls",
+						"retType": "bool"
+					},
+					{
+						"name": "setValue",
+						"params": [
+							{
+								"name": "val",
+								"type": "double"
+							}
+						],
+						"retType": "void"
+					}
+				],
+				"name": "QwtAbstractSlider",
+				"properties": [
+					{
+						"getter": "value",
+						"name": "value",
+						"setter": "setValue",
+						"type": "double"
+					},
+					{
+						"getter": "totalSteps",
+						"name": "totalSteps",
+						"setter": "setTotalSteps",
+						"type": "quint32"
+					},
+					{
+						"getter": "singleSteps",
+						"name": "singleSteps",
+						"setter": "setSingleSteps",
+						"type": "quint32"
+					},
+					{
+						"getter": "pageSteps",
+						"name": "pageSteps",
+						"setter": "setPageSteps",
+						"type": "quint32"
+					},
+					{
+						"getter": "stepAlignment",
+						"name": "stepAlignment",
+						"setter": "setStepAlignment",
+						"type": "bool"
+					},
+					{
+						"getter": "isReadOnly",
+						"name": "readOnly",
+						"setter": "setReadOnly",
+						"type": "bool"
+					},
+					{
+						"getter": "isTracking",
+						"name": "tracking",
+						"setter": "setTracking",
+						"type": "bool"
+					},
+					{
+						"getter": "wrapping",
+						"name": "wrapping",
+						"setter": "setWrapping",
+						"type": "bool"
+					},
+					{
+						"getter": "invertedControls",
+						"name": "invertedControls",
+						"setter": "setInvertedControls",
+						"type": "bool"
+					}
+				]
+			},
+			{
+				"base": "QwtAbstractSlider",
+				"enums": [
+					{
+						"name": "ScalePosition",
+						"values": [
+							{
+								"name": "NoScale",
+								"value": 0
+							},
+							{
+								"name": "LeadingScale",
+								"value": 1
+							},
+							{
+								"name": "TrailingScale",
+								"value": 2
+							}
+						]
+					}
+				],
+				"methods": [
+					{
+						"name": "QwtSlider",
+						"params": [
+							{
+								"name": "orientation",
+								"type": "Qt::Orientation"
+							},
+							{
+								"name": "parent",
+								"type": "QWidget*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setOrientation",
+						"params": [
+							{
+								"name": "orientation",
+								"type": "Qt::Orientation"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "orientation",
+						"retType": "Qt::Orientation"
+					},
+					{
+						"name": "setScalePosition",
+						"params": [
+							{
+								"name": "position",
+								"type": "QwtSlider::ScalePosition"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "scalePosition",
+						"retType": "QwtSlider::ScalePosition"
+					},
+					{
+						"name": "setTrough",
+						"params": [
+							{
+								"name": "hasTrough",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "hasTrough",
+						"retType": "bool"
+					},
+					{
+						"name": "setGroove",
+						"params": [
+							{
+								"name": "hasGroove",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "hasGroove",
+						"retType": "bool"
+					},
+					{
+						"name": "setHandleSize",
+						"params": [
+							{
+								"name": "size",
+								"type": "const QSize&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "handleSize",
+						"retType": "QSize"
+					},
+					{
+						"name": "setBorderWidth",
+						"params": [
+							{
+								"name": "bw",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "borderWidth",
+						"retType": "int"
+					},
+					{
+						"name": "setSpacing",
+						"params": [
+							{
+								"name": "spacing",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "spacing",
+						"retType": "int"
+					},
+					{
+						"name": "setUpdateInterval",
+						"params": [
+							{
+								"name": "interval",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "updateInterval",
+						"retType": "int"
+					}
+				],
+				"name": "QwtSlider",
+				"properties": [
+					{
+						"getter": "orientation",
+						"name": "orientation",
+						"setter": "setOrientation",
+						"type": "Qt::Orientation"
+					},
+					{
+						"getter": "scalePosition",
+						"name": "scalePosition",
+						"setter": "setScalePosition",
+						"type": "ScalePosition"
+					},
+					{
+						"getter": "hasTrough",
+						"name": "trough",
+						"setter": "setTrough",
+						"type": "bool"
+					},
+					{
+						"getter": "hasGroove",
+						"name": "groove",
+						"setter": "setGroove",
+						"type": "bool"
+					},
+					{
+						"getter": "handleSize",
+						"name": "handleSize",
+						"setter": "setHandleSize",
+						"type": "QSize"
+					},
+					{
+						"getter": "borderWidth",
+						"name": "borderWidth",
+						"setter": "setBorderWidth",
+						"type": "int"
+					},
+					{
+						"getter": "spacing",
+						"name": "spacing",
+						"setter": "setSpacing",
+						"type": "int"
+					}
+				]
+			}
+		]
+	}
+}

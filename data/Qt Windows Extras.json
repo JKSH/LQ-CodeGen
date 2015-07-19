@@ -1,0 +1,941 @@
+{
+	"name": "Qt Windows Extras",
+	"typeCategories": {
+		"simpleIdentities": [
+			{
+				"enums": [
+					{
+						"name": "Type",
+						"values": [
+							{
+								"name": "Custom",
+								"value": 0
+							},
+							{
+								"name": "Recent",
+								"value": 1
+							},
+							{
+								"name": "Frequent",
+								"value": 2
+							},
+							{
+								"name": "Tasks",
+								"value": 3
+							}
+						]
+					}
+				],
+				"methods": [
+					{
+						"name": "QWinJumpListCategory",
+						"params": [
+							{
+								"name": "title",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "type",
+						"retType": "QWinJumpListCategory::Type"
+					},
+					{
+						"isConst": true,
+						"name": "isVisible",
+						"retType": "bool"
+					},
+					{
+						"name": "setVisible",
+						"params": [
+							{
+								"name": "visible",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "title",
+						"retType": "QString"
+					},
+					{
+						"name": "setTitle",
+						"params": [
+							{
+								"name": "title",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "count",
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "isEmpty",
+						"retType": "bool"
+					},
+					{
+						"name": "addItem",
+						"params": [
+							{
+								"name": "item",
+								"type": "QWinJumpListItem*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "addDestination",
+						"params": [
+							{
+								"name": "filePath",
+								"type": "const QString&"
+							}
+						],
+						"retType": "QWinJumpListItem*"
+					},
+					{
+						"name": "addLink",
+						"params": [
+							{
+								"name": "icon",
+								"type": "const QIcon&"
+							},
+							{
+								"name": "title",
+								"type": "const QString&"
+							},
+							{
+								"name": "executablePath",
+								"type": "const QString&"
+							},
+							{
+								"name": "arguments",
+								"type": "const QStringList&"
+							}
+						],
+						"retType": "QWinJumpListItem*"
+					},
+					{
+						"name": "addSeparator",
+						"retType": "QWinJumpListItem*"
+					},
+					{
+						"name": "clear",
+						"retType": "void"
+					}
+				],
+				"name": "QWinJumpListCategory",
+				"properties": [
+					{
+						"getter": "isVisible",
+						"name": "visible",
+						"setter": "setVisible",
+						"type": "bool"
+					},
+					{
+						"getter": "title",
+						"name": "title",
+						"setter": "setTitle",
+						"type": "QString"
+					}
+				]
+			},
+			{
+				"enums": [
+					{
+						"name": "Type",
+						"values": [
+							{
+								"name": "Destination",
+								"value": 0
+							},
+							{
+								"name": "Link",
+								"value": 1
+							},
+							{
+								"name": "Separator",
+								"value": 2
+							}
+						]
+					}
+				],
+				"methods": [
+					{
+						"name": "QWinJumpListItem",
+						"params": [
+							{
+								"name": "type",
+								"type": "QWinJumpListItem::Type"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setType",
+						"params": [
+							{
+								"name": "type",
+								"type": "QWinJumpListItem::Type"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "type",
+						"retType": "QWinJumpListItem::Type"
+					},
+					{
+						"name": "setFilePath",
+						"params": [
+							{
+								"name": "filePath",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "filePath",
+						"retType": "QString"
+					},
+					{
+						"name": "setWorkingDirectory",
+						"params": [
+							{
+								"name": "workingDirectory",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "workingDirectory",
+						"retType": "QString"
+					},
+					{
+						"name": "setIcon",
+						"params": [
+							{
+								"name": "icon",
+								"type": "const QIcon&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "icon",
+						"retType": "QIcon"
+					},
+					{
+						"name": "setTitle",
+						"params": [
+							{
+								"name": "title",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "title",
+						"retType": "QString"
+					},
+					{
+						"name": "setDescription",
+						"params": [
+							{
+								"name": "description",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "description",
+						"retType": "QString"
+					},
+					{
+						"name": "setArguments",
+						"params": [
+							{
+								"name": "arguments",
+								"type": "const QStringList&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "arguments",
+						"retType": "QStringList"
+					}
+				],
+				"name": "QWinJumpListItem",
+				"properties": [
+					{
+						"getter": "type",
+						"name": "type",
+						"setter": "setType",
+						"type": "QWinJumpListItem::Type"
+					},
+					{
+						"getter": "filePath",
+						"name": "filePath",
+						"setter": "setFilePath",
+						"type": "QString"
+					},
+					{
+						"getter": "workingDirectory",
+						"name": "workingDirectory",
+						"setter": "setWorkingDirectory",
+						"type": "QString"
+					},
+					{
+						"getter": "icon",
+						"name": "icon",
+						"setter": "setIcon",
+						"type": "QIcon"
+					},
+					{
+						"getter": "title",
+						"name": "title",
+						"setter": "setTitle",
+						"type": "QString"
+					},
+					{
+						"getter": "description",
+						"name": "description",
+						"setter": "setDescription",
+						"type": "QString"
+					},
+					{
+						"getter": "arguments",
+						"name": "arguments",
+						"setter": "setArguments",
+						"type": "QStringList"
+					}
+				]
+			}
+		],
+		"qObjects": [
+			{
+				"base": "QObject",
+				"methods": [
+					{
+						"name": "QWinJumpList",
+						"params": [
+							{
+								"name": "parent",
+								"type": "QObject*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "identifier",
+						"retType": "QString"
+					},
+					{
+						"name": "setIdentifier",
+						"params": [
+							{
+								"name": "identifier",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "recent",
+						"retType": "QWinJumpListCategory*"
+					},
+					{
+						"isConst": true,
+						"name": "frequent",
+						"retType": "QWinJumpListCategory*"
+					},
+					{
+						"isConst": true,
+						"name": "tasks",
+						"retType": "QWinJumpListCategory*"
+					},
+					{
+						"name": "addCategory",
+						"params": [
+							{
+								"name": "category",
+								"type": "QWinJumpListCategory*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "clear",
+						"retType": "void"
+					}
+				],
+				"name": "QWinJumpList",
+				"properties": [
+					{
+						"getter": "identifier",
+						"name": "identifier",
+						"setter": "setIdentifier",
+						"type": "QString"
+					}
+				]
+			},
+			{
+				"base": "QObject",
+				"methods": [
+					{
+						"name": "QWinTaskbarButton",
+						"params": [
+							{
+								"name": "parent",
+								"type": "QObject*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setWindow",
+						"params": [
+							{
+								"name": "window",
+								"type": "QWindow*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "window",
+						"retType": "QWindow*"
+					},
+					{
+						"isConst": true,
+						"name": "overlayIcon",
+						"retType": "QIcon"
+					},
+					{
+						"isConst": true,
+						"name": "overlayAccessibleDescription",
+						"retType": "QString"
+					},
+					{
+						"isConst": true,
+						"name": "progress",
+						"retType": "QWinTaskbarProgress*"
+					},
+					{
+						"name": "setOverlayIcon",
+						"params": [
+							{
+								"name": "icon",
+								"type": "const QIcon&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setOverlayAccessibleDescription",
+						"params": [
+							{
+								"name": "description",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "clearOverlayIcon",
+						"retType": "void"
+					}
+				],
+				"name": "QWinTaskbarButton",
+				"properties": [
+					{
+						"getter": "overlayIcon",
+						"name": "overlayIcon",
+						"setter": "setOverlayIcon",
+						"type": "QIcon"
+					},
+					{
+						"getter": "overlayAccessibleDescription",
+						"name": "overlayAccessibleDescription",
+						"setter": "setOverlayAccessibleDescription",
+						"type": "QString"
+					}
+				]
+			},
+			{
+				"base": "QObject",
+				"methods": [
+					{
+						"isConst": true,
+						"name": "value",
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "minimum",
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "maximum",
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "isVisible",
+						"retType": "bool"
+					},
+					{
+						"isConst": true,
+						"name": "isPaused",
+						"retType": "bool"
+					},
+					{
+						"isConst": true,
+						"name": "isStopped",
+						"retType": "bool"
+					},
+					{
+						"name": "setValue",
+						"params": [
+							{
+								"name": "value",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setMinimum",
+						"params": [
+							{
+								"name": "minimum",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setMaximum",
+						"params": [
+							{
+								"name": "maximum",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setRange",
+						"params": [
+							{
+								"name": "minimum",
+								"type": "int"
+							},
+							{
+								"name": "maximum",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "reset",
+						"retType": "void"
+					},
+					{
+						"name": "show",
+						"retType": "void"
+					},
+					{
+						"name": "hide",
+						"retType": "void"
+					},
+					{
+						"name": "setVisible",
+						"params": [
+							{
+								"name": "visible",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "pause",
+						"retType": "void"
+					},
+					{
+						"name": "resume",
+						"retType": "void"
+					},
+					{
+						"name": "setPaused",
+						"params": [
+							{
+								"name": "paused",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "stop",
+						"retType": "void"
+					}
+				],
+				"name": "QWinTaskbarProgress",
+				"properties": [
+					{
+						"getter": "value",
+						"name": "value",
+						"setter": "setValue",
+						"type": "int"
+					},
+					{
+						"getter": "minimum",
+						"name": "minimum",
+						"setter": "setMinimum",
+						"type": "int"
+					},
+					{
+						"getter": "maximum",
+						"name": "maximum",
+						"setter": "setMaximum",
+						"type": "int"
+					},
+					{
+						"getter": "isVisible",
+						"name": "visible",
+						"setter": "setVisible",
+						"type": "bool"
+					},
+					{
+						"getter": "isPaused",
+						"name": "paused",
+						"setter": "setPaused",
+						"type": "bool"
+					}
+				]
+			},
+			{
+				"base": "QObject",
+				"methods": [
+					{
+						"name": "QWinThumbnailToolBar",
+						"params": [
+							{
+								"name": "parent",
+								"type": "QObject*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setWindow",
+						"params": [
+							{
+								"name": "window",
+								"type": "QWindow*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "window",
+						"retType": "QWindow*"
+					},
+					{
+						"name": "addButton",
+						"params": [
+							{
+								"name": "button",
+								"type": "QWinThumbnailToolButton*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "removeButton",
+						"params": [
+							{
+								"name": "button",
+								"type": "QWinThumbnailToolButton*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "count",
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "iconicPixmapNotificationsEnabled",
+						"retType": "bool"
+					},
+					{
+						"name": "setIconicPixmapNotificationsEnabled",
+						"params": [
+							{
+								"name": "enabled",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "iconicThumbnailPixmap",
+						"retType": "QPixmap"
+					},
+					{
+						"isConst": true,
+						"name": "iconicLivePreviewPixmap",
+						"retType": "QPixmap"
+					},
+					{
+						"name": "clear",
+						"retType": "void"
+					},
+					{
+						"name": "setIconicThumbnailPixmap",
+						"params": [
+							{
+								"name": "pixmap",
+								"type": "const QPixmap&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setIconicLivePreviewPixmap",
+						"params": [
+							{
+								"name": "pixmap",
+								"type": "const QPixmap&"
+							}
+						],
+						"retType": "void"
+					}
+				],
+				"name": "QWinThumbnailToolBar",
+				"properties": [
+					{
+						"getter": "iconicPixmapNotificationsEnabled",
+						"name": "iconicPixmapNotificationsEnabled",
+						"setter": "setIconicPixmapNotificationsEnabled",
+						"type": "bool"
+					},
+					{
+						"getter": "iconicThumbnailPixmap",
+						"name": "iconicThumbnailPixmap",
+						"setter": "setIconicThumbnailPixmap",
+						"type": "QPixmap"
+					},
+					{
+						"getter": "iconicLivePreviewPixmap",
+						"name": "iconicLivePreviewPixmap",
+						"setter": "setIconicLivePreviewPixmap",
+						"type": "QPixmap"
+					}
+				]
+			},
+			{
+				"base": "QObject",
+				"methods": [
+					{
+						"name": "QWinThumbnailToolButton",
+						"params": [
+							{
+								"name": "parent",
+								"type": "QObject*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setToolTip",
+						"params": [
+							{
+								"name": "toolTip",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "toolTip",
+						"retType": "QString"
+					},
+					{
+						"name": "setIcon",
+						"params": [
+							{
+								"name": "icon",
+								"type": "const QIcon&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "icon",
+						"retType": "QIcon"
+					},
+					{
+						"name": "setEnabled",
+						"params": [
+							{
+								"name": "enabled",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "isEnabled",
+						"retType": "bool"
+					},
+					{
+						"name": "setInteractive",
+						"params": [
+							{
+								"name": "interactive",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "isInteractive",
+						"retType": "bool"
+					},
+					{
+						"name": "setVisible",
+						"params": [
+							{
+								"name": "visible",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "isVisible",
+						"retType": "bool"
+					},
+					{
+						"name": "setDismissOnClick",
+						"params": [
+							{
+								"name": "dismiss",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "dismissOnClick",
+						"retType": "bool"
+					},
+					{
+						"name": "setFlat",
+						"params": [
+							{
+								"name": "flat",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "isFlat",
+						"retType": "bool"
+					},
+					{
+						"name": "click",
+						"retType": "void"
+					}
+				],
+				"name": "QWinThumbnailToolButton",
+				"properties": [
+					{
+						"getter": "toolTip",
+						"name": "toolTip",
+						"setter": "setToolTip",
+						"type": "QString"
+					},
+					{
+						"getter": "icon",
+						"name": "icon",
+						"setter": "setIcon",
+						"type": "QIcon"
+					},
+					{
+						"getter": "isEnabled",
+						"name": "enabled",
+						"setter": "setEnabled",
+						"type": "bool"
+					},
+					{
+						"getter": "isInteractive",
+						"name": "interactive",
+						"setter": "setInteractive",
+						"type": "bool"
+					},
+					{
+						"getter": "isVisible",
+						"name": "visible",
+						"setter": "setVisible",
+						"type": "bool"
+					},
+					{
+						"getter": "dismissOnClick",
+						"name": "dismissOnClick",
+						"setter": "setDismissOnClick",
+						"type": "bool"
+					},
+					{
+						"getter": "isFlat",
+						"name": "flat",
+						"setter": "setFlat",
+						"type": "bool"
+					}
+				]
+			}
+		]
+	}
+}

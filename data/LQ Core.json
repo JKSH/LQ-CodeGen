@@ -12,34 +12,4448 @@
 	],
 	"namespaces": [
 		{
-			"name": "Qt",
 			"enums": [
+				{
+					"name": "KeyboardModifier",
+					"values": [
+						{
+							"name": "NoModifier",
+							"value": 0
+						},
+						{
+							"name": "ShiftModifier",
+							"value": 33554432
+						},
+						{
+							"name": "ControlModifier",
+							"value": 67108864
+						},
+						{
+							"name": "AltModifier",
+							"value": 134217728
+						},
+						{
+							"name": "MetaModifier",
+							"value": 268435456
+						},
+						{
+							"name": "KeypadModifier",
+							"value": 536870912
+						},
+						{
+							"name": "GroupSwitchModifier",
+							"value": 1073741824
+						},
+						{
+							"name": "KeyboardModifierMask",
+							"value": -33554432
+						}
+					]
+				},
+				{
+					"name": "MouseButton",
+					"values": [
+						{
+							"name": "NoButton",
+							"value": 0
+						},
+						{
+							"name": "LeftButton",
+							"value": 1
+						},
+						{
+							"name": "RightButton",
+							"value": 2
+						},
+						{
+							"name": "MiddleButton",
+							"value": 4
+						},
+						{
+							"name": "BackButton",
+							"value": 8
+						},
+						{
+							"name": "ForwardButton",
+							"value": 16
+						},
+						{
+							"name": "TaskButton",
+							"value": 32
+						}
+					]
+				},
+				{
+					"name": "Orientation",
+					"values": [
+						{
+							"name": "Horizontal",
+							"value": 1
+						},
+						{
+							"name": "Vertical",
+							"value": 2
+						}
+					]
+				},
 				{
 					"name": "FocusPolicy",
 					"values": [
 						{
-							"name": "ClickFocus",
-							"value": 2
-						},
-						{
 							"name": "NoFocus",
 							"value": 0
-						},
-						{
-							"name": "StrongFocus",
-							"value": 11
 						},
 						{
 							"name": "TabFocus",
 							"value": 1
 						},
 						{
+							"name": "ClickFocus",
+							"value": 2
+						},
+						{
+							"name": "StrongFocus",
+							"value": 11
+						},
+						{
 							"name": "WheelFocus",
 							"value": 15
 						}
 					]
+				},
+				{
+					"name": "SortOrder",
+					"values": [
+						{
+							"name": "AscendingOrder",
+							"value": 0
+						},
+						{
+							"name": "DescendingOrder",
+							"value": 1
+						}
+					]
+				},
+				{
+					"name": "TileRule",
+					"values": [
+						{
+							"name": "StretchTile",
+							"value": 0
+						},
+						{
+							"name": "RepeatTile",
+							"value": 1
+						},
+						{
+							"name": "RoundTile",
+							"value": 2
+						}
+					]
+				},
+				{
+					"name": "AlignmentFlag",
+					"values": [
+						{
+							"name": "AlignLeading",
+							"value": 1
+						},
+						{
+							"name": "AlignTrailing",
+							"value": 2
+						},
+						{
+							"name": "AlignHCenter",
+							"value": 4
+						},
+						{
+							"name": "AlignJustify",
+							"value": 8
+						},
+						{
+							"name": "AlignAbsolute",
+							"value": 16
+						},
+						{
+							"name": "AlignHorizontal_Mask",
+							"value": 31
+						},
+						{
+							"name": "AlignTop",
+							"value": 32
+						},
+						{
+							"name": "AlignBottom",
+							"value": 64
+						},
+						{
+							"name": "AlignVCenter",
+							"value": 128
+						},
+						{
+							"name": "AlignBaseline",
+							"value": 256
+						},
+						{
+							"name": "AlignVertical_Mask",
+							"value": 480
+						},
+						{
+							"name": "AlignCenter",
+							"value": 132
+						}
+					]
+				},
+				{
+					"name": "TextFlag",
+					"values": [
+						{
+							"name": "TextSingleLine",
+							"value": 256
+						},
+						{
+							"name": "TextDontClip",
+							"value": 512
+						},
+						{
+							"name": "TextExpandTabs",
+							"value": 1024
+						},
+						{
+							"name": "TextShowMnemonic",
+							"value": 2048
+						},
+						{
+							"name": "TextWordWrap",
+							"value": 4096
+						},
+						{
+							"name": "TextWrapAnywhere",
+							"value": 8192
+						},
+						{
+							"name": "TextDontPrint",
+							"value": 16384
+						},
+						{
+							"name": "TextIncludeTrailingSpaces",
+							"value": 134217728
+						},
+						{
+							"name": "TextHideMnemonic",
+							"value": 32768
+						},
+						{
+							"name": "TextJustificationForced",
+							"value": 65536
+						},
+						{
+							"name": "TextForceLeftToRight",
+							"value": 131072
+						},
+						{
+							"name": "TextForceRightToLeft",
+							"value": 262144
+						},
+						{
+							"name": "TextLongestVariant",
+							"value": 524288
+						},
+						{
+							"name": "TextBypassShaping",
+							"value": 1048576
+						}
+					]
+				},
+				{
+					"name": "TextElideMode",
+					"values": [
+						{
+							"name": "ElideLeft",
+							"value": 0
+						},
+						{
+							"name": "ElideRight",
+							"value": 1
+						},
+						{
+							"name": "ElideMiddle",
+							"value": 2
+						},
+						{
+							"name": "ElideNone",
+							"value": 3
+						}
+					]
+				},
+				{
+					"name": "WhiteSpaceMode",
+					"values": [
+						{
+							"name": "WhiteSpaceNormal",
+							"value": 0
+						},
+						{
+							"name": "WhiteSpacePre",
+							"value": 1
+						},
+						{
+							"name": "WhiteSpaceNoWrap",
+							"value": 2
+						},
+						{
+							"name": "WhiteSpaceModeUndefined",
+							"value": -1
+						}
+					]
+				},
+				{
+					"name": "HitTestAccuracy",
+					"values": [
+						{
+							"name": "ExactHit",
+							"value": 0
+						},
+						{
+							"name": "FuzzyHit",
+							"value": 1
+						}
+					]
+				},
+				{
+					"name": "WindowType",
+					"values": [
+						{
+							"name": "Widget",
+							"value": 0
+						},
+						{
+							"name": "Window",
+							"value": 1
+						},
+						{
+							"name": "Dialog",
+							"value": 3
+						},
+						{
+							"name": "Sheet",
+							"value": 5
+						},
+						{
+							"name": "Drawer",
+							"value": 7
+						},
+						{
+							"name": "Popup",
+							"value": 9
+						},
+						{
+							"name": "Tool",
+							"value": 11
+						},
+						{
+							"name": "ToolTip",
+							"value": 13
+						},
+						{
+							"name": "SplashScreen",
+							"value": 15
+						},
+						{
+							"name": "Desktop",
+							"value": 17
+						},
+						{
+							"name": "SubWindow",
+							"value": 18
+						},
+						{
+							"name": "ForeignWindow",
+							"value": 33
+						},
+						{
+							"name": "CoverWindow",
+							"value": 65
+						},
+						{
+							"name": "WindowType_Mask",
+							"value": 255
+						},
+						{
+							"name": "MSWindowsFixedSizeDialogHint",
+							"value": 256
+						},
+						{
+							"name": "MSWindowsOwnDC",
+							"value": 512
+						},
+						{
+							"name": "BypassWindowManagerHint",
+							"value": 1024
+						},
+						{
+							"name": "FramelessWindowHint",
+							"value": 2048
+						},
+						{
+							"name": "WindowTitleHint",
+							"value": 4096
+						},
+						{
+							"name": "WindowSystemMenuHint",
+							"value": 8192
+						},
+						{
+							"name": "WindowMinimizeButtonHint",
+							"value": 16384
+						},
+						{
+							"name": "WindowMaximizeButtonHint",
+							"value": 32768
+						},
+						{
+							"name": "WindowMinMaxButtonsHint",
+							"value": 49152
+						},
+						{
+							"name": "WindowContextHelpButtonHint",
+							"value": 65536
+						},
+						{
+							"name": "WindowShadeButtonHint",
+							"value": 131072
+						},
+						{
+							"name": "WindowStaysOnTopHint",
+							"value": 262144
+						},
+						{
+							"name": "WindowTransparentForInput",
+							"value": 524288
+						},
+						{
+							"name": "WindowOverridesSystemGestures",
+							"value": 1048576
+						},
+						{
+							"name": "WindowDoesNotAcceptFocus",
+							"value": 2097152
+						},
+						{
+							"name": "CustomizeWindowHint",
+							"value": 33554432
+						},
+						{
+							"name": "WindowStaysOnBottomHint",
+							"value": 67108864
+						},
+						{
+							"name": "WindowCloseButtonHint",
+							"value": 134217728
+						},
+						{
+							"name": "MacWindowToolBarButtonHint",
+							"value": 268435456
+						},
+						{
+							"name": "BypassGraphicsProxyWidget",
+							"value": 536870912
+						},
+						{
+							"name": "NoDropShadowWindowHint",
+							"value": 1073741824
+						},
+						{
+							"name": "WindowFullscreenButtonHint",
+							"value": -2147483648
+						}
+					]
+				},
+				{
+					"name": "WindowState",
+					"values": [
+						{
+							"name": "WindowNoState",
+							"value": 0
+						},
+						{
+							"name": "WindowMinimized",
+							"value": 1
+						},
+						{
+							"name": "WindowMaximized",
+							"value": 2
+						},
+						{
+							"name": "WindowFullScreen",
+							"value": 4
+						},
+						{
+							"name": "WindowActive",
+							"value": 8
+						}
+					]
+				},
+				{
+					"name": "ApplicationState",
+					"values": [
+						{
+							"name": "ApplicationSuspended",
+							"value": 0
+						},
+						{
+							"name": "ApplicationHidden",
+							"value": 1
+						},
+						{
+							"name": "ApplicationInactive",
+							"value": 2
+						},
+						{
+							"name": "ApplicationActive",
+							"value": 4
+						}
+					]
+				},
+				{
+					"name": "ScreenOrientation",
+					"values": [
+						{
+							"name": "PrimaryOrientation",
+							"value": 0
+						},
+						{
+							"name": "PortraitOrientation",
+							"value": 1
+						},
+						{
+							"name": "LandscapeOrientation",
+							"value": 2
+						},
+						{
+							"name": "InvertedPortraitOrientation",
+							"value": 4
+						},
+						{
+							"name": "InvertedLandscapeOrientation",
+							"value": 8
+						}
+					]
+				},
+				{
+					"name": "WidgetAttribute",
+					"values": [
+						{
+							"name": "WA_Disabled",
+							"value": 0
+						},
+						{
+							"name": "WA_UnderMouse",
+							"value": 1
+						},
+						{
+							"name": "WA_MouseTracking",
+							"value": 2
+						},
+						{
+							"name": "WA_OpaquePaintEvent",
+							"value": 4
+						},
+						{
+							"name": "WA_StaticContents",
+							"value": 5
+						},
+						{
+							"name": "WA_LaidOut",
+							"value": 7
+						},
+						{
+							"name": "WA_PaintOnScreen",
+							"value": 8
+						},
+						{
+							"name": "WA_NoSystemBackground",
+							"value": 9
+						},
+						{
+							"name": "WA_UpdatesDisabled",
+							"value": 10
+						},
+						{
+							"name": "WA_Mapped",
+							"value": 11
+						},
+						{
+							"name": "WA_MacNoClickThrough",
+							"value": 12
+						},
+						{
+							"name": "WA_InputMethodEnabled",
+							"value": 14
+						},
+						{
+							"name": "WA_WState_Visible",
+							"value": 15
+						},
+						{
+							"name": "WA_WState_Hidden",
+							"value": 16
+						},
+						{
+							"name": "WA_ForceDisabled",
+							"value": 32
+						},
+						{
+							"name": "WA_KeyCompression",
+							"value": 33
+						},
+						{
+							"name": "WA_PendingMoveEvent",
+							"value": 34
+						},
+						{
+							"name": "WA_PendingResizeEvent",
+							"value": 35
+						},
+						{
+							"name": "WA_SetPalette",
+							"value": 36
+						},
+						{
+							"name": "WA_SetFont",
+							"value": 37
+						},
+						{
+							"name": "WA_SetCursor",
+							"value": 38
+						},
+						{
+							"name": "WA_NoChildEventsFromChildren",
+							"value": 39
+						},
+						{
+							"name": "WA_WindowModified",
+							"value": 41
+						},
+						{
+							"name": "WA_Resized",
+							"value": 42
+						},
+						{
+							"name": "WA_Moved",
+							"value": 43
+						},
+						{
+							"name": "WA_PendingUpdate",
+							"value": 44
+						},
+						{
+							"name": "WA_InvalidSize",
+							"value": 45
+						},
+						{
+							"name": "WA_MacBrushedMetal",
+							"value": 46
+						},
+						{
+							"name": "WA_CustomWhatsThis",
+							"value": 47
+						},
+						{
+							"name": "WA_LayoutOnEntireRect",
+							"value": 48
+						},
+						{
+							"name": "WA_OutsideWSRange",
+							"value": 49
+						},
+						{
+							"name": "WA_GrabbedShortcut",
+							"value": 50
+						},
+						{
+							"name": "WA_TransparentForMouseEvents",
+							"value": 51
+						},
+						{
+							"name": "WA_PaintUnclipped",
+							"value": 52
+						},
+						{
+							"name": "WA_SetWindowIcon",
+							"value": 53
+						},
+						{
+							"name": "WA_NoMouseReplay",
+							"value": 54
+						},
+						{
+							"name": "WA_DeleteOnClose",
+							"value": 55
+						},
+						{
+							"name": "WA_RightToLeft",
+							"value": 56
+						},
+						{
+							"name": "WA_SetLayoutDirection",
+							"value": 57
+						},
+						{
+							"name": "WA_NoChildEventsForParent",
+							"value": 58
+						},
+						{
+							"name": "WA_ForceUpdatesDisabled",
+							"value": 59
+						},
+						{
+							"name": "WA_WState_Created",
+							"value": 60
+						},
+						{
+							"name": "WA_WState_CompressKeys",
+							"value": 61
+						},
+						{
+							"name": "WA_WState_InPaintEvent",
+							"value": 62
+						},
+						{
+							"name": "WA_WState_Reparented",
+							"value": 63
+						},
+						{
+							"name": "WA_WState_ConfigPending",
+							"value": 64
+						},
+						{
+							"name": "WA_WState_Polished",
+							"value": 66
+						},
+						{
+							"name": "WA_WState_OwnSizePolicy",
+							"value": 68
+						},
+						{
+							"name": "WA_WState_ExplicitShowHide",
+							"value": 69
+						},
+						{
+							"name": "WA_MouseNoMask",
+							"value": 71
+						},
+						{
+							"name": "WA_NoMousePropagation",
+							"value": 73
+						},
+						{
+							"name": "WA_Hover",
+							"value": 74
+						},
+						{
+							"name": "WA_InputMethodTransparent",
+							"value": 75
+						},
+						{
+							"name": "WA_QuitOnClose",
+							"value": 76
+						},
+						{
+							"name": "WA_KeyboardFocusChange",
+							"value": 77
+						},
+						{
+							"name": "WA_AcceptDrops",
+							"value": 78
+						},
+						{
+							"name": "WA_WindowPropagation",
+							"value": 80
+						},
+						{
+							"name": "WA_NoX11EventCompression",
+							"value": 81
+						},
+						{
+							"name": "WA_TintedBackground",
+							"value": 82
+						},
+						{
+							"name": "WA_X11OpenGLOverlay",
+							"value": 83
+						},
+						{
+							"name": "WA_AlwaysShowToolTips",
+							"value": 84
+						},
+						{
+							"name": "WA_MacOpaqueSizeGrip",
+							"value": 85
+						},
+						{
+							"name": "WA_SetStyle",
+							"value": 86
+						},
+						{
+							"name": "WA_SetLocale",
+							"value": 87
+						},
+						{
+							"name": "WA_MacShowFocusRect",
+							"value": 88
+						},
+						{
+							"name": "WA_MacNormalSize",
+							"value": 89
+						},
+						{
+							"name": "WA_MacSmallSize",
+							"value": 90
+						},
+						{
+							"name": "WA_MacMiniSize",
+							"value": 91
+						},
+						{
+							"name": "WA_LayoutUsesWidgetRect",
+							"value": 92
+						},
+						{
+							"name": "WA_MacAlwaysShowToolWindow",
+							"value": 96
+						},
+						{
+							"name": "WA_ShowWithoutActivating",
+							"value": 98
+						},
+						{
+							"name": "WA_X11BypassTransientForHint",
+							"value": 99
+						},
+						{
+							"name": "WA_NativeWindow",
+							"value": 100
+						},
+						{
+							"name": "WA_DontCreateNativeAncestors",
+							"value": 101
+						},
+						{
+							"name": "WA_MacVariableSize",
+							"value": 102
+						},
+						{
+							"name": "WA_DontShowOnScreen",
+							"value": 103
+						},
+						{
+							"name": "WA_X11NetWmWindowTypeDesktop",
+							"value": 104
+						},
+						{
+							"name": "WA_X11NetWmWindowTypeDock",
+							"value": 105
+						},
+						{
+							"name": "WA_X11NetWmWindowTypeToolBar",
+							"value": 106
+						},
+						{
+							"name": "WA_X11NetWmWindowTypeMenu",
+							"value": 107
+						},
+						{
+							"name": "WA_X11NetWmWindowTypeUtility",
+							"value": 108
+						},
+						{
+							"name": "WA_X11NetWmWindowTypeSplash",
+							"value": 109
+						},
+						{
+							"name": "WA_X11NetWmWindowTypeDialog",
+							"value": 110
+						},
+						{
+							"name": "WA_X11NetWmWindowTypeDropDownMenu",
+							"value": 111
+						},
+						{
+							"name": "WA_X11NetWmWindowTypePopupMenu",
+							"value": 112
+						},
+						{
+							"name": "WA_X11NetWmWindowTypeToolTip",
+							"value": 113
+						},
+						{
+							"name": "WA_X11NetWmWindowTypeNotification",
+							"value": 114
+						},
+						{
+							"name": "WA_X11NetWmWindowTypeCombo",
+							"value": 115
+						},
+						{
+							"name": "WA_X11NetWmWindowTypeDND",
+							"value": 116
+						},
+						{
+							"name": "WA_MacFrameworkScaled",
+							"value": 117
+						},
+						{
+							"name": "WA_SetWindowModality",
+							"value": 118
+						},
+						{
+							"name": "WA_TranslucentBackground",
+							"value": 120
+						},
+						{
+							"name": "WA_AcceptTouchEvents",
+							"value": 121
+						},
+						{
+							"name": "WA_WState_AcceptedTouchBeginEvent",
+							"value": 122
+						},
+						{
+							"name": "WA_TouchPadAcceptSingleTouchEvents",
+							"value": 123
+						},
+						{
+							"name": "WA_X11DoNotAcceptFocus",
+							"value": 126
+						},
+						{
+							"name": "WA_MacNoShadow",
+							"value": 127
+						},
+						{
+							"name": "WA_AlwaysStackOnTop",
+							"value": 128
+						}
+					]
+				},
+				{
+					"name": "ApplicationAttribute",
+					"values": [
+						{
+							"name": "AA_ImmediateWidgetCreation",
+							"value": 0
+						},
+						{
+							"name": "AA_MSWindowsUseDirect3DByDefault",
+							"value": 1
+						},
+						{
+							"name": "AA_DontShowIconsInMenus",
+							"value": 2
+						},
+						{
+							"name": "AA_NativeWindows",
+							"value": 3
+						},
+						{
+							"name": "AA_DontCreateNativeWidgetSiblings",
+							"value": 4
+						},
+						{
+							"name": "AA_MacPluginApplication",
+							"value": 5
+						},
+						{
+							"name": "AA_DontUseNativeMenuBar",
+							"value": 6
+						},
+						{
+							"name": "AA_MacDontSwapCtrlAndMeta",
+							"value": 7
+						},
+						{
+							"name": "AA_Use96Dpi",
+							"value": 8
+						},
+						{
+							"name": "AA_X11InitThreads",
+							"value": 10
+						},
+						{
+							"name": "AA_SynthesizeTouchForUnhandledMouseEvents",
+							"value": 11
+						},
+						{
+							"name": "AA_SynthesizeMouseForUnhandledTouchEvents",
+							"value": 12
+						},
+						{
+							"name": "AA_UseHighDpiPixmaps",
+							"value": 13
+						},
+						{
+							"name": "AA_ForceRasterWidgets",
+							"value": 14
+						},
+						{
+							"name": "AA_UseDesktopOpenGL",
+							"value": 15
+						},
+						{
+							"name": "AA_UseOpenGLES",
+							"value": 16
+						},
+						{
+							"name": "AA_UseSoftwareOpenGL",
+							"value": 17
+						},
+						{
+							"name": "AA_ShareOpenGLContexts",
+							"value": 18
+						}
+					]
+				},
+				{
+					"name": "BGMode",
+					"values": [
+						{
+							"name": "TransparentMode",
+							"value": 0
+						},
+						{
+							"name": "OpaqueMode",
+							"value": 1
+						}
+					]
+				},
+				{
+					"name": "Key",
+					"values": [
+						{
+							"name": "Key_Escape",
+							"value": 16777216
+						},
+						{
+							"name": "Key_Tab",
+							"value": 16777217
+						},
+						{
+							"name": "Key_Backtab",
+							"value": 16777218
+						},
+						{
+							"name": "Key_Backspace",
+							"value": 16777219
+						},
+						{
+							"name": "Key_Return",
+							"value": 16777220
+						},
+						{
+							"name": "Key_Enter",
+							"value": 16777221
+						},
+						{
+							"name": "Key_Insert",
+							"value": 16777222
+						},
+						{
+							"name": "Key_Delete",
+							"value": 16777223
+						},
+						{
+							"name": "Key_Pause",
+							"value": 16777224
+						},
+						{
+							"name": "Key_Print",
+							"value": 16777225
+						},
+						{
+							"name": "Key_SysReq",
+							"value": 16777226
+						},
+						{
+							"name": "Key_Clear",
+							"value": 16777227
+						},
+						{
+							"name": "Key_Home",
+							"value": 16777232
+						},
+						{
+							"name": "Key_End",
+							"value": 16777233
+						},
+						{
+							"name": "Key_Left",
+							"value": 16777234
+						},
+						{
+							"name": "Key_Up",
+							"value": 16777235
+						},
+						{
+							"name": "Key_Right",
+							"value": 16777236
+						},
+						{
+							"name": "Key_Down",
+							"value": 16777237
+						},
+						{
+							"name": "Key_PageUp",
+							"value": 16777238
+						},
+						{
+							"name": "Key_PageDown",
+							"value": 16777239
+						},
+						{
+							"name": "Key_Shift",
+							"value": 16777248
+						},
+						{
+							"name": "Key_Control",
+							"value": 16777249
+						},
+						{
+							"name": "Key_Meta",
+							"value": 16777250
+						},
+						{
+							"name": "Key_Alt",
+							"value": 16777251
+						},
+						{
+							"name": "Key_CapsLock",
+							"value": 16777252
+						},
+						{
+							"name": "Key_NumLock",
+							"value": 16777253
+						},
+						{
+							"name": "Key_ScrollLock",
+							"value": 16777254
+						},
+						{
+							"name": "Key_F1",
+							"value": 16777264
+						},
+						{
+							"name": "Key_F2",
+							"value": 16777265
+						},
+						{
+							"name": "Key_F3",
+							"value": 16777266
+						},
+						{
+							"name": "Key_F4",
+							"value": 16777267
+						},
+						{
+							"name": "Key_F5",
+							"value": 16777268
+						},
+						{
+							"name": "Key_F6",
+							"value": 16777269
+						},
+						{
+							"name": "Key_F7",
+							"value": 16777270
+						},
+						{
+							"name": "Key_F8",
+							"value": 16777271
+						},
+						{
+							"name": "Key_F9",
+							"value": 16777272
+						},
+						{
+							"name": "Key_F10",
+							"value": 16777273
+						},
+						{
+							"name": "Key_F11",
+							"value": 16777274
+						},
+						{
+							"name": "Key_F12",
+							"value": 16777275
+						},
+						{
+							"name": "Key_F13",
+							"value": 16777276
+						},
+						{
+							"name": "Key_F14",
+							"value": 16777277
+						},
+						{
+							"name": "Key_F15",
+							"value": 16777278
+						},
+						{
+							"name": "Key_F16",
+							"value": 16777279
+						},
+						{
+							"name": "Key_F17",
+							"value": 16777280
+						},
+						{
+							"name": "Key_F18",
+							"value": 16777281
+						},
+						{
+							"name": "Key_F19",
+							"value": 16777282
+						},
+						{
+							"name": "Key_F20",
+							"value": 16777283
+						},
+						{
+							"name": "Key_F21",
+							"value": 16777284
+						},
+						{
+							"name": "Key_F22",
+							"value": 16777285
+						},
+						{
+							"name": "Key_F23",
+							"value": 16777286
+						},
+						{
+							"name": "Key_F24",
+							"value": 16777287
+						},
+						{
+							"name": "Key_F25",
+							"value": 16777288
+						},
+						{
+							"name": "Key_F26",
+							"value": 16777289
+						},
+						{
+							"name": "Key_F27",
+							"value": 16777290
+						},
+						{
+							"name": "Key_F28",
+							"value": 16777291
+						},
+						{
+							"name": "Key_F29",
+							"value": 16777292
+						},
+						{
+							"name": "Key_F30",
+							"value": 16777293
+						},
+						{
+							"name": "Key_F31",
+							"value": 16777294
+						},
+						{
+							"name": "Key_F32",
+							"value": 16777295
+						},
+						{
+							"name": "Key_F33",
+							"value": 16777296
+						},
+						{
+							"name": "Key_F34",
+							"value": 16777297
+						},
+						{
+							"name": "Key_F35",
+							"value": 16777298
+						},
+						{
+							"name": "Key_Super_L",
+							"value": 16777299
+						},
+						{
+							"name": "Key_Super_R",
+							"value": 16777300
+						},
+						{
+							"name": "Key_Menu",
+							"value": 16777301
+						},
+						{
+							"name": "Key_Hyper_L",
+							"value": 16777302
+						},
+						{
+							"name": "Key_Hyper_R",
+							"value": 16777303
+						},
+						{
+							"name": "Key_Help",
+							"value": 16777304
+						},
+						{
+							"name": "Key_Direction_L",
+							"value": 16777305
+						},
+						{
+							"name": "Key_Direction_R",
+							"value": 16777312
+						},
+						{
+							"name": "Key_Space",
+							"value": 32
+						},
+						{
+							"name": "Key_Exclam",
+							"value": 33
+						},
+						{
+							"name": "Key_QuoteDbl",
+							"value": 34
+						},
+						{
+							"name": "Key_NumberSign",
+							"value": 35
+						},
+						{
+							"name": "Key_Dollar",
+							"value": 36
+						},
+						{
+							"name": "Key_Percent",
+							"value": 37
+						},
+						{
+							"name": "Key_Ampersand",
+							"value": 38
+						},
+						{
+							"name": "Key_Apostrophe",
+							"value": 39
+						},
+						{
+							"name": "Key_ParenLeft",
+							"value": 40
+						},
+						{
+							"name": "Key_ParenRight",
+							"value": 41
+						},
+						{
+							"name": "Key_Asterisk",
+							"value": 42
+						},
+						{
+							"name": "Key_Plus",
+							"value": 43
+						},
+						{
+							"name": "Key_Comma",
+							"value": 44
+						},
+						{
+							"name": "Key_Minus",
+							"value": 45
+						},
+						{
+							"name": "Key_Period",
+							"value": 46
+						},
+						{
+							"name": "Key_Slash",
+							"value": 47
+						},
+						{
+							"name": "Key_0",
+							"value": 48
+						},
+						{
+							"name": "Key_1",
+							"value": 49
+						},
+						{
+							"name": "Key_2",
+							"value": 50
+						},
+						{
+							"name": "Key_3",
+							"value": 51
+						},
+						{
+							"name": "Key_4",
+							"value": 52
+						},
+						{
+							"name": "Key_5",
+							"value": 53
+						},
+						{
+							"name": "Key_6",
+							"value": 54
+						},
+						{
+							"name": "Key_7",
+							"value": 55
+						},
+						{
+							"name": "Key_8",
+							"value": 56
+						},
+						{
+							"name": "Key_9",
+							"value": 57
+						},
+						{
+							"name": "Key_Colon",
+							"value": 58
+						},
+						{
+							"name": "Key_Semicolon",
+							"value": 59
+						},
+						{
+							"name": "Key_Less",
+							"value": 60
+						},
+						{
+							"name": "Key_Equal",
+							"value": 61
+						},
+						{
+							"name": "Key_Greater",
+							"value": 62
+						},
+						{
+							"name": "Key_Question",
+							"value": 63
+						},
+						{
+							"name": "Key_At",
+							"value": 64
+						},
+						{
+							"name": "Key_A",
+							"value": 65
+						},
+						{
+							"name": "Key_B",
+							"value": 66
+						},
+						{
+							"name": "Key_C",
+							"value": 67
+						},
+						{
+							"name": "Key_D",
+							"value": 68
+						},
+						{
+							"name": "Key_E",
+							"value": 69
+						},
+						{
+							"name": "Key_F",
+							"value": 70
+						},
+						{
+							"name": "Key_G",
+							"value": 71
+						},
+						{
+							"name": "Key_H",
+							"value": 72
+						},
+						{
+							"name": "Key_I",
+							"value": 73
+						},
+						{
+							"name": "Key_J",
+							"value": 74
+						},
+						{
+							"name": "Key_K",
+							"value": 75
+						},
+						{
+							"name": "Key_L",
+							"value": 76
+						},
+						{
+							"name": "Key_M",
+							"value": 77
+						},
+						{
+							"name": "Key_N",
+							"value": 78
+						},
+						{
+							"name": "Key_O",
+							"value": 79
+						},
+						{
+							"name": "Key_P",
+							"value": 80
+						},
+						{
+							"name": "Key_Q",
+							"value": 81
+						},
+						{
+							"name": "Key_R",
+							"value": 82
+						},
+						{
+							"name": "Key_S",
+							"value": 83
+						},
+						{
+							"name": "Key_T",
+							"value": 84
+						},
+						{
+							"name": "Key_U",
+							"value": 85
+						},
+						{
+							"name": "Key_V",
+							"value": 86
+						},
+						{
+							"name": "Key_W",
+							"value": 87
+						},
+						{
+							"name": "Key_X",
+							"value": 88
+						},
+						{
+							"name": "Key_Y",
+							"value": 89
+						},
+						{
+							"name": "Key_Z",
+							"value": 90
+						},
+						{
+							"name": "Key_BracketLeft",
+							"value": 91
+						},
+						{
+							"name": "Key_Backslash",
+							"value": 92
+						},
+						{
+							"name": "Key_BracketRight",
+							"value": 93
+						},
+						{
+							"name": "Key_AsciiCircum",
+							"value": 94
+						},
+						{
+							"name": "Key_Underscore",
+							"value": 95
+						},
+						{
+							"name": "Key_QuoteLeft",
+							"value": 96
+						},
+						{
+							"name": "Key_BraceLeft",
+							"value": 123
+						},
+						{
+							"name": "Key_Bar",
+							"value": 124
+						},
+						{
+							"name": "Key_BraceRight",
+							"value": 125
+						},
+						{
+							"name": "Key_AsciiTilde",
+							"value": 126
+						},
+						{
+							"name": "Key_nobreakspace",
+							"value": 160
+						},
+						{
+							"name": "Key_exclamdown",
+							"value": 161
+						},
+						{
+							"name": "Key_cent",
+							"value": 162
+						},
+						{
+							"name": "Key_sterling",
+							"value": 163
+						},
+						{
+							"name": "Key_currency",
+							"value": 164
+						},
+						{
+							"name": "Key_yen",
+							"value": 165
+						},
+						{
+							"name": "Key_brokenbar",
+							"value": 166
+						},
+						{
+							"name": "Key_section",
+							"value": 167
+						},
+						{
+							"name": "Key_diaeresis",
+							"value": 168
+						},
+						{
+							"name": "Key_copyright",
+							"value": 169
+						},
+						{
+							"name": "Key_ordfeminine",
+							"value": 170
+						},
+						{
+							"name": "Key_guillemotleft",
+							"value": 171
+						},
+						{
+							"name": "Key_notsign",
+							"value": 172
+						},
+						{
+							"name": "Key_hyphen",
+							"value": 173
+						},
+						{
+							"name": "Key_registered",
+							"value": 174
+						},
+						{
+							"name": "Key_macron",
+							"value": 175
+						},
+						{
+							"name": "Key_degree",
+							"value": 176
+						},
+						{
+							"name": "Key_plusminus",
+							"value": 177
+						},
+						{
+							"name": "Key_twosuperior",
+							"value": 178
+						},
+						{
+							"name": "Key_threesuperior",
+							"value": 179
+						},
+						{
+							"name": "Key_acute",
+							"value": 180
+						},
+						{
+							"name": "Key_mu",
+							"value": 181
+						},
+						{
+							"name": "Key_paragraph",
+							"value": 182
+						},
+						{
+							"name": "Key_periodcentered",
+							"value": 183
+						},
+						{
+							"name": "Key_cedilla",
+							"value": 184
+						},
+						{
+							"name": "Key_onesuperior",
+							"value": 185
+						},
+						{
+							"name": "Key_masculine",
+							"value": 186
+						},
+						{
+							"name": "Key_guillemotright",
+							"value": 187
+						},
+						{
+							"name": "Key_onequarter",
+							"value": 188
+						},
+						{
+							"name": "Key_onehalf",
+							"value": 189
+						},
+						{
+							"name": "Key_threequarters",
+							"value": 190
+						},
+						{
+							"name": "Key_questiondown",
+							"value": 191
+						},
+						{
+							"name": "Key_Agrave",
+							"value": 192
+						},
+						{
+							"name": "Key_Aacute",
+							"value": 193
+						},
+						{
+							"name": "Key_Acircumflex",
+							"value": 194
+						},
+						{
+							"name": "Key_Atilde",
+							"value": 195
+						},
+						{
+							"name": "Key_Adiaeresis",
+							"value": 196
+						},
+						{
+							"name": "Key_Aring",
+							"value": 197
+						},
+						{
+							"name": "Key_AE",
+							"value": 198
+						},
+						{
+							"name": "Key_Ccedilla",
+							"value": 199
+						},
+						{
+							"name": "Key_Egrave",
+							"value": 200
+						},
+						{
+							"name": "Key_Eacute",
+							"value": 201
+						},
+						{
+							"name": "Key_Ecircumflex",
+							"value": 202
+						},
+						{
+							"name": "Key_Ediaeresis",
+							"value": 203
+						},
+						{
+							"name": "Key_Igrave",
+							"value": 204
+						},
+						{
+							"name": "Key_Iacute",
+							"value": 205
+						},
+						{
+							"name": "Key_Icircumflex",
+							"value": 206
+						},
+						{
+							"name": "Key_Idiaeresis",
+							"value": 207
+						},
+						{
+							"name": "Key_ETH",
+							"value": 208
+						},
+						{
+							"name": "Key_Ntilde",
+							"value": 209
+						},
+						{
+							"name": "Key_Ograve",
+							"value": 210
+						},
+						{
+							"name": "Key_Oacute",
+							"value": 211
+						},
+						{
+							"name": "Key_Ocircumflex",
+							"value": 212
+						},
+						{
+							"name": "Key_Otilde",
+							"value": 213
+						},
+						{
+							"name": "Key_Odiaeresis",
+							"value": 214
+						},
+						{
+							"name": "Key_multiply",
+							"value": 215
+						},
+						{
+							"name": "Key_Ooblique",
+							"value": 216
+						},
+						{
+							"name": "Key_Ugrave",
+							"value": 217
+						},
+						{
+							"name": "Key_Uacute",
+							"value": 218
+						},
+						{
+							"name": "Key_Ucircumflex",
+							"value": 219
+						},
+						{
+							"name": "Key_Udiaeresis",
+							"value": 220
+						},
+						{
+							"name": "Key_Yacute",
+							"value": 221
+						},
+						{
+							"name": "Key_THORN",
+							"value": 222
+						},
+						{
+							"name": "Key_ssharp",
+							"value": 223
+						},
+						{
+							"name": "Key_division",
+							"value": 247
+						},
+						{
+							"name": "Key_ydiaeresis",
+							"value": 255
+						},
+						{
+							"name": "Key_AltGr",
+							"value": 16781571
+						},
+						{
+							"name": "Key_Multi_key",
+							"value": 16781600
+						},
+						{
+							"name": "Key_Codeinput",
+							"value": 16781623
+						},
+						{
+							"name": "Key_SingleCandidate",
+							"value": 16781628
+						},
+						{
+							"name": "Key_MultipleCandidate",
+							"value": 16781629
+						},
+						{
+							"name": "Key_PreviousCandidate",
+							"value": 16781630
+						},
+						{
+							"name": "Key_Mode_switch",
+							"value": 16781694
+						},
+						{
+							"name": "Key_Kanji",
+							"value": 16781601
+						},
+						{
+							"name": "Key_Muhenkan",
+							"value": 16781602
+						},
+						{
+							"name": "Key_Henkan",
+							"value": 16781603
+						},
+						{
+							"name": "Key_Romaji",
+							"value": 16781604
+						},
+						{
+							"name": "Key_Hiragana",
+							"value": 16781605
+						},
+						{
+							"name": "Key_Katakana",
+							"value": 16781606
+						},
+						{
+							"name": "Key_Hiragana_Katakana",
+							"value": 16781607
+						},
+						{
+							"name": "Key_Zenkaku",
+							"value": 16781608
+						},
+						{
+							"name": "Key_Hankaku",
+							"value": 16781609
+						},
+						{
+							"name": "Key_Zenkaku_Hankaku",
+							"value": 16781610
+						},
+						{
+							"name": "Key_Touroku",
+							"value": 16781611
+						},
+						{
+							"name": "Key_Massyo",
+							"value": 16781612
+						},
+						{
+							"name": "Key_Kana_Lock",
+							"value": 16781613
+						},
+						{
+							"name": "Key_Kana_Shift",
+							"value": 16781614
+						},
+						{
+							"name": "Key_Eisu_Shift",
+							"value": 16781615
+						},
+						{
+							"name": "Key_Eisu_toggle",
+							"value": 16781616
+						},
+						{
+							"name": "Key_Hangul",
+							"value": 16781617
+						},
+						{
+							"name": "Key_Hangul_Start",
+							"value": 16781618
+						},
+						{
+							"name": "Key_Hangul_End",
+							"value": 16781619
+						},
+						{
+							"name": "Key_Hangul_Hanja",
+							"value": 16781620
+						},
+						{
+							"name": "Key_Hangul_Jamo",
+							"value": 16781621
+						},
+						{
+							"name": "Key_Hangul_Romaja",
+							"value": 16781622
+						},
+						{
+							"name": "Key_Hangul_Jeonja",
+							"value": 16781624
+						},
+						{
+							"name": "Key_Hangul_Banja",
+							"value": 16781625
+						},
+						{
+							"name": "Key_Hangul_PreHanja",
+							"value": 16781626
+						},
+						{
+							"name": "Key_Hangul_PostHanja",
+							"value": 16781627
+						},
+						{
+							"name": "Key_Hangul_Special",
+							"value": 16781631
+						},
+						{
+							"name": "Key_Dead_Grave",
+							"value": 16781904
+						},
+						{
+							"name": "Key_Dead_Acute",
+							"value": 16781905
+						},
+						{
+							"name": "Key_Dead_Circumflex",
+							"value": 16781906
+						},
+						{
+							"name": "Key_Dead_Tilde",
+							"value": 16781907
+						},
+						{
+							"name": "Key_Dead_Macron",
+							"value": 16781908
+						},
+						{
+							"name": "Key_Dead_Breve",
+							"value": 16781909
+						},
+						{
+							"name": "Key_Dead_Abovedot",
+							"value": 16781910
+						},
+						{
+							"name": "Key_Dead_Diaeresis",
+							"value": 16781911
+						},
+						{
+							"name": "Key_Dead_Abovering",
+							"value": 16781912
+						},
+						{
+							"name": "Key_Dead_Doubleacute",
+							"value": 16781913
+						},
+						{
+							"name": "Key_Dead_Caron",
+							"value": 16781914
+						},
+						{
+							"name": "Key_Dead_Cedilla",
+							"value": 16781915
+						},
+						{
+							"name": "Key_Dead_Ogonek",
+							"value": 16781916
+						},
+						{
+							"name": "Key_Dead_Iota",
+							"value": 16781917
+						},
+						{
+							"name": "Key_Dead_Voiced_Sound",
+							"value": 16781918
+						},
+						{
+							"name": "Key_Dead_Semivoiced_Sound",
+							"value": 16781919
+						},
+						{
+							"name": "Key_Dead_Belowdot",
+							"value": 16781920
+						},
+						{
+							"name": "Key_Dead_Hook",
+							"value": 16781921
+						},
+						{
+							"name": "Key_Dead_Horn",
+							"value": 16781922
+						},
+						{
+							"name": "Key_Back",
+							"value": 16777313
+						},
+						{
+							"name": "Key_Forward",
+							"value": 16777314
+						},
+						{
+							"name": "Key_Stop",
+							"value": 16777315
+						},
+						{
+							"name": "Key_Refresh",
+							"value": 16777316
+						},
+						{
+							"name": "Key_VolumeDown",
+							"value": 16777328
+						},
+						{
+							"name": "Key_VolumeMute",
+							"value": 16777329
+						},
+						{
+							"name": "Key_VolumeUp",
+							"value": 16777330
+						},
+						{
+							"name": "Key_BassBoost",
+							"value": 16777331
+						},
+						{
+							"name": "Key_BassUp",
+							"value": 16777332
+						},
+						{
+							"name": "Key_BassDown",
+							"value": 16777333
+						},
+						{
+							"name": "Key_TrebleUp",
+							"value": 16777334
+						},
+						{
+							"name": "Key_TrebleDown",
+							"value": 16777335
+						},
+						{
+							"name": "Key_MediaPlay",
+							"value": 16777344
+						},
+						{
+							"name": "Key_MediaStop",
+							"value": 16777345
+						},
+						{
+							"name": "Key_MediaPrevious",
+							"value": 16777346
+						},
+						{
+							"name": "Key_MediaNext",
+							"value": 16777347
+						},
+						{
+							"name": "Key_MediaRecord",
+							"value": 16777348
+						},
+						{
+							"name": "Key_MediaPause",
+							"value": 16777349
+						},
+						{
+							"name": "Key_MediaTogglePlayPause",
+							"value": 16777350
+						},
+						{
+							"name": "Key_HomePage",
+							"value": 16777360
+						},
+						{
+							"name": "Key_Favorites",
+							"value": 16777361
+						},
+						{
+							"name": "Key_Search",
+							"value": 16777362
+						},
+						{
+							"name": "Key_Standby",
+							"value": 16777363
+						},
+						{
+							"name": "Key_OpenUrl",
+							"value": 16777364
+						},
+						{
+							"name": "Key_LaunchMail",
+							"value": 16777376
+						},
+						{
+							"name": "Key_LaunchMedia",
+							"value": 16777377
+						},
+						{
+							"name": "Key_Launch0",
+							"value": 16777378
+						},
+						{
+							"name": "Key_Launch1",
+							"value": 16777379
+						},
+						{
+							"name": "Key_Launch2",
+							"value": 16777380
+						},
+						{
+							"name": "Key_Launch3",
+							"value": 16777381
+						},
+						{
+							"name": "Key_Launch4",
+							"value": 16777382
+						},
+						{
+							"name": "Key_Launch5",
+							"value": 16777383
+						},
+						{
+							"name": "Key_Launch6",
+							"value": 16777384
+						},
+						{
+							"name": "Key_Launch7",
+							"value": 16777385
+						},
+						{
+							"name": "Key_Launch8",
+							"value": 16777386
+						},
+						{
+							"name": "Key_Launch9",
+							"value": 16777387
+						},
+						{
+							"name": "Key_LaunchA",
+							"value": 16777388
+						},
+						{
+							"name": "Key_LaunchB",
+							"value": 16777389
+						},
+						{
+							"name": "Key_LaunchC",
+							"value": 16777390
+						},
+						{
+							"name": "Key_LaunchD",
+							"value": 16777391
+						},
+						{
+							"name": "Key_LaunchE",
+							"value": 16777392
+						},
+						{
+							"name": "Key_LaunchF",
+							"value": 16777393
+						},
+						{
+							"name": "Key_MonBrightnessUp",
+							"value": 16777394
+						},
+						{
+							"name": "Key_MonBrightnessDown",
+							"value": 16777395
+						},
+						{
+							"name": "Key_KeyboardLightOnOff",
+							"value": 16777396
+						},
+						{
+							"name": "Key_KeyboardBrightnessUp",
+							"value": 16777397
+						},
+						{
+							"name": "Key_KeyboardBrightnessDown",
+							"value": 16777398
+						},
+						{
+							"name": "Key_PowerOff",
+							"value": 16777399
+						},
+						{
+							"name": "Key_WakeUp",
+							"value": 16777400
+						},
+						{
+							"name": "Key_Eject",
+							"value": 16777401
+						},
+						{
+							"name": "Key_ScreenSaver",
+							"value": 16777402
+						},
+						{
+							"name": "Key_WWW",
+							"value": 16777403
+						},
+						{
+							"name": "Key_Memo",
+							"value": 16777404
+						},
+						{
+							"name": "Key_LightBulb",
+							"value": 16777405
+						},
+						{
+							"name": "Key_Shop",
+							"value": 16777406
+						},
+						{
+							"name": "Key_History",
+							"value": 16777407
+						},
+						{
+							"name": "Key_AddFavorite",
+							"value": 16777408
+						},
+						{
+							"name": "Key_HotLinks",
+							"value": 16777409
+						},
+						{
+							"name": "Key_BrightnessAdjust",
+							"value": 16777410
+						},
+						{
+							"name": "Key_Finance",
+							"value": 16777411
+						},
+						{
+							"name": "Key_Community",
+							"value": 16777412
+						},
+						{
+							"name": "Key_AudioRewind",
+							"value": 16777413
+						},
+						{
+							"name": "Key_BackForward",
+							"value": 16777414
+						},
+						{
+							"name": "Key_ApplicationLeft",
+							"value": 16777415
+						},
+						{
+							"name": "Key_ApplicationRight",
+							"value": 16777416
+						},
+						{
+							"name": "Key_Book",
+							"value": 16777417
+						},
+						{
+							"name": "Key_CD",
+							"value": 16777418
+						},
+						{
+							"name": "Key_Calculator",
+							"value": 16777419
+						},
+						{
+							"name": "Key_ToDoList",
+							"value": 16777420
+						},
+						{
+							"name": "Key_ClearGrab",
+							"value": 16777421
+						},
+						{
+							"name": "Key_Close",
+							"value": 16777422
+						},
+						{
+							"name": "Key_Copy",
+							"value": 16777423
+						},
+						{
+							"name": "Key_Cut",
+							"value": 16777424
+						},
+						{
+							"name": "Key_Display",
+							"value": 16777425
+						},
+						{
+							"name": "Key_DOS",
+							"value": 16777426
+						},
+						{
+							"name": "Key_Documents",
+							"value": 16777427
+						},
+						{
+							"name": "Key_Excel",
+							"value": 16777428
+						},
+						{
+							"name": "Key_Explorer",
+							"value": 16777429
+						},
+						{
+							"name": "Key_Game",
+							"value": 16777430
+						},
+						{
+							"name": "Key_Go",
+							"value": 16777431
+						},
+						{
+							"name": "Key_iTouch",
+							"value": 16777432
+						},
+						{
+							"name": "Key_LogOff",
+							"value": 16777433
+						},
+						{
+							"name": "Key_Market",
+							"value": 16777434
+						},
+						{
+							"name": "Key_Meeting",
+							"value": 16777435
+						},
+						{
+							"name": "Key_MenuKB",
+							"value": 16777436
+						},
+						{
+							"name": "Key_MenuPB",
+							"value": 16777437
+						},
+						{
+							"name": "Key_MySites",
+							"value": 16777438
+						},
+						{
+							"name": "Key_News",
+							"value": 16777439
+						},
+						{
+							"name": "Key_OfficeHome",
+							"value": 16777440
+						},
+						{
+							"name": "Key_Option",
+							"value": 16777441
+						},
+						{
+							"name": "Key_Paste",
+							"value": 16777442
+						},
+						{
+							"name": "Key_Phone",
+							"value": 16777443
+						},
+						{
+							"name": "Key_Calendar",
+							"value": 16777444
+						},
+						{
+							"name": "Key_Reply",
+							"value": 16777445
+						},
+						{
+							"name": "Key_Reload",
+							"value": 16777446
+						},
+						{
+							"name": "Key_RotateWindows",
+							"value": 16777447
+						},
+						{
+							"name": "Key_RotationPB",
+							"value": 16777448
+						},
+						{
+							"name": "Key_RotationKB",
+							"value": 16777449
+						},
+						{
+							"name": "Key_Save",
+							"value": 16777450
+						},
+						{
+							"name": "Key_Send",
+							"value": 16777451
+						},
+						{
+							"name": "Key_Spell",
+							"value": 16777452
+						},
+						{
+							"name": "Key_SplitScreen",
+							"value": 16777453
+						},
+						{
+							"name": "Key_Support",
+							"value": 16777454
+						},
+						{
+							"name": "Key_TaskPane",
+							"value": 16777455
+						},
+						{
+							"name": "Key_Terminal",
+							"value": 16777456
+						},
+						{
+							"name": "Key_Tools",
+							"value": 16777457
+						},
+						{
+							"name": "Key_Travel",
+							"value": 16777458
+						},
+						{
+							"name": "Key_Video",
+							"value": 16777459
+						},
+						{
+							"name": "Key_Word",
+							"value": 16777460
+						},
+						{
+							"name": "Key_Xfer",
+							"value": 16777461
+						},
+						{
+							"name": "Key_ZoomIn",
+							"value": 16777462
+						},
+						{
+							"name": "Key_ZoomOut",
+							"value": 16777463
+						},
+						{
+							"name": "Key_Away",
+							"value": 16777464
+						},
+						{
+							"name": "Key_Messenger",
+							"value": 16777465
+						},
+						{
+							"name": "Key_WebCam",
+							"value": 16777466
+						},
+						{
+							"name": "Key_MailForward",
+							"value": 16777467
+						},
+						{
+							"name": "Key_Pictures",
+							"value": 16777468
+						},
+						{
+							"name": "Key_Music",
+							"value": 16777469
+						},
+						{
+							"name": "Key_Battery",
+							"value": 16777470
+						},
+						{
+							"name": "Key_Bluetooth",
+							"value": 16777471
+						},
+						{
+							"name": "Key_WLAN",
+							"value": 16777472
+						},
+						{
+							"name": "Key_UWB",
+							"value": 16777473
+						},
+						{
+							"name": "Key_AudioForward",
+							"value": 16777474
+						},
+						{
+							"name": "Key_AudioRepeat",
+							"value": 16777475
+						},
+						{
+							"name": "Key_AudioRandomPlay",
+							"value": 16777476
+						},
+						{
+							"name": "Key_Subtitle",
+							"value": 16777477
+						},
+						{
+							"name": "Key_AudioCycleTrack",
+							"value": 16777478
+						},
+						{
+							"name": "Key_Time",
+							"value": 16777479
+						},
+						{
+							"name": "Key_Hibernate",
+							"value": 16777480
+						},
+						{
+							"name": "Key_View",
+							"value": 16777481
+						},
+						{
+							"name": "Key_TopMenu",
+							"value": 16777482
+						},
+						{
+							"name": "Key_PowerDown",
+							"value": 16777483
+						},
+						{
+							"name": "Key_Suspend",
+							"value": 16777484
+						},
+						{
+							"name": "Key_ContrastAdjust",
+							"value": 16777485
+						},
+						{
+							"name": "Key_LaunchG",
+							"value": 16777486
+						},
+						{
+							"name": "Key_LaunchH",
+							"value": 16777487
+						},
+						{
+							"name": "Key_TouchpadToggle",
+							"value": 16777488
+						},
+						{
+							"name": "Key_TouchpadOn",
+							"value": 16777489
+						},
+						{
+							"name": "Key_TouchpadOff",
+							"value": 16777490
+						},
+						{
+							"name": "Key_MicMute",
+							"value": 16777491
+						},
+						{
+							"name": "Key_Red",
+							"value": 16777492
+						},
+						{
+							"name": "Key_Green",
+							"value": 16777493
+						},
+						{
+							"name": "Key_Yellow",
+							"value": 16777494
+						},
+						{
+							"name": "Key_Blue",
+							"value": 16777495
+						},
+						{
+							"name": "Key_ChannelUp",
+							"value": 16777496
+						},
+						{
+							"name": "Key_ChannelDown",
+							"value": 16777497
+						},
+						{
+							"name": "Key_Guide",
+							"value": 16777498
+						},
+						{
+							"name": "Key_Info",
+							"value": 16777499
+						},
+						{
+							"name": "Key_Settings",
+							"value": 16777500
+						},
+						{
+							"name": "Key_MicVolumeUp",
+							"value": 16777501
+						},
+						{
+							"name": "Key_MicVolumeDown",
+							"value": 16777502
+						},
+						{
+							"name": "Key_New",
+							"value": 16777504
+						},
+						{
+							"name": "Key_Open",
+							"value": 16777505
+						},
+						{
+							"name": "Key_Find",
+							"value": 16777506
+						},
+						{
+							"name": "Key_Undo",
+							"value": 16777507
+						},
+						{
+							"name": "Key_Redo",
+							"value": 16777508
+						},
+						{
+							"name": "Key_MediaLast",
+							"value": 16842751
+						},
+						{
+							"name": "Key_Select",
+							"value": 16842752
+						},
+						{
+							"name": "Key_Yes",
+							"value": 16842753
+						},
+						{
+							"name": "Key_No",
+							"value": 16842754
+						},
+						{
+							"name": "Key_Cancel",
+							"value": 16908289
+						},
+						{
+							"name": "Key_Printer",
+							"value": 16908290
+						},
+						{
+							"name": "Key_Execute",
+							"value": 16908291
+						},
+						{
+							"name": "Key_Sleep",
+							"value": 16908292
+						},
+						{
+							"name": "Key_Play",
+							"value": 16908293
+						},
+						{
+							"name": "Key_Zoom",
+							"value": 16908294
+						},
+						{
+							"name": "Key_Exit",
+							"value": 16908298
+						},
+						{
+							"name": "Key_Context1",
+							"value": 17825792
+						},
+						{
+							"name": "Key_Context2",
+							"value": 17825793
+						},
+						{
+							"name": "Key_Context3",
+							"value": 17825794
+						},
+						{
+							"name": "Key_Context4",
+							"value": 17825795
+						},
+						{
+							"name": "Key_Call",
+							"value": 17825796
+						},
+						{
+							"name": "Key_Hangup",
+							"value": 17825797
+						},
+						{
+							"name": "Key_Flip",
+							"value": 17825798
+						},
+						{
+							"name": "Key_ToggleCallHangup",
+							"value": 17825799
+						},
+						{
+							"name": "Key_VoiceDial",
+							"value": 17825800
+						},
+						{
+							"name": "Key_LastNumberRedial",
+							"value": 17825801
+						},
+						{
+							"name": "Key_Camera",
+							"value": 17825824
+						},
+						{
+							"name": "Key_CameraFocus",
+							"value": 17825825
+						},
+						{
+							"name": "Key_unknown",
+							"value": 33554431
+						}
+					]
+				},
+				{
+					"name": "ArrowType",
+					"values": [
+						{
+							"name": "NoArrow",
+							"value": 0
+						},
+						{
+							"name": "UpArrow",
+							"value": 1
+						},
+						{
+							"name": "DownArrow",
+							"value": 2
+						},
+						{
+							"name": "LeftArrow",
+							"value": 3
+						},
+						{
+							"name": "RightArrow",
+							"value": 4
+						}
+					]
+				},
+				{
+					"name": "PenStyle",
+					"values": [
+						{
+							"name": "NoPen",
+							"value": 0
+						},
+						{
+							"name": "SolidLine",
+							"value": 1
+						},
+						{
+							"name": "DashLine",
+							"value": 2
+						},
+						{
+							"name": "DotLine",
+							"value": 3
+						},
+						{
+							"name": "DashDotLine",
+							"value": 4
+						},
+						{
+							"name": "DashDotDotLine",
+							"value": 5
+						},
+						{
+							"name": "CustomDashLine",
+							"value": 6
+						},
+						{
+							"name": "MPenStyle",
+							"value": 15
+						}
+					]
+				},
+				{
+					"name": "PenCapStyle",
+					"values": [
+						{
+							"name": "FlatCap",
+							"value": 0
+						},
+						{
+							"name": "SquareCap",
+							"value": 16
+						},
+						{
+							"name": "RoundCap",
+							"value": 32
+						},
+						{
+							"name": "MPenCapStyle",
+							"value": 48
+						}
+					]
+				},
+				{
+					"name": "PenJoinStyle",
+					"values": [
+						{
+							"name": "MiterJoin",
+							"value": 0
+						},
+						{
+							"name": "BevelJoin",
+							"value": 64
+						},
+						{
+							"name": "RoundJoin",
+							"value": 128
+						},
+						{
+							"name": "SvgMiterJoin",
+							"value": 256
+						},
+						{
+							"name": "MPenJoinStyle",
+							"value": 448
+						}
+					]
+				},
+				{
+					"name": "BrushStyle",
+					"values": [
+						{
+							"name": "NoBrush",
+							"value": 0
+						},
+						{
+							"name": "SolidPattern",
+							"value": 1
+						},
+						{
+							"name": "Dense1Pattern",
+							"value": 2
+						},
+						{
+							"name": "Dense2Pattern",
+							"value": 3
+						},
+						{
+							"name": "Dense3Pattern",
+							"value": 4
+						},
+						{
+							"name": "Dense4Pattern",
+							"value": 5
+						},
+						{
+							"name": "Dense5Pattern",
+							"value": 6
+						},
+						{
+							"name": "Dense6Pattern",
+							"value": 7
+						},
+						{
+							"name": "Dense7Pattern",
+							"value": 8
+						},
+						{
+							"name": "HorPattern",
+							"value": 9
+						},
+						{
+							"name": "VerPattern",
+							"value": 10
+						},
+						{
+							"name": "CrossPattern",
+							"value": 11
+						},
+						{
+							"name": "BDiagPattern",
+							"value": 12
+						},
+						{
+							"name": "FDiagPattern",
+							"value": 13
+						},
+						{
+							"name": "DiagCrossPattern",
+							"value": 14
+						},
+						{
+							"name": "LinearGradientPattern",
+							"value": 15
+						},
+						{
+							"name": "RadialGradientPattern",
+							"value": 16
+						},
+						{
+							"name": "ConicalGradientPattern",
+							"value": 17
+						},
+						{
+							"name": "TexturePattern",
+							"value": 24
+						}
+					]
+				},
+				{
+					"name": "SizeMode",
+					"values": [
+						{
+							"name": "AbsoluteSize",
+							"value": 0
+						},
+						{
+							"name": "RelativeSize",
+							"value": 1
+						}
+					]
+				},
+				{
+					"name": "UIEffect",
+					"values": [
+						{
+							"name": "UI_General",
+							"value": 0
+						},
+						{
+							"name": "UI_AnimateMenu",
+							"value": 1
+						},
+						{
+							"name": "UI_FadeMenu",
+							"value": 2
+						},
+						{
+							"name": "UI_AnimateCombo",
+							"value": 3
+						},
+						{
+							"name": "UI_AnimateTooltip",
+							"value": 4
+						},
+						{
+							"name": "UI_FadeTooltip",
+							"value": 5
+						},
+						{
+							"name": "UI_AnimateToolBox",
+							"value": 6
+						}
+					]
+				},
+				{
+					"name": "CursorShape",
+					"values": [
+						{
+							"name": "ArrowCursor",
+							"value": 0
+						},
+						{
+							"name": "UpArrowCursor",
+							"value": 1
+						},
+						{
+							"name": "CrossCursor",
+							"value": 2
+						},
+						{
+							"name": "WaitCursor",
+							"value": 3
+						},
+						{
+							"name": "IBeamCursor",
+							"value": 4
+						},
+						{
+							"name": "SizeVerCursor",
+							"value": 5
+						},
+						{
+							"name": "SizeHorCursor",
+							"value": 6
+						},
+						{
+							"name": "SizeBDiagCursor",
+							"value": 7
+						},
+						{
+							"name": "SizeFDiagCursor",
+							"value": 8
+						},
+						{
+							"name": "SizeAllCursor",
+							"value": 9
+						},
+						{
+							"name": "BlankCursor",
+							"value": 10
+						},
+						{
+							"name": "SplitVCursor",
+							"value": 11
+						},
+						{
+							"name": "SplitHCursor",
+							"value": 12
+						},
+						{
+							"name": "PointingHandCursor",
+							"value": 13
+						},
+						{
+							"name": "ForbiddenCursor",
+							"value": 14
+						},
+						{
+							"name": "WhatsThisCursor",
+							"value": 15
+						},
+						{
+							"name": "BusyCursor",
+							"value": 16
+						},
+						{
+							"name": "OpenHandCursor",
+							"value": 17
+						},
+						{
+							"name": "ClosedHandCursor",
+							"value": 18
+						},
+						{
+							"name": "DragCopyCursor",
+							"value": 19
+						},
+						{
+							"name": "DragMoveCursor",
+							"value": 20
+						},
+						{
+							"name": "DragLinkCursor",
+							"value": 21
+						},
+						{
+							"name": "BitmapCursor",
+							"value": 24
+						},
+						{
+							"name": "CustomCursor",
+							"value": 25
+						}
+					]
+				},
+				{
+					"name": "TextFormat",
+					"values": [
+						{
+							"name": "PlainText",
+							"value": 0
+						},
+						{
+							"name": "RichText",
+							"value": 1
+						},
+						{
+							"name": "AutoText",
+							"value": 2
+						}
+					]
+				},
+				{
+					"name": "AspectRatioMode",
+					"values": [
+						{
+							"name": "IgnoreAspectRatio",
+							"value": 0
+						},
+						{
+							"name": "KeepAspectRatio",
+							"value": 1
+						},
+						{
+							"name": "KeepAspectRatioByExpanding",
+							"value": 2
+						}
+					]
+				},
+				{
+					"name": "DockWidgetArea",
+					"values": [
+						{
+							"name": "LeftDockWidgetArea",
+							"value": 1
+						},
+						{
+							"name": "RightDockWidgetArea",
+							"value": 2
+						},
+						{
+							"name": "TopDockWidgetArea",
+							"value": 4
+						},
+						{
+							"name": "BottomDockWidgetArea",
+							"value": 8
+						},
+						{
+							"name": "DockWidgetArea_Mask",
+							"value": 15
+						},
+						{
+							"name": "NoDockWidgetArea",
+							"value": 0
+						}
+					]
+				},
+				{
+					"name": "DockWidgetAreaSizes",
+					"values": [
+						{
+							"name": "NDockWidgetAreas",
+							"value": 4
+						}
+					]
+				},
+				{
+					"name": "ToolBarArea",
+					"values": [
+						{
+							"name": "LeftToolBarArea",
+							"value": 1
+						},
+						{
+							"name": "RightToolBarArea",
+							"value": 2
+						},
+						{
+							"name": "TopToolBarArea",
+							"value": 4
+						},
+						{
+							"name": "BottomToolBarArea",
+							"value": 8
+						},
+						{
+							"name": "ToolBarArea_Mask",
+							"value": 15
+						},
+						{
+							"name": "NoToolBarArea",
+							"value": 0
+						}
+					]
+				},
+				{
+					"name": "ToolBarAreaSizes",
+					"values": [
+						{
+							"name": "NToolBarAreas",
+							"value": 4
+						}
+					]
+				},
+				{
+					"name": "DateFormat",
+					"values": [
+						{
+							"name": "TextDate",
+							"value": 0
+						},
+						{
+							"name": "ISODate",
+							"value": 1
+						},
+						{
+							"name": "SystemLocaleShortDate",
+							"value": 2
+						},
+						{
+							"name": "SystemLocaleLongDate",
+							"value": 3
+						},
+						{
+							"name": "DefaultLocaleShortDate",
+							"value": 4
+						},
+						{
+							"name": "DefaultLocaleLongDate",
+							"value": 5
+						},
+						{
+							"name": "RFC2822Date",
+							"value": 6
+						}
+					]
+				},
+				{
+					"name": "TimeSpec",
+					"values": [
+						{
+							"name": "LocalTime",
+							"value": 0
+						},
+						{
+							"name": "UTC",
+							"value": 1
+						},
+						{
+							"name": "OffsetFromUTC",
+							"value": 2
+						},
+						{
+							"name": "TimeZone",
+							"value": 3
+						}
+					]
+				},
+				{
+					"name": "DayOfWeek",
+					"values": [
+						{
+							"name": "Monday",
+							"value": 1
+						},
+						{
+							"name": "Tuesday",
+							"value": 2
+						},
+						{
+							"name": "Wednesday",
+							"value": 3
+						},
+						{
+							"name": "Thursday",
+							"value": 4
+						},
+						{
+							"name": "Friday",
+							"value": 5
+						},
+						{
+							"name": "Saturday",
+							"value": 6
+						},
+						{
+							"name": "Sunday",
+							"value": 7
+						}
+					]
+				},
+				{
+					"name": "ScrollBarPolicy",
+					"values": [
+						{
+							"name": "ScrollBarAsNeeded",
+							"value": 0
+						},
+						{
+							"name": "ScrollBarAlwaysOff",
+							"value": 1
+						},
+						{
+							"name": "ScrollBarAlwaysOn",
+							"value": 2
+						}
+					]
+				},
+				{
+					"name": "CaseSensitivity",
+					"values": [
+						{
+							"name": "CaseInsensitive",
+							"value": 0
+						},
+						{
+							"name": "CaseSensitive",
+							"value": 1
+						}
+					]
+				},
+				{
+					"name": "Corner",
+					"values": [
+						{
+							"name": "TopLeftCorner",
+							"value": 0
+						},
+						{
+							"name": "TopRightCorner",
+							"value": 1
+						},
+						{
+							"name": "BottomLeftCorner",
+							"value": 2
+						},
+						{
+							"name": "BottomRightCorner",
+							"value": 3
+						}
+					]
+				},
+				{
+					"name": "Edge",
+					"values": [
+						{
+							"name": "TopEdge",
+							"value": 1
+						},
+						{
+							"name": "LeftEdge",
+							"value": 2
+						},
+						{
+							"name": "RightEdge",
+							"value": 4
+						},
+						{
+							"name": "BottomEdge",
+							"value": 8
+						}
+					]
+				},
+				{
+					"name": "ConnectionType",
+					"values": [
+						{
+							"name": "AutoConnection",
+							"value": 0
+						},
+						{
+							"name": "DirectConnection",
+							"value": 1
+						},
+						{
+							"name": "QueuedConnection",
+							"value": 2
+						},
+						{
+							"name": "BlockingQueuedConnection",
+							"value": 3
+						},
+						{
+							"name": "UniqueConnection",
+							"value": 128
+						}
+					]
+				},
+				{
+					"name": "ShortcutContext",
+					"values": [
+						{
+							"name": "WidgetShortcut",
+							"value": 0
+						},
+						{
+							"name": "WindowShortcut",
+							"value": 1
+						},
+						{
+							"name": "ApplicationShortcut",
+							"value": 2
+						},
+						{
+							"name": "WidgetWithChildrenShortcut",
+							"value": 3
+						}
+					]
+				},
+				{
+					"name": "FillRule",
+					"values": [
+						{
+							"name": "OddEvenFill",
+							"value": 0
+						},
+						{
+							"name": "WindingFill",
+							"value": 1
+						}
+					]
+				},
+				{
+					"name": "MaskMode",
+					"values": [
+						{
+							"name": "MaskInColor",
+							"value": 0
+						},
+						{
+							"name": "MaskOutColor",
+							"value": 1
+						}
+					]
+				},
+				{
+					"name": "ClipOperation",
+					"values": [
+						{
+							"name": "NoClip",
+							"value": 0
+						},
+						{
+							"name": "ReplaceClip",
+							"value": 1
+						},
+						{
+							"name": "IntersectClip",
+							"value": 2
+						}
+					]
+				},
+				{
+					"name": "ItemSelectionMode",
+					"values": [
+						{
+							"name": "ContainsItemShape",
+							"value": 0
+						},
+						{
+							"name": "IntersectsItemShape",
+							"value": 1
+						},
+						{
+							"name": "ContainsItemBoundingRect",
+							"value": 2
+						},
+						{
+							"name": "IntersectsItemBoundingRect",
+							"value": 3
+						}
+					]
+				},
+				{
+					"name": "TransformationMode",
+					"values": [
+						{
+							"name": "FastTransformation",
+							"value": 0
+						},
+						{
+							"name": "SmoothTransformation",
+							"value": 1
+						}
+					]
+				},
+				{
+					"name": "Axis",
+					"values": [
+						{
+							"name": "XAxis",
+							"value": 0
+						},
+						{
+							"name": "YAxis",
+							"value": 1
+						},
+						{
+							"name": "ZAxis",
+							"value": 2
+						}
+					]
+				},
+				{
+					"name": "FocusReason",
+					"values": [
+						{
+							"name": "MouseFocusReason",
+							"value": 0
+						},
+						{
+							"name": "TabFocusReason",
+							"value": 1
+						},
+						{
+							"name": "BacktabFocusReason",
+							"value": 2
+						},
+						{
+							"name": "ActiveWindowFocusReason",
+							"value": 3
+						},
+						{
+							"name": "PopupFocusReason",
+							"value": 4
+						},
+						{
+							"name": "ShortcutFocusReason",
+							"value": 5
+						},
+						{
+							"name": "MenuBarFocusReason",
+							"value": 6
+						},
+						{
+							"name": "OtherFocusReason",
+							"value": 7
+						},
+						{
+							"name": "NoFocusReason",
+							"value": 8
+						}
+					]
+				},
+				{
+					"name": "ContextMenuPolicy",
+					"values": [
+						{
+							"name": "NoContextMenu",
+							"value": 0
+						},
+						{
+							"name": "DefaultContextMenu",
+							"value": 1
+						},
+						{
+							"name": "ActionsContextMenu",
+							"value": 2
+						},
+						{
+							"name": "CustomContextMenu",
+							"value": 3
+						},
+						{
+							"name": "PreventContextMenu",
+							"value": 4
+						}
+					]
+				},
+				{
+					"name": "InputMethodQuery",
+					"values": [
+						{
+							"name": "ImEnabled",
+							"value": 1
+						},
+						{
+							"name": "ImCursorRectangle",
+							"value": 2
+						},
+						{
+							"name": "ImFont",
+							"value": 4
+						},
+						{
+							"name": "ImCursorPosition",
+							"value": 8
+						},
+						{
+							"name": "ImSurroundingText",
+							"value": 16
+						},
+						{
+							"name": "ImCurrentSelection",
+							"value": 32
+						},
+						{
+							"name": "ImMaximumTextLength",
+							"value": 64
+						},
+						{
+							"name": "ImAnchorPosition",
+							"value": 128
+						},
+						{
+							"name": "ImHints",
+							"value": 256
+						},
+						{
+							"name": "ImPreferredLanguage",
+							"value": 512
+						},
+						{
+							"name": "ImAbsolutePosition",
+							"value": 1024
+						},
+						{
+							"name": "ImTextBeforeCursor",
+							"value": 2048
+						},
+						{
+							"name": "ImTextAfterCursor",
+							"value": 4096
+						},
+						{
+							"name": "ImPlatformData",
+							"value": -2147483648
+						},
+						{
+							"name": "ImQueryInput",
+							"value": 186
+						},
+						{
+							"name": "ImQueryAll",
+							"value": -1
+						}
+					]
+				},
+				{
+					"name": "InputMethodHint",
+					"values": [
+						{
+							"name": "ImhNone",
+							"value": 0
+						},
+						{
+							"name": "ImhHiddenText",
+							"value": 1
+						},
+						{
+							"name": "ImhSensitiveData",
+							"value": 2
+						},
+						{
+							"name": "ImhNoAutoUppercase",
+							"value": 4
+						},
+						{
+							"name": "ImhPreferNumbers",
+							"value": 8
+						},
+						{
+							"name": "ImhPreferUppercase",
+							"value": 16
+						},
+						{
+							"name": "ImhPreferLowercase",
+							"value": 32
+						},
+						{
+							"name": "ImhNoPredictiveText",
+							"value": 64
+						},
+						{
+							"name": "ImhDate",
+							"value": 128
+						},
+						{
+							"name": "ImhTime",
+							"value": 256
+						},
+						{
+							"name": "ImhPreferLatin",
+							"value": 512
+						},
+						{
+							"name": "ImhMultiLine",
+							"value": 1024
+						},
+						{
+							"name": "ImhDigitsOnly",
+							"value": 65536
+						},
+						{
+							"name": "ImhFormattedNumbersOnly",
+							"value": 131072
+						},
+						{
+							"name": "ImhUppercaseOnly",
+							"value": 262144
+						},
+						{
+							"name": "ImhLowercaseOnly",
+							"value": 524288
+						},
+						{
+							"name": "ImhDialableCharactersOnly",
+							"value": 1048576
+						},
+						{
+							"name": "ImhEmailCharactersOnly",
+							"value": 2097152
+						},
+						{
+							"name": "ImhUrlCharactersOnly",
+							"value": 4194304
+						},
+						{
+							"name": "ImhLatinOnly",
+							"value": 8388608
+						},
+						{
+							"name": "ImhExclusiveInputMask",
+							"value": -65536
+						}
+					]
+				},
+				{
+					"name": "ToolButtonStyle",
+					"values": [
+						{
+							"name": "ToolButtonIconOnly",
+							"value": 0
+						},
+						{
+							"name": "ToolButtonTextOnly",
+							"value": 1
+						},
+						{
+							"name": "ToolButtonTextBesideIcon",
+							"value": 2
+						},
+						{
+							"name": "ToolButtonTextUnderIcon",
+							"value": 3
+						},
+						{
+							"name": "ToolButtonFollowStyle",
+							"value": 4
+						}
+					]
+				},
+				{
+					"name": "LayoutDirection",
+					"values": [
+						{
+							"name": "LeftToRight",
+							"value": 0
+						},
+						{
+							"name": "RightToLeft",
+							"value": 1
+						},
+						{
+							"name": "LayoutDirectionAuto",
+							"value": 2
+						}
+					]
+				},
+				{
+					"name": "AnchorPoint",
+					"values": [
+						{
+							"name": "AnchorLeft",
+							"value": 0
+						},
+						{
+							"name": "AnchorHorizontalCenter",
+							"value": 1
+						},
+						{
+							"name": "AnchorRight",
+							"value": 2
+						},
+						{
+							"name": "AnchorTop",
+							"value": 3
+						},
+						{
+							"name": "AnchorVerticalCenter",
+							"value": 4
+						},
+						{
+							"name": "AnchorBottom",
+							"value": 5
+						}
+					]
+				},
+				{
+					"name": "FindChildOption",
+					"values": [
+						{
+							"name": "FindDirectChildrenOnly",
+							"value": 0
+						},
+						{
+							"name": "FindChildrenRecursively",
+							"value": 1
+						}
+					]
+				},
+				{
+					"name": "DropAction",
+					"values": [
+						{
+							"name": "CopyAction",
+							"value": 1
+						},
+						{
+							"name": "MoveAction",
+							"value": 2
+						},
+						{
+							"name": "LinkAction",
+							"value": 4
+						},
+						{
+							"name": "ActionMask",
+							"value": 255
+						},
+						{
+							"name": "TargetMoveAction",
+							"value": 32770
+						},
+						{
+							"name": "IgnoreAction",
+							"value": 0
+						}
+					]
+				},
+				{
+					"name": "CheckState",
+					"values": [
+						{
+							"name": "Unchecked",
+							"value": 0
+						},
+						{
+							"name": "PartiallyChecked",
+							"value": 1
+						},
+						{
+							"name": "Checked",
+							"value": 2
+						}
+					]
+				},
+				{
+					"name": "ItemDataRole",
+					"values": [
+						{
+							"name": "DisplayRole",
+							"value": 0
+						},
+						{
+							"name": "DecorationRole",
+							"value": 1
+						},
+						{
+							"name": "EditRole",
+							"value": 2
+						},
+						{
+							"name": "ToolTipRole",
+							"value": 3
+						},
+						{
+							"name": "StatusTipRole",
+							"value": 4
+						},
+						{
+							"name": "WhatsThisRole",
+							"value": 5
+						},
+						{
+							"name": "FontRole",
+							"value": 6
+						},
+						{
+							"name": "TextAlignmentRole",
+							"value": 7
+						},
+						{
+							"name": "BackgroundRole",
+							"value": 8
+						},
+						{
+							"name": "ForegroundRole",
+							"value": 9
+						},
+						{
+							"name": "CheckStateRole",
+							"value": 10
+						},
+						{
+							"name": "AccessibleTextRole",
+							"value": 11
+						},
+						{
+							"name": "AccessibleDescriptionRole",
+							"value": 12
+						},
+						{
+							"name": "SizeHintRole",
+							"value": 13
+						},
+						{
+							"name": "InitialSortOrderRole",
+							"value": 14
+						},
+						{
+							"name": "DisplayPropertyRole",
+							"value": 27
+						},
+						{
+							"name": "DecorationPropertyRole",
+							"value": 28
+						},
+						{
+							"name": "ToolTipPropertyRole",
+							"value": 29
+						},
+						{
+							"name": "StatusTipPropertyRole",
+							"value": 30
+						},
+						{
+							"name": "WhatsThisPropertyRole",
+							"value": 31
+						},
+						{
+							"name": "UserRole",
+							"value": 256
+						}
+					]
+				},
+				{
+					"name": "ItemFlag",
+					"values": [
+						{
+							"name": "NoItemFlags",
+							"value": 0
+						},
+						{
+							"name": "ItemIsSelectable",
+							"value": 1
+						},
+						{
+							"name": "ItemIsEditable",
+							"value": 2
+						},
+						{
+							"name": "ItemIsDragEnabled",
+							"value": 4
+						},
+						{
+							"name": "ItemIsDropEnabled",
+							"value": 8
+						},
+						{
+							"name": "ItemIsUserCheckable",
+							"value": 16
+						},
+						{
+							"name": "ItemIsEnabled",
+							"value": 32
+						},
+						{
+							"name": "ItemIsTristate",
+							"value": 64
+						},
+						{
+							"name": "ItemNeverHasChildren",
+							"value": 128
+						}
+					]
+				},
+				{
+					"name": "MatchFlag",
+					"values": [
+						{
+							"name": "MatchExactly",
+							"value": 0
+						},
+						{
+							"name": "MatchContains",
+							"value": 1
+						},
+						{
+							"name": "MatchStartsWith",
+							"value": 2
+						},
+						{
+							"name": "MatchEndsWith",
+							"value": 3
+						},
+						{
+							"name": "MatchRegExp",
+							"value": 4
+						},
+						{
+							"name": "MatchWildcard",
+							"value": 5
+						},
+						{
+							"name": "MatchFixedString",
+							"value": 8
+						},
+						{
+							"name": "MatchCaseSensitive",
+							"value": 16
+						},
+						{
+							"name": "MatchWrap",
+							"value": 32
+						},
+						{
+							"name": "MatchRecursive",
+							"value": 64
+						}
+					]
+				},
+				{
+					"name": "WindowModality",
+					"values": [
+						{
+							"name": "NonModal",
+							"value": 0
+						},
+						{
+							"name": "WindowModal",
+							"value": 1
+						},
+						{
+							"name": "ApplicationModal",
+							"value": 2
+						}
+					]
+				},
+				{
+					"name": "TextInteractionFlag",
+					"values": [
+						{
+							"name": "NoTextInteraction",
+							"value": 0
+						},
+						{
+							"name": "TextSelectableByMouse",
+							"value": 1
+						},
+						{
+							"name": "TextSelectableByKeyboard",
+							"value": 2
+						},
+						{
+							"name": "LinksAccessibleByMouse",
+							"value": 4
+						},
+						{
+							"name": "LinksAccessibleByKeyboard",
+							"value": 8
+						},
+						{
+							"name": "TextEditable",
+							"value": 16
+						},
+						{
+							"name": "TextEditorInteraction",
+							"value": 19
+						},
+						{
+							"name": "TextBrowserInteraction",
+							"value": 13
+						}
+					]
+				},
+				{
+					"name": "EventPriority",
+					"values": [
+						{
+							"name": "HighEventPriority",
+							"value": 1
+						},
+						{
+							"name": "NormalEventPriority",
+							"value": 0
+						},
+						{
+							"name": "LowEventPriority",
+							"value": -1
+						}
+					]
+				},
+				{
+					"name": "SizeHint",
+					"values": [
+						{
+							"name": "MinimumSize",
+							"value": 0
+						},
+						{
+							"name": "PreferredSize",
+							"value": 1
+						},
+						{
+							"name": "MaximumSize",
+							"value": 2
+						},
+						{
+							"name": "MinimumDescent",
+							"value": 3
+						},
+						{
+							"name": "NSizeHints",
+							"value": 4
+						}
+					]
+				},
+				{
+					"name": "WindowFrameSection",
+					"values": [
+						{
+							"name": "NoSection",
+							"value": 0
+						},
+						{
+							"name": "LeftSection",
+							"value": 1
+						},
+						{
+							"name": "TopLeftSection",
+							"value": 2
+						},
+						{
+							"name": "TopSection",
+							"value": 3
+						},
+						{
+							"name": "TopRightSection",
+							"value": 4
+						},
+						{
+							"name": "RightSection",
+							"value": 5
+						},
+						{
+							"name": "BottomRightSection",
+							"value": 6
+						},
+						{
+							"name": "BottomSection",
+							"value": 7
+						},
+						{
+							"name": "BottomLeftSection",
+							"value": 8
+						},
+						{
+							"name": "TitleBarArea",
+							"value": 9
+						}
+					]
+				},
+				{
+					"name": "Initialization",
+					"values": [
+						{
+							"name": "Uninitialized",
+							"value": 0
+						}
+					]
+				},
+				{
+					"name": "CoordinateSystem",
+					"values": [
+						{
+							"name": "DeviceCoordinates",
+							"value": 0
+						},
+						{
+							"name": "LogicalCoordinates",
+							"value": 1
+						}
+					]
+				},
+				{
+					"name": "TouchPointState",
+					"values": [
+						{
+							"name": "TouchPointPressed",
+							"value": 1
+						},
+						{
+							"name": "TouchPointMoved",
+							"value": 2
+						},
+						{
+							"name": "TouchPointStationary",
+							"value": 4
+						},
+						{
+							"name": "TouchPointReleased",
+							"value": 8
+						}
+					]
+				},
+				{
+					"name": "GestureState",
+					"values": [
+						{
+							"name": "NoGesture",
+							"value": 0
+						},
+						{
+							"name": "GestureStarted",
+							"value": 1
+						},
+						{
+							"name": "GestureUpdated",
+							"value": 2
+						},
+						{
+							"name": "GestureFinished",
+							"value": 3
+						},
+						{
+							"name": "GestureCanceled",
+							"value": 4
+						}
+					]
+				},
+				{
+					"name": "GestureType",
+					"values": [
+						{
+							"name": "TapGesture",
+							"value": 1
+						},
+						{
+							"name": "TapAndHoldGesture",
+							"value": 2
+						},
+						{
+							"name": "PanGesture",
+							"value": 3
+						},
+						{
+							"name": "PinchGesture",
+							"value": 4
+						},
+						{
+							"name": "SwipeGesture",
+							"value": 5
+						},
+						{
+							"name": "CustomGesture",
+							"value": 256
+						},
+						{
+							"name": "LastGestureType",
+							"value": -1
+						}
+					]
+				},
+				{
+					"name": "GestureFlag",
+					"values": [
+						{
+							"name": "DontStartGestureOnChildren",
+							"value": 1
+						},
+						{
+							"name": "ReceivePartialGestures",
+							"value": 2
+						},
+						{
+							"name": "IgnoredGesturesPropagateToParent",
+							"value": 4
+						}
+					]
+				},
+				{
+					"name": "NativeGestureType",
+					"values": [
+						{
+							"name": "BeginNativeGesture",
+							"value": 0
+						},
+						{
+							"name": "EndNativeGesture",
+							"value": 1
+						},
+						{
+							"name": "PanNativeGesture",
+							"value": 2
+						},
+						{
+							"name": "ZoomNativeGesture",
+							"value": 3
+						},
+						{
+							"name": "SmartZoomNativeGesture",
+							"value": 4
+						},
+						{
+							"name": "RotateNativeGesture",
+							"value": 5
+						},
+						{
+							"name": "SwipeNativeGesture",
+							"value": 6
+						}
+					]
+				},
+				{
+					"name": "NavigationMode",
+					"values": [
+						{
+							"name": "NavigationModeNone",
+							"value": 0
+						},
+						{
+							"name": "NavigationModeKeypadTabOrder",
+							"value": 1
+						},
+						{
+							"name": "NavigationModeKeypadDirectional",
+							"value": 2
+						},
+						{
+							"name": "NavigationModeCursorAuto",
+							"value": 3
+						},
+						{
+							"name": "NavigationModeCursorForceVisible",
+							"value": 4
+						}
+					]
+				},
+				{
+					"name": "CursorMoveStyle",
+					"values": [
+						{
+							"name": "LogicalMoveStyle",
+							"value": 0
+						},
+						{
+							"name": "VisualMoveStyle",
+							"value": 1
+						}
+					]
+				},
+				{
+					"name": "TimerType",
+					"values": [
+						{
+							"name": "PreciseTimer",
+							"value": 0
+						},
+						{
+							"name": "CoarseTimer",
+							"value": 1
+						},
+						{
+							"name": "VeryCoarseTimer",
+							"value": 2
+						}
+					]
+				},
+				{
+					"name": "ScrollPhase",
+					"values": [
+						{
+							"name": "ScrollBegin",
+							"value": 1
+						},
+						{
+							"name": "ScrollUpdate",
+							"value": 2
+						},
+						{
+							"name": "ScrollEnd",
+							"value": 3
+						}
+					]
+				},
+				{
+					"name": "MouseEventSource",
+					"values": [
+						{
+							"name": "MouseEventNotSynthesized",
+							"value": 0
+						},
+						{
+							"name": "MouseEventSynthesizedBySystem",
+							"value": 1
+						},
+						{
+							"name": "MouseEventSynthesizedByQt",
+							"value": 2
+						}
+					]
+				},
+				{
+					"name": "MouseEventFlag",
+					"values": [
+						{
+							"name": "MouseEventCreatedDoubleClick",
+							"value": 1
+						},
+						{
+							"name": "MouseEventFlagMask",
+							"value": 255
+						}
+					]
 				}
-			]
+			],
+			"name": "Qt"
 		}
 	],
 	"typeCategories": {
