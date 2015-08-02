@@ -65,7 +65,7 @@ stopWidgetEngine()
 }
 
 qint32
-registerEventRefs(LVUserEventRef* voidRef, LVUserEventRef* boolRef, LVUserEventRef* i32Ref, LVUserEventRef* stringRef)
+registerEventRefs(LVUserEventRef* voidRef, LVUserEventRef* boolRef, LVUserEventRef* i32Ref, LVUserEventRef* dblRef, LVUserEventRef* stringRef)
 {
 	if (!bridge)
 		return LQ::EngineNotRunningError;
@@ -73,6 +73,7 @@ registerEventRefs(LVUserEventRef* voidRef, LVUserEventRef* boolRef, LVUserEventR
 	bridge->registerEventRef_void(voidRef);
 	bridge->registerEventRef_bool(boolRef);
 	bridge->registerEventRef_i32(i32Ref);
+	bridge->registerEventRef_dbl(dblRef);
 	bridge->registerEventRef_string(stringRef);
 	return LQ::NoError;
 }
@@ -109,6 +110,17 @@ connect_i32(quint32 _instance, const char* encodedSignal)
 
 	QObject::connect((QObject*)_instance, encodedSignal,
 			bridge, SLOT(postLVEvent_i32(int)));
+
+	return LQ::NoError;
+}
+qint32
+connect_dbl(quintptr _instance, const char* encodedSignal)
+{
+	if (!bridge)
+		return LQ::EngineNotRunningError;
+
+	QObject::connect((QObject*)_instance, encodedSignal,
+			bridge, SLOT(postLVEvent_dbl(double)));
 
 	return LQ::NoError;
 }
