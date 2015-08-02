@@ -21,6 +21,7 @@ public:
 	void registerEventRef_void(LVUserEventRef* ref)   {ref_void   = *ref;}
 	void registerEventRef_bool(LVUserEventRef* ref)   {ref_bool   = *ref;}
 	void registerEventRef_i32(LVUserEventRef* ref)    {ref_i32    = *ref;}
+	void registerEventRef_dbl(LVUserEventRef* ref)    {ref_dbl    = *ref;}
 	void registerEventRef_string(LVUserEventRef* ref) {ref_string = *ref;}
 
 public slots:
@@ -35,6 +36,10 @@ public slots:
 	void postLVEvent_i32(int value) {
 		SignalPacket<qint32> packet{(quint64)sender(), senderSignalIndex(), value};
 		PostLVUserEvent(ref_i32, &packet);
+	}
+	void postLVEvent_dbl(double value) {
+		SignalPacket<double> packet{(quint64)sender(), senderSignalIndex(), value};
+		PostLVUserEvent(ref_dbl, &packet);
 	}
 	void postLVEvent_string(const QString& value) {
 		const int lStrHeaderSize = 4;
@@ -70,6 +75,7 @@ private:
 	LVUserEventRef ref_void;
 	LVUserEventRef ref_bool;
 	LVUserEventRef ref_i32;
+	LVUserEventRef ref_dbl;
 	LVUserEventRef ref_string;
 };
 
