@@ -76,7 +76,6 @@
 		<Item Name="Delete Temporary Template Directory.vi" Type="VI" URL="../Delete Temporary Template Directory.vi"/>
 		<Item Name="Generate and Save Method VIs.vi" Type="VI" URL="../Generate and Save Method VIs.vi"/>
 		<Item Name="Get LVClasses.vi" Type="VI" URL="../Get LVClasses.vi"/>
-		<Item Name="Main - Independent.vi" Type="VI" URL="../Main - Independent.vi"/>
 		<Item Name="Main.vi" Type="VI" URL="../Main.vi"/>
 		<Item Name="Parse Module Specifications.vi" Type="VI" URL="../Parse Module Specifications.vi"/>
 		<Item Name="Populate Module.vi" Type="VI" URL="../Populate Module.vi"/>
