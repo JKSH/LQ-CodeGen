@@ -64,13 +64,13 @@
 		<Item Name="Create Cluster Typedefs.vi" Type="VI" URL="../Create Cluster Typedefs.vi"/>
 		<Item Name="Create Enum Typedefs.vi" Type="VI" URL="../Create Enum Typedefs.vi"/>
 		<Item Name="Create Identity Classes.vi" Type="VI" URL="../Create Identity Classes.vi"/>
-		<Item Name="Create Kernel Module LVLib.vi" Type="VI" URL="../Create Kernel Module LVLib.vi"/>
+		<Item Name="Create Kernel Module.vi" Type="VI" URL="../Create Kernel Module.vi"/>
 		<Item Name="Create LVClass Control.vi" Type="VI" URL="../Create LVClass Control.vi"/>
 		<Item Name="Create Method VIs.vi" Type="VI" URL="../Create Method VIs.vi"/>
 		<Item Name="Create Namespaces.vi" Type="VI" URL="../Create Namespaces.vi"/>
 		<Item Name="Create New Class.vi" Type="VI" URL="../Create New Class.vi"/>
 		<Item Name="Create Opaque Structs.vi" Type="VI" URL="../Create Opaque Structs.vi"/>
-		<Item Name="Create Satellite Module LVLib.vi" Type="VI" URL="../Create Satellite Module LVLib.vi"/>
+		<Item Name="Create Satellite Module.vi" Type="VI" URL="../Create Satellite Module.vi"/>
 		<Item Name="Create Temporary Template Directory.vi" Type="VI" URL="../Create Temporary Template Directory.vi"/>
 		<Item Name="Delete Template VIs.vi" Type="VI" URL="../Delete Template VIs.vi"/>
 		<Item Name="Delete Temporary Template Directory.vi" Type="VI" URL="../Delete Temporary Template Directory.vi"/>
