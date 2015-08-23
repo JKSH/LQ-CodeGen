@@ -45,6 +45,7 @@
 				<Item Name="TypeConv_Register Existing Complex Types.vi" Type="VI" URL="../Param Writers/TypeConv/TypeConv_Register Existing Complex Types.vi"/>
 				<Item Name="TypeConv_Register Existing Enums.vi" Type="VI" URL="../Param Writers/TypeConv/TypeConv_Register Existing Enums.vi"/>
 				<Item Name="TypeConv_Register Existing Identities.vi" Type="VI" URL="../Param Writers/TypeConv/TypeConv_Register Existing Identities.vi"/>
+				<Item Name="TypeConv_Register Existing Namespaces.vi" Type="VI" URL="../Param Writers/TypeConv/TypeConv_Register Existing Namespaces.vi"/>
 				<Item Name="TypeConv_Register Existing Opaque Structs.vi" Type="VI" URL="../Param Writers/TypeConv/TypeConv_Register Existing Opaque Structs.vi"/>
 			</Item>
 			<Item Name="Abstract Param Writer.lvclass" Type="LVClass" URL="../Param Writers/Abstract Param Writer/Abstract Param Writer.lvclass"/>
@@ -83,7 +84,6 @@
 		<Item Name="Register Projections.vi" Type="VI" URL="../Register Projections.vi"/>
 		<Item Name="Save Method VIs.vi" Type="VI" URL="../Save Method VIs.vi"/>
 		<Item Name="Set Inheritances.vi" Type="VI" URL="../Set Inheritances.vi"/>
-		<Item Name="TypeConv_Register Existing Namespaces.vi" Type="VI" URL="../Param Writers/TypeConv/TypeConv_Register Existing Namespaces.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="user.lib" Type="Folder">
 				<Item Name="Array of VData to VArray__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/lvdata/lvdata.llb/Array of VData to VArray__ogtk.vi"/>
