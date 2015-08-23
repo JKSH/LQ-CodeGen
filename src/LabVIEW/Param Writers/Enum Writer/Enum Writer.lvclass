@@ -33,6 +33,15 @@
 			<Property Name="NI.ClassItem.State" Type="Int">1342972416</Property>
 		</Item>
 	</Item>
+	<Item Name="Read Typedef Path.vi" Type="VI" URL="../Read Typedef Path.vi">
+		<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!$@!!!!"1!%!!!!&amp;E!S`````QR5?8"F:'6G)&amp;"B&gt;'A!!#Z!=!!?!!!6%U6O&gt;7UA6X*J&gt;'6S,GRW9WRB=X-!$U6O&gt;7UA6X*J&gt;'6S)'^V&gt;!!O1(!!(A!!&amp;2.&amp;&lt;H6N)&amp;&gt;S;82F=CZM&gt;G.M98.T!!Z&amp;&lt;H6N)&amp;&gt;S;82F=C"J&lt;A!!91$Q!!Q!!!!!!!%!!A!!!!!!!!!!!!!!!!!!!!-#!!"Y!!!!!!!!!!!!!!E!!!!.#Q!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"!!!!U!!!!-!!!!!!!!!!!!!!%!"!!!!!!</Property>
+		<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
+		<Property Name="NI.ClassItem.Flags" Type="Int">16777216</Property>
+		<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">true</Property>
+		<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
+		<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
+		<Property Name="NI.ClassItem.State" Type="Int">1107820544</Property>
+	</Item>
 	<Item Name="Write Typedef Path.vi" Type="VI" URL="../Write Typedef Path.vi">
 		<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!%]!!!!#A!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!"!!!!#Z!=!!?!!!6%U6O&gt;7UA6X*J&gt;'6S,GRW9WRB=X-!$U6O&gt;7UA6X*J&gt;'6S)'^V&gt;!!A1&amp;!!!Q!!!!%!!B.F=H*P=C"J&lt;C!I&lt;G]A:8*S&lt;X)J!":!-P````]-6(FQ:72F:C"1982I!!!O1(!!(A!!&amp;2.&amp;&lt;H6N)&amp;&gt;S;82F=CZM&gt;G.M98.T!!Z&amp;&lt;H6N)&amp;&gt;S;82F=C"J&lt;A!!91$Q!!Q!!Q!%!!1!"1!%!!1!"!!%!!9!"!!(!!A#!!"Y!!!.#!!!!!!!!!!!!!!.#Q!!!!!!!!!!!!!!!!!!!!!!!!A!!!!!!!!!%!!!!")!!!U!!!!-!!!!!!!!!!!!!!%!#1!!!!!</Property>
 		<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
