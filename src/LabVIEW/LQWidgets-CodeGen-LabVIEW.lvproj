@@ -45,6 +45,7 @@
 				<Item Name="TypeConv_Register Existing Complex Types.vi" Type="VI" URL="../Param Writers/TypeConv/TypeConv_Register Existing Complex Types.vi"/>
 				<Item Name="TypeConv_Register Existing Enums.vi" Type="VI" URL="../Param Writers/TypeConv/TypeConv_Register Existing Enums.vi"/>
 				<Item Name="TypeConv_Register Existing Identities.vi" Type="VI" URL="../Param Writers/TypeConv/TypeConv_Register Existing Identities.vi"/>
+				<Item Name="TypeConv_Register Existing Namespaces.vi" Type="VI" URL="../Param Writers/TypeConv/TypeConv_Register Existing Namespaces.vi"/>
 				<Item Name="TypeConv_Register Existing Opaque Structs.vi" Type="VI" URL="../Param Writers/TypeConv/TypeConv_Register Existing Opaque Structs.vi"/>
 			</Item>
 			<Item Name="Abstract Param Writer.lvclass" Type="LVClass" URL="../Param Writers/Abstract Param Writer/Abstract Param Writer.lvclass"/>
@@ -63,19 +64,18 @@
 		<Item Name="Create Cluster Typedefs.vi" Type="VI" URL="../Create Cluster Typedefs.vi"/>
 		<Item Name="Create Enum Typedefs.vi" Type="VI" URL="../Create Enum Typedefs.vi"/>
 		<Item Name="Create Identity Classes.vi" Type="VI" URL="../Create Identity Classes.vi"/>
-		<Item Name="Create Kernel Module LVLib.vi" Type="VI" URL="../Create Kernel Module LVLib.vi"/>
+		<Item Name="Create Kernel Module.vi" Type="VI" URL="../Create Kernel Module.vi"/>
 		<Item Name="Create LVClass Control.vi" Type="VI" URL="../Create LVClass Control.vi"/>
 		<Item Name="Create Method VIs.vi" Type="VI" URL="../Create Method VIs.vi"/>
 		<Item Name="Create Namespaces.vi" Type="VI" URL="../Create Namespaces.vi"/>
 		<Item Name="Create New Class.vi" Type="VI" URL="../Create New Class.vi"/>
 		<Item Name="Create Opaque Structs.vi" Type="VI" URL="../Create Opaque Structs.vi"/>
-		<Item Name="Create Satellite Module LVLib.vi" Type="VI" URL="../Create Satellite Module LVLib.vi"/>
+		<Item Name="Create Satellite Module.vi" Type="VI" URL="../Create Satellite Module.vi"/>
 		<Item Name="Create Temporary Template Directory.vi" Type="VI" URL="../Create Temporary Template Directory.vi"/>
 		<Item Name="Delete Template VIs.vi" Type="VI" URL="../Delete Template VIs.vi"/>
 		<Item Name="Delete Temporary Template Directory.vi" Type="VI" URL="../Delete Temporary Template Directory.vi"/>
 		<Item Name="Generate and Save Method VIs.vi" Type="VI" URL="../Generate and Save Method VIs.vi"/>
 		<Item Name="Get LVClasses.vi" Type="VI" URL="../Get LVClasses.vi"/>
-		<Item Name="Main - Independent.vi" Type="VI" URL="../Main - Independent.vi"/>
 		<Item Name="Main.vi" Type="VI" URL="../Main.vi"/>
 		<Item Name="Parse Module Specifications.vi" Type="VI" URL="../Parse Module Specifications.vi"/>
 		<Item Name="Populate Module.vi" Type="VI" URL="../Populate Module.vi"/>
@@ -83,7 +83,6 @@
 		<Item Name="Register Projections.vi" Type="VI" URL="../Register Projections.vi"/>
 		<Item Name="Save Method VIs.vi" Type="VI" URL="../Save Method VIs.vi"/>
 		<Item Name="Set Inheritances.vi" Type="VI" URL="../Set Inheritances.vi"/>
-		<Item Name="TypeConv_Register Existing Namespaces.vi" Type="VI" URL="../Param Writers/TypeConv/TypeConv_Register Existing Namespaces.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="user.lib" Type="Folder">
 				<Item Name="Array of VData to VArray__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/lvdata/lvdata.llb/Array of VData to VArray__ogtk.vi"/>
