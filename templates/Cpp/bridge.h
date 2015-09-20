@@ -4,6 +4,7 @@
 #include <QtWidgets>
 #include <QtSvg>
 #include <QtWinExtras>
+#include "lqapplication.h"
 #include "utils.h"
 
 #include <qwt_thermo.h>

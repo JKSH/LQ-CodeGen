@@ -148,13 +148,18 @@ ClassWriter::funcCallBody_inDll(const Method &method)
 			"\t\t\t"          "\"" + method.qualifiedName("_") + "\","  "\n"
 			"\t\t\t"          "Qt::BlockingQueuedConnection,"           "\n"
 			""                "%RETURN_LINE_INVOKE%"
+			""                "%CLASSNAME_LINE_INVOKE%"
 			""                "%INSTANCE_LINE_INVOKE%"
 			""                "%INPUT_LINES_INVOKE%";
 
+	QString thisClass = method.className();
+	if ( method.isConstructor() && TypeConv::category(thisClass) == TypeConv::QObject )
+		body_dll.replace("%CLASSNAME_LINE_INVOKE%", "\t\t\tQ_ARG(const char*, _className),\n");
+	else
+		body_dll.replace("%CLASSNAME_LINE_INVOKE%", "");
+
 	if (!method.isConstructor() && !method.isStaticMember())
 	{
-		QString thisClass = method.className();
-
 		QString conversion = TypeConv::convCode_dll2Bridge(thisClass);
 		conversion.replace("_qtType_", TypeConv::instanceType_bridge(thisClass));
 		conversion.replace("_dllValue_", "_instance");
@@ -246,8 +251,10 @@ ClassWriter::funcCallBody_inBridge(const Method &method)
 			wrapper = "return serialize(%METHOD_CALL%);";
 			break;
 		case TypeConv::SimpleIdentity:
-		case TypeConv::QObject:
 			wrapper = "return new %METHOD_CALL%;";
+			break;
+		case TypeConv::QObject:
+			wrapper = "return newLQObject<%CLASS%>(%PARAMS%);";
 			break;
 		default:
 			qWarning() << "WARNING: ClassWriter::funcCallBody_inBridge(): This type cannot have constructors:" << method.className();
@@ -324,6 +331,8 @@ ClassWriter::funcCallBody_inBridge(const Method &method)
 
 	QString methodCall = method.name() + "(%PARAMS%)";
 	QString params;
+	if (method.isConstructor() && classCategory == TypeConv::QObject)
+		params += "_className, ";
 	for (const Param& param : method.paramList_raw())
 	{
 		QByteArray normType = QMetaObject::normalizedType(param.type.toUtf8());
@@ -335,9 +344,9 @@ ClassWriter::funcCallBody_inBridge(const Method &method)
 	}
 	params.chop(2);
 
-	methodCall.replace("%PARAMS%", params);
 	wrapper.replace("%CLASS%", method.className());
 	wrapper.replace("%METHOD_CALL%", methodCall);
+	wrapper.replace("%PARAMS%", params);
 
 	return wrapper;
 }

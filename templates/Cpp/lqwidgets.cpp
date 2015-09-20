@@ -17,7 +17,7 @@ run()
 	QByteArray     argv0("LQWidgets.dll\0");
 	QVector<char*> argv{argv0.data(), nullptr};
 
-	QApplication app(argc, argv.data());
+	LQApplication app(argc, argv.data());
 	app.setQuitOnLastWindowClosed(false); // Only quit explicitly when commanded from LabVIEW
 
 	// TODO: Find a way to track all top-level widgets for deletion. CANNOT parent to qApp!
