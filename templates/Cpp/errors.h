@@ -16,7 +16,8 @@ namespace LQ
 		*/
 		NoError = 0,
 		EngineNotRunningError = -8000,
-		EngineAlreadyRunningError = -8001
+		EngineAlreadyRunningError = -8001,
+		NotAnLQObjectError = -8002
 	};
 }
 

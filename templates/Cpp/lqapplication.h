@@ -4,6 +4,8 @@
 #include <private/qmetaobjectbuilder_p.h>
 #include <QApplication>
 #include <QVector>
+#include "errors.h"
+#include "utils.h"
 
 class LQApplication : public QApplication
 {
@@ -23,6 +25,8 @@ public:
 	BindingStatus bindingStatus(const QByteArray& className) const;
 	int initializeBinding(const QByteArray& className, QMetaObject* prototype);
 
+	Q_INVOKABLE LQ::Error finalizeBinding(QObject* _instance, LVArray<LStrHandle>** signalList, LStrHandle superClassName);
+
 	int lqIndex(const QByteArray& className) const
 	{ return bindingMap.indexOf(className); }
 
@@ -33,6 +37,7 @@ private:
 	QByteArrayList bindingMap;
 	QVector<bool> bindingFinalists;
 	QVector<QMetaObject*> lqMetaObjects;
+	QVector<QMetaObject*> staleMetaObjects;
 };
 
 /*!

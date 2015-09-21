@@ -136,6 +136,24 @@ connect_string(quintptr _instance, const char* encodedSignal)
 	return LQ::NoError;
 }
 
+qint32
+registerLQObject(quintptr _instance, LVArray<LStrHandle>** signalList, LStrHandle superClassName)
+{
+	if (!bridge)
+		return LQ::EngineNotRunningError;
+
+	LQ::Error errorCode;
+	QMetaObject::invokeMethod(qApp,
+				"finalizeBinding",
+				Qt::BlockingQueuedConnection,
+				Q_RETURN_ARG(LQ::Error, errorCode),
+				Q_ARG(QObject*, (QObject*)_instance),
+				Q_ARG(LVArray<LStrHandle>**, signalList),
+				Q_ARG(LStrHandle, superClassName));
+
+	return errorCode;
+}
+
 /*!
 	Finds the value returned by QObject::senderSignalIndex() as called
 	from a slot that was executed in response to a signal emission.
