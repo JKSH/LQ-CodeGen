@@ -137,6 +137,97 @@ connect_string(quintptr _instance, const char* encodedSignal)
 }
 
 qint32
+emit_void(quintptr _instance, const char* normalizedSignal)
+{
+	// ASSUMPTION: (All "emit" functions) Signal parameters are compatible
+
+	if (!bridge)
+		return LQ::EngineNotRunningError;
+
+	auto obj = reinterpret_cast<QObject*>(_instance);
+	auto metaObj = obj->metaObject();
+	int signalIndex = metaObj->indexOfSignal(normalizedSignal);
+	if (signalIndex == -1)
+		return LQ::InvalidSignalError;
+
+	// Use static variables to avoid recreating them each call
+	static bool dummy = false;
+	static void* argv[]{nullptr, &dummy};
+	QMetaObject::activate(obj, signalIndex, reinterpret_cast<void**>(argv));
+	return LQ::NoError;
+}
+
+qint32
+emit_bool(quintptr _instance, const char* normalizedSignal, bool* data)
+{
+	if (!bridge)
+		return LQ::EngineNotRunningError;
+
+	auto obj = reinterpret_cast<QObject*>(_instance);
+	auto metaObj = obj->metaObject();
+	int signalIndex = metaObj->indexOfSignal(normalizedSignal);
+	if (signalIndex == -1)
+		return LQ::InvalidSignalError;
+
+	void* argv[]{nullptr, data};
+	QMetaObject::activate(obj, signalIndex, reinterpret_cast<void**>(argv));
+	return LQ::NoError;
+}
+
+qint32
+emit_i32(quintptr _instance, const char* normalizedSignal, qint32* data)
+{
+	if (!bridge)
+		return LQ::EngineNotRunningError;
+
+	auto obj = reinterpret_cast<QObject*>(_instance);
+	auto metaObj = obj->metaObject();
+	int signalIndex = metaObj->indexOfSignal(normalizedSignal);
+	if (signalIndex == -1)
+		return LQ::InvalidSignalError;
+
+	void* argv[]{nullptr, data};
+	QMetaObject::activate(obj, signalIndex, reinterpret_cast<void**>(argv));
+	return LQ::NoError;
+}
+
+qint32
+emit_dbl(quintptr _instance, const char* normalizedSignal, double* data)
+{
+	if (!bridge)
+		return LQ::EngineNotRunningError;
+
+	auto obj = reinterpret_cast<QObject*>(_instance);
+	auto metaObj = obj->metaObject();
+	int signalIndex = metaObj->indexOfSignal(normalizedSignal);
+	if (signalIndex == -1)
+		return LQ::InvalidSignalError;
+
+	void* argv[]{nullptr, data};
+	QMetaObject::activate(obj, signalIndex, reinterpret_cast<void**>(argv));
+	return LQ::NoError;
+}
+
+qint32
+emit_string(quintptr _instance, const char* normalizedSignal, LStrHandle data)
+{
+	if (!bridge)
+		return LQ::EngineNotRunningError;
+
+	auto obj = reinterpret_cast<QObject*>(_instance);
+	auto metaObj = obj->metaObject();
+	int signalIndex = metaObj->indexOfSignal(normalizedSignal);
+	if (signalIndex == -1)
+		return LQ::InvalidSignalError;
+
+	// NOTE: Wasted operations! Converting from LStr to QString to LStr again
+	QString str = QString::fromUtf8(copyFromLStr(data));
+	void* argv[]{nullptr, &str};
+	QMetaObject::activate(obj, signalIndex, reinterpret_cast<void**>(argv));
+	return LQ::NoError;
+}
+
+qint32
 registerLQObject(quintptr _instance, LVArray<LStrHandle>** signalList, LStrHandle superClassName)
 {
 	if (!bridge)

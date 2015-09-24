@@ -17,7 +17,8 @@ namespace LQ
 		NoError = 0,
 		EngineNotRunningError = -8000,
 		EngineAlreadyRunningError = -8001,
-		NotAnLQObjectError = -8002
+		NotAnLQObjectError = -8002,
+		InvalidSignalError = -8003
 	};
 }
 
