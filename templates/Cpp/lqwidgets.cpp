@@ -178,6 +178,65 @@ connect_bySignature_qtMethod(QMetaObject::Connection* _retVal, quintptr sender, 
 }
 
 qint32
+activate_void(quintptr _instance, qint32 signalIndex)
+{
+	if (!bridge)
+		return LQ::EngineNotRunningError;
+
+	// Use static variables to avoid recreating them each call
+	static bool dummy = false;
+	static void* argv[]{nullptr, &dummy};
+	QMetaObject::activate((QObject*)_instance, signalIndex, reinterpret_cast<void**>(argv));
+	return LQ::NoError;
+}
+
+qint32
+activate_bool(quintptr _instance, qint32 signalIndex, bool* data)
+{
+	if (!bridge)
+		return LQ::EngineNotRunningError;
+
+	void* argv[]{nullptr, data};
+	QMetaObject::activate((QObject*)_instance, signalIndex, reinterpret_cast<void**>(argv));
+	return LQ::NoError;
+}
+
+qint32
+activate_i32(quintptr _instance, qint32 signalIndex, qint32* data)
+{
+	if (!bridge)
+		return LQ::EngineNotRunningError;
+
+	void* argv[]{nullptr, data};
+	QMetaObject::activate((QObject*)_instance, signalIndex, reinterpret_cast<void**>(argv));
+	return LQ::NoError;
+}
+
+qint32
+activate_dbl(quintptr _instance, qint32 signalIndex, double* data)
+{
+	if (!bridge)
+		return LQ::EngineNotRunningError;
+
+	void* argv[]{nullptr, data};
+	QMetaObject::activate((QObject*)_instance, signalIndex, reinterpret_cast<void**>(argv));
+	return LQ::NoError;
+}
+
+qint32
+activate_string(quintptr _instance, qint32 signalIndex, LStrHandle data)
+{
+	if (!bridge)
+		return LQ::EngineNotRunningError;
+
+	// NOTE: Wasted operations! Converting from LStr to QString to LStr again
+	QString str = QString::fromUtf8(copyFromLStr(data));
+	void* argv[]{nullptr, &str};
+	QMetaObject::activate((QObject*)_instance, signalIndex, reinterpret_cast<void**>(argv));
+	return LQ::NoError;
+}
+
+qint32
 emit_void(quintptr _instance, const char* normalizedSignal)
 {
 	// ASSUMPTION: (All "emit" functions) Signal parameters are compatible
@@ -191,11 +250,7 @@ emit_void(quintptr _instance, const char* normalizedSignal)
 	if (signalIndex == -1)
 		return LQ::InvalidSignalError;
 
-	// Use static variables to avoid recreating them each call
-	static bool dummy = false;
-	static void* argv[]{nullptr, &dummy};
-	QMetaObject::activate(obj, signalIndex, reinterpret_cast<void**>(argv));
-	return LQ::NoError;
+	return activate_void(_instance, signalIndex);
 }
 
 qint32
@@ -210,9 +265,7 @@ emit_bool(quintptr _instance, const char* normalizedSignal, bool* data)
 	if (signalIndex == -1)
 		return LQ::InvalidSignalError;
 
-	void* argv[]{nullptr, data};
-	QMetaObject::activate(obj, signalIndex, reinterpret_cast<void**>(argv));
-	return LQ::NoError;
+	return activate_bool(_instance, signalIndex, data);
 }
 
 qint32
@@ -227,9 +280,7 @@ emit_i32(quintptr _instance, const char* normalizedSignal, qint32* data)
 	if (signalIndex == -1)
 		return LQ::InvalidSignalError;
 
-	void* argv[]{nullptr, data};
-	QMetaObject::activate(obj, signalIndex, reinterpret_cast<void**>(argv));
-	return LQ::NoError;
+	return activate_i32(_instance, signalIndex, data);
 }
 
 qint32
@@ -244,9 +295,7 @@ emit_dbl(quintptr _instance, const char* normalizedSignal, double* data)
 	if (signalIndex == -1)
 		return LQ::InvalidSignalError;
 
-	void* argv[]{nullptr, data};
-	QMetaObject::activate(obj, signalIndex, reinterpret_cast<void**>(argv));
-	return LQ::NoError;
+	return activate_dbl(_instance, signalIndex, data);
 }
 
 qint32
@@ -261,11 +310,7 @@ emit_string(quintptr _instance, const char* normalizedSignal, LStrHandle data)
 	if (signalIndex == -1)
 		return LQ::InvalidSignalError;
 
-	// NOTE: Wasted operations! Converting from LStr to QString to LStr again
-	QString str = QString::fromUtf8(copyFromLStr(data));
-	void* argv[]{nullptr, &str};
-	QMetaObject::activate(obj, signalIndex, reinterpret_cast<void**>(argv));
-	return LQ::NoError;
+	return activate_string(_instance, signalIndex, data);
 }
 
 qint32
