@@ -370,4 +370,31 @@ findSignalIndex(qint64* _retVal, quintptr _instance, const char* normalizedSigna
 	return LQ::NoError;
 }
 
+/*!
+	This function is intended to be called by LabVIEW when preparing to make
+	a signal-signal connection using signature strings only.
+
+	Finds the index of \a normalizedSignal as reported by QMetaObject::indexOfSignal(), and
+	finds whether or not the \a normalizedSignal is dynamic (i.e. LabVIEW-defined).
+
+	Returns LQ::InvalidSignalError if the signal doesn't exist.
+*/
+qint32
+findSignalInfo(qint32* _retVal_signalIndex, bool* _retVal_isDynamic, quintptr _instance, const char* normalizedSignal)
+{
+	if (!bridge)
+		return LQ::EngineNotRunningError;
+
+	auto obj = reinterpret_cast<QObject*>(_instance);
+	*_retVal_signalIndex = obj->metaObject()->indexOfSignal(normalizedSignal);
+
+	if (*_retVal_signalIndex < 0)
+		return LQ::InvalidSignalError;
+
+	// ASSUMPTION: All native C++ signals are recorded in the QObject's static meta object,
+	// but all LabVIEW-defined signals are not.
+	*_retVal_isDynamic = (*_retVal_signalIndex) >= obj->staticMetaObject.methodCount();
+	return LQ::NoError;
+}
+
 //[TEMPLATE]
