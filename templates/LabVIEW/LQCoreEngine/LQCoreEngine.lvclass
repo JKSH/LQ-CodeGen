@@ -112,15 +112,6 @@
 			<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
 			<Property Name="NI.ClassItem.State" Type="Int">1082130960</Property>
 		</Item>
-		<Item Name="Connect_SignatureIn_QtSignal.vi" Type="VI" URL="../_Polymorphic Instances/Connect_SignatureIn_QtSignal.vi">
-			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!'=!!!!$!!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AF&amp;=H*P=C"0&gt;81!"!!!!$:!=!!?!!!B$F2F&lt;8"M982F,GRW&lt;'FC%%R24W*K:7.U,GRW9WRB=X-!#F.F&lt;G2F=C"0&gt;81!!#"!-0````]75G6M98EA5WFH&lt;G&amp;M)&amp;.J:WZB&gt;(6S:1!!-%"Q!"Y!!#%/6'6N='RB&gt;'5O&lt;(:M;7)14&amp;&amp;09GJF9X1O&lt;(:D&lt;'&amp;T=Q!&amp;5G6M98E!&amp;E"1!!-!!!!"!!))28*S&lt;X)A37Y!!#*!-0````]:4X*J:WFO97QA5WFH&lt;G&amp;M)&amp;.J:WZB&gt;(6S:1!U1(!!(A!!)1Z5:7VQ&lt;'&amp;U:3ZM&gt;GRJ9B"-55^C;G6D&gt;#ZM&gt;G.M98.T!!F4:7ZE:8)A37Y!91$Q!!Q!!Q!%!!1!"1!'!!1!"Q!%!!A!"!!*!!I$!!"Y!!!.#!!!!!!!!!!!!!!.#Q!"%A!!!!!!!!!1!!!!!!!!!!I!!!!!!!!"%A!!!"!!!!U!!!!-!!!!!!!!!!!!!!%!#Q!!!!!</Property>
-			<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
-			<Property Name="NI.ClassItem.Flags" Type="Int">16777344</Property>
-			<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">true</Property>
-			<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
-			<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
-			<Property Name="NI.ClassItem.State" Type="Int">1082143248</Property>
-		</Item>
 		<Item Name="Connect_SignatureIn_QtSlot.vi" Type="VI" URL="../_Polymorphic Instances/Connect_SignatureIn_QtSlot.vi">
 			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!'1!!!!$!!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AF&amp;=H*P=C"0&gt;81!"!!!!$:!=!!?!!!B$F2F&lt;8"M982F,GRW&lt;'FC%%R24W*K:7.U,GRW9WRB=X-!#F.F&lt;G2F=C"0&gt;81!!"B!-0````]/5WRP&gt;#"4;7&gt;O982V=G5!!$2!=!!?!!!B$F2F&lt;8"M982F,GRW&lt;'FC%%R24W*K:7.U,GRW9WRB=X-!#&amp;*F9W6J&gt;G6S!!!71&amp;!!!Q!!!!%!!AB&amp;=H*P=C"*&lt;A!!'E!Q`````R"4;7&gt;O97QA5WFH&lt;G&amp;U&gt;8*F!!!U1(!!(A!!)1Z5:7VQ&lt;'&amp;U:3ZM&gt;GRJ9B"-55^C;G6D&gt;#ZM&gt;G.M98.T!!F4:7ZE:8)A37Y!91$Q!!Q!!Q!%!!1!"1!'!!1!"Q!%!!A!"!!*!!I$!!"Y!!!.#!!!!!!!!!!!!!!.#Q!"%A!!!!!!!!!1!!!!!!!!!!I!!!!!!!!"%A!!!"!!!!U!!!!-!!!!!!!!!!!!!!%!#Q!!!!!</Property>
 			<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
@@ -129,6 +120,15 @@
 			<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
 			<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
 			<Property Name="NI.ClassItem.State" Type="Int">1082143248</Property>
+		</Item>
+		<Item Name="Connect_SignatureIn_Signal.vi" Type="VI" URL="../_Polymorphic Instances/Connect_SignatureIn_Signal.vi">
+			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!'C!!!!$!!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AF&amp;=H*P=C"0&gt;81!"!!!!$:!=!!?!!!B$F2F&lt;8"M982F,GRW&lt;'FC%%R24W*K:7.U,GRW9WRB=X-!#F.F&lt;G2F=C"0&gt;81!!#"!-0````]75G6M98EA5WFH&lt;G&amp;M)&amp;.J:WZB&gt;(6S:1!!/%"Q!"Y!!#%/6'6N='RB&gt;'5O&lt;(:M;7)14&amp;&amp;09GJF9X1O&lt;(:D&lt;'&amp;T=Q!-5G6M98EA4W*K:7.U!!!71&amp;!!!Q!!!!%!!AB&amp;=H*P=C"*&lt;A!!)%!Q`````R&gt;4&lt;X6S9W5A5WFH&lt;G&amp;M)&amp;.J:WZB&gt;(6S:1!U1(!!(A!!)1Z5:7VQ&lt;'&amp;U:3ZM&gt;GRJ9B"-55^C;G6D&gt;#ZM&gt;G.M98.T!!F4:7ZE:8)A37Y!91$Q!!Q!!Q!%!!1!"1!'!!1!"Q!%!!A!"!!*!!I$!!"Y!!!.#!!!!!!!!!!!!!!.#Q!"%A!!!!!!!!!1!!!!!!!!!!I!!!!!!!!"%A!!!"!!!!U!!!!-!!!!!!!!!!!!!!%!#Q!!!!!</Property>
+			<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
+			<Property Name="NI.ClassItem.Flags" Type="Int">160</Property>
+			<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">true</Property>
+			<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
+			<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
+			<Property Name="NI.ClassItem.State" Type="Int">1082130960</Property>
 		</Item>
 	</Item>
 	<Item Name="_Private" Type="Folder">
