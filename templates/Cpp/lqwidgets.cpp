@@ -213,65 +213,6 @@ connect_bySignature(QMetaObject::Connection* _retVal, quintptr sender, const cha
 }
 
 qint32
-activate_void(quintptr _instance, qint32 signalIndex)
-{
-	if (!bridge)
-		return LQ::EngineNotRunningError;
-
-	// Use static variables to avoid recreating them each call
-	static bool dummy = false;
-	static void* argv[]{nullptr, &dummy};
-	QMetaObject::activate((QObject*)_instance, signalIndex, reinterpret_cast<void**>(argv));
-	return LQ::NoError;
-}
-
-qint32
-activate_bool(quintptr _instance, qint32 signalIndex, bool* data)
-{
-	if (!bridge)
-		return LQ::EngineNotRunningError;
-
-	void* argv[]{nullptr, data};
-	QMetaObject::activate((QObject*)_instance, signalIndex, reinterpret_cast<void**>(argv));
-	return LQ::NoError;
-}
-
-qint32
-activate_i32(quintptr _instance, qint32 signalIndex, qint32* data)
-{
-	if (!bridge)
-		return LQ::EngineNotRunningError;
-
-	void* argv[]{nullptr, data};
-	QMetaObject::activate((QObject*)_instance, signalIndex, reinterpret_cast<void**>(argv));
-	return LQ::NoError;
-}
-
-qint32
-activate_dbl(quintptr _instance, qint32 signalIndex, double* data)
-{
-	if (!bridge)
-		return LQ::EngineNotRunningError;
-
-	void* argv[]{nullptr, data};
-	QMetaObject::activate((QObject*)_instance, signalIndex, reinterpret_cast<void**>(argv));
-	return LQ::NoError;
-}
-
-qint32
-activate_string(quintptr _instance, qint32 signalIndex, LStrHandle data)
-{
-	if (!bridge)
-		return LQ::EngineNotRunningError;
-
-	// NOTE: Wasted operations! Converting from LStr to QString to LStr again
-	QString str = QString::fromUtf8(copyFromLStr(data));
-	void* argv[]{nullptr, &str};
-	QMetaObject::activate((QObject*)_instance, signalIndex, reinterpret_cast<void**>(argv));
-	return LQ::NoError;
-}
-
-qint32
 emit_void(quintptr _instance, const char* normalizedSignal)
 {
 	// ASSUMPTION: (All "emit" functions) Signal parameters are compatible
@@ -285,7 +226,11 @@ emit_void(quintptr _instance, const char* normalizedSignal)
 	if (signalIndex == -1)
 		return LQ::InvalidSignalError;
 
-	return activate_void(_instance, signalIndex);
+	// Use static variables to avoid recreating them each call
+	static bool dummy = false;
+	static void* argv[]{nullptr, &dummy};
+	QMetaObject::activate(obj, signalIndex, reinterpret_cast<void**>(argv));
+	return LQ::NoError;
 }
 
 qint32
@@ -300,7 +245,9 @@ emit_bool(quintptr _instance, const char* normalizedSignal, bool* data)
 	if (signalIndex == -1)
 		return LQ::InvalidSignalError;
 
-	return activate_bool(_instance, signalIndex, data);
+	void* argv[]{nullptr, data};
+	QMetaObject::activate(obj, signalIndex, reinterpret_cast<void**>(argv));
+	return LQ::NoError;
 }
 
 qint32
@@ -315,7 +262,9 @@ emit_i32(quintptr _instance, const char* normalizedSignal, qint32* data)
 	if (signalIndex == -1)
 		return LQ::InvalidSignalError;
 
-	return activate_i32(_instance, signalIndex, data);
+	void* argv[]{nullptr, data};
+	QMetaObject::activate(obj, signalIndex, reinterpret_cast<void**>(argv));
+	return LQ::NoError;
 }
 
 qint32
@@ -330,7 +279,9 @@ emit_dbl(quintptr _instance, const char* normalizedSignal, double* data)
 	if (signalIndex == -1)
 		return LQ::InvalidSignalError;
 
-	return activate_dbl(_instance, signalIndex, data);
+	void* argv[]{nullptr, data};
+	QMetaObject::activate(obj, signalIndex, reinterpret_cast<void**>(argv));
+	return LQ::NoError;
 }
 
 qint32
@@ -345,7 +296,11 @@ emit_string(quintptr _instance, const char* normalizedSignal, LStrHandle data)
 	if (signalIndex == -1)
 		return LQ::InvalidSignalError;
 
-	return activate_string(_instance, signalIndex, data);
+	// NOTE: Wasted operations! Converting from LStr to QString to LStr again
+	QString str = QString::fromUtf8(copyFromLStr(data));
+	void* argv[]{nullptr, &str};
+	QMetaObject::activate(obj, signalIndex, reinterpret_cast<void**>(argv));
+	return LQ::NoError;
 }
 
 qint32
@@ -402,33 +357,6 @@ findSignalIndex(qint64* _retVal, quintptr _instance, const char* normalizedSigna
 		// However, that would be the wrong index for an overridden virtual signal (not
 		// that I can think of any such cases in Qt)
 	}
-	return LQ::NoError;
-}
-
-/*!
-	This function is intended to be called by LabVIEW when preparing to make
-	a signal-signal connection using signature strings only.
-
-	Finds the index of \a normalizedSignal as reported by QMetaObject::indexOfSignal(), and
-	finds whether or not the \a normalizedSignal is dynamic (i.e. LabVIEW-defined).
-
-	Returns LQ::InvalidSignalError if the signal doesn't exist.
-*/
-qint32
-findSignalInfo(qint32* _retVal_signalIndex, bool* _retVal_isDynamic, quintptr _instance, const char* normalizedSignal)
-{
-	if (!bridge)
-		return LQ::EngineNotRunningError;
-
-	auto obj = reinterpret_cast<QObject*>(_instance);
-	*_retVal_signalIndex = obj->metaObject()->indexOfSignal(normalizedSignal);
-
-	if (*_retVal_signalIndex < 0)
-		return LQ::InvalidSignalError;
-
-	// ASSUMPTION: All native C++ signals are recorded in the QObject's static meta object,
-	// but all LabVIEW-defined signals are not.
-	*_retVal_isDynamic = (*_retVal_signalIndex) >= obj->staticMetaObject.methodCount();
 	return LQ::NoError;
 }
 

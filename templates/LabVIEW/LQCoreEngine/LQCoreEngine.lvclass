@@ -215,51 +215,6 @@
 				<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
 				<Property Name="NI.ClassItem.State" Type="Int">1082130960</Property>
 			</Item>
-			<Item Name="Relay Signal (Bool).vi" Type="VI" URL="../_Private/Signals and Slots/Relay Signal (Bool).vi">
-				<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!%\!!!!$!!%!!!!'5!)!".3:7RB?3"09GJF9X1A5G6G&lt;H6N!".!!Q!-5WFH&lt;G&amp;M)%FO:'6Y!!!;1&amp;!!!A!"!!)/68.F=C"198*B&lt;76U:8)!!""!)1J#&lt;W^M)&amp;:B&lt;(6F!!!51&amp;!!!1!%#E6W:7ZU)%2B&gt;'%!!"J!=!!:!!%!"!Z6=W6S)%6W:7ZU)&amp;*F:A!!,Q$R!!!!!!!!!!%0:8:F&lt;H2T&lt;X6S9W5O9X2M!"&gt;!"Q!-28:F&lt;H1A5W^V=G.F!!!21!=!#E6W:7ZU)&amp;2Z='5!!"&amp;!"Q!+6'FN:3"4&gt;'&amp;N=!!!(E"1!!-!"Q!)!!E228:F&lt;H1A1W^N&lt;7^O)%2B&gt;'%!0!$Q!!A!!!!!!!!!!!!$!!5!"A!+!Q!!9!!!!!!!!!!!!!!!!!!!!!!!!!A!!!!)!!!!#!!!!!A!!!!!!1!,!!!!!!</Property>
-				<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
-				<Property Name="NI.ClassItem.Flags" Type="Int">16777216</Property>
-				<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">true</Property>
-				<Property Name="NI.ClassItem.MethodScope" Type="UInt">2</Property>
-				<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
-				<Property Name="NI.ClassItem.State" Type="Int">1342710288</Property>
-			</Item>
-			<Item Name="Relay Signal (DBL).vi" Type="VI" URL="../_Private/Signals and Slots/Relay Signal (DBL).vi">
-				<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!%[!!!!$!!%!!!!'5!)!".3:7RB?3"09GJF9X1A5G6G&lt;H6N!".!!Q!-5WFH&lt;G&amp;M)%FO:'6Y!!!;1&amp;!!!A!"!!)/68.F=C"198*B&lt;76U:8)!!!^!#A!*2%*-)&amp;:B&lt;(6F!"2!5!!"!!1+28:F&lt;H1A2'&amp;U91!!'E"Q!"E!!1!%$F6T:8)A28:F&lt;H1A5G6G!!!P!0%!!!!!!!!!!1^F&gt;G6O&gt;(.P&gt;8*D:3ZD&gt;'Q!&amp;U!(!!R&amp;&gt;G6O&gt;#"4&lt;X6S9W5!!"&amp;!"Q!+28:F&lt;H1A6(FQ:1!!%5!(!!J5;7VF)&amp;.U97VQ!!!?1&amp;!!!Q!(!!A!#2&amp;&amp;&gt;G6O&gt;#"$&lt;WVN&lt;WYA2'&amp;U91!]!0!!#!!!!!!!!!!!!!-!"1!'!!I$!!"A!!!!!!!!!!!!!!!!!!!!!!!!#!!!!!A!!!!)!!!!#!!!!!!"!!M!!!!!</Property>
-				<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
-				<Property Name="NI.ClassItem.Flags" Type="Int">16777216</Property>
-				<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">true</Property>
-				<Property Name="NI.ClassItem.MethodScope" Type="UInt">2</Property>
-				<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
-				<Property Name="NI.ClassItem.State" Type="Int">1342710288</Property>
-			</Item>
-			<Item Name="Relay Signal (I32).vi" Type="VI" URL="../_Private/Signals and Slots/Relay Signal (I32).vi">
-				<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!%[!!!!$!!%!!!!'5!)!".3:7RB?3"09GJF9X1A5G6G&lt;H6N!".!!Q!-5WFH&lt;G&amp;M)%FO:'6Y!!!;1&amp;!!!A!"!!)/68.F=C"198*B&lt;76U:8)!!!^!!Q!*34-S)&amp;:B&lt;(6F!"2!5!!"!!1,28:F&lt;H1A2'&amp;U93!!'E"Q!"E!!1!%$F6T:8)A28:F&lt;H1A5G6G!!!P!0%!!!!!!!!!!1^F&gt;G6O&gt;(.P&gt;8*D:3ZD&gt;'Q!&amp;U!(!!R&amp;&gt;G6O&gt;#"4&lt;X6S9W5!!"&amp;!"Q!+28:F&lt;H1A6(FQ:1!!%5!(!!J5;7VF)&amp;.U97VQ!!!?1&amp;!!!Q!(!!A!#2&amp;&amp;&gt;G6O&gt;#"$&lt;WVN&lt;WYA2'&amp;U91!]!0!!#!!!!!!!!!!!!!-!"1!'!!I$!!"A!!!!!!!!!!!!!!!!!!!!!!!!#!!!!!A!!!!)!!!!#!!!!!!"!!M!!!!!</Property>
-				<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
-				<Property Name="NI.ClassItem.Flags" Type="Int">16777216</Property>
-				<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">true</Property>
-				<Property Name="NI.ClassItem.MethodScope" Type="UInt">2</Property>
-				<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
-				<Property Name="NI.ClassItem.State" Type="Int">1342710288</Property>
-			</Item>
-			<Item Name="Relay Signal (String).vi" Type="VI" URL="../_Private/Signals and Slots/Relay Signal (String).vi">
-				<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!&amp;"!!!!$!!%!!!!'5!)!".3:7RB?3"09GJF9X1A5G6G&lt;H6N!".!!Q!-5WFH&lt;G&amp;M)%FO:'6Y!!!;1&amp;!!!A!"!!)/68.F=C"198*B&lt;76U:8)!!":!-0````]-5X2S;7ZH)&amp;:B&lt;(6F!!!51&amp;!!!1!%#E6W:7ZU)%2B&gt;'%!!"J!=!!:!!%!"!Z6=W6S)%6W:7ZU)&amp;*F:A!!,Q$R!!!!!!!!!!%0:8:F&lt;H2T&lt;X6S9W5O9X2M!"&gt;!"Q!-28:F&lt;H1A5W^V=G.F!!!21!=!#E6W:7ZU)&amp;2Z='5!!"&amp;!"Q!+6'FN:3"4&gt;'&amp;N=!!!(E"1!!-!"Q!)!!E228:F&lt;H1A1W^N&lt;7^O)%2B&gt;'%!0!$Q!!A!!!!!!!!!!!!$!!5!"A!+!Q!!9!!!!!!!!!!!!!!!!!!!!!!!!!A!!!!)!!!!#!!!!!A!!!!!!1!,!!!!!!</Property>
-				<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
-				<Property Name="NI.ClassItem.Flags" Type="Int">16777216</Property>
-				<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">true</Property>
-				<Property Name="NI.ClassItem.MethodScope" Type="UInt">2</Property>
-				<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
-				<Property Name="NI.ClassItem.State" Type="Int">1342710288</Property>
-			</Item>
-			<Item Name="Relay Signal (Void).vi" Type="VI" URL="../_Private/Signals and Slots/Relay Signal (Void).vi">
-				<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!%\!!!!$!!%!!!!'5!)!".3:7RB?3"09GJF9X1A5G6G&lt;H6N!".!!Q!-5WFH&lt;G&amp;M)%FO:'6Y!!!;1&amp;!!!A!"!!)/68.F=C"198*B&lt;76U:8)!!""!)1J7&lt;WFE)&amp;:B&lt;(6F!!!51&amp;!!!1!%#E6W:7ZU)%2B&gt;'%!!"J!=!!:!!%!"!Z6=W6S)%6W:7ZU)&amp;*F:A!!,Q$R!!!!!!!!!!%0:8:F&lt;H2T&lt;X6S9W5O9X2M!"&gt;!"Q!-28:F&lt;H1A5W^V=G.F!!!21!=!#E6W:7ZU)&amp;2Z='5!!"&amp;!"Q!+6'FN:3"4&gt;'&amp;N=!!!(E"1!!-!"Q!)!!E228:F&lt;H1A1W^N&lt;7^O)%2B&gt;'%!0!$Q!!A!!!!!!!!!!!!$!!5!"A!+!Q!!9!!!!!!!!!!!!!!!!!!!!!!!!!A!!!!)!!!!#!!!!!A!!!!!!1!,!!!!!!</Property>
-				<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
-				<Property Name="NI.ClassItem.Flags" Type="Int">16777216</Property>
-				<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">true</Property>
-				<Property Name="NI.ClassItem.MethodScope" Type="UInt">2</Property>
-				<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
-				<Property Name="NI.ClassItem.State" Type="Int">1342710288</Property>
-			</Item>
 			<Item Name="Signal Packet_DBL.ctl" Type="VI" URL="../_Private/Signals and Slots/Signal Packet_DBL.ctl">
 				<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!#H!!!!"!!61!A!$F&amp;09GJF9X1A5G6G&lt;H6N!!!41!1!$&amp;.J:WZB&lt;#"*&lt;G2F?!!!%U!$!!R4;7&gt;O97QA6G&amp;M&gt;75!!'1!]1!!!!!!!!!$$F2F&lt;8"M982F,GRW&lt;'FC&amp;%R21W^S:56O:WFO:3ZM&gt;G.M98.T&amp;6.J:WZB&lt;#"197.L:82@2%*-,G.U&lt;!!C1&amp;!!!Q!!!!%!!B&amp;*-T)A5WFH&lt;G&amp;M)&amp;"B9WNF&gt;!!"!!-!!!!!</Property>
 				<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
