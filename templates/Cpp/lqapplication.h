@@ -40,6 +40,27 @@ private:
 	QVector<QMetaObject*> staleMetaObjects;
 };
 
+class LQSignalRelay : public QObject
+{
+	Q_OBJECT
+
+public slots:
+	// ASSUMPTION: Only one of these slots will be connected per class instance
+	void activate() const                    { activate_impl(nullptr); }
+	void activate(bool data) const           { activate_impl(&data); }
+	void activate(int data) const            { activate_impl(&data); }
+	void activate(double data) const         { activate_impl(&data); }
+	void activate(const QString& data) const { activate_impl( (void*)&data ); }
+
+public:
+	Q_INVOKABLE LQSignalRelay() : QObject() {}
+	Q_INVOKABLE void finalize(QObject* target, int signalIndex);
+
+private:
+	void activate_impl(void* dataAddr) const;
+	int signalIndex;
+};
+
 /*!
 	LQMetaBinding is used to modify a native C++ QObject when the user
 	creates a custom subclass in LabVIEW. It enables user-defined signals
