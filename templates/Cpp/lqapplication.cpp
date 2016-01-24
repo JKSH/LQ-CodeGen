@@ -1,4 +1,5 @@
 #include "lqapplication.h"
+#include <QWidget> // For QWidget destructor
 
 /*!
 	\class LQApplication
@@ -9,6 +10,13 @@
 
 LQApplication::~LQApplication()
 {
+	// We must preemptively delete all widgets here. If we leave it up
+	// to the QApplication destructor instead, it will try to query
+	// the widgets' meta objects... which won't exist anymore after this
+	// destructor is done!
+	for (auto widget : topLevelWidgets())
+		delete widget;
+
 	// QMetaObjectBuilder creates these objects using malloc(),
 	// so they must be free()'d.
 	for(auto obj : lqMetaObjects)
