@@ -16,7 +16,11 @@ namespace LQ
 		*/
 		NoError = 0,
 		EngineNotRunningError = -8000,
-		EngineAlreadyRunningError = -8001
+		EngineAlreadyRunningError = -8001,
+		NotAnLQObjectError = -8002,
+		InvalidSignalError = -8003,
+		IncompatibleArgumentsError = -8004,
+		ConnectionFailedError = -8005
 	};
 }
 

@@ -125,6 +125,7 @@ QList<Param>
 Method::paramList_bridge() const
 {
 	QList<Param> list = paramList_raw();
+	auto classCategory = TypeConv::category(_className);
 	for (Param& param : list)
 	{
 		switch (   TypeConv::category(  QMetaObject::normalizedType( param.type.toUtf8() )  )   )
@@ -147,7 +148,7 @@ Method::paramList_bridge() const
 	}
 	if (!isConstructor() && !isStaticMember())
 	{
-		switch (   TypeConv::category(  QMetaObject::normalizedType( _className.toUtf8() )  )   )
+		switch (classCategory)
 		{
 		case TypeConv::Boolean:
 		case TypeConv::Numeric:
@@ -159,6 +160,17 @@ Method::paramList_bridge() const
 			break;
 		case TypeConv::OpaqueStruct:
 			list.prepend(Param{"LStrHandle", "_instance"});
+			break;
+		default:
+			break;
+		}
+	}
+	if (isConstructor())
+	{
+		switch (classCategory)
+		{
+		case TypeConv::QObject:
+			list.prepend(Param{"const char*", "_className"});
 			break;
 		default:
 			break;
@@ -200,9 +212,10 @@ Method::paramList_dll() const
 	}
 
 	// Prepend list with Instance (if applicable)
+	auto classCategory = TypeConv::category(_className);
 	if (!isConstructor() && !isStaticMember())
 	{
-		switch (   TypeConv::category(  QMetaObject::normalizedType( _className.toUtf8() )  )   )
+		switch (classCategory)
 		{
 		case TypeConv::SimpleIdentity:
 		case TypeConv::QObject:
@@ -211,6 +224,19 @@ Method::paramList_dll() const
 			break;
 		default:
 			qWarning() << "WARNING: Method::paramList_dll(): This type cannot have methods:" << _className;
+			break;
+		}
+	}
+
+	// Prepend list with Class Name (if QObject constructor)
+	if (isConstructor())
+	{
+		switch (classCategory)
+		{
+		case TypeConv::QObject:
+			list.prepend(Param{"const char*", "_className"});
+			break;
+		default:
 			break;
 		}
 	}
