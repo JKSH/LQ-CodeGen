@@ -215,6 +215,15 @@
 				<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
 				<Property Name="NI.ClassItem.State" Type="Int">1082130960</Property>
 			</Item>
+			<Item Name="Signal Data Type.ctl" Type="VI" URL="../_Private/Signals and Slots/Signal Data Type.ctl">
+				<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!!-!!!!!1!%!!!!!1!!!!!!!!</Property>
+				<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
+				<Property Name="NI.ClassItem.Flags" Type="Int">4194304</Property>
+				<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">true</Property>
+				<Property Name="NI.ClassItem.MethodScope" Type="UInt">2</Property>
+				<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
+				<Property Name="NI.ClassItem.State" Type="Int">1074541056</Property>
+			</Item>
 			<Item Name="Signal Packet_DBL.ctl" Type="VI" URL="../_Private/Signals and Slots/Signal Packet_DBL.ctl">
 				<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!#H!!!!"!!61!A!$F&amp;09GJF9X1A5G6G&lt;H6N!!!41!1!$&amp;.J:WZB&lt;#"*&lt;G2F?!!!%U!$!!R4;7&gt;O97QA6G&amp;M&gt;75!!'1!]1!!!!!!!!!$$F2F&lt;8"M982F,GRW&lt;'FC&amp;%R21W^S:56O:WFO:3ZM&gt;G.M98.T&amp;6.J:WZB&lt;#"197.L:82@2%*-,G.U&lt;!!C1&amp;!!!Q!!!!%!!B&amp;*-T)A5WFH&lt;G&amp;M)&amp;"B9WNF&gt;!!"!!-!!!!!</Property>
 				<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
