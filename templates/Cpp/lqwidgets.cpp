@@ -84,7 +84,8 @@ connect_void(quintptr _instance, const char* encodedSignal)
 {
 	if (!bridge)
 		return LQ::EngineNotRunningError;
-
+	if (!_instance)
+		return LQ::NullPointerUseError;
 	if ( !QMetaObject::checkConnectArgs(encodedSignal, "()") )
 		return LQ::IncompatibleArgumentsError;
 	auto result = QObject::connect((QObject*)_instance, encodedSignal,
@@ -99,7 +100,8 @@ connect_bool(quintptr _instance, const char* encodedSignal)
 {
 	if (!bridge)
 		return LQ::EngineNotRunningError;
-
+	if (!_instance)
+		return LQ::NullPointerUseError;
 	if ( !QMetaObject::checkConnectArgs(encodedSignal, "(bool)") )
 		return LQ::IncompatibleArgumentsError;
 	auto result = QObject::connect((QObject*)_instance, encodedSignal,
@@ -114,7 +116,8 @@ connect_i32(quintptr _instance, const char* encodedSignal)
 {
 	if (!bridge)
 		return LQ::EngineNotRunningError;
-
+	if (!_instance)
+		return LQ::NullPointerUseError;
 	if ( !QMetaObject::checkConnectArgs(encodedSignal, "(int)") )
 		return LQ::IncompatibleArgumentsError;
 	auto result = QObject::connect((QObject*)_instance, encodedSignal,
@@ -129,7 +132,8 @@ connect_dbl(quintptr _instance, const char* encodedSignal)
 {
 	if (!bridge)
 		return LQ::EngineNotRunningError;
-
+	if (!_instance)
+		return LQ::NullPointerUseError;
 	if ( !QMetaObject::checkConnectArgs(encodedSignal, "(double)") )
 		return LQ::IncompatibleArgumentsError;
 	auto result = QObject::connect((QObject*)_instance, encodedSignal,
@@ -144,7 +148,8 @@ connect_string(quintptr _instance, const char* encodedSignal)
 {
 	if (!bridge)
 		return LQ::EngineNotRunningError;
-
+	if (!_instance)
+		return LQ::NullPointerUseError;
 	if ( !QMetaObject::checkConnectArgs(encodedSignal, "(QString)") )
 		return LQ::IncompatibleArgumentsError;
 	auto result = QObject::connect((QObject*)_instance, encodedSignal,
@@ -169,6 +174,8 @@ connect_bySignature(QMetaObject::Connection* _retVal, quintptr sender, const cha
 {
 	if (!bridge)
 		return LQ::EngineNotRunningError;
+	if (!sender || !receiver)
+		return LQ::NullPointerUseError;
 	if ( !QMetaObject::checkConnectArgs(encodedSignal, encodedMethod) )
 		return LQ::IncompatibleArgumentsError;
 
@@ -219,6 +226,8 @@ emit_void(quintptr _instance, const char* normalizedSignal)
 
 	if (!bridge)
 		return LQ::EngineNotRunningError;
+	if (!_instance)
+		return LQ::NullPointerUseError;
 
 	auto obj = reinterpret_cast<QObject*>(_instance);
 	auto metaObj = obj->metaObject();
@@ -238,6 +247,8 @@ emit_bool(quintptr _instance, const char* normalizedSignal, bool* data)
 {
 	if (!bridge)
 		return LQ::EngineNotRunningError;
+	if (!_instance)
+		return LQ::NullPointerUseError;
 
 	auto obj = reinterpret_cast<QObject*>(_instance);
 	auto metaObj = obj->metaObject();
@@ -255,6 +266,8 @@ emit_i32(quintptr _instance, const char* normalizedSignal, qint32* data)
 {
 	if (!bridge)
 		return LQ::EngineNotRunningError;
+	if (!_instance)
+		return LQ::NullPointerUseError;
 
 	auto obj = reinterpret_cast<QObject*>(_instance);
 	auto metaObj = obj->metaObject();
@@ -272,6 +285,8 @@ emit_dbl(quintptr _instance, const char* normalizedSignal, double* data)
 {
 	if (!bridge)
 		return LQ::EngineNotRunningError;
+	if (!_instance)
+		return LQ::NullPointerUseError;
 
 	auto obj = reinterpret_cast<QObject*>(_instance);
 	auto metaObj = obj->metaObject();
@@ -289,6 +304,8 @@ emit_string(quintptr _instance, const char* normalizedSignal, LStrHandle data)
 {
 	if (!bridge)
 		return LQ::EngineNotRunningError;
+	if (!_instance)
+		return LQ::NullPointerUseError;
 
 	auto obj = reinterpret_cast<QObject*>(_instance);
 	auto metaObj = obj->metaObject();
@@ -308,6 +325,8 @@ registerLQObject(quintptr _instance, LVArray<LStrHandle>** signalList, LStrHandl
 {
 	if (!bridge)
 		return LQ::EngineNotRunningError;
+	if (!_instance)
+		return LQ::NullPointerUseError;
 
 	LQ::Error errorCode;
 	QMetaObject::invokeMethod(qApp,
@@ -333,6 +352,8 @@ findSignalIndex(qint64* _retVal, quintptr _instance, const char* normalizedSigna
 {
 	if (!bridge)
 		return LQ::EngineNotRunningError;
+	if (!_instance)
+		return LQ::NullPointerUseError;
 
 	QString head = QString::fromLatin1(normalizedSignal);
 	head.chop(1);

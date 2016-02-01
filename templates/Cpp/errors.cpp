@@ -10,7 +10,8 @@ static const QMap<int, QByteArray> errorMap
 	{LQ::NotAnLQObjectError, "This QObject was not implemented and registered in LabVIEW."},
 	{LQ::InvalidSignalError, "This signal does not exist."},
 	{LQ::IncompatibleArgumentsError, "The signal argument(s) are incompatible with its target."},
-	{LQ::ConnectionFailedError, "The connection failed."}
+	{LQ::ConnectionFailedError, "The connection failed."},
+	{LQ::NullPointerUseError, "Invalid LQ reference."}
 };
 
 void
