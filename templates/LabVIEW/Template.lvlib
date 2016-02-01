@@ -6,6 +6,7 @@
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">true</Property>
 	<Item Name="_Internal" Type="Folder">
 		<Item Name="Library Path.vi" Type="VI" URL="../_Internal/Library Path.vi"/>
+		<Item Name="Pack Errors.vi" Type="VI" URL="../_Internal/Pack Errors.vi"/>
 	</Item>
 	<Item Name="LQCoreEngine.lvclass" Type="LVClass" URL="../LQCoreEngine/LQCoreEngine.lvclass"/>
 	<Item Name="LQIdentity.lvclass" Type="LVClass" URL="../LQIdentity/LQIdentity.lvclass"/>
