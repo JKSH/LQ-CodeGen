@@ -70,6 +70,9 @@ LQApplication::initializeBinding(const QByteArray& className, QMetaObject* proto
 LQ::Error
 LQApplication::finalizeBinding(QObject* _instance, LVArray<LStrHandle>** signalList, LStrHandle superClassName)
 {
+	if (!_instance)
+		return LQ::NullPointerUseError;
+
 	QByteArray className = _instance->metaObject()->className();
 
 	auto status = bindingStatus(className);

@@ -141,8 +141,8 @@ ClassWriter::funcCallBody_inDll(const Method &method)
 	QString body_dll;
 	body_dll =
 			"\t"      "if (!bridge)"    "\n"
-			"\t\t"        "return LQ::EngineNotRunningError;"           "\n\n"
-
+			"\t\t"        "return LQ::EngineNotRunningError;"           "\n"
+			""        "%CHECK_INSTANCE_NULLITY%"                        "\n"
 			""        "%RETURN_VAR_INTERMEDIATE%"
 			"\t"      "QMetaObject::invokeMethod(bridge,"               "\n"
 			"\t\t\t"          "\"" + method.qualifiedName("_") + "\","  "\n"
@@ -164,10 +164,21 @@ ClassWriter::funcCallBody_inDll(const Method &method)
 		conversion.replace("_qtType_", TypeConv::instanceType_bridge(thisClass));
 		conversion.replace("_dllValue_", "_instance");
 
+		switch (TypeConv::category(method.className()))
+		{
+		case TypeConv::SimpleIdentity:
+		case TypeConv::QObject:
+			body_dll.replace("%CHECK_INSTANCE_NULLITY%", "\tif (!_instance)\n\t\treturn LQ::NullPointerUseError;\n");
+		default:
+			body_dll.replace("%CHECK_INSTANCE_NULLITY%", "");
+		}
 		body_dll.replace("%INSTANCE_LINE_INVOKE%", "\t\t\tQ_ARG(" + TypeConv::instanceType_bridge(thisClass) + ", "	+ conversion + "),\n");
 	}
 	else
+	{
+		body_dll.replace("%CHECK_INSTANCE_NULLITY%", "");
 		body_dll.replace("%INSTANCE_LINE_INVOKE%", "");
+	}
 
 	QString retType_brg = method.returnType_bridge();
 	bool hasReturn = (retType_brg != "void");

@@ -20,7 +20,8 @@ namespace LQ
 		NotAnLQObjectError = -8002,
 		InvalidSignalError = -8003,
 		IncompatibleArgumentsError = -8004,
-		ConnectionFailedError = -8005
+		ConnectionFailedError = -8005,
+		NullPointerUseError = -8006
 	};
 }
 
