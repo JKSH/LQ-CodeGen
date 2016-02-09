@@ -7,6 +7,8 @@
 
 void copyIntoLStr(LStrHandle lStr, const QByteArray& bytes);
 QByteArray copyFromLStr(LStrHandle lStr);
+LStrHandle newLStr(const QByteArray& bytes);
+inline LStrHandle newLStr(const QString& string) {return newLStr(string.toUtf8());}
 
 // TODO: Move the following to types.h or something
 
@@ -66,12 +68,7 @@ struct LVArray<LStrHandle>
 	{
 		resize(destHandle, list.size());
 		for (int i = 0; i < list.size(); ++i)
-		{
-			const int lStrHeaderSize = 4;
-			QByteArray bytes = list[i].toUtf8();
-			(*destHandle)->elt[i] = (LStrHandle)DSNewHandle(bytes.length() + lStrHeaderSize);
-			copyIntoLStr((*destHandle)->elt[i], bytes);
-		}
+			(*destHandle)->elt[i] = newLStr(list[i]);
 	}
 	QStringList toList() const
 	{
