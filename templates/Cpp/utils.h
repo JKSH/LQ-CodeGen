@@ -2,7 +2,6 @@
 #define UTILS_H
 
 #include <QDataStream>
-#include <QStringList>
 #include "extcode.h"
 
 void copyIntoLStr(LStrHandle lStr, const QByteArray& bytes);
@@ -25,25 +24,33 @@ struct LVArray
 		DSSetHandleSize(handle, newSize);
 		(*handle)->dimSize = count;
 	}
-	static void fromQVector(LVArray<T>** destHandle, const QVector<T>& vector)
+
+	template <typename U>
+	static void fromQVector(LVArray<T>** destHandle, const QVector<U>& vector)
 	{
 		resize(destHandle, vector.size());
 		std::copy(vector.constBegin(), vector.constEnd(), (*destHandle)->elt);
 	}
-	static void fromQList(LVArray<T>** destHandle, const QList<T>& list)
+
+	template <typename U>
+	static void fromQList(LVArray<T>** destHandle, const QList<U>& list)
 	{
 		resize(destHandle, list.size());
 		std::copy(list.constBegin(), list.constEnd(), (*destHandle)->elt);
 	}
-	QVector<T> toVector() const
+
+	template <typename U>
+	QVector<U> toQVector() const
 	{
-		QVector<T> vector(dimSize);
+		QVector<U> vector(dimSize);
 		std::copy(elt, elt+dimSize, vector.data());
 		return vector;
 	}
-	QList<T> toList() const
+
+	template <typename U>
+	QList<U> toQList() const
 	{
-		QList<T> list;
+		QList<U> list;
 		list.reserve(dimSize);
 		for (int i = 0; i < dimSize; ++i)
 			list << elt[i];
@@ -64,15 +71,19 @@ struct LVArray<LStrHandle>
 		// Just call the primary implementation
 		LVArray<void*>::resize((LVArray<void*>**)handle, count);
 	}
-	static void fromList(LVArray<LStrHandle>** destHandle, const QStringList& list)
+
+	template <typename U>
+	static void fromQList(LVArray<LStrHandle>** destHandle, const QList<U>& list)
 	{
 		resize(destHandle, list.size());
 		for (int i = 0; i < list.size(); ++i)
 			(*destHandle)->elt[i] = newLStr(list[i]);
 	}
-	QStringList toList() const
+
+	template <typename U>
+	QList<U> toQList() const
 	{
-		QStringList list;
+		QList<U> list;
 		list.reserve(dimSize);
 		for (int i = 0; i < dimSize; ++i)
 			list << copyFromLStr(elt[i]); // TODO: Avoid intermediate QByteArray

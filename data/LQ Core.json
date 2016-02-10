@@ -4662,21 +4662,21 @@
 			{
 				"name": "QStringList",
 				"dllType": "LVArray<LStrHandle>**",
-				"dll2bridge": "(*_dllValue_)->toList()",
-				"bridge2dll": "LVArray<LStrHandle>::fromList(_dllValue_, _bridgeValue_)"
+				"dll2bridge": "(*_dllValue_)->toQList<QString>()",
+				"bridge2dll": "LVArray<LStrHandle>::fromQList(_dllValue_, _bridgeValue_)"
 			}
 		],
 		"fullArrays": [
 			{
 				"name": "QList<%QT_TYPE_INNER%>",
 				"dllType": "LVArray<%DLL_TYPE_INNER%>**",
-				"dll2bridge": "(*_dllValue_)->toList()",
+				"dll2bridge": "(*_dllValue_)->toQList<%QT_TYPE_INNER%>()",
 				"bridge2dll": "LVArray<%DLL_TYPE_INNER%>::fromQList(_dllValue_, _bridgeValue_)"
 			},		
 			{
 				"name": "QVector<%QT_TYPE_INNER%>",
 				"dllType": "LVArray<%DLL_TYPE_INNER%>**",
-				"dll2bridge": "(*_dllValue_)->toVector()",
+				"dll2bridge": "(*_dllValue_)->toQVector<%QT_TYPE_INNER%>()",
 				"bridge2dll": "LVArray<%DLL_TYPE_INNER%>::fromQVector(_dllValue_, _bridgeValue_)"
 			}
 		]
