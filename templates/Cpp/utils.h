@@ -94,6 +94,42 @@ struct LVArray<LStrHandle>
 	qint32 dimSize;
 	LStrHandle elt[1];
 };
+
+template <>
+struct LVArray<quintptr>
+{
+	static void resize(LVArray<quintptr>** handle, qint32 count)
+	{
+		// Just call the primary implementation
+		LVArray<void*>::resize((LVArray<void*>**)handle, count);
+	}
+
+	template <typename U>
+	static void fromQList(LVArray<quintptr>** destHandle, const QList<U>& list)
+	{
+		static_assert(std::is_pointer<U>::value, "Converting quintptr to non-pointers is not supported.");
+
+		resize(destHandle, list.size());
+		for (int i = 0; i < list.size(); ++i)
+			(*destHandle)->elt[i] = (quintptr)list[i];
+	}
+
+	template <typename U>
+	QList<U> toQList() const
+	{
+		static_assert(std::is_pointer<U>::value, "Converting non-pointers to quintptr is not supported.");
+
+		QList<U> list;
+		list.reserve(dimSize);
+		for (int i = 0; i < dimSize; ++i)
+			list << (U)elt[i];
+		return list;
+	}
+	// No QVector storage
+
+	qint32 dimSize;
+	quintptr elt[1];
+};
 #include "lv_epilog.h"
 
 // ASSUMPTION: T is serializable

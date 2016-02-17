@@ -23,6 +23,15 @@
 			<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
 			<Property Name="NI.ClassItem.State" Type="Int">1342710272</Property>
 		</Item>
+		<Item Name="Create Input Param Route.vi" Type="VI" URL="../Protected/Create Input Param Route.vi">
+			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!%#!!!!"A!%!!!!)E"Q!!A!!%!"!!!51UR'4C"5:8*N;7ZB&lt;#"4&lt;X6S9W5!!$*!=!!?!!!7&amp;%&amp;S=G&amp;Z)&amp;&gt;S;82F=CZM&gt;G.M98.T!!!118*S98EA6X*J&gt;'6S)'^V&gt;!!!(E"Q!!A!!%!,!!!11W^O&gt;(*P&lt;#"5:8*N;7ZB&lt;!!!-%"Q!"Y!!"9518*S98EA6X*J&gt;'6S,GRW9WRB=X-!!!^"=H*B?3"8=GFU:8)A;7Y!6!$Q!!Q!!!!!!!%!!A!!!!!!!!!!!!!!!!!$!!1$!!"Y!!!!!!!!!!!!!!E!!!#.#Q!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!%!!!!*!!!!!!!1!&amp;!!!!!!</Property>
+			<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
+			<Property Name="NI.ClassItem.Flags" Type="Int">1073741824</Property>
+			<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">false</Property>
+			<Property Name="NI.ClassItem.MethodScope" Type="UInt">3</Property>
+			<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
+			<Property Name="NI.ClassItem.State" Type="Int">1107821072</Property>
+		</Item>
 		<Item Name="Generate BD Constant Info.vi" Type="VI" URL="../Protected/Generate BD Constant Info.vi">
 			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!$&lt;!!!!"A!%!!!!$E!S`````Q21982I!!!,1!-!"6.U?7RF!$*!=!!?!!!7&amp;%&amp;S=G&amp;Z)&amp;&gt;S;82F=CZM&gt;G.M98.T!!!118*S98EA6X*J&gt;'6S)'^V&gt;!!!-%"Q!"Y!!"9518*S98EA6X*J&gt;'6S,GRW9WRB=X-!!!^"=H*B?3"8=GFU:8)A;7Y!6!$Q!!Q!!!!"!!)!!Q!!!!!!!!!!!!!!!!!!!!1#!!"Y!!!!!!!!#1!!!!E!!!#.#Q!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*!!!!!!!1!&amp;!!!!!!</Property>
 			<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
@@ -43,6 +52,15 @@
 		</Item>
 		<Item Name="Polish Control.vi" Type="VI" URL="../Protected/Polish Control.vi">
 			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!$;!!!!"1!%!!!!-E"Q!"Y!!"9518*S98EA6X*J&gt;'6S,GRW9WRB=X-!!"""=H*B?3"8=GFU:8)A&lt;X6U!!!91(!!#!!!!!9!!!N$&lt;WZU=G^M)&amp;*F:A!Q1(!!(A!!&amp;B2"=H*B?3"8=GFU:8)O&lt;(:D&lt;'&amp;T=Q!!$U&amp;S=G&amp;Z)&amp;&gt;S;82F=C"J&lt;A"5!0!!$!!!!!!!!!!"!!!!!!!!!!!!!!!!!!)!!Q-!!(A!!!!!!!!!!!!!!!!!!)U,!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!3!!!!E!!!!!!"!!1!!!!!</Property>
+			<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
+			<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>
+			<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">false</Property>
+			<Property Name="NI.ClassItem.MethodScope" Type="UInt">3</Property>
+			<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
+			<Property Name="NI.ClassItem.State" Type="Int">1107821072</Property>
+		</Item>
+		<Item Name="Polish Return Wire.vi" Type="VI" URL="../Protected/Polish Return Wire.vi">
+			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!$;!!!!"1!%!!!!-E"Q!"Y!!"9518*S98EA6X*J&gt;'6S,GRW9WRB=X-!!"""=H*B?3"8=GFU:8)A&lt;X6U!!!91(!!#!!!1$=!!!N3:82V=GYA6WFS:1!Q1(!!(A!!&amp;B2"=H*B?3"8=GFU:8)O&lt;(:D&lt;'&amp;T=Q!!$U&amp;S=G&amp;Z)&amp;&gt;S;82F=C"J&lt;A"5!0!!$!!!!!!!!!!"!!!!!!!!!!!!!!!!!!)!!Q-!!(A!!!!!!!!!!!!!!!!!!)U,!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!3!!!!E!!!!!!"!!1!!!!!</Property>
 			<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
 			<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>
 			<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">false</Property>
