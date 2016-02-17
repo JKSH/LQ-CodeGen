@@ -4547,6 +4547,10 @@
 						"isFactory": true
 					},
 					{
+						"name": "availableCodecs","retType": "QList<QByteArray>",
+						"isStaticMember": true
+					},
+					{
 						"name": "availableMibs","retType": "QList<int>",
 						"isStaticMember": true
 					},
