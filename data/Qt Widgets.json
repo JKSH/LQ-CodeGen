@@ -36,6 +36,15 @@
 						"name": "QWidget"
 					},
 					{
+						"name": "actions", "retType": "QList<QAction*>"
+					},
+					{
+						"name": "addActions", "retType": "void",
+						"params": [
+							{"name": "actions", "type": "const QList<QAction*>&"}
+						]
+					},
+					{
 						"name": "focusPolicy", "retType": "Qt::FocusPolicy"
 					},
 					{
@@ -1380,6 +1389,479 @@
 						"getter": "tabBarAutoHide",
 						"name": "tabBarAutoHide",
 						"setter": "setTabBarAutoHide",
+						"type": "bool"
+					}
+				]
+			},
+			{
+				"base": "QObject",
+				"enums": [
+					{
+						"name": "MenuRole",
+						"values": [
+							{
+								"name": "NoRole",
+								"value": 0
+							},
+							{
+								"name": "TextHeuristicRole",
+								"value": 1
+							},
+							{
+								"name": "ApplicationSpecificRole",
+								"value": 2
+							},
+							{
+								"name": "AboutQtRole",
+								"value": 3
+							},
+							{
+								"name": "AboutRole",
+								"value": 4
+							},
+							{
+								"name": "PreferencesRole",
+								"value": 5
+							},
+							{
+								"name": "QuitRole",
+								"value": 6
+							}
+						]
+					},
+					{
+						"name": "Priority",
+						"values": [
+							{
+								"name": "LowPriority",
+								"value": 0
+							},
+							{
+								"name": "NormalPriority",
+								"value": 128
+							},
+							{
+								"name": "HighPriority",
+								"value": 256
+							}
+						]
+					},
+					{
+						"name": "ActionEvent",
+						"values": [
+							{
+								"name": "Trigger",
+								"value": 0
+							},
+							{
+								"name": "Hover",
+								"value": 1
+							}
+						]
+					}
+				],
+				"methods": [
+					{
+						"name": "QAction",
+						"params": [
+							{
+								"name": "icon",
+								"type": "const QIcon&"
+							},
+							{
+								"name": "text",
+								"type": "const QString&"
+							},
+							{
+								"name": "parent",
+								"type": "QObject*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setIcon",
+						"params": [
+							{
+								"name": "icon",
+								"type": "const QIcon&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "icon",
+						"retType": "QIcon"
+					},
+					{
+						"name": "setText",
+						"params": [
+							{
+								"name": "text",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "text",
+						"retType": "QString"
+					},
+					{
+						"name": "setIconText",
+						"params": [
+							{
+								"name": "text",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "iconText",
+						"retType": "QString"
+					},
+					{
+						"name": "setToolTip",
+						"params": [
+							{
+								"name": "tip",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "toolTip",
+						"retType": "QString"
+					},
+					{
+						"name": "setStatusTip",
+						"params": [
+							{
+								"name": "statusTip",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "statusTip",
+						"retType": "QString"
+					},
+					{
+						"name": "setWhatsThis",
+						"params": [
+							{
+								"name": "what",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "whatsThis",
+						"retType": "QString"
+					},
+					{
+						"name": "setPriority",
+						"params": [
+							{
+								"name": "priority",
+								"type": "QAction::Priority"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "priority",
+						"retType": "QAction::Priority"
+					},
+					{
+						"name": "setSeparator",
+						"params": [
+							{
+								"name": "isSeparator",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "isSeparator",
+						"retType": "bool"
+					},
+					{
+						"name": "setShortcutContext",
+						"params": [
+							{
+								"name": "context",
+								"type": "Qt::ShortcutContext"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "shortcutContext",
+						"retType": "Qt::ShortcutContext"
+					},
+					{
+						"name": "setAutoRepeat",
+						"params": [
+							{
+								"name": "autoRepeat",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "autoRepeat",
+						"retType": "bool"
+					},
+					{
+						"name": "setFont",
+						"params": [
+							{
+								"name": "font",
+								"type": "const QFont&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "font",
+						"retType": "QFont"
+					},
+					{
+						"name": "setCheckable",
+						"params": [
+							{
+								"name": "checkable",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "isCheckable",
+						"retType": "bool"
+					},
+					{
+						"isConst": true,
+						"name": "isChecked",
+						"retType": "bool"
+					},
+					{
+						"isConst": true,
+						"name": "isEnabled",
+						"retType": "bool"
+					},
+					{
+						"isConst": true,
+						"name": "isVisible",
+						"retType": "bool"
+					},
+					{
+						"name": "activate",
+						"params": [
+							{
+								"name": "event",
+								"type": "QAction::ActionEvent"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "showStatusText",
+						"params": [
+							{
+								"name": "widget",
+								"type": "QWidget*"
+							}
+						],
+						"retType": "bool"
+					},
+					{
+						"name": "setMenuRole",
+						"params": [
+							{
+								"name": "menuRole",
+								"type": "QAction::MenuRole"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "menuRole",
+						"retType": "QAction::MenuRole"
+					},
+					{
+						"name": "setIconVisibleInMenu",
+						"params": [
+							{
+								"name": "visible",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "isIconVisibleInMenu",
+						"retType": "bool"
+					},
+					{
+						"isConst": true,
+						"name": "parentWidget",
+						"retType": "QWidget*"
+					},
+					{
+						"name": "trigger",
+						"retType": "void"
+					},
+					{
+						"name": "hover",
+						"retType": "void"
+					},
+					{
+						"name": "setChecked",
+						"params": [
+							{
+								"name": "checked",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "toggle",
+						"retType": "void"
+					},
+					{
+						"name": "setEnabled",
+						"params": [
+							{
+								"name": "enabled",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setVisible",
+						"params": [
+							{
+								"name": "visible",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					}
+				],
+				"name": "QAction",
+				"properties": [
+					{
+						"getter": "isCheckable",
+						"name": "checkable",
+						"setter": "setCheckable",
+						"type": "bool"
+					},
+					{
+						"getter": "isChecked",
+						"name": "checked",
+						"setter": "setChecked",
+						"type": "bool"
+					},
+					{
+						"getter": "isEnabled",
+						"name": "enabled",
+						"setter": "setEnabled",
+						"type": "bool"
+					},
+					{
+						"getter": "icon",
+						"name": "icon",
+						"setter": "setIcon",
+						"type": "QIcon"
+					},
+					{
+						"getter": "text",
+						"name": "text",
+						"setter": "setText",
+						"type": "QString"
+					},
+					{
+						"getter": "iconText",
+						"name": "iconText",
+						"setter": "setIconText",
+						"type": "QString"
+					},
+					{
+						"getter": "toolTip",
+						"name": "toolTip",
+						"setter": "setToolTip",
+						"type": "QString"
+					},
+					{
+						"getter": "statusTip",
+						"name": "statusTip",
+						"setter": "setStatusTip",
+						"type": "QString"
+					},
+					{
+						"getter": "whatsThis",
+						"name": "whatsThis",
+						"setter": "setWhatsThis",
+						"type": "QString"
+					},
+					{
+						"getter": "font",
+						"name": "font",
+						"setter": "setFont",
+						"type": "QFont"
+					},
+					{
+						"getter": "shortcutContext",
+						"name": "shortcutContext",
+						"setter": "setShortcutContext",
+						"type": "Qt::ShortcutContext"
+					},
+					{
+						"getter": "autoRepeat",
+						"name": "autoRepeat",
+						"setter": "setAutoRepeat",
+						"type": "bool"
+					},
+					{
+						"getter": "isVisible",
+						"name": "visible",
+						"setter": "setVisible",
+						"type": "bool"
+					},
+					{
+						"getter": "menuRole",
+						"name": "menuRole",
+						"setter": "setMenuRole",
+						"type": "MenuRole"
+					},
+					{
+						"getter": "isIconVisibleInMenu",
+						"name": "iconVisibleInMenu",
+						"setter": "setIconVisibleInMenu",
 						"type": "bool"
 					}
 				]

@@ -2,11 +2,12 @@
 #define UTILS_H
 
 #include <QDataStream>
-#include <QStringList>
 #include "extcode.h"
 
 void copyIntoLStr(LStrHandle lStr, const QByteArray& bytes);
 QByteArray copyFromLStr(LStrHandle lStr);
+LStrHandle newLStr(const QByteArray& bytes);
+inline LStrHandle newLStr(const QString& string) {return newLStr(string.toUtf8());}
 
 // TODO: Move the following to types.h or something
 
@@ -23,25 +24,33 @@ struct LVArray
 		DSSetHandleSize(handle, newSize);
 		(*handle)->dimSize = count;
 	}
-	static void fromQVector(LVArray<T>** destHandle, const QVector<T>& vector)
+
+	template <typename U>
+	static void fromQVector(LVArray<T>** destHandle, const QVector<U>& vector)
 	{
 		resize(destHandle, vector.size());
 		std::copy(vector.constBegin(), vector.constEnd(), (*destHandle)->elt);
 	}
-	static void fromQList(LVArray<T>** destHandle, const QList<T>& list)
+
+	template <typename U>
+	static void fromQList(LVArray<T>** destHandle, const QList<U>& list)
 	{
 		resize(destHandle, list.size());
 		std::copy(list.constBegin(), list.constEnd(), (*destHandle)->elt);
 	}
-	QVector<T> toVector() const
+
+	template <typename U>
+	QVector<U> toQVector() const
 	{
-		QVector<T> vector(dimSize);
+		QVector<U> vector(dimSize);
 		std::copy(elt, elt+dimSize, vector.data());
 		return vector;
 	}
-	QList<T> toList() const
+
+	template <typename U>
+	QList<U> toQList() const
 	{
-		QList<T> list;
+		QList<U> list;
 		list.reserve(dimSize);
 		for (int i = 0; i < dimSize; ++i)
 			list << elt[i];
@@ -62,20 +71,19 @@ struct LVArray<LStrHandle>
 		// Just call the primary implementation
 		LVArray<void*>::resize((LVArray<void*>**)handle, count);
 	}
-	static void fromList(LVArray<LStrHandle>** destHandle, const QStringList& list)
+
+	template <typename U>
+	static void fromQList(LVArray<LStrHandle>** destHandle, const QList<U>& list)
 	{
 		resize(destHandle, list.size());
 		for (int i = 0; i < list.size(); ++i)
-		{
-			const int lStrHeaderSize = 4;
-			QByteArray bytes = list[i].toUtf8();
-			(*destHandle)->elt[i] = (LStrHandle)DSNewHandle(bytes.length() + lStrHeaderSize);
-			copyIntoLStr((*destHandle)->elt[i], bytes);
-		}
+			(*destHandle)->elt[i] = newLStr(list[i]);
 	}
-	QStringList toList() const
+
+	template <typename U>
+	QList<U> toQList() const
 	{
-		QStringList list;
+		QList<U> list;
 		list.reserve(dimSize);
 		for (int i = 0; i < dimSize; ++i)
 			list << copyFromLStr(elt[i]); // TODO: Avoid intermediate QByteArray
@@ -85,6 +93,42 @@ struct LVArray<LStrHandle>
 
 	qint32 dimSize;
 	LStrHandle elt[1];
+};
+
+template <>
+struct LVArray<quintptr>
+{
+	static void resize(LVArray<quintptr>** handle, qint32 count)
+	{
+		// Just call the primary implementation
+		LVArray<void*>::resize((LVArray<void*>**)handle, count);
+	}
+
+	template <typename U>
+	static void fromQList(LVArray<quintptr>** destHandle, const QList<U>& list)
+	{
+		static_assert(std::is_pointer<U>::value, "Converting quintptr to non-pointers is not supported.");
+
+		resize(destHandle, list.size());
+		for (int i = 0; i < list.size(); ++i)
+			(*destHandle)->elt[i] = (quintptr)list[i];
+	}
+
+	template <typename U>
+	QList<U> toQList() const
+	{
+		static_assert(std::is_pointer<U>::value, "Converting non-pointers to quintptr is not supported.");
+
+		QList<U> list;
+		list.reserve(dimSize);
+		for (int i = 0; i < dimSize; ++i)
+			list << (U)elt[i];
+		return list;
+	}
+	// No QVector storage
+
+	qint32 dimSize;
+	quintptr elt[1];
 };
 #include "lv_epilog.h"
 

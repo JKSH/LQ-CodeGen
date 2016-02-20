@@ -91,9 +91,9 @@ LQApplication::finalizeBinding(QObject* _instance, LVArray<LStrHandle>** signalL
 		b.setSuperClass(lqMetaObjects[superIndex]);
 
 	// TODO: Sanitize the signal signatures
-	// TODO: Use a nicer API that converts LVArray<LStrHandle> to QByteArrayList (requires improved array support)
-	for (int i = 0; i < (*signalList)->dimSize; ++i)
-		b.addSignal(  copyFromLStr( (*signalList)->elt[i] )  );
+	auto sigs = (*signalList)->toQList<QByteArray>();
+	for (const auto& sig : sigs)
+		b.addSignal(sig);
 
 	// Avoid race condition: Don't delete the stub QMetaObject yet, in case a
 	// different thread started reading from it just before we finalize the
