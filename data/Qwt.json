@@ -854,6 +854,33 @@
 						"type": "int"
 					}
 				]
+			},
+			{
+				"base": "QFrame",
+				"enums": [
+					{
+						"name": "Axis",
+						"values": [
+							{
+								"name": "yLeft",
+								"value": 0
+							},
+							{
+								"name": "yRight",
+								"value": 1
+							},
+							{
+								"name": "xBottom",
+								"value": 2
+							},
+							{
+								"name": "xTop",
+								"value": 3
+							}
+						]
+					}
+				],
+				"name": "QwtPlot"
 			}
 		]
 	}
