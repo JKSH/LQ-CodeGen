@@ -274,7 +274,7 @@
 						"name": "setBorderWidth",
 						"params": [
 							{
-								"name": "w",
+								"name": "width",
 								"type": "int"
 							}
 						],
@@ -316,10 +316,40 @@
 						"retType": "double"
 					},
 					{
+						"name": "setFillBrush",
+						"params": [
+							{
+								"name": "brush",
+								"type": "const QBrush&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "fillBrush",
+						"retType": "QBrush"
+					},
+					{
+						"name": "setAlarmBrush",
+						"params": [
+							{
+								"name": "brush",
+								"type": "const QBrush&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "alarmBrush",
+						"retType": "QBrush"
+					},
+					{
 						"name": "setAlarmLevel",
 						"params": [
 							{
-								"name": "v",
+								"name": "level",
 								"type": "double"
 							}
 						],
@@ -334,7 +364,7 @@
 						"name": "setAlarmEnabled",
 						"params": [
 							{
-								"name": "tf",
+								"name": "enabled",
 								"type": "bool"
 							}
 						],
@@ -349,7 +379,7 @@
 						"name": "setPipeWidth",
 						"params": [
 							{
-								"name": "w",
+								"name": "width",
 								"type": "int"
 							}
 						],
@@ -369,7 +399,7 @@
 						"name": "setValue",
 						"params": [
 							{
-								"name": "val",
+								"name": "value",
 								"type": "double"
 							}
 						],

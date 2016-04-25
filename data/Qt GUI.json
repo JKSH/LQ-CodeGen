@@ -15,6 +15,47 @@
 		],
 		"opaqueStructs": [
 			{
+				"name": "QBrush",
+				"methods": [
+					{
+						"name": "QBrush"
+					},
+					{
+						"name": "color", "retType": "QColor"
+					},
+					{
+						"name": "setColor", "retType": "void",
+						"params": [
+							{"name": "color", "type": "const QColor&"}
+						]
+					},
+					{
+						"name": "setStyle", "retType": "void",
+						"params": [
+							{"name": "style", "type": "Qt::BrushStyle"}
+						]
+					},
+					{
+						"isConst": true,
+						"name": "style", "retType": "Qt::BrushStyle"
+					}
+				]
+			},
+			{
+				"name": "QColor",
+				"methods": [
+					{
+						"name": "QColor",
+						"params": [
+							{"name": "r", "type": "int"},
+							{"name": "g", "type": "int"},
+							{"name": "b", "type": "int"},
+							{"name": "a", "type": "int"}
+						]
+					}
+				]
+			},
+			{
 				"enums": [
 					{
 						"name": "StyleHint",
@@ -456,11 +497,6 @@
 					},
 					{
 						"isConst": true,
-						"name": "rawMode",
-						"retType": "bool"
-					},
-					{
-						"isConst": true,
 						"name": "exactMatch",
 						"retType": "bool"
 					},
@@ -594,37 +630,12 @@
 					},
 					{
 						"isConst": true,
-						"name": "size",
-						"retType": "QSize"
-					},
-					{
-						"isConst": true,
 						"name": "geometry",
 						"retType": "QRect"
 					},
 					{
 						"isConst": true,
-						"name": "physicalDotsPerInchX",
-						"retType": "qreal"
-					},
-					{
-						"isConst": true,
-						"name": "physicalDotsPerInchY",
-						"retType": "qreal"
-					},
-					{
-						"isConst": true,
 						"name": "physicalDotsPerInch",
-						"retType": "qreal"
-					},
-					{
-						"isConst": true,
-						"name": "logicalDotsPerInchX",
-						"retType": "qreal"
-					},
-					{
-						"isConst": true,
-						"name": "logicalDotsPerInchY",
 						"retType": "qreal"
 					},
 					{
@@ -639,32 +650,7 @@
 					},
 					{
 						"isConst": true,
-						"name": "availableSize",
-						"retType": "QSize"
-					},
-					{
-						"isConst": true,
 						"name": "availableGeometry",
-						"retType": "QRect"
-					},
-					{
-						"isConst": true,
-						"name": "virtualSize",
-						"retType": "QSize"
-					},
-					{
-						"isConst": true,
-						"name": "virtualGeometry",
-						"retType": "QRect"
-					},
-					{
-						"isConst": true,
-						"name": "availableVirtualSize",
-						"retType": "QSize"
-					},
-					{
-						"isConst": true,
-						"name": "availableVirtualGeometry",
 						"retType": "QRect"
 					},
 					{
@@ -699,7 +685,44 @@
 						"retType": "qreal"
 					}
 				],
-				"name": "QScreen"
+				"name": "QScreen",
+				"properties": [
+					{
+						"getter": "name",
+						"name": "name",
+						"type": "QString"
+					},
+					{
+						"getter": "depth",
+						"name": "depth",
+						"type": "int"
+					},
+					{
+						"getter": "geometry",
+						"name": "geometry",
+						"type": "QRect"
+					},
+					{
+						"getter": "availableGeometry",
+						"name": "availableGeometry",
+						"type": "QRect"
+					},
+					{
+						"getter": "physicalDotsPerInch",
+						"name": "physicalDotsPerInch",
+						"type": "qreal"
+					},
+					{
+						"getter": "logicalDotsPerInch",
+						"name": "logicalDotsPerInch",
+						"type": "qreal"
+					},
+					{
+						"getter": "refreshRate",
+						"name": "refreshRate",
+						"type": "qreal"
+					}
+				]
 			},
 			{
 				"base": "QObject",
@@ -730,19 +753,6 @@
 							{
 								"name": "FullScreen",
 								"value": 5
-							}
-						]
-					},
-					{
-						"name": "AncestorMode",
-						"values": [
-							{
-								"name": "ExcludeTransients",
-								"value": 0
-							},
-							{
-								"name": "IncludeTransients",
-								"value": 1
 							}
 						]
 					}
@@ -786,11 +796,6 @@
 					{
 						"isConst": true,
 						"name": "isTopLevel",
-						"retType": "bool"
-					},
-					{
-						"isConst": true,
-						"name": "isModal",
 						"retType": "bool"
 					},
 					{
@@ -880,26 +885,6 @@
 					},
 					{
 						"isConst": true,
-						"name": "minimumWidth",
-						"retType": "int"
-					},
-					{
-						"isConst": true,
-						"name": "minimumHeight",
-						"retType": "int"
-					},
-					{
-						"isConst": true,
-						"name": "maximumWidth",
-						"retType": "int"
-					},
-					{
-						"isConst": true,
-						"name": "maximumHeight",
-						"retType": "int"
-					},
-					{
-						"isConst": true,
 						"name": "minimumSize",
 						"retType": "QSize"
 					},
@@ -979,40 +964,11 @@
 						"retType": "QRect"
 					},
 					{
-						"isConst": true,
-						"name": "width",
-						"retType": "int"
-					},
-					{
-						"isConst": true,
-						"name": "height",
-						"retType": "int"
-					},
-					{
-						"isConst": true,
-						"name": "x",
-						"retType": "int"
-					},
-					{
-						"isConst": true,
-						"name": "y",
-						"retType": "int"
-					},
-					{
-						"isConst": true,
-						"name": "size",
-						"retType": "QSize"
-					},
-					{
 						"name": "resize",
 						"params": [
 							{
-								"name": "w",
-								"type": "int"
-							},
-							{
-								"name": "h",
-								"type": "int"
+								"name": "newSize",
+								"type": "const QSize&"
 							}
 						],
 						"retType": "void"
@@ -1031,10 +987,6 @@
 						"isConst": true,
 						"name": "icon",
 						"retType": "QIcon"
-					},
-					{
-						"name": "destroy",
-						"retType": "void"
 					},
 					{
 						"name": "setKeyboardGrabEnabled",
@@ -1148,86 +1100,6 @@
 						"retType": "void"
 					},
 					{
-						"name": "setX",
-						"params": [
-							{
-								"name": "arg",
-								"type": "int"
-							}
-						],
-						"retType": "void"
-					},
-					{
-						"name": "setY",
-						"params": [
-							{
-								"name": "arg",
-								"type": "int"
-							}
-						],
-						"retType": "void"
-					},
-					{
-						"name": "setWidth",
-						"params": [
-							{
-								"name": "arg",
-								"type": "int"
-							}
-						],
-						"retType": "void"
-					},
-					{
-						"name": "setHeight",
-						"params": [
-							{
-								"name": "arg",
-								"type": "int"
-							}
-						],
-						"retType": "void"
-					},
-					{
-						"name": "setMinimumWidth",
-						"params": [
-							{
-								"name": "w",
-								"type": "int"
-							}
-						],
-						"retType": "void"
-					},
-					{
-						"name": "setMinimumHeight",
-						"params": [
-							{
-								"name": "h",
-								"type": "int"
-							}
-						],
-						"retType": "void"
-					},
-					{
-						"name": "setMaximumWidth",
-						"params": [
-							{
-								"name": "w",
-								"type": "int"
-							}
-						],
-						"retType": "void"
-					},
-					{
-						"name": "setMaximumHeight",
-						"params": [
-							{
-								"name": "h",
-								"type": "int"
-							}
-						],
-						"retType": "void"
-					},
-					{
 						"name": "alert",
 						"params": [
 							{
@@ -1253,57 +1125,14 @@
 						"type": "Qt::WindowModality"
 					},
 					{
-						"getter": "x",
-						"name": "x",
-						"setter": "setX",
-						"type": "int"
-					},
-					{
-						"getter": "y",
-						"name": "y",
-						"setter": "setY",
-						"type": "int"
-					},
-					{
-						"getter": "width",
-						"name": "width",
-						"setter": "setWidth",
-						"type": "int"
-					},
-					{
-						"getter": "height",
-						"name": "height",
-						"setter": "setHeight",
-						"type": "int"
-					},
-					{
-						"getter": "minimumWidth",
-						"name": "minimumWidth",
-						"setter": "setMinimumWidth",
-						"type": "int"
-					},
-					{
-						"getter": "minimumHeight",
-						"name": "minimumHeight",
-						"setter": "setMinimumHeight",
-						"type": "int"
-					},
-					{
-						"getter": "maximumWidth",
-						"name": "maximumWidth",
-						"setter": "setMaximumWidth",
-						"type": "int"
-					},
-					{
-						"getter": "maximumHeight",
-						"name": "maximumHeight",
-						"setter": "setMaximumHeight",
-						"type": "int"
-					},
-					{
 						"getter": "isVisible",
 						"name": "visible",
 						"setter": "setVisible",
+						"type": "bool"
+					},
+					{
+						"getter": "isActive",
+						"name": "active",
 						"type": "bool"
 					},
 					{

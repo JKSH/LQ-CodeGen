@@ -45,6 +45,9 @@
 						]
 					},
 					{
+						"name": "contextMenuPolicy", "retType": "Qt::ContextMenuPolicy"
+					},
+					{
 						"name": "focusPolicy", "retType": "Qt::FocusPolicy"
 					},
 					{
@@ -66,13 +69,16 @@
 						"name": "minimumSize", "retType": "QSize"
 					},
 					{
-						"name": "restoreGeometry", "retType": "bool",
+						"name": "resize", "retType": "void",
 						"params": [
-							{"name": "geometry", "type": "const QByteArray&"}
+							{"name": "size", "type": "const QSize&"}
 						]
 					},
 					{
-						"name": "saveGeometry", "retType": "QByteArray"
+						"name": "setContextMenuPolicy", "retType": "void",
+						"params": [
+							{"name": "policy", "type": "Qt::ContextMenuPolicy"}
+						]
 					},
 					{
 						"name": "setEnabled", "retType": "void",
@@ -161,6 +167,12 @@
 						]
 					},
 					{
+						"name": "size", "retType": "QSize"
+					},
+					{
+						"name": "sizeHint", "retType": "QSize"
+					},
+					{
 						"name": "styleSheet", "retType": "QString"
 					},
 					{
@@ -168,6 +180,9 @@
 					},
 					{
 						"name": "toolTipDuration", "retType": "int"
+					},
+					{
+						"name": "windowHandle", "retType": "QWindow*"
 					},
 					{
 						"name": "windowIcon", "retType": "QIcon"
@@ -180,6 +195,11 @@
 					}
 				],
 				"properties": [
+					{
+						"name": "contextMenuPolicy",
+						"getter": "contextMenuPolicy",
+						"setter": "setContextMenuPolicy"
+					},
 					{
 						"name": "enabled",
 						"getter": "isEnabled",
@@ -204,6 +224,15 @@
 						"name": "minimumSize",
 						"getter": "minimumSize",
 						"setter": "setMinimumSize"
+					},
+					{
+						"name": "size",
+						"getter": "size",
+						"setter": "resize"
+					},
+					{
+						"name": "sizeHint",
+						"getter": "sizeHint"
 					},
 					{
 						"name": "styleSheet",
@@ -243,48 +272,726 @@
 				]
 			},
 			{
-				"name": "QComboBox", "base": "QWidget",
+				"base": "QWidget",
 				"enums": [
+					{
+						"name": "InsertPolicy",
+						"values": [
+							{
+								"name": "NoInsert",
+								"value": 0
+							},
+							{
+								"name": "InsertAtTop",
+								"value": 1
+							},
+							{
+								"name": "InsertAtCurrent",
+								"value": 2
+							},
+							{
+								"name": "InsertAtBottom",
+								"value": 3
+							},
+							{
+								"name": "InsertAfterCurrent",
+								"value": 4
+							},
+							{
+								"name": "InsertBeforeCurrent",
+								"value": 5
+							},
+							{
+								"name": "InsertAlphabetically",
+								"value": 6
+							}
+						]
+					},
 					{
 						"name": "SizeAdjustPolicy",
 						"values": [
-							{"name": "AdjustToContents", "value": 0},
-							{"name": "AdjustToContentsOnFirstShow", "value": 1},
-							{"name": "AdjustToMinimumContentsLength", "value": 2},
-							{"name": "AdjustToMinimumContentsLengthWithIcon", "value": 3}
+							{
+								"name": "AdjustToContents",
+								"value": 0
+							},
+							{
+								"name": "AdjustToContentsOnFirstShow",
+								"value": 1
+							},
+							{
+								"name": "AdjustToMinimumContentsLength",
+								"value": 2
+							},
+							{
+								"name": "AdjustToMinimumContentsLengthWithIcon",
+								"value": 3
+							}
 						]
 					}
 				],
 				"methods": [
 					{
-						"name": "QComboBox"
-					},
-					{
-						"name": "addItems", "retType": "void",
+						"name": "QComboBox",
 						"params": [
-							 {"name": "texts", "type": "const QStringList&"}
-						]
+							{
+								"name": "parent",
+								"type": "QWidget*"
+							}
+						],
+						"retType": "void"
 					},
 					{
-						"name": "setSizeAdjustPolicy", "retType": "void",
+						"isConst": true,
+						"name": "maxVisibleItems",
+						"retType": "int"
+					},
+					{
+						"name": "setMaxVisibleItems",
 						"params": [
-							 {"name": "policy", "type": "QComboBox::SizeAdjustPolicy"}
-						]
+							{
+								"name": "maxItems",
+								"type": "int"
+							}
+						],
+						"retType": "void"
 					},
 					{
-						"name": "sizeAdjustPolicy", "retType": "QComboBox::SizeAdjustPolicy"
+						"isConst": true,
+						"name": "count",
+						"retType": "int"
+					},
+					{
+						"name": "setMaxCount",
+						"params": [
+							{
+								"name": "max",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "maxCount",
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "duplicatesEnabled",
+						"retType": "bool"
+					},
+					{
+						"name": "setDuplicatesEnabled",
+						"params": [
+							{
+								"name": "enable",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setFrame",
+						"params": [
+							{
+								"name": "hasFrame",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "hasFrame",
+						"retType": "bool"
+					},
+					{
+						"isConst": true,
+						"name": "findText",
+						"params": [
+							{
+								"name": "text",
+								"type": "const QString&"
+							},
+							{
+								"name": "flags",
+								"type": "Qt::MatchFlag"
+							}
+						],
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "insertPolicy",
+						"retType": "QComboBox::InsertPolicy"
+					},
+					{
+						"name": "setInsertPolicy",
+						"params": [
+							{
+								"name": "policy",
+								"type": "QComboBox::InsertPolicy"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "sizeAdjustPolicy",
+						"retType": "QComboBox::SizeAdjustPolicy"
+					},
+					{
+						"name": "setSizeAdjustPolicy",
+						"params": [
+							{
+								"name": "policy",
+								"type": "QComboBox::SizeAdjustPolicy"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "minimumContentsLength",
+						"retType": "int"
+					},
+					{
+						"name": "setMinimumContentsLength",
+						"params": [
+							{
+								"name": "characters",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "iconSize",
+						"retType": "QSize"
+					},
+					{
+						"name": "setIconSize",
+						"params": [
+							{
+								"name": "size",
+								"type": "const QSize&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "isEditable",
+						"retType": "bool"
+					},
+					{
+						"name": "setEditable",
+						"params": [
+							{
+								"name": "editable",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "currentIndex",
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "currentText",
+						"retType": "QString"
+					},
+					{
+						"isConst": true,
+						"name": "itemText",
+						"params": [
+							{
+								"name": "index",
+								"type": "int"
+							}
+						],
+						"retType": "QString"
+					},
+					{
+						"isConst": true,
+						"name": "itemIcon",
+						"params": [
+							{
+								"name": "index",
+								"type": "int"
+							}
+						],
+						"retType": "QIcon"
+					},
+					{
+						"name": "addItems",
+						"params": [
+							{
+								"name": "texts",
+								"type": "const QStringList&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "insertItems",
+						"params": [
+							{
+								"name": "index",
+								"type": "int"
+							},
+							{
+								"name": "texts",
+								"type": "const QStringList&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "insertSeparator",
+						"params": [
+							{
+								"name": "index",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "removeItem",
+						"params": [
+							{
+								"name": "index",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setItemText",
+						"params": [
+							{
+								"name": "index",
+								"type": "int"
+							},
+							{
+								"name": "text",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setItemIcon",
+						"params": [
+							{
+								"name": "index",
+								"type": "int"
+							},
+							{
+								"name": "icon",
+								"type": "const QIcon&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "showPopup",
+						"retType": "void"
+					},
+					{
+						"name": "hidePopup",
+						"retType": "void"
+					},
+					{
+						"name": "clear",
+						"retType": "void"
+					},
+					{
+						"name": "clearEditText",
+						"retType": "void"
+					},
+					{
+						"name": "setEditText",
+						"params": [
+							{
+								"name": "text",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setCurrentIndex",
+						"params": [
+							{
+								"name": "index",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setCurrentText",
+						"params": [
+							{
+								"name": "text",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
 					}
 				],
+				"name": "QComboBox",
 				"properties": [
 					{
-						"name": "sizeAdjustPolicy",
+						"getter": "isEditable",
+						"name": "editable",
+						"setter": "setEditable",
+						"type": "bool"
+					},
+					{
+						"getter": "count",
+						"name": "count",
+						"type": "int"
+					},
+					{
+						"getter": "currentText",
+						"name": "currentText",
+						"setter": "setCurrentText",
+						"type": "QString"
+					},
+					{
+						"getter": "currentIndex",
+						"name": "currentIndex",
+						"setter": "setCurrentIndex",
+						"type": "int"
+					},
+					{
+						"getter": "maxVisibleItems",
+						"name": "maxVisibleItems",
+						"setter": "setMaxVisibleItems",
+						"type": "int"
+					},
+					{
+						"getter": "maxCount",
+						"name": "maxCount",
+						"setter": "setMaxCount",
+						"type": "int"
+					},
+					{
+						"getter": "insertPolicy",
+						"name": "insertPolicy",
+						"setter": "setInsertPolicy",
+						"type": "InsertPolicy"
+					},
+					{
 						"getter": "sizeAdjustPolicy",
-						"setter": "setSizeAdjustPolicy"
+						"name": "sizeAdjustPolicy",
+						"setter": "setSizeAdjustPolicy",
+						"type": "SizeAdjustPolicy"
+					},
+					{
+						"getter": "minimumContentsLength",
+						"name": "minimumContentsLength",
+						"setter": "setMinimumContentsLength",
+						"type": "int"
+					},
+					{
+						"getter": "iconSize",
+						"name": "iconSize",
+						"setter": "setIconSize",
+						"type": "QSize"
+					},
+					{
+						"getter": "duplicatesEnabled",
+						"name": "duplicatesEnabled",
+						"setter": "setDuplicatesEnabled",
+						"type": "bool"
+					},
+					{
+						"getter": "hasFrame",
+						"name": "frame",
+						"setter": "setFrame",
+						"type": "bool"
 					}
 				]
 			},
 			{
-				"name": "QFrame", "base": "QWidget"
+				"base": "QComboBox",
+				"enums": [
+					{
+						"name": "FontFilter",
+						"values": [
+							{
+								"name": "AllFonts",
+								"value": 0
+							},
+							{
+								"name": "ScalableFonts",
+								"value": 1
+							},
+							{
+								"name": "NonScalableFonts",
+								"value": 2
+							},
+							{
+								"name": "MonospacedFonts",
+								"value": 4
+							},
+							{
+								"name": "ProportionalFonts",
+								"value": 8
+							}
+						]
+					}
+				],
+				"methods": [
+					{
+						"name": "QFontComboBox",
+						"params": [
+							{
+								"name": "parent",
+								"type": "QWidget*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setFontFilters",
+						"params": [
+							{
+								"name": "filters",
+								"type": "QFontComboBox::FontFilter"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "fontFilters",
+						"retType": "QFontComboBox::FontFilter"
+					},
+					{
+						"isConst": true,
+						"name": "currentFont",
+						"retType": "QFont"
+					},
+					{
+						"name": "setCurrentFont",
+						"params": [
+							{
+								"name": "font",
+								"type": "const QFont&"
+							}
+						],
+						"retType": "void"
+					}
+				],
+				"name": "QFontComboBox",
+				"properties": [
+					{
+						"getter": "fontFilters",
+						"name": "fontFilters",
+						"setter": "setFontFilters",
+						"type": "QFontComboBox::FontFilter"
+					},
+					{
+						"getter": "currentFont",
+						"name": "currentFont",
+						"setter": "setCurrentFont",
+						"type": "QFont"
+					}
+				]
+			},
+			{
+				"base": "QWidget",
+				"enums": [
+					{
+						"name": "Shape",
+						"values": [
+							{
+								"name": "NoFrame",
+								"value": 0
+							},
+							{
+								"name": "Box",
+								"value": 1
+							},
+							{
+								"name": "Panel",
+								"value": 2
+							},
+							{
+								"name": "WinPanel",
+								"value": 3
+							},
+							{
+								"name": "HLine",
+								"value": 4
+							},
+							{
+								"name": "VLine",
+								"value": 5
+							},
+							{
+								"name": "StyledPanel",
+								"value": 6
+							}
+						]
+					},
+					{
+						"name": "Shadow",
+						"values": [
+							{
+								"name": "Plain",
+								"value": 16
+							},
+							{
+								"name": "Raised",
+								"value": 32
+							},
+							{
+								"name": "Sunken",
+								"value": 48
+							}
+						]
+					}
+				],
+				"methods": [
+					{
+						"name": "QFrame",
+						"params": [
+							{
+								"name": "parent",
+								"type": "QWidget*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "frameWidth",
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "frameShape",
+						"retType": "QFrame::Shape"
+					},
+					{
+						"name": "setFrameShape",
+						"params": [
+							{
+								"name": "shape",
+								"type": "QFrame::Shape"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "frameShadow",
+						"retType": "QFrame::Shadow"
+					},
+					{
+						"name": "setFrameShadow",
+						"params": [
+							{
+								"name": "shadow",
+								"type": "QFrame::Shadow"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "lineWidth",
+						"retType": "int"
+					},
+					{
+						"name": "setLineWidth",
+						"params": [
+							{
+								"name": "width",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "midLineWidth",
+						"retType": "int"
+					},
+					{
+						"name": "setMidLineWidth",
+						"params": [
+							{
+								"name": "width",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "frameRect",
+						"retType": "QRect"
+					},
+					{
+						"name": "setFrameRect",
+						"params": [
+							{
+								"name": "rectangle",
+								"type": "const QRect&"
+							}
+						],
+						"retType": "void"
+					}
+				],
+				"name": "QFrame",
+				"properties": [
+					{
+						"getter": "frameShape",
+						"name": "frameShape",
+						"setter": "setFrameShape",
+						"type": "Shape"
+					},
+					{
+						"getter": "frameShadow",
+						"name": "frameShadow",
+						"setter": "setFrameShadow",
+						"type": "Shadow"
+					},
+					{
+						"getter": "lineWidth",
+						"name": "lineWidth",
+						"setter": "setLineWidth",
+						"type": "int"
+					},
+					{
+						"getter": "midLineWidth",
+						"name": "midLineWidth",
+						"setter": "setMidLineWidth",
+						"type": "int"
+					},
+					{
+						"getter": "frameWidth",
+						"name": "frameWidth",
+						"type": "int"
+					},
+					{
+						"getter": "frameRect",
+						"name": "frameRect",
+						"setter": "setFrameRect",
+						"type": "QRect"
+					}
+				]
 			},
 			{
 				"name": "QLabel", "base": "QFrame",
@@ -293,6 +1000,15 @@
 						"name": "QLabel",
 						"params": [
 							 {"name": "text", "type": "const QString&"}
+						]
+					},
+					{
+						"name": "alignment", "retType": "Qt::AlignmentFlag"
+					},
+					{
+						"name": "setAlignment", "retType": "void",
+						"params": [
+							{"name": "alignment", "type": "Qt::AlignmentFlag"}
 						]
 					},
 					{
@@ -321,6 +1037,11 @@
 					}
 				],
 				"properties": [
+					{
+						"name": "alignment",
+						"getter": "alignment",
+						"setter": "setAlignment"
+					},
 					{
 						"name": "text",
 						"getter": "text",
@@ -425,50 +1146,171 @@
 			},
 			{
 				"name": "QBoxLayout", "base": "QLayout",
+				"enums": [
+					{
+						"name": "Direction",
+						"values": [
+							{"name": "LeftToRight", "value": 0},
+							{"name": "RightToLeft", "value": 1},
+							{"name": "TopToBottom", "value": 2},
+							{"name": "BottomToTop", "value": 3}
+						]
+					}
+				],
 				"methods": [
+					{
+						"name": "QBoxLayout",
+						"params": [
+							{"name": "direction", "type": "QBoxLayout::Direction"},
+							{"name": "parent", "type": "QWidget*"}
+						]
+					},
+					{
+						"name": "addLayout", "retType": "void",
+						"params": [
+							{"name": "layout", "type": "QLayout*"},
+							{"name": "stretch", "type": "int"}
+						]
+					},
+					{
+						"name": "addSpacing", "retType": "void",
+						"params": [
+							{"name": "size", "type": "int"}
+						]
+					},
+					{
+						"name": "addStretch", "retType": "void",
+						"params": [
+							{"name": "stretch", "type": "int"}
+						]
+					},
+					{
+						"name": "addStrut", "retType": "void",
+						"params": [
+							{"name": "size", "type": "int"}
+						]
+					},
 					{
 						"name": "addWidget", "retType": "void",
 						"params": [
-							{"name": "widget", "type": "QWidget*"}
+							{"name": "widget", "type": "QWidget*"},
+							{"name": "stretch", "type": "int"}
 						]
 					}
 				]
 			},
 			{
-				"name": "QVBoxLayout", "base": "QBoxLayout",
-				"methods": [
+				"base": "QFrame",
+				"enums": [
 					{
-						"name": "QVBoxLayout"
+						"name": "SizeAdjustPolicy",
+						"values": [
+							{
+								"name": "AdjustIgnored",
+								"value": 0
+							},
+							{
+								"name": "AdjustToContentsOnFirstShow",
+								"value": 1
+							},
+							{
+								"name": "AdjustToContents",
+								"value": 2
+							}
+						]
 					}
-				]
-			},
-			{
-				"name": "QHBoxLayout", "base": "QBoxLayout",
+				],
 				"methods": [
 					{
-						"name": "QHBoxLayout"
-					}
-				]
-			},
-			{
-				"name": "QAbstractScrollArea", "base": "QFrame"
-			},
-			{
-				"name": "QAbstractItemView", "base": "QAbstractScrollArea",
-				"methods": [
-					{
-						"name": "setModel", "retType": "void",
+						"name": "QAbstractScrollArea",
 						"params": [
-							{"name": "model", "type": "QAbstractItemModel*"}
-						]
-					}
-				]
-			},
-			{
-				"name": "QListView", "base": "QAbstractItemView",
-				"methods": [
+							{
+								"name": "parent",
+								"type": "QWidget*"
+							}
+						],
+						"retType": "void"
+					},
 					{
-						"name": "QListView"
+						"isConst": true,
+						"name": "verticalScrollBarPolicy",
+						"retType": "Qt::ScrollBarPolicy"
+					},
+					{
+						"name": "setVerticalScrollBarPolicy",
+						"params": [
+							{
+								"name": "policy",
+								"type": "Qt::ScrollBarPolicy"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "horizontalScrollBarPolicy",
+						"retType": "Qt::ScrollBarPolicy"
+					},
+					{
+						"name": "setHorizontalScrollBarPolicy",
+						"params": [
+							{
+								"name": "policy",
+								"type": "Qt::ScrollBarPolicy"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "cornerWidget",
+						"retType": "QWidget*"
+					},
+					{
+						"name": "setCornerWidget",
+						"params": [
+							{
+								"name": "widget",
+								"type": "QWidget*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "sizeAdjustPolicy",
+						"retType": "QAbstractScrollArea::SizeAdjustPolicy"
+					},
+					{
+						"name": "setSizeAdjustPolicy",
+						"params": [
+							{
+								"name": "policy",
+								"type": "QAbstractScrollArea::SizeAdjustPolicy"
+							}
+						],
+						"retType": "void"
+					}
+				],
+				"name": "QAbstractScrollArea",
+				"properties": [
+					{
+						"getter": "verticalScrollBarPolicy",
+						"name": "verticalScrollBarPolicy",
+						"setter": "setVerticalScrollBarPolicy",
+						"type": "Qt::ScrollBarPolicy"
+					},
+					{
+						"getter": "horizontalScrollBarPolicy",
+						"name": "horizontalScrollBarPolicy",
+						"setter": "setHorizontalScrollBarPolicy",
+						"type": "Qt::ScrollBarPolicy"
+					},
+					{
+						"getter": "sizeAdjustPolicy",
+						"name": "sizeAdjustPolicy",
+						"setter": "setSizeAdjustPolicy",
+						"type": "SizeAdjustPolicy"
 					}
 				]
 			},
@@ -1863,6 +2705,4444 @@
 						"name": "iconVisibleInMenu",
 						"setter": "setIconVisibleInMenu",
 						"type": "bool"
+					}
+				]
+			},
+			{
+				"base": "QAbstractScrollArea",
+				"methods": [
+					{
+						"name": "QScrollArea",
+						"params": [
+							{
+								"name": "parent",
+								"type": "QWidget*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "widget",
+						"retType": "QWidget*"
+					},
+					{
+						"name": "setWidget",
+						"params": [
+							{
+								"name": "widget",
+								"type": "QWidget*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "takeWidget",
+						"retType": "QWidget*"
+					},
+					{
+						"isConst": true,
+						"name": "widgetResizable",
+						"retType": "bool"
+					},
+					{
+						"name": "setWidgetResizable",
+						"params": [
+							{
+								"name": "resizable",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "alignment",
+						"retType": "Qt::AlignmentFlag"
+					},
+					{
+						"name": "setAlignment",
+						"params": [
+							{
+								"name": "alignment",
+								"type": "Qt::AlignmentFlag"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "ensureVisible",
+						"params": [
+							{
+								"name": "x",
+								"type": "int"
+							},
+							{
+								"name": "y",
+								"type": "int"
+							},
+							{
+								"name": "xmargin",
+								"type": "int"
+							},
+							{
+								"name": "ymargin",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "ensureWidgetVisible",
+						"params": [
+							{
+								"name": "childWidget",
+								"type": "QWidget*"
+							},
+							{
+								"name": "xmargin",
+								"type": "int"
+							},
+							{
+								"name": "ymargin",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					}
+				],
+				"name": "QScrollArea",
+				"properties": [
+					{
+						"getter": "widgetResizable",
+						"name": "widgetResizable",
+						"setter": "setWidgetResizable",
+						"type": "bool"
+					},
+					{
+						"getter": "alignment",
+						"name": "alignment",
+						"setter": "setAlignment",
+						"type": "Qt::AlignmentFlag"
+					}
+				]
+			},
+			{
+				"base": "QWidget",
+				"enums": [
+					{
+						"name": "DialogCode",
+						"values": [
+							{
+								"name": "Rejected",
+								"value": 0
+							},
+							{
+								"name": "Accepted",
+								"value": 1
+							}
+						]
+					}
+				],
+				"methods": [
+					{
+						"name": "QDialog",
+						"params": [
+							{
+								"name": "parent",
+								"type": "QWidget*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "result",
+						"retType": "int"
+					},
+					{
+						"name": "setSizeGripEnabled",
+						"params": [
+							{
+								"name": "enabled",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "isSizeGripEnabled",
+						"retType": "bool"
+					},
+					{
+						"name": "setModal",
+						"params": [
+							{
+								"name": "modal",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setResult",
+						"params": [
+							{
+								"name": "result",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "open",
+						"retType": "void"
+					},
+					{
+						"name": "exec",
+						"retType": "int"
+					},
+					{
+						"name": "done",
+						"params": [
+							{
+								"name": "result",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "accept",
+						"retType": "void"
+					},
+					{
+						"name": "reject",
+						"retType": "void"
+					}
+				],
+				"name": "QDialog",
+				"properties": [
+					{
+						"getter": "isSizeGripEnabled",
+						"name": "sizeGripEnabled",
+						"setter": "setSizeGripEnabled",
+						"type": "bool"
+					},
+					{
+						"getter": "isModal",
+						"name": "modal",
+						"setter": "setModal",
+						"type": "bool"
+					}
+				]
+			},
+			{
+				"base": "QDialog",
+				"enums": [
+					{
+						"name": "ViewMode",
+						"values": [
+							{
+								"name": "Detail",
+								"value": 0
+							},
+							{
+								"name": "List",
+								"value": 1
+							}
+						]
+					},
+					{
+						"name": "FileMode",
+						"values": [
+							{
+								"name": "AnyFile",
+								"value": 0
+							},
+							{
+								"name": "ExistingFile",
+								"value": 1
+							},
+							{
+								"name": "Directory",
+								"value": 2
+							},
+							{
+								"name": "ExistingFiles",
+								"value": 3
+							},
+							{
+								"name": "DirectoryOnly",
+								"value": 4
+							}
+						]
+					},
+					{
+						"name": "AcceptMode",
+						"values": [
+							{
+								"name": "AcceptOpen",
+								"value": 0
+							},
+							{
+								"name": "AcceptSave",
+								"value": 1
+							}
+						]
+					},
+					{
+						"name": "DialogLabel",
+						"values": [
+							{
+								"name": "LookIn",
+								"value": 0
+							},
+							{
+								"name": "FileName",
+								"value": 1
+							},
+							{
+								"name": "FileType",
+								"value": 2
+							},
+							{
+								"name": "Accept",
+								"value": 3
+							},
+							{
+								"name": "Reject",
+								"value": 4
+							}
+						]
+					},
+					{
+						"name": "Option",
+						"values": [
+							{
+								"name": "ShowDirsOnly",
+								"value": 1
+							},
+							{
+								"name": "DontResolveSymlinks",
+								"value": 2
+							},
+							{
+								"name": "DontConfirmOverwrite",
+								"value": 4
+							},
+							{
+								"name": "DontUseSheet",
+								"value": 8
+							},
+							{
+								"name": "DontUseNativeDialog",
+								"value": 16
+							},
+							{
+								"name": "ReadOnly",
+								"value": 32
+							},
+							{
+								"name": "HideNameFilterDetails",
+								"value": 64
+							},
+							{
+								"name": "DontUseCustomDirectoryIcons",
+								"value": 128
+							}
+						]
+					}
+				],
+				"methods": [
+					{
+						"name": "QFileDialog",
+						"params": [
+							{
+								"name": "parent",
+								"type": "QWidget*"
+							},
+							{
+								"name": "caption",
+								"type": "const QString&"
+							},
+							{
+								"name": "directory",
+								"type": "const QString&"
+							},
+							{
+								"name": "filter",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setDirectory",
+						"params": [
+							{
+								"name": "directory",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "selectFile",
+						"params": [
+							{
+								"name": "filename",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "selectedFiles",
+						"retType": "QStringList"
+					},
+					{
+						"name": "setNameFilterDetailsVisible",
+						"params": [
+							{
+								"name": "enabled",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "isNameFilterDetailsVisible",
+						"retType": "bool"
+					},
+					{
+						"name": "setNameFilter",
+						"params": [
+							{
+								"name": "filter",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setNameFilters",
+						"params": [
+							{
+								"name": "filters",
+								"type": "const QStringList&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "nameFilters",
+						"retType": "QStringList"
+					},
+					{
+						"name": "selectNameFilter",
+						"params": [
+							{
+								"name": "filter",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "selectedNameFilter",
+						"retType": "QString"
+					},
+					{
+						"name": "setMimeTypeFilters",
+						"params": [
+							{
+								"name": "filters",
+								"type": "const QStringList&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "mimeTypeFilters",
+						"retType": "QStringList"
+					},
+					{
+						"name": "selectMimeTypeFilter",
+						"params": [
+							{
+								"name": "filter",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setViewMode",
+						"params": [
+							{
+								"name": "mode",
+								"type": "QFileDialog::ViewMode"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "viewMode",
+						"retType": "QFileDialog::ViewMode"
+					},
+					{
+						"name": "setFileMode",
+						"params": [
+							{
+								"name": "mode",
+								"type": "QFileDialog::FileMode"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "fileMode",
+						"retType": "QFileDialog::FileMode"
+					},
+					{
+						"name": "setAcceptMode",
+						"params": [
+							{
+								"name": "mode",
+								"type": "QFileDialog::AcceptMode"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "acceptMode",
+						"retType": "QFileDialog::AcceptMode"
+					},
+					{
+						"name": "setReadOnly",
+						"params": [
+							{
+								"name": "readOnly",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "isReadOnly",
+						"retType": "bool"
+					},
+					{
+						"name": "setResolveSymlinks",
+						"params": [
+							{
+								"name": "remove",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "resolveSymlinks",
+						"retType": "bool"
+					},
+					{
+						"name": "setConfirmOverwrite",
+						"params": [
+							{
+								"name": "confirm",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "confirmOverwrite",
+						"retType": "bool"
+					},
+					{
+						"name": "setDefaultSuffix",
+						"params": [
+							{
+								"name": "suffix",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "defaultSuffix",
+						"retType": "QString"
+					},
+					{
+						"name": "setHistory",
+						"params": [
+							{
+								"name": "paths",
+								"type": "const QStringList&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "history",
+						"retType": "QStringList"
+					},
+					{
+						"name": "setLabelText",
+						"params": [
+							{
+								"name": "label",
+								"type": "QFileDialog::DialogLabel"
+							},
+							{
+								"name": "text",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "labelText",
+						"params": [
+							{
+								"name": "label",
+								"type": "QFileDialog::DialogLabel"
+							}
+						],
+						"retType": "QString"
+					},
+					{
+						"name": "setOption",
+						"params": [
+							{
+								"name": "option",
+								"type": "QFileDialog::Option"
+							},
+							{
+								"name": "on",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "testOption",
+						"params": [
+							{
+								"name": "option",
+								"type": "QFileDialog::Option"
+							}
+						],
+						"retType": "bool"
+					},
+					{
+						"name": "setOptions",
+						"params": [
+							{
+								"name": "options",
+								"type": "QFileDialog::Option"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "options",
+						"retType": "QFileDialog::Option"
+					},
+					{
+						"isStaticMember": true,
+						"name": "getOpenFileName",
+						"params": [
+							{
+								"name": "parent",
+								"type": "QWidget*"
+							},
+							{
+								"name": "caption",
+								"type": "const QString&"
+							},
+							{
+								"name": "dir",
+								"type": "const QString&"
+							},
+							{
+								"name": "filter",
+								"type": "const QString&"
+							}
+						],
+						"retType": "QString"
+					},
+					{
+						"isStaticMember": true,
+						"name": "getSaveFileName",
+						"params": [
+							{
+								"name": "parent",
+								"type": "QWidget*"
+							},
+							{
+								"name": "caption",
+								"type": "const QString&"
+							},
+							{
+								"name": "dir",
+								"type": "const QString&"
+							},
+							{
+								"name": "filter",
+								"type": "const QString&"
+							}
+						],
+						"retType": "QString"
+					},
+					{
+						"isStaticMember": true,
+						"name": "getExistingDirectory",
+						"params": [
+							{
+								"name": "parent",
+								"type": "QWidget*"
+							},
+							{
+								"name": "caption",
+								"type": "const QString&"
+							},
+							{
+								"name": "dir",
+								"type": "const QString&"
+							},
+							{
+								"name": "options",
+								"type": "QFileDialog::Option"
+							}
+						],
+						"retType": "QString"
+					},
+					{
+						"isStaticMember": true,
+						"name": "getOpenFileNames",
+						"params": [
+							{
+								"name": "parent",
+								"type": "QWidget*"
+							},
+							{
+								"name": "caption",
+								"type": "const QString&"
+							},
+							{
+								"name": "dir",
+								"type": "const QString&"
+							},
+							{
+								"name": "filter",
+								"type": "const QString&"
+							}
+						],
+						"retType": "QStringList"
+					}
+				],
+				"name": "QFileDialog",
+				"properties": [
+					{
+						"getter": "viewMode",
+						"name": "viewMode",
+						"setter": "setViewMode",
+						"type": "ViewMode"
+					},
+					{
+						"getter": "fileMode",
+						"name": "fileMode",
+						"setter": "setFileMode",
+						"type": "FileMode"
+					},
+					{
+						"getter": "acceptMode",
+						"name": "acceptMode",
+						"setter": "setAcceptMode",
+						"type": "AcceptMode"
+					},
+					{
+						"getter": "isReadOnly",
+						"name": "readOnly",
+						"setter": "setReadOnly",
+						"type": "bool"
+					},
+					{
+						"getter": "resolveSymlinks",
+						"name": "resolveSymlinks",
+						"setter": "setResolveSymlinks",
+						"type": "bool"
+					},
+					{
+						"getter": "confirmOverwrite",
+						"name": "confirmOverwrite",
+						"setter": "setConfirmOverwrite",
+						"type": "bool"
+					},
+					{
+						"getter": "defaultSuffix",
+						"name": "defaultSuffix",
+						"setter": "setDefaultSuffix",
+						"type": "QString"
+					},
+					{
+						"getter": "isNameFilterDetailsVisible",
+						"name": "nameFilterDetailsVisible",
+						"setter": "setNameFilterDetailsVisible",
+						"type": "bool"
+					},
+					{
+						"getter": "QFileDialog::Option",
+						"name": "options",
+						"setter": "setOptions",
+						"type": "QFileDialog::Option"
+					}
+				]
+			},
+			{
+				"base": "QDialog",
+				"enums": [
+					{
+						"name": "FontDialogOption",
+						"values": [
+							{
+								"name": "NoButtons",
+								"value": 1
+							},
+							{
+								"name": "DontUseNativeDialog",
+								"value": 2
+							},
+							{
+								"name": "ScalableFonts",
+								"value": 4
+							},
+							{
+								"name": "NonScalableFonts",
+								"value": 8
+							},
+							{
+								"name": "MonospacedFonts",
+								"value": 16
+							},
+							{
+								"name": "ProportionalFonts",
+								"value": 32
+							}
+						]
+					}
+				],
+				"methods": [
+					{
+						"name": "QFontDialog",
+						"params": [
+							{
+								"name": "initial",
+								"type": "const QFont&"
+							},
+							{
+								"name": "parent",
+								"type": "QWidget*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setCurrentFont",
+						"params": [
+							{
+								"name": "font",
+								"type": "const QFont&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "currentFont",
+						"retType": "QFont"
+					},
+					{
+						"isConst": true,
+						"name": "selectedFont",
+						"retType": "QFont"
+					},
+					{
+						"isConst": true,
+						"name": "testOption",
+						"params": [
+							{
+								"name": "option",
+								"type": "QFontDialog::FontDialogOption"
+							}
+						],
+						"retType": "bool"
+					},
+					{
+						"name": "setOptions",
+						"params": [
+							{
+								"name": "options",
+								"type": "QFontDialog::FontDialogOption"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "options",
+						"retType": "QFontDialog::FontDialogOption"
+					}
+				],
+				"name": "QFontDialog",
+				"properties": [
+					{
+						"getter": "currentFont",
+						"name": "currentFont",
+						"setter": "setCurrentFont",
+						"type": "QFont"
+					},
+					{
+						"getter": "options",
+						"name": "options",
+						"setter": "setOptions",
+						"type": "QFontDialog::FontDialogOption"
+					}
+				]
+			},
+			{
+				"base": "QDialog",
+				"methods": [
+					{
+						"name": "QProgressDialog",
+						"params": [
+							{
+								"name": "parent",
+								"type": "QWidget*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "wasCanceled",
+						"retType": "bool"
+					},
+					{
+						"isConst": true,
+						"name": "minimum",
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "maximum",
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "value",
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "labelText",
+						"retType": "QString"
+					},
+					{
+						"isConst": true,
+						"name": "minimumDuration",
+						"retType": "int"
+					},
+					{
+						"name": "setAutoReset",
+						"params": [
+							{
+								"name": "reset",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "autoReset",
+						"retType": "bool"
+					},
+					{
+						"name": "setAutoClose",
+						"params": [
+							{
+								"name": "close",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "autoClose",
+						"retType": "bool"
+					},
+					{
+						"name": "cancel",
+						"retType": "void"
+					},
+					{
+						"name": "reset",
+						"retType": "void"
+					},
+					{
+						"name": "setMaximum",
+						"params": [
+							{
+								"name": "maximum",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setMinimum",
+						"params": [
+							{
+								"name": "minimum",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setValue",
+						"params": [
+							{
+								"name": "progress",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setLabelText",
+						"params": [
+							{
+								"name": "text",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setCancelButtonText",
+						"params": [
+							{
+								"name": "text",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setMinimumDuration",
+						"params": [
+							{
+								"name": "ms",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					}
+				],
+				"name": "QProgressDialog",
+				"properties": [
+					{
+						"getter": "wasCanceled",
+						"name": "wasCanceled",
+						"type": "bool"
+					},
+					{
+						"getter": "minimum",
+						"name": "minimum",
+						"setter": "setMinimum",
+						"type": "int"
+					},
+					{
+						"getter": "maximum",
+						"name": "maximum",
+						"setter": "setMaximum",
+						"type": "int"
+					},
+					{
+						"getter": "value",
+						"name": "value",
+						"setter": "setValue",
+						"type": "int"
+					},
+					{
+						"getter": "autoReset",
+						"name": "autoReset",
+						"setter": "setAutoReset",
+						"type": "bool"
+					},
+					{
+						"getter": "autoClose",
+						"name": "autoClose",
+						"setter": "setAutoClose",
+						"type": "bool"
+					},
+					{
+						"getter": "minimumDuration",
+						"name": "minimumDuration",
+						"setter": "setMinimumDuration",
+						"type": "int"
+					},
+					{
+						"getter": "labelText",
+						"name": "labelText",
+						"setter": "setLabelText",
+						"type": "QString"
+					}
+				]
+			},
+			{
+				"base": "QDialog",
+				"enums": [
+					{
+						"name": "Icon",
+						"values": [
+							{
+								"name": "NoIcon",
+								"value": 0
+							},
+							{
+								"name": "Information",
+								"value": 1
+							},
+							{
+								"name": "Warning",
+								"value": 2
+							},
+							{
+								"name": "Critical",
+								"value": 3
+							},
+							{
+								"name": "Question",
+								"value": 4
+							}
+						]
+					},
+					{
+						"name": "ButtonRole",
+						"values": [
+							{
+								"name": "InvalidRole",
+								"value": -1
+							},
+							{
+								"name": "AcceptRole",
+								"value": 0
+							},
+							{
+								"name": "RejectRole",
+								"value": 1
+							},
+							{
+								"name": "DestructiveRole",
+								"value": 2
+							},
+							{
+								"name": "ActionRole",
+								"value": 3
+							},
+							{
+								"name": "HelpRole",
+								"value": 4
+							},
+							{
+								"name": "YesRole",
+								"value": 5
+							},
+							{
+								"name": "NoRole",
+								"value": 6
+							},
+							{
+								"name": "ResetRole",
+								"value": 7
+							},
+							{
+								"name": "ApplyRole",
+								"value": 8
+							},
+							{
+								"name": "NRoles",
+								"value": 9
+							}
+						]
+					},
+					{
+						"name": "StandardButton",
+						"values": [
+							{
+								"name": "NoButton",
+								"value": 0
+							},
+							{
+								"name": "Ok",
+								"value": 1024
+							},
+							{
+								"name": "Save",
+								"value": 2048
+							},
+							{
+								"name": "SaveAll",
+								"value": 4096
+							},
+							{
+								"name": "Open",
+								"value": 8192
+							},
+							{
+								"name": "Yes",
+								"value": 16384
+							},
+							{
+								"name": "YesToAll",
+								"value": 32768
+							},
+							{
+								"name": "No",
+								"value": 65536
+							},
+							{
+								"name": "NoToAll",
+								"value": 131072
+							},
+							{
+								"name": "Abort",
+								"value": 262144
+							},
+							{
+								"name": "Retry",
+								"value": 524288
+							},
+							{
+								"name": "Ignore",
+								"value": 1048576
+							},
+							{
+								"name": "Close",
+								"value": 2097152
+							},
+							{
+								"name": "Cancel",
+								"value": 4194304
+							},
+							{
+								"name": "Discard",
+								"value": 8388608
+							},
+							{
+								"name": "Help",
+								"value": 16777216
+							},
+							{
+								"name": "Apply",
+								"value": 33554432
+							},
+							{
+								"name": "Reset",
+								"value": 67108864
+							},
+							{
+								"name": "RestoreDefaults",
+								"value": 134217728
+							}
+						]
+					}
+				],
+				"methods": [
+					{
+						"name": "QMessageBox",
+						"params": [
+							{
+								"name": "parent",
+								"type": "QWidget*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setStandardButtons",
+						"params": [
+							{
+								"name": "buttons",
+								"type": "QMessageBox::StandardButton"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "standardButtons",
+						"retType": "QMessageBox::StandardButton"
+					},
+					{
+						"name": "setDefaultButton",
+						"params": [
+							{
+								"name": "button",
+								"type": "QMessageBox::StandardButton"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setEscapeButton",
+						"params": [
+							{
+								"name": "button",
+								"type": "QMessageBox::StandardButton"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "text",
+						"retType": "QString"
+					},
+					{
+						"name": "setText",
+						"params": [
+							{
+								"name": "text",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "icon",
+						"retType": "QMessageBox::Icon"
+					},
+					{
+						"name": "setIcon",
+						"params": [
+							{
+								"name": "icon",
+								"type": "QMessageBox::Icon"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "iconPixmap",
+						"retType": "QPixmap"
+					},
+					{
+						"name": "setIconPixmap",
+						"params": [
+							{
+								"name": "pixmap",
+								"type": "const QPixmap&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "textFormat",
+						"retType": "Qt::TextFormat"
+					},
+					{
+						"name": "setTextFormat",
+						"params": [
+							{
+								"name": "format",
+								"type": "Qt::TextFormat"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setTextInteractionFlags",
+						"params": [
+							{
+								"name": "flags",
+								"type": "Qt::TextInteractionFlag"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "textInteractionFlags",
+						"retType": "Qt::TextInteractionFlag"
+					},
+					{
+						"name": "setCheckBox",
+						"params": [
+							{
+								"name": "checkbox",
+								"type": "QCheckBox*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "checkBox",
+						"retType": "QCheckBox*"
+					},
+					{
+						"isStaticMember": true,
+						"name": "information",
+						"params": [
+							{
+								"name": "parent",
+								"type": "QWidget*"
+							},
+							{
+								"name": "title",
+								"type": "const QString&"
+							},
+							{
+								"name": "text",
+								"type": "const QString&"
+							},
+							{
+								"name": "buttons",
+								"type": "QMessageBox::StandardButton"
+							},
+							{
+								"name": "defaultButton",
+								"type": "QMessageBox::StandardButton"
+							}
+						],
+						"retType": "QMessageBox::StandardButton"
+					},
+					{
+						"isStaticMember": true,
+						"name": "question",
+						"params": [
+							{
+								"name": "parent",
+								"type": "QWidget*"
+							},
+							{
+								"name": "title",
+								"type": "const QString&"
+							},
+							{
+								"name": "text",
+								"type": "const QString&"
+							},
+							{
+								"name": "buttons",
+								"type": "QMessageBox::StandardButton"
+							},
+							{
+								"name": "defaultButton",
+								"type": "QMessageBox::StandardButton"
+							}
+						],
+						"retType": "QMessageBox::StandardButton"
+					},
+					{
+						"isStaticMember": true,
+						"name": "warning",
+						"params": [
+							{
+								"name": "parent",
+								"type": "QWidget*"
+							},
+							{
+								"name": "title",
+								"type": "const QString&"
+							},
+							{
+								"name": "text",
+								"type": "const QString&"
+							},
+							{
+								"name": "buttons",
+								"type": "QMessageBox::StandardButton"
+							},
+							{
+								"name": "defaultButton",
+								"type": "QMessageBox::StandardButton"
+							}
+						],
+						"retType": "QMessageBox::StandardButton"
+					},
+					{
+						"isStaticMember": true,
+						"name": "critical",
+						"params": [
+							{
+								"name": "parent",
+								"type": "QWidget*"
+							},
+							{
+								"name": "title",
+								"type": "const QString&"
+							},
+							{
+								"name": "text",
+								"type": "const QString&"
+							},
+							{
+								"name": "buttons",
+								"type": "QMessageBox::StandardButton"
+							},
+							{
+								"name": "defaultButton",
+								"type": "QMessageBox::StandardButton"
+							}
+						],
+						"retType": "QMessageBox::StandardButton"
+					},
+					{
+						"isStaticMember": true,
+						"name": "about",
+						"params": [
+							{
+								"name": "parent",
+								"type": "QWidget*"
+							},
+							{
+								"name": "title",
+								"type": "const QString&"
+							},
+							{
+								"name": "text",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isStaticMember": true,
+						"name": "aboutQt",
+						"params": [
+							{
+								"name": "parent",
+								"type": "QWidget*"
+							},
+							{
+								"name": "title",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "informativeText",
+						"retType": "QString"
+					},
+					{
+						"name": "setInformativeText",
+						"params": [
+							{
+								"name": "text",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "detailedText",
+						"retType": "QString"
+					},
+					{
+						"name": "setDetailedText",
+						"params": [
+							{
+								"name": "text",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isStaticMember": true,
+						"name": "standardIcon",
+						"params": [
+							{
+								"name": "icon",
+								"type": "QMessageBox::Icon"
+							}
+						],
+						"retType": "QPixmap"
+					}
+				],
+				"name": "QMessageBox",
+				"properties": [
+					{
+						"getter": "text",
+						"name": "text",
+						"setter": "setText",
+						"type": "QString"
+					},
+					{
+						"getter": "icon",
+						"name": "icon",
+						"setter": "setIcon",
+						"type": "Icon"
+					},
+					{
+						"getter": "iconPixmap",
+						"name": "iconPixmap",
+						"setter": "setIconPixmap",
+						"type": "QPixmap"
+					},
+					{
+						"getter": "textFormat",
+						"name": "textFormat",
+						"setter": "setTextFormat",
+						"type": "Qt::TextFormat"
+					},
+					{
+						"getter": "standardButtons",
+						"name": "standardButtons",
+						"setter": "setStandardButtons",
+						"type": "QMessageBox::StandardButton"
+					},
+					{
+						"getter": "detailedText",
+						"name": "detailedText",
+						"setter": "setDetailedText",
+						"type": "QString"
+					},
+					{
+						"getter": "informativeText",
+						"name": "informativeText",
+						"setter": "setInformativeText",
+						"type": "QString"
+					},
+					{
+						"getter": "textInteractionFlags",
+						"name": "textInteractionFlags",
+						"setter": "setTextInteractionFlags",
+						"type": "Qt::TextInteractionFlag"
+					}
+				]
+			},
+			{
+				"base": "QFrame",
+				"methods": [
+					{
+						"name": "QToolBox",
+						"params": [
+							{
+								"name": "parent",
+								"type": "QWidget*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "addItem",
+						"params": [
+							{
+								"name": "widget",
+								"type": "QWidget*"
+							},
+							{
+								"name": "icon",
+								"type": "const QIcon&"
+							},
+							{
+								"name": "text",
+								"type": "const QString&"
+							}
+						],
+						"retType": "int"
+					},
+					{
+						"name": "insertItem",
+						"params": [
+							{
+								"name": "index",
+								"type": "int"
+							},
+							{
+								"name": "widget",
+								"type": "QWidget*"
+							},
+							{
+								"name": "icon",
+								"type": "const QIcon&"
+							},
+							{
+								"name": "text",
+								"type": "const QString&"
+							}
+						],
+						"retType": "int"
+					},
+					{
+						"name": "removeItem",
+						"params": [
+							{
+								"name": "index",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setItemEnabled",
+						"params": [
+							{
+								"name": "index",
+								"type": "int"
+							},
+							{
+								"name": "enabled",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "isItemEnabled",
+						"params": [
+							{
+								"name": "index",
+								"type": "int"
+							}
+						],
+						"retType": "bool"
+					},
+					{
+						"name": "setItemText",
+						"params": [
+							{
+								"name": "index",
+								"type": "int"
+							},
+							{
+								"name": "text",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "itemText",
+						"params": [
+							{
+								"name": "index",
+								"type": "int"
+							}
+						],
+						"retType": "QString"
+					},
+					{
+						"name": "setItemIcon",
+						"params": [
+							{
+								"name": "index",
+								"type": "int"
+							},
+							{
+								"name": "icon",
+								"type": "const QIcon&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "itemIcon",
+						"params": [
+							{
+								"name": "index",
+								"type": "int"
+							}
+						],
+						"retType": "QIcon"
+					},
+					{
+						"name": "setItemToolTip",
+						"params": [
+							{
+								"name": "index",
+								"type": "int"
+							},
+							{
+								"name": "toolTip",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "itemToolTip",
+						"params": [
+							{
+								"name": "index",
+								"type": "int"
+							}
+						],
+						"retType": "QString"
+					},
+					{
+						"isConst": true,
+						"name": "currentIndex",
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "currentWidget",
+						"retType": "QWidget*"
+					},
+					{
+						"isConst": true,
+						"name": "widget",
+						"params": [
+							{
+								"name": "index",
+								"type": "int"
+							}
+						],
+						"retType": "QWidget*"
+					},
+					{
+						"isConst": true,
+						"name": "indexOf",
+						"params": [
+							{
+								"name": "widget",
+								"type": "QWidget*"
+							}
+						],
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "count",
+						"retType": "int"
+					},
+					{
+						"name": "setCurrentIndex",
+						"params": [
+							{
+								"name": "index",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setCurrentWidget",
+						"params": [
+							{
+								"name": "widget",
+								"type": "QWidget*"
+							}
+						],
+						"retType": "void"
+					}
+				],
+				"name": "QToolBox",
+				"properties": [
+					{
+						"getter": "currentIndex",
+						"name": "currentIndex",
+						"setter": "setCurrentIndex",
+						"type": "int"
+					},
+					{
+						"getter": "count",
+						"name": "count",
+						"type": "int"
+					}
+				]
+			},
+			{
+				"base": "QLayout",
+				"methods": [
+					{
+						"name": "QGridLayout"
+					},
+					{
+						"name": "setHorizontalSpacing",
+						"params": [
+							{
+								"name": "spacing",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "horizontalSpacing",
+						"retType": "int"
+					},
+					{
+						"name": "setVerticalSpacing",
+						"params": [
+							{
+								"name": "spacing",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "verticalSpacing",
+						"retType": "int"
+					},
+					{
+						"name": "setRowStretch",
+						"params": [
+							{
+								"name": "row",
+								"type": "int"
+							},
+							{
+								"name": "stretch",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setColumnStretch",
+						"params": [
+							{
+								"name": "column",
+								"type": "int"
+							},
+							{
+								"name": "stretch",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "rowStretch",
+						"params": [
+							{
+								"name": "row",
+								"type": "int"
+							}
+						],
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "columnStretch",
+						"params": [
+							{
+								"name": "column",
+								"type": "int"
+							}
+						],
+						"retType": "int"
+					},
+					{
+						"name": "setRowMinimumHeight",
+						"params": [
+							{
+								"name": "row",
+								"type": "int"
+							},
+							{
+								"name": "minSize",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setColumnMinimumWidth",
+						"params": [
+							{
+								"name": "column",
+								"type": "int"
+							},
+							{
+								"name": "minSize",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "rowMinimumHeight",
+						"params": [
+							{
+								"name": "row",
+								"type": "int"
+							}
+						],
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "columnMinimumWidth",
+						"params": [
+							{
+								"name": "column",
+								"type": "int"
+							}
+						],
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "columnCount",
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "rowCount",
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "cellRect",
+						"params": [
+							{
+								"name": "row",
+								"type": "int"
+							},
+							{
+								"name": "column",
+								"type": "int"
+							}
+						],
+						"retType": "QRect"
+					},
+					{
+						"name": "addWidget",
+						"params": [
+							{
+								"name": "widget",
+								"type": "QWidget*"
+							},
+							{
+								"name": "row",
+								"type": "int"
+							},
+							{
+								"name": "column",
+								"type": "int"
+							},
+							{
+								"name": "rowSpan",
+								"type": "int"
+							},
+							{
+								"name": "columnSpan",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "addLayout",
+						"params": [
+							{
+								"name": "widget",
+								"type": "QLayout*"
+							},
+							{
+								"name": "row",
+								"type": "int"
+							},
+							{
+								"name": "column",
+								"type": "int"
+							},
+							{
+								"name": "rowSpan",
+								"type": "int"
+							},
+							{
+								"name": "columnSpan",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setOriginCorner",
+						"params": [
+							{
+								"name": "corner",
+								"type": "Qt::Corner"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "originCorner",
+						"retType": "Qt::Corner"
+					}
+				],
+				"name": "QGridLayout"
+			},
+			{
+				"base": "QLayout",
+				"enums": [
+					{
+						"name": "FieldGrowthPolicy",
+						"values": [
+							{
+								"name": "FieldsStayAtSizeHint",
+								"value": 0
+							},
+							{
+								"name": "ExpandingFieldsGrow",
+								"value": 1
+							},
+							{
+								"name": "AllNonFixedFieldsGrow",
+								"value": 2
+							}
+						]
+					},
+					{
+						"name": "RowWrapPolicy",
+						"values": [
+							{
+								"name": "DontWrapRows",
+								"value": 0
+							},
+							{
+								"name": "WrapLongRows",
+								"value": 1
+							},
+							{
+								"name": "WrapAllRows",
+								"value": 2
+							}
+						]
+					},
+					{
+						"name": "ItemRole",
+						"values": [
+							{
+								"name": "LabelRole",
+								"value": 0
+							},
+							{
+								"name": "FieldRole",
+								"value": 1
+							},
+							{
+								"name": "SpanningRole",
+								"value": 2
+							}
+						]
+					}
+				],
+				"methods": [
+					{
+						"name": "QFormLayout",
+						"params": [
+							{
+								"name": "parent",
+								"type": "QWidget*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setFieldGrowthPolicy",
+						"params": [
+							{
+								"name": "policy",
+								"type": "QFormLayout::FieldGrowthPolicy"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "fieldGrowthPolicy",
+						"retType": "QFormLayout::FieldGrowthPolicy"
+					},
+					{
+						"name": "setRowWrapPolicy",
+						"params": [
+							{
+								"name": "policy",
+								"type": "QFormLayout::RowWrapPolicy"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "rowWrapPolicy",
+						"retType": "QFormLayout::RowWrapPolicy"
+					},
+					{
+						"name": "setLabelAlignment",
+						"params": [
+							{
+								"name": "alignment",
+								"type": "Qt::AlignmentFlag"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "labelAlignment",
+						"retType": "Qt::AlignmentFlag"
+					},
+					{
+						"name": "setFormAlignment",
+						"params": [
+							{
+								"name": "alignment",
+								"type": "Qt::AlignmentFlag"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "formAlignment",
+						"retType": "Qt::AlignmentFlag"
+					},
+					{
+						"name": "setHorizontalSpacing",
+						"params": [
+							{
+								"name": "spacing",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "horizontalSpacing",
+						"retType": "int"
+					},
+					{
+						"name": "setVerticalSpacing",
+						"params": [
+							{
+								"name": "spacing",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "verticalSpacing",
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "spacing",
+						"retType": "int"
+					},
+					{
+						"name": "setSpacing",
+						"params": [
+							{
+								"name": "spacing",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "addRow",
+						"params": [
+							{
+								"name": "labelText",
+								"type": "const QString&"
+							},
+							{
+								"name": "field",
+								"type": "QWidget*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "insertRow",
+						"params": [
+							{
+								"name": "row",
+								"type": "int"
+							},
+							{
+								"name": "labelText",
+								"type": "const QString&"
+							},
+							{
+								"name": "field",
+								"type": "QWidget*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "rowCount",
+						"retType": "int"
+					}
+				],
+				"name": "QFormLayout",
+				"properties": [
+					{
+						"getter": "fieldGrowthPolicy",
+						"name": "fieldGrowthPolicy",
+						"setter": "setFieldGrowthPolicy",
+						"type": "FieldGrowthPolicy"
+					},
+					{
+						"getter": "rowWrapPolicy",
+						"name": "rowWrapPolicy",
+						"setter": "setRowWrapPolicy",
+						"type": "RowWrapPolicy"
+					},
+					{
+						"getter": "labelAlignment",
+						"name": "labelAlignment",
+						"setter": "setLabelAlignment",
+						"type": "Qt::AlignmentFlag"
+					},
+					{
+						"getter": "formAlignment",
+						"name": "formAlignment",
+						"setter": "setFormAlignment",
+						"type": "Qt::AlignmentFlag"
+					},
+					{
+						"getter": "horizontalSpacing",
+						"name": "horizontalSpacing",
+						"setter": "setHorizontalSpacing",
+						"type": "int"
+					},
+					{
+						"getter": "verticalSpacing",
+						"name": "verticalSpacing",
+						"setter": "setVerticalSpacing",
+						"type": "int"
+					}
+				]
+			},
+			{
+				"base": "QFrame",
+				"enums": [
+					{
+						"name": "Mode",
+						"values": [
+							{
+								"name": "Hex",
+								"value": 0
+							},
+							{
+								"name": "Dec",
+								"value": 1
+							},
+							{
+								"name": "Oct",
+								"value": 2
+							},
+							{
+								"name": "Bin",
+								"value": 3
+							}
+						]
+					},
+					{
+						"name": "SegmentStyle",
+						"values": [
+							{
+								"name": "Outline",
+								"value": 0
+							},
+							{
+								"name": "Filled",
+								"value": 1
+							},
+							{
+								"name": "Flat",
+								"value": 2
+							}
+						]
+					}
+				],
+				"methods": [
+					{
+						"name": "QLCDNumber",
+						"params": [
+							{
+								"name": "parent",
+								"type": "QWidget*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "smallDecimalPoint",
+						"retType": "bool"
+					},
+					{
+						"isConst": true,
+						"name": "digitCount",
+						"retType": "int"
+					},
+					{
+						"name": "setDigitCount",
+						"params": [
+							{
+								"name": "nDigits",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "checkOverflow",
+						"params": [
+							{
+								"name": "number",
+								"type": "double"
+							}
+						],
+						"retType": "bool"
+					},
+					{
+						"isConst": true,
+						"name": "mode",
+						"retType": "QLCDNumber::Mode"
+					},
+					{
+						"name": "setMode",
+						"params": [
+							{
+								"name": "mode",
+								"type": "QLCDNumber::Mode"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "segmentStyle",
+						"retType": "QLCDNumber::SegmentStyle"
+					},
+					{
+						"name": "setSegmentStyle",
+						"params": [
+							{
+								"name": "style",
+								"type": "QLCDNumber::SegmentStyle"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "value",
+						"retType": "double"
+					},
+					{
+						"name": "display",
+						"params": [
+							{
+								"name": "num",
+								"type": "double"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setSmallDecimalPoint",
+						"params": [
+							{
+								"name": "smallPoint",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					}
+				],
+				"name": "QLCDNumber",
+				"properties": [
+					{
+						"getter": "smallDecimalPoint",
+						"name": "smallDecimalPoint",
+						"setter": "setSmallDecimalPoint",
+						"type": "bool"
+					},
+					{
+						"getter": "digitCount",
+						"name": "digitCount",
+						"setter": "setDigitCount",
+						"type": "int"
+					},
+					{
+						"getter": "mode",
+						"name": "mode",
+						"setter": "setMode",
+						"type": "Mode"
+					},
+					{
+						"getter": "segmentStyle",
+						"name": "segmentStyle",
+						"setter": "setSegmentStyle",
+						"type": "SegmentStyle"
+					}
+				]
+			},
+			{
+				"base": "QWidget",
+				"enums": [
+					{
+						"name": "ActionPosition",
+						"values": [
+							{
+								"name": "LeadingPosition",
+								"value": 0
+							},
+							{
+								"name": "TrailingPosition",
+								"value": 1
+							}
+						]
+					},
+					{
+						"name": "EchoMode",
+						"values": [
+							{
+								"name": "Normal",
+								"value": 0
+							},
+							{
+								"name": "NoEcho",
+								"value": 1
+							},
+							{
+								"name": "Password",
+								"value": 2
+							},
+							{
+								"name": "PasswordEchoOnEdit",
+								"value": 3
+							}
+						]
+					}
+				],
+				"methods": [
+					{
+						"name": "QLineEdit",
+						"params": [
+							{
+								"name": "text",
+								"type": "const QString&"
+							},
+							{
+								"name": "parent",
+								"type": "QWidget*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "text",
+						"retType": "QString"
+					},
+					{
+						"isConst": true,
+						"name": "displayText",
+						"retType": "QString"
+					},
+					{
+						"isConst": true,
+						"name": "placeholderText",
+						"retType": "QString"
+					},
+					{
+						"name": "setPlaceholderText",
+						"params": [
+							{
+								"name": "text",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "maxLength",
+						"retType": "int"
+					},
+					{
+						"name": "setMaxLength",
+						"params": [
+							{
+								"name": "length",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setFrame",
+						"params": [
+							{
+								"name": "show",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "hasFrame",
+						"retType": "bool"
+					},
+					{
+						"name": "setClearButtonEnabled",
+						"params": [
+							{
+								"name": "enable",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "isClearButtonEnabled",
+						"retType": "bool"
+					},
+					{
+						"isConst": true,
+						"name": "echoMode",
+						"retType": "QLineEdit::EchoMode"
+					},
+					{
+						"name": "setEchoMode",
+						"params": [
+							{
+								"name": "echoMode",
+								"type": "QLineEdit::EchoMode"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "isReadOnly",
+						"retType": "bool"
+					},
+					{
+						"name": "setReadOnly",
+						"params": [
+							{
+								"name": "readOnly",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "cursorPosition",
+						"retType": "int"
+					},
+					{
+						"name": "setCursorPosition",
+						"params": [
+							{
+								"name": "pos",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setAlignment",
+						"params": [
+							{
+								"name": "alignment",
+								"type": "Qt::AlignmentFlag"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "alignment",
+						"retType": "Qt::AlignmentFlag"
+					},
+					{
+						"name": "cursorForward",
+						"params": [
+							{
+								"name": "mark",
+								"type": "bool"
+							},
+							{
+								"name": "steps",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "cursorBackward",
+						"params": [
+							{
+								"name": "mark",
+								"type": "bool"
+							},
+							{
+								"name": "steps",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "cursorWordForward",
+						"params": [
+							{
+								"name": "mark",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "cursorWordBackward",
+						"params": [
+							{
+								"name": "mark",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "backspace",
+						"retType": "void"
+					},
+					{
+						"name": "del",
+						"retType": "void"
+					},
+					{
+						"name": "home",
+						"params": [
+							{
+								"name": "mark",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "end",
+						"params": [
+							{
+								"name": "mark",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "isModified",
+						"retType": "bool"
+					},
+					{
+						"name": "setModified",
+						"params": [
+							{
+								"name": "modified",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setSelection",
+						"params": [
+							{
+								"name": "start",
+								"type": "int"
+							},
+							{
+								"name": "length",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "hasSelectedText",
+						"retType": "bool"
+					},
+					{
+						"isConst": true,
+						"name": "selectedText",
+						"retType": "QString"
+					},
+					{
+						"isConst": true,
+						"name": "selectionStart",
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "isUndoAvailable",
+						"retType": "bool"
+					},
+					{
+						"isConst": true,
+						"name": "isRedoAvailable",
+						"retType": "bool"
+					},
+					{
+						"name": "setDragEnabled",
+						"params": [
+							{
+								"name": "enabled",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "dragEnabled",
+						"retType": "bool"
+					},
+					{
+						"name": "setCursorMoveStyle",
+						"params": [
+							{
+								"name": "style",
+								"type": "Qt::CursorMoveStyle"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "cursorMoveStyle",
+						"retType": "Qt::CursorMoveStyle"
+					},
+					{
+						"isConst": true,
+						"name": "inputMask",
+						"retType": "QString"
+					},
+					{
+						"name": "setInputMask",
+						"params": [
+							{
+								"name": "inputMask",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "hasAcceptableInput",
+						"retType": "bool"
+					},
+					{
+						"name": "setTextMargins",
+						"params": [
+							{
+								"name": "margins",
+								"type": "const QMargins&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "textMargins",
+						"retType": "QMargins"
+					},
+					{
+						"name": "setText",
+						"params": [
+							{
+								"name": "text",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "clear",
+						"retType": "void"
+					},
+					{
+						"name": "selectAll",
+						"retType": "void"
+					},
+					{
+						"name": "undo",
+						"retType": "void"
+					},
+					{
+						"name": "redo",
+						"retType": "void"
+					},
+					{
+						"name": "cut",
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "copy",
+						"retType": "void"
+					},
+					{
+						"name": "paste",
+						"retType": "void"
+					},
+					{
+						"name": "deselect",
+						"retType": "void"
+					},
+					{
+						"name": "insert",
+						"params": [
+							{
+								"name": "text",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					}
+				],
+				"name": "QLineEdit",
+				"properties": [
+					{
+						"getter": "inputMask",
+						"name": "inputMask",
+						"setter": "setInputMask",
+						"type": "QString"
+					},
+					{
+						"getter": "text",
+						"name": "text",
+						"setter": "setText",
+						"type": "QString"
+					},
+					{
+						"getter": "maxLength",
+						"name": "maxLength",
+						"setter": "setMaxLength",
+						"type": "int"
+					},
+					{
+						"getter": "hasFrame",
+						"name": "frame",
+						"setter": "setFrame",
+						"type": "bool"
+					},
+					{
+						"getter": "echoMode",
+						"name": "echoMode",
+						"setter": "setEchoMode",
+						"type": "EchoMode"
+					},
+					{
+						"getter": "displayText",
+						"name": "displayText",
+						"type": "QString"
+					},
+					{
+						"getter": "cursorPosition",
+						"name": "cursorPosition",
+						"setter": "setCursorPosition",
+						"type": "int"
+					},
+					{
+						"getter": "alignment",
+						"name": "alignment",
+						"setter": "setAlignment",
+						"type": "Qt::AlignmentFlag"
+					},
+					{
+						"getter": "isModified",
+						"name": "modified",
+						"setter": "setModified",
+						"type": "bool"
+					},
+					{
+						"getter": "hasSelectedText",
+						"name": "hasSelectedText",
+						"type": "bool"
+					},
+					{
+						"getter": "selectedText",
+						"name": "selectedText",
+						"type": "QString"
+					},
+					{
+						"getter": "dragEnabled",
+						"name": "dragEnabled",
+						"setter": "setDragEnabled",
+						"type": "bool"
+					},
+					{
+						"getter": "isReadOnly",
+						"name": "readOnly",
+						"setter": "setReadOnly",
+						"type": "bool"
+					},
+					{
+						"getter": "isUndoAvailable",
+						"name": "undoAvailable",
+						"type": "bool"
+					},
+					{
+						"getter": "isRedoAvailable",
+						"name": "redoAvailable",
+						"type": "bool"
+					},
+					{
+						"getter": "hasAcceptableInput",
+						"name": "acceptableInput",
+						"type": "bool"
+					},
+					{
+						"getter": "placeholderText",
+						"name": "placeholderText",
+						"setter": "setPlaceholderText",
+						"type": "QString"
+					},
+					{
+						"getter": "cursorMoveStyle",
+						"name": "cursorMoveStyle",
+						"setter": "setCursorMoveStyle",
+						"type": "Qt::CursorMoveStyle"
+					},
+					{
+						"getter": "isClearButtonEnabled",
+						"name": "clearButtonEnabled",
+						"setter": "setClearButtonEnabled",
+						"type": "bool"
+					}
+				]
+			},
+			{
+				"base": "QAbstractButton",
+				"methods": [
+					{
+						"name": "QRadioButton",
+						"params": [
+							{
+								"name": "text",
+								"type": "const QString&"
+							},
+							{
+								"name": "parent",
+								"type": "QWidget*"
+							}
+						],
+						"retType": "void"
+					}
+				],
+				"name": "QRadioButton"
+			},
+			{
+				"base": "QAbstractScrollArea",
+				"enums": [
+					{
+						"name": "LineWrapMode",
+						"values": [
+							{
+								"name": "NoWrap",
+								"value": 0
+							},
+							{
+								"name": "WidgetWidth",
+								"value": 1
+							},
+							{
+								"name": "FixedPixelWidth",
+								"value": 2
+							},
+							{
+								"name": "FixedColumnWidth",
+								"value": 3
+							}
+						]
+					},
+					{
+						"name": "AutoFormattingFlag",
+						"values": [
+							{
+								"name": "AutoNone",
+								"value": 0
+							},
+							{
+								"name": "AutoBulletList",
+								"value": 1
+							},
+							{
+								"name": "AutoAll",
+								"value": -1
+							}
+						]
+					}
+				],
+				"methods": [
+					{
+						"name": "QTextEdit",
+						"params": [
+							{
+								"name": "text",
+								"type": "const QString&"
+							},
+							{
+								"name": "parent",
+								"type": "QWidget*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setPlaceholderText",
+						"params": [
+							{
+								"name": "placeholderText",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "placeholderText",
+						"retType": "QString"
+					},
+					{
+						"isConst": true,
+						"name": "isReadOnly",
+						"retType": "bool"
+					},
+					{
+						"name": "setReadOnly",
+						"params": [
+							{
+								"name": "readOnly",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setTextInteractionFlags",
+						"params": [
+							{
+								"name": "flags",
+								"type": "Qt::TextInteractionFlag"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "textInteractionFlags",
+						"retType": "Qt::TextInteractionFlag"
+					},
+					{
+						"isConst": true,
+						"name": "fontPointSize",
+						"retType": "qreal"
+					},
+					{
+						"isConst": true,
+						"name": "fontFamily",
+						"retType": "QString"
+					},
+					{
+						"isConst": true,
+						"name": "fontWeight",
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "fontUnderline",
+						"retType": "bool"
+					},
+					{
+						"isConst": true,
+						"name": "fontItalic",
+						"retType": "bool"
+					},
+					{
+						"isConst": true,
+						"name": "textColor",
+						"retType": "QColor"
+					},
+					{
+						"isConst": true,
+						"name": "textBackgroundColor",
+						"retType": "QColor"
+					},
+					{
+						"isConst": true,
+						"name": "currentFont",
+						"retType": "QFont"
+					},
+					{
+						"isConst": true,
+						"name": "alignment",
+						"retType": "Qt::AlignmentFlag"
+					},
+					{
+						"isConst": true,
+						"name": "autoFormatting",
+						"retType": "QTextEdit::AutoFormattingFlag"
+					},
+					{
+						"name": "setAutoFormatting",
+						"params": [
+							{
+								"name": "features",
+								"type": "QTextEdit::AutoFormattingFlag"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "tabChangesFocus",
+						"retType": "bool"
+					},
+					{
+						"name": "setTabChangesFocus",
+						"params": [
+							{
+								"name": "change",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setDocumentTitle",
+						"params": [
+							{
+								"name": "title",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "documentTitle",
+						"retType": "QString"
+					},
+					{
+						"isConst": true,
+						"name": "isUndoRedoEnabled",
+						"retType": "bool"
+					},
+					{
+						"name": "setUndoRedoEnabled",
+						"params": [
+							{
+								"name": "enable",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "lineWrapMode",
+						"retType": "QTextEdit::LineWrapMode"
+					},
+					{
+						"name": "setLineWrapMode",
+						"params": [
+							{
+								"name": "mode",
+								"type": "QTextEdit::LineWrapMode"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "lineWrapColumnOrWidth",
+						"retType": "int"
+					},
+					{
+						"name": "setLineWrapColumnOrWidth",
+						"params": [
+							{
+								"name": "width",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "toPlainText",
+						"retType": "QString"
+					},
+					{
+						"isConst": true,
+						"name": "toHtml",
+						"retType": "QString"
+					},
+					{
+						"name": "ensureCursorVisible",
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "cursorRect",
+						"retType": "QRect"
+					},
+					{
+						"isConst": true,
+						"name": "anchorAt",
+						"params": [
+							{
+								"name": "pos",
+								"type": "const QPoint&"
+							}
+						],
+						"retType": "QString"
+					},
+					{
+						"isConst": true,
+						"name": "overwriteMode",
+						"retType": "bool"
+					},
+					{
+						"name": "setOverwriteMode",
+						"params": [
+							{
+								"name": "overwrite",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "tabStopWidth",
+						"retType": "int"
+					},
+					{
+						"name": "setTabStopWidth",
+						"params": [
+							{
+								"name": "width",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "cursorWidth",
+						"retType": "int"
+					},
+					{
+						"name": "setCursorWidth",
+						"params": [
+							{
+								"name": "width",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "acceptRichText",
+						"retType": "bool"
+					},
+					{
+						"name": "setAcceptRichText",
+						"params": [
+							{
+								"name": "accept",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "canPaste",
+						"retType": "bool"
+					},
+					{
+						"name": "setFontPointSize",
+						"params": [
+							{
+								"name": "size",
+								"type": "qreal"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setFontFamily",
+						"params": [
+							{
+								"name": "fontFamily",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setFontWeight",
+						"params": [
+							{
+								"name": "weight",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setFontUnderline",
+						"params": [
+							{
+								"name": "underline",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setFontItalic",
+						"params": [
+							{
+								"name": "italic",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setTextColor",
+						"params": [
+							{
+								"name": "color",
+								"type": "const QColor&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setTextBackgroundColor",
+						"params": [
+							{
+								"name": "color",
+								"type": "const QColor&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setCurrentFont",
+						"params": [
+							{
+								"name": "font",
+								"type": "const QFont&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setAlignment",
+						"params": [
+							{
+								"name": "alignment",
+								"type": "Qt::AlignmentFlag"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setPlainText",
+						"params": [
+							{
+								"name": "text",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setHtml",
+						"params": [
+							{
+								"name": "text",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setText",
+						"params": [
+							{
+								"name": "text",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "cut",
+						"retType": "void"
+					},
+					{
+						"name": "copy",
+						"retType": "void"
+					},
+					{
+						"name": "paste",
+						"retType": "void"
+					},
+					{
+						"name": "undo",
+						"retType": "void"
+					},
+					{
+						"name": "redo",
+						"retType": "void"
+					},
+					{
+						"name": "clear",
+						"retType": "void"
+					},
+					{
+						"name": "selectAll",
+						"retType": "void"
+					},
+					{
+						"name": "insertPlainText",
+						"params": [
+							{
+								"name": "text",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "insertHtml",
+						"params": [
+							{
+								"name": "text",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "append",
+						"params": [
+							{
+								"name": "text",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "scrollToAnchor",
+						"params": [
+							{
+								"name": "name",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "zoomIn",
+						"params": [
+							{
+								"name": "range",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "zoomOut",
+						"params": [
+							{
+								"name": "range",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					}
+				],
+				"name": "QTextEdit",
+				"properties": [
+					{
+						"getter": "autoFormatting",
+						"name": "autoFormatting",
+						"setter": "setAutoFormatting",
+						"type": "QTextEdit::AutoFormattingFlag"
+					},
+					{
+						"getter": "tabChangesFocus",
+						"name": "tabChangesFocus",
+						"setter": "setTabChangesFocus",
+						"type": "bool"
+					},
+					{
+						"getter": "documentTitle",
+						"name": "documentTitle",
+						"setter": "setDocumentTitle",
+						"type": "QString"
+					},
+					{
+						"getter": "isUndoRedoEnabled",
+						"name": "undoRedoEnabled",
+						"setter": "setUndoRedoEnabled",
+						"type": "bool"
+					},
+					{
+						"getter": "lineWrapMode",
+						"name": "lineWrapMode",
+						"setter": "setLineWrapMode",
+						"type": "LineWrapMode"
+					},
+					{
+						"getter": "lineWrapColumnOrWidth",
+						"name": "lineWrapColumnOrWidth",
+						"setter": "setLineWrapColumnOrWidth",
+						"type": "int"
+					},
+					{
+						"getter": "isReadOnly",
+						"name": "readOnly",
+						"setter": "setReadOnly",
+						"type": "bool"
+					},
+					{
+						"getter": "toHtml",
+						"name": "html",
+						"setter": "setHtml",
+						"type": "QString"
+					},
+					{
+						"getter": "toPlainText",
+						"name": "plainText",
+						"setter": "setPlainText",
+						"type": "QString"
+					},
+					{
+						"getter": "overwriteMode",
+						"name": "overwriteMode",
+						"setter": "setOverwriteMode",
+						"type": "bool"
+					},
+					{
+						"getter": "tabStopWidth",
+						"name": "tabStopWidth",
+						"setter": "setTabStopWidth",
+						"type": "int"
+					},
+					{
+						"getter": "acceptRichText",
+						"name": "acceptRichText",
+						"setter": "setAcceptRichText",
+						"type": "bool"
+					},
+					{
+						"getter": "cursorWidth",
+						"name": "cursorWidth",
+						"setter": "setCursorWidth",
+						"type": "int"
+					},
+					{
+						"getter": "textInteractionFlags",
+						"name": "textInteractionFlags",
+						"setter": "setTextInteractionFlags",
+						"type": "Qt::TextInteractionFlag"
+					},
+					{
+						"getter": "placeholderText",
+						"name": "placeholderText",
+						"setter": "setPlaceholderText",
+						"type": "QString"
+					}
+				]
+			},
+			{
+				"base": "QAbstractScrollArea",
+				"enums": [
+					{
+						"name": "WindowOrder",
+						"values": [
+							{
+								"name": "CreationOrder",
+								"value": 0
+							},
+							{
+								"name": "StackingOrder",
+								"value": 1
+							},
+							{
+								"name": "ActivationHistoryOrder",
+								"value": 2
+							}
+						]
+					}
+				],
+				"methods": [
+					{
+						"name": "QMdiArea",
+						"params": [
+							{
+								"name": "parent",
+								"type": "QWidget*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "currentSubWindow",
+						"retType": "QMdiSubWindow*"
+					},
+					{
+						"isConst": true,
+						"name": "activeSubWindow",
+						"retType": "QMdiSubWindow*"
+					},
+					{
+						"isConst": true,
+						"name": "subWindowList",
+						"params": [
+							{
+								"name": "order",
+								"type": "QMdiArea::WindowOrder"
+							}
+						],
+						"retType": "QList<QMdiSubWindow*>"
+					},
+					{
+						"name": "addSubWindow",
+						"params": [
+							{
+								"name": "widget",
+								"type": "QWidget*"
+							},
+							{
+								"name": "flags",
+								"type": "Qt::WindowType"
+							}
+						],
+						"retType": "QMdiSubWindow*"
+					},
+					{
+						"name": "removeSubWindow",
+						"params": [
+							{
+								"name": "widget",
+								"type": "QWidget*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "background",
+						"retType": "QBrush"
+					},
+					{
+						"name": "setBackground",
+						"params": [
+							{
+								"name": "background",
+								"type": "const QBrush&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "activationOrder",
+						"retType": "QMdiArea::WindowOrder"
+					},
+					{
+						"name": "setActivationOrder",
+						"params": [
+							{
+								"name": "order",
+								"type": "QMdiArea::WindowOrder"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setActiveSubWindow",
+						"params": [
+							{
+								"name": "window",
+								"type": "QMdiSubWindow*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "tileSubWindows",
+						"retType": "void"
+					},
+					{
+						"name": "cascadeSubWindows",
+						"retType": "void"
+					},
+					{
+						"name": "closeActiveSubWindow",
+						"retType": "void"
+					},
+					{
+						"name": "closeAllSubWindows",
+						"retType": "void"
+					},
+					{
+						"name": "activateNextSubWindow",
+						"retType": "void"
+					},
+					{
+						"name": "activatePreviousSubWindow",
+						"retType": "void"
+					}
+				],
+				"name": "QMdiArea",
+				"properties": [
+					{
+						"getter": "background",
+						"name": "background",
+						"setter": "setBackground",
+						"type": "QBrush"
+					},
+					{
+						"getter": "activationOrder",
+						"name": "activationOrder",
+						"setter": "setActivationOrder",
+						"type": "WindowOrder"
+					}
+				]
+			},
+			{
+				"base": "QWidget",
+				"enums": [
+					{
+						"name": "SubWindowOption",
+						"values": [
+							{
+								"name": "RubberBandResize",
+								"value": 4
+							},
+							{
+								"name": "RubberBandMove",
+								"value": 8
+							}
+						]
+					}
+				],
+				"methods": [
+					{
+						"name": "QMdiSubWindow",
+						"params": [
+							{
+								"name": "parent",
+								"type": "QWidget*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setWidget",
+						"params": [
+							{
+								"name": "widget",
+								"type": "QWidget*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "widget",
+						"retType": "QWidget*"
+					},
+					{
+						"isConst": true,
+						"name": "isShaded",
+						"retType": "bool"
+					},
+					{
+						"name": "setOption",
+						"params": [
+							{
+								"name": "option",
+								"type": "QMdiSubWindow::SubWindowOption"
+							},
+							{
+								"name": "on",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "testOption",
+						"params": [
+							{
+								"name": "option",
+								"type": "QMdiSubWindow::SubWindowOption"
+							}
+						],
+						"retType": "bool"
+					},
+					{
+						"name": "setKeyboardSingleStep",
+						"params": [
+							{
+								"name": "step",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "keyboardSingleStep",
+						"retType": "int"
+					},
+					{
+						"name": "setKeyboardPageStep",
+						"params": [
+							{
+								"name": "step",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "keyboardPageStep",
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "mdiArea",
+						"retType": "QMdiArea*"
+					},
+					{
+						"name": "showShaded",
+						"retType": "void"
+					}
+				],
+				"name": "QMdiSubWindow",
+				"properties": [
+					{
+						"getter": "keyboardSingleStep",
+						"name": "keyboardSingleStep",
+						"setter": "setKeyboardSingleStep",
+						"type": "int"
+					},
+					{
+						"getter": "keyboardPageStep",
+						"name": "keyboardPageStep",
+						"setter": "setKeyboardPageStep",
+						"type": "int"
+					}
+				]
+			},
+			{
+				"name": "QAbstractSpinBox", "base": "QWidget",
+				"methods": [
+					{
+						"name": "isReadOnly", "retType": "bool"
+					},
+					{
+						"name": "setReadOnly", "retType": "void",
+						"params": [
+							{"name": "readOnly", "type": "bool"}
+						]
+					}
+				],
+				"properties": [
+					{
+						"getter": "isReadOnly",
+						"name": "readOnly",
+						"setter": "setReadOnly",
+						"type": "bool"
+					}
+				]
+			},
+			{
+				"base": "QAbstractSpinBox",
+				"methods": [
+					{
+						"name": "QSpinBox",
+						"params": [
+							{
+								"name": "parent",
+								"type": "QWidget*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "value",
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "prefix",
+						"retType": "QString"
+					},
+					{
+						"name": "setPrefix",
+						"params": [
+							{
+								"name": "prefix",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "suffix",
+						"retType": "QString"
+					},
+					{
+						"name": "setSuffix",
+						"params": [
+							{
+								"name": "suffix",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "cleanText",
+						"retType": "QString"
+					},
+					{
+						"isConst": true,
+						"name": "singleStep",
+						"retType": "int"
+					},
+					{
+						"name": "setSingleStep",
+						"params": [
+							{
+								"name": "val",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "minimum",
+						"retType": "int"
+					},
+					{
+						"name": "setMinimum",
+						"params": [
+							{
+								"name": "min",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "maximum",
+						"retType": "int"
+					},
+					{
+						"name": "setMaximum",
+						"params": [
+							{
+								"name": "max",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setRange",
+						"params": [
+							{
+								"name": "min",
+								"type": "int"
+							},
+							{
+								"name": "max",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "displayIntegerBase",
+						"retType": "int"
+					},
+					{
+						"name": "setDisplayIntegerBase",
+						"params": [
+							{
+								"name": "base",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setValue",
+						"params": [
+							{
+								"name": "val",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					}
+				],
+				"name": "QSpinBox",
+				"properties": [
+					{
+						"getter": "suffix",
+						"name": "suffix",
+						"setter": "setSuffix",
+						"type": "QString"
+					},
+					{
+						"getter": "prefix",
+						"name": "prefix",
+						"setter": "setPrefix",
+						"type": "QString"
+					},
+					{
+						"getter": "cleanText",
+						"name": "cleanText",
+						"type": "QString"
+					},
+					{
+						"getter": "minimum",
+						"name": "minimum",
+						"setter": "setMinimum",
+						"type": "int"
+					},
+					{
+						"getter": "maximum",
+						"name": "maximum",
+						"setter": "setMaximum",
+						"type": "int"
+					},
+					{
+						"getter": "singleStep",
+						"name": "singleStep",
+						"setter": "setSingleStep",
+						"type": "int"
+					},
+					{
+						"getter": "value",
+						"name": "value",
+						"setter": "setValue",
+						"type": "int"
+					},
+					{
+						"getter": "displayIntegerBase",
+						"name": "displayIntegerBase",
+						"setter": "setDisplayIntegerBase",
+						"type": "int"
+					}
+				]
+			},
+			{
+				"base": "QAbstractSpinBox",
+				"methods": [
+					{
+						"name": "QDoubleSpinBox",
+						"params": [
+							{
+								"name": "parent",
+								"type": "QWidget*"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "value",
+						"retType": "double"
+					},
+					{
+						"isConst": true,
+						"name": "prefix",
+						"retType": "QString"
+					},
+					{
+						"name": "setPrefix",
+						"params": [
+							{
+								"name": "prefix",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "suffix",
+						"retType": "QString"
+					},
+					{
+						"name": "setSuffix",
+						"params": [
+							{
+								"name": "suffix",
+								"type": "const QString&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "cleanText",
+						"retType": "QString"
+					},
+					{
+						"isConst": true,
+						"name": "singleStep",
+						"retType": "double"
+					},
+					{
+						"name": "setSingleStep",
+						"params": [
+							{
+								"name": "val",
+								"type": "double"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "minimum",
+						"retType": "double"
+					},
+					{
+						"name": "setMinimum",
+						"params": [
+							{
+								"name": "min",
+								"type": "double"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "maximum",
+						"retType": "double"
+					},
+					{
+						"name": "setMaximum",
+						"params": [
+							{
+								"name": "max",
+								"type": "double"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setRange",
+						"params": [
+							{
+								"name": "min",
+								"type": "double"
+							},
+							{
+								"name": "max",
+								"type": "double"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "decimals",
+						"retType": "int"
+					},
+					{
+						"name": "setDecimals",
+						"params": [
+							{
+								"name": "prec",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "valueFromText",
+						"params": [
+							{
+								"name": "text",
+								"type": "const QString&"
+							}
+						],
+						"retType": "double"
+					},
+					{
+						"isConst": true,
+						"name": "textFromValue",
+						"params": [
+							{
+								"name": "val",
+								"type": "double"
+							}
+						],
+						"retType": "QString"
+					},
+					{
+						"name": "setValue",
+						"params": [
+							{
+								"name": "val",
+								"type": "double"
+							}
+						],
+						"retType": "void"
+					}
+				],
+				"name": "QDoubleSpinBox",
+				"properties": [
+					{
+						"getter": "prefix",
+						"name": "prefix",
+						"setter": "setPrefix",
+						"type": "QString"
+					},
+					{
+						"getter": "suffix",
+						"name": "suffix",
+						"setter": "setSuffix",
+						"type": "QString"
+					},
+					{
+						"getter": "cleanText",
+						"name": "cleanText",
+						"type": "QString"
+					},
+					{
+						"getter": "decimals",
+						"name": "decimals",
+						"setter": "setDecimals",
+						"type": "int"
+					},
+					{
+						"getter": "minimum",
+						"name": "minimum",
+						"setter": "setMinimum",
+						"type": "double"
+					},
+					{
+						"getter": "maximum",
+						"name": "maximum",
+						"setter": "setMaximum",
+						"type": "double"
+					},
+					{
+						"getter": "singleStep",
+						"name": "singleStep",
+						"setter": "setSingleStep",
+						"type": "double"
+					},
+					{
+						"getter": "value",
+						"name": "value",
+						"setter": "setValue",
+						"type": "double"
 					}
 				]
 			}
