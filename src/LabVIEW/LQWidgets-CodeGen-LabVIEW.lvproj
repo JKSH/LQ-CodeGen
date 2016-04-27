@@ -17,6 +17,8 @@
 		<Item Name="Data Structures" Type="Folder">
 			<Item Name="JSON" Type="Folder">
 				<Item Name="Class.ctl" Type="VI" URL="../Data Structures/JSON/Class.ctl"/>
+				<Item Name="Connector Pane Terminal.ctl" Type="VI" URL="../Data Structures/JSON/Connector Pane Terminal.ctl"/>
+				<Item Name="Connector Pane.ctl" Type="VI" URL="../Data Structures/JSON/Connector Pane.ctl"/>
 				<Item Name="Enum Value.ctl" Type="VI" URL="../Data Structures/JSON/Enum Value.ctl"/>
 				<Item Name="Enum.ctl" Type="VI" URL="../Data Structures/JSON/Enum.ctl"/>
 				<Item Name="Method.ctl" Type="VI" URL="../Data Structures/JSON/Method.ctl"/>
