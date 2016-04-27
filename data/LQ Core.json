@@ -155,11 +155,11 @@
 					"name": "AlignmentFlag",
 					"values": [
 						{
-							"name": "AlignLeading",
+							"name": "AlignLeft",
 							"value": 1
 						},
 						{
-							"name": "AlignTrailing",
+							"name": "AlignRight",
 							"value": 2
 						},
 						{
@@ -4200,15 +4200,6 @@
 					]
 				},
 				{
-					"name": "Initialization",
-					"values": [
-						{
-							"name": "Uninitialized",
-							"value": 0
-						}
-					]
-				},
-				{
 					"name": "CoordinateSystem",
 					"values": [
 						{
@@ -4513,6 +4504,22 @@
 		],
 		"simpleStructs": [
 			{
+				"name": "QMargins",
+				"fields": [
+					{"name": "left", "type": "int"},
+					{"name": "top", "type": "int"},
+					{"name": "right", "type": "int"},
+					{"name": "bottom", "type": "int"}
+				]
+			},
+			{
+				"name": "QPoint",
+				"fields": [
+					{"name": "x", "type": "int"},
+					{"name": "y", "type": "int"}
+				]
+			},
+			{
 				"name": "QSize",
 				"fields": [
 					{"name": "width", "type": "int"},
@@ -4545,6 +4552,10 @@
 						],
 						"isStaticMember": true,
 						"isFactory": true
+					},
+					{
+						"name": "availableCodecs","retType": "QList<QByteArray>",
+						"isStaticMember": true
 					},
 					{
 						"name": "availableMibs","retType": "QList<int>",
@@ -4602,29 +4613,6 @@
 				]
 			},
 			{
-				"name": "QAbstractItemModel", "base": "QObject"
-			},
-			{
-				"name": "QAbstractListModel", "base": "QAbstractItemModel"
-			},
-			{
-				"name": "QStringListModel", "base": "QAbstractListModel",
-				"methods": [
-					{
-						"name": "QStringListModel"
-					},
-					{
-						"name": "setStringList", "retType": "void",
-						"params": [
-							{"name": "strings", "type": "const QStringList&"}
-						]
-					},
-					{
-						"name": "stringList", "retType": "QStringList"
-					}
-				]
-			},
-			{
 				"name": "QCoreApplication", "base": "QObject",
 				"methods": [
 					{
@@ -4662,21 +4650,21 @@
 			{
 				"name": "QStringList",
 				"dllType": "LVArray<LStrHandle>**",
-				"dll2bridge": "(*_dllValue_)->toList()",
-				"bridge2dll": "LVArray<LStrHandle>::fromList(_dllValue_, _bridgeValue_)"
+				"dll2bridge": "(*_dllValue_)->toQList<QString>()",
+				"bridge2dll": "LVArray<LStrHandle>::fromQList(_dllValue_, _bridgeValue_)"
 			}
 		],
 		"fullArrays": [
 			{
 				"name": "QList<%QT_TYPE_INNER%>",
 				"dllType": "LVArray<%DLL_TYPE_INNER%>**",
-				"dll2bridge": "(*_dllValue_)->toList()",
+				"dll2bridge": "(*_dllValue_)->toQList<%QT_TYPE_INNER%>()",
 				"bridge2dll": "LVArray<%DLL_TYPE_INNER%>::fromQList(_dllValue_, _bridgeValue_)"
-			},		
+			},
 			{
 				"name": "QVector<%QT_TYPE_INNER%>",
 				"dllType": "LVArray<%DLL_TYPE_INNER%>**",
-				"dll2bridge": "(*_dllValue_)->toVector()",
+				"dll2bridge": "(*_dllValue_)->toQVector<%QT_TYPE_INNER%>()",
 				"bridge2dll": "LVArray<%DLL_TYPE_INNER%>::fromQVector(_dllValue_, _bridgeValue_)"
 			}
 		]

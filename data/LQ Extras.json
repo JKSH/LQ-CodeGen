@@ -1,0 +1,95 @@
+{
+	"name": "LQ Extras",
+	"typeCategories": {
+		"qObjects": [
+			{
+				"name": "LQChart", "base": "QWidget",
+				"methods": [
+					{
+						"name": "LQChart", "retType": "void",
+						"params": [
+							{ "name": "historyLength", "type": "int" },
+							{ "name": "xMultiplier", "type": "double" },
+							{ "name": "parent", "type": "QWidget*" }
+						]
+					},
+					{
+						"name": "append", "retType": "void",
+						"params": [
+							{ "name": "values", "type": "const LQMatrix<double>&" }
+						]
+					},
+					{
+						"name": "axisTitle", "retType": "QString",
+						"params": [
+							{ "name": "axisId", "type": "QwtPlot::Axis" }
+						]
+					},
+					{
+						"name": "clear", "retType": "void"
+					},
+					{
+						"name": "curveTitles", "retType": "QStringList"
+					},
+					{
+						"name": "historyLength", "retType": "int"
+					},
+					{
+						"name": "isAxisAutoScaling", "retType": "bool",
+						"params": [
+							{ "name": "axisId", "type": "QwtPlot::Axis" }
+						]
+					},
+					{
+						"name": "setAxisAutoScaling", "retType": "void",
+						"params": [
+							{ "name": "axisId", "type": "QwtPlot::Axis" },
+							{ "name": "autoScaling", "type": "bool" }
+						]
+					},
+					{
+						"name": "setAxisTitle", "retType": "void",
+						"params": [
+							{ "name": "axisId", "type": "QwtPlot::Axis" },
+							{ "name": "title", "type": "const QString&" }
+						]
+					},
+					{
+						"name": "setCurveTitles", "retType": "void",
+						"params": [
+							{ "name": "titles", "type": "const QStringList&" }
+						]
+					},
+					{
+						"name": "setHistoryLength", "retType": "void",
+						"params": [
+							{ "name": "length", "type": "int" }
+						]
+					},
+					{
+						"name": "setYAxisRange", "retType": "void",
+						"params": [
+							{ "name": "min", "type": "double" },
+							{ "name": "max", "type": "double" }
+						]
+					}
+				],
+				"properties": [
+					{
+						"name": "historyLength",
+						"getter": "historyLength",
+						"setter": "setHistoryLength"
+					}
+				]
+			}
+		],
+		"fullArrays": [
+			{
+				"name": "LQMatrix<%QT_TYPE_INNER%>",
+				"dllType": "LVArray<%DLL_TYPE_INNER%, 2>**",
+				"dll2bridge": "(*_dllValue_)->toQVector2D<%QT_TYPE_INNER%>()",
+				"bridge2dll": "LVArray<%DLL_TYPE_INNER%, 2>::fromQVector2D(_dllValue_, _bridgeValue_)"
+			}
+		]
+	}
+}

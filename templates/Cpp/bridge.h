@@ -43,17 +43,10 @@ public slots:
 		PostLVUserEvent(ref_dbl, &packet);
 	}
 	void postLVEvent_string(const QString& value) {
-		const int lStrHeaderSize = 4;
-		QByteArray bytes = value.toUtf8();
-		LStrHandle lStr = (LStrHandle)DSNewHandle(bytes.length() + lStrHeaderSize);
-		if (lStr)
-		{
-			copyIntoLStr(lStr, bytes);
-			SignalPacket<LStrHandle> packet{(quint64)sender(), senderSignalIndex(), lStr};
-			PostLVUserEvent(ref_string, &packet);
-			DSDisposeHandle(lStr);
-		}
-		// else we've probably run out of memory
+		LStrHandle lStr = newLStr(value);
+		SignalPacket<LStrHandle> packet{(quint64)sender(), senderSignalIndex(), lStr};
+		PostLVUserEvent(ref_string, &packet);
+		DSDisposeHandle(lStr);
 	}
 
 //[TEMPLATE]

@@ -24,6 +24,7 @@ namespace TypeConv
 
 	Category category(const QString& qtType);
 	QString typeBase(const QString& qtType);
+	QString innerType(const QString& qtType);
 	QString bridgeType(const QString& qtType);
 	QString dllType(const QString& qtType);
 

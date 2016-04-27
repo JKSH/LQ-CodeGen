@@ -64,6 +64,17 @@ TypeConv::typeBase(const QString& qtType)
 	return tmp;
 }
 
+QString
+TypeConv::innerType(const QString& qtType)
+{
+	int templateStartIdx = qtType.indexOf('<');
+	int templateEndIdx = qtType.lastIndexOf('>');
+	if (templateStartIdx != -1 && templateEndIdx != -1)
+		return qtType.left(templateEndIdx).mid(templateStartIdx+1);
+
+	return "";
+}
+
 TypeConv::Category
 TypeConv::category(const QString& qtType)
 {
@@ -217,7 +228,7 @@ TypeConv::convCode_dll2Bridge(const QString& qtType)
 		return "_dllValue_";
 	case SimpleContainer:
 	case FullArray:
-		return _bridge2dll[tmp].toObject()["dll2bridge"].toString();
+		return _bridge2dll[tmp].toObject()["dll2bridge"].toString().replace("%QT_TYPE_INNER%", innerType(qtType));
 	case Enum:
 	case SimpleIdentity:
 	case QObject:
