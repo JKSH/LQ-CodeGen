@@ -4752,6 +4752,26 @@
 						"retType": "QRect"
 					},
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "column",
+									"index": 6
+								},
+								{
+									"name": "columnSpan",
+									"index": 4
+								},
+								{
+									"name": "row",
+									"index": 7
+								},
+								{
+									"name": "rowSpan",
+									"index": 5
+								}
+							]
+						},
 						"name": "addWidget",
 						"params": [
 							{
@@ -4767,10 +4787,12 @@
 								"type": "int"
 							},
 							{
+								"defaultValue": "1",
 								"name": "rowSpan",
 								"type": "int"
 							},
 							{
+								"defaultValue": "1",
 								"name": "columnSpan",
 								"type": "int"
 							}
@@ -4778,6 +4800,26 @@
 						"retType": "void"
 					},
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "column",
+									"index": 6
+								},
+								{
+									"name": "columnSpan",
+									"index": 4
+								},
+								{
+									"name": "row",
+									"index": 7
+								},
+								{
+									"name": "rowSpan",
+									"index": 5
+								}
+							]
+						},
 						"name": "addLayout",
 						"params": [
 							{
@@ -4793,10 +4835,12 @@
 								"type": "int"
 							},
 							{
+								"defaultValue": "1",
 								"name": "rowSpan",
 								"type": "int"
 							},
 							{
+								"defaultValue": "1",
 								"name": "columnSpan",
 								"type": "int"
 							}
