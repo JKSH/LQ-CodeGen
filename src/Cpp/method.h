@@ -4,7 +4,7 @@
 #include "typeconv.h"
 #include <QJsonObject>
 
-class Param;
+struct Param;
 
 class Method
 {

@@ -50,7 +50,7 @@
 							{"name": "r", "type": "int"},
 							{"name": "g", "type": "int"},
 							{"name": "b", "type": "int"},
-							{"name": "a", "type": "int"}
+							{"name": "a", "type": "int", "defaultValue": "255"}
 						]
 					}
 				]

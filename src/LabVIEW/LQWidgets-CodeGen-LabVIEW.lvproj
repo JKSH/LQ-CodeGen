@@ -17,6 +17,8 @@
 		<Item Name="Data Structures" Type="Folder">
 			<Item Name="JSON" Type="Folder">
 				<Item Name="Class.ctl" Type="VI" URL="../Data Structures/JSON/Class.ctl"/>
+				<Item Name="Connector Pane Terminal.ctl" Type="VI" URL="../Data Structures/JSON/Connector Pane Terminal.ctl"/>
+				<Item Name="Connector Pane.ctl" Type="VI" URL="../Data Structures/JSON/Connector Pane.ctl"/>
 				<Item Name="Enum Value.ctl" Type="VI" URL="../Data Structures/JSON/Enum Value.ctl"/>
 				<Item Name="Enum.ctl" Type="VI" URL="../Data Structures/JSON/Enum.ctl"/>
 				<Item Name="Method.ctl" Type="VI" URL="../Data Structures/JSON/Method.ctl"/>
@@ -29,6 +31,8 @@
 				<Item Name="TypeConv.ctl" Type="VI" URL="../Data Structures/JSON/TypeConv.ctl"/>
 			</Item>
 			<Item Name="DLL Parameter Info.ctl" Type="VI" URL="../Data Structures/DLL Parameter Info.ctl"/>
+			<Item Name="Manifestation Ancestors.ctl" Type="VI" URL="../Data Structures/Manifestation Ancestors.ctl"/>
+			<Item Name="VI Input Builder.ctl" Type="VI" URL="../Data Structures/VI Input Builder.ctl"/>
 		</Item>
 		<Item Name="Icons and Wires" Type="Folder">
 			<Item Name="Create Icon.vi" Type="VI" URL="../Icons and Wires/Create Icon.vi"/>
@@ -78,6 +82,7 @@
 		<Item Name="Get LVClasses.vi" Type="VI" URL="../Get LVClasses.vi"/>
 		<Item Name="Main.vi" Type="VI" URL="../Main.vi"/>
 		<Item Name="Parse Module Specifications.vi" Type="VI" URL="../Parse Module Specifications.vi"/>
+		<Item Name="Parse Param and ConPane Info.vi" Type="VI" URL="../Parse Param and ConPane Info.vi"/>
 		<Item Name="Populate Module.vi" Type="VI" URL="../Populate Module.vi"/>
 		<Item Name="Prepare Save Dir.vi" Type="VI" URL="../Prepare Save Dir.vi"/>
 		<Item Name="Register Projections.vi" Type="VI" URL="../Register Projections.vi"/>
@@ -177,6 +182,7 @@
 				<Item Name="Flatten Pixmap.vi" Type="VI" URL="/&lt;vilib&gt;/picture/pixmap.llb/Flatten Pixmap.vi"/>
 				<Item Name="Font.ctl" Type="VI" URL="/&lt;vilib&gt;/LabVIEW Icon API/lv_icon/Controls/Font.ctl"/>
 				<Item Name="Get Image Subset.vi" Type="VI" URL="/&lt;vilib&gt;/picture/pictutil.llb/Get Image Subset.vi"/>
+				<Item Name="Get LV Class Name.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/LVClass/Get LV Class Name.vi"/>
 				<Item Name="Get System Directory.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/sysdir.llb/Get System Directory.vi"/>
 				<Item Name="Get Text Rect.vi" Type="VI" URL="/&lt;vilib&gt;/picture/picture.llb/Get Text Rect.vi"/>
 				<Item Name="Get Type Code from I16 Array And Pos.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/GetType.llb/Get Type Code from I16 Array And Pos.vi"/>
@@ -232,7 +238,6 @@
 				<Item Name="VIAnUtil Get Terminal Data Type.vi" Type="VI" URL="/&lt;vilib&gt;/addons/analyzer/_analyzerutils.llb/VIAnUtil Get Terminal Data Type.vi"/>
 				<Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
 			</Item>
-			<Item Name="Manifestation Ancestors.ctl" Type="VI" URL="../Data Structures/Manifestation Ancestors.ctl"/>
 			<Item Name="Remove and Rewire.vi" Type="VI" URL="/&lt;resource&gt;/dialog/QuickDrop/plugins/Remove and Rewire.vi"/>
 			<Item Name="TRef FinderCallback.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/traverseref.llb/TRef FinderCallback.vi"/>
 		</Item>

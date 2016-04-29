@@ -14,10 +14,17 @@ void
 TypeConv::init(const QJsonArray& conversions, Category category)
 {
 	// TODO: More robust checks
-	// TODO: Warn if the type is already registered
 	for (const QJsonValue& obj : conversions)
 	{
 		QString objName = obj.toObject()["name"].toString();
+		if (_categories.contains(objName))
+		{
+			qWarning()
+					<< "WARNING: TypeConv::init(): Refusing to register type"
+					<< objName << "as Category" << category;
+			qWarning() << "\tIt is already registered as Category" << _categories[objName];
+			continue;
+		}
 
 		if (category == FullArray)
 		{
