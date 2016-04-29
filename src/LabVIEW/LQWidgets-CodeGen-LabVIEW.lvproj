@@ -80,11 +80,13 @@
 		<Item Name="Get LVClasses.vi" Type="VI" URL="../Get LVClasses.vi"/>
 		<Item Name="Main.vi" Type="VI" URL="../Main.vi"/>
 		<Item Name="Parse Module Specifications.vi" Type="VI" URL="../Parse Module Specifications.vi"/>
+		<Item Name="Parse Param and ConPane Info.vi" Type="VI" URL="../Parse Param and ConPane Info.vi"/>
 		<Item Name="Populate Module.vi" Type="VI" URL="../Populate Module.vi"/>
 		<Item Name="Prepare Save Dir.vi" Type="VI" URL="../Prepare Save Dir.vi"/>
 		<Item Name="Register Projections.vi" Type="VI" URL="../Register Projections.vi"/>
 		<Item Name="Save Method VIs.vi" Type="VI" URL="../Save Method VIs.vi"/>
 		<Item Name="Set Inheritances.vi" Type="VI" URL="../Set Inheritances.vi"/>
+		<Item Name="VI Input Builder.ctl" Type="VI" URL="../Data Structures/VI Input Builder.ctl"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="user.lib" Type="Folder">
 				<Item Name="Array of VData to VArray__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/lvdata/lvdata.llb/Array of VData to VArray__ogtk.vi"/>
