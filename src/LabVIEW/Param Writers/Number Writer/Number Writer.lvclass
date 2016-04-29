@@ -50,6 +50,15 @@
 			<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
 			<Property Name="NI.ClassItem.State" Type="Int">1107821072</Property>
 		</Item>
+		<Item Name="Set Default Value.vi" Type="VI" URL="../Protected/Set Default Value.vi">
+			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!%S!!!!#!!%!!!!)%!Q`````R:-97*73568)%2F:G&amp;V&lt;(1A5X2S;7ZH!!!=1(!!#!!!!!9!!!^$&lt;WZU=G^M)&amp;*F:C"%&gt;8!!-E"Q!"Y!!"=64H6N9G6S)&amp;&gt;S;82F=CZM&gt;G.M98.T!"&amp;/&gt;7VC:8)A6X*J&gt;'6S)'^V&gt;!!;1$$`````%52F:G&amp;V&lt;(1A1SML)&amp;:B&lt;(6F!"B!=!!)!!!!"A!!#U.P&lt;H2S&lt;WQA5G6G!$*!=!!?!!!8&amp;5ZV&lt;7*F=C"8=GFU:8)O&lt;(:D&lt;'&amp;T=Q!14H6N9G6S)&amp;&gt;S;82F=C"J&lt;A!!6!$Q!!Q!!!!"!!)!!Q!!!!!!!!!!!!!!"!!&amp;!!9$!!"Y!!!!!!!!$1E!!!U+!!#.#Q!!!!!!!!!!!!!!!!!!!!!!!!!!!!%3!!!!%A!!!*!!!!!!!1!(!!!!!!</Property>
+			<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
+			<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>
+			<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">false</Property>
+			<Property Name="NI.ClassItem.MethodScope" Type="UInt">3</Property>
+			<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
+			<Property Name="NI.ClassItem.State" Type="Int">1107821072</Property>
+		</Item>
 	</Item>
 	<Item Name="Numeric Type" Type="Property Definition">
 		<Property Name="NI.ClassItem.Property.LongName" Type="Str">Numeric Type</Property>
