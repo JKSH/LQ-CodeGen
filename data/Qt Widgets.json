@@ -1222,16 +1222,6 @@
 				],
 				"methods": [
 					{
-						"name": "QAbstractScrollArea",
-						"params": [
-							{
-								"name": "parent",
-								"type": "QWidget*"
-							}
-						],
-						"retType": "void"
-					},
-					{
 						"isConst": true,
 						"name": "verticalScrollBarPolicy",
 						"retType": "Qt::ScrollBarPolicy"

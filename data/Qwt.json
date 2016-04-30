@@ -6,16 +6,6 @@
 				"base": "QWidget",
 				"methods": [
 					{
-						"name": "QwtAbstractScale",
-						"params": [
-							{
-								"name": "parent",
-								"type": "QWidget*"
-							}
-						],
-						"retType": "void"
-					},
-					{
 						"name": "setScale",
 						"params": [
 							{
