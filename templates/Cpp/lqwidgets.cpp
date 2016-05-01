@@ -60,6 +60,13 @@ stopWidgetEngine()
 {
 	if (!bridge)
 		return LQ::EngineNotRunningError;
+
+	// LQApplication::killWidgets() sends a QDeferredDeleteEvent to all remaining
+	// widgets. These events can only be processed while the event loop is running.
+	// QCoreApplication::processEvents() doensn't process them.
+	QMetaObject::invokeMethod(qApp, "killWidgets", Qt::BlockingQueuedConnection);
+
+	// Wait for QCoreApplication::quit() to finish before returning control to LabVIEW
 	QMetaObject::invokeMethod(qApp, "quit", Qt::BlockingQueuedConnection);
 	return LQ::NoError;
 }

@@ -1,5 +1,6 @@
 #include "lqapplication.h"
 #include <QWidget> // For QWidget destructor
+#include <QDebug>
 
 /*!
 	\class LQApplication
@@ -8,14 +9,21 @@
 	to run a LabVIEW-driven Qt application.
 */
 
+/*!
+	\sa LQApplication::killWidgets(), stopWidgetEngine()
+*/
 LQApplication::~LQApplication()
 {
+	// killWidgets() should have already taken care of these, but just in case...
 	// We must preemptively delete all widgets here. If we leave it up
 	// to the QApplication destructor instead, it will try to query
-	// the widgets' meta objects... which won't exist anymore after this
-	// destructor is done!
+	// the widgets' meta objects. However, those won't exist anymore after the
+	// LQApplication destructor is done!
 	for (auto widget : topLevelWidgets())
+	{
+		qWarning() << "Widget was not deleted before LQApplication:" << widget;
 		delete widget;
+	}
 
 	// QMetaObjectBuilder creates these objects using malloc(),
 	// so they must be free()'d.
@@ -103,6 +111,22 @@ LQApplication::finalizeBinding(QObject* _instance, LVArray<LStrHandle>** signalL
 	bindingFinalists[index] = true;
 
 	return LQ::NoError;
+}
+
+/*!
+	This function provides a way to gracefully delete all widgets before
+	stopping the GUI event loop.
+
+	Some complex widgets (e.g. QComboBox) don't like direct deletion, so
+	we must ensure they receive and act on a QDeferredDeleteEvent.
+
+	\sa LQApplication::~LQApplication(), stopWidgetEngine()
+*/
+void
+LQApplication::killWidgets()
+{
+	for (auto widget : topLevelWidgets())
+		widget->deleteLater();
 }
 
 /*!

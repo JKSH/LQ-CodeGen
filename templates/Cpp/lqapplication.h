@@ -33,6 +33,9 @@ public:
 	const QMetaObject* lqMetaObject(int index) const
 	{ return lqMetaObjects[index]; }
 
+public slots:
+	void killWidgets();
+
 private:
 	QByteArrayList bindingMap;
 	QVector<bool> bindingFinalists;
