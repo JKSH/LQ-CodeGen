@@ -206,6 +206,14 @@
 				],
 				"methods": [
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"name": "QwtThermo",
 						"params": [
 							{
@@ -695,6 +703,14 @@
 				],
 				"methods": [
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"name": "QwtSlider",
 						"params": [
 							{

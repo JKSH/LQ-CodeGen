@@ -331,6 +331,14 @@
 				],
 				"methods": [
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"name": "QComboBox",
 						"params": [
 							{
@@ -752,6 +760,14 @@
 				],
 				"methods": [
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"name": "QFontComboBox",
 						"params": [
 							{
@@ -864,6 +880,14 @@
 				],
 				"methods": [
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"name": "QFrame",
 						"params": [
 							{
@@ -1159,6 +1183,11 @@
 				],
 				"methods": [
 					{
+						"connectorPane": {
+							"terminals": [
+								{"name": "parent", "index": 5}
+							]
+						},
 						"name": "QBoxLayout",
 						"params": [
 							{"name": "direction", "type": "QBoxLayout::Direction"},
@@ -1308,6 +1337,14 @@
 				"base": "QAbstractButton",
 				"methods": [
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"name": "QCheckBox",
 						"params": [
 							{
@@ -1366,6 +1403,14 @@
 				"base": "QWidget",
 				"methods": [
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"name": "QGroupBox",
 						"params": [
 							{
@@ -1493,6 +1538,14 @@
 				"base": "QFrame",
 				"methods": [
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"name": "QSplitter",
 						"params": [
 							{
@@ -1755,6 +1808,14 @@
 				],
 				"methods": [
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"name": "QTabWidget",
 						"params": [
 							{
@@ -2294,6 +2355,14 @@
 				],
 				"methods": [
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"name": "QAction",
 						"params": [
 							{
@@ -2702,6 +2771,14 @@
 				"base": "QAbstractScrollArea",
 				"methods": [
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"name": "QScrollArea",
 						"params": [
 							{
@@ -2836,6 +2913,14 @@
 				],
 				"methods": [
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"name": "QDialog",
 						"params": [
 							{
@@ -3047,6 +3132,14 @@
 				],
 				"methods": [
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"name": "QFileDialog",
 						"params": [
 							{
@@ -3359,6 +3452,14 @@
 						"retType": "QFileDialog::Option"
 					},
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"isStaticMember": true,
 						"name": "getOpenFileName",
 						"params": [
@@ -3382,6 +3483,14 @@
 						"retType": "QString"
 					},
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"isStaticMember": true,
 						"name": "getSaveFileName",
 						"params": [
@@ -3405,6 +3514,14 @@
 						"retType": "QString"
 					},
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"isStaticMember": true,
 						"name": "getExistingDirectory",
 						"params": [
@@ -3428,6 +3545,14 @@
 						"retType": "QString"
 					},
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"isStaticMember": true,
 						"name": "getOpenFileNames",
 						"params": [
@@ -3544,6 +3669,14 @@
 				],
 				"methods": [
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"name": "QFontDialog",
 						"params": [
 							{
@@ -3624,6 +3757,14 @@
 				"base": "QDialog",
 				"methods": [
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"name": "QProgressDialog",
 						"params": [
 							{
@@ -3974,6 +4115,14 @@
 				],
 				"methods": [
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"name": "QMessageBox",
 						"params": [
 							{
@@ -4109,6 +4258,14 @@
 						"retType": "QCheckBox*"
 					},
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"isStaticMember": true,
 						"name": "information",
 						"params": [
@@ -4136,6 +4293,14 @@
 						"retType": "QMessageBox::StandardButton"
 					},
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"isStaticMember": true,
 						"name": "question",
 						"params": [
@@ -4163,6 +4328,14 @@
 						"retType": "QMessageBox::StandardButton"
 					},
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"isStaticMember": true,
 						"name": "warning",
 						"params": [
@@ -4190,6 +4363,14 @@
 						"retType": "QMessageBox::StandardButton"
 					},
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"isStaticMember": true,
 						"name": "critical",
 						"params": [
@@ -4217,6 +4398,14 @@
 						"retType": "QMessageBox::StandardButton"
 					},
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"isStaticMember": true,
 						"name": "about",
 						"params": [
@@ -4236,6 +4425,14 @@
 						"retType": "void"
 					},
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"isStaticMember": true,
 						"name": "aboutQt",
 						"params": [
@@ -4348,6 +4545,14 @@
 				"base": "QFrame",
 				"methods": [
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"name": "QToolBox",
 						"params": [
 							{
@@ -4912,6 +5117,14 @@
 				],
 				"methods": [
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"name": "QFormLayout",
 						"params": [
 							{
@@ -5148,6 +5361,14 @@
 				],
 				"methods": [
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"name": "QLCDNumber",
 						"params": [
 							{
@@ -5312,6 +5533,14 @@
 				],
 				"methods": [
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"name": "QLineEdit",
 						"params": [
 							{
@@ -5820,6 +6049,14 @@
 				"base": "QAbstractButton",
 				"methods": [
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"name": "QRadioButton",
 						"params": [
 							{
@@ -5880,6 +6117,14 @@
 				],
 				"methods": [
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"name": "QTextEdit",
 						"params": [
 							{
@@ -6494,6 +6739,14 @@
 				],
 				"methods": [
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"name": "QMdiArea",
 						"params": [
 							{
@@ -6648,6 +6901,14 @@
 				],
 				"methods": [
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"name": "QMdiSubWindow",
 						"params": [
 							{
@@ -6784,6 +7045,14 @@
 				"base": "QAbstractSpinBox",
 				"methods": [
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"name": "QSpinBox",
 						"params": [
 							{
@@ -6973,6 +7242,14 @@
 				"base": "QAbstractSpinBox",
 				"methods": [
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"name": "QDoubleSpinBox",
 						"params": [
 							{

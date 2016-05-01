@@ -338,6 +338,14 @@
 				"base": "QObject",
 				"methods": [
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"name": "QWinJumpList",
 						"params": [
 							{
@@ -406,6 +414,14 @@
 				"base": "QObject",
 				"methods": [
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"name": "QWinTaskbarButton",
 						"params": [
 							{
@@ -646,6 +662,14 @@
 				"base": "QObject",
 				"methods": [
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"name": "QWinThumbnailToolBar",
 						"params": [
 							{
@@ -771,6 +795,14 @@
 				"base": "QObject",
 				"methods": [
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"name": "QWinThumbnailToolButton",
 						"params": [
 							{
