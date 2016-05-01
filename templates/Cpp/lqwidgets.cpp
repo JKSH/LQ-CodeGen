@@ -360,8 +360,8 @@ findSignalIndex(qint64* _retVal, quintptr _instance, const char* normalizedSigna
 	if (!_instance)
 		return LQ::NullPointerUseError;
 
-	QString head = QString::fromLatin1(normalizedSignal);
-	head.chop(1);
+	QByteArray head(normalizedSignal);
+	head.chop(1); // Chop off the trailing ')' to match the start of other overloads
 
 	*_retVal = -1;
 	int maxLength = 0;
@@ -369,7 +369,7 @@ findSignalIndex(qint64* _retVal, quintptr _instance, const char* normalizedSigna
 	for(int i = 0; i < metaObject->methodCount(); ++i)
 	{
 		const QMetaMethod candidateMethod = metaObject->method(i);
-		const QString candidateStr = QString::fromLatin1(candidateMethod.methodSignature());
+		const QByteArray candidateStr(candidateMethod.methodSignature());
 		if (candidateMethod.methodType() == QMetaMethod::Signal
 				&& candidateStr.startsWith(head)
 				&& candidateStr.length() >= maxLength)
