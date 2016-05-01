@@ -74,12 +74,7 @@ registerEventRefs(LVUserEventRef* voidRef, LVUserEventRef* boolRef, LVUserEventR
 {
 	if (!bridge)
 		return LQ::EngineNotRunningError;
-
-	bridge->registerEventRef_void(voidRef);
-	bridge->registerEventRef_bool(boolRef);
-	bridge->registerEventRef_i32(i32Ref);
-	bridge->registerEventRef_dbl(dblRef);
-	bridge->registerEventRef_string(stringRef);
+	static_cast<LQApplication*>(qApp)->registerEventRefs(voidRef, boolRef, i32Ref, dblRef, stringRef);
 	return LQ::NoError;
 }
 
@@ -94,7 +89,7 @@ connect_void(quintptr _instance, const char* encodedSignal)
 	if ( !QMetaObject::checkConnectArgs(encodedSignal, "()") )
 		return LQ::IncompatibleArgumentsError;
 	auto result = QObject::connect((QObject*)_instance, encodedSignal,
-			bridge, SLOT(postLVEvent_void()));
+			qApp, SLOT(postLVEvent_void()));
 
 	if (!result)
 		return LQ::ConnectionFailedError;
@@ -110,7 +105,7 @@ connect_bool(quintptr _instance, const char* encodedSignal)
 	if ( !QMetaObject::checkConnectArgs(encodedSignal, "(bool)") )
 		return LQ::IncompatibleArgumentsError;
 	auto result = QObject::connect((QObject*)_instance, encodedSignal,
-			bridge, SLOT(postLVEvent_bool(bool)));
+			qApp, SLOT(postLVEvent_bool(bool)));
 
 	if (!result)
 		return LQ::ConnectionFailedError;
@@ -126,7 +121,7 @@ connect_i32(quintptr _instance, const char* encodedSignal)
 	if ( !QMetaObject::checkConnectArgs(encodedSignal, "(int)") )
 		return LQ::IncompatibleArgumentsError;
 	auto result = QObject::connect((QObject*)_instance, encodedSignal,
-			bridge, SLOT(postLVEvent_i32(int)));
+			qApp, SLOT(postLVEvent_i32(int)));
 
 	if (!result)
 		return LQ::ConnectionFailedError;
@@ -142,7 +137,7 @@ connect_dbl(quintptr _instance, const char* encodedSignal)
 	if ( !QMetaObject::checkConnectArgs(encodedSignal, "(double)") )
 		return LQ::IncompatibleArgumentsError;
 	auto result = QObject::connect((QObject*)_instance, encodedSignal,
-			bridge, SLOT(postLVEvent_dbl(double)));
+			qApp, SLOT(postLVEvent_dbl(double)));
 
 	if (!result)
 		return LQ::ConnectionFailedError;
@@ -158,7 +153,7 @@ connect_string(quintptr _instance, const char* encodedSignal)
 	if ( !QMetaObject::checkConnectArgs(encodedSignal, "(QString)") )
 		return LQ::IncompatibleArgumentsError;
 	auto result = QObject::connect((QObject*)_instance, encodedSignal,
-			bridge, SLOT(postLVEvent_string(QString)));
+			qApp, SLOT(postLVEvent_string(QString)));
 
 	if (!result)
 		return LQ::ConnectionFailedError;

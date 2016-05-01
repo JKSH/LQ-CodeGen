@@ -20,8 +20,10 @@ public:
 	};
 
 	LQApplication(int& argc, char** argv) : QApplication(argc, argv) {}
-
 	~LQApplication();
+
+	void registerEventRefs(LVUserEventRef* ref_void, LVUserEventRef* ref_bool, LVUserEventRef* ref_i32, LVUserEventRef* ref_dbl, LVUserEventRef* ref_string);
+
 	BindingStatus bindingStatus(const QByteArray& className) const;
 	int initializeBinding(const QByteArray& className, QMetaObject* prototype);
 
@@ -34,9 +36,54 @@ public:
 	{ return lqMetaObjects[index]; }
 
 public slots:
+	void postLVEvent_void() {
+		SignalPacket<bool> packet{(quint64)sender(), senderSignalIndex(), false};
+		PostLVUserEvent(ref_void, &packet);
+	}
+	void postLVEvent_bool(bool value) {
+		SignalPacket<bool> packet{(quint64)sender(), senderSignalIndex(), value};
+		PostLVUserEvent(ref_bool, &packet);
+	}
+	void postLVEvent_i32(int value) {
+		SignalPacket<qint32> packet{(quint64)sender(), senderSignalIndex(), value};
+		PostLVUserEvent(ref_i32, &packet);
+	}
+	void postLVEvent_dbl(double value) {
+		SignalPacket<double> packet{(quint64)sender(), senderSignalIndex(), value};
+		PostLVUserEvent(ref_dbl, &packet);
+	}
+	void postLVEvent_string(const QString& value) {
+		LStrHandle lStr = newLStr(value);
+		SignalPacket<LStrHandle> packet{(quint64)sender(), senderSignalIndex(), lStr};
+		PostLVUserEvent(ref_string, &packet);
+		DSDisposeHandle(lStr);
+	}
 	void killWidgets();
 
 private:
+	/*
+		Use 64 bits for 'sender' because LabVIEW's CLFN takes 64 bits
+		for all pointer-sized integers, even in 32-bit builds.
+
+		Use 64 bits for 'signalIndex' to avoid alignment problems in
+		64-bit builds, if T is pointer-sized.
+	*/
+	template <typename T>
+	struct SignalPacket {
+		quint64 sender;
+		qint64 signalIndex;
+		T value;
+	};
+
+	// Variables for transmitting signals to LabVIEW
+	LVUserEventRef ref_void;
+	LVUserEventRef ref_bool;
+	LVUserEventRef ref_i32;
+	LVUserEventRef ref_dbl;
+	LVUserEventRef ref_string;
+
+
+	// Variables for managing dynamic meta-objects
 	QByteArrayList bindingMap;
 	QVector<bool> bindingFinalists;
 	QVector<QMetaObject*> lqMetaObjects;

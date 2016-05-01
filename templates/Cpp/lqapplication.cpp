@@ -33,6 +33,18 @@ LQApplication::~LQApplication()
 		free(obj);
 }
 
+void
+LQApplication::registerEventRefs(LVUserEventRef* ref_void, LVUserEventRef* ref_bool, LVUserEventRef* ref_i32, LVUserEventRef* ref_dbl, LVUserEventRef* ref_string)
+{
+	// ASSUMPTION: These will always be registered before any connections are made.
+	// No need to lock for thread-safety.
+	this->ref_void = *ref_void;
+	this->ref_bool = *ref_bool;
+	this->ref_i32 = *ref_i32;
+	this->ref_dbl = *ref_dbl;
+	this->ref_string = *ref_string;
+}
+
 LQApplication::BindingStatus
 LQApplication::bindingStatus(const QByteArray& className) const
 {
