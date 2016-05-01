@@ -20,8 +20,6 @@ run()
 	LQApplication app(argc, argv.data());
 	app.setQuitOnLastWindowClosed(false); // Only quit explicitly when commanded from LabVIEW
 
-	// TODO: Find a way to track all top-level widgets for deletion. CANNOT parent to qApp!
-
 	// Tie the Bridge's lifetime to the QApplication object
 	bridge = new Bridge(&app);
 
