@@ -6,16 +6,6 @@
 				"base": "QWidget",
 				"methods": [
 					{
-						"name": "QwtAbstractScale",
-						"params": [
-							{
-								"name": "parent",
-								"type": "QWidget*"
-							}
-						],
-						"retType": "void"
-					},
-					{
 						"name": "setScale",
 						"params": [
 							{
@@ -216,6 +206,14 @@
 				],
 				"methods": [
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"name": "QwtThermo",
 						"params": [
 							{
@@ -705,6 +703,14 @@
 				],
 				"methods": [
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"name": "QwtSlider",
 						"params": [
 							{

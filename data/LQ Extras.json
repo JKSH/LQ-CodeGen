@@ -6,6 +6,11 @@
 				"name": "LQChart", "base": "QWidget",
 				"methods": [
 					{
+						"connectorPane": {
+							"terminals": [
+								{"name": "parent", "index": 5}
+							]
+						},
 						"name": "LQChart", "retType": "void",
 						"params": [
 							{ "name": "historyLength", "type": "int" },
