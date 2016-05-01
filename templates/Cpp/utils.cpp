@@ -14,7 +14,6 @@ copyIntoLStr(LStrHandle lStr, const QByteArray& bytes)
 	}
 }
 
-// TODO: Make QByteArray converter use this too?
 QByteArray
 copyFromLStr(LStrHandle lStr)
 {

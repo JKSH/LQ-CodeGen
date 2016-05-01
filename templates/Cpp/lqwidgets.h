@@ -24,7 +24,7 @@ extern qint32 Q_DECL_EXPORT emit_i32(quintptr _instance, const char* normalizedS
 extern qint32 Q_DECL_EXPORT emit_dbl(quintptr _instance, const char* normalizedSignal, double* data);
 extern qint32 Q_DECL_EXPORT emit_string(quintptr _instance, const char* normalizedSignal, LStrHandle data);
 extern qint32 Q_DECL_EXPORT registerLQObject(quintptr _instance, LVArray<LStrHandle>** signalList, LStrHandle superClassName);
-extern qint32 Q_DECL_EXPORT findSignalIndex(qint64* _retVal, quintptr _instance, const char* encodedSignal);
+extern qint32 Q_DECL_EXPORT findSignalIndex(qint64* _retVal, quintptr _instance, const char* normalizedSignal);
 
 // TODO: Add QObject::setProperty() and QObject::property()
 

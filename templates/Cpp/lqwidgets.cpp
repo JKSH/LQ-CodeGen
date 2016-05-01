@@ -20,8 +20,6 @@ run()
 	LQApplication app(argc, argv.data());
 	app.setQuitOnLastWindowClosed(false); // Only quit explicitly when commanded from LabVIEW
 
-	// TODO: Find a way to track all top-level widgets for deletion. CANNOT parent to qApp!
-
 	// Tie the Bridge's lifetime to the QApplication object
 	bridge = new Bridge(&app);
 
@@ -60,6 +58,13 @@ stopWidgetEngine()
 {
 	if (!bridge)
 		return LQ::EngineNotRunningError;
+
+	// LQApplication::killWidgets() sends a QDeferredDeleteEvent to all remaining
+	// widgets. These events can only be processed while the event loop is running.
+	// QCoreApplication::processEvents() doensn't process them.
+	QMetaObject::invokeMethod(qApp, "killWidgets", Qt::BlockingQueuedConnection);
+
+	// Wait for QCoreApplication::quit() to finish before returning control to LabVIEW
 	QMetaObject::invokeMethod(qApp, "quit", Qt::BlockingQueuedConnection);
 	return LQ::NoError;
 }
@@ -69,12 +74,7 @@ registerEventRefs(LVUserEventRef* voidRef, LVUserEventRef* boolRef, LVUserEventR
 {
 	if (!bridge)
 		return LQ::EngineNotRunningError;
-
-	bridge->registerEventRef_void(voidRef);
-	bridge->registerEventRef_bool(boolRef);
-	bridge->registerEventRef_i32(i32Ref);
-	bridge->registerEventRef_dbl(dblRef);
-	bridge->registerEventRef_string(stringRef);
+	static_cast<LQApplication*>(qApp)->registerEventRefs(voidRef, boolRef, i32Ref, dblRef, stringRef);
 	return LQ::NoError;
 }
 
@@ -89,7 +89,7 @@ connect_void(quintptr _instance, const char* encodedSignal)
 	if ( !QMetaObject::checkConnectArgs(encodedSignal, "()") )
 		return LQ::IncompatibleArgumentsError;
 	auto result = QObject::connect((QObject*)_instance, encodedSignal,
-			bridge, SLOT(postLVEvent_void()));
+			qApp, SLOT(postLVEvent_void()));
 
 	if (!result)
 		return LQ::ConnectionFailedError;
@@ -105,7 +105,7 @@ connect_bool(quintptr _instance, const char* encodedSignal)
 	if ( !QMetaObject::checkConnectArgs(encodedSignal, "(bool)") )
 		return LQ::IncompatibleArgumentsError;
 	auto result = QObject::connect((QObject*)_instance, encodedSignal,
-			bridge, SLOT(postLVEvent_bool(bool)));
+			qApp, SLOT(postLVEvent_bool(bool)));
 
 	if (!result)
 		return LQ::ConnectionFailedError;
@@ -121,7 +121,7 @@ connect_i32(quintptr _instance, const char* encodedSignal)
 	if ( !QMetaObject::checkConnectArgs(encodedSignal, "(int)") )
 		return LQ::IncompatibleArgumentsError;
 	auto result = QObject::connect((QObject*)_instance, encodedSignal,
-			bridge, SLOT(postLVEvent_i32(int)));
+			qApp, SLOT(postLVEvent_i32(int)));
 
 	if (!result)
 		return LQ::ConnectionFailedError;
@@ -137,7 +137,7 @@ connect_dbl(quintptr _instance, const char* encodedSignal)
 	if ( !QMetaObject::checkConnectArgs(encodedSignal, "(double)") )
 		return LQ::IncompatibleArgumentsError;
 	auto result = QObject::connect((QObject*)_instance, encodedSignal,
-			bridge, SLOT(postLVEvent_dbl(double)));
+			qApp, SLOT(postLVEvent_dbl(double)));
 
 	if (!result)
 		return LQ::ConnectionFailedError;
@@ -153,7 +153,7 @@ connect_string(quintptr _instance, const char* encodedSignal)
 	if ( !QMetaObject::checkConnectArgs(encodedSignal, "(QString)") )
 		return LQ::IncompatibleArgumentsError;
 	auto result = QObject::connect((QObject*)_instance, encodedSignal,
-			bridge, SLOT(postLVEvent_string(QString)));
+			qApp, SLOT(postLVEvent_string(QString)));
 
 	if (!result)
 		return LQ::ConnectionFailedError;
@@ -355,8 +355,8 @@ findSignalIndex(qint64* _retVal, quintptr _instance, const char* normalizedSigna
 	if (!_instance)
 		return LQ::NullPointerUseError;
 
-	QString head = QString::fromLatin1(normalizedSignal);
-	head.chop(1);
+	QByteArray head(normalizedSignal);
+	head.chop(1); // Chop off the trailing ')' to match the start of other overloads
 
 	*_retVal = -1;
 	int maxLength = 0;
@@ -364,7 +364,7 @@ findSignalIndex(qint64* _retVal, quintptr _instance, const char* normalizedSigna
 	for(int i = 0; i < metaObject->methodCount(); ++i)
 	{
 		const QMetaMethod candidateMethod = metaObject->method(i);
-		const QString candidateStr = QString::fromLatin1(candidateMethod.methodSignature());
+		const QByteArray candidateStr(candidateMethod.methodSignature());
 		if (candidateMethod.methodType() == QMetaMethod::Signal
 				&& candidateStr.startsWith(head)
 				&& candidateStr.length() >= maxLength)
