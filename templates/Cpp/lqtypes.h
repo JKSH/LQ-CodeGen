@@ -237,6 +237,9 @@ struct LVArray<quintptr>
 };
 #include "lv_epilog.h"
 
+template <typename T>
+using LQMatrix = QVector<QVector<T>>;
+
 // ASSUMPTION: T is serializable
 // TODO: Investigate if it's worth overloading the functions below to take rvalue references.
 //       See http://qt-project.org/forums/viewthread/34454
