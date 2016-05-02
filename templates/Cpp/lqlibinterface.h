@@ -1,10 +1,10 @@
-#ifndef LQWIDGETS_H
-#define LQWIDGETS_H
+#ifndef LQLIBINTERFACE_H
+#define LQLIBINTERFACE_H
 
 #include <QtCore>
 #include <QtGlobal>
 #include "extcode.h"
-#include "utils.h"
+#include "lqtypes.h"
 
 extern "C" {
 
@@ -32,4 +32,4 @@ extern qint32 Q_DECL_EXPORT findSignalIndex(qint64* _retVal, quintptr _instance,
 
 }
 
-#endif
+#endif // LQLIBINTERFACE_H

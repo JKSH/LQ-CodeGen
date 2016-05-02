@@ -1,5 +1,5 @@
-#ifndef UTILS_H
-#define UTILS_H
+#ifndef LQTYPES_H
+#define LQTYPES_H
 
 #include <QDataStream>
 #include "extcode.h"
@@ -8,8 +8,6 @@ void copyIntoLStr(LStrHandle lStr, const QByteArray& bytes);
 QByteArray copyFromLStr(LStrHandle lStr);
 LStrHandle newLStr(const QByteArray& bytes);
 inline LStrHandle newLStr(const QString& string) {return newLStr(string.toUtf8());}
-
-// TODO: Move the following to types.h or something
 
 // Structs declared between lv_prolog.h and lv_epilog.h get aligned according to LabVIEW's expectations
 #include "lv_prolog.h"
@@ -260,4 +258,4 @@ deserialize(const QByteArray& bytes)
 	return object;
 }
 
-#endif // UTILS_H
+#endif // LQTYPES_H

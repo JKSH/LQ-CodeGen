@@ -1,6 +1,6 @@
-#include "lqwidgets.h"
-#include "bridge.h"
-#include "errors.h"
+#include "lqlibinterface.h"
+#include "lqbridge.h"
+#include "lqerrors.h"
 #include <thread>
 #include <QThread>
 

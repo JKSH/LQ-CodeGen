@@ -1,5 +1,5 @@
-#include "errors.h"
-#include "utils.h"
+#include "lqerrors.h"
+#include "lqtypes.h"
 #include <QMap>
 
 static const QMap<int, QByteArray> errorMap

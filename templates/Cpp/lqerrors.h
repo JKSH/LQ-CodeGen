@@ -1,5 +1,5 @@
-#ifndef ERRORS_H
-#define ERRORS_H
+#ifndef LQERRORS_H
+#define LQERRORS_H
 
 #include <QtGlobal>
 #include "extcode.h"
@@ -31,4 +31,4 @@ extern void Q_DECL_EXPORT errorStringFromCode(LStrHandle _retVal, int32 errorCod
 
 }
 
-#endif // ERRORS_H
+#endif // LQERRORS_H

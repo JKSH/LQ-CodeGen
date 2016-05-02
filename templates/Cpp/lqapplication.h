@@ -4,8 +4,8 @@
 #include <private/qmetaobjectbuilder_p.h>
 #include <QApplication>
 #include <QVector>
-#include "errors.h"
-#include "utils.h"
+#include "lqerrors.h"
+#include "lqtypes.h"
 
 class LQApplication : public QApplication
 {
