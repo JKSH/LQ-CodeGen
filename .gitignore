@@ -2,4 +2,4 @@
 *.autosave
 *.lvlps
 *.pro.user
-*build*
+*build-*
