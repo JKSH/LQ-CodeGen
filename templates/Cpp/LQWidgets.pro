@@ -6,12 +6,14 @@ TARGET = LQWidgets
 TEMPLATE = lib
 
 SOURCES += \
+    lqmain.cpp \
     lqlibinterface.cpp \
     lqtypes.cpp \
     lqerrors.cpp \
     lqapplication.cpp
 
 HEADERS += \
+    lqmain.h \
     lqlibinterface.h \
     lqbridge.h \
     lqtypes.h \
