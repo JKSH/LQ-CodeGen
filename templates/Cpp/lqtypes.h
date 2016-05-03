@@ -1,5 +1,13 @@
-#ifndef UTILS_H
-#define UTILS_H
+/*\
+ * Copyright (c) 2016 Sze Howe Koh
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+\*/
+
+#ifndef LQTYPES_H
+#define LQTYPES_H
 
 #include <QDataStream>
 #include "extcode.h"
@@ -8,8 +16,6 @@ void copyIntoLStr(LStrHandle lStr, const QByteArray& bytes);
 QByteArray copyFromLStr(LStrHandle lStr);
 LStrHandle newLStr(const QByteArray& bytes);
 inline LStrHandle newLStr(const QString& string) {return newLStr(string.toUtf8());}
-
-// TODO: Move the following to types.h or something
 
 // Structs declared between lv_prolog.h and lv_epilog.h get aligned according to LabVIEW's expectations
 #include "lv_prolog.h"
@@ -239,6 +245,9 @@ struct LVArray<quintptr>
 };
 #include "lv_epilog.h"
 
+template <typename T>
+using LQMatrix = QVector<QVector<T>>;
+
 // ASSUMPTION: T is serializable
 // TODO: Investigate if it's worth overloading the functions below to take rvalue references.
 //       See http://qt-project.org/forums/viewthread/34454
@@ -260,4 +269,4 @@ deserialize(const QByteArray& bytes)
 	return object;
 }
 
-#endif // UTILS_H
+#endif // LQTYPES_H

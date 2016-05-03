@@ -1,5 +1,13 @@
-#ifndef ERRORS_H
-#define ERRORS_H
+/*\
+ * Copyright (c) 2016 Sze Howe Koh
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+\*/
+
+#ifndef LQERRORS_H
+#define LQERRORS_H
 
 #include <QtGlobal>
 #include "extcode.h"
@@ -31,4 +39,4 @@ extern void Q_DECL_EXPORT errorStringFromCode(LStrHandle _retVal, int32 errorCod
 
 }
 
-#endif // ERRORS_H
+#endif // LQERRORS_H

@@ -1,3 +1,11 @@
+/*\
+ * Copyright (c) 2016 Sze Howe Koh
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+\*/
+
 #include "classwriter.h"
 #include "typeconv.h"
 #include "method.h"
@@ -9,9 +17,9 @@
 #include <QDebug>
 
 ClassWriter::ClassWriter() :
-	dllH("lqwidgets.h"),
-	dllC("lqwidgets.cpp"),
-	bridgeH("bridge.h")
+	dllH("lqlibinterface.h"),
+	dllC("lqlibinterface.cpp"),
+	bridgeH("lqbridge.h")
 {}
 
 bool
@@ -30,7 +38,7 @@ ClassWriter::startWriting()
 	// TODO: Warn if templates are malformed
 
 	// TODO: Refactor
-	QFile template_dllH("../../templates/Cpp/lqwidgets.h");
+	QFile template_dllH("../../templates/Cpp/lqlibinterface.h");
 	if (template_dllH.open(QFile::ReadOnly|QFile::Text))
 	{
 		QStringList bits = QString(template_dllH.readAll()).split("//[TEMPLATE]");
@@ -42,9 +50,9 @@ ClassWriter::startWriting()
 		template_dllH.close();
 	}
 	else
-		qWarning() << "Could not find lqwidgets.h template";
+		qWarning() << "Could not find lqlibinterface.h template";
 
-	QFile template_dllC("../../templates/Cpp/lqwidgets.cpp");
+	QFile template_dllC("../../templates/Cpp/lqlibinterface.cpp");
 	if (template_dllC.open(QFile::ReadOnly|QFile::Text))
 	{
 		QStringList bits = QString(template_dllC.readAll()).split("//[TEMPLATE]");
@@ -56,9 +64,9 @@ ClassWriter::startWriting()
 		template_dllC.close();
 	}
 	else
-		qWarning() << "Could not find lqwidgets.cpp template";
+		qWarning() << "Could not find lqlibinterface.cpp template";
 
-	QFile template_bridgeH("../../templates/Cpp/bridge.h");
+	QFile template_bridgeH("../../templates/Cpp/lqbridge.h");
 	if (template_bridgeH.open(QFile::ReadOnly|QFile::Text))
 	{
 		QStringList bits = QString(template_bridgeH.readAll()).split("//[TEMPLATE]");
@@ -70,7 +78,7 @@ ClassWriter::startWriting()
 		template_bridgeH.close();
 	}
 	else
-		qWarning() << "Could not find bridge.h template";
+		qWarning() << "Could not find lqbridge.h template";
 
 	return true;
 }

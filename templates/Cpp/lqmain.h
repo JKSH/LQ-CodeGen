@@ -1,10 +1,19 @@
-#ifndef LQWIDGETS_H
-#define LQWIDGETS_H
+/*\
+ * Copyright (c) 2016 Sze Howe Koh
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+\*/
 
-#include <QtCore>
+#ifndef LQMAIN_H
+#define LQMAIN_H
+
 #include <QtGlobal>
+#include <QMetaObject>
 #include "extcode.h"
-#include "utils.h"
+#include "lqtypes.h"
+
 
 extern "C" {
 
@@ -26,10 +35,6 @@ extern qint32 Q_DECL_EXPORT emit_string(quintptr _instance, const char* normaliz
 extern qint32 Q_DECL_EXPORT registerLQObject(quintptr _instance, LVArray<LStrHandle>** signalList, LStrHandle superClassName);
 extern qint32 Q_DECL_EXPORT findSignalIndex(qint64* _retVal, quintptr _instance, const char* normalizedSignal);
 
-// TODO: Add QObject::setProperty() and QObject::property()
-
-//[TEMPLATE]
-
 }
 
-#endif
+#endif // LQMAIN_H

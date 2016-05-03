@@ -6,16 +6,18 @@ TARGET = LQWidgets
 TEMPLATE = lib
 
 SOURCES += \
-    lqwidgets.cpp \
-    utils.cpp \
-    errors.cpp \
+    lqmain.cpp \
+    lqlibinterface.cpp \
+    lqtypes.cpp \
+    lqerrors.cpp \
     lqapplication.cpp
 
 HEADERS += \
-    lqwidgets.h \
-    bridge.h \
-    utils.h \
-    errors.h \
+    lqmain.h \
+    lqlibinterface.h \
+    lqbridge.h \
+    lqtypes.h \
+    lqerrors.h \
     lqapplication.h
 
 INCLUDEPATH += "C:/Program Files (x86)/National Instruments/LabVIEW 2013/cintools"

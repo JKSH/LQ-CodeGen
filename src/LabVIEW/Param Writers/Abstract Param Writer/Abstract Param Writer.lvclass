@@ -1,5 +1,9 @@
 ﻿<?xml version='1.0' encoding='UTF-8'?>
 <LVClass LVVersion="13008000">
+	<Property Name="NI.Lib.Description" Type="Str">Copyright (c) 2016 Sze Howe Koh
+
+This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.</Property>
+	<Property Name="NI.Lib.HelpPath" Type="Str"></Property>
 	<Property Name="NI.Lib.Icon" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!(]!!!*Q(C=\&gt;7R=2MR%!81N=?"5X&lt;A91M&lt;/W-,&lt;'&amp;&lt;9+K1,7Q,&lt;)%N&lt;!NMA3X)DW?-RJ(JQ"I\%%Z,(@`BA#==ZB3RN;]28_,V7@P_W`:R`&gt;HV*SU_WE@\N_XF[3:^^TX\+2YP)D7K6;G-RV3P)R`ZS%=_]J'XP/5N&lt;XH,7V\SEJ?]Z#5P?=J4HP+5JTTFWS%0?=B$DD1G(R/.1==!IT.+D)`B':\B'2Z@9XC':XC':XBUC?%:HO%:HO&amp;R7QT0]!T0]!S0I4&lt;*&lt;)?=:XA-(]X40-X40-VDSGC?"GC4N9(&lt;)"D2,L;4ZGG?ZH%;T&gt;-]T&gt;-]T?.S.%`T.%`T.)^&lt;NF8J4@-YZ$S'C?)JHO)JHO)R&gt;"20]220]230[;*YCK=ASI2F=)1I.Z5/Z5PR&amp;)^@54T&amp;5TT&amp;5TQO&lt;5_INJ6Z;"[(H#&gt;ZEC&gt;ZEC&gt;Z$"(*ETT*ETT*9^B)HO2*HO2*(F.&amp;]C20]C2)GN4UE1:,.[:/+5A?0^NOS?UJ^3&lt;*\9B9GT@7JISVW7*NIFC&lt;)^:$D`5Q9TWE7)M@;V&amp;D,6;M29DVR]6#R],%GC47T9_/=@&gt;Z5V&gt;V57&gt;V5E&gt;V5(OV?^T[FTP?\`?YX7ZRP6\D=LH%_8S/U_E5R_-R$I&gt;$\0@\W/VW&lt;[_"&lt;Y[X&amp;],0^^+,]T_J&gt;`J@_B_]'_.T`$KO.@I"O[^NF!!!!!!</Property>
 	<Property Name="NI.Lib.SourceVersion" Type="Int">318799872</Property>
 	<Property Name="NI.Lib.Version" Type="Str">1.0.0.0</Property>
@@ -96,13 +100,13 @@
 			<Property Name="NI.ClassItem.State" Type="Int">1342710272</Property>
 		</Item>
 		<Item Name="Set Default Value.vi" Type="VI" URL="../Protected/Set Default Value.vi">
-			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!&amp;3!!!!#!!%!!!!)%!Q`````R:-97*73568)%2F:G&amp;V&lt;(1A5X2S;7ZH!!!=1(!!#!!!!!9!!!^$&lt;WZU=G^M)&amp;*F:C"%&gt;8!!1E"Q!"Y!!"]&gt;17*T&gt;(*B9X1A5'&amp;S97UA6X*J&gt;'6S,GRW9WRB=X-!'5&amp;C=X2S97.U)&amp;"B=G&amp;N)&amp;&gt;S;82F=C"P&gt;81!'E!Q`````R&amp;%:7:B&gt;7RU)%-L+S"797RV:1!91(!!#!!!!!9!!!N$&lt;WZU=G^M)&amp;*F:A"#1(!!(A!!(RV"9H.U=G&amp;D&gt;#"198*B&lt;3"8=GFU:8)O&lt;(:D&lt;'&amp;T=Q!917*T&gt;(*B9X1A5'&amp;S97UA6X*J&gt;'6S)'FO!!"5!0!!$!!!!!%!!A!$!!!!!!!!!!!!!!!%!!5!"A)!!(A!!!!!!!!*!!!!$1I!!)U,!!!!!!!!!!!!!!!!!!!!!!!!!!!!!B!!!!!1!!!!E!!!!!!"!!=!!!!!</Property>
+			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!&amp;3!!!!#!!%!!!!)%!Q`````R:-97*73568)%2F:G&amp;V&lt;(1A5X2S;7ZH!!!=1(!!#!!!!!9!!!^$&lt;WZU=G^M)&amp;*F:C"%&gt;8!!1E"Q!"Y!!"]&gt;17*T&gt;(*B9X1A5'&amp;S97UA6X*J&gt;'6S,GRW9WRB=X-!'5&amp;C=X2S97.U)&amp;"B=G&amp;N)&amp;&gt;S;82F=C"P&gt;81!'E!Q`````R&amp;%:7:B&gt;7RU)%-L+S"797RV:1!91(!!#!!!!!9!!!N$&lt;WZU=G^M)&amp;*F:A"#1(!!(A!!(RV"9H.U=G&amp;D&gt;#"198*B&lt;3"8=GFU:8)O&lt;(:D&lt;'&amp;T=Q!917*T&gt;(*B9X1A5'&amp;S97UA6X*J&gt;'6S)'FO!!"5!0!!$!!!!!%!!A!$!!!!!!!!!!!!!!!%!!5!"A-!!(A!!!!!!!!*!!!!$1I!!)U,!!!!!!!!!!!!!!!!!!!!!!!!!!!!!B!!!!!1!!!!E!!!!!!"!!=!!!!!</Property>
 			<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
-			<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>
+			<Property Name="NI.ClassItem.Flags" Type="Int">1073741824</Property>
 			<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">false</Property>
 			<Property Name="NI.ClassItem.MethodScope" Type="UInt">3</Property>
 			<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
-			<Property Name="NI.ClassItem.State" Type="Int">1342710272</Property>
+			<Property Name="NI.ClassItem.State" Type="Int">1082130960</Property>
 		</Item>
 	</Item>
 	<Item Name="Utils" Type="Folder">

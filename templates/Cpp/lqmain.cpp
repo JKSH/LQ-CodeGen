@@ -1,12 +1,20 @@
-#include "lqwidgets.h"
-#include "bridge.h"
-#include "errors.h"
+/*\
+ * Copyright (c) 2016 Sze Howe Koh
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+\*/
+
+#include "lqmain.h"
+#include "lqbridge.h"
+#include "lqerrors.h"
 #include <thread>
 #include <QThread>
 
 // STRATEGY: The Bridge pointer is always NULL before the GUI event loop is running,
 // and NULL after the event loop has stopped
-static Bridge* bridge = nullptr;
+Bridge* bridge = nullptr;
 
 static void
 run()
@@ -41,7 +49,7 @@ startWidgetEngine(quintptr* _retVal, LStrHandle pluginDir)
 		return LQ::EngineAlreadyRunningError;
 	}
 
-	QCoreApplication::addLibraryPath(QString::fromUtf8( (char*)(*pluginDir)->str, LStrLen(*pluginDir) ));
+	QCoreApplication::addLibraryPath(  QString::fromUtf8( copyFromLStr(pluginDir) )  );
 	std::thread t(&run);
 	t.detach();
 
@@ -380,5 +388,3 @@ findSignalIndex(qint64* _retVal, quintptr _instance, const char* normalizedSigna
 	}
 	return LQ::NoError;
 }
-
-//[TEMPLATE]

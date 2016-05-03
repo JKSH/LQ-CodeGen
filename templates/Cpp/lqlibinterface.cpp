@@ -6,15 +6,10 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
 \*/
 
-#ifndef PARAM_H
-#define PARAM_H
+#include "lqlibinterface.h"
+#include "lqbridge.h"
+#include "lqerrors.h"
 
-#include <QString>
+// NOTE: This file contains auto-generated code. Do not modify by hand.
 
-struct Param
-{
-	QString type;
-	QString name;
-};
-
-#endif // PARAM_H
+//[TEMPLATE]
