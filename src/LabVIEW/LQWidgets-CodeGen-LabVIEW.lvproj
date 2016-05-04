@@ -21,6 +21,7 @@
 				<Item Name="Connector Pane.ctl" Type="VI" URL="../Data Structures/JSON/Connector Pane.ctl"/>
 				<Item Name="Enum Value.ctl" Type="VI" URL="../Data Structures/JSON/Enum Value.ctl"/>
 				<Item Name="Enum.ctl" Type="VI" URL="../Data Structures/JSON/Enum.ctl"/>
+				<Item Name="LabVIEW Documentation.ctl" Type="VI" URL="../Data Structures/JSON/LabVIEW Documentation.ctl"/>
 				<Item Name="Method.ctl" Type="VI" URL="../Data Structures/JSON/Method.ctl"/>
 				<Item Name="Namespace.ctl" Type="VI" URL="../Data Structures/JSON/Namespace.ctl"/>
 				<Item Name="Param.ctl" Type="VI" URL="../Data Structures/JSON/Param.ctl"/>

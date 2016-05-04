@@ -1,4 +1,8 @@
 {
+	"labviewDocumentation": {
+		"classUrlFormat": "http://doc.qt.io/qt-5/<CLASS_NAME>.html",
+		"methodUrlFormat": "http://doc.qt.io/qt-5/<CLASS_NAME>.html#<METHOD_NAME>"
+	},
 	"name": "Qt SVG",
 	"typeCategories": {
 		"qObjects": [
