@@ -35,6 +35,11 @@
 			<Item Name="Manifestation Ancestors.ctl" Type="VI" URL="../Data Structures/Manifestation Ancestors.ctl"/>
 			<Item Name="VI Input Builder.ctl" Type="VI" URL="../Data Structures/VI Input Builder.ctl"/>
 		</Item>
+		<Item Name="Documentation" Type="Folder">
+			<Item Name="Add Class Documentation.vi" Type="VI" URL="../Documentation/Add Class Documentation.vi"/>
+			<Item Name="Add VI Documentation.vi" Type="VI" URL="../Documentation/Add VI Documentation.vi"/>
+			<Item Name="Generate Doc URL.vi" Type="VI" URL="../Documentation/Generate Doc URL.vi"/>
+		</Item>
 		<Item Name="Icons and Wires" Type="Folder">
 			<Item Name="Create Icon.vi" Type="VI" URL="../Icons and Wires/Create Icon.vi"/>
 			<Item Name="Icon Template.ctl" Type="VI" URL="../Icons and Wires/Icon Template.ctl"/>
