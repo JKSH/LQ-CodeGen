@@ -1,4 +1,8 @@
 {
+	"labviewDocumentation": {
+		"classUrlFormat": "http://qwt.sourceforge.net/class_<CLASS_NAME_UNDERSCORED_LOWERCASE>.html",
+		"methodUrlFormat": "http://qwt.sourceforge.net/class_<CLASS_NAME_UNDERSCORED_LOWERCASE>.html#<METHOD_NAME>"
+	},
 	"name": "Qwt",
 	"typeCategories": {
 		"qObjects": [

@@ -21,6 +21,7 @@
 				<Item Name="Connector Pane.ctl" Type="VI" URL="../Data Structures/JSON/Connector Pane.ctl"/>
 				<Item Name="Enum Value.ctl" Type="VI" URL="../Data Structures/JSON/Enum Value.ctl"/>
 				<Item Name="Enum.ctl" Type="VI" URL="../Data Structures/JSON/Enum.ctl"/>
+				<Item Name="LabVIEW Documentation.ctl" Type="VI" URL="../Data Structures/JSON/LabVIEW Documentation.ctl"/>
 				<Item Name="Method.ctl" Type="VI" URL="../Data Structures/JSON/Method.ctl"/>
 				<Item Name="Namespace.ctl" Type="VI" URL="../Data Structures/JSON/Namespace.ctl"/>
 				<Item Name="Param.ctl" Type="VI" URL="../Data Structures/JSON/Param.ctl"/>
@@ -33,6 +34,11 @@
 			<Item Name="DLL Parameter Info.ctl" Type="VI" URL="../Data Structures/DLL Parameter Info.ctl"/>
 			<Item Name="Manifestation Ancestors.ctl" Type="VI" URL="../Data Structures/Manifestation Ancestors.ctl"/>
 			<Item Name="VI Input Builder.ctl" Type="VI" URL="../Data Structures/VI Input Builder.ctl"/>
+		</Item>
+		<Item Name="Documentation" Type="Folder">
+			<Item Name="Add Class Documentation.vi" Type="VI" URL="../Documentation/Add Class Documentation.vi"/>
+			<Item Name="Add VI Documentation.vi" Type="VI" URL="../Documentation/Add VI Documentation.vi"/>
+			<Item Name="Generate Doc URL.vi" Type="VI" URL="../Documentation/Generate Doc URL.vi"/>
 		</Item>
 		<Item Name="Icons and Wires" Type="Folder">
 			<Item Name="Create Icon.vi" Type="VI" URL="../Icons and Wires/Create Icon.vi"/>
