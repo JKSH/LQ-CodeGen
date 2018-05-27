@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='UTF-8'?>
-<LVClass LVVersion="13008000">
+<LVClass LVVersion="14008000">
 	<Property Name="NI.Lib.ContainingLib" Type="Str">Template.lvlib</Property>
 	<Property Name="NI.Lib.ContainingLibPath" Type="Str">../../Template.lvlib</Property>
 	<Property Name="NI.Lib.FriendGUID" Type="Str">49f323a7-edf8-4046-a453-309fa9925cb0</Property>
