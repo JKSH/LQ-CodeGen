@@ -252,7 +252,7 @@ using LQMatrix = QVector<QVector<T>>;
 // TODO: Investigate if it's worth overloading the functions below to take rvalue references.
 //       See http://qt-project.org/forums/viewthread/34454
 template <typename T> QByteArray
-serialize(const T& object)
+serialize(const T& object) // TODO: Remove after functor-based invokes are implemented
 {
 	QByteArray bytes;
 	QDataStream stream(&bytes, QIODevice::WriteOnly);
@@ -260,10 +260,17 @@ serialize(const T& object)
 	return bytes;
 }
 
-template <typename T> T
-deserialize(const QByteArray& bytes)
+template <typename T> void
+serialize(LStrHandle buffer, const T& object)
 {
-	QDataStream stream(bytes);
+	copyIntoLStr(buffer, serialize(object));
+}
+
+template <typename T> T
+deserialize(LStrHandle bytes)
+{
+	QByteArray ba = copyFromLStr(bytes);
+	QDataStream stream(ba);
 	T object;
 	stream >> object;
 	return object;

@@ -294,7 +294,7 @@ TypeConv::convCode_bridge2Qt(const QString& qtType)
 	case FullArray:
 		return "_bridgeValue_";
 	case OpaqueStruct:
-		return "deserialize<_qtType_>(copyFromLStr(_bridgeValue_))";
+		return "deserialize<_qtType_>(_bridgeValue_)";
 	default:
 		qWarning() << "WARNING: TypeConv::convCode_bridge2Qt(): Don't know how to convert" << qtType;
 		return "";

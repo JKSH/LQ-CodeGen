@@ -306,7 +306,7 @@ ClassWriter::funcCallBody_inBridge(const Method &method)
 		case TypeConv::OpaqueStruct:
 
 			wrapper = "\n"
-					"\t\t"  "%CLASS% thisInstance = deserialize<%CLASS%>(copyFromLStr(_instance));"   "\n"
+					"\t\t"  "%CLASS% thisInstance = deserialize<%CLASS%>(_instance);"  "\n"
 					"\t\t"  "%CALL_STMT_MAIN%;"                                                       "\n"
 							"%SERIAlIZE_LINE%"
 					"\t\t"  "%RETURN_STMT_END%"                                                       "\n"
