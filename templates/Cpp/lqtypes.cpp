@@ -22,16 +22,28 @@ copyIntoLStr(LStrHandle lStr, const QByteArray& bytes)
 	}
 }
 
-QByteArray
-copyFromLStr(LStrHandle lStr)
-{
-	return QByteArray( (char*)(*lStr)->str, LStrLen(*lStr) );
-}
-
 LStrHandle
 newLStr(const QByteArray& bytes)
 {
 	auto lStr = (LStrHandle)DSNewHandle(bytes.length() + lStrHeaderSize);
 	copyIntoLStr(lStr, bytes);
 	return lStr;
+}
+
+template<> QByteArray
+LString::to<QByteArray>(LStrHandle lStr)
+{
+	return QByteArray(
+		reinterpret_cast<char*>( (*lStr)->str ),
+		LStrLen(*lStr)
+	);
+}
+
+template<> QString
+LString::to<QString>(LStrHandle lStr)
+{
+	return QString::fromUtf8(
+		reinterpret_cast<char*>( (*lStr)->str ),
+		LStrLen(*lStr)
+	);
 }

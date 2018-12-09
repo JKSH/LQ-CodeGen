@@ -13,9 +13,15 @@
 #include "extcode.h"
 
 void copyIntoLStr(LStrHandle lStr, const QByteArray& bytes);
-QByteArray copyFromLStr(LStrHandle lStr);
 LStrHandle newLStr(const QByteArray& bytes);
 inline LStrHandle newLStr(const QString& string) {return newLStr(string.toUtf8());}
+
+namespace LString
+{
+template <typename T> T to(LStrHandle lStr);
+template<> QByteArray to<QByteArray>(LStrHandle lStr);
+template<> QString to<QString>(LStrHandle lStr);
+}
 
 // Structs declared between lv_prolog.h and lv_epilog.h get aligned according to LabVIEW's expectations
 #include "lv_prolog.h"
@@ -184,7 +190,7 @@ struct LVArray<LStrHandle, N>
 		QList<U> list;
 		list.reserve(dimSizes[0]);
 		for (int i = 0; i < dimSizes[0]; ++i)
-			list << copyFromLStr(elt[i]); // TODO: Avoid intermediate QByteArray
+			list << LString::to<U>(elt[i]);
 		return list;
 	}
 
@@ -199,7 +205,7 @@ struct LVArray<LStrHandle, N>
 		{
 			matrix[r].reserve(colCount);
 			for (int c = 0; c < colCount; ++i, ++c)
-				matrix[r] << copyFromLStr(elt[i]);
+				matrix[r] << LString::to<U>(elt[i]);
 		}
 		return matrix;
 	}
@@ -269,7 +275,7 @@ serialize(LStrHandle buffer, const T& object)
 template <typename T> T
 deserialize(LStrHandle bytes)
 {
-	QByteArray ba = copyFromLStr(bytes);
+	auto ba = LString::to<QByteArray>(bytes);
 	QDataStream stream(ba);
 	T object;
 	stream >> object;

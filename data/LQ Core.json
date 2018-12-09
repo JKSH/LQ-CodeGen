@@ -4642,13 +4642,13 @@
 			{
 				"name": "QByteArray",
 				"dllType": "LStrHandle",
-				"dll2bridge": "QByteArray( (char*)(*_dllValue_)->str, LStrLen(*_dllValue_) )",
+				"dll2bridge": "LString::to<QByteArray>(_dllValue_)",
 				"bridge2dll": "copyIntoLStr(_dllValue_, _bridgeValue_)"
 			},
 			{
 				"name": "QString",
 				"dllType": "LStrHandle",
-				"dll2bridge": "QString::fromUtf8( (char*)(*_dllValue_)->str, LStrLen(*_dllValue_) )",
+				"dll2bridge": "LString::to<QString>(_dllValue_)",
 				"bridge2dll": "copyIntoLStr(_dllValue_, _bridgeValue_.toUtf8())"
 			},
 			{
