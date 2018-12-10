@@ -12,7 +12,9 @@
 #include <QDataStream>
 #include "extcode.h"
 
-void copyIntoLStr(LStrHandle lStr, const QByteArray& bytes);
+LStrHandle operator<<(LStrHandle dest, const QByteArray& src);
+inline LStrHandle operator<<(LStrHandle dest, const QString& src) { dest << src.toUtf8(); return dest; }
+
 LStrHandle newLStr(const QByteArray& bytes);
 inline LStrHandle newLStr(const QString& string) {return newLStr(string.toUtf8());}
 
@@ -269,7 +271,7 @@ serialize(const T& object) // TODO: Remove after functor-based invokes are imple
 template <typename T> void
 serialize(LStrHandle buffer, const T& object)
 {
-	copyIntoLStr(buffer, serialize(object));
+	buffer << serialize(object);
 }
 
 template <typename T> T

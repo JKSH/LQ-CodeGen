@@ -4643,13 +4643,13 @@
 				"name": "QByteArray",
 				"dllType": "LStrHandle",
 				"dll2bridge": "LString::to<QByteArray>(_dllValue_)",
-				"bridge2dll": "copyIntoLStr(_dllValue_, _bridgeValue_)"
+				"bridge2dll": "_dllValue_ << _bridgeValue_"
 			},
 			{
 				"name": "QString",
 				"dllType": "LStrHandle",
 				"dll2bridge": "LString::to<QString>(_dllValue_)",
-				"bridge2dll": "copyIntoLStr(_dllValue_, _bridgeValue_.toUtf8())"
+				"bridge2dll": "_dllValue_ << _bridgeValue_"
 			},
 			{
 				"name": "QStringList",

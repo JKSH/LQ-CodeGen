@@ -10,23 +10,23 @@
 
 static const int lStrHeaderSize = 4;
 
-void
-copyIntoLStr(LStrHandle lStr, const QByteArray& bytes)
+LStrHandle
+operator<<(LStrHandle dest, const QByteArray& src)
 {
-	// TODO: Report MgErr value
-	MgErr outcome = DSSetHandleSize(lStr, bytes.length() + lStrHeaderSize);
+	MgErr outcome = DSSetHandleSize(dest, src.length() + lStrHeaderSize);
 	if (outcome == noErr)
 	{
-		(*lStr)->cnt = bytes.length();
-		std::copy(bytes.constBegin(), bytes.constEnd(), (*lStr)->str);
+		(*dest)->cnt = src.length();
+		std::copy(src.constBegin(), src.constEnd(), (*dest)->str);
 	}
+	return dest;
 }
 
 LStrHandle
 newLStr(const QByteArray& bytes)
 {
 	auto lStr = (LStrHandle)DSNewHandle(bytes.length() + lStrHeaderSize);
-	copyIntoLStr(lStr, bytes);
+	lStr << bytes;
 	return lStr;
 }
 

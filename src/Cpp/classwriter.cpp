@@ -328,7 +328,7 @@ ClassWriter::funcCallBody_inBridge(const Method &method)
 		if (method.isConst())
 			wrapper.replace("%SERIAlIZE_LINE%", "");
 		else
-			wrapper.replace("%SERIAlIZE_LINE%", "\t\tcopyIntoLStr(_instance, serialize(thisInstance));\n");
+			wrapper.replace("%SERIAlIZE_LINE%", "\t\t_instance << serialize(thisInstance);\n");
 
 		if (hasReturn)
 		{
