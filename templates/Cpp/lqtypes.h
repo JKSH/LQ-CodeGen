@@ -64,8 +64,8 @@ struct LVArray
 		std::copy( dimensions, dimensions+N, (*handle)->dimSizes );
 	}
 
-	// TODO: Rename the 1D functions to "fromQVector1D()" etc. for consistency with the 2D versions
-
+	// TODO: Rename the 1D functions to "fromQVector1D()" etc. for consistency with the 2D versions, OR
+	// TODO: Merge these fromQ* functions into the stream operators below
 	template <typename U>
 	static void fromQVector(LVArray<T>** destHandle, const QVector<U>& vector)
 	{
@@ -251,6 +251,24 @@ struct LVArray<quintptr>
 	qint32 dimSize;
 	quintptr elt[1];
 };
+
+template <typename T, typename U>
+void operator<<(LVArray<T>** destHandle, const QList<U>& src)
+{
+	LVArray<T>::fromQList(destHandle, src);
+}
+
+template <typename T, typename U>
+void operator<<(LVArray<T>** destHandle, const QVector<U>& src)
+{
+	LVArray<T>::fromQVector(destHandle, src);
+}
+
+template <typename T, typename U>
+void operator<<(LVArray<T, 2>** destHandle, const QVector<QVector<U>>& src)
+{
+	LVArray<T>::fromQVector2D(destHandle, src);
+}
 #include "lv_epilog.h"
 
 template <typename T>

@@ -93,7 +93,7 @@
 				"name": "LQMatrix<%QT_TYPE_INNER%>",
 				"dllType": "LVArray<%DLL_TYPE_INNER%, 2>**",
 				"dll2bridge": "(*_dllValue_)->toQVector2D<%QT_TYPE_INNER%>()",
-				"bridge2dll": "LVArray<%DLL_TYPE_INNER%, 2>::fromQVector2D(_dllValue_, _bridgeValue_)"
+				"bridge2dll": "_dllValue_ << _bridgeValue_"
 			}
 		]
 	}
