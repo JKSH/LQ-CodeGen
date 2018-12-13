@@ -146,110 +146,24 @@ ClassWriter::writeClass(const QJsonObject& classObj)
 QString
 ClassWriter::funcCallBody_inDll(const Method &method)
 {
-	QString body_dll;
-	body_dll =
-			"\t"      "if (!bridge)"    "\n"
-			"\t\t"        "return LQ::EngineNotRunningError;"           "\n"
-			""        "%CHECK_INSTANCE_NULLITY%"                        "\n"
-			""        "%RETURN_VAR_INTERMEDIATE%"
-			"\t"      "QMetaObject::invokeMethod(bridge,"               "\n"
-			"\t\t\t"          "\"" + method.qualifiedName("_") + "\","  "\n"
-			"\t\t\t"          "Qt::BlockingQueuedConnection,"           "\n"
-			""                "%RETURN_LINE_INVOKE%"
-			""                "%CLASSNAME_LINE_INVOKE%"
-			""                "%INSTANCE_LINE_INVOKE%"
-			""                "%INPUT_LINES_INVOKE%";
+	QString body_dll =
+			"\t"      "return lqInvoke(%PASS_INSTANCE%[=]"              "\n"
+			"\t"      "{"                                               "\n"
+			""            "%BODY%"
+			"\t"      "});"                                             "\n";
 
-	QString thisClass = method.className();
-	if ( method.isConstructor() && TypeConv::category(thisClass) == TypeConv::QObject )
-		body_dll.replace("%CLASSNAME_LINE_INVOKE%", "\t\t\tQ_ARG(const char*, _className),\n");
+	auto classCategory = TypeConv::category(method.className());
+	bool isInstanceMethod =
+			(classCategory == TypeConv::SimpleIdentity || classCategory == TypeConv::QObject)
+			&& !method.isConstructor()
+			&& !method.isStaticMember();
+
+	if (isInstanceMethod)
+		body_dll.replace("%PASS_INSTANCE%", "_instance, ");
 	else
-		body_dll.replace("%CLASSNAME_LINE_INVOKE%", "");
+		body_dll.replace("%PASS_INSTANCE%", "");
 
-	if (!method.isConstructor() && !method.isStaticMember())
-	{
-		QString conversion = TypeConv::convCode_dll2Bridge(thisClass);
-		conversion.replace("_qtType_", TypeConv::instanceType_bridge(thisClass));
-		conversion.replace("_dllValue_", "_instance");
-
-		switch (TypeConv::category(method.className()))
-		{
-		case TypeConv::SimpleIdentity:
-		case TypeConv::QObject:
-			body_dll.replace("%CHECK_INSTANCE_NULLITY%", "\tif (!_instance)\n\t\treturn LQ::NullPointerUseError;\n");
-		default:
-			body_dll.replace("%CHECK_INSTANCE_NULLITY%", "");
-		}
-		body_dll.replace("%INSTANCE_LINE_INVOKE%", "\t\t\tQ_ARG(" + TypeConv::instanceType_bridge(thisClass) + ", "	+ conversion + "),\n");
-	}
-	else
-	{
-		body_dll.replace("%CHECK_INSTANCE_NULLITY%", "");
-		body_dll.replace("%INSTANCE_LINE_INVOKE%", "");
-	}
-
-	QString retType_brg = method.returnType_bridge();
-	bool hasReturn = (retType_brg != "void");
-	if (hasReturn)
-	{
-		body_dll.replace("%RETURN_VAR_INTERMEDIATE%", "\t%RETURN_TYPE_BRIDGE% retVal_brg;\n");
-		body_dll.replace("%RETURN_LINE_INVOKE%", "\t\t\tQ_RETURN_ARG(%RETURN_TYPE_BRIDGE%, retVal_brg)," "\n");
-		body_dll.replace("%RETURN_TYPE_BRIDGE%", retType_brg);
-	}
-	else
-	{
-		body_dll.replace("%RETURN_VAR_INTERMEDIATE%", "");
-		body_dll.replace("%RETURN_LINE_INVOKE%", "");
-	}
-
-	QString inputLines;
-	for (const Param& p : method.paramList_raw())
-	{
-		QByteArray normType = QMetaObject::normalizedType(p.type.toUtf8());
-		QString conversion = TypeConv::convCode_dll2Bridge(normType);
-		conversion.replace("_qtType_", normType);
-		conversion.replace("_dllValue_", p.name);
-
-		inputLines
-				+= "\t\t\tQ_ARG(" + TypeConv::bridgeType(p.type) + ", "
-				+ conversion + "),\n";
-	}
-	body_dll.replace("%INPUT_LINES_INVOKE%", inputLines);
-
-	body_dll.chop(2);
-	body_dll += ");\n";
-
-	if (hasReturn)
-	{
-		QString conversion = TypeConv::convCode_bridge2Dll(retType_brg);
-		conversion.replace("_dllType_", method.returnType_dll());
-		conversion.replace("_dllValue_", "_retVal");
-		conversion.replace("_bridgeValue_", "retVal_brg");
-
-		body_dll
-				+= "\t%RETURN_KEY%" + conversion + ";\n";
-
-		switch (TypeConv::category(retType_brg))
-		{
-		case TypeConv::Boolean:
-		case TypeConv::Numeric:
-		case TypeConv::Enum:
-		case TypeConv::SimpleStruct:
-		case TypeConv::SimpleIdentity:
-		case TypeConv::QObject:
-			body_dll.replace("%RETURN_KEY%", "*_retVal = ");
-			break;
-		case TypeConv::SimpleContainer:
-		case TypeConv::FullArray:
-		case TypeConv::OpaqueStruct:
-			body_dll.replace("%RETURN_KEY%", "");
-			break;
-		default:
-			qWarning() << "WARNING: ClassWriter::funcCallBody_inDll(): Unsupported return type:" << retType_brg;
-		}
-	}
-
-	body_dll += "\n\treturn LQ::NoError;\n";
+	body_dll.replace("%BODY%", funcCallBody_inLambda(method));
 	return body_dll;
 }
 
@@ -368,4 +282,193 @@ ClassWriter::funcCallBody_inBridge(const Method &method)
 	wrapper.replace("%PARAMS%", params);
 
 	return wrapper;
+}
+
+QString
+ClassWriter::funcCallBody_inLambda(const Method& method)
+{
+	QString body =
+			""      "%UNPACK_INSTANCE%"
+			"\t\t"  "%RETURN_VAR_ASSIGN%"  "%CALL_EXPR%;"  "\n"
+			""      "%RETURN_STMT%"
+			""      "%REPACK_INSTANCE%";
+
+	bool hasReturn = (method.returnType_dll() != "void");
+	auto classCategory = TypeConv::category(method.className());
+	if (method.isConstructor() || method.isStaticMember())
+		body.replace("%UNPACK_INSTANCE%", "");
+	else
+	{
+		body.replace("%UNPACK_INSTANCE%", "\t\tauto instance = %UNPACK_INSTANCE_ACTION%<%CLASS%%PTR%>(_instance);\n");
+		switch (classCategory)
+		{
+		case TypeConv::OpaqueStruct:
+			body.replace("%UNPACK_INSTANCE_ACTION%", "deserialize");
+			body.replace("%PTR%", "");
+			break;
+		case TypeConv::SimpleIdentity:
+		case TypeConv::QObject:
+			body.replace("%UNPACK_INSTANCE_ACTION%", "reinterpret_cast");
+			body.replace("%PTR%", "*");
+			break;
+		default:
+			qWarning() << "WARNING: ClassWriter::funcCallBody_inLambda(): This type cannot be instantiated for method calls:" << method.className();
+			return "";
+		}
+	}
+
+	// Preparing the intermediate return variable
+	if (hasReturn)
+		body.replace("%RETURN_VAR_ASSIGN%", "auto retVal = ");
+	else
+		body.replace("%RETURN_VAR_ASSIGN%", "");
+
+	// Call the function
+	if (method.isConstructor())
+	{
+		QString methodCallWrapper;
+		switch (classCategory)
+		{
+		case TypeConv::OpaqueStruct:
+			methodCallWrapper = "%METHOD_CALL%";
+			break;
+		case TypeConv::SimpleIdentity:
+			methodCallWrapper = "new %METHOD_CALL%";
+			break;
+		case TypeConv::QObject:
+			methodCallWrapper = "newLQObject<%CLASS%>(%PARAMS%)";
+			break;
+		default:
+			qWarning() << "WARNING: ClassWriter::funcCallBody_inLambda(): This type cannot have constructors:" << method.className();
+			return "";
+		}
+		body.replace("%CALL_EXPR%", methodCallWrapper);
+	}
+	else if (method.isStaticMember())
+	{
+		switch (classCategory)
+		{
+		case TypeConv::OpaqueStruct:
+		case TypeConv::SimpleIdentity:
+		case TypeConv::QObject:
+			body.replace("%CALL_EXPR%", "%CLASS%::%METHOD_CALL%");
+			break;
+		default:
+			qWarning() << "WARNING: ClassWriter::funcCallBody_inLambda(): This type cannot have methods:" << method.className();
+			return "";
+		}
+	}
+	else
+	{
+		body.replace("%CALL_EXPR%", "instance%CALL_OPERATOR%%METHOD_CALL%");
+		switch (classCategory)
+		{
+		case TypeConv::OpaqueStruct:
+			body.replace("%CALL_OPERATOR%", ".");
+			break;
+
+		case TypeConv::SimpleIdentity:
+		case TypeConv::QObject:
+			body.replace("%CALL_OPERATOR%", "->");
+			break;
+
+		default:
+			qWarning() << "WARNING: ClassWriter::funcCallBody_inLambda(): This type cannot have methods:" << method.className();
+			return "";
+		}
+	}
+
+	// Write actual method call
+	QString methodCall = method.name() + "(%PARAMS%)";
+	QStringList params;
+	if (method.isConstructor() && classCategory == TypeConv::QObject)
+		params << "_className";
+	for (const Param& param : method.paramList_raw())
+	{
+		QByteArray normType = QMetaObject::normalizedType(param.type.toUtf8());
+		QString conversion = TypeConv::convCode_dll2Qt(normType);
+		conversion.replace("_qtType_", normType);
+		conversion.replace("_dllValue_", param.name);
+
+		params << conversion;
+	}
+
+	body.replace("%CLASS%", method.className());
+	body.replace("%METHOD_CALL%", methodCall);
+	body.replace("%PARAMS%", params.join(", "));
+
+	// Repack instance
+	if (classCategory == TypeConv::OpaqueStruct
+			&& !method.isConstructor()
+			&& !method.isConst()
+			&& !method.isStaticMember())
+	{
+		body.replace("%REPACK_INSTANCE%", "\t\t_instance << serialize(instance);\n");
+	}
+	else
+		body.replace("%REPACK_INSTANCE%", "");
+
+	// Finalize return value
+	if (hasReturn)
+	{
+		body.replace("%RETURN_STMT%", "\t\t%RETURN_DEREF%_retVal %RET_OP% %RET_CONV%;\n");
+
+		QString retType = method.returnType_qt();
+		if (method.isConstructor())
+			retType = method.className(); // HACK: This should often be a POINTER to the class type
+
+		bool hasReturnDeref = true;
+		QString retOp = "=";
+		switch (TypeConv::category(retType))
+		{
+		case TypeConv::Boolean:
+		case TypeConv::Numeric:
+		case TypeConv::Enum:
+		case TypeConv::SimpleStruct:
+		case TypeConv::SimpleIdentity:
+		case TypeConv::QObject:
+			break;
+		case TypeConv::SimpleContainer:
+		case TypeConv::FullArray:
+		case TypeConv::OpaqueStruct:
+			hasReturnDeref = false;
+			retOp = "<<";
+			break;
+		default:
+			break;
+		}
+		if (hasReturnDeref)
+			body.replace("%RETURN_DEREF%", "*");
+		else
+			body.replace("%RETURN_DEREF%", "");
+		body.replace("%RET_OP%", retOp);
+
+		switch (TypeConv::category(retType))
+		{
+		case TypeConv::Boolean:
+		case TypeConv::Numeric:
+		case TypeConv::Enum:
+		case TypeConv::SimpleStruct:
+			body.replace("%RET_CONV%", "retVal");
+			break;
+		case TypeConv::SimpleIdentity:
+		case TypeConv::QObject:
+			body.replace("%RET_CONV%", "reinterpret_cast<quintptr>(retVal)");
+			break;
+		case TypeConv::SimpleContainer:
+		case TypeConv::FullArray:
+			body.replace("%RET_CONV%", "retVal");
+			break;
+		case TypeConv::OpaqueStruct:
+			body.replace("%RET_CONV%", "serialize(retVal)");
+			break;
+		default:
+			qWarning() << "WARNING: ClassWriter::funcCallBody_inDll(): This method cannot return:" << method.name();
+			break;
+		}
+	}
+	else
+		body.replace("%RETURN_STMT%", "");
+
+	return body;
 }

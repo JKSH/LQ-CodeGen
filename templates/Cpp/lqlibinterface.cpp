@@ -10,6 +10,24 @@
 #include "lqbridge.h"
 #include "lqerrors.h"
 
+static qint32
+lqInvoke(std::function<void()> func)
+{
+	if (!bridge)
+		return LQ::EngineNotRunningError;
+
+	QMetaObject::invokeMethod(qApp, func, Qt::BlockingQueuedConnection);
+	return LQ::NoError;
+}
+
+static qint32
+lqInvoke(quintptr _instance, std::function<void()> func)
+{
+	if (!_instance)
+		return LQ::NullPointerUseError;
+	return lqInvoke(func);
+}
+
 // NOTE: This file contains auto-generated code. Do not modify by hand.
 
 //[TEMPLATE]

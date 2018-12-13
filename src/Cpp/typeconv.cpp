@@ -300,3 +300,31 @@ TypeConv::convCode_bridge2Qt(const QString& qtType)
 		return "";
 	}
 }
+
+QString
+TypeConv::convCode_dll2Qt(const QString& qtType)
+{
+	QString tmp = typeBase(qtType);
+	switch (category(tmp))
+	{
+	case Boolean:
+	case SimpleStruct:
+		return "*_dllValue_";
+	case Numeric:
+		return "_dllValue_";
+	case OpaqueStruct:
+		return "deserialize<_qtType_>(_dllValue_)";
+	case SimpleContainer:
+	case FullArray:
+		return _bridge2dll[tmp].toObject()["dll2bridge"].toString().replace("%QT_TYPE_INNER%", innerType(qtType));
+	case Enum:
+		return "static_cast<_qtType_>(_dllValue_)";
+	case SimpleIdentity:
+	case QObject:
+		return "reinterpret_cast<_qtType_>(_dllValue_)";
+	default:
+		qWarning() << "WARNING: TypeConv::convCode_dll2Qt(): Don't know how to convert" << qtType;
+		return QString();
+	}
+}
+

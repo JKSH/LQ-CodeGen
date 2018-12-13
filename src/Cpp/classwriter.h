@@ -27,6 +27,7 @@ public:
 private:
 	static QString funcCallBody_inDll(const Method& method);
 	static QString funcCallBody_inBridge(const Method& method);
+	static QString funcCallBody_inLambda(const Method& method);
 
 	QFile dllH;
 	QFile dllC;
