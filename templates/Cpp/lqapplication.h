@@ -183,4 +183,6 @@ newLQObject(const char* className, Uu ... args)
 	return new LQMetaBinding<T>(className, args ...);
 }
 
+extern std::atomic_bool isRunning;
+
 #endif // LQAPPLICATION_H

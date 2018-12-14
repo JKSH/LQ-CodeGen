@@ -15,7 +15,6 @@ SOURCES += \
 HEADERS += \
     lqmain.h \
     lqlibinterface.h \
-    lqbridge.h \
     lqtypes.h \
     lqerrors.h \
     lqapplication.h

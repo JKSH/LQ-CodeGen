@@ -18,16 +18,14 @@
 
 ClassWriter::ClassWriter() :
 	dllH("lqlibinterface.h"),
-	dllC("lqlibinterface.cpp"),
-	bridgeH("lqbridge.h")
+	dllC("lqlibinterface.cpp")
 {}
 
 bool
 ClassWriter::startWriting()
 {
 	bool ok = dllH.open(QFile::WriteOnly|QFile::Text)
-			&& dllC.open(QFile::WriteOnly|QFile::Text)
-			&& bridgeH.open(QFile::WriteOnly|QFile::Text);
+			&& dllC.open(QFile::WriteOnly|QFile::Text);
 
 	if (!ok)
 	{
@@ -66,20 +64,6 @@ ClassWriter::startWriting()
 	else
 		qWarning() << "Could not find lqlibinterface.cpp template";
 
-	QFile template_bridgeH("../../templates/Cpp/lqbridge.h");
-	if (template_bridgeH.open(QFile::ReadOnly|QFile::Text))
-	{
-		QStringList bits = QString(template_bridgeH.readAll()).split("//[TEMPLATE]");
-		bridgeH.write(bits[0].toUtf8());
-
-		if (bits.count() > 1)
-			_footer_bridgeH = bits[1];
-
-		template_bridgeH.close();
-	}
-	else
-		qWarning() << "Could not find lqbridge.h template";
-
 	return true;
 }
 
@@ -88,11 +72,9 @@ ClassWriter::stopWriting()
 {
 	dllH.write(_footer_dllH.toUtf8());
 	dllC.write(_footer_dllC.toUtf8());
-	bridgeH.write(_footer_bridgeH.toUtf8());
 
 	dllH.close();
 	dllC.close();
-	bridgeH.close();
 }
 
 void
@@ -116,30 +98,19 @@ ClassWriter::writeClass(const QJsonObject& classObj)
 			continue;
 		}
 
-		QString retType_brg = method.returnType_bridge();
-		bridgeH.write('\t' + retType_brg.toUtf8() + ' ');
 		dllH.write("extern qint32 Q_DECL_EXPORT ");
 		dllC.write("qint32\n");
 
 		QByteArray funcName = method.qualifiedName("_").toUtf8();
-		bridgeH.write(funcName + '(');
 		dllH.write(funcName + '(');
 		dllC.write(funcName + '(');
 
 		QString paramStr_dll = Method::paramsToCode_prototype(method.paramList_dll());
-		QString paramStr_brg = Method::paramsToCode_prototype(method.paramList_bridge());
-
-		bridgeH.write(paramStr_brg.toUtf8() + ") {");
 		dllH.write(paramStr_dll.toUtf8() + ");\n");
 		dllC.write(paramStr_dll.toUtf8() + ")\n{\n");
 
-		QString body_brg = funcCallBody_inBridge(method);
 		QString body_dll = funcCallBody_inDll(method);
-
-		bridgeH.write(body_brg.toUtf8() + "}\n");
 		dllC.write(body_dll.toUtf8() + "}\n\n");
-
-		// TODO: Bypass Bridge if method is a slot
 	}
 }
 
@@ -165,123 +136,6 @@ ClassWriter::funcCallBody_inDll(const Method &method)
 
 	body_dll.replace("%BODY%", funcCallBody_inLambda(method));
 	return body_dll;
-}
-
-QString
-ClassWriter::funcCallBody_inBridge(const Method &method)
-{
-	auto classCategory = TypeConv::category(method.className());
-	bool hasReturn = (method.returnType_bridge() != "void");
-
-	// TODO: Optimize passing data across the Bridge
-	// e.g. To return a LabVIEW string, write the data in the GUI thread and make the Bridge return void
-	QString wrapper;
-	if (method.isConstructor())
-	{
-		switch (classCategory)
-		{
-		case TypeConv::OpaqueStruct:
-			wrapper = "return serialize(%METHOD_CALL%);";
-			break;
-		case TypeConv::SimpleIdentity:
-			wrapper = "return new %METHOD_CALL%;";
-			break;
-		case TypeConv::QObject:
-			wrapper = "return newLQObject<%CLASS%>(%PARAMS%);";
-			break;
-		default:
-			qWarning() << "WARNING: ClassWriter::funcCallBody_inBridge(): This type cannot have constructors:" << method.className();
-			return "";
-		}
-	}
-	else if (method.isStaticMember())
-	{
-		switch (classCategory)
-		{
-		case TypeConv::OpaqueStruct:
-		case TypeConv::SimpleIdentity:
-		case TypeConv::QObject:
-			wrapper = "%RETURN_KEY_END%%CLASS%::%METHOD_CALL%;";
-			break;
-		default:
-			qWarning() << "WARNING: ClassWriter::funcCallBody_inBridge(): This type cannot have methods:" << method.className();
-			return "";
-		}
-
-		if (hasReturn)
-			wrapper.replace("%RETURN_KEY_END%", "return ");
-		else
-			wrapper.replace("%RETURN_KEY_END%", "");
-	}
-	else
-	{
-		switch (classCategory)
-		{
-		case TypeConv::OpaqueStruct:
-
-			wrapper = "\n"
-					"\t\t"  "%CLASS% thisInstance = deserialize<%CLASS%>(_instance);"  "\n"
-					"\t\t"  "%CALL_STMT_MAIN%;"                                                       "\n"
-							"%SERIAlIZE_LINE%"
-					"\t\t"  "%RETURN_STMT_END%"                                                       "\n"
-					"\t";
-			break;
-
-		case TypeConv::SimpleIdentity:
-		case TypeConv::QObject:
-			wrapper = "%RETURN_KEY_END%%FINAL_CALL_CONVERTED%;";
-			wrapper.replace("%FINAL_CALL_CONVERTED%", TypeConv::convCode_qt2Bridge(method.returnType_qt()));
-			wrapper.replace("_qtValue_", "_instance->%METHOD_CALL%");
-			break;
-
-		default:
-			qWarning() << "WARNING: ClassWriter::funcCallBody_inBridge(): This type cannot have methods:" << method.className();
-			return "";
-		}
-
-		if (method.isConst())
-			wrapper.replace("%SERIAlIZE_LINE%", "");
-		else
-			wrapper.replace("%SERIAlIZE_LINE%", "\t\t_instance << serialize(thisInstance);\n");
-
-		if (hasReturn)
-		{
-			wrapper.replace("%CALL_STMT_MAIN%", "%RETURN_TYPE% retVal = " + TypeConv::convCode_qt2Bridge(method.returnType_qt()));
-			wrapper.replace("_qtValue_", "thisInstance.%METHOD_CALL%");
-
-			wrapper.replace("%RETURN_KEY_END%", "return ");
-			wrapper.replace("%RETURN_STMT_END%", "return retVal;");
-			wrapper.replace("%RETURN_TYPE%", method.returnType_bridge());
-		}
-		else
-		{
-			wrapper.replace("%CALL_STMT_MAIN%", "thisInstance.%METHOD_CALL%");
-
-			wrapper.replace("%RETURN_KEY_END%", "");
-			wrapper.replace("%RETURN_STMT_END%", "");
-		}
-	}
-
-	QString methodCall = method.name() + "(%PARAMS%)";
-	QString params;
-	if (method.isConstructor() && classCategory == TypeConv::QObject)
-		params += "_className, ";
-	for (const Param& param : method.paramList_raw())
-	{
-		QByteArray normType = QMetaObject::normalizedType(param.type.toUtf8());
-		QString conversion = TypeConv::convCode_bridge2Qt(normType);
-		conversion.replace("_qtType_", normType);
-		conversion.replace("_bridgeValue_", param.name);
-
-		params += conversion + ", ";
-	}
-	params.chop(2);
-
-	wrapper.replace("%CLASS%", method.className());
-	wrapper.replace("%METHOD_CALL%", methodCall);
-	wrapper.replace("%PARAMS%", params);
-
-	return wrapper;
 }
 
 QString

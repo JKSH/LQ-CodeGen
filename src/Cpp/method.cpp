@@ -64,6 +64,8 @@ Method::qualifiedName(const QString& separator) const
 	return _className + separator + name();
 }
 
+// TODO: Remove the remnant references to "bridge".
+//       Functor-based invokes have obsoleted the Bridge class.
 QString
 Method::returnType_bridge() const
 {
@@ -126,65 +128,6 @@ Method::paramList_raw() const
 				paramObj["type"].toString(),
 				paramObj["name"].toString()};
 	}
-	return list;
-}
-
-QList<Param>
-Method::paramList_bridge() const
-{
-	QList<Param> list = paramList_raw();
-	auto classCategory = TypeConv::category(_className);
-	for (Param& param : list)
-	{
-		switch (   TypeConv::category(  QMetaObject::normalizedType( param.type.toUtf8() )  )   )
-		{
-		case TypeConv::Boolean:
-		case TypeConv::Numeric:
-		case TypeConv::Enum:
-		case TypeConv::SimpleStruct:
-		case TypeConv::SimpleIdentity:
-		case TypeConv::QObject:
-		case TypeConv::SimpleContainer:
-		case TypeConv::FullArray:
-			break;
-		case TypeConv::OpaqueStruct:
-			param.type = "LStrHandle";
-			break;
-		default:
-			qWarning() << "WARNING: Method::paramList_bridge(): Unsupported input arg type:" << param.type;
-		}
-	}
-	if (!isConstructor() && !isStaticMember())
-	{
-		switch (classCategory)
-		{
-		case TypeConv::Boolean:
-		case TypeConv::Numeric:
-		case TypeConv::SimpleStruct:
-		case TypeConv::SimpleIdentity:
-		case TypeConv::QObject:
-		case TypeConv::SimpleContainer:
-			list.prepend(Param{_className+'*', "_instance"});
-			break;
-		case TypeConv::OpaqueStruct:
-			list.prepend(Param{"LStrHandle", "_instance"});
-			break;
-		default:
-			break;
-		}
-	}
-	if (isConstructor())
-	{
-		switch (classCategory)
-		{
-		case TypeConv::QObject:
-			list.prepend(Param{"const char*", "_className"});
-			break;
-		default:
-			break;
-		}
-	}
-
 	return list;
 }
 

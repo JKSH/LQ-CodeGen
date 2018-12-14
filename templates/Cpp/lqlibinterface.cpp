@@ -7,13 +7,18 @@
 \*/
 
 #include "lqlibinterface.h"
-#include "lqbridge.h"
-#include "lqerrors.h"
+#include "lqapplication.h"
+
+#include <qwt_thermo.h>
+#include <qwt_slider.h>
+#include <QtWidgets>
+#include <QtSvg>
+#include <QtWinExtras>
 
 static qint32
 lqInvoke(std::function<void()> func)
 {
-	if (!bridge)
+	if (!isRunning)
 		return LQ::EngineNotRunningError;
 
 	QMetaObject::invokeMethod(qApp, func, Qt::BlockingQueuedConnection);
