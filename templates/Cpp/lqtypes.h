@@ -1,5 +1,5 @@
 /*\
- * Copyright (c) 2016 Sze Howe Koh
+ * Copyright (c) 2018 Sze Howe Koh
  *
  * This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -14,6 +14,7 @@
 
 LStrHandle operator<<(LStrHandle dest, const QByteArray& src);
 inline LStrHandle operator<<(LStrHandle dest, const QString& src) { dest << src.toUtf8(); return dest; }
+template <typename T> void operator<<(LStrHandle dest, const T& src) { dest << serialize(src); }
 
 LStrHandle newLStr(const QByteArray& bytes);
 inline LStrHandle newLStr(const QString& string) {return newLStr(string.toUtf8());}
@@ -278,18 +279,12 @@ using LQMatrix = QVector<QVector<T>>;
 // TODO: Investigate if it's worth overloading the functions below to take rvalue references.
 //       See http://qt-project.org/forums/viewthread/34454
 template <typename T> QByteArray
-serialize(const T& object) // TODO: Remove after functor-based invokes are implemented
+serialize(const T& object) // TODO: Merge this function into operator<<
 {
 	QByteArray bytes;
 	QDataStream stream(&bytes, QIODevice::WriteOnly);
 	stream << object;
 	return bytes;
-}
-
-template <typename T> void
-serialize(LStrHandle buffer, const T& object)
-{
-	buffer << serialize(object);
 }
 
 template <typename T> T

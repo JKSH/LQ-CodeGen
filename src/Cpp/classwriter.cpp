@@ -1,5 +1,5 @@
 /*\
- * Copyright (c) 2016 Sze Howe Koh
+ * Copyright (c) 2018 Sze Howe Koh
  *
  * This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -257,7 +257,7 @@ ClassWriter::funcCallBody_inLambda(const Method& method)
 			&& !method.isConst()
 			&& !method.isStaticMember())
 	{
-		body.replace("%REPACK_INSTANCE%", "\t\t_instance << serialize(instance);\n");
+		body.replace("%REPACK_INSTANCE%", "\t\t_instance << instance;\n");
 	}
 	else
 		body.replace("%REPACK_INSTANCE%", "");
@@ -314,7 +314,7 @@ ClassWriter::funcCallBody_inLambda(const Method& method)
 			body.replace("%RET_CONV%", "retVal");
 			break;
 		case TypeConv::OpaqueStruct:
-			body.replace("%RET_CONV%", "serialize(retVal)");
+			body.replace("%RET_CONV%", "retVal");
 			break;
 		default:
 			qWarning() << "WARNING: ClassWriter::funcCallBody_inDll(): This method cannot return:" << method.name();
