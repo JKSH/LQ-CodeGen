@@ -12,6 +12,9 @@
 #include <QDataStream>
 #include "extcode.h"
 
+template <typename T>
+using LQTable = QVector<QVector<T>>;
+
 // This header uses operator<< in lieu of operator=. Chaining is not supported.
 void operator<<(LStrHandle dest, const QByteArray& src);
 inline void operator<<(LStrHandle dest, const QString& src) { dest << src.toUtf8(); }
@@ -87,7 +90,7 @@ struct LVArray
 	}
 
 	template <typename U>
-	static void fromQVector2D(LVArray<T, 2>** destHandle, const QVector<QVector<U>>& matrix)
+	static void fromLQTable(LVArray<T, 2>** destHandle, const LQTable<U>& matrix)
 	{
 		static_assert(N==2, "This function only supports 2D arrays.");
 
@@ -124,12 +127,12 @@ struct LVArray
 	}
 
 	template <typename U>
-	QVector<QVector<U>> toQVector2D() const
+	LQTable<U> toLQTable() const
 	{
 		static_assert(N==2, "This function only supports 2D arrays.");
 
 		const int colCount = dimSizes[1];
-		QVector<QVector<U>> matrix( dimSizes[0], QVector<U>(colCount) );
+		LQTable<U> matrix( dimSizes[0], QVector<U>(colCount) );
 		for (int r = 0; r < dimSizes[0]; ++r)
 		{
 			// TODO: See if writing this another way produces smaller assemblies
@@ -170,7 +173,7 @@ struct LVArray<LStrHandle, N>
 	}
 
 	template <typename U>
-	static void fromQVector2D(LVArray<LStrHandle, 2>** destHandle, const QVector<QVector<U>>& matrix)
+	static void fromLQTable(LVArray<LStrHandle, 2>** destHandle, const LQTable<U>& matrix)
 	{
 		const int colCount = matrix.isEmpty() ? 0 : matrix[0].size();
 		int dimensions[2] = {
@@ -199,12 +202,12 @@ struct LVArray<LStrHandle, N>
 	}
 
 	template <typename U>
-	QVector<QVector<U>> toQVector2D() const
+	LQTable<U> toLQTable() const
 	{
 		static_assert(N==2, "This function only supports 2D arrays.");
 
 		const int colCount = dimSizes[1];
-		QVector<QVector<U>> matrix(dimSizes[0]);
+		LQTable<U> matrix(dimSizes[0]);
 		for (int i = 0, r = 0; r < dimSizes[0]; ++r)
 		{
 			matrix[r].reserve(colCount);
@@ -257,10 +260,7 @@ struct LVArray<quintptr>
 
 template <typename T, typename U> void operator<<(LVArray<T>** destHandle, const QList<U>& src) { LVArray<T>::fromQList(destHandle, src); }
 template <typename T, typename U> void operator<<(LVArray<T>** destHandle, const QVector<U>& src) { LVArray<T>::fromQVector(destHandle, src); }
-template <typename T, typename U> void operator<<(LVArray<T, 2>** destHandle, const QVector<QVector<U>>& src) { LVArray<T>::fromQVector2D(destHandle, src); }
-
-template <typename T>
-using LQMatrix = QVector<QVector<T>>;
+template <typename T, typename U> void operator<<(LVArray<T, 2>** destHandle, const LQTable<U>& src) { LVArray<T>::fromLQTable(destHandle, src); }
 
 // ASSUMPTION: T is serializable
 // TODO: Investigate if it's worth overloading the functions below to take rvalue references.
