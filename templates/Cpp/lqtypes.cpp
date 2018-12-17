@@ -1,5 +1,5 @@
 /*\
- * Copyright (c) 2016 Sze Howe Koh
+ * Copyright (c) 2018 Sze Howe Koh
  *
  * This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -10,7 +10,7 @@
 
 static const int lStrHeaderSize = 4;
 
-LStrHandle
+void
 operator<<(LStrHandle dest, const QByteArray& src)
 {
 	MgErr outcome = DSSetHandleSize(dest, src.length() + lStrHeaderSize);
@@ -19,7 +19,6 @@ operator<<(LStrHandle dest, const QByteArray& src)
 		(*dest)->cnt = src.length();
 		std::copy(src.constBegin(), src.constEnd(), (*dest)->str);
 	}
-	return dest;
 }
 
 LStrHandle

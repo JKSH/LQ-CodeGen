@@ -12,8 +12,9 @@
 #include <QDataStream>
 #include "extcode.h"
 
-LStrHandle operator<<(LStrHandle dest, const QByteArray& src);
-inline LStrHandle operator<<(LStrHandle dest, const QString& src) { dest << src.toUtf8(); return dest; }
+// This header uses operator<< in lieu of operator=. Chaining is not supported.
+void operator<<(LStrHandle dest, const QByteArray& src);
+inline void operator<<(LStrHandle dest, const QString& src) { dest << src.toUtf8(); }
 template <typename T> void operator<<(LStrHandle dest, const T& src) { dest << serialize(src); }
 
 LStrHandle newLStr(const QByteArray& bytes);
