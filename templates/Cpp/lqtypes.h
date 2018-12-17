@@ -253,25 +253,11 @@ struct LVArray<quintptr>
 	qint32 dimSize;
 	quintptr elt[1];
 };
-
-template <typename T, typename U>
-void operator<<(LVArray<T>** destHandle, const QList<U>& src)
-{
-	LVArray<T>::fromQList(destHandle, src);
-}
-
-template <typename T, typename U>
-void operator<<(LVArray<T>** destHandle, const QVector<U>& src)
-{
-	LVArray<T>::fromQVector(destHandle, src);
-}
-
-template <typename T, typename U>
-void operator<<(LVArray<T, 2>** destHandle, const QVector<QVector<U>>& src)
-{
-	LVArray<T>::fromQVector2D(destHandle, src);
-}
 #include "lv_epilog.h"
+
+template <typename T, typename U> void operator<<(LVArray<T>** destHandle, const QList<U>& src) { LVArray<T>::fromQList(destHandle, src); }
+template <typename T, typename U> void operator<<(LVArray<T>** destHandle, const QVector<U>& src) { LVArray<T>::fromQVector(destHandle, src); }
+template <typename T, typename U> void operator<<(LVArray<T, 2>** destHandle, const QVector<QVector<U>>& src) { LVArray<T>::fromQVector2D(destHandle, src); }
 
 template <typename T>
 using LQMatrix = QVector<QVector<T>>;
