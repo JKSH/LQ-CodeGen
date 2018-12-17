@@ -90,18 +90,18 @@ struct LVArray
 	}
 
 	template <typename U>
-	static void fromLQTable(LVArray<T, 2>** destHandle, const LQTable<U>& matrix)
+	static void fromLQTable(LVArray<T, 2>** destHandle, const LQTable<U>& table)
 	{
 		static_assert(N==2, "This function only supports 2D arrays.");
 
 		int dimensions[2] = {
-			matrix.size(),
-			matrix.isEmpty() ? 0 : matrix[0].size() // ASSUMPTION: All rows are the same length
+			table.size(),
+			table.isEmpty() ? 0 : table[0].size() // ASSUMPTION: All rows are the same length
 		};
 		resize(destHandle, dimensions);
 
 		for (int r = 0; r < dimensions[0]; ++r)
-			std::copy( matrix[r].constBegin(), matrix[r].constEnd(), (*destHandle)->elt + r*dimensions[1] );
+			std::copy( table[r].constBegin(), table[r].constEnd(), (*destHandle)->elt + r*dimensions[1] );
 	}
 
 	template <typename U>
@@ -132,16 +132,16 @@ struct LVArray
 		static_assert(N==2, "This function only supports 2D arrays.");
 
 		const int colCount = dimSizes[1];
-		LQTable<U> matrix( dimSizes[0], QVector<U>(colCount) );
+		LQTable<U> table( dimSizes[0], QVector<U>(colCount) );
 		for (int r = 0; r < dimSizes[0]; ++r)
 		{
 			// TODO: See if writing this another way produces smaller assemblies
 			std::copy(
 					elt + r*colCount,
 					elt + r*colCount + colCount,
-					matrix[r].data());
+					table[r].data());
 		}
-		return matrix;
+		return table;
 	}
 
 	// WARNING: Check padding requirements for each platform
@@ -173,11 +173,11 @@ struct LVArray<LStrHandle, N>
 	}
 
 	template <typename U>
-	static void fromLQTable(LVArray<LStrHandle, 2>** destHandle, const LQTable<U>& matrix)
+	static void fromLQTable(LVArray<LStrHandle, 2>** destHandle, const LQTable<U>& table)
 	{
-		const int colCount = matrix.isEmpty() ? 0 : matrix[0].size();
+		const int colCount = table.isEmpty() ? 0 : table[0].size();
 		int dimensions[2] = {
-			matrix.size(),
+			table.size(),
 			colCount
 		};
 		resize(destHandle, dimensions);
@@ -185,7 +185,7 @@ struct LVArray<LStrHandle, N>
 		for (int i = 0, r = 0; r < dimensions[0]; ++r)
 		{
 			for (int c = 0; c < colCount; ++i, ++c)
-				(*destHandle)->elt[i] = newLStr(matrix[r][c]);
+				(*destHandle)->elt[i] = newLStr(table[r][c]);
 		}
 	}
 
@@ -207,14 +207,14 @@ struct LVArray<LStrHandle, N>
 		static_assert(N==2, "This function only supports 2D arrays.");
 
 		const int colCount = dimSizes[1];
-		LQTable<U> matrix(dimSizes[0]);
+		LQTable<U> table(dimSizes[0]);
 		for (int i = 0, r = 0; r < dimSizes[0]; ++r)
 		{
-			matrix[r].reserve(colCount);
+			table[r].reserve(colCount);
 			for (int c = 0; c < colCount; ++i, ++c)
-				matrix[r] << LString::to<U>(elt[i]);
+				table[r] << LString::to<U>(elt[i]);
 		}
-		return matrix;
+		return table;
 	}
 
 	qint32 dimSizes[N];
