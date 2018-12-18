@@ -159,28 +159,6 @@ TypeConv::dllType(const QString& qtType)
 
 // TODO: Use instanceType() in more generation code
 QString
-TypeConv::instanceType_bridge(const QString& qtType)
-{
-	QString tmp = QMetaObject::normalizedType(qtType.toUtf8());
-	switch (category(tmp))
-	{
-	case SimpleIdentity:
-	case QObject:
-		// TODO: Clean this up
-		if (tmp.contains('*'))
-			return tmp;
-		return tmp+'*';
-
-	case OpaqueStruct:
-		return "LStrHandle";
-
-	default:
-		qWarning() << "WARNING: instanceType_bridge(): This type cannot have methods:" << qtType;
-		return tmp;
-	}
-}
-
-QString
 TypeConv::instanceType_dll(const QString& qtType)
 {
 	QString tmp = QMetaObject::normalizedType(qtType.toUtf8());
@@ -198,39 +176,7 @@ TypeConv::instanceType_dll(const QString& qtType)
 }
 
 QString
-TypeConv::convCode_bridge2Dll(const QString& qtType)
-{
-	QString tmp = typeBase(qtType);
-	switch (category(tmp))
-	{
-	case Boolean:
-	case Numeric:
-	case SimpleStruct:
-	case OpaqueStruct:
-		return "_bridgeValue_";
-	case SimpleContainer: return _bridge2dll[qtType].toObject()["bridge2dll"].toString();
-	case FullArray:
-	{
-		int start = qtType.indexOf('<') + 1;
-		int end = qtType.lastIndexOf('>');
-
-		QString inner = qtType.mid(start, end-start);
-		QString type = _bridge2dll[tmp].toObject()["bridge2dll"].toString();
-
-		return type.replace("%DLL_TYPE_INNER%", dllType(inner));
-	}
-	case Enum:
-	case SimpleIdentity:
-	case QObject:
-		return "(_dllType_)_bridgeValue_";
-	default:
-		qWarning() << "WARNING: TypeConv::convCode_bridge2Dll(): Don't know how to convert" << qtType;
-		return QString();
-	}
-}
-
-QString
-TypeConv::convCode_dll2Bridge(const QString& qtType)
+TypeConv::convCode_dll2Qt(const QString& qtType)
 {
 	QString tmp = typeBase(qtType);
 	switch (category(tmp))
@@ -239,64 +185,20 @@ TypeConv::convCode_dll2Bridge(const QString& qtType)
 	case SimpleStruct:
 		return "*_dllValue_";
 	case Numeric:
-	case OpaqueStruct:
 		return "_dllValue_";
+	case OpaqueStruct:
+		return "deserialize<_qtType_>(_dllValue_)";
 	case SimpleContainer:
 	case FullArray:
 		return _bridge2dll[tmp].toObject()["dll2bridge"].toString().replace("%QT_TYPE_INNER%", innerType(qtType));
 	case Enum:
+		return "static_cast<_qtType_>(_dllValue_)";
 	case SimpleIdentity:
 	case QObject:
-		return "(_qtType_)_dllValue_";
+		return "reinterpret_cast<_qtType_>(_dllValue_)";
 	default:
-		qWarning() << "WARNING: TypeConv::convCode_dll2Bridge(): Don't know how to convert" << qtType;
+		qWarning() << "WARNING: TypeConv::convCode_dll2Qt(): Don't know how to convert" << qtType;
 		return QString();
 	}
 }
 
-QString
-TypeConv::convCode_qt2Bridge(const QString& qtType)
-{
-	QString tmp = QMetaObject::normalizedType(qtType.toUtf8());
-	switch (category(tmp))
-	{
-	case Void:
-	case Boolean:
-	case Numeric:
-	case Enum:
-	case SimpleStruct:
-	case SimpleIdentity:
-	case QObject:
-	case SimpleContainer:
-	case FullArray:
-		return "_qtValue_";
-	case OpaqueStruct:
-		return "serialize(_qtValue_)";
-	default:
-		qWarning() << "WARNING: TypeConv::convCode_qt2Bridge(): Don't know how to convert" << qtType;
-		return "";
-	}
-}
-
-QString
-TypeConv::convCode_bridge2Qt(const QString& qtType)
-{
-	QString tmp = QMetaObject::normalizedType(qtType.toUtf8());
-	switch (category(tmp))
-	{
-	case Boolean:
-	case Numeric:
-	case Enum:
-	case SimpleStruct:
-	case SimpleIdentity:
-	case QObject:
-	case SimpleContainer:
-	case FullArray:
-		return "_bridgeValue_";
-	case OpaqueStruct:
-		return "deserialize<_qtType_>(copyFromLStr(_bridgeValue_))";
-	default:
-		qWarning() << "WARNING: TypeConv::convCode_bridge2Qt(): Don't know how to convert" << qtType;
-		return "";
-	}
-}

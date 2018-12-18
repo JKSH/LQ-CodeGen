@@ -26,15 +26,13 @@ public:
 
 private:
 	static QString funcCallBody_inDll(const Method& method);
-	static QString funcCallBody_inBridge(const Method& method);
+	static QString funcCallBody_inLambda(const Method& method);
 
 	QFile dllH;
 	QFile dllC;
-	QFile bridgeH;
 
 	QString _footer_dllH;
 	QString _footer_dllC;
-	QString _footer_bridgeH;
 };
 
 #endif // CLASSWRITER_H

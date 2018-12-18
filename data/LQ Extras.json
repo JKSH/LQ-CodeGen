@@ -21,7 +21,7 @@
 					{
 						"name": "append", "retType": "void",
 						"params": [
-							{ "name": "values", "type": "const LQMatrix<double>&" }
+							{ "name": "values", "type": "const LQTable<double>&" }
 						]
 					},
 					{
@@ -90,10 +90,9 @@
 		],
 		"fullArrays": [
 			{
-				"name": "LQMatrix<%QT_TYPE_INNER%>",
+				"name": "LQTable<%QT_TYPE_INNER%>",
 				"dllType": "LVArray<%DLL_TYPE_INNER%, 2>**",
-				"dll2bridge": "(*_dllValue_)->toQVector2D<%QT_TYPE_INNER%>()",
-				"bridge2dll": "LVArray<%DLL_TYPE_INNER%, 2>::fromQVector2D(_dllValue_, _bridgeValue_)"
+				"dll2bridge": "(*_dllValue_)->toLQTable<%QT_TYPE_INNER%>()"
 			}
 		]
 	}

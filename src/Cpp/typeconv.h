@@ -37,12 +37,7 @@ namespace TypeConv
 	QString dllType(const QString& qtType);
 
 	QString instanceType_dll(const QString& qtType);
-	QString instanceType_bridge(const QString& qtType);
-
-	QString convCode_bridge2Dll(const QString& qtType);
-	QString convCode_dll2Bridge(const QString& qtType);
-	QString convCode_qt2Bridge(const QString& qtType);
-	QString convCode_bridge2Qt(const QString& qtType);
+	QString convCode_dll2Qt(const QString& qtType);
 }
 
 #endif // TYPECONV_H

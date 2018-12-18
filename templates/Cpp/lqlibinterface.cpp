@@ -7,8 +7,31 @@
 \*/
 
 #include "lqlibinterface.h"
-#include "lqbridge.h"
-#include "lqerrors.h"
+#include "lqapplication.h"
+
+#include <qwt_thermo.h>
+#include <qwt_slider.h>
+#include <QtWidgets>
+#include <QtSvg>
+#include <QtWinExtras>
+
+static qint32
+lqInvoke(std::function<void()> func)
+{
+	if (!isRunning)
+		return LQ::EngineNotRunningError;
+
+	QMetaObject::invokeMethod(qApp, func, Qt::BlockingQueuedConnection);
+	return LQ::NoError;
+}
+
+static qint32
+lqInvoke(quintptr _instance, std::function<void()> func)
+{
+	if (!_instance)
+		return LQ::NullPointerUseError;
+	return lqInvoke(func);
+}
 
 // NOTE: This file contains auto-generated code. Do not modify by hand.
 

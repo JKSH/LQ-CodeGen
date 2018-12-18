@@ -35,7 +35,6 @@ public:
 
 	// Param lists
 	QList<Param> paramList_raw() const;
-	QList<Param> paramList_bridge() const;
 	QList<Param> paramList_dll() const;
 
 	// Param list codification

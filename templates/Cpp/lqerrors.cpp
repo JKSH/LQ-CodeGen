@@ -25,5 +25,5 @@ static const QMap<int, QByteArray> errorMap
 void
 errorStringFromCode(LStrHandle _retVal, int32 errorCode)
 {
-	copyIntoLStr(_retVal, errorMap.value(errorCode, "Unknown error."));
+	_retVal << errorMap.value(errorCode, "Unknown error.");
 }
