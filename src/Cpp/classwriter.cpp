@@ -143,8 +143,8 @@ ClassWriter::funcCallBody_inLambda(const Method& method)
 {
 	QString body =
 			""      "%UNPACK_INSTANCE%"
-			"\t\t"  "%RETURN_VAR_ASSIGN%"  "%CALL_EXPR%;"  "\n"
-			""      "%RETURN_STMT%"
+			"\t\t"  "%RETURN_ASSIGNMENT_1%"  "%CALL_EXPR%;"  "\n"
+			""      "%RETURN_ASSIGNMENT_2%"
 			""      "%REPACK_INSTANCE%";
 
 	bool hasReturn = (method.returnType_dll() != "void");
@@ -170,12 +170,6 @@ ClassWriter::funcCallBody_inLambda(const Method& method)
 			return "";
 		}
 	}
-
-	// Preparing the intermediate return variable
-	if (hasReturn)
-		body.replace("%RETURN_VAR_ASSIGN%", "auto retVal = ");
-	else
-		body.replace("%RETURN_VAR_ASSIGN%", "");
 
 	// Call the function
 	if (method.isConstructor())
@@ -265,64 +259,59 @@ ClassWriter::funcCallBody_inLambda(const Method& method)
 	// Finalize return value
 	if (hasReturn)
 	{
-		body.replace("%RETURN_STMT%", "\t\t%RETURN_DEREF%_retVal %RET_OP% %RET_CONV%;\n");
-
 		QString retType = method.returnType_qt();
 		if (method.isConstructor())
 			retType = method.className(); // HACK: This should often be a POINTER to the class type
 
-		bool hasReturnDeref = true;
-		QString retOp = "=";
+		QString storeReturn;
+		QString retOp;
+		QString retConv;
 		switch (TypeConv::category(retType))
 		{
 		case TypeConv::Boolean:
 		case TypeConv::Numeric:
 		case TypeConv::Enum:
 		case TypeConv::SimpleStruct:
+			storeReturn = '*';
+			retOp       = '=';
+			retConv     = "retVal";
+			break;
 		case TypeConv::SimpleIdentity:
 		case TypeConv::QObject:
+			storeReturn = '*';
+			retOp       = '=';
+			retConv     = "reinterpret_cast<quintptr>(retVal)";
 			break;
 		case TypeConv::SimpleContainer:
 		case TypeConv::FullArray:
 		case TypeConv::OpaqueStruct:
-			hasReturnDeref = false;
-			retOp = "<<";
-			break;
-		default:
-			break;
-		}
-		if (hasReturnDeref)
-			body.replace("%RETURN_DEREF%", "*");
-		else
-			body.replace("%RETURN_DEREF%", "");
-		body.replace("%RET_OP%", retOp);
-
-		switch (TypeConv::category(retType))
-		{
-		case TypeConv::Boolean:
-		case TypeConv::Numeric:
-		case TypeConv::Enum:
-		case TypeConv::SimpleStruct:
-			body.replace("%RET_CONV%", "retVal");
-			break;
-		case TypeConv::SimpleIdentity:
-		case TypeConv::QObject:
-			body.replace("%RET_CONV%", "reinterpret_cast<quintptr>(retVal)");
-			break;
-		case TypeConv::SimpleContainer:
-		case TypeConv::FullArray:
-			body.replace("%RET_CONV%", "retVal");
-			break;
-		case TypeConv::OpaqueStruct:
-			body.replace("%RET_CONV%", "retVal");
+			retOp       = "<<";
+			retConv     = "retVal";
 			break;
 		default:
 			qWarning() << "WARNING: ClassWriter::funcCallBody_inDll(): This method cannot return:" << method.name();
 			break;
 		}
+
+		storeReturn += "_retVal " + retOp + ' ';
+		if (retConv == "retVal")
+		{
+			// If the expression is a single variable...
+			body.replace("%RETURN_ASSIGNMENT_1%", storeReturn);
+			body.replace("%RETURN_ASSIGNMENT_2%", "");
+		}
+		else
+		{
+			// If the expression is longer...
+			body.replace("%RETURN_ASSIGNMENT_1%", "auto retVal = ");
+			body.replace("%RETURN_ASSIGNMENT_2%", "\t\t" + storeReturn + retConv + ";\n");
+		}
 	}
 	else
-		body.replace("%RETURN_STMT%", "");
+	{
+		body.replace("%RETURN_ASSIGNMENT_1%", "");
+		body.replace("%RETURN_ASSIGNMENT_2%", "");
+	}
 
 	return body;
 }
