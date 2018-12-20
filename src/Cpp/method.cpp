@@ -7,7 +7,6 @@
 \*/
 
 #include "method.h"
-#include "param.h"
 
 #include <QList>
 #include <QJsonArray>

@@ -1,5 +1,5 @@
 /*\
- * Copyright (c) 2016 Sze Howe Koh
+ * Copyright (c) 2018 Sze Howe Koh
  *
  * This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -12,7 +12,11 @@
 #include "typeconv.h"
 #include <QJsonObject>
 
-struct Param;
+struct Param
+{
+	QString type;
+	QString name;
+};
 
 class Method
 {

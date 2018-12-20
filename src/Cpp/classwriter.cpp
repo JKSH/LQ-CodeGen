@@ -9,7 +9,6 @@
 #include "classwriter.h"
 #include "typeconv.h"
 #include "method.h"
-#include "param.h"
 
 #include <QJsonObject>
 #include <QJsonArray>
