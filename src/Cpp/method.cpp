@@ -1,5 +1,5 @@
 /*\
- * Copyright (c) 2016 Sze Howe Koh
+ * Copyright (c) 2018 Sze Howe Koh
  *
  * This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -219,11 +219,9 @@ Method::paramList_dll() const
 QString
 Method::paramsToCode_prototype(const QList<Param>& params)
 {
-	QString str;
+	QStringList paramStrings;
 	for (const Param& p : params)
-		str += p.type + ' ' + p.name + ", ";
+		paramStrings << p.type + ' ' + p.name;
 
-	// Remove the trailing ", "
-	str.chop(2);
-	return str;
+	return paramStrings.join(", ");
 }
