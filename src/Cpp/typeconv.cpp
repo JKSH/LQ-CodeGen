@@ -1,5 +1,5 @@
 /*\
- * Copyright (c) 2016 Sze Howe Koh
+ * Copyright (c) 2018 Sze Howe Koh
  *
  * This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -15,8 +15,8 @@
 
 #include <QDebug>
 
-QJsonObject _bridge2dll;
-QMap<QString, TypeConv::Category> _categories;
+static QJsonObject _bridge2dll;
+static QMap<QString, TypeConv::Category> _categories;
 
 void
 TypeConv::init(const QJsonArray& conversions, Category category)
