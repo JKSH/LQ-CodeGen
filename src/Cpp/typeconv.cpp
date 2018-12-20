@@ -96,31 +96,6 @@ TypeConv::category(const QString& qtType)
 	return _categories.value(typeBase(qtType), Invalid);
 }
 
-QString
-TypeConv::bridgeType(const QString& qtType)
-{
-	QString tmp = QMetaObject::normalizedType(qtType.toUtf8());
-	switch (category(tmp))
-	{
-	case Void:
-	case Boolean:
-	case Numeric:
-	case Enum:
-	case SimpleStruct:
-	case SimpleContainer:
-	case FullArray:
-	case SimpleIdentity:
-	case QObject:
-		return tmp;
-	case OpaqueStruct:
-		return "LStrHandle";
-	default:
-		qWarning() << "WARNING: TypeConv::bridgeType(): Unsupported type:" << qtType;
-		return tmp;
-		// TODO: Decide on a good default to return
-	}
-}
-
 /// This is a lossy (irreversible) conversion.
 QString
 TypeConv::dllType(const QString& qtType)

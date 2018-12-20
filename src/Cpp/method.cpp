@@ -85,7 +85,6 @@ Method::returnType_bridge() const
 	}
 	else
 	{
-		QString retType_bridge;
 		switch (TypeConv::category(retType_qt))
 		{
 		case TypeConv::Void:
@@ -97,16 +96,13 @@ Method::returnType_bridge() const
 		case TypeConv::QObject:
 		case TypeConv::SimpleContainer:
 		case TypeConv::FullArray:
-			retType_bridge = TypeConv::bridgeType(retType_qt);
-			break;
+			return retType_qt;
 		case TypeConv::OpaqueStruct:
-			retType_bridge = "QByteArray";
-			break;
+			return "QByteArray";
 		default:
 			qWarning() << "WARNING: Method::returnType_bridge(): Unsupported return type:" << retType_qt;
 			return "";
 		}
-		return retType_bridge;
 	}
 }
 
