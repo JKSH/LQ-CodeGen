@@ -87,7 +87,8 @@ ClassWriter::writeClass(const QJsonObject& classObj)
 		return;
 	}
 
-	for (const QJsonValue& mVal : classObj["methods"].toArray())
+	const QJsonArray mArray = classObj["methods"].toArray();
+	for (const QJsonValue& mVal : mArray)
 	{
 		auto methodObj = mVal.toObject();
 		Method method(currentClass, methodObj);

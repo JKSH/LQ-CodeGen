@@ -121,7 +121,8 @@ QList<Param>
 Method::paramList_raw() const
 {
 	QList<Param> list;
-	for (const QJsonValue& pVal : _data["params"].toArray())
+	const QJsonArray pArray = _data["params"].toArray();
+	for (const QJsonValue& pVal : pArray)
 	{
 		auto paramObj = pVal.toObject();
 		list << Param{
