@@ -108,7 +108,8 @@ TypeConv::dllType(const QString& qtType)
 	case SimpleStruct:
 		return tmp;
 	case Numeric:
-	case SimpleContainer: return _bridge2dll[tmp].toObject()["dllType"].toString();
+	case SimpleContainer:
+		return _bridge2dll[tmp].toObject()["dllType"].toString();
 	case Enum:
 		return "int32"; // ASSUMPTION: All enums fit in 32-bit integers
 	case FullArray:
