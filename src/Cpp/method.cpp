@@ -125,7 +125,7 @@ Method::returnType_dll() const
 QList<Param>
 Method::paramList_dll() const
 {
-	QList<Param> list = paramList_raw();
+	QList<Param> list = paramList_qt();
 
 	for (Param& param : list)
 	{

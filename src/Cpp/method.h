@@ -39,7 +39,7 @@ public:
 	QString returnType_dll() const;
 
 	// Param lists
-	QList<Param> paramList_raw() const {return _paramList;}
+	QList<Param> paramList_qt() const {return _paramList;}
 	QList<Param> paramList_dll() const;
 
 	// Param list codification

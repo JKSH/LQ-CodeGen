@@ -231,7 +231,7 @@ ClassWriter::funcCallBody_inLambda(const Method& method)
 	QStringList params;
 	if (method.isConstructor() && classCategory == TypeConv::QObject)
 		params << "_className";
-	for (const Param& param : method.paramList_raw())
+	for (const Param& param : method.paramList_qt())
 	{
 		QByteArray normType = QMetaObject::normalizedType(param.type.toUtf8());
 		QString conversion = TypeConv::convCode_dll2Qt(normType);
