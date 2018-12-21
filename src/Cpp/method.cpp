@@ -8,7 +8,6 @@
 
 #include "method.h"
 
-#include <QList>
 #include <QJsonArray>
 
 #include <QDebug>
@@ -24,6 +23,17 @@ Method::Method(const QString& className, const QJsonObject& methodObj) :
 		- Constructor has a retType
 		- Non-constructor has no retType
 	*/
+
+	const QJsonArray pArray = _data["params"].toArray();
+	for (const QJsonValue& pVal : pArray)
+	{
+		auto paramObj = pVal.toObject();
+		_paramList << Param
+		{
+			paramObj["type"].toString(),
+			paramObj["name"].toString()
+		};
+	}
 }
 
 bool
@@ -110,21 +120,6 @@ QString
 Method::returnType_dll() const
 {
 	return TypeConv::dllType(returnType_bridge());
-}
-
-QList<Param>
-Method::paramList_raw() const
-{
-	QList<Param> list;
-	const QJsonArray pArray = _data["params"].toArray();
-	for (const QJsonValue& pVal : pArray)
-	{
-		auto paramObj = pVal.toObject();
-		list << Param{
-				paramObj["type"].toString(),
-				paramObj["name"].toString()};
-	}
-	return list;
 }
 
 QList<Param>

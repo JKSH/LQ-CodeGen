@@ -10,6 +10,7 @@
 #define METHOD_H
 
 #include "typeconv.h"
+#include <QList>
 #include <QJsonObject>
 
 struct Param
@@ -38,7 +39,7 @@ public:
 	QString returnType_dll() const;
 
 	// Param lists
-	QList<Param> paramList_raw() const;
+	QList<Param> paramList_raw() const {return _paramList;}
 	QList<Param> paramList_dll() const;
 
 	// Param list codification
@@ -47,6 +48,7 @@ public:
 private:
 	QString _className;
 	QJsonObject _data;
+	QList<Param> _paramList;
 };
 
 #endif // METHOD_H
