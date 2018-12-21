@@ -26,11 +26,12 @@ public:
 
 	// Method info
 	bool isValid() const;
-	bool isConst() const;
+	bool isConst() const {return _data["isConst"].toBool();}
 	bool isConstructor() const;
-	bool isStaticMember() const;
+	bool isStaticMember() const {return _data["isStaticMember"].toBool();}
+
 	QString className() const {return _className;}
-	QString name() const;
+	QString name() const {return _data["name"].toString();}
 	QString qualifiedName(const QString& separator) const;
 
 	// Return type names
