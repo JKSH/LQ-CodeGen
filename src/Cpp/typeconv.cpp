@@ -123,9 +123,8 @@ TypeConv::dllType(const QString& qtType)
 	}
 	case SimpleIdentity:
 	case QObject:
-		return "quintptr";
 	case OpaqueStruct:
-		return "LStrHandle";
+		return instanceType_dll(qtType);
 	default:
 		qWarning() << "WARNING: TypeConv::dllType(): Unsupported type:" << qtType;
 		return tmp;
