@@ -55,53 +55,46 @@ Method::qualifiedName(const QString& separator) const
 	return _className + separator + name();
 }
 
-// TODO: Remove the remnant references to "bridge".
-//       Functor-based invokes have obsoleted the Bridge class.
-QString
-Method::returnType_bridge() const
-{
-	QString retType_qt = _data["retType"].toString();
-	if (isConstructor())
-	{
-		switch (TypeConv::category(_className))
-		{
-		case TypeConv::OpaqueStruct:
-			return "QByteArray";
-		case TypeConv::SimpleIdentity:
-		case TypeConv::QObject:
-			return _className + '*';
-		default:
-			qWarning() << "WARNING: Method::returnType_bridge(): This type cannot have constructors:" << _className;
-			return "";
-		}
-	}
-	else
-	{
-		switch (TypeConv::category(retType_qt))
-		{
-		case TypeConv::Void:
-		case TypeConv::Boolean:
-		case TypeConv::Numeric:
-		case TypeConv::Enum:
-		case TypeConv::SimpleStruct:
-		case TypeConv::SimpleIdentity:
-		case TypeConv::QObject:
-		case TypeConv::SimpleContainer:
-		case TypeConv::FullArray:
-			return retType_qt;
-		case TypeConv::OpaqueStruct:
-			return "QByteArray";
-		default:
-			qWarning() << "WARNING: Method::returnType_bridge(): Unsupported return type:" << retType_qt;
-			return "";
-		}
-	}
-}
-
 QString
 Method::returnType_dll() const
 {
-	return TypeConv::dllType(returnType_bridge());
+	QString retType_qt = returnType_qt();
+	if (isConstructor())
+	{
+		// Treat constructors as methods that return a class instance
+		switch (TypeConv::category(_className))
+		{
+		case TypeConv::OpaqueStruct:
+			retType_qt = _className;
+			break;
+		case TypeConv::SimpleIdentity:
+		case TypeConv::QObject:
+			retType_qt = _className + '*';
+			break;
+		default:
+			qWarning() << "WARNING: Method::returnType_dll(): This type cannot have constructors:" << _className;
+		}
+	}
+
+	QString retType_dll = TypeConv::dllType(retType_qt);
+	switch ( TypeConv::category(retType_qt) )
+	{
+	case TypeConv::Void:
+	case TypeConv::OpaqueStruct:
+	case TypeConv::SimpleContainer:
+	case TypeConv::FullArray:
+		return retType_dll;
+	case TypeConv::Boolean:
+	case TypeConv::Numeric:
+	case TypeConv::Enum:
+	case TypeConv::SimpleStruct:
+	case TypeConv::SimpleIdentity:
+	case TypeConv::QObject:
+		return retType_dll + '*'; // Parameter is returned to LabVIEW by pointer.
+	default:
+		qWarning() << "WARNING: Method::returnType_dll(): Unsupported return type:" << retType_qt;
+		return "";
+	}
 }
 
 QList<Param>
@@ -153,39 +146,13 @@ Method::paramList_dll() const
 	}
 
 	// Prepend list with Class Name (if QObject constructor)
-	if (isConstructor())
-	{
-		switch (classCategory)
-		{
-		case TypeConv::QObject:
-			list.prepend(Param{"const char*", "_className"});
-			break;
-		default:
-			break;
-		}
-	}
+	if (isConstructor() && classCategory == TypeConv::QObject)
+		list.prepend(Param{"const char*", "_className"});
 
 	// Prepend list with the return value (if any)
-	QString retType = returnType_dll();
-	switch (  TypeConv::category( returnType_bridge() )  )
-	{
-	// NOTE: The actions in the switch() case flow through.
-	//       There is only 1 "break", before "default".
-	case TypeConv::Boolean:
-	case TypeConv::Numeric:
-	case TypeConv::Enum:
-	case TypeConv::SimpleStruct:
-	case TypeConv::SimpleIdentity:
-	case TypeConv::QObject:
-		retType += '*';
-	case TypeConv::SimpleContainer:
-	case TypeConv::FullArray:
-		list.prepend(Param{retType, "_retVal"});
-	case TypeConv::Void:
-		break;
-	default:
-		qWarning() << "WARNING: Method::paramList_dll(): Unsupported return type:" << returnType_bridge();
-	}
+	auto returnCategory = TypeConv::category(returnType_qt());
+	if (isConstructor() || returnCategory != TypeConv::Void)
+		list.prepend(Param{returnType_dll(), "_retVal"});
 	return list;
 }
 

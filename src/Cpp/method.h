@@ -36,7 +36,6 @@ public:
 
 	// Return type names
 	QString returnType_qt() const {return _data["retType"].toString();}
-	QString returnType_bridge() const;
 	QString returnType_dll() const;
 
 	// Param lists
