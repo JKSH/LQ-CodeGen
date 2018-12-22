@@ -1,5 +1,5 @@
 /*\
- * Copyright (c) 2016 Sze Howe Koh
+ * Copyright (c) 2018 Sze Howe Koh
  *
  * This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -15,8 +15,8 @@
 
 #include <QDebug>
 
-QJsonObject _bridge2dll;
-QMap<QString, TypeConv::Category> _categories;
+static QJsonObject _bridge2dll;
+static QMap<QString, TypeConv::Category> _categories;
 
 void
 TypeConv::init(const QJsonArray& conversions, Category category)
@@ -96,31 +96,6 @@ TypeConv::category(const QString& qtType)
 	return _categories.value(typeBase(qtType), Invalid);
 }
 
-QString
-TypeConv::bridgeType(const QString& qtType)
-{
-	QString tmp = QMetaObject::normalizedType(qtType.toUtf8());
-	switch (category(tmp))
-	{
-	case Void:
-	case Boolean:
-	case Numeric:
-	case Enum:
-	case SimpleStruct:
-	case SimpleContainer:
-	case FullArray:
-	case SimpleIdentity:
-	case QObject:
-		return tmp;
-	case OpaqueStruct:
-		return "LStrHandle";
-	default:
-		qWarning() << "WARNING: TypeConv::bridgeType(): Unsupported type:" << qtType;
-		return tmp;
-		// TODO: Decide on a good default to return
-	}
-}
-
 /// This is a lossy (irreversible) conversion.
 QString
 TypeConv::dllType(const QString& qtType)
@@ -133,7 +108,8 @@ TypeConv::dllType(const QString& qtType)
 	case SimpleStruct:
 		return tmp;
 	case Numeric:
-	case SimpleContainer: return _bridge2dll[tmp].toObject()["dllType"].toString();
+	case SimpleContainer:
+		return _bridge2dll[tmp].toObject()["dllType"].toString();
 	case Enum:
 		return "int32"; // ASSUMPTION: All enums fit in 32-bit integers
 	case FullArray:
@@ -147,9 +123,8 @@ TypeConv::dllType(const QString& qtType)
 	}
 	case SimpleIdentity:
 	case QObject:
-		return "quintptr";
 	case OpaqueStruct:
-		return "LStrHandle";
+		return instanceType_dll(qtType);
 	default:
 		qWarning() << "WARNING: TypeConv::dllType(): Unsupported type:" << qtType;
 		return tmp;

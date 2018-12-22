@@ -1,5 +1,5 @@
 /*\
- * Copyright (c) 2016 Sze Howe Koh
+ * Copyright (c) 2018 Sze Howe Koh
  *
  * This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -42,7 +42,9 @@ extractEnums(const QJsonArray& entities)
 	{
 		QJsonObject entityObj = entity.toObject();
 		QString entityName = entityObj["name"].toString();
-		for (const QJsonValue& entry : entityObj["enums"].toArray())
+
+		const QJsonArray eArray = entityObj["enums"].toArray();
+		for (const QJsonValue& entry : eArray)
 		{
 			// Fully qualify the name
 			auto finalEnum = entry.toObject();
@@ -83,15 +85,15 @@ int main(int, char **)
 	for (const QString& file : moduleSpecs)
 	{
 		// Read module specs
-		QJsonObject moduleSpecs = parseJsonFile("../../data/"+file).object();
+		const QJsonObject moduleSpecs = parseJsonFile("../../data/"+file).object();
 		if (moduleSpecs.isEmpty())
 			return -1;
-		QJsonObject types = moduleSpecs["typeCategories"].toObject();
-		QJsonArray numerics = types["numerics"].toArray();
-		QJsonArray simpleStructs = types["simpleStructs"].toArray();
-		QJsonArray opaqueStructs = types["opaqueStructs"].toArray();
-		QJsonArray simpleIdentities = types["simpleIdentities"].toArray();
-		QJsonArray qObjects = types["qObjects"].toArray();
+		const QJsonObject types = moduleSpecs["typeCategories"].toObject();
+		const QJsonArray numerics = types["numerics"].toArray();
+		const QJsonArray simpleStructs = types["simpleStructs"].toArray();
+		const QJsonArray opaqueStructs = types["opaqueStructs"].toArray();
+		const QJsonArray simpleIdentities = types["simpleIdentities"].toArray();
+		const QJsonArray qObjects = types["qObjects"].toArray();
 
 		// Regster types
 		TypeConv::init(numerics, TypeConv::Numeric);

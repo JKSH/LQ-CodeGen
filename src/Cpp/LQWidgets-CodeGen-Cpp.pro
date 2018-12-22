@@ -20,5 +20,4 @@ SOURCES += main.cpp\
 HEADERS  += \
     classwriter.h \
     method.h \
-    typeconv.h \
-    param.h
+    typeconv.h

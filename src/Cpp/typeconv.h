@@ -1,5 +1,5 @@
 /*\
- * Copyright (c) 2016 Sze Howe Koh
+ * Copyright (c) 2018 Sze Howe Koh
  *
  * This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -33,7 +33,6 @@ namespace TypeConv
 	Category category(const QString& qtType);
 	QString typeBase(const QString& qtType);
 	QString innerType(const QString& qtType);
-	QString bridgeType(const QString& qtType);
 	QString dllType(const QString& qtType);
 
 	QString instanceType_dll(const QString& qtType);

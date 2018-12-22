@@ -9,7 +9,6 @@
 #include "classwriter.h"
 #include "typeconv.h"
 #include "method.h"
-#include "param.h"
 
 #include <QJsonObject>
 #include <QJsonArray>
@@ -87,7 +86,8 @@ ClassWriter::writeClass(const QJsonObject& classObj)
 		return;
 	}
 
-	for (const QJsonValue& mVal : classObj["methods"].toArray())
+	const QJsonArray mArray = classObj["methods"].toArray();
+	for (const QJsonValue& mVal : mArray)
 	{
 		auto methodObj = mVal.toObject();
 		Method method(currentClass, methodObj);
@@ -231,7 +231,7 @@ ClassWriter::funcCallBody_inLambda(const Method& method)
 	QStringList params;
 	if (method.isConstructor() && classCategory == TypeConv::QObject)
 		params << "_className";
-	for (const Param& param : method.paramList_raw())
+	for (const Param& param : method.paramList_qt())
 	{
 		QByteArray normType = QMetaObject::normalizedType(param.type.toUtf8());
 		QString conversion = TypeConv::convCode_dll2Qt(normType);
