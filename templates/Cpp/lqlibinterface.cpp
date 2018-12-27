@@ -1,5 +1,5 @@
 /*\
- * Copyright (c) 2016 Sze Howe Koh
+ * Copyright (c) 2018 Sze Howe Koh
  *
  * This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -8,7 +8,7 @@
 
 #include "lqlibinterface.h"
 #include "lqapplication.h"
-
+#include "lqextras/lqchart.h"
 #include <qwt_thermo.h>
 #include <qwt_slider.h>
 #include <QtWidgets>
