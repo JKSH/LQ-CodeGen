@@ -1,4 +1,3 @@
-CONFIG += C++11
 QT     += core_private # For QMetaObjectBuilder only. Do not use other private API.
 QT     += widgets svg winextras
 
