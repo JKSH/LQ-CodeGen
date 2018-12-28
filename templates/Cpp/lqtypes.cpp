@@ -8,7 +8,7 @@
 
 #include "lqtypes.h"
 
-static const int lStrHeaderSize = 4;
+static const size_t lStrHeaderSize = 4;
 
 void
 operator<<(LStrHandle dest, const QByteArray& src)
@@ -30,7 +30,7 @@ newLStr(const QByteArray& bytes)
 }
 
 template<> QByteArray
-LString::to<QByteArray>(LStrHandle lStr)
+LVString::to<QByteArray>(LStrHandle lStr)
 {
 	return QByteArray(
 		reinterpret_cast<char*>( (*lStr)->str ),
@@ -39,7 +39,7 @@ LString::to<QByteArray>(LStrHandle lStr)
 }
 
 template<> QString
-LString::to<QString>(LStrHandle lStr)
+LVString::to<QString>(LStrHandle lStr)
 {
 	return QString::fromUtf8(
 		reinterpret_cast<char*>( (*lStr)->str ),

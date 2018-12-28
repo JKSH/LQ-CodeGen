@@ -23,7 +23,7 @@ template <typename T> void operator<<(LStrHandle dest, const T& src) { dest << s
 LStrHandle newLStr(const QByteArray& bytes);
 inline LStrHandle newLStr(const QString& string) {return newLStr(string.toUtf8());}
 
-namespace LString
+namespace LVString
 {
 template <typename T> T to(LStrHandle lStr);
 template<> QByteArray to<QByteArray>(LStrHandle lStr);
@@ -48,7 +48,7 @@ struct LVArray
 	{
 		static_assert(N==1, "This function only supports 1D arrays.");
 
-		int newSize = sizeof(qint32) + count*sizeof(T);
+		size_t newSize = sizeof(qint32) + count*sizeof(T);
 
 		// ASSUMPTION: This call will only fail if the program is already doomed anyway.
 		DSSetHandleSize(handle, newSize);
@@ -197,7 +197,7 @@ struct LVArray<LStrHandle, N>
 		QList<U> list;
 		list.reserve(dimSizes[0]);
 		for (int i = 0; i < dimSizes[0]; ++i)
-			list << LString::to<U>(elt[i]);
+			list << LVString::to<U>(elt[i]);
 		return list;
 	}
 
@@ -212,7 +212,7 @@ struct LVArray<LStrHandle, N>
 		{
 			table[r].reserve(colCount);
 			for (int c = 0; c < colCount; ++i, ++c)
-				table[r] << LString::to<U>(elt[i]);
+				table[r] << LVString::to<U>(elt[i]);
 		}
 		return table;
 	}
@@ -277,7 +277,7 @@ serialize(const T& object) // TODO: Merge this function into operator<<
 template <typename T> T
 deserialize(LStrHandle bytes)
 {
-	auto ba = LString::to<QByteArray>(bytes);
+	auto ba = LVString::to<QByteArray>(bytes);
 	QDataStream stream(ba);
 	T object;
 	stream >> object;

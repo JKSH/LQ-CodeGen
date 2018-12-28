@@ -1,7 +1,7 @@
 {
 	"labviewDocumentation": {
-		"classUrlFormat": "http://doc.qt.io/qt-5/<CLASS_NAME>.html",
-		"methodUrlFormat": "http://doc.qt.io/qt-5/<CLASS_NAME>.html#<METHOD_NAME>"
+		"classUrlFormat": "https://doc.qt.io/qt-5/<CLASS_NAME_LOWERCASE>.html",
+		"methodUrlFormat": "https://doc.qt.io/qt-5/<CLASS_NAME_LOWERCASE>.html#<METHOD_NAME>"
 	},
 	"name": "Qt Widgets",
 	"projections": [
