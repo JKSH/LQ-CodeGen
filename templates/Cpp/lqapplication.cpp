@@ -114,7 +114,7 @@ LQApplication::finalizeBinding(QObject* _instance, LVArray<LStrHandle>** signalL
 	int index = lqIndex(className);
 	QMetaObjectBuilder b(lqMetaObjects[index]);
 
-	int superIndex = lqIndex( LString::to<QByteArray>(superClassName) );
+	int superIndex = lqIndex( LVString::to<QByteArray>(superClassName) );
 	if (superIndex >= 0)
 		b.setSuperClass(lqMetaObjects[superIndex]);
 

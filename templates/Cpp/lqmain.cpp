@@ -45,7 +45,7 @@ startWidgetEngine(quintptr* _retVal, LStrHandle pluginDir)
 		return LQ::EngineAlreadyRunningError;
 	}
 
-	QCoreApplication::addLibraryPath( LString::to<QString>(pluginDir) );
+	QCoreApplication::addLibraryPath( LVString::to<QString>(pluginDir) );
 	std::thread t(&run);
 	t.detach();
 
@@ -318,7 +318,7 @@ emit_string(quintptr _instance, const char* normalizedSignal, LStrHandle data)
 		return LQ::InvalidSignalError;
 
 	// NOTE: Wasted operations! Converting from LStr to QString to LStr again
-	auto str = LString::to<QString>(data);
+	auto str = LVString::to<QString>(data);
 	void* argv[]{nullptr, &str};
 	QMetaObject::activate(obj, signalIndex, reinterpret_cast<void**>(argv));
 	return LQ::NoError;
