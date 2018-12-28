@@ -15,16 +15,17 @@
 
 #include <QDebug>
 
-ClassWriter::ClassWriter() :
-	dllH("lqlibinterface.h"),
-	dllC("lqlibinterface.cpp")
-{}
+ClassWriter::ClassWriter(const QString& outputDir)
+{
+	dllH.setFileName(outputDir + "lqlibinterface.h");
+	dllC.setFileName(outputDir + "lqlibinterface.cpp");
+}
 
 bool
 ClassWriter::startWriting()
 {
-	bool ok = dllH.open(QFile::WriteOnly|QFile::Text)
-			&& dllC.open(QFile::WriteOnly|QFile::Text);
+	bool ok = dllH.open(QFile::ReadWrite|QFile::Text)
+			&& dllC.open(QFile::ReadWrite|QFile::Text);
 
 	if (!ok)
 	{
@@ -34,34 +35,19 @@ ClassWriter::startWriting()
 
 	// TODO: Warn if templates are malformed
 
-	// TODO: Refactor
-	QFile template_dllH("../../templates/Cpp/lqlibinterface.h");
-	if (template_dllH.open(QFile::ReadOnly|QFile::Text))
-	{
-		QStringList bits = QString(template_dllH.readAll()).split("//[TEMPLATE]");
-		dllH.write(bits[0].toUtf8());
+	QStringList bits = QString(dllH.readAll()).split("//[TEMPLATE]");
+	dllH.resize(0);
+	dllH.write(bits[0].toUtf8());
 
-		if (bits.count() > 1)
-			_footer_dllH = bits[1];
+	if (bits.count() > 1)
+		_footer_dllH = bits[1];
 
-		template_dllH.close();
-	}
-	else
-		qWarning() << "Could not find lqlibinterface.h template";
+	bits = QString(dllC.readAll()).split("//[TEMPLATE]");
+	dllC.resize(0);
+	dllC.write(bits[0].toUtf8());
 
-	QFile template_dllC("../../templates/Cpp/lqlibinterface.cpp");
-	if (template_dllC.open(QFile::ReadOnly|QFile::Text))
-	{
-		QStringList bits = QString(template_dllC.readAll()).split("//[TEMPLATE]");
-		dllC.write(bits[0].toUtf8());
-
-		if (bits.count() > 1)
-			_footer_dllC = bits[1];
-
-		template_dllC.close();
-	}
-	else
-		qWarning() << "Could not find lqlibinterface.cpp template";
+	if (bits.count() > 1)
+		_footer_dllC = bits[1];
 
 	return true;
 }
