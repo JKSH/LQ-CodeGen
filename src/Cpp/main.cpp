@@ -6,6 +6,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
 \*/
 
+#include <QDir>
 #include <QDebug>
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -57,6 +58,12 @@ extractEnums(const QJsonArray& entities)
 	return enums;
 }
 
+// ASSUMPTION: The actual LQ project is in an adjacent folder, called "LQ-Bindings"
+// ASSUMPTION: This program will run within Qt Creator, hence these paths are relative to the shadow build folder
+const QString dataDir = "../../data/";
+const QString templateDir = "../../templates/Cpp/";
+const QString outputDir = "../../../LQ-Bindings/src/Cpp/";
+
 // The kernel module must be first in the list.
 const QStringList
 moduleSpecs
@@ -77,7 +84,18 @@ int main(int, char **)
 	TypeConv::init({QJsonObject{{"name", "void"}}}, TypeConv::Void);
 	TypeConv::init({QJsonObject{{"name", "bool"}}}, TypeConv::Boolean);
 
-	ClassWriter c;
+	// Copy template files into output folder (replacing the old versions if necessary)
+	QDir::current().mkpath(outputDir);
+	for (const QString& templateName : QDir(templateDir).entryList({"*.pro", "*.h", "*.cpp"}))
+	{
+		QString target = outputDir + templateName;
+		QFile output(target);
+		if (output.exists())
+			output.remove();
+		QFile::copy(templateDir + templateName, target);
+	}
+
+	ClassWriter c(outputDir);
 	c.startWriting();
 
 	// Loop across multiple modules, and generate code for each
@@ -85,7 +103,7 @@ int main(int, char **)
 	for (const QString& file : moduleSpecs)
 	{
 		// Read module specs
-		const QJsonObject moduleSpecs = parseJsonFile("../../data/"+file).object();
+		const QJsonObject moduleSpecs = parseJsonFile(dataDir + file).object();
 		if (moduleSpecs.isEmpty())
 			return -1;
 		const QJsonObject types = moduleSpecs["typeCategories"].toObject();

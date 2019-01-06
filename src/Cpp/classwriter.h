@@ -17,7 +17,7 @@ class QJsonObject;
 class ClassWriter
 {
 public:
-	ClassWriter();
+	ClassWriter(const QString& outputDir);
 
 	bool startWriting();
 	void stopWriting();
