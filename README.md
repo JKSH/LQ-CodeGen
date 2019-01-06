@@ -20,8 +20,8 @@ Usage
 -----
 The code generator software is intended to be run from their respective IDEs.
 
-* C++: Open the [project file](src/Cpp/LQ-CodeGen-Cpp.pro) in [Qt Creator]
-  (https://doc.qt.io/qtcreator/) and build and run the program in-place.
+* C++: Open the [project file](src/Cpp/LQ-CodeGen-Cpp.pro) in [Qt Creator](https://doc.qt.io/qtcreator/)
+  and build and run the program in-place.
 * LabVIEW: Open the [project file](src/LabVIEW/LQ-CodeGen-LabVIEW.lvproj) in
   the LabVIEW development environment and run _Main.vi_.
 
@@ -37,5 +37,4 @@ Copyright
 ---------
 Copyright (c) 2019 Sze Howe Koh <<szehowe.koh@gmail.com>>
 
-The LQ Code Generator is published under the [Mozilla Public License v2.0]
-(LICENSE.MPLv2)
+The LQ Code Generator is published under the [Mozilla Public License v2.0](LICENSE.MPLv2)
