@@ -35,13 +35,6 @@
 			<Item Name="Manifestation Ancestors.ctl" Type="VI" URL="../Data Structures/Manifestation Ancestors.ctl"/>
 			<Item Name="VI Input Builder.ctl" Type="VI" URL="../Data Structures/VI Input Builder.ctl"/>
 		</Item>
-		<Item Name="Distribution" Type="Folder">
-			<Item Name="Disable Source Separation (Library).vi" Type="VI" URL="../Distribution/Disable Source Separation (Library).vi"/>
-			<Item Name="Disable Source Separation (Project Item).vi" Type="VI" URL="../Distribution/Disable Source Separation (Project Item).vi"/>
-			<Item Name="Disable Source Separation.vi" Type="VI" URL="../Distribution/Disable Source Separation.vi"/>
-			<Item Name="Open and Disable Source Separation (Library).vi" Type="VI" URL="../Distribution/Open and Disable Source Separation (Library).vi"/>
-			<Item Name="Open and Disable Source Separation (VI).vi" Type="VI" URL="../Distribution/Open and Disable Source Separation (VI).vi"/>
-		</Item>
 		<Item Name="Documentation" Type="Folder">
 			<Item Name="Add Class Documentation.vi" Type="VI" URL="../Documentation/Add Class Documentation.vi"/>
 			<Item Name="Add VI Documentation.vi" Type="VI" URL="../Documentation/Add VI Documentation.vi"/>
@@ -252,7 +245,6 @@
 				<Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
 			</Item>
 			<Item Name="Remove and Rewire.vi" Type="VI" URL="/&lt;resource&gt;/dialog/QuickDrop/plugins/Remove and Rewire.vi"/>
-			<Item Name="TRef FinderCallback.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/traverseref.llb/TRef FinderCallback.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
