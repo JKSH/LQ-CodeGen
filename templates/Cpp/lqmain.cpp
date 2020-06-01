@@ -1,5 +1,5 @@
 /*\
- * Copyright (c) 2018 Sze Howe Koh
+ * Copyright (c) 2020 Sze Howe Koh
  *
  * This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -20,7 +20,7 @@ static void
 run()
 {
 	int            argc = 1;
-	QByteArray     argv0("LQWidgets.dll\0");
+	QByteArray     argv0("LQ");
 	QVector<char*> argv{argv0.data(), nullptr};
 
 	LQApplication app(argc, argv.data());
