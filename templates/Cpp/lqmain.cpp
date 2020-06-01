@@ -17,12 +17,13 @@
 std::atomic_bool isRunning{false};
 
 static void
-run()
+run(QString pluginDir)
 {
 	int            argc = 1;
 	QByteArray     argv0("LQ");
 	QVector<char*> argv{argv0.data(), nullptr};
 
+	QCoreApplication::addLibraryPath(pluginDir);
 	LQApplication app(argc, argv.data());
 	app.setQuitOnLastWindowClosed(false); // Only quit explicitly when commanded from LabVIEW
 	isRunning = true;
@@ -45,8 +46,7 @@ startWidgetEngine(quintptr* _retVal, LStrHandle pluginDir)
 		return LQ::EngineAlreadyRunningError;
 	}
 
-	QCoreApplication::addLibraryPath( LVString::to<QString>(pluginDir) );
-	std::thread t(&run);
+	std::thread t(&run, LVString::to<QString>(pluginDir));
 	t.detach();
 
 	// Block until the engine has been initialized
