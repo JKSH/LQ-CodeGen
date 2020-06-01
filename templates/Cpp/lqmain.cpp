@@ -15,6 +15,8 @@
 // This mutex prevents simultaneous instances of engine management functions
 // (startWidgetEngine()/stopWidgetEngine())
 static std::mutex mutex_engineApi;
+static bool isThreadAllocated = false;
+
 
 // This flag is write-protected by mutex_engineApi and Synchronizer::mutex_threadSync,
 // but it can be read globally without protection. When true, LabVIEW access is enabled.
@@ -94,23 +96,25 @@ run(QString pluginDir)
 	QVector<char*> argv{argv0.data(), nullptr};
 
 	QCoreApplication::addLibraryPath(pluginDir);
+	while (true)
+	{
+		sync.fromThread_waitForStart();
 
-	sync.fromThread_waitForStart();
+		LQApplication app(argc, argv.data());
+		app.setQuitOnLastWindowClosed(false); // Only quit explicitly when commanded from LabVIEW
 
-	LQApplication app(argc, argv.data());
-	app.setQuitOnLastWindowClosed(false); // Only quit explicitly when commanded from LabVIEW
+		sync.fromThread_notifyLVAccessEnabled();
 
-	sync.fromThread_notifyLVAccessEnabled();
+		// Run the blocking event loop.
+		// Print debug messages just before it starts and just after it stops.
+		qDebug() << "Starting Qt event loop in" << QThread::currentThread();
+		app.exec();
+		qDebug("Qt event loop stopped");
 
-	// Run the blocking event loop.
-	// Print debug messages just before it starts and just after it stops.
-	qDebug() << "Starting Qt event loop in" << QThread::currentThread();
-	app.exec();
-	qDebug("Qt event loop stopped");
-
-	// It is unlikely but not impossible for LabVIEW to trigger a quit without
-	// going through stopWidgetEngine(). This line handles the unlikely case.
-	sync.fromAnywhere_disableLVAccess();
+		// It is unlikely but not impossible for LabVIEW to trigger a quit without
+		// going through stopWidgetEngine(). This line handles the unlikely case.
+		sync.fromAnywhere_disableLVAccess();
+	}
 }
 
 // TODO: Return version info to protect against mismatched VI-DLL combos
@@ -125,8 +129,12 @@ startWidgetEngine(quintptr* _retVal, LStrHandle pluginDir)
 		return LQ::EngineAlreadyRunningError;
 	}
 
-	std::thread t(&run, LVString::to<QString>(pluginDir));
-	t.detach();
+	if (!isThreadAllocated)
+	{
+		std::thread t(&run, LVString::to<QString>(pluginDir));
+		t.detach();
+		isThreadAllocated = true;
+	}
 
 	sync.fromApi_notifyStart();
 	sync.fromApi_waitForLVAccessEnabled();
