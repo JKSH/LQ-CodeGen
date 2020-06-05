@@ -15,7 +15,7 @@
 // This mutex prevents simultaneous instances of engine management functions
 // (startWidgetEngine()/stopWidgetEngine())
 static std::mutex mutex_engineApi;
-static bool isThreadAllocated = false;
+static std::atomic_bool isThreadAllocated{false};
 
 
 // This flag is write-protected by mutex_engineApi and Synchronizer::mutex_threadSync,
@@ -96,7 +96,7 @@ run(QString pluginDir)
 	QVector<char*> argv{argv0.data(), nullptr};
 
 	QCoreApplication::addLibraryPath(pluginDir);
-	while (true)
+	do
 	{
 		sync.fromThread_waitForStart();
 
@@ -106,15 +106,16 @@ run(QString pluginDir)
 		sync.fromThread_notifyLVAccessEnabled();
 
 		// Run the blocking event loop.
-		// Print debug messages just before it starts and just after it stops.
 		qDebug() << "Starting Qt event loop in" << QThread::currentThread();
 		app.exec();
 		qDebug("Qt event loop stopped");
 
 		// It is unlikely but not impossible for LabVIEW to trigger a quit without
-		// going through stopWidgetEngine(). This line handles the unlikely case.
+		// going through stopEngine(). This line handles the unlikely case.
 		sync.fromAnywhere_disableLVAccess();
-	}
+
+	} while (isThreadAllocated);
+	qDebug() << QThread::currentThread() << "stopped";
 }
 
 // TODO: Return version info to protect against mismatched VI-DLL combos
@@ -144,13 +145,14 @@ startWidgetEngine(quintptr* _retVal, LStrHandle pluginDir)
 }
 
 qint32
-stopWidgetEngine()
+stopEngine(bool* preserveThread)
 {
 	std::lock_guard<std::mutex> outerLock(mutex_engineApi);
 
 	if (!isRunning)
 		return LQ::EngineNotRunningError;
 
+	isThreadAllocated = *preserveThread;
 	sync.fromAnywhere_disableLVAccess();
 
 	// LQApplication::killWidgets() sends a QDeferredDeleteEvent to all remaining
