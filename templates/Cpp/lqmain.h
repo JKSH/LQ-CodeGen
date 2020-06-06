@@ -17,7 +17,7 @@
 
 extern "C" {
 
-extern qint32 Q_DECL_EXPORT startWidgetEngine(quintptr* _retVal, LStrHandle pluginDir);
+extern qint32 Q_DECL_EXPORT startEngine(quintptr* _retVal, LStrHandle pluginDir, LStrHandle cliArgs);
 extern qint32 Q_DECL_EXPORT stopEngine(bool* preserveThread);
 
 extern qint32 Q_DECL_EXPORT registerEventRefs(LVUserEventRef* voidRef, LVUserEventRef* boolRef, LVUserEventRef* i32Ref, LVUserEventRef* dblRef, LVUserEventRef* stringRef);

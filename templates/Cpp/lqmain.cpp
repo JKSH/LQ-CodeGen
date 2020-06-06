@@ -86,22 +86,47 @@ public:
 		threadState = ThreadState::Idle;
 	}
 };
+
 static Synchronizer sync;
+static QByteArray commandLineArgs;
 
 static void
 run(QString pluginDir)
 {
-	int            argc = 1;
-	QByteArray     argv0("LQ");
-	QVector<char*> argv{argv0.data(), nullptr};
-
+	QByteArray argv0("LQ");
 	QCoreApplication::addLibraryPath(pluginDir);
 	do
 	{
 		sync.fromThread_waitForStart();
 
+		qDebug() << "Initializing Qt engine. Command line arguments:";
+		qDebug() << "\t" << commandLineArgs;
+
+		// TODO: Handle escaped spaces
+		QByteArrayList tokens;
+		if (!commandLineArgs.isEmpty())
+			tokens = commandLineArgs.split(' ');
+
+		QVector<char*> argv{argv0.data()};
+		for (int i = 0; i < tokens.count(); ++i)
+			argv << tokens[i].data();
+		argv << nullptr;
+
+		int argc = argv.count() - 1;
+
 		LQApplication app(argc, argv.data());
-		app.setQuitOnLastWindowClosed(false); // Only quit explicitly when commanded from LabVIEW
+
+		// NOTE: QCoreApplication consumes the supported args.
+		//       Whatever is left can't be used.
+		if (argc > 1)
+		{
+			qWarning() << "Unsupported arguments:";
+			for (int i = 1; i < argc; ++i)
+				qWarning() << '\t' << argv[i];
+		}
+
+		// Only quit when explicitly commanded from LabVIEW
+		app.setQuitOnLastWindowClosed(false);
 
 		sync.fromThread_notifyLVAccessEnabled();
 
@@ -120,7 +145,7 @@ run(QString pluginDir)
 
 // TODO: Return version info to protect against mismatched VI-DLL combos
 qint32
-startWidgetEngine(quintptr* _retVal, LStrHandle pluginDir)
+startEngine(quintptr* _retVal, LStrHandle pluginDir, LStrHandle cliArgs)
 {
 	std::lock_guard<std::mutex> outerLock(mutex_engineApi);
 
@@ -137,6 +162,7 @@ startWidgetEngine(quintptr* _retVal, LStrHandle pluginDir)
 		isThreadAllocated = true;
 	}
 
+	commandLineArgs = LVString::to<QByteArray>(cliArgs).simplified();
 	sync.fromApi_notifyStart();
 	sync.fromApi_waitForLVAccessEnabled();
 
