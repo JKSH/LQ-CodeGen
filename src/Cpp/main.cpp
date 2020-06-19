@@ -1,5 +1,5 @@
 /*\
- * Copyright (c) 2018 Sze Howe Koh
+ * Copyright (c) 2020 Sze Howe Koh
  *
  * This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -86,7 +86,7 @@ int main(int, char **)
 
 	// Copy template files into output folder (replacing the old versions if necessary)
 	QDir::current().mkpath(outputDir);
-	for (const QString& templateName : QDir(templateDir).entryList({"*.pro", "*.h", "*.cpp"}))
+	for (const QString& templateName : QDir(templateDir).entryList({"*.h", "*.cpp"}))
 	{
 		QString target = outputDir + templateName;
 		QFile output(target);
