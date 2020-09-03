@@ -42,6 +42,7 @@
 		</Item>
 		<Item Name="Icons and Wires" Type="Folder">
 			<Item Name="Create Icon.vi" Type="VI" URL="../Icons and Wires/Create Icon.vi"/>
+			<Item Name="Group 1-Char Tokens.vi" Type="VI" URL="../Icons and Wires/Group 1-Char Tokens.vi"/>
 			<Item Name="Icon Template.ctl" Type="VI" URL="../Icons and Wires/Icon Template.ctl"/>
 			<Item Name="Name to Icon Lines.vi" Type="VI" URL="../Icons and Wires/Name to Icon Lines.vi"/>
 		</Item>
