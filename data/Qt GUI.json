@@ -1032,6 +1032,11 @@
 						"retType": "QRect"
 					},
 					{
+						"isConst": true,
+						"name": "size",
+						"retType": "QSize"
+					},
+					{
 						"name": "resize",
 						"params": [
 							{
