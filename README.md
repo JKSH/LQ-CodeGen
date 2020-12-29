@@ -10,7 +10,7 @@ Project Folders
 * [src](src): Contains the source code for the code generator itself.
 * [templates](templates): Contains the template files that get populated by the
   binding code.
-    - The templates also contains custom-written code (both LabVIEW and C++)
+    - The templates also contains custom-written code for LabVIEW
       that make the bindings work. Although these are not technically templates,
       they need to evolve closely with the code generator, which is why they are
       in this repo.
@@ -30,7 +30,7 @@ System Requirements
 -------------------
 * NI LabVIEW 2014 or newer
 * A C++11 compliant compiler (tested with Microsoft Visual C++ 2017)
-* Qt 5.10 or newer
+* Qt 5.12 or newer
 
 
 Copyright
