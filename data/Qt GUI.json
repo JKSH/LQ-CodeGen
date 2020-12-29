@@ -599,23 +599,87 @@
 		],
 		"qObjects": [
 			{
-				"name": "QGuiApplication", "base": "QCoreApplication",
+				"base": "QCoreApplication",
 				"methods": [
 					{
-						"name": "setWindowIcon", "retType": "void",
+						"name": "setWindowIcon",
 						"params": [
-							{"name": "icon", "type": "const QIcon&"}
-						]
+							{
+								"name": "icon",
+								"type": "const QIcon&"
+							}
+						],
+						"retType": "void"
 					},
 					{
-						"name": "windowIcon", "retType": "QIcon"
+						"isConst": true,
+						"name": "windowIcon",
+						"retType": "QIcon"
+					},
+					{
+						"isConst": true,
+						"name": "primaryScreen",
+						"retType": "QScreen*"
+					},
+					{
+						"isConst": true,
+						"name": "screens",
+						"retType": "QList<QScreen*>"
+					},
+					{
+						"isConst": true,
+						"name": "font",
+						"retType": "QFont"
+					},
+					{
+						"name": "setFont",
+						"params": [
+							{
+								"name": "font",
+								"type": "const QFont&"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setLayoutDirection",
+						"params": [
+							{
+								"name": "direction",
+								"type": "Qt::LayoutDirection"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "layoutDirection",
+						"retType": "Qt::LayoutDirection"
+					},
+					{
+						"name": "applicationState",
+						"retType": "Qt::ApplicationState"
 					}
 				],
+				"name": "QGuiApplication",
 				"properties": [
 					{
-						"name": "windowIcon",
 						"getter": "windowIcon",
-						"setter": "setWindowIcon"
+						"name": "windowIcon",
+						"setter": "setWindowIcon",
+						"type": "QIcon"
+					},
+					{
+						"getter": "layoutDirection",
+						"name": "layoutDirection",
+						"setter": "setLayoutDirection",
+						"type": "Qt::LayoutDirection"
+					},
+					{
+						"getter": "font",
+						"name": "font",
+						"setter": "setFont",
+						"type": "QFont"
 					}
 				]
 			},
