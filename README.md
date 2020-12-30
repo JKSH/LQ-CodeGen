@@ -35,6 +35,6 @@ System Requirements
 
 Copyright
 ---------
-Copyright (c) 2019 Sze Howe Koh <<szehowe.koh@gmail.com>>
+Copyright (c) 2020 Sze Howe Koh <<szehowe.koh@gmail.com>>
 
 The LQ Code Generator is published under the [Mozilla Public License v2.0](LICENSE.MPLv2)
