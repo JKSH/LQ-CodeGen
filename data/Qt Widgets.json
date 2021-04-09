@@ -70,6 +70,9 @@
 						"name": "isVisible", "retType": "bool"
 					},
 					{
+						"name": "locale", "retType": "QLocale"
+					},
+					{
 						"name": "minimumSize", "retType": "QSize"
 					},
 					{
@@ -112,6 +115,12 @@
 						"name": "setLayout", "retType": "void",
 						"params": [
 							{"name": "layout", "type": "QLayout*"}
+						]
+					},
+					{
+						"name": "setLocale", "retType": "void",
+						"params": [
+							{"name": "locale", "type": "const QLocale&"}
 						]
 					},
 					{
@@ -223,6 +232,11 @@
 						"name": "geometry",
 						"getter": "geometry",
 						"setter": "setGeometry"
+					},
+					{
+						"name": "locale",
+						"getter": "locale",
+						"setter": "setLocale"
 					},
 					{
 						"name": "minimumSize",

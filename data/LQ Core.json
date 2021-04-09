@@ -4540,6 +4540,3268 @@
 				]
 			}
 		],
+		"opaqueStructs": [
+			{
+				"enums": [
+					{
+						"name": "Language",
+						"values": [
+							{
+								"name": "AnyLanguage",
+								"value": 0
+							},
+							{
+								"name": "C",
+								"value": 1
+							},
+							{
+								"name": "Abkhazian",
+								"value": 2
+							},
+							{
+								"name": "Oromo",
+								"value": 3
+							},
+							{
+								"name": "Afar",
+								"value": 4
+							},
+							{
+								"name": "Afrikaans",
+								"value": 5
+							},
+							{
+								"name": "Albanian",
+								"value": 6
+							},
+							{
+								"name": "Amharic",
+								"value": 7
+							},
+							{
+								"name": "Arabic",
+								"value": 8
+							},
+							{
+								"name": "Armenian",
+								"value": 9
+							},
+							{
+								"name": "Assamese",
+								"value": 10
+							},
+							{
+								"name": "Aymara",
+								"value": 11
+							},
+							{
+								"name": "Azerbaijani",
+								"value": 12
+							},
+							{
+								"name": "Bashkir",
+								"value": 13
+							},
+							{
+								"name": "Basque",
+								"value": 14
+							},
+							{
+								"name": "Bengali",
+								"value": 15
+							},
+							{
+								"name": "Dzongkha",
+								"value": 16
+							},
+							{
+								"name": "Bihari",
+								"value": 17
+							},
+							{
+								"name": "Bislama",
+								"value": 18
+							},
+							{
+								"name": "Breton",
+								"value": 19
+							},
+							{
+								"name": "Bulgarian",
+								"value": 20
+							},
+							{
+								"name": "Burmese",
+								"value": 21
+							},
+							{
+								"name": "Belarusian",
+								"value": 22
+							},
+							{
+								"name": "Khmer",
+								"value": 23
+							},
+							{
+								"name": "Catalan",
+								"value": 24
+							},
+							{
+								"name": "Chinese",
+								"value": 25
+							},
+							{
+								"name": "Corsican",
+								"value": 26
+							},
+							{
+								"name": "Croatian",
+								"value": 27
+							},
+							{
+								"name": "Czech",
+								"value": 28
+							},
+							{
+								"name": "Danish",
+								"value": 29
+							},
+							{
+								"name": "Dutch",
+								"value": 30
+							},
+							{
+								"name": "English",
+								"value": 31
+							},
+							{
+								"name": "Esperanto",
+								"value": 32
+							},
+							{
+								"name": "Estonian",
+								"value": 33
+							},
+							{
+								"name": "Faroese",
+								"value": 34
+							},
+							{
+								"name": "Fijian",
+								"value": 35
+							},
+							{
+								"name": "Finnish",
+								"value": 36
+							},
+							{
+								"name": "French",
+								"value": 37
+							},
+							{
+								"name": "WesternFrisian",
+								"value": 38
+							},
+							{
+								"name": "Gaelic",
+								"value": 39
+							},
+							{
+								"name": "Galician",
+								"value": 40
+							},
+							{
+								"name": "Georgian",
+								"value": 41
+							},
+							{
+								"name": "German",
+								"value": 42
+							},
+							{
+								"name": "Greek",
+								"value": 43
+							},
+							{
+								"name": "Greenlandic",
+								"value": 44
+							},
+							{
+								"name": "Guarani",
+								"value": 45
+							},
+							{
+								"name": "Gujarati",
+								"value": 46
+							},
+							{
+								"name": "Hausa",
+								"value": 47
+							},
+							{
+								"name": "Hebrew",
+								"value": 48
+							},
+							{
+								"name": "Hindi",
+								"value": 49
+							},
+							{
+								"name": "Hungarian",
+								"value": 50
+							},
+							{
+								"name": "Icelandic",
+								"value": 51
+							},
+							{
+								"name": "Indonesian",
+								"value": 52
+							},
+							{
+								"name": "Interlingua",
+								"value": 53
+							},
+							{
+								"name": "Interlingue",
+								"value": 54
+							},
+							{
+								"name": "Inuktitut",
+								"value": 55
+							},
+							{
+								"name": "Inupiak",
+								"value": 56
+							},
+							{
+								"name": "Irish",
+								"value": 57
+							},
+							{
+								"name": "Italian",
+								"value": 58
+							},
+							{
+								"name": "Japanese",
+								"value": 59
+							},
+							{
+								"name": "Javanese",
+								"value": 60
+							},
+							{
+								"name": "Kannada",
+								"value": 61
+							},
+							{
+								"name": "Kashmiri",
+								"value": 62
+							},
+							{
+								"name": "Kazakh",
+								"value": 63
+							},
+							{
+								"name": "Kinyarwanda",
+								"value": 64
+							},
+							{
+								"name": "Kirghiz",
+								"value": 65
+							},
+							{
+								"name": "Korean",
+								"value": 66
+							},
+							{
+								"name": "Kurdish",
+								"value": 67
+							},
+							{
+								"name": "Rundi",
+								"value": 68
+							},
+							{
+								"name": "Lao",
+								"value": 69
+							},
+							{
+								"name": "Latin",
+								"value": 70
+							},
+							{
+								"name": "Latvian",
+								"value": 71
+							},
+							{
+								"name": "Lingala",
+								"value": 72
+							},
+							{
+								"name": "Lithuanian",
+								"value": 73
+							},
+							{
+								"name": "Macedonian",
+								"value": 74
+							},
+							{
+								"name": "Malagasy",
+								"value": 75
+							},
+							{
+								"name": "Malay",
+								"value": 76
+							},
+							{
+								"name": "Malayalam",
+								"value": 77
+							},
+							{
+								"name": "Maltese",
+								"value": 78
+							},
+							{
+								"name": "Maori",
+								"value": 79
+							},
+							{
+								"name": "Marathi",
+								"value": 80
+							},
+							{
+								"name": "Marshallese",
+								"value": 81
+							},
+							{
+								"name": "Mongolian",
+								"value": 82
+							},
+							{
+								"name": "NauruLanguage",
+								"value": 83
+							},
+							{
+								"name": "Nepali",
+								"value": 84
+							},
+							{
+								"name": "NorwegianBokmal",
+								"value": 85
+							},
+							{
+								"name": "Occitan",
+								"value": 86
+							},
+							{
+								"name": "Oriya",
+								"value": 87
+							},
+							{
+								"name": "Pashto",
+								"value": 88
+							},
+							{
+								"name": "Persian",
+								"value": 89
+							},
+							{
+								"name": "Polish",
+								"value": 90
+							},
+							{
+								"name": "Portuguese",
+								"value": 91
+							},
+							{
+								"name": "Punjabi",
+								"value": 92
+							},
+							{
+								"name": "Quechua",
+								"value": 93
+							},
+							{
+								"name": "Romansh",
+								"value": 94
+							},
+							{
+								"name": "Romanian",
+								"value": 95
+							},
+							{
+								"name": "Russian",
+								"value": 96
+							},
+							{
+								"name": "Samoan",
+								"value": 97
+							},
+							{
+								"name": "Sango",
+								"value": 98
+							},
+							{
+								"name": "Sanskrit",
+								"value": 99
+							},
+							{
+								"name": "Serbian",
+								"value": 100
+							},
+							{
+								"name": "Ossetic",
+								"value": 101
+							},
+							{
+								"name": "SouthernSotho",
+								"value": 102
+							},
+							{
+								"name": "Tswana",
+								"value": 103
+							},
+							{
+								"name": "Shona",
+								"value": 104
+							},
+							{
+								"name": "Sindhi",
+								"value": 105
+							},
+							{
+								"name": "Sinhala",
+								"value": 106
+							},
+							{
+								"name": "Swati",
+								"value": 107
+							},
+							{
+								"name": "Slovak",
+								"value": 108
+							},
+							{
+								"name": "Slovenian",
+								"value": 109
+							},
+							{
+								"name": "Somali",
+								"value": 110
+							},
+							{
+								"name": "Spanish",
+								"value": 111
+							},
+							{
+								"name": "Sundanese",
+								"value": 112
+							},
+							{
+								"name": "Swahili",
+								"value": 113
+							},
+							{
+								"name": "Swedish",
+								"value": 114
+							},
+							{
+								"name": "Sardinian",
+								"value": 115
+							},
+							{
+								"name": "Tajik",
+								"value": 116
+							},
+							{
+								"name": "Tamil",
+								"value": 117
+							},
+							{
+								"name": "Tatar",
+								"value": 118
+							},
+							{
+								"name": "Telugu",
+								"value": 119
+							},
+							{
+								"name": "Thai",
+								"value": 120
+							},
+							{
+								"name": "Tibetan",
+								"value": 121
+							},
+							{
+								"name": "Tigrinya",
+								"value": 122
+							},
+							{
+								"name": "Tongan",
+								"value": 123
+							},
+							{
+								"name": "Tsonga",
+								"value": 124
+							},
+							{
+								"name": "Turkish",
+								"value": 125
+							},
+							{
+								"name": "Turkmen",
+								"value": 126
+							},
+							{
+								"name": "Tahitian",
+								"value": 127
+							},
+							{
+								"name": "Uighur",
+								"value": 128
+							},
+							{
+								"name": "Ukrainian",
+								"value": 129
+							},
+							{
+								"name": "Urdu",
+								"value": 130
+							},
+							{
+								"name": "Uzbek",
+								"value": 131
+							},
+							{
+								"name": "Vietnamese",
+								"value": 132
+							},
+							{
+								"name": "Volapuk",
+								"value": 133
+							},
+							{
+								"name": "Welsh",
+								"value": 134
+							},
+							{
+								"name": "Wolof",
+								"value": 135
+							},
+							{
+								"name": "Xhosa",
+								"value": 136
+							},
+							{
+								"name": "Yiddish",
+								"value": 137
+							},
+							{
+								"name": "Yoruba",
+								"value": 138
+							},
+							{
+								"name": "Zhuang",
+								"value": 139
+							},
+							{
+								"name": "Zulu",
+								"value": 140
+							},
+							{
+								"name": "NorwegianNynorsk",
+								"value": 141
+							},
+							{
+								"name": "Bosnian",
+								"value": 142
+							},
+							{
+								"name": "Divehi",
+								"value": 143
+							},
+							{
+								"name": "Manx",
+								"value": 144
+							},
+							{
+								"name": "Cornish",
+								"value": 145
+							},
+							{
+								"name": "Akan",
+								"value": 146
+							},
+							{
+								"name": "Konkani",
+								"value": 147
+							},
+							{
+								"name": "Ga",
+								"value": 148
+							},
+							{
+								"name": "Igbo",
+								"value": 149
+							},
+							{
+								"name": "Kamba",
+								"value": 150
+							},
+							{
+								"name": "Syriac",
+								"value": 151
+							},
+							{
+								"name": "Blin",
+								"value": 152
+							},
+							{
+								"name": "Geez",
+								"value": 153
+							},
+							{
+								"name": "Koro",
+								"value": 154
+							},
+							{
+								"name": "Sidamo",
+								"value": 155
+							},
+							{
+								"name": "Atsam",
+								"value": 156
+							},
+							{
+								"name": "Tigre",
+								"value": 157
+							},
+							{
+								"name": "Jju",
+								"value": 158
+							},
+							{
+								"name": "Friulian",
+								"value": 159
+							},
+							{
+								"name": "Venda",
+								"value": 160
+							},
+							{
+								"name": "Ewe",
+								"value": 161
+							},
+							{
+								"name": "Walamo",
+								"value": 162
+							},
+							{
+								"name": "Hawaiian",
+								"value": 163
+							},
+							{
+								"name": "Tyap",
+								"value": 164
+							},
+							{
+								"name": "Nyanja",
+								"value": 165
+							},
+							{
+								"name": "Filipino",
+								"value": 166
+							},
+							{
+								"name": "SwissGerman",
+								"value": 167
+							},
+							{
+								"name": "SichuanYi",
+								"value": 168
+							},
+							{
+								"name": "Kpelle",
+								"value": 169
+							},
+							{
+								"name": "LowGerman",
+								"value": 170
+							},
+							{
+								"name": "SouthNdebele",
+								"value": 171
+							},
+							{
+								"name": "NorthernSotho",
+								"value": 172
+							},
+							{
+								"name": "NorthernSami",
+								"value": 173
+							},
+							{
+								"name": "Taroko",
+								"value": 174
+							},
+							{
+								"name": "Gusii",
+								"value": 175
+							},
+							{
+								"name": "Taita",
+								"value": 176
+							},
+							{
+								"name": "Fulah",
+								"value": 177
+							},
+							{
+								"name": "Kikuyu",
+								"value": 178
+							},
+							{
+								"name": "Samburu",
+								"value": 179
+							},
+							{
+								"name": "Sena",
+								"value": 180
+							},
+							{
+								"name": "NorthNdebele",
+								"value": 181
+							},
+							{
+								"name": "Rombo",
+								"value": 182
+							},
+							{
+								"name": "Tachelhit",
+								"value": 183
+							},
+							{
+								"name": "Kabyle",
+								"value": 184
+							},
+							{
+								"name": "Nyankole",
+								"value": 185
+							},
+							{
+								"name": "Bena",
+								"value": 186
+							},
+							{
+								"name": "Vunjo",
+								"value": 187
+							},
+							{
+								"name": "Bambara",
+								"value": 188
+							},
+							{
+								"name": "Embu",
+								"value": 189
+							},
+							{
+								"name": "Cherokee",
+								"value": 190
+							},
+							{
+								"name": "Morisyen",
+								"value": 191
+							},
+							{
+								"name": "Makonde",
+								"value": 192
+							},
+							{
+								"name": "Langi",
+								"value": 193
+							},
+							{
+								"name": "Ganda",
+								"value": 194
+							},
+							{
+								"name": "Bemba",
+								"value": 195
+							},
+							{
+								"name": "Kabuverdianu",
+								"value": 196
+							},
+							{
+								"name": "Meru",
+								"value": 197
+							},
+							{
+								"name": "Kalenjin",
+								"value": 198
+							},
+							{
+								"name": "Nama",
+								"value": 199
+							},
+							{
+								"name": "Machame",
+								"value": 200
+							},
+							{
+								"name": "Colognian",
+								"value": 201
+							},
+							{
+								"name": "Masai",
+								"value": 202
+							},
+							{
+								"name": "Soga",
+								"value": 203
+							},
+							{
+								"name": "Luyia",
+								"value": 204
+							},
+							{
+								"name": "Asu",
+								"value": 205
+							},
+							{
+								"name": "Teso",
+								"value": 206
+							},
+							{
+								"name": "Saho",
+								"value": 207
+							},
+							{
+								"name": "KoyraChiini",
+								"value": 208
+							},
+							{
+								"name": "Rwa",
+								"value": 209
+							},
+							{
+								"name": "Luo",
+								"value": 210
+							},
+							{
+								"name": "Chiga",
+								"value": 211
+							},
+							{
+								"name": "CentralMoroccoTamazight",
+								"value": 212
+							},
+							{
+								"name": "KoyraboroSenni",
+								"value": 213
+							},
+							{
+								"name": "Shambala",
+								"value": 214
+							},
+							{
+								"name": "Bodo",
+								"value": 215
+							},
+							{
+								"name": "Avaric",
+								"value": 216
+							},
+							{
+								"name": "Chamorro",
+								"value": 217
+							},
+							{
+								"name": "Chechen",
+								"value": 218
+							},
+							{
+								"name": "Church",
+								"value": 219
+							},
+							{
+								"name": "Chuvash",
+								"value": 220
+							},
+							{
+								"name": "Cree",
+								"value": 221
+							},
+							{
+								"name": "Haitian",
+								"value": 222
+							},
+							{
+								"name": "Herero",
+								"value": 223
+							},
+							{
+								"name": "HiriMotu",
+								"value": 224
+							},
+							{
+								"name": "Kanuri",
+								"value": 225
+							},
+							{
+								"name": "Komi",
+								"value": 226
+							},
+							{
+								"name": "Kongo",
+								"value": 227
+							},
+							{
+								"name": "Kwanyama",
+								"value": 228
+							},
+							{
+								"name": "Limburgish",
+								"value": 229
+							},
+							{
+								"name": "LubaKatanga",
+								"value": 230
+							},
+							{
+								"name": "Luxembourgish",
+								"value": 231
+							},
+							{
+								"name": "Navaho",
+								"value": 232
+							},
+							{
+								"name": "Ndonga",
+								"value": 233
+							},
+							{
+								"name": "Ojibwa",
+								"value": 234
+							},
+							{
+								"name": "Pali",
+								"value": 235
+							},
+							{
+								"name": "Walloon",
+								"value": 236
+							},
+							{
+								"name": "Aghem",
+								"value": 237
+							},
+							{
+								"name": "Basaa",
+								"value": 238
+							},
+							{
+								"name": "Zarma",
+								"value": 239
+							},
+							{
+								"name": "Duala",
+								"value": 240
+							},
+							{
+								"name": "JolaFonyi",
+								"value": 241
+							},
+							{
+								"name": "Ewondo",
+								"value": 242
+							},
+							{
+								"name": "Bafia",
+								"value": 243
+							},
+							{
+								"name": "MakhuwaMeetto",
+								"value": 244
+							},
+							{
+								"name": "Mundang",
+								"value": 245
+							},
+							{
+								"name": "Kwasio",
+								"value": 246
+							},
+							{
+								"name": "Nuer",
+								"value": 247
+							},
+							{
+								"name": "Sakha",
+								"value": 248
+							},
+							{
+								"name": "Sangu",
+								"value": 249
+							},
+							{
+								"name": "CongoSwahili",
+								"value": 250
+							},
+							{
+								"name": "Tasawaq",
+								"value": 251
+							},
+							{
+								"name": "Vai",
+								"value": 252
+							},
+							{
+								"name": "Walser",
+								"value": 253
+							},
+							{
+								"name": "Yangben",
+								"value": 254
+							},
+							{
+								"name": "Avestan",
+								"value": 255
+							},
+							{
+								"name": "Asturian",
+								"value": 256
+							},
+							{
+								"name": "Ngomba",
+								"value": 257
+							},
+							{
+								"name": "Kako",
+								"value": 258
+							},
+							{
+								"name": "Meta",
+								"value": 259
+							},
+							{
+								"name": "Ngiemboon",
+								"value": 260
+							},
+							{
+								"name": "Aragonese",
+								"value": 261
+							},
+							{
+								"name": "Akkadian",
+								"value": 262
+							},
+							{
+								"name": "AncientEgyptian",
+								"value": 263
+							},
+							{
+								"name": "AncientGreek",
+								"value": 264
+							},
+							{
+								"name": "Aramaic",
+								"value": 265
+							},
+							{
+								"name": "Balinese",
+								"value": 266
+							},
+							{
+								"name": "Bamun",
+								"value": 267
+							},
+							{
+								"name": "BatakToba",
+								"value": 268
+							},
+							{
+								"name": "Buginese",
+								"value": 269
+							},
+							{
+								"name": "Buhid",
+								"value": 270
+							},
+							{
+								"name": "Carian",
+								"value": 271
+							},
+							{
+								"name": "Chakma",
+								"value": 272
+							},
+							{
+								"name": "ClassicalMandaic",
+								"value": 273
+							},
+							{
+								"name": "Coptic",
+								"value": 274
+							},
+							{
+								"name": "Dogri",
+								"value": 275
+							},
+							{
+								"name": "EasternCham",
+								"value": 276
+							},
+							{
+								"name": "EasternKayah",
+								"value": 277
+							},
+							{
+								"name": "Etruscan",
+								"value": 278
+							},
+							{
+								"name": "Gothic",
+								"value": 279
+							},
+							{
+								"name": "Hanunoo",
+								"value": 280
+							},
+							{
+								"name": "Ingush",
+								"value": 281
+							},
+							{
+								"name": "LargeFloweryMiao",
+								"value": 282
+							},
+							{
+								"name": "Lepcha",
+								"value": 283
+							},
+							{
+								"name": "Limbu",
+								"value": 284
+							},
+							{
+								"name": "Lisu",
+								"value": 285
+							},
+							{
+								"name": "Lu",
+								"value": 286
+							},
+							{
+								"name": "Lycian",
+								"value": 287
+							},
+							{
+								"name": "Lydian",
+								"value": 288
+							},
+							{
+								"name": "Mandingo",
+								"value": 289
+							},
+							{
+								"name": "Manipuri",
+								"value": 290
+							},
+							{
+								"name": "Meroitic",
+								"value": 291
+							},
+							{
+								"name": "NorthernThai",
+								"value": 292
+							},
+							{
+								"name": "OldIrish",
+								"value": 293
+							},
+							{
+								"name": "OldNorse",
+								"value": 294
+							},
+							{
+								"name": "OldPersian",
+								"value": 295
+							},
+							{
+								"name": "OldTurkish",
+								"value": 296
+							},
+							{
+								"name": "Pahlavi",
+								"value": 297
+							},
+							{
+								"name": "Parthian",
+								"value": 298
+							},
+							{
+								"name": "Phoenician",
+								"value": 299
+							},
+							{
+								"name": "PrakritLanguage",
+								"value": 300
+							},
+							{
+								"name": "Rejang",
+								"value": 301
+							},
+							{
+								"name": "Sabaean",
+								"value": 302
+							},
+							{
+								"name": "Samaritan",
+								"value": 303
+							},
+							{
+								"name": "Santali",
+								"value": 304
+							},
+							{
+								"name": "Saurashtra",
+								"value": 305
+							},
+							{
+								"name": "Sora",
+								"value": 306
+							},
+							{
+								"name": "Sylheti",
+								"value": 307
+							},
+							{
+								"name": "Tagbanwa",
+								"value": 308
+							},
+							{
+								"name": "TaiDam",
+								"value": 309
+							},
+							{
+								"name": "TaiNua",
+								"value": 310
+							},
+							{
+								"name": "Ugaritic",
+								"value": 311
+							},
+							{
+								"name": "Akoose",
+								"value": 312
+							},
+							{
+								"name": "Lakota",
+								"value": 313
+							},
+							{
+								"name": "StandardMoroccanTamazight",
+								"value": 314
+							},
+							{
+								"name": "Mapuche",
+								"value": 315
+							},
+							{
+								"name": "CentralKurdish",
+								"value": 316
+							},
+							{
+								"name": "LowerSorbian",
+								"value": 317
+							},
+							{
+								"name": "UpperSorbian",
+								"value": 318
+							},
+							{
+								"name": "Kenyang",
+								"value": 319
+							},
+							{
+								"name": "Mohawk",
+								"value": 320
+							},
+							{
+								"name": "Nko",
+								"value": 321
+							},
+							{
+								"name": "Prussian",
+								"value": 322
+							},
+							{
+								"name": "Kiche",
+								"value": 323
+							},
+							{
+								"name": "SouthernSami",
+								"value": 324
+							},
+							{
+								"name": "LuleSami",
+								"value": 325
+							},
+							{
+								"name": "InariSami",
+								"value": 326
+							},
+							{
+								"name": "SkoltSami",
+								"value": 327
+							},
+							{
+								"name": "Warlpiri",
+								"value": 328
+							},
+							{
+								"name": "ManichaeanMiddlePersian",
+								"value": 329
+							},
+							{
+								"name": "Mende",
+								"value": 330
+							},
+							{
+								"name": "AncientNorthArabian",
+								"value": 331
+							},
+							{
+								"name": "LinearA",
+								"value": 332
+							},
+							{
+								"name": "HmongNjua",
+								"value": 333
+							},
+							{
+								"name": "Ho",
+								"value": 334
+							},
+							{
+								"name": "Lezghian",
+								"value": 335
+							},
+							{
+								"name": "Bassa",
+								"value": 336
+							},
+							{
+								"name": "Mono",
+								"value": 337
+							},
+							{
+								"name": "TedimChin",
+								"value": 338
+							},
+							{
+								"name": "Maithili",
+								"value": 339
+							},
+							{
+								"name": "Ahom",
+								"value": 340
+							},
+							{
+								"name": "AmericanSignLanguage",
+								"value": 341
+							},
+							{
+								"name": "ArdhamagadhiPrakrit",
+								"value": 342
+							},
+							{
+								"name": "Bhojpuri",
+								"value": 343
+							},
+							{
+								"name": "HieroglyphicLuwian",
+								"value": 344
+							},
+							{
+								"name": "LiteraryChinese",
+								"value": 345
+							},
+							{
+								"name": "Mazanderani",
+								"value": 346
+							},
+							{
+								"name": "Mru",
+								"value": 347
+							},
+							{
+								"name": "Newari",
+								"value": 348
+							},
+							{
+								"name": "NorthernLuri",
+								"value": 349
+							},
+							{
+								"name": "Palauan",
+								"value": 350
+							},
+							{
+								"name": "Papiamento",
+								"value": 351
+							},
+							{
+								"name": "Saraiki",
+								"value": 352
+							},
+							{
+								"name": "TokelauLanguage",
+								"value": 353
+							},
+							{
+								"name": "TokPisin",
+								"value": 354
+							},
+							{
+								"name": "TuvaluLanguage",
+								"value": 355
+							},
+							{
+								"name": "UncodedLanguages",
+								"value": 356
+							},
+							{
+								"name": "Cantonese",
+								"value": 357
+							},
+							{
+								"name": "Osage",
+								"value": 358
+							},
+							{
+								"name": "Tangut",
+								"value": 359
+							}
+						]
+					},
+					{
+						"name": "Script",
+						"values": [
+							{
+								"name": "AnyScript",
+								"value": 0
+							},
+							{
+								"name": "ArabicScript",
+								"value": 1
+							},
+							{
+								"name": "CyrillicScript",
+								"value": 2
+							},
+							{
+								"name": "DeseretScript",
+								"value": 3
+							},
+							{
+								"name": "GurmukhiScript",
+								"value": 4
+							},
+							{
+								"name": "SimplifiedHanScript",
+								"value": 5
+							},
+							{
+								"name": "TraditionalHanScript",
+								"value": 6
+							},
+							{
+								"name": "LatinScript",
+								"value": 7
+							},
+							{
+								"name": "MongolianScript",
+								"value": 8
+							},
+							{
+								"name": "TifinaghScript",
+								"value": 9
+							},
+							{
+								"name": "ArmenianScript",
+								"value": 10
+							},
+							{
+								"name": "BengaliScript",
+								"value": 11
+							},
+							{
+								"name": "CherokeeScript",
+								"value": 12
+							},
+							{
+								"name": "DevanagariScript",
+								"value": 13
+							},
+							{
+								"name": "EthiopicScript",
+								"value": 14
+							},
+							{
+								"name": "GeorgianScript",
+								"value": 15
+							},
+							{
+								"name": "GreekScript",
+								"value": 16
+							},
+							{
+								"name": "GujaratiScript",
+								"value": 17
+							},
+							{
+								"name": "HebrewScript",
+								"value": 18
+							},
+							{
+								"name": "JapaneseScript",
+								"value": 19
+							},
+							{
+								"name": "KhmerScript",
+								"value": 20
+							},
+							{
+								"name": "KannadaScript",
+								"value": 21
+							},
+							{
+								"name": "KoreanScript",
+								"value": 22
+							},
+							{
+								"name": "LaoScript",
+								"value": 23
+							},
+							{
+								"name": "MalayalamScript",
+								"value": 24
+							},
+							{
+								"name": "MyanmarScript",
+								"value": 25
+							},
+							{
+								"name": "OriyaScript",
+								"value": 26
+							},
+							{
+								"name": "TamilScript",
+								"value": 27
+							},
+							{
+								"name": "TeluguScript",
+								"value": 28
+							},
+							{
+								"name": "ThaanaScript",
+								"value": 29
+							},
+							{
+								"name": "ThaiScript",
+								"value": 30
+							},
+							{
+								"name": "TibetanScript",
+								"value": 31
+							},
+							{
+								"name": "SinhalaScript",
+								"value": 32
+							},
+							{
+								"name": "SyriacScript",
+								"value": 33
+							},
+							{
+								"name": "YiScript",
+								"value": 34
+							},
+							{
+								"name": "VaiScript",
+								"value": 35
+							},
+							{
+								"name": "AvestanScript",
+								"value": 36
+							},
+							{
+								"name": "BalineseScript",
+								"value": 37
+							},
+							{
+								"name": "BamumScript",
+								"value": 38
+							},
+							{
+								"name": "BatakScript",
+								"value": 39
+							},
+							{
+								"name": "BopomofoScript",
+								"value": 40
+							},
+							{
+								"name": "BrahmiScript",
+								"value": 41
+							},
+							{
+								"name": "BugineseScript",
+								"value": 42
+							},
+							{
+								"name": "BuhidScript",
+								"value": 43
+							},
+							{
+								"name": "CanadianAboriginalScript",
+								"value": 44
+							},
+							{
+								"name": "CarianScript",
+								"value": 45
+							},
+							{
+								"name": "ChakmaScript",
+								"value": 46
+							},
+							{
+								"name": "ChamScript",
+								"value": 47
+							},
+							{
+								"name": "CopticScript",
+								"value": 48
+							},
+							{
+								"name": "CypriotScript",
+								"value": 49
+							},
+							{
+								"name": "EgyptianHieroglyphsScript",
+								"value": 50
+							},
+							{
+								"name": "FraserScript",
+								"value": 51
+							},
+							{
+								"name": "GlagoliticScript",
+								"value": 52
+							},
+							{
+								"name": "GothicScript",
+								"value": 53
+							},
+							{
+								"name": "HanScript",
+								"value": 54
+							},
+							{
+								"name": "HangulScript",
+								"value": 55
+							},
+							{
+								"name": "HanunooScript",
+								"value": 56
+							},
+							{
+								"name": "ImperialAramaicScript",
+								"value": 57
+							},
+							{
+								"name": "InscriptionalPahlaviScript",
+								"value": 58
+							},
+							{
+								"name": "InscriptionalParthianScript",
+								"value": 59
+							},
+							{
+								"name": "JavaneseScript",
+								"value": 60
+							},
+							{
+								"name": "KaithiScript",
+								"value": 61
+							},
+							{
+								"name": "KatakanaScript",
+								"value": 62
+							},
+							{
+								"name": "KayahLiScript",
+								"value": 63
+							},
+							{
+								"name": "KharoshthiScript",
+								"value": 64
+							},
+							{
+								"name": "LannaScript",
+								"value": 65
+							},
+							{
+								"name": "LepchaScript",
+								"value": 66
+							},
+							{
+								"name": "LimbuScript",
+								"value": 67
+							},
+							{
+								"name": "LinearBScript",
+								"value": 68
+							},
+							{
+								"name": "LycianScript",
+								"value": 69
+							},
+							{
+								"name": "LydianScript",
+								"value": 70
+							},
+							{
+								"name": "MandaeanScript",
+								"value": 71
+							},
+							{
+								"name": "MeiteiMayekScript",
+								"value": 72
+							},
+							{
+								"name": "MeroiticScript",
+								"value": 73
+							},
+							{
+								"name": "MeroiticCursiveScript",
+								"value": 74
+							},
+							{
+								"name": "NkoScript",
+								"value": 75
+							},
+							{
+								"name": "NewTaiLueScript",
+								"value": 76
+							},
+							{
+								"name": "OghamScript",
+								"value": 77
+							},
+							{
+								"name": "OlChikiScript",
+								"value": 78
+							},
+							{
+								"name": "OldItalicScript",
+								"value": 79
+							},
+							{
+								"name": "OldPersianScript",
+								"value": 80
+							},
+							{
+								"name": "OldSouthArabianScript",
+								"value": 81
+							},
+							{
+								"name": "OrkhonScript",
+								"value": 82
+							},
+							{
+								"name": "OsmanyaScript",
+								"value": 83
+							},
+							{
+								"name": "PhagsPaScript",
+								"value": 84
+							},
+							{
+								"name": "PhoenicianScript",
+								"value": 85
+							},
+							{
+								"name": "PollardPhoneticScript",
+								"value": 86
+							},
+							{
+								"name": "RejangScript",
+								"value": 87
+							},
+							{
+								"name": "RunicScript",
+								"value": 88
+							},
+							{
+								"name": "SamaritanScript",
+								"value": 89
+							},
+							{
+								"name": "SaurashtraScript",
+								"value": 90
+							},
+							{
+								"name": "SharadaScript",
+								"value": 91
+							},
+							{
+								"name": "ShavianScript",
+								"value": 92
+							},
+							{
+								"name": "SoraSompengScript",
+								"value": 93
+							},
+							{
+								"name": "CuneiformScript",
+								"value": 94
+							},
+							{
+								"name": "SundaneseScript",
+								"value": 95
+							},
+							{
+								"name": "SylotiNagriScript",
+								"value": 96
+							},
+							{
+								"name": "TagalogScript",
+								"value": 97
+							},
+							{
+								"name": "TagbanwaScript",
+								"value": 98
+							},
+							{
+								"name": "TaiLeScript",
+								"value": 99
+							},
+							{
+								"name": "TaiVietScript",
+								"value": 100
+							},
+							{
+								"name": "TakriScript",
+								"value": 101
+							},
+							{
+								"name": "UgariticScript",
+								"value": 102
+							},
+							{
+								"name": "BrailleScript",
+								"value": 103
+							},
+							{
+								"name": "HiraganaScript",
+								"value": 104
+							},
+							{
+								"name": "CaucasianAlbanianScript",
+								"value": 105
+							},
+							{
+								"name": "BassaVahScript",
+								"value": 106
+							},
+							{
+								"name": "DuployanScript",
+								"value": 107
+							},
+							{
+								"name": "ElbasanScript",
+								"value": 108
+							},
+							{
+								"name": "GranthaScript",
+								"value": 109
+							},
+							{
+								"name": "PahawhHmongScript",
+								"value": 110
+							},
+							{
+								"name": "KhojkiScript",
+								"value": 111
+							},
+							{
+								"name": "LinearAScript",
+								"value": 112
+							},
+							{
+								"name": "MahajaniScript",
+								"value": 113
+							},
+							{
+								"name": "ManichaeanScript",
+								"value": 114
+							},
+							{
+								"name": "MendeKikakuiScript",
+								"value": 115
+							},
+							{
+								"name": "ModiScript",
+								"value": 116
+							},
+							{
+								"name": "MroScript",
+								"value": 117
+							},
+							{
+								"name": "OldNorthArabianScript",
+								"value": 118
+							},
+							{
+								"name": "NabataeanScript",
+								"value": 119
+							},
+							{
+								"name": "PalmyreneScript",
+								"value": 120
+							},
+							{
+								"name": "PauCinHauScript",
+								"value": 121
+							},
+							{
+								"name": "OldPermicScript",
+								"value": 122
+							},
+							{
+								"name": "PsalterPahlaviScript",
+								"value": 123
+							},
+							{
+								"name": "SiddhamScript",
+								"value": 124
+							},
+							{
+								"name": "KhudawadiScript",
+								"value": 125
+							},
+							{
+								"name": "TirhutaScript",
+								"value": 126
+							},
+							{
+								"name": "VarangKshitiScript",
+								"value": 127
+							},
+							{
+								"name": "AhomScript",
+								"value": 128
+							},
+							{
+								"name": "AnatolianHieroglyphsScript",
+								"value": 129
+							},
+							{
+								"name": "HatranScript",
+								"value": 130
+							},
+							{
+								"name": "MultaniScript",
+								"value": 131
+							},
+							{
+								"name": "OldHungarianScript",
+								"value": 132
+							},
+							{
+								"name": "SignWritingScript",
+								"value": 133
+							},
+							{
+								"name": "AdlamScript",
+								"value": 134
+							},
+							{
+								"name": "BhaiksukiScript",
+								"value": 135
+							},
+							{
+								"name": "MarchenScript",
+								"value": 136
+							},
+							{
+								"name": "NewaScript",
+								"value": 137
+							},
+							{
+								"name": "OsageScript",
+								"value": 138
+							},
+							{
+								"name": "TangutScript",
+								"value": 139
+							},
+							{
+								"name": "HanWithBopomofoScript",
+								"value": 140
+							},
+							{
+								"name": "JamoScript",
+								"value": 141
+							}
+						]
+					},
+					{
+						"name": "Country",
+						"values": [
+							{
+								"name": "AnyCountry",
+								"value": 0
+							},
+							{
+								"name": "Afghanistan",
+								"value": 1
+							},
+							{
+								"name": "Albania",
+								"value": 2
+							},
+							{
+								"name": "Algeria",
+								"value": 3
+							},
+							{
+								"name": "AmericanSamoa",
+								"value": 4
+							},
+							{
+								"name": "Andorra",
+								"value": 5
+							},
+							{
+								"name": "Angola",
+								"value": 6
+							},
+							{
+								"name": "Anguilla",
+								"value": 7
+							},
+							{
+								"name": "Antarctica",
+								"value": 8
+							},
+							{
+								"name": "AntiguaAndBarbuda",
+								"value": 9
+							},
+							{
+								"name": "Argentina",
+								"value": 10
+							},
+							{
+								"name": "Armenia",
+								"value": 11
+							},
+							{
+								"name": "Aruba",
+								"value": 12
+							},
+							{
+								"name": "Australia",
+								"value": 13
+							},
+							{
+								"name": "Austria",
+								"value": 14
+							},
+							{
+								"name": "Azerbaijan",
+								"value": 15
+							},
+							{
+								"name": "Bahamas",
+								"value": 16
+							},
+							{
+								"name": "Bahrain",
+								"value": 17
+							},
+							{
+								"name": "Bangladesh",
+								"value": 18
+							},
+							{
+								"name": "Barbados",
+								"value": 19
+							},
+							{
+								"name": "Belarus",
+								"value": 20
+							},
+							{
+								"name": "Belgium",
+								"value": 21
+							},
+							{
+								"name": "Belize",
+								"value": 22
+							},
+							{
+								"name": "Benin",
+								"value": 23
+							},
+							{
+								"name": "Bermuda",
+								"value": 24
+							},
+							{
+								"name": "Bhutan",
+								"value": 25
+							},
+							{
+								"name": "Bolivia",
+								"value": 26
+							},
+							{
+								"name": "BosniaAndHerzegowina",
+								"value": 27
+							},
+							{
+								"name": "Botswana",
+								"value": 28
+							},
+							{
+								"name": "BouvetIsland",
+								"value": 29
+							},
+							{
+								"name": "Brazil",
+								"value": 30
+							},
+							{
+								"name": "BritishIndianOceanTerritory",
+								"value": 31
+							},
+							{
+								"name": "Brunei",
+								"value": 32
+							},
+							{
+								"name": "Bulgaria",
+								"value": 33
+							},
+							{
+								"name": "BurkinaFaso",
+								"value": 34
+							},
+							{
+								"name": "Burundi",
+								"value": 35
+							},
+							{
+								"name": "Cambodia",
+								"value": 36
+							},
+							{
+								"name": "Cameroon",
+								"value": 37
+							},
+							{
+								"name": "Canada",
+								"value": 38
+							},
+							{
+								"name": "CapeVerde",
+								"value": 39
+							},
+							{
+								"name": "CaymanIslands",
+								"value": 40
+							},
+							{
+								"name": "CentralAfricanRepublic",
+								"value": 41
+							},
+							{
+								"name": "Chad",
+								"value": 42
+							},
+							{
+								"name": "Chile",
+								"value": 43
+							},
+							{
+								"name": "China",
+								"value": 44
+							},
+							{
+								"name": "ChristmasIsland",
+								"value": 45
+							},
+							{
+								"name": "CocosIslands",
+								"value": 46
+							},
+							{
+								"name": "Colombia",
+								"value": 47
+							},
+							{
+								"name": "Comoros",
+								"value": 48
+							},
+							{
+								"name": "CongoKinshasa",
+								"value": 49
+							},
+							{
+								"name": "CongoBrazzaville",
+								"value": 50
+							},
+							{
+								"name": "CookIslands",
+								"value": 51
+							},
+							{
+								"name": "CostaRica",
+								"value": 52
+							},
+							{
+								"name": "IvoryCoast",
+								"value": 53
+							},
+							{
+								"name": "Croatia",
+								"value": 54
+							},
+							{
+								"name": "Cuba",
+								"value": 55
+							},
+							{
+								"name": "Cyprus",
+								"value": 56
+							},
+							{
+								"name": "CzechRepublic",
+								"value": 57
+							},
+							{
+								"name": "Denmark",
+								"value": 58
+							},
+							{
+								"name": "Djibouti",
+								"value": 59
+							},
+							{
+								"name": "Dominica",
+								"value": 60
+							},
+							{
+								"name": "DominicanRepublic",
+								"value": 61
+							},
+							{
+								"name": "EastTimor",
+								"value": 62
+							},
+							{
+								"name": "Ecuador",
+								"value": 63
+							},
+							{
+								"name": "Egypt",
+								"value": 64
+							},
+							{
+								"name": "ElSalvador",
+								"value": 65
+							},
+							{
+								"name": "EquatorialGuinea",
+								"value": 66
+							},
+							{
+								"name": "Eritrea",
+								"value": 67
+							},
+							{
+								"name": "Estonia",
+								"value": 68
+							},
+							{
+								"name": "Ethiopia",
+								"value": 69
+							},
+							{
+								"name": "FalklandIslands",
+								"value": 70
+							},
+							{
+								"name": "FaroeIslands",
+								"value": 71
+							},
+							{
+								"name": "Fiji",
+								"value": 72
+							},
+							{
+								"name": "Finland",
+								"value": 73
+							},
+							{
+								"name": "France",
+								"value": 74
+							},
+							{
+								"name": "Guernsey",
+								"value": 75
+							},
+							{
+								"name": "FrenchGuiana",
+								"value": 76
+							},
+							{
+								"name": "FrenchPolynesia",
+								"value": 77
+							},
+							{
+								"name": "FrenchSouthernTerritories",
+								"value": 78
+							},
+							{
+								"name": "Gabon",
+								"value": 79
+							},
+							{
+								"name": "Gambia",
+								"value": 80
+							},
+							{
+								"name": "Georgia",
+								"value": 81
+							},
+							{
+								"name": "Germany",
+								"value": 82
+							},
+							{
+								"name": "Ghana",
+								"value": 83
+							},
+							{
+								"name": "Gibraltar",
+								"value": 84
+							},
+							{
+								"name": "Greece",
+								"value": 85
+							},
+							{
+								"name": "Greenland",
+								"value": 86
+							},
+							{
+								"name": "Grenada",
+								"value": 87
+							},
+							{
+								"name": "Guadeloupe",
+								"value": 88
+							},
+							{
+								"name": "Guam",
+								"value": 89
+							},
+							{
+								"name": "Guatemala",
+								"value": 90
+							},
+							{
+								"name": "Guinea",
+								"value": 91
+							},
+							{
+								"name": "GuineaBissau",
+								"value": 92
+							},
+							{
+								"name": "Guyana",
+								"value": 93
+							},
+							{
+								"name": "Haiti",
+								"value": 94
+							},
+							{
+								"name": "HeardAndMcDonaldIslands",
+								"value": 95
+							},
+							{
+								"name": "Honduras",
+								"value": 96
+							},
+							{
+								"name": "HongKong",
+								"value": 97
+							},
+							{
+								"name": "Hungary",
+								"value": 98
+							},
+							{
+								"name": "Iceland",
+								"value": 99
+							},
+							{
+								"name": "India",
+								"value": 100
+							},
+							{
+								"name": "Indonesia",
+								"value": 101
+							},
+							{
+								"name": "Iran",
+								"value": 102
+							},
+							{
+								"name": "Iraq",
+								"value": 103
+							},
+							{
+								"name": "Ireland",
+								"value": 104
+							},
+							{
+								"name": "Israel",
+								"value": 105
+							},
+							{
+								"name": "Italy",
+								"value": 106
+							},
+							{
+								"name": "Jamaica",
+								"value": 107
+							},
+							{
+								"name": "Japan",
+								"value": 108
+							},
+							{
+								"name": "Jordan",
+								"value": 109
+							},
+							{
+								"name": "Kazakhstan",
+								"value": 110
+							},
+							{
+								"name": "Kenya",
+								"value": 111
+							},
+							{
+								"name": "Kiribati",
+								"value": 112
+							},
+							{
+								"name": "NorthKorea",
+								"value": 113
+							},
+							{
+								"name": "SouthKorea",
+								"value": 114
+							},
+							{
+								"name": "Kuwait",
+								"value": 115
+							},
+							{
+								"name": "Kyrgyzstan",
+								"value": 116
+							},
+							{
+								"name": "Laos",
+								"value": 117
+							},
+							{
+								"name": "Latvia",
+								"value": 118
+							},
+							{
+								"name": "Lebanon",
+								"value": 119
+							},
+							{
+								"name": "Lesotho",
+								"value": 120
+							},
+							{
+								"name": "Liberia",
+								"value": 121
+							},
+							{
+								"name": "Libya",
+								"value": 122
+							},
+							{
+								"name": "Liechtenstein",
+								"value": 123
+							},
+							{
+								"name": "Lithuania",
+								"value": 124
+							},
+							{
+								"name": "Luxembourg",
+								"value": 125
+							},
+							{
+								"name": "Macau",
+								"value": 126
+							},
+							{
+								"name": "Macedonia",
+								"value": 127
+							},
+							{
+								"name": "Madagascar",
+								"value": 128
+							},
+							{
+								"name": "Malawi",
+								"value": 129
+							},
+							{
+								"name": "Malaysia",
+								"value": 130
+							},
+							{
+								"name": "Maldives",
+								"value": 131
+							},
+							{
+								"name": "Mali",
+								"value": 132
+							},
+							{
+								"name": "Malta",
+								"value": 133
+							},
+							{
+								"name": "MarshallIslands",
+								"value": 134
+							},
+							{
+								"name": "Martinique",
+								"value": 135
+							},
+							{
+								"name": "Mauritania",
+								"value": 136
+							},
+							{
+								"name": "Mauritius",
+								"value": 137
+							},
+							{
+								"name": "Mayotte",
+								"value": 138
+							},
+							{
+								"name": "Mexico",
+								"value": 139
+							},
+							{
+								"name": "Micronesia",
+								"value": 140
+							},
+							{
+								"name": "Moldova",
+								"value": 141
+							},
+							{
+								"name": "Monaco",
+								"value": 142
+							},
+							{
+								"name": "Mongolia",
+								"value": 143
+							},
+							{
+								"name": "Montserrat",
+								"value": 144
+							},
+							{
+								"name": "Morocco",
+								"value": 145
+							},
+							{
+								"name": "Mozambique",
+								"value": 146
+							},
+							{
+								"name": "Myanmar",
+								"value": 147
+							},
+							{
+								"name": "Namibia",
+								"value": 148
+							},
+							{
+								"name": "NauruCountry",
+								"value": 149
+							},
+							{
+								"name": "Nepal",
+								"value": 150
+							},
+							{
+								"name": "Netherlands",
+								"value": 151
+							},
+							{
+								"name": "CuraSao",
+								"value": 152
+							},
+							{
+								"name": "NewCaledonia",
+								"value": 153
+							},
+							{
+								"name": "NewZealand",
+								"value": 154
+							},
+							{
+								"name": "Nicaragua",
+								"value": 155
+							},
+							{
+								"name": "Niger",
+								"value": 156
+							},
+							{
+								"name": "Nigeria",
+								"value": 157
+							},
+							{
+								"name": "Niue",
+								"value": 158
+							},
+							{
+								"name": "NorfolkIsland",
+								"value": 159
+							},
+							{
+								"name": "NorthernMarianaIslands",
+								"value": 160
+							},
+							{
+								"name": "Norway",
+								"value": 161
+							},
+							{
+								"name": "Oman",
+								"value": 162
+							},
+							{
+								"name": "Pakistan",
+								"value": 163
+							},
+							{
+								"name": "Palau",
+								"value": 164
+							},
+							{
+								"name": "PalestinianTerritories",
+								"value": 165
+							},
+							{
+								"name": "Panama",
+								"value": 166
+							},
+							{
+								"name": "PapuaNewGuinea",
+								"value": 167
+							},
+							{
+								"name": "Paraguay",
+								"value": 168
+							},
+							{
+								"name": "Peru",
+								"value": 169
+							},
+							{
+								"name": "Philippines",
+								"value": 170
+							},
+							{
+								"name": "Pitcairn",
+								"value": 171
+							},
+							{
+								"name": "Poland",
+								"value": 172
+							},
+							{
+								"name": "Portugal",
+								"value": 173
+							},
+							{
+								"name": "PuertoRico",
+								"value": 174
+							},
+							{
+								"name": "Qatar",
+								"value": 175
+							},
+							{
+								"name": "Reunion",
+								"value": 176
+							},
+							{
+								"name": "Romania",
+								"value": 177
+							},
+							{
+								"name": "Russia",
+								"value": 178
+							},
+							{
+								"name": "Rwanda",
+								"value": 179
+							},
+							{
+								"name": "SaintKittsAndNevis",
+								"value": 180
+							},
+							{
+								"name": "SaintLucia",
+								"value": 181
+							},
+							{
+								"name": "SaintVincentAndTheGrenadines",
+								"value": 182
+							},
+							{
+								"name": "Samoa",
+								"value": 183
+							},
+							{
+								"name": "SanMarino",
+								"value": 184
+							},
+							{
+								"name": "SaoTomeAndPrincipe",
+								"value": 185
+							},
+							{
+								"name": "SaudiArabia",
+								"value": 186
+							},
+							{
+								"name": "Senegal",
+								"value": 187
+							},
+							{
+								"name": "Seychelles",
+								"value": 188
+							},
+							{
+								"name": "SierraLeone",
+								"value": 189
+							},
+							{
+								"name": "Singapore",
+								"value": 190
+							},
+							{
+								"name": "Slovakia",
+								"value": 191
+							},
+							{
+								"name": "Slovenia",
+								"value": 192
+							},
+							{
+								"name": "SolomonIslands",
+								"value": 193
+							},
+							{
+								"name": "Somalia",
+								"value": 194
+							},
+							{
+								"name": "SouthAfrica",
+								"value": 195
+							},
+							{
+								"name": "SouthGeorgiaAndTheSouthSandwichIslands",
+								"value": 196
+							},
+							{
+								"name": "Spain",
+								"value": 197
+							},
+							{
+								"name": "SriLanka",
+								"value": 198
+							},
+							{
+								"name": "SaintHelena",
+								"value": 199
+							},
+							{
+								"name": "SaintPierreAndMiquelon",
+								"value": 200
+							},
+							{
+								"name": "Sudan",
+								"value": 201
+							},
+							{
+								"name": "Suriname",
+								"value": 202
+							},
+							{
+								"name": "SvalbardAndJanMayenIslands",
+								"value": 203
+							},
+							{
+								"name": "Swaziland",
+								"value": 204
+							},
+							{
+								"name": "Sweden",
+								"value": 205
+							},
+							{
+								"name": "Switzerland",
+								"value": 206
+							},
+							{
+								"name": "Syria",
+								"value": 207
+							},
+							{
+								"name": "Taiwan",
+								"value": 208
+							},
+							{
+								"name": "Tajikistan",
+								"value": 209
+							},
+							{
+								"name": "Tanzania",
+								"value": 210
+							},
+							{
+								"name": "Thailand",
+								"value": 211
+							},
+							{
+								"name": "Togo",
+								"value": 212
+							},
+							{
+								"name": "TokelauCountry",
+								"value": 213
+							},
+							{
+								"name": "Tonga",
+								"value": 214
+							},
+							{
+								"name": "TrinidadAndTobago",
+								"value": 215
+							},
+							{
+								"name": "Tunisia",
+								"value": 216
+							},
+							{
+								"name": "Turkey",
+								"value": 217
+							},
+							{
+								"name": "Turkmenistan",
+								"value": 218
+							},
+							{
+								"name": "TurksAndCaicosIslands",
+								"value": 219
+							},
+							{
+								"name": "TuvaluCountry",
+								"value": 220
+							},
+							{
+								"name": "Uganda",
+								"value": 221
+							},
+							{
+								"name": "Ukraine",
+								"value": 222
+							},
+							{
+								"name": "UnitedArabEmirates",
+								"value": 223
+							},
+							{
+								"name": "UnitedKingdom",
+								"value": 224
+							},
+							{
+								"name": "UnitedStates",
+								"value": 225
+							},
+							{
+								"name": "UnitedStatesMinorOutlyingIslands",
+								"value": 226
+							},
+							{
+								"name": "Uruguay",
+								"value": 227
+							},
+							{
+								"name": "Uzbekistan",
+								"value": 228
+							},
+							{
+								"name": "Vanuatu",
+								"value": 229
+							},
+							{
+								"name": "VaticanCityState",
+								"value": 230
+							},
+							{
+								"name": "Venezuela",
+								"value": 231
+							},
+							{
+								"name": "Vietnam",
+								"value": 232
+							},
+							{
+								"name": "BritishVirginIslands",
+								"value": 233
+							},
+							{
+								"name": "UnitedStatesVirginIslands",
+								"value": 234
+							},
+							{
+								"name": "WallisAndFutunaIslands",
+								"value": 235
+							},
+							{
+								"name": "WesternSahara",
+								"value": 236
+							},
+							{
+								"name": "Yemen",
+								"value": 237
+							},
+							{
+								"name": "CanaryIslands",
+								"value": 238
+							},
+							{
+								"name": "Zambia",
+								"value": 239
+							},
+							{
+								"name": "Zimbabwe",
+								"value": 240
+							},
+							{
+								"name": "ClippertonIsland",
+								"value": 241
+							},
+							{
+								"name": "Montenegro",
+								"value": 242
+							},
+							{
+								"name": "Serbia",
+								"value": 243
+							},
+							{
+								"name": "SaintBarthelemy",
+								"value": 244
+							},
+							{
+								"name": "SaintMartin",
+								"value": 245
+							},
+							{
+								"name": "LatinAmerica",
+								"value": 246
+							},
+							{
+								"name": "AscensionIsland",
+								"value": 247
+							},
+							{
+								"name": "AlandIslands",
+								"value": 248
+							},
+							{
+								"name": "DiegoGarcia",
+								"value": 249
+							},
+							{
+								"name": "CeutaAndMelilla",
+								"value": 250
+							},
+							{
+								"name": "IsleOfMan",
+								"value": 251
+							},
+							{
+								"name": "Jersey",
+								"value": 252
+							},
+							{
+								"name": "TristanDaCunha",
+								"value": 253
+							},
+							{
+								"name": "SouthSudan",
+								"value": 254
+							},
+							{
+								"name": "Bonaire",
+								"value": 255
+							},
+							{
+								"name": "SintMaarten",
+								"value": 256
+							},
+							{
+								"name": "Kosovo",
+								"value": 257
+							},
+							{
+								"name": "EuropeanUnion",
+								"value": 258
+							},
+							{
+								"name": "OutlyingOceania",
+								"value": 259
+							},
+							{
+								"name": "World",
+								"value": 260
+							},
+							{
+								"name": "Europe",
+								"value": 261
+							}
+						]
+					},
+					{
+						"name": "MeasurementSystem",
+						"values": [
+							{
+								"name": "MetricSystem",
+								"value": 0
+							},
+							{
+								"name": "ImperialUSSystem",
+								"value": 1
+							},
+							{
+								"name": "ImperialUKSystem",
+								"value": 2
+							}
+						]
+					},
+					{
+						"name": "NumberOption",
+						"values": [
+							{
+								"name": "DefaultNumberOptions",
+								"value": 0
+							},
+							{
+								"name": "OmitGroupSeparator",
+								"value": 1
+							},
+							{
+								"name": "RejectGroupSeparator",
+								"value": 2
+							},
+							{
+								"name": "OmitLeadingZeroInExponent",
+								"value": 4
+							},
+							{
+								"name": "RejectLeadingZeroInExponent",
+								"value": 8
+							},
+							{
+								"name": "IncludeTrailingZeroesAfterDot",
+								"value": 16
+							},
+							{
+								"name": "RejectTrailingZeroesAfterDot",
+								"value": 32
+							}
+						]
+					}
+				],
+				"methods": [
+					{
+						"name": "QLocale",
+						"params": [
+							{
+								"defaultValue": "English",
+								"name": "language",
+								"type": "QLocale::Language"
+							},
+							{
+								"defaultValue": "AnyScript",
+								"name": "script",
+								"type": "QLocale::Script"
+							},
+							{
+								"defaultValue": "AnyCountry",
+								"name": "country",
+								"type": "QLocale::Country"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "language",
+						"retType": "QLocale::Language"
+					},
+					{
+						"isConst": true,
+						"name": "script",
+						"retType": "QLocale::Script"
+					},
+					{
+						"isConst": true,
+						"name": "country",
+						"retType": "QLocale::Country"
+					},
+					{
+						"isConst": true,
+						"name": "name",
+						"retType": "QString"
+					},
+					{
+						"isConst": true,
+						"name": "bcp47Name",
+						"retType": "QString"
+					},
+					{
+						"isConst": true,
+						"name": "nativeLanguageName",
+						"retType": "QString"
+					},
+					{
+						"isConst": true,
+						"name": "nativeCountryName",
+						"retType": "QString"
+					},
+					{
+						"isConst": true,
+						"name": "measurementSystem",
+						"retType": "QLocale::MeasurementSystem"
+					},
+					{
+						"isConst": true,
+						"name": "textDirection",
+						"retType": "Qt::LayoutDirection"
+					},
+					{
+						"isStaticMember": true,
+						"name": "setDefault",
+						"params": [
+							{
+								"name": "locale",
+								"type": "const QLocale &"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isStaticMember": true,
+						"name": "system",
+						"retType": "QLocale"
+					},
+					{
+						"isStaticMember": true,
+						"name": "matchingLocales",
+						"params": [
+							{
+								"defaultValue": "AnyLanguage",
+								"name": "language",
+								"type": "QLocale::Language"
+							},
+							{
+								"defaultValue": "AnyScript",
+								"name": "script",
+								"type": "QLocale::Script"
+							},
+							{
+								"defaultValue": "AnyCountry",
+								"name": "country",
+								"type": "QLocale::Country"
+							}
+						],
+						"retType": "QList<QLocale>"
+					},
+					{
+						"name": "setNumberOptions",
+						"params": [
+							{
+								"name": "options",
+								"type": "QLocale::NumberOption"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "numberOptions",
+						"retType": "QLocale::NumberOption"
+					}
+				],
+				"name": "QLocale",
+				"properties": [
+					{
+						"getter": "name",
+						"name": "name",
+						"type": "QString"
+					},
+					{
+						"getter": "numberOptions",
+						"name": "numberOptions",
+						"setter": "setNumberOptions",
+						"type": "QLocale::NumberOption"
+					}
+				]
+			}
+		],
 		"simpleIdentities": [
 			{
 				"name": "QTextCodec",
