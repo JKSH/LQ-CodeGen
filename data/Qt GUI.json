@@ -46,16 +46,45 @@
 				]
 			},
 			{
-				"name": "QColor",
 				"methods": [
 					{
 						"name": "QColor",
 						"params": [
-							{"name": "r", "type": "int"},
-							{"name": "g", "type": "int"},
-							{"name": "b", "type": "int"},
-							{"name": "a", "type": "int", "defaultValue": "255"}
-						]
+							{
+								"name": "rgb",
+								"type": "LQRgb"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "alpha",
+						"retType": "quint8"
+					},
+					{
+						"name": "setAlpha",
+						"params": [
+							{
+								"name": "alpha",
+								"type": "quint8"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "rgb",
+						"retType": "LQRgb"
+					}
+				],
+				"name": "QColor",
+				"properties": [
+					{
+						"getter": "alpha",
+						"name": "alpha",
+						"setter": "setAlpha",
+						"type": "quint8"
 					}
 				]
 			},
@@ -1221,6 +1250,14 @@
 						"type": "qreal"
 					}
 				]
+			}
+		],
+		"lqCustomCasts": [
+			{
+				"name": "LQRgb",
+				"dllType": "quint32",
+				"dll2bridge": "_dllValue_ | 0xff000000",
+				"qt2dll": "_qtValue_ & RGB_MASK"
 			}
 		]
 	}
