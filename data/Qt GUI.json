@@ -37,6 +37,7 @@
 						"retType": "void"
 					},
 					{
+						"isConst": true,
 						"name": "color", "retType": "QColor"
 					},
 					{
@@ -54,6 +55,41 @@
 					{
 						"isConst": true,
 						"name": "style", "retType": "Qt::BrushStyle"
+					},
+					{
+						"isConst": true,
+						"name": "texture",
+						"retType": "QPixmap"
+					},
+					{
+						"name": "setTexture",
+						"params": [
+							{
+								"name": "pixmap",
+								"type": "const QPixmap &"
+							}
+						],
+						"retType": "void"
+					}
+				],
+				"properties": [
+					{
+						"getter": "style",
+						"name": "style",
+						"setter": "setStyle",
+						"type": "Qt::BrushStyle"
+					},
+					{
+						"getter": "texture",
+						"name": "texture",
+						"setter": "setTexture",
+						"type": "QPixmap"
+					},
+					{
+						"getter": "color",
+						"name": "color",
+						"setter": "setColor",
+						"type": "QColor"
 					}
 				]
 			},
@@ -603,6 +639,118 @@
 				]
 			},
 			{
+				"enums": [
+					{
+						"name": "ColorGroup",
+						"values": [
+							{
+								"name": "Active",
+								"value": 0
+							},
+							{
+								"name": "Disabled",
+								"value": 1
+							},
+							{
+								"name": "Inactive",
+								"value": 2
+							},
+							{
+								"name": "All",
+								"value": 5
+							}
+						]
+					},
+					{
+						"name": "ColorRole",
+						"values": [
+							{
+								"name": "WindowText",
+								"value": 0
+							},
+							{
+								"name": "Button",
+								"value": 1
+							},
+							{
+								"name": "Light",
+								"value": 2
+							},
+							{
+								"name": "Midlight",
+								"value": 3
+							},
+							{
+								"name": "Dark",
+								"value": 4
+							},
+							{
+								"name": "Mid",
+								"value": 5
+							},
+							{
+								"name": "Text",
+								"value": 6
+							},
+							{
+								"name": "BrightText",
+								"value": 7
+							},
+							{
+								"name": "ButtonText",
+								"value": 8
+							},
+							{
+								"name": "Base",
+								"value": 9
+							},
+							{
+								"name": "Window",
+								"value": 10
+							},
+							{
+								"name": "Shadow",
+								"value": 11
+							},
+							{
+								"name": "Highlight",
+								"value": 12
+							},
+							{
+								"name": "HighlightedText",
+								"value": 13
+							},
+							{
+								"name": "Link",
+								"value": 14
+							},
+							{
+								"name": "LinkVisited",
+								"value": 15
+							},
+							{
+								"name": "AlternateBase",
+								"value": 16
+							},
+							{
+								"name": "NoRole",
+								"value": 17
+							},
+							{
+								"name": "ToolTipBase",
+								"value": 18
+							},
+							{
+								"name": "ToolTipText",
+								"value": 19
+							},
+							{
+								"name": "PlaceholderText",
+								"value": 20
+							}
+						]
+					}
+				],
 				"methods": [
 					{
 						"name": "QPalette",
@@ -613,6 +761,74 @@
 							}
 						],
 						"retType": "void"
+					},
+					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "colorGroup",
+									"index": 7
+								}
+							]
+						},
+						"isConst": true,
+						"name": "brush",
+						"params": [
+							{
+								"defaultValue": "All",
+								"name": "colorGroup",
+								"type": "QPalette::ColorGroup"
+							},
+							{
+								"defaultValue": "NoRole",
+								"name": "colorRole",
+								"type": "QPalette::ColorRole"
+							}
+						],
+						"retType": "const QBrush &"
+					},
+					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "colorGroup",
+									"index": 7
+								}
+							]
+						},
+						"name": "setBrush",
+						"params": [
+							{
+								"defaultValue": "All",
+								"name": "colorGroup",
+								"type": "QPalette::ColorGroup"
+							},
+							{
+								"defaultValue": "NoRole",
+								"name": "colorRole",
+								"type": "QPalette::ColorRole"
+							},
+							{
+								"name": "brush",
+								"type": "const QBrush &"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "isBrushSet",
+						"params": [
+							{
+								"name": "colorGroup",
+								"type": "QPalette::ColorGroup"
+							},
+							{
+								"name": "colorRole",
+								"type": "QPalette::ColorRole"
+							}
+						],
+						"retType": "bool"
 					}
 				],
 				"name": "QPalette"
@@ -651,9 +867,26 @@
 						"retType": "void"
 					},
 					{
+						"isConst": true,
 						"name": "dashOffset", "retType": "qreal"
 					},
 					{
+						"isConst": true,
+						"name": "style",
+						"retType": "Qt::PenStyle"
+					},
+					{
+						"name": "setStyle",
+						"params": [
+							{
+								"name": "style",
+								"type": "Qt::PenStyle"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
 						"name": "dashPattern", "retType": "QVector<qreal>"
 					},
 					{
@@ -661,6 +894,183 @@
 						"params": [
 							 {"name": "pattern", "type": "const QVector<qreal>&"}
 						]
+					},
+					{
+						"name": "setDashOffset",
+						"params": [
+							{
+								"name": "offset",
+								"type": "qreal"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "miterLimit",
+						"retType": "qreal"
+					},
+					{
+						"name": "setMiterLimit",
+						"params": [
+							{
+								"name": "limit",
+								"type": "qreal"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "widthF",
+						"retType": "qreal"
+					},
+					{
+						"name": "setWidthF",
+						"params": [
+							{
+								"name": "width",
+								"type": "qreal"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "color",
+						"retType": "QColor"
+					},
+					{
+						"name": "setColor",
+						"params": [
+							{
+								"name": "color",
+								"type": "const QColor &"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "brush",
+						"retType": "QBrush"
+					},
+					{
+						"name": "setBrush",
+						"params": [
+							{
+								"name": "brush",
+								"type": "const QBrush &"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "capStyle",
+						"retType": "Qt::PenCapStyle"
+					},
+					{
+						"name": "setCapStyle",
+						"params": [
+							{
+								"name": "capStyle",
+								"type": "Qt::PenCapStyle"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "joinStyle",
+						"retType": "Qt::PenJoinStyle"
+					},
+					{
+						"name": "setJoinStyle",
+						"params": [
+							{
+								"name": "joinStyle",
+								"type": "Qt::PenJoinStyle"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "isCosmetic",
+						"retType": "bool"
+					},
+					{
+						"name": "setCosmetic",
+						"params": [
+							{
+								"name": "cosmetic",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					}
+				],
+				"properties": [
+					{
+						"getter": "style",
+						"name": "style",
+						"setter": "setStyle",
+						"type": "Qt::PenStyle"
+					},
+					{
+						"getter": "dashPattern",
+						"name": "dashPattern",
+						"setter": "setDashPattern",
+						"type": "QVector<qreal>"
+					},
+					{
+						"getter": "dashOffset",
+						"name": "dashOffset",
+						"setter": "setDashOffset",
+						"type": "qreal"
+					},
+					{
+						"getter": "miterLimit",
+						"name": "miterLimit",
+						"setter": "setMiterLimit",
+						"type": "qreal"
+					},
+					{
+						"getter": "widthF",
+						"name": "width",
+						"setter": "setWidthF",
+						"type": "qreal"
+					},
+					{
+						"getter": "color",
+						"name": "color",
+						"setter": "setColor",
+						"type": "QColor"
+					},
+					{
+						"getter": "brush",
+						"name": "brush",
+						"setter": "setBrush",
+						"type": "QBrush"
+					},
+					{
+						"getter": "capStyle",
+						"name": "capStyle",
+						"setter": "setCapStyle",
+						"type": "Qt::PenCapStyle"
+					},
+					{
+						"getter": "joinStyle",
+						"name": "joinStyle",
+						"setter": "setJoinStyle",
+						"type": "Qt::PenJoinStyle"
+					},
+					{
+						"getter": "isCosmetic",
+						"name": "cosmetic",
+						"setter": "setCosmetic",
+						"type": "bool"
 					}
 				]
 			},

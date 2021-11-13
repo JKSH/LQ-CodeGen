@@ -76,6 +76,11 @@
 						"name": "minimumSize", "retType": "QSize"
 					},
 					{
+						"isConst": true,
+						"name": "palette",
+						"retType": "const QPalette &"
+					},
+					{
 						"name": "resize", "retType": "void",
 						"params": [
 							{"name": "size", "type": "const QSize&"}
@@ -128,6 +133,16 @@
 						"params": [
 							{"name": "size", "type": "const QSize&"}
 						]
+					},
+					{
+						"name": "setPalette",
+						"params": [
+							{
+								"name": "palette",
+								"type": "const QPalette &"
+							}
+						],
+						"retType": "void"
 					},
 					{
 						"name": "setStyleSheet", "retType": "void",
