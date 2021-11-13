@@ -22,7 +22,19 @@
 				"name": "QBrush",
 				"methods": [
 					{
-						"name": "QBrush"
+						"name": "QBrush",
+						"params": [
+							{
+								"name": "color",
+								"type": "LQRgb"
+							},
+							{
+								"defaultValue": "SolidPattern",
+								"name": "brushStyle",
+								"type": "Qt::BrushStyle"
+							}
+						],
+						"retType": "void"
 					},
 					{
 						"name": "color", "retType": "QColor"
@@ -591,10 +603,52 @@
 				]
 			},
 			{
+				"methods": [
+					{
+						"name": "QPalette",
+						"params": [
+							{
+								"name": "button",
+								"type": "LQRgb"
+							}
+						],
+						"retType": "void"
+					}
+				],
+				"name": "QPalette"
+			},
+			{
 				"name": "QPen",
 				"methods": [
 					{
-						"name": "QPen"
+						"name": "QPen",
+						"params": [
+							{
+								"name": "brush",
+								"type": "LQRgbBrush"
+							},
+							{
+								"defaultValue": "0",
+								"name": "width",
+								"type": "qreal"
+							},
+							{
+								"defaultValue": "SolidLine",
+								"name": "style",
+								"type": "Qt::PenStyle"
+							},
+							{
+								"defaultValue": "SquareCap",
+								"name": "capStyle",
+								"type": "Qt::PenCapStyle"
+							},
+							{
+								"defaultValue": "BevelJoin",
+								"name": "joinStyle",
+								"type": "Qt::PenJoinStyle"
+							}
+						],
+						"retType": "void"
 					},
 					{
 						"name": "dashOffset", "retType": "qreal"
@@ -1258,6 +1312,11 @@
 				"dllType": "quint32",
 				"dll2bridge": "_dllValue_ | 0xff000000",
 				"qt2dll": "_qtValue_ & RGB_MASK"
+			},
+			{
+				"name": "LQRgbBrush",
+				"dllType": "quint32",
+				"dll2bridge": "QBrush(_dllValue_ | 0xff000000)"
 			}
 		]
 	}
