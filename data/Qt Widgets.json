@@ -16,6 +16,30 @@
 				"name": "QApplication", "base": "QGuiApplication",
 				"methods": [
 					{
+						"name": "palette",
+						"params": [
+							{
+								"name": "className",
+								"type": "CString"
+							}
+						],
+						"retType": "QPalette"
+					},
+					{
+						"name": "setPalette",
+						"params": [
+							{
+								"name": "palette",
+								"type": "const QPalette &"
+							},
+							{
+								"name": "className",
+								"type": "CString"
+							}
+						],
+						"retType": "void"
+					},
+					{
 						"name": "setStyleSheet", "retType": "void",
 						"params": [
 							{"name": "sheet", "type": "const QString&"}
