@@ -19,6 +19,7 @@
 						"name": "palette",
 						"params": [
 							{
+								"defaultValue": "QWidget",
 								"name": "className",
 								"type": "CString"
 							}
@@ -33,6 +34,7 @@
 								"type": "const QPalette &"
 							},
 							{
+								"defaultValue": "QWidget",
 								"name": "className",
 								"type": "CString"
 							}
