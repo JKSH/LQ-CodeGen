@@ -9,8 +9,7 @@
 #include "lqlibinterface.h"
 #include "lqapplication.h"
 #include "lqextras/lqchart.h"
-#include <qwt_thermo.h>
-#include <qwt_slider.h>
+#include "lqwt.h"
 #include <QtWidgets>
 #include <QtSvg>
 #include <QtWinExtras>
