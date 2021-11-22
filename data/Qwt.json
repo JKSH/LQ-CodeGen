@@ -5,6 +5,12 @@
 	},
 	"name": "Qwt",
 	"typeCategories": {
+		"numerics": [
+			{
+				"name": "uint",
+				"dllType": "quint32"
+			}
+		],
 		"qObjects": [
 			{
 				"base": "QWidget",
@@ -222,7 +228,7 @@
 						"params": [
 							{
 								"name": "parent",
-								"type": "QWidget*"
+								"type": "QWidget *"
 							}
 						],
 						"retType": "void"
@@ -322,7 +328,7 @@
 						"params": [
 							{
 								"name": "brush",
-								"type": "const QBrush&"
+								"type": "const QBrush &"
 							}
 						],
 						"retType": "void"
@@ -337,7 +343,7 @@
 						"params": [
 							{
 								"name": "brush",
-								"type": "const QBrush&"
+								"type": "const QBrush &"
 							}
 						],
 						"retType": "void"
@@ -515,7 +521,7 @@
 						"params": [
 							{
 								"name": "totalSteps",
-								"type": "quint32"
+								"type": "uint"
 							}
 						],
 						"retType": "void"
@@ -523,14 +529,14 @@
 					{
 						"isConst": true,
 						"name": "totalSteps",
-						"retType": "quint32"
+						"retType": "uint"
 					},
 					{
 						"name": "setSingleSteps",
 						"params": [
 							{
 								"name": "singleSteps",
-								"type": "quint32"
+								"type": "uint"
 							}
 						],
 						"retType": "void"
@@ -538,14 +544,14 @@
 					{
 						"isConst": true,
 						"name": "singleSteps",
-						"retType": "quint32"
+						"retType": "uint"
 					},
 					{
 						"name": "setPageSteps",
 						"params": [
 							{
 								"name": "pageSteps",
-								"type": "quint32"
+								"type": "uint"
 							}
 						],
 						"retType": "void"
@@ -553,7 +559,7 @@
 					{
 						"isConst": true,
 						"name": "pageSteps",
-						"retType": "quint32"
+						"retType": "uint"
 					},
 					{
 						"name": "setStepAlignment",
@@ -619,7 +625,7 @@
 						"name": "setValue",
 						"params": [
 							{
-								"name": "val",
+								"name": "value",
 								"type": "double"
 							}
 						],
@@ -638,19 +644,19 @@
 						"getter": "totalSteps",
 						"name": "totalSteps",
 						"setter": "setTotalSteps",
-						"type": "quint32"
+						"type": "uint"
 					},
 					{
 						"getter": "singleSteps",
 						"name": "singleSteps",
 						"setter": "setSingleSteps",
-						"type": "quint32"
+						"type": "uint"
 					},
 					{
 						"getter": "pageSteps",
 						"name": "pageSteps",
 						"setter": "setPageSteps",
-						"type": "quint32"
+						"type": "uint"
 					},
 					{
 						"getter": "stepAlignment",
@@ -723,7 +729,7 @@
 							},
 							{
 								"name": "parent",
-								"type": "QWidget*"
+								"type": "QWidget *"
 							}
 						],
 						"retType": "void"
@@ -793,7 +799,7 @@
 						"params": [
 							{
 								"name": "size",
-								"type": "const QSize&"
+								"type": "const QSize &"
 							}
 						],
 						"retType": "void"
@@ -807,7 +813,7 @@
 						"name": "setBorderWidth",
 						"params": [
 							{
-								"name": "bw",
+								"name": "width",
 								"type": "int"
 							}
 						],
