@@ -123,6 +123,7 @@ int main(int, char **)
 		TypeConv::init(opaqueStructs, TypeConv::OpaqueStruct);
 		TypeConv::init(types["simpleContainers"].toArray(), TypeConv::SimpleContainer);
 		TypeConv::init(types["fullArrays"].toArray(), TypeConv::FullArray);
+		TypeConv::init(types["lqCustomCasts"].toArray(), TypeConv::LQCustomCast);
 		TypeConv::init(simpleIdentities, TypeConv::SimpleIdentity);
 		TypeConv::init(qObjects, TypeConv::QObject);
 

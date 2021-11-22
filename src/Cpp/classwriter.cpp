@@ -251,35 +251,31 @@ ClassWriter::funcCallBody_inLambda(const Method& method)
 
 		QString storeReturn;
 		QString retOp;
-		QString retConv;
 		switch (TypeConv::category(retType))
 		{
 		case TypeConv::Boolean:
 		case TypeConv::Numeric:
 		case TypeConv::Enum:
 		case TypeConv::SimpleStruct:
-			storeReturn = '*';
-			retOp       = '=';
-			retConv     = "retVal";
-			break;
 		case TypeConv::SimpleIdentity:
 		case TypeConv::QObject:
+		case TypeConv::LQCustomCast:
 			storeReturn = '*';
 			retOp       = '=';
-			retConv     = "reinterpret_cast<quintptr>(retVal)";
 			break;
 		case TypeConv::SimpleContainer:
 		case TypeConv::FullArray:
 		case TypeConv::OpaqueStruct:
 			retOp       = "<<";
-			retConv     = "retVal";
 			break;
 		default:
-			qWarning() << "WARNING: ClassWriter::funcCallBody_inDll(): This method cannot return:" << method.name();
+			qWarning() << "WARNING: ClassWriter::funcCallBody_inLambda(): This method cannot return:" << method.name();
 			break;
 		}
 
 		storeReturn += "_retVal " + retOp + ' ';
+
+		QString retConv = TypeConv::convCode_qt2Dll(retType).replace("_qtValue_", "retVal");
 		if (retConv == "retVal")
 		{
 			// If the expression is a single variable...

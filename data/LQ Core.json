@@ -7902,6 +7902,11 @@
 		],
 		"simpleContainers": [
 			{
+				"name": "CString",
+				"dllType": "const char*",
+				"dll2bridge": "_dllValue_"
+			},
+			{
 				"name": "QByteArray",
 				"dllType": "LStrHandle",
 				"dll2bridge": "LVString::to<QByteArray>(_dllValue_)"

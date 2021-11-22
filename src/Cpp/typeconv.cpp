@@ -109,6 +109,7 @@ TypeConv::dllType(const QString& qtType)
 		return tmp;
 	case Numeric:
 	case SimpleContainer:
+	case LQCustomCast:
 		return _bridge2dll[tmp].toObject()["dllType"].toString();
 	case Enum:
 		return "int32"; // ASSUMPTION: All enums fit in 32-bit integers
@@ -171,9 +172,34 @@ TypeConv::convCode_dll2Qt(const QString& qtType)
 	case SimpleIdentity:
 	case QObject:
 		return "reinterpret_cast<_qtType_>(_dllValue_)";
+	case LQCustomCast:
+		return _bridge2dll[tmp].toObject()["dll2bridge"].toString();
 	default:
 		qWarning() << "WARNING: TypeConv::convCode_dll2Qt(): Don't know how to convert" << qtType;
 		return QString();
 	}
 }
 
+QString
+TypeConv::convCode_qt2Dll(const QString& qtType)
+{
+	switch (TypeConv::category(qtType))
+	{
+	case TypeConv::Boolean:
+	case TypeConv::Numeric:
+	case TypeConv::Enum:
+	case TypeConv::SimpleStruct:
+	case TypeConv::OpaqueStruct:
+	case TypeConv::SimpleContainer:
+	case TypeConv::FullArray:
+		return "_qtValue_";
+	case TypeConv::SimpleIdentity:
+	case TypeConv::QObject:
+		return "reinterpret_cast<quintptr>(_qtValue_)";
+	case TypeConv::LQCustomCast:
+		return _bridge2dll[qtType].toObject()["qt2dll"].toString();
+	default:
+		qWarning() << "WARNING: TypeConv::convCode_qt2Dll(): Don't know how to convert" << qtType;
+		return QString();
+	}
+}

@@ -16,6 +16,32 @@
 				"name": "QApplication", "base": "QGuiApplication",
 				"methods": [
 					{
+						"name": "palette",
+						"params": [
+							{
+								"defaultValue": "QWidget",
+								"name": "className",
+								"type": "CString"
+							}
+						],
+						"retType": "QPalette"
+					},
+					{
+						"name": "setPalette",
+						"params": [
+							{
+								"name": "palette",
+								"type": "const QPalette &"
+							},
+							{
+								"defaultValue": "QWidget",
+								"name": "className",
+								"type": "CString"
+							}
+						],
+						"retType": "void"
+					},
+					{
 						"name": "setStyleSheet", "retType": "void",
 						"params": [
 							{"name": "sheet", "type": "const QString&"}
@@ -76,6 +102,11 @@
 						"name": "minimumSize", "retType": "QSize"
 					},
 					{
+						"isConst": true,
+						"name": "palette",
+						"retType": "const QPalette &"
+					},
+					{
 						"name": "resize", "retType": "void",
 						"params": [
 							{"name": "size", "type": "const QSize&"}
@@ -128,6 +159,16 @@
 						"params": [
 							{"name": "size", "type": "const QSize&"}
 						]
+					},
+					{
+						"name": "setPalette",
+						"params": [
+							{
+								"name": "palette",
+								"type": "const QPalette &"
+							}
+						],
+						"retType": "void"
 					},
 					{
 						"name": "setStyleSheet", "retType": "void",

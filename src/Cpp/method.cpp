@@ -90,6 +90,7 @@ Method::returnType_dll() const
 	case TypeConv::SimpleStruct:
 	case TypeConv::SimpleIdentity:
 	case TypeConv::QObject:
+	case TypeConv::LQCustomCast:
 		return retType_dll + '*'; // Parameter is returned to LabVIEW by pointer.
 	default:
 		qWarning() << "WARNING: Method::returnType_dll(): Unsupported return type:" << retType_qt;
@@ -119,6 +120,7 @@ Method::paramList_dll() const
 		case TypeConv::QObject:
 		case TypeConv::SimpleContainer: // TODO: Use Handle Pointers for containers, for efficiency
 		case TypeConv::FullArray:
+		case TypeConv::LQCustomCast:
 			break;
 		case TypeConv::OpaqueStruct:
 			param.type = "LStrHandle";
