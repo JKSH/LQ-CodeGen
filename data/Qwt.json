@@ -1132,6 +1132,20 @@
 						"retType": "void"
 					},
 					{
+						"name": "setAxisScaleDraw",
+						"params": [
+							{
+								"name": "axisId",
+								"type": "QwtAxis::Position"
+							},
+							{
+								"name": "scaleDraw",
+								"type": "QwtScaleDraw *"
+							}
+						],
+						"retType": "void"
+					},
+					{
 						"isConst": true,
 						"name": "axisStepSize",
 						"params": [
@@ -1141,6 +1155,16 @@
 							}
 						],
 						"retType": "double"
+					},
+					{
+						"name": "axisScaleDraw",
+						"params": [
+							{
+								"name": "axisId",
+								"type": "QwtAxis::Position"
+							}
+						],
+						"retType": "QwtScaleDraw *"
 					},
 					{
 						"name": "setAxisLabelAlignment",
@@ -1262,6 +1286,28 @@
 			}
 		],
 		"simpleIdentities": [
+			{
+				"enums": [
+					{
+						"name": "FrameStyle",
+						"values": [
+							{
+								"name": "NoFrame",
+								"value": 0
+							},
+							{
+								"name": "Plain",
+								"value": 1
+							},
+							{
+								"name": "Raised",
+								"value": 2
+							}
+						]
+					}
+				],
+				"name": "QwtColumnSymbol"
+			},
 			{
 				"methods": [
 					{
@@ -1682,6 +1728,368 @@
 					}
 				],
 				"name": "QwtPlotCurve"
+			},
+			{
+				"base": "QwtPlotSeriesItem",
+				"enums": [
+					{
+						"name": "LayoutPolicy",
+						"values": [
+							{
+								"name": "AutoAdjustSamples",
+								"value": 0
+							},
+							{
+								"name": "ScaleSamplesToAxes",
+								"value": 1
+							},
+							{
+								"name": "ScaleSampleToCanvas",
+								"value": 2
+							},
+							{
+								"name": "FixedSampleSize",
+								"value": 3
+							}
+						]
+					}
+				],
+				"methods": [
+					{
+						"name": "setLayoutPolicy",
+						"params": [
+							{
+								"name": "policy",
+								"type": "QwtPlotAbstractBarChart::LayoutPolicy"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "layoutPolicy",
+						"retType": "QwtPlotAbstractBarChart::LayoutPolicy"
+					},
+					{
+						"name": "setLayoutHint",
+						"params": [
+							{
+								"name": "hint",
+								"type": "double"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "layoutHint",
+						"retType": "double"
+					},
+					{
+						"name": "setSpacing",
+						"params": [
+							{
+								"name": "spacing",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "spacing",
+						"retType": "int"
+					},
+					{
+						"name": "setMargin",
+						"params": [
+							{
+								"name": "margin",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "margin",
+						"retType": "int"
+					},
+					{
+						"name": "setBaseline",
+						"params": [
+							{
+								"name": "baseline",
+								"type": "double"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "baseline",
+						"retType": "double"
+					}
+				],
+				"name": "QwtPlotAbstractBarChart",
+				"properties": [
+					{
+						"getter": "layoutPolicy",
+						"name": "layoutPolicy",
+						"setter": "setLayoutPolicy",
+						"type": "LayoutPolicy"
+					},
+					{
+						"getter": "layoutHint",
+						"name": "layoutHint",
+						"setter": "setLayoutHint",
+						"type": "double"
+					},
+					{
+						"getter": "spacing",
+						"name": "spacing",
+						"setter": "setSpacing",
+						"type": "int"
+					},
+					{
+						"getter": "margin",
+						"name": "margin",
+						"setter": "setMargin",
+						"type": "int"
+					},
+					{
+						"getter": "baseline",
+						"name": "baseline",
+						"setter": "setBaseline",
+						"type": "double"
+					}
+				]
+			},
+			{
+				"base": "QwtPlotAbstractBarChart",
+				"enums": [
+					{
+						"name": "LegendMode",
+						"values": [
+							{
+								"name": "LegendChartTitle",
+								"value": 0
+							},
+							{
+								"name": "LegendBarTitles",
+								"value": 1
+							}
+						]
+					}
+				],
+				"methods": [
+					{
+						"name": "setSamples",
+						"params": [
+							{
+								"name": "samples",
+								"type": "const QVector<double> &"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setLegendMode",
+						"params": [
+							{
+								"name": "mode",
+								"type": "QwtPlotBarChart::LegendMode"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "legendMode",
+						"retType": "QwtPlotBarChart::LegendMode"
+					}
+				],
+				"name": "QwtPlotBarChart",
+				"properties": [
+					{
+						"getter": "legendMode",
+						"name": "legendMode",
+						"setter": "setLegendMode",
+						"type": "LegendMode"
+					}
+				]
+			},
+			{
+				"enums": [
+					{
+						"name": "ScaleComponent",
+						"values": [
+							{
+								"name": "Backbone",
+								"value": 1
+							},
+							{
+								"name": "Ticks",
+								"value": 2
+							},
+							{
+								"name": "Labels",
+								"value": 4
+							}
+						]
+					}
+				],
+				"methods": [
+					{
+						"name": "enableComponent",
+						"params": [
+							{
+								"name": "component",
+								"type": "QwtAbstractScaleDraw::ScaleComponent"
+							},
+							{
+								"name": "enable",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "hasComponent",
+						"params": [
+							{
+								"name": "component",
+								"type": "QwtAbstractScaleDraw::ScaleComponent"
+							}
+						],
+						"retType": "bool"
+					},
+					{
+						"name": "setSpacing",
+						"params": [
+							{
+								"name": "spacing",
+								"type": "double"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "spacing",
+						"retType": "double"
+					},
+					{
+						"name": "setPenWidthF",
+						"params": [
+							{
+								"name": "width",
+								"type": "qreal"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "penWidthF",
+						"retType": "qreal"
+					}
+				],
+				"name": "QwtAbstractScaleDraw",
+				"properties": [
+					{
+						"getter": "spacing",
+						"name": "spacing",
+						"setter": "setSpacing",
+						"type": "double"
+					},
+					{
+						"getter": "penWidthF",
+						"name": "penWidth",
+						"setter": "setPenWidthF",
+						"type": "double"
+					}
+				]
+			},
+			{
+				"base": "QwtAbstractScaleDraw",
+				"enums": [
+					{
+						"name": "Alignment",
+						"values": [
+							{
+								"name": "BottomScale",
+								"value": 0
+							},
+							{
+								"name": "TopScale",
+								"value": 1
+							},
+							{
+								"name": "LeftScale",
+								"value": 2
+							},
+							{
+								"name": "RightScale",
+								"value": 3
+							}
+						]
+					}
+				],
+				"methods": [
+					{
+						"isConst": true,
+						"name": "alignment",
+						"retType": "QwtScaleDraw::Alignment"
+					},
+					{
+						"name": "setAlignment",
+						"params": [
+							{
+								"name": "alignment",
+								"type": "QwtScaleDraw::Alignment"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "orientation",
+						"retType": "Qt::Orientation"
+					},
+					{
+						"name": "setLabelAlignment",
+						"params": [
+							{
+								"name": "alignment",
+								"type": "Qt::AlignmentFlag"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "labelAlignment",
+						"retType": "Qt::AlignmentFlag"
+					},
+					{
+						"name": "setLabelRotation",
+						"params": [
+							{
+								"name": "rotation",
+								"type": "double"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "labelRotation",
+						"retType": "double"
+					}
+				],
+				"name": "QwtScaleDraw"
 			},
 			{
 				"enums": [

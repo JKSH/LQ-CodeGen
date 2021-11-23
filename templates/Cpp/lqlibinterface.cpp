@@ -8,8 +8,7 @@
 
 #include "lqlibinterface.h"
 #include "lqapplication.h"
-#include "lqextras/lqchart.h"
-#include "lqwt.h"
+#include "lqextras.h"
 #include <QtWidgets>
 #include <QtSvg>
 #include <QtWinExtras>
