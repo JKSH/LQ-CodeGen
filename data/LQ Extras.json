@@ -88,6 +88,100 @@
 				]
 			}
 		],
+        "simpleIdentities": [
+            {
+                "base": "QwtPlotBarChart",
+                "methods": [
+                    {
+                        "name": "LQwtPlotBarChart",
+                        "params": [
+                            {
+                                "name": "title",
+                                "type": "const QString &"
+                            }
+                        ],
+                        "retType": "void"
+                    },
+                    {
+                        "isConst": true,
+                        "name": "barFrameStyle",
+                        "retType": "QwtColumnSymbol::FrameStyle"
+                    },
+                    {
+                        "name": "setBarFrameStyle",
+                        "params": [
+                            {
+                                "name": "style",
+                                "type": "QwtColumnSymbol::FrameStyle"
+                            }
+                        ],
+                        "retType": "void"
+                    },
+                    {
+                        "isConst": true,
+                        "name": "barFrameLineWidth",
+                        "retType": "int"
+                    },
+                    {
+                        "name": "setBarFrameLineWidth",
+                        "params": [
+                            {
+                                "name": "width",
+                                "type": "int"
+                            }
+                        ],
+                        "retType": "void"
+                    },
+                    {
+                        "isConst": true,
+                        "name": "barPalette",
+                        "retType": "QPalette"
+                    },
+                    {
+                        "name": "setBarPalette",
+                        "params": [
+                            {
+                                "name": "palette",
+                                "type": "const QPalette &"
+                            }
+                        ],
+                        "retType": "void"
+                    }
+                ],
+                "name": "LQwtPlotBarChart"
+            },
+            {
+                "base": "QwtScaleDraw",
+                "methods": [
+                    {
+                        "name": "LQwtTextScaleDraw",
+                        "params": [
+                            {
+                                "name": "labels",
+                                "type": "const QStringList &"
+                            }
+                        ],
+                        "retType": "void"
+                    },
+                    {
+                        "isConst": true,
+                        "name": "labels",
+                        "retType": "QStringList"
+                    },
+                    {
+                        "name": "setLabels",
+                        "params": [
+                            {
+                                "name": "labels",
+                                "type": "const QStringList &"
+                            }
+                        ],
+                        "retType": "void"
+                    }
+                ],
+                "name": "LQwtTextScaleDraw"
+            }
+        ],
 		"fullArrays": [
 			{
 				"name": "LQTable<%QT_TYPE_INNER%>",

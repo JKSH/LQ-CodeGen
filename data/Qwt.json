@@ -1,10 +1,51 @@
 {
 	"labviewDocumentation": {
-		"classUrlFormat": "http://qwt.sourceforge.net/class_<CLASS_NAME_UNDERSCORED_LOWERCASE>.html",
-		"methodUrlFormat": "http://qwt.sourceforge.net/class_<CLASS_NAME_UNDERSCORED_LOWERCASE>.html#<METHOD_NAME>"
+		"classUrlFormat": "https://qwt.sourceforge.io/class_<CLASS_NAME_UNDERSCORED_LOWERCASE>.html",
+		"methodUrlFormat": "https://qwt.sourceforge.io/class_<CLASS_NAME_UNDERSCORED_LOWERCASE>.html#<METHOD_NAME>"
 	},
 	"name": "Qwt",
+	"namespaces": [
+		{
+			"enums": [
+				{
+					"name": "Position",
+					"values": [
+						{
+							"name": "YLeft",
+							"value": 0
+						},
+						{
+							"name": "YRight",
+							"value": 1
+						},
+						{
+							"name": "XBottom",
+							"value": 2
+						},
+						{
+							"name": "XTop",
+							"value": 3
+						}
+					]
+				}
+			],
+			"name": "QwtAxis"
+		}
+	],
 	"typeCategories": {
+		"numerics": [
+			{
+				"name": "uint",
+				"dllType": "quint32"
+			}
+		],
+		"simpleContainers": [
+			{
+				"name": "QwtText",
+				"dllType": "LStrHandle",
+				"dll2bridge": "LVString::to<QwtText>(_dllValue_)"
+			}
+		],
 		"qObjects": [
 			{
 				"base": "QWidget",
@@ -222,7 +263,7 @@
 						"params": [
 							{
 								"name": "parent",
-								"type": "QWidget*"
+								"type": "QWidget *"
 							}
 						],
 						"retType": "void"
@@ -322,7 +363,7 @@
 						"params": [
 							{
 								"name": "brush",
-								"type": "const QBrush&"
+								"type": "const QBrush &"
 							}
 						],
 						"retType": "void"
@@ -337,7 +378,7 @@
 						"params": [
 							{
 								"name": "brush",
-								"type": "const QBrush&"
+								"type": "const QBrush &"
 							}
 						],
 						"retType": "void"
@@ -515,7 +556,7 @@
 						"params": [
 							{
 								"name": "totalSteps",
-								"type": "quint32"
+								"type": "uint"
 							}
 						],
 						"retType": "void"
@@ -523,14 +564,14 @@
 					{
 						"isConst": true,
 						"name": "totalSteps",
-						"retType": "quint32"
+						"retType": "uint"
 					},
 					{
 						"name": "setSingleSteps",
 						"params": [
 							{
 								"name": "singleSteps",
-								"type": "quint32"
+								"type": "uint"
 							}
 						],
 						"retType": "void"
@@ -538,14 +579,14 @@
 					{
 						"isConst": true,
 						"name": "singleSteps",
-						"retType": "quint32"
+						"retType": "uint"
 					},
 					{
 						"name": "setPageSteps",
 						"params": [
 							{
 								"name": "pageSteps",
-								"type": "quint32"
+								"type": "uint"
 							}
 						],
 						"retType": "void"
@@ -553,7 +594,7 @@
 					{
 						"isConst": true,
 						"name": "pageSteps",
-						"retType": "quint32"
+						"retType": "uint"
 					},
 					{
 						"name": "setStepAlignment",
@@ -619,7 +660,7 @@
 						"name": "setValue",
 						"params": [
 							{
-								"name": "val",
+								"name": "value",
 								"type": "double"
 							}
 						],
@@ -638,19 +679,19 @@
 						"getter": "totalSteps",
 						"name": "totalSteps",
 						"setter": "setTotalSteps",
-						"type": "quint32"
+						"type": "uint"
 					},
 					{
 						"getter": "singleSteps",
 						"name": "singleSteps",
 						"setter": "setSingleSteps",
-						"type": "quint32"
+						"type": "uint"
 					},
 					{
 						"getter": "pageSteps",
 						"name": "pageSteps",
 						"setter": "setPageSteps",
-						"type": "quint32"
+						"type": "uint"
 					},
 					{
 						"getter": "stepAlignment",
@@ -723,7 +764,7 @@
 							},
 							{
 								"name": "parent",
-								"type": "QWidget*"
+								"type": "QWidget *"
 							}
 						],
 						"retType": "void"
@@ -793,7 +834,7 @@
 						"params": [
 							{
 								"name": "size",
-								"type": "const QSize&"
+								"type": "const QSize &"
 							}
 						],
 						"retType": "void"
@@ -807,7 +848,7 @@
 						"name": "setBorderWidth",
 						"params": [
 							{
-								"name": "bw",
+								"name": "width",
 								"type": "int"
 							}
 						],
@@ -899,6 +940,27 @@
 				"base": "QFrame",
 				"enums": [
 					{
+						"name": "LegendPosition",
+						"values": [
+							{
+								"name": "LeftLegend",
+								"value": 0
+							},
+							{
+								"name": "RightLegend",
+								"value": 1
+							},
+							{
+								"name": "BottomLegend",
+								"value": 2
+							},
+							{
+								"name": "TopLegend",
+								"value": 3
+							}
+						]
+					},
+					{
 						"name": "Axis",
 						"values": [
 							{
@@ -920,7 +982,1219 @@
 						]
 					}
 				],
-				"name": "QwtPlot"
+				"methods": [
+					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
+						"name": "QwtPlot",
+						"params": [
+							{
+								"name": "title",
+								"type": "const QwtText &"
+							},
+							{
+								"name": "parent",
+								"type": "QWidget *"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setTitle",
+						"params": [
+							{
+								"name": "title",
+								"type": "const QString &"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "title",
+						"retType": "QwtText"
+					},
+					{
+						"name": "setCanvasBackground",
+						"params": [
+							{
+								"name": "brush",
+								"type": "const QBrush &"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "canvasBackground",
+						"retType": "QBrush"
+					},
+					{
+						"name": "axisScaleEngine",
+						"params": [
+							{
+								"name": "axisId",
+								"type": "QwtAxis::Position"
+							}
+						],
+						"retType": "QwtScaleEngine *"
+					},
+					{
+						"name": "setAxisScaleEngine",
+						"params": [
+							{
+								"name": "axisId",
+								"type": "QwtAxis::Position"
+							},
+							{
+								"name": "engine",
+								"type": "QwtScaleEngine *"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setAxisAutoScale",
+						"params": [
+							{
+								"name": "axisId",
+								"type": "QwtAxis::Position"
+							},
+							{
+								"name": "on",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "axisAutoScale",
+						"params": [
+							{
+								"name": "axisId",
+								"type": "QwtAxis::Position"
+							}
+						],
+						"retType": "bool"
+					},
+					{
+						"name": "setAxisFont",
+						"params": [
+							{
+								"name": "axisId",
+								"type": "QwtAxis::Position"
+							},
+							{
+								"name": "font",
+								"type": "const QFont &"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "axisFont",
+						"params": [
+							{
+								"name": "axisId",
+								"type": "QwtAxis::Position"
+							}
+						],
+						"retType": "QFont"
+					},
+					{
+						"name": "setAxisScale",
+						"params": [
+							{
+								"name": "axisId",
+								"type": "QwtAxis::Position"
+							},
+							{
+								"name": "min",
+								"type": "double"
+							},
+							{
+								"name": "max",
+								"type": "double"
+							},
+							{
+								"name": "stepSize",
+								"type": "double"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setAxisScaleDraw",
+						"params": [
+							{
+								"name": "axisId",
+								"type": "QwtAxis::Position"
+							},
+							{
+								"name": "scaleDraw",
+								"type": "QwtScaleDraw *"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "axisStepSize",
+						"params": [
+							{
+								"name": "axisId",
+								"type": "QwtAxis::Position"
+							}
+						],
+						"retType": "double"
+					},
+					{
+						"name": "axisScaleDraw",
+						"params": [
+							{
+								"name": "axisId",
+								"type": "QwtAxis::Position"
+							}
+						],
+						"retType": "QwtScaleDraw *"
+					},
+					{
+						"name": "setAxisLabelAlignment",
+						"params": [
+							{
+								"name": "axisId",
+								"type": "QwtAxis::Position"
+							},
+							{
+								"name": "alignment",
+								"type": "Qt::AlignmentFlag"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setAxisLabelRotation",
+						"params": [
+							{
+								"name": "axisId",
+								"type": "QwtAxis::Position"
+							},
+							{
+								"name": "rotation",
+								"type": "double"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setAxisTitle",
+						"params": [
+							{
+								"name": "axisId",
+								"type": "QwtAxis::Position"
+							},
+							{
+								"name": "title",
+								"type": "const QString &"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "axisTitle",
+						"params": [
+							{
+								"name": "axisId",
+								"type": "QwtAxis::Position"
+							}
+						],
+						"retType": "QwtText"
+					},
+					{
+						"name": "setAxisMaxMinor",
+						"params": [
+							{
+								"name": "axisId",
+								"type": "QwtAxis::Position"
+							},
+							{
+								"name": "maxMinor",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "axisMaxMinor",
+						"params": [
+							{
+								"name": "axisId",
+								"type": "QwtAxis::Position"
+							}
+						],
+						"retType": "int"
+					},
+					{
+						"name": "setAxisMaxMajor",
+						"params": [
+							{
+								"name": "axisId",
+								"type": "QwtAxis::Position"
+							},
+							{
+								"name": "maxMajor",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "axisMaxMajor",
+						"params": [
+							{
+								"name": "axisId",
+								"type": "QwtAxis::Position"
+							}
+						],
+						"retType": "int"
+					},
+					{
+						"name": "replot",
+						"retType": "void"
+					}
+				],
+				"name": "QwtPlot",
+				"properties": [
+					{
+						"getter": "canvasBackground",
+						"name": "canvasBackground",
+						"setter": "setCanvasBackground",
+						"type": "QBrush"
+					}
+				]
+			}
+		],
+		"simpleIdentities": [
+			{
+				"enums": [
+					{
+						"name": "FrameStyle",
+						"values": [
+							{
+								"name": "NoFrame",
+								"value": 0
+							},
+							{
+								"name": "Plain",
+								"value": 1
+							},
+							{
+								"name": "Raised",
+								"value": 2
+							}
+						]
+					}
+				],
+				"name": "QwtColumnSymbol"
+			},
+			{
+				"methods": [
+					{
+						"name": "attach",
+						"params": [
+							{
+								"name": "plot",
+								"type": "QwtPlot *"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "detach",
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "plot",
+						"retType": "QwtPlot *"
+					},
+					{
+						"name": "setTitle",
+						"params": [
+							{
+								"name": "title",
+								"type": "const QString &"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "title",
+						"retType": "const QwtText &"
+					},
+					{
+						"name": "setLegendIconSize",
+						"params": [
+							{
+								"name": "size",
+								"type": "const QSize &"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "legendIconSize",
+						"retType": "QSize"
+					},
+					{
+						"isConst": true,
+						"name": "z",
+						"retType": "double"
+					},
+					{
+						"name": "setZ",
+						"params": [
+							{
+								"name": "z",
+								"type": "double"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setVisible",
+						"params": [
+							{
+								"name": "visible",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "isVisible",
+						"retType": "bool"
+					},
+					{
+						"name": "setXAxis",
+						"params": [
+							{
+								"name": "axis",
+								"type": "QwtAxis::Position"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "xAxis",
+						"retType": "QwtAxis::Position"
+					},
+					{
+						"name": "setYAxis",
+						"params": [
+							{
+								"name": "axis",
+								"type": "QwtAxis::Position"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "yAxis",
+						"retType": "QwtAxis::Position"
+					}
+				],
+				"name": "QwtPlotItem",
+				"properties": [
+					{
+						"getter": "title",
+						"name": "title",
+						"setter": "setTitle",
+						"type": "QwtText"
+					},
+					{
+						"getter": "legendIconSize",
+						"name": "legendIconSize",
+						"setter": "setLegendIconSize",
+						"type": "QSize"
+					},
+					{
+						"getter": "z",
+						"name": "z",
+						"setter": "setZ",
+						"type": "double"
+					},
+					{
+						"getter": "isVisible",
+						"name": "visible",
+						"setter": "setVisible",
+						"type": "bool"
+					},
+					{
+						"getter": "xAxis",
+						"name": "xAxis",
+						"setter": "setXAxis",
+						"type": "QwtPlot::Axis"
+					},
+					{
+						"getter": "yAxis",
+						"name": "yAxis",
+						"setter": "setYAxis",
+						"type": "QwtPlot::Axis"
+					}
+				]
+			},
+			{
+				"base": "QwtPlotItem",
+				"methods": [
+					{
+						"name": "setOrientation",
+						"params": [
+							{
+								"name": "orientation",
+								"type": "Qt::Orientation"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "orientation",
+						"retType": "Qt::Orientation"
+					}
+				],
+				"name": "QwtPlotSeriesItem",
+				"properties": [
+					{
+						"getter": "orientation",
+						"name": "orientation",
+						"setter": "setOrientation",
+						"type": "Qt::Orientation"
+					}
+				]
+			},
+			{
+				"base": "QwtPlotSeriesItem",
+				"enums": [
+					{
+						"name": "CurveStyle",
+						"values": [
+							{
+								"name": "NoCurve",
+								"value": -1
+							},
+							{
+								"name": "Lines",
+								"value": 0
+							},
+							{
+								"name": "Sticks",
+								"value": 1
+							},
+							{
+								"name": "Steps",
+								"value": 2
+							},
+							{
+								"name": "Dots",
+								"value": 3
+							},
+							{
+								"name": "UserCurve",
+								"value": 100
+							}
+						]
+					},
+					{
+						"name": "CurveAttribute",
+						"values": [
+							{
+								"name": "Inverted",
+								"value": 1
+							},
+							{
+								"name": "Fitted",
+								"value": 2
+							}
+						]
+					},
+					{
+						"name": "LegendAttribute",
+						"values": [
+							{
+								"name": "LegendNoAttribute",
+								"value": 0
+							},
+							{
+								"name": "LegendShowLine",
+								"value": 1
+							},
+							{
+								"name": "LegendShowSymbol",
+								"value": 2
+							},
+							{
+								"name": "LegendShowBrush",
+								"value": 4
+							}
+						]
+					},
+					{
+						"name": "PaintAttribute",
+						"values": [
+							{
+								"name": "ClipPolygons",
+								"value": 1
+							},
+							{
+								"name": "FilterPoints",
+								"value": 2
+							},
+							{
+								"name": "MinimizeMemory",
+								"value": 4
+							},
+							{
+								"name": "ImageBuffer",
+								"value": 8
+							},
+							{
+								"name": "FilterPointsAggressive",
+								"value": 16
+							}
+						]
+					}
+				],
+				"methods": [
+					{
+						"name": "QwtPlotCurve",
+						"params": [
+							{
+								"name": "title",
+								"type": "const QString &"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setPaintAttribute",
+						"params": [
+							{
+								"name": "attribute",
+								"type": "QwtPlotCurve::PaintAttribute"
+							},
+							{
+								"name": "on",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "testPaintAttribute",
+						"params": [
+							{
+								"name": "attribute",
+								"type": "QwtPlotCurve::PaintAttribute"
+							}
+						],
+						"retType": "bool"
+					},
+					{
+						"name": "setLegendAttribute",
+						"params": [
+							{
+								"name": "attribute",
+								"type": "QwtPlotCurve::LegendAttribute"
+							},
+							{
+								"name": "on",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "testLegendAttribute",
+						"params": [
+							{
+								"name": "attribute",
+								"type": "QwtPlotCurve::LegendAttribute"
+							}
+						],
+						"retType": "bool"
+					},
+					{
+						"name": "setSamples",
+						"params": [
+							{
+								"name": "xData",
+								"type": "const QVector<double> &"
+							},
+							{
+								"name": "yData",
+								"type": "const QVector<double> &"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setCurveAttribute",
+						"params": [
+							{
+								"name": "attribute",
+								"type": "QwtPlotCurve::CurveAttribute"
+							},
+							{
+								"name": "on",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "testCurveAttribute",
+						"params": [
+							{
+								"name": "attribute",
+								"type": "QwtPlotCurve::CurveAttribute"
+							}
+						],
+						"retType": "bool"
+					},
+					{
+						"name": "setPen",
+						"params": [
+							{
+								"name": "pen",
+								"type": "const QPen &"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "pen",
+						"retType": "const QPen &"
+					},
+					{
+						"name": "setBaseline",
+						"params": [
+							{
+								"name": "baseline",
+								"type": "double"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "baseline",
+						"retType": "double"
+					},
+					{
+						"name": "setStyle",
+						"params": [
+							{
+								"name": "style",
+								"type": "QwtPlotCurve::CurveStyle"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "style",
+						"retType": "QwtPlotCurve::CurveStyle"
+					}
+				],
+				"name": "QwtPlotCurve"
+			},
+			{
+				"base": "QwtPlotSeriesItem",
+				"enums": [
+					{
+						"name": "LayoutPolicy",
+						"values": [
+							{
+								"name": "AutoAdjustSamples",
+								"value": 0
+							},
+							{
+								"name": "ScaleSamplesToAxes",
+								"value": 1
+							},
+							{
+								"name": "ScaleSampleToCanvas",
+								"value": 2
+							},
+							{
+								"name": "FixedSampleSize",
+								"value": 3
+							}
+						]
+					}
+				],
+				"methods": [
+					{
+						"name": "setLayoutPolicy",
+						"params": [
+							{
+								"name": "policy",
+								"type": "QwtPlotAbstractBarChart::LayoutPolicy"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "layoutPolicy",
+						"retType": "QwtPlotAbstractBarChart::LayoutPolicy"
+					},
+					{
+						"name": "setLayoutHint",
+						"params": [
+							{
+								"name": "hint",
+								"type": "double"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "layoutHint",
+						"retType": "double"
+					},
+					{
+						"name": "setSpacing",
+						"params": [
+							{
+								"name": "spacing",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "spacing",
+						"retType": "int"
+					},
+					{
+						"name": "setMargin",
+						"params": [
+							{
+								"name": "margin",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "margin",
+						"retType": "int"
+					},
+					{
+						"name": "setBaseline",
+						"params": [
+							{
+								"name": "baseline",
+								"type": "double"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "baseline",
+						"retType": "double"
+					}
+				],
+				"name": "QwtPlotAbstractBarChart",
+				"properties": [
+					{
+						"getter": "layoutPolicy",
+						"name": "layoutPolicy",
+						"setter": "setLayoutPolicy",
+						"type": "LayoutPolicy"
+					},
+					{
+						"getter": "layoutHint",
+						"name": "layoutHint",
+						"setter": "setLayoutHint",
+						"type": "double"
+					},
+					{
+						"getter": "spacing",
+						"name": "spacing",
+						"setter": "setSpacing",
+						"type": "int"
+					},
+					{
+						"getter": "margin",
+						"name": "margin",
+						"setter": "setMargin",
+						"type": "int"
+					},
+					{
+						"getter": "baseline",
+						"name": "baseline",
+						"setter": "setBaseline",
+						"type": "double"
+					}
+				]
+			},
+			{
+				"base": "QwtPlotAbstractBarChart",
+				"enums": [
+					{
+						"name": "LegendMode",
+						"values": [
+							{
+								"name": "LegendChartTitle",
+								"value": 0
+							},
+							{
+								"name": "LegendBarTitles",
+								"value": 1
+							}
+						]
+					}
+				],
+				"methods": [
+					{
+						"name": "setSamples",
+						"params": [
+							{
+								"name": "samples",
+								"type": "const QVector<double> &"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setLegendMode",
+						"params": [
+							{
+								"name": "mode",
+								"type": "QwtPlotBarChart::LegendMode"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "legendMode",
+						"retType": "QwtPlotBarChart::LegendMode"
+					}
+				],
+				"name": "QwtPlotBarChart",
+				"properties": [
+					{
+						"getter": "legendMode",
+						"name": "legendMode",
+						"setter": "setLegendMode",
+						"type": "LegendMode"
+					}
+				]
+			},
+			{
+				"enums": [
+					{
+						"name": "ScaleComponent",
+						"values": [
+							{
+								"name": "Backbone",
+								"value": 1
+							},
+							{
+								"name": "Ticks",
+								"value": 2
+							},
+							{
+								"name": "Labels",
+								"value": 4
+							}
+						]
+					}
+				],
+				"methods": [
+					{
+						"name": "enableComponent",
+						"params": [
+							{
+								"name": "component",
+								"type": "QwtAbstractScaleDraw::ScaleComponent"
+							},
+							{
+								"name": "enable",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "hasComponent",
+						"params": [
+							{
+								"name": "component",
+								"type": "QwtAbstractScaleDraw::ScaleComponent"
+							}
+						],
+						"retType": "bool"
+					},
+					{
+						"name": "setSpacing",
+						"params": [
+							{
+								"name": "spacing",
+								"type": "double"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "spacing",
+						"retType": "double"
+					},
+					{
+						"name": "setPenWidthF",
+						"params": [
+							{
+								"name": "width",
+								"type": "qreal"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "penWidthF",
+						"retType": "qreal"
+					}
+				],
+				"name": "QwtAbstractScaleDraw",
+				"properties": [
+					{
+						"getter": "spacing",
+						"name": "spacing",
+						"setter": "setSpacing",
+						"type": "double"
+					},
+					{
+						"getter": "penWidthF",
+						"name": "penWidth",
+						"setter": "setPenWidthF",
+						"type": "double"
+					}
+				]
+			},
+			{
+				"base": "QwtAbstractScaleDraw",
+				"enums": [
+					{
+						"name": "Alignment",
+						"values": [
+							{
+								"name": "BottomScale",
+								"value": 0
+							},
+							{
+								"name": "TopScale",
+								"value": 1
+							},
+							{
+								"name": "LeftScale",
+								"value": 2
+							},
+							{
+								"name": "RightScale",
+								"value": 3
+							}
+						]
+					}
+				],
+				"methods": [
+					{
+						"isConst": true,
+						"name": "alignment",
+						"retType": "QwtScaleDraw::Alignment"
+					},
+					{
+						"name": "setAlignment",
+						"params": [
+							{
+								"name": "alignment",
+								"type": "QwtScaleDraw::Alignment"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "orientation",
+						"retType": "Qt::Orientation"
+					},
+					{
+						"name": "setLabelAlignment",
+						"params": [
+							{
+								"name": "alignment",
+								"type": "Qt::AlignmentFlag"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "labelAlignment",
+						"retType": "Qt::AlignmentFlag"
+					},
+					{
+						"name": "setLabelRotation",
+						"params": [
+							{
+								"name": "rotation",
+								"type": "double"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "labelRotation",
+						"retType": "double"
+					}
+				],
+				"name": "QwtScaleDraw"
+			},
+			{
+				"enums": [
+					{
+						"name": "Attribute",
+						"values": [
+							{
+								"name": "NoAttribute",
+								"value": 0
+							},
+							{
+								"name": "IncludeReference",
+								"value": 1
+							},
+							{
+								"name": "Symmetric",
+								"value": 2
+							},
+							{
+								"name": "Floating",
+								"value": 4
+							},
+							{
+								"name": "Inverted",
+								"value": 8
+							}
+						]
+					}
+				],
+				"methods": [
+					{
+						"name": "setAttribute",
+						"params": [
+							{
+								"name": "attribute",
+								"type": "QwtScaleEngine::Attribute"
+							},
+                            {
+								"defaultValue": "true",
+                                "name": "on",
+                                "type": "bool"
+                            }
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "testAttribute",
+						"params": [
+							{
+								"name": "attribute",
+								"type": "QwtScaleEngine::Attribute"
+							}
+						],
+						"retType": "bool"
+					},
+					{
+						"name": "setReference",
+						"params": [
+							{
+								"name": "reference",
+								"type": "double"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "reference",
+						"retType": "double"
+					}
+				],
+				"name": "QwtScaleEngine"
+			},
+			{
+				"base": "QwtScaleEngine",
+				"methods": [
+					{
+						"name": "QwtLinearScaleEngine",
+						"params": [
+							{
+								"name": "base",
+								"type": "uint"
+							}
+						],
+						"retType": "void"
+					}
+				],
+				"name": "QwtLinearScaleEngine"
+			},
+			{
+				"base": "QwtScaleEngine",
+				"methods": [
+					{
+						"name": "QwtLogScaleEngine",
+						"params": [
+							{
+								"name": "base",
+								"type": "uint"
+							}
+						],
+						"retType": "void"
+					}
+				],
+				"name": "QwtLogScaleEngine"
 			}
 		]
 	}
