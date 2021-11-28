@@ -1170,6 +1170,31 @@
 						"name": "icon", "retType": "QIcon"
 					},
 					{
+						"isConst": true,
+						"name": "iconSize",
+						"retType": "QSize"
+					},
+					{
+						"name": "setCheckable",
+						"params": [
+							{
+								"name": "checkable",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "isCheckable",
+						"retType": "bool"
+					},
+					{
+						"isConst": true,
+						"name": "isChecked",
+						"retType": "bool"
+					},
+					{
 						"name": "isDown", "retType": "bool"
 					},
 					{
@@ -1177,6 +1202,41 @@
 						"params": [
 							 {"name": "down", "type": "bool"}
 						]
+					},
+					{
+						"name": "setAutoExclusive",
+						"params": [
+							{
+								"name": "autoExclusive",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "autoExclusive",
+						"retType": "bool"
+					},
+					{
+						"name": "setIconSize",
+						"params": [
+							{
+								"name": "size",
+								"type": "const QSize &"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setChecked",
+						"params": [
+							{
+								"name": "checked",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
 					},
 					{
 						"name": "setIcon", "retType": "void",
@@ -1209,6 +1269,30 @@
 						"name": "text",
 						"getter": "text",
 						"setter": "setText"
+					},
+					{
+						"getter": "iconSize",
+						"name": "iconSize",
+						"setter": "setIconSize",
+						"type": "QSize"
+					},
+					{
+						"getter": "isCheckable",
+						"name": "checkable",
+						"setter": "setCheckable",
+						"type": "bool"
+					},
+					{
+						"getter": "isChecked",
+						"name": "checked",
+						"setter": "setChecked",
+						"type": "bool"
+					},
+					{
+						"getter": "autoExclusive",
+						"name": "autoExclusive",
+						"setter": "setAutoExclusive",
+						"type": "bool"
 					}
 				]
 			},
