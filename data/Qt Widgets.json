@@ -7697,6 +7697,134 @@
 						"type": "double"
 					}
 				]
+			},
+			{
+				"base": "QFrame",
+				"methods": [
+					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
+						"name": "QStackedWidget",
+						"params": [
+							{
+								"defaultValue": "nullptr",
+								"name": "parent",
+								"type": "QWidget *"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "index",
+									"index": 7
+								}
+							]
+						},
+						"name": "insertWidget",
+						"params": [
+							{
+								"defaultValue": "-1",
+								"name": "index",
+								"type": "int"
+							},
+							{
+								"name": "widget",
+								"type": "QWidget *"
+							}
+						],
+						"retType": "int"
+					},
+					{
+						"name": "removeWidget",
+						"params": [
+							{
+								"name": "widget",
+								"type": "QWidget *"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "currentWidget",
+						"retType": "QWidget *"
+					},
+					{
+						"isConst": true,
+						"name": "currentIndex",
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "indexOf",
+						"params": [
+							{
+								"name": "widget",
+								"type": "QWidget *"
+							}
+						],
+						"retType": "int"
+					},
+					{
+						"isConst": true,
+						"name": "widget",
+						"params": [
+							{
+								"name": "index",
+								"type": "int"
+							}
+						],
+						"retType": "QWidget *"
+					},
+					{
+						"isConst": true,
+						"name": "count",
+						"retType": "int"
+					},
+					{
+						"name": "setCurrentIndex",
+						"params": [
+							{
+								"name": "index",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"name": "setCurrentWidget",
+						"params": [
+							{
+								"name": "widget",
+								"type": "QWidget *"
+							}
+						],
+						"retType": "void"
+					}
+				],
+				"name": "QStackedWidget",
+				"properties": [
+					{
+						"getter": "currentIndex",
+						"name": "currentIndex",
+						"setter": "setCurrentIndex",
+						"type": "int"
+					},
+					{
+						"getter": "count",
+						"name": "count",
+						"type": "int"
+					}
+				]
 			}
 		]
 	}
