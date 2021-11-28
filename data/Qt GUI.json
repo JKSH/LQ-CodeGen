@@ -1120,21 +1120,6 @@
 						"retType": "QList<QScreen*>"
 					},
 					{
-						"isConst": true,
-						"name": "font",
-						"retType": "QFont"
-					},
-					{
-						"name": "setFont",
-						"params": [
-							{
-								"name": "font",
-								"type": "const QFont&"
-							}
-						],
-						"retType": "void"
-					},
-					{
 						"name": "setLayoutDirection",
 						"params": [
 							{
@@ -1167,12 +1152,6 @@
 						"name": "layoutDirection",
 						"setter": "setLayoutDirection",
 						"type": "Qt::LayoutDirection"
-					},
-					{
-						"getter": "font",
-						"name": "font",
-						"setter": "setFont",
-						"type": "QFont"
 					}
 				]
 			},

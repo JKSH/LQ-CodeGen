@@ -16,6 +16,32 @@
 				"name": "QApplication", "base": "QGuiApplication",
 				"methods": [
 					{
+						"name": "font",
+						"params": [
+							{
+								"defaultValue": "QWidget",
+								"name": "className",
+								"type": "CString"
+							}
+						],
+						"retType": "QFont"
+					},
+					{
+						"name": "setFont",
+						"params": [
+							{
+								"name": "font",
+								"type": "const QFont &"
+							},
+							{
+								"defaultValue": "QWidget",
+								"name": "className",
+								"type": "CString"
+							}
+						],
+						"retType": "void"
+					},
+					{
 						"name": "palette",
 						"params": [
 							{
