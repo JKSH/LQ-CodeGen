@@ -95,6 +95,7 @@
 						"name": "actions", "retType": "QList<QAction*>"
 					},
 					{
+						"isDeprecated": true,
 						"name": "addActions", "retType": "void",
 						"params": [
 							{"name": "actions", "type": "const QList<QAction*>&"}
@@ -114,6 +115,29 @@
 					},
 					{
 						"name": "layout", "retType": "QLayout*"
+					},
+					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "before",
+									"index": 7
+								}
+							]
+						},
+						"name": "insertActions",
+						"params": [
+							{
+								"defaultValue": "nullptr",
+								"name": "before",
+								"type": "QAction *"
+							},
+							{
+								"name": "actions",
+								"type": "QList<QAction*> &"
+							}
+						],
+						 "retType": "void"
 					},
 					{
 						"name": "isEnabled", "retType": "bool"
@@ -621,6 +645,7 @@
 						"retType": "QIcon"
 					},
 					{
+						"isDeprecated": true,
 						"name": "addItems",
 						"params": [
 							{
@@ -631,9 +656,18 @@
 						"retType": "void"
 					},
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "index",
+									"index": 7
+								}
+							]
+						},
 						"name": "insertItems",
 						"params": [
 							{
+								"defaultValue": "INT_MAX",
 								"name": "index",
 								"type": "int"
 							},
@@ -1729,6 +1763,7 @@
 						"retType": "void"
 					},
 					{
+						"isDeprecated": true,
 						"name": "addWidget",
 						"params": [
 							{
@@ -1739,9 +1774,18 @@
 						"retType": "void"
 					},
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "index",
+									"index": 7
+								}
+							]
+						},
 						"name": "insertWidget",
 						"params": [
 							{
+								"defaultValue": "-1",
 								"name": "index",
 								"type": "int"
 							},
@@ -1995,6 +2039,7 @@
 						"retType": "void"
 					},
 					{
+						"isDeprecated": true,
 						"name": "addTab",
 						"params": [
 							{
@@ -2013,9 +2058,22 @@
 						"retType": "int"
 					},
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "index",
+									"index": 7
+								},
+								{
+									"name": "label",
+									"index": 10
+								}
+							]
+						},
 						"name": "insertTab",
 						"params": [
 							{
+								"defaultValue": "-1",
 								"name": "index",
 								"type": "int"
 							},
@@ -4732,6 +4790,7 @@
 						"retType": "void"
 					},
 					{
+						"isDeprecated": true,
 						"name": "addItem",
 						"params": [
 							{
@@ -4750,9 +4809,22 @@
 						"retType": "int"
 					},
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "index",
+									"index": 7
+								},
+								{
+									"name": "text",
+									"index": 10
+								}
+							]
+						},
 						"name": "insertItem",
 						"params": [
 							{
+								"defaultValue": "-1",
 								"name": "index",
 								"type": "int"
 							},
