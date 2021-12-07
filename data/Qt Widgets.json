@@ -117,6 +117,11 @@
 						]
 					},
 					{
+						"isConst": true,
+						"name": "autoFillBackground",
+						"retType": "bool"
+					},
+					{
 						"name": "contextMenuPolicy", "retType": "Qt::ContextMenuPolicy"
 					},
 					{
@@ -176,6 +181,17 @@
 						"params": [
 							{"name": "size", "type": "const QSize&"}
 						]
+					},
+					{
+						"name": "setAutoFillBackground",
+						"params": [
+							{
+								"defaultValue": "true",
+								"name": "enabled",
+								"type": "bool"
+							}
+						],
+						"retType": "void"
 					},
 					{
 						"name": "setContextMenuPolicy", "retType": "void",
@@ -274,6 +290,16 @@
 						]
 					},
 					{
+						"name": "setWindowState",
+						"params": [
+							{
+								"name": "windowState",
+								"type": "Qt::WindowState"
+							}
+						],
+						"retType": "void"
+					},
+					{
 						"name": "setWindowOpacity", "retType": "void",
 						"params": [
 							{"name": "level", "type": "qreal"}
@@ -310,10 +336,20 @@
 						"name": "windowOpacity", "retType": "qreal"
 					},
 					{
+						"name": "windowState",
+						"retType": "Qt::WindowState"
+					},
+					{
 						"name": "windowTitle", "retType": "QString"
 					}
 				],
 				"properties": [
+					{
+						"getter": "autoFillBackground",
+						"name": "autoFillBackground",
+						"setter": "setAutoFillBackground",
+						"type": "bool"
+					},
 					{
 						"name": "contextMenuPolicy",
 						"getter": "contextMenuPolicy",
