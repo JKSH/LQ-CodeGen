@@ -89,7 +89,22 @@
 				"name": "QWidget", "base": "QObject",
 				"methods": [
 					{
-						"name": "QWidget"
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
+						"name": "QWidget",
+						"params": [
+							{
+								"defaultValue": "nullptr",
+								"name": "parent",
+								"type": "QWidget *"
+							}
+						]
 					},
 					{
 						"name": "actions", "retType": "QList<QAction*>"
@@ -1140,9 +1155,25 @@
 				"name": "QLabel", "base": "QFrame",
 				"methods": [
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"name": "QLabel",
 						"params": [
-							 {"name": "text", "type": "const QString&"}
+							{
+								"name": "text",
+								"type": "const QString &"
+							},
+							{
+								"defaultValue": "nullptr",
+								"name": "parent",
+								"type": "QWidget *"
+							}
 						]
 					},
 					{
@@ -1334,9 +1365,25 @@
 				"name": "QPushButton", "base": "QAbstractButton",
 				"methods": [
 					{
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
 						"name": "QPushButton",
 						"params": [
-							 {"name": "text", "type": "const QString&"}
+							{
+								"name": "text",
+								"type": "const QString &"
+							},
+							{
+								"defaultValue": "nullptr",
+								"name": "parent",
+								"type": "QWidget *"
+							}
 						]
 					},
 					{
@@ -5030,7 +5077,22 @@
 				"base": "QLayout",
 				"methods": [
 					{
-						"name": "QGridLayout"
+						"connectorPane": {
+							"terminals": [
+								{
+									"name": "parent",
+									"index": 5
+								}
+							]
+						},
+						"name": "QGridLayout",
+						"params": [
+							{
+								"defaultValue": "nullptr",
+								"name": "parent",
+								"type": "QWidget *"
+							}
+						]
 					},
 					{
 						"name": "setHorizontalSpacing",
