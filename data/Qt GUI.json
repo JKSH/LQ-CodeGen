@@ -610,30 +610,105 @@
 				"name": "QFont"
 			},
 			{
+				"enums": [
+					{
+						"name": "Mode",
+						"values": [
+							{
+								"name": "Normal",
+								"value": 0
+							},
+							{
+								"name": "Disabled",
+								"value": 1
+							},
+							{
+								"name": "Active",
+								"value": 2
+							},
+							{
+								"name": "Selected",
+								"value": 3
+							}
+						]
+					},
+					{
+						"name": "State",
+						"values": [
+							{
+								"name": "On",
+								"value": 0
+							},
+							{
+								"name": "Off",
+								"value": 1
+							}
+						]
+					}
+				],
 				"name": "QIcon",
 				"methods": [
 					{
 						"name": "QIcon",
 						"params": [
-							 {"name": "fileName", "type": "const QString&"}
+							{
+								"defaultValue": "QString()",
+								"name": "fileName",
+								"type": "const QString &"
+							}
 						]
 					},
 					{
 						"name": "addFile", "retType": "void",
 						"params": [
-							 {"name": "file", "type": "const QString&"}
+							{"name": "file", "type": "const QString&"},
+							{
+								"name": "size",
+								"type": "const QSize &"
+							},
+							{
+								"defaultValue": "Normal",
+								"name": "mode",
+								"type": "QIcon::Mode"
+							},
+							{
+								"defaultValue": "Off",
+								"name": "state",
+								"type": "QIcon::State"
+							}
 						]
 					},
 					{
 						"name": "addPixmap", "retType": "void",
 						"params": [
-							 {"name": "pixmap", "type": "const QPixmap&"}
+							{"name": "pixmap", "type": "const QPixmap&"},
+							{
+								"defaultValue": "Normal",
+								"name": "mode",
+								"type": "QIcon::Mode"
+							},
+							{
+								"defaultValue": "Off",
+								"name": "state",
+								"type": "QIcon::State"
+							}
 						]
 					},
 					{
+						"isConst": true,
 						"name": "pixmap", "retType": "QPixmap",
 						"params": [
-							 {"name": "size", "type": "const QSize&"}
+							{"name": "size", "type": "const QSize&"},
+							{
+								"defaultValue": "Normal",
+								"name": "mode",
+								"type": "QIcon::Mode"
+							},
+							{
+								"defaultValue": "Off",
+								"name": "state",
+								"type": "QIcon::State"
+							}
 						]
 					}
 				]
@@ -1120,21 +1195,6 @@
 						"retType": "QList<QScreen*>"
 					},
 					{
-						"isConst": true,
-						"name": "font",
-						"retType": "QFont"
-					},
-					{
-						"name": "setFont",
-						"params": [
-							{
-								"name": "font",
-								"type": "const QFont&"
-							}
-						],
-						"retType": "void"
-					},
-					{
 						"name": "setLayoutDirection",
 						"params": [
 							{
@@ -1167,12 +1227,6 @@
 						"name": "layoutDirection",
 						"setter": "setLayoutDirection",
 						"type": "Qt::LayoutDirection"
-					},
-					{
-						"getter": "font",
-						"name": "font",
-						"setter": "setFont",
-						"type": "QFont"
 					}
 				]
 			},
@@ -1218,22 +1272,27 @@
 						"name": "grabWindow",
 						"params": [
 							{
+								"defaultValue": "0",
 								"name": "window",
 								"type": "WId"
 							},
 							{
+								"defaultValue": "0",
 								"name": "x",
 								"type": "int"
 							},
 							{
+								"defaultValue": "0",
 								"name": "y",
 								"type": "int"
 							},
 							{
+								"defaultValue": "-1",
 								"name": "w",
 								"type": "int"
 							},
 							{
+								"defaultValue": "-1",
 								"name": "h",
 								"type": "int"
 							}
