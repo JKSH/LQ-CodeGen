@@ -4524,6 +4524,13 @@
 				]
 			},
 			{
+				"name": "QPointF",
+				"fields": [
+					{"name": "x", "type": "qreal"},
+					{"name": "y", "type": "qreal"}
+				]
+			},
+			{
 				"name": "QSize",
 				"fields": [
 					{
