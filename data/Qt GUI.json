@@ -1272,22 +1272,27 @@
 						"name": "grabWindow",
 						"params": [
 							{
+								"defaultValue": "0",
 								"name": "window",
 								"type": "WId"
 							},
 							{
+								"defaultValue": "0",
 								"name": "x",
 								"type": "int"
 							},
 							{
+								"defaultValue": "0",
 								"name": "y",
 								"type": "int"
 							},
 							{
+								"defaultValue": "-1",
 								"name": "w",
 								"type": "int"
 							},
 							{
+								"defaultValue": "-1",
 								"name": "h",
 								"type": "int"
 							}
