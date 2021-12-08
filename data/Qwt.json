@@ -1514,10 +1514,6 @@
 							{
 								"name": "Dots",
 								"value": 3
-							},
-							{
-								"name": "UserCurve",
-								"value": 100
 							}
 						]
 					},
