@@ -1727,7 +1727,27 @@
 						"retType": "QwtPlotCurve::CurveStyle"
 					}
 				],
-				"name": "QwtPlotCurve"
+				"name": "QwtPlotCurve",
+				"properties": [
+					{
+						"getter": "baseline",
+						"name": "baseline",
+						"setter": "setBaseline",
+						"type": "double"
+					},
+					{
+						"getter": "style",
+						"name": "style",
+						"setter": "setStyle",
+						"type": "QwtPlotCurve::CurveStyle"
+					},
+					{
+						"getter": "pen",
+						"name": "pen",
+						"setter": "setPen",
+						"type": "QPen"
+					}
+				]
 			},
 			{
 				"base": "QwtPlotSeriesItem",

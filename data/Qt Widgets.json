@@ -386,6 +386,12 @@
 						"setter": "setMinimumSize"
 					},
 					{
+						"getter": "palette",
+						"name": "palette",
+						"setter": "setPalette",
+						"type": "QPalette"
+					},
+					{
 						"name": "size",
 						"getter": "size",
 						"setter": "resize"

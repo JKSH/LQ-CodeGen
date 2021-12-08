@@ -148,7 +148,27 @@
                         "retType": "void"
                     }
                 ],
-                "name": "LQwtPlotBarChart"
+				"name": "LQwtPlotBarChart",
+				"properties": [
+					{
+						"getter": "barFrameStyle",
+						"name": "barFrameStyle",
+						"setter": "setBarFrameStyle",
+						"type": "QwtColumnSymbol::FrameStyle"
+					},
+					{
+						"getter": "barFrameLineWidth",
+						"name": "barFrameLineWidth",
+						"setter": "setBarFrameLineWidth",
+						"type": "int"
+					},
+					{
+						"getter": "barPalette",
+						"name": "barPalette",
+						"setter": "setBarPalette",
+						"type": "QPalette"
+					}
+				]
             },
             {
                 "base": "QwtScaleDraw",
@@ -179,7 +199,15 @@
                         "retType": "void"
                     }
                 ],
-                "name": "LQwtTextScaleDraw"
+				"name": "LQwtTextScaleDraw",
+				"properties": [
+					{
+						"getter": "labels",
+						"name": "labels",
+						"setter": "setLabels",
+						"type": "QStringList"
+					}
+				]
             }
         ],
 		"fullArrays": [
