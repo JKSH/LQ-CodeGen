@@ -961,6 +961,7 @@
 						]
 					},
 					{
+						"isDeprecated": true,
 						"name": "Axis",
 						"values": [
 							{

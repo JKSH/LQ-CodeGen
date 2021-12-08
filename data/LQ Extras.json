@@ -27,7 +27,7 @@
 					{
 						"name": "axisTitle", "retType": "QString",
 						"params": [
-							{ "name": "axisId", "type": "QwtPlot::Axis" }
+							{ "name": "axisId", "type": "QwtAxis::Position" }
 						]
 					},
 					{
@@ -42,20 +42,20 @@
 					{
 						"name": "isAxisAutoScaling", "retType": "bool",
 						"params": [
-							{ "name": "axisId", "type": "QwtPlot::Axis" }
+							{ "name": "axisId", "type": "QwtAxis::Position" }
 						]
 					},
 					{
 						"name": "setAxisAutoScaling", "retType": "void",
 						"params": [
-							{ "name": "axisId", "type": "QwtPlot::Axis" },
+							{ "name": "axisId", "type": "QwtAxis::Position" },
 							{ "name": "autoScaling", "type": "bool" }
 						]
 					},
 					{
 						"name": "setAxisTitle", "retType": "void",
 						"params": [
-							{ "name": "axisId", "type": "QwtPlot::Axis" },
+							{ "name": "axisId", "type": "QwtAxis::Position" },
 							{ "name": "title", "type": "const QString&" }
 						]
 					},
