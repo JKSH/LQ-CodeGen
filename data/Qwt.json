@@ -2144,11 +2144,11 @@
 								"name": "attribute",
 								"type": "QwtScaleEngine::Attribute"
 							},
-                            {
+							{
 								"defaultValue": "true",
-                                "name": "on",
-                                "type": "bool"
-                            }
+								"name": "on",
+								"type": "bool"
+							}
 						],
 						"retType": "void"
 					},
