@@ -1310,6 +1310,7 @@
 				"name": "QwtColumnSymbol"
 			},
 			{
+				"isDeletable": true,
 				"methods": [
 					{
 						"name": "attach",
@@ -1578,6 +1579,7 @@
 						]
 					}
 				],
+				"isSubclassable": true,
 				"methods": [
 					{
 						"name": "QwtPlotCurve",
