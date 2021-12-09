@@ -1310,6 +1310,7 @@
 				"name": "QwtColumnSymbol"
 			},
 			{
+				"isDeletable": true,
 				"methods": [
 					{
 						"name": "attach",
