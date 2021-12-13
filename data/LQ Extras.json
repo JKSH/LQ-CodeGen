@@ -27,7 +27,7 @@
 					{
 						"name": "axisTitle", "retType": "QString",
 						"params": [
-							{ "name": "axisId", "type": "QwtPlot::Axis" }
+							{ "name": "axisId", "type": "QwtAxis::Position" }
 						]
 					},
 					{
@@ -42,20 +42,20 @@
 					{
 						"name": "isAxisAutoScaling", "retType": "bool",
 						"params": [
-							{ "name": "axisId", "type": "QwtPlot::Axis" }
+							{ "name": "axisId", "type": "QwtAxis::Position" }
 						]
 					},
 					{
 						"name": "setAxisAutoScaling", "retType": "void",
 						"params": [
-							{ "name": "axisId", "type": "QwtPlot::Axis" },
+							{ "name": "axisId", "type": "QwtAxis::Position" },
 							{ "name": "autoScaling", "type": "bool" }
 						]
 					},
 					{
 						"name": "setAxisTitle", "retType": "void",
 						"params": [
-							{ "name": "axisId", "type": "QwtPlot::Axis" },
+							{ "name": "axisId", "type": "QwtAxis::Position" },
 							{ "name": "title", "type": "const QString&" }
 						]
 					},
@@ -84,6 +84,128 @@
 						"name": "historyLength",
 						"getter": "historyLength",
 						"setter": "setHistoryLength"
+					}
+				]
+			}
+		],
+		"simpleIdentities": [
+			{
+				"base": "QwtPlotBarChart",
+				"methods": [
+					{
+						"name": "LQwtPlotBarChart",
+						"params": [
+							{
+								"name": "title",
+								"type": "const QString &"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "barFrameStyle",
+						"retType": "QwtColumnSymbol::FrameStyle"
+					},
+					{
+						"name": "setBarFrameStyle",
+						"params": [
+							{
+								"name": "style",
+								"type": "QwtColumnSymbol::FrameStyle"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "barFrameLineWidth",
+						"retType": "int"
+					},
+					{
+						"name": "setBarFrameLineWidth",
+						"params": [
+							{
+								"name": "width",
+								"type": "int"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "barPalette",
+						"retType": "QPalette"
+					},
+					{
+						"name": "setBarPalette",
+						"params": [
+							{
+								"name": "palette",
+								"type": "const QPalette &"
+							}
+						],
+						"retType": "void"
+					}
+				],
+				"name": "LQwtPlotBarChart",
+				"properties": [
+					{
+						"getter": "barFrameStyle",
+						"name": "barFrameStyle",
+						"setter": "setBarFrameStyle",
+						"type": "QwtColumnSymbol::FrameStyle"
+					},
+					{
+						"getter": "barFrameLineWidth",
+						"name": "barFrameLineWidth",
+						"setter": "setBarFrameLineWidth",
+						"type": "int"
+					},
+					{
+						"getter": "barPalette",
+						"name": "barPalette",
+						"setter": "setBarPalette",
+						"type": "QPalette"
+					}
+				]
+			},
+			{
+				"base": "QwtScaleDraw",
+				"methods": [
+					{
+						"name": "LQwtTextScaleDraw",
+						"params": [
+							{
+								"name": "labels",
+								"type": "const QStringList &"
+							}
+						],
+						"retType": "void"
+					},
+					{
+						"isConst": true,
+						"name": "labels",
+						"retType": "QStringList"
+					},
+					{
+						"name": "setLabels",
+						"params": [
+							{
+								"name": "labels",
+								"type": "const QStringList &"
+							}
+						],
+						"retType": "void"
+					}
+				],
+				"name": "LQwtTextScaleDraw",
+				"properties": [
+					{
+						"getter": "labels",
+						"name": "labels",
+						"setter": "setLabels",
+						"type": "QStringList"
 					}
 				]
 			}

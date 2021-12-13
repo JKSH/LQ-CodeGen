@@ -25,7 +25,8 @@ namespace TypeConv
 		SimpleIdentity,
 		QObject,
 		SimpleContainer,
-		FullArray
+		FullArray,
+		LQCustomCast
 	};
 
 	void init(const QJsonArray& conversions, Category category);
@@ -37,6 +38,7 @@ namespace TypeConv
 
 	QString instanceType_dll(const QString& qtType);
 	QString convCode_dll2Qt(const QString& qtType);
+	QString convCode_qt2Dll(const QString& qtType);
 }
 
 #endif // TYPECONV_H

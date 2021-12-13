@@ -4524,10 +4524,25 @@
 				]
 			},
 			{
+				"name": "QPointF",
+				"fields": [
+					{"name": "x", "type": "qreal"},
+					{"name": "y", "type": "qreal"}
+				]
+			},
+			{
 				"name": "QSize",
 				"fields": [
-					{"name": "width", "type": "int"},
-					{"name": "height", "type": "int"}
+					{
+						"defaultValue": "-1",
+						"name": "width",
+						"type": "int"
+					},
+					{
+						"defaultValue": "-1",
+						"name": "height",
+						"type": "int"
+					}
 				]
 			},
 			{
@@ -7901,6 +7916,11 @@
 			}
 		],
 		"simpleContainers": [
+			{
+				"name": "CString",
+				"dllType": "const char*",
+				"dll2bridge": "_dllValue_"
+			},
 			{
 				"name": "QByteArray",
 				"dllType": "LStrHandle",
