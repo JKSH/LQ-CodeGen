@@ -1159,6 +1159,17 @@
 						]
 					},
 					{
+						"isConst": true,
+						"name": "save",
+						"params": [
+							{
+								"name": "fileName",
+								"type": "const QString &"
+							}
+						],
+						"retType": "bool"
+					},
+					{
 						"name": "size", "retType": "QSize",
 						"isConst": true
 					}
